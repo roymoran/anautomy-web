@@ -13,7 +13,7 @@ class SubscribersController < ApplicationController
 		flash[:success] = "You will be hearing from us soon...very soon."
 		redirect_to :back
 		else
-			render 'new'
+			render Rails.application.routes.recognize_path(request.referer)[:action]
 		end
 	end
 

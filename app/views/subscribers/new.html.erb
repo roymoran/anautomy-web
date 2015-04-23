@@ -44,10 +44,10 @@
         <!-- /.container -->
     </div>
     <!-- /.content-section-a -->
-    <hr class="introDivider">
+   <!-- <hr class="introDivider"> -->
     <!-- Page Content -->
      <a  id = "how" name="how"></a>
-    <div class="content-section-a howBox">
+    <div class="content-section-b">
 
         <div class="container">
             <div class="row">
@@ -82,26 +82,28 @@
                     <p class="text-muted howDescriptions">Find the best place to get the repair done for a price that you know is fair.</p>
                 </div>
             </div>
-        </div>
-        <div class = "subscribeBox">
-            <h5>We'll be launching soon. Get on our waiting list for an invitation to our beta launch.</h5>
-            <div class="form-group subscribeForm">
+            <h5 class = "text-center">We'll be launching soon. Get on our waiting list for an invitation to our beta launch.</h5>
+            
 
-
-        <%= form_for(@subscriber) do |f| %>
+            <form class="form-inline">
+         <%= form_for(@subscriber) do |f| %>
       <%= render 'shared/error_messages' %>
-
-      <div class = "form-inline">
-      <%= f.email_field :email, class: 'form-control input-lg', :placeholder => "Email"%>
-      <%= f.text_field :zip, class: 'form-control input-lg', :placeholder => "Zip code"%>
-      <div class = "notifyButton">
-      <%= f.submit "Notify Me", class: "btnbtn btn-lg" %>
-    <% end %>
-
-    </div>
+  <div class="form-group">
+   <%= f.email_field :email, class: 'form-control input-lg', :placeholder => "Email"%>
+   <%= f.text_field :zip, class: 'form-control input-lg', :placeholder => "Zip code"%>
   </div>
-    </div>
-    </div>
+  <div class="form-group">
+    <%= f.submit "Notify Me", class: "notifyButton btnbtn btn-lg" %>
+</div>
+  </div>
+  <% end %>
+</form>
+
+
+
+
+
+        </div>
     </div>
 
 <!--
@@ -135,15 +137,9 @@
     <div class="banner">
 
         <div class="container">
-            <h3 class = "submissionMessage">Starting May 1st we'll be accepting initial submissions for prices you have paid on repairs.</h3>
+            <h3 class = "text-center ">Starting May 1st we'll be accepting initial submissions for prices you have paid on repairs.</h3>
             <hr class="intro-divider">
-            <h3 class = "submissionMessageSmall">Leave us your email above and we'll notify you.</h3>
-            <div class="row">
-                <div class="col-lg-6">
-                    <!--<h2>Help us help you:</h2>-->
-                </div>
-            </div>
-
+            <h3 class = "text-center ">Leave us your email above and we'll notify you.</h3>
         </div>
         <!-- /.container -->
 

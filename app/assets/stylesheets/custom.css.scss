@@ -187,12 +187,8 @@ fieldset[disabled] .btn-lg.active {
 {
     padding-left: 50px;
     padding-top: 25px;
-}
-.notifyButton{
-    position: relative;
-    left: 500px;
-    top: -67px;
-}    
+    padding-bottom:10px;
+} 
 
  .subscribeForm{
     float: left;
@@ -379,15 +375,11 @@ fieldset[disabled] .btn-lg.active {
 .submissionMessage{
     margin-left: auto ;
     margin-right: auto ;
-    margin-top: 140px;
-    width: 600px;
     text-align: center;
 }
 .submissionMessageSmall{
     margin-left: auto;
     margin-right: auto;
-    margin-top: 10px;
-    width: 400px;
     text-align: center;
     font-weight: 400;
 }
@@ -402,12 +394,7 @@ fieldset[disabled] .btn-lg.active {
 .howDescriptions{
     font-size: 1.2em;
 }
-.whySection{
-    height: 92%;
-}
-.howBox{
-    height: 85%;
-}
+
 footer {
     padding: 50px 0;
     background-color: #f8f8f8;
@@ -417,8 +404,11 @@ p.copyright {
     margin: 15px 0 0;
 }
 
+.howBox{
+    height: 120%;
+}
 
-
+  
 
 /*!
  * Start Bootstrap - Scrolling Nav HTML Template (http://startbootstrap.com)
@@ -491,6 +481,10 @@ of those sections to manage the look and feel of the site. */
     background-color: #333; /* Modern Browsers */
 }
 
-.errorBox{
-    
-}
+
+
+.notifyButton{
+position: relative;
+    right: -10px;
+
+}  
