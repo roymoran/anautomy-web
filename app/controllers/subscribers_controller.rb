@@ -1,7 +1,4 @@
 class SubscribersController < ApplicationController
-	def show
-		@subscriber = Subscriber.all
-	end
 
 	def new
 		@subscriber = Subscriber.new
