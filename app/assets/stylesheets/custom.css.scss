@@ -215,7 +215,7 @@ fieldset[disabled] .btn-lg.active {
     padding-bottom: 50px;
     text-align: center;
     color: #f8f8f8;
-    background: url(intro-bg.jpg) no-repeat center center;
+    background: image-url(intro-bg.jpg) no-repeat center center;
     background-size: cover;
     
 }
@@ -332,7 +332,7 @@ fieldset[disabled] .btn-lg.active {
 .banner {
     padding: 50px 0;
     color: #f8f8f8;
-    background: url(banner-bg.jpg) no-repeat center center;
+    background: image-url(banner-bg.jpg) no-repeat center center;
     background-size: cover;
     height: 500px;
 }
