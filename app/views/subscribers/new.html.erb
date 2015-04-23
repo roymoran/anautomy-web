@@ -1,0 +1,155 @@
+<!-- Header -->
+    <a id = "intro" name="intro"></a>
+    <div class="intro-header coverHeight">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="intro-message">
+                        <h1>Never Get Overcharged Again</h1>
+                        <h3>Be An Expert on Your Car Repiars</h3>
+                        <div class = "howButton">
+                                <a href = "#how" class="btn btn-default btn-md page-scroll"> <span class="network-name">How?</span></a>
+                        </div>
+                        <!--<hr class="intro-divider"> -->
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.intro-header -->
+
+    <!--content-section-before a -->
+    <a  id="why" name="why"></a>
+    <div class="content-section-a whySection">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading sectionHeading">Why are we here?</h2>
+                    <p class="lead">The mechanical repair industry is one of the least transparent consumer facing industries that exists. Most people will ask friends and family if they know any honest mechanics whenever their car breaks down. Anautomy is not here to send you quotes for your repair from nearby shops. You don’t even know if any of those quotes are a fair price. <br><br>Anautomy is here to help show you what other people are paying for their repairs and where they got it done. Then you can determine if you are truly getting a good price for the repair and get your car back on the road.</p>
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    <%= image_tag("ipad.png", class: "img-responsive") %> 
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+    </div>
+    <!-- /.content-section-a -->
+
+    <!-- Page Content -->
+     <a  id = "how" name="how"></a>
+    <div class="content-section-a howBox">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-headin sectionHeading">How Anautomy Works</h2>
+                    <h3 class="section-subheading text-muted"></h3>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class = "howLabels">Find</h4>
+                    <p class="text-muted howDescriptions">Find your car and the repair you need through our powerful search tool</p>
+                </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="howLabels">Browse</h4>
+                    <p class="text-muted howDescriptions">See how much others are paying on the same repair for your vehicle.</p>
+                </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-lock fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="howLabels">Save</h4>
+                    <p class="text-muted howDescriptions">Find the best place to get the repair done for a price that you knnow is fair.</p>
+                </div>
+            </div>
+        </div>
+        <div class = "subscribeBox">
+            <h5>We'll be launching soon. Get on our waiting list for an invitation to our beta launch.</h5>
+            <div class="form-group subscribeForm">
+
+
+        <%= form_for(@subscriber) do |f| %>
+      <%= render 'shared/error_messages' %>
+
+      <div class = "form-inline">
+      <%= f.email_field :email, class: 'form-control input-lg', :placeholder => "Email"%>
+      <%= f.text_field :zip, class: 'form-control input-lg', :placeholder => "Zip code"%>
+      <div class = "notifyButton">
+      <%= f.submit "Notify Me", class: "btnbtn btn-lg" %>
+    <% end %>
+
+    </div>
+
+  </div>
+    </div>
+    </div>
+    </div>
+
+<!--
+    <div class="content-section-b">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">3D Device Mockups<br>by PSDCovers</h2>
+                    <p class="lead">Turn your 2D designs into high quality, 3D product shots in seconds using free Photoshop actions by <a target="_blank" href="http://www.psdcovers.com/">PSDCovers</a>! Visit their website to download some of their awesome, free photoshop actions!</p>
+                </div>
+                <div class="col-lg-5 col-sm-pull-6  col-sm-6">
+                    <img class="img-responsive" src="img/dog.png" alt="">
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+-->
+
+    <!-- /.content-section-b -->
+
+   
+    <!-- /.content-section-a -->
+    <div id = "next">
+    <a  name="next"></a>
+    <div class="banner">
+
+        <div class="container">
+
+            <h3 class = "submissionMessage">Starting May 1st we'll be accepting initial submissions for prices you have paid on repairs.</h3>
+            <hr class="intro-divider">
+            <h3 class = "submissionMessageSmall">Leave us you're email above and we'll notify you.</h3>
+            <div class="row">
+                <div class="col-lg-6">
+                    <!--<h2>Help us help you:</h2>-->
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    </div>
+    <!-- /.banner -->
+
