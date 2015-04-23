@@ -215,7 +215,7 @@ fieldset[disabled] .btn-lg.active {
     padding-bottom: 50px;
     text-align: center;
     color: #f8f8f8;
-    background-image: image-url("intro-bg.jpg") no-repeat center center;
+    background: url('http://i.imgur.com/TUpsfVk.jpg') no-repeat center center;
     background-size: cover;
     
 }
@@ -332,7 +332,7 @@ fieldset[disabled] .btn-lg.active {
 .banner {
     padding: 50px 0;
     color: #f8f8f8;
-    background-image: image-url("banner-bg.jpg") no-repeat center center;
+    background: url('http://i.imgur.com/7WdUZfg.jpg') no-repeat center center;
     background-size: cover;
     height: 500px;
 }
@@ -416,8 +416,6 @@ footer {
 p.copyright {
     margin: 15px 0 0;
 }
-
-
 
 
 
