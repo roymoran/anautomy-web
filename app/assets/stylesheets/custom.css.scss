@@ -481,10 +481,15 @@ of those sections to manage the look and feel of the site. */
     background-color: #333; /* Modern Browsers */
 }
 
-
+.alertPosition{
+    margin-top:50px;
+}
 
 .notifyButton{
 position: relative;
     right: -10px;
-
 }  
+
+.formPosition{
+    margin-left: 180px;
+}
