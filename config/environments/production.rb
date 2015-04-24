@@ -77,16 +77,18 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-
-
-  config.action_mailer.smtp_settings = {
-    :address   => "smtp.mandrillapp.com",
-    :port      => 587, # ports 587 and 2525 are also supported with STARTTLS
-    :enable_starttls_auto => true, # detects and uses STARTTLS
-    :user_name => "roy_moran1993@yahoo.com",
-    :password  => "7Dy1xqWItGv7evtShwajyQ", # SMTP password is any valid API key
-    :authentication => 'login', # Mandrill supports 'plain' or 'login'
-    :domain => 'anautomybeta.com', # your domain to identify your server when connecting
+ config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+  host = 'anautomybeta.com'
+  config.action_mailer.default_url_options = { host: host }
+  ActionMailer::Base.smtp_settings = {
+    :address        => 'smtp.mandrillapp.com',
+    :port           => '587',
+    :authentication => :plain,
+    :user_name      => "app36147600@heroku.com",
+    :password       => "Hcyb_VFdZNZIgUlkVCuzHw",
+    :domain         => 'heroku.com',
+    :enable_starttls_auto => true
   }
 
 
