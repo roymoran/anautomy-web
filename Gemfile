@@ -30,6 +30,7 @@ gem 'bootstrap-sass',          '3.2.0.0'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'newrelic_rpm'
 
 
 group :test do
