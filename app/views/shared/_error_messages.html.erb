@@ -1,6 +1,6 @@
 <%if @subscriber.errors.any?%>
   <div id="error_explanation">
-    <div class="alert alert-danger errorBox">
+    <div class="alert alert-danger">
       The form contains <%= pluralize(@subscriber.errors.count, "error") %>.
     </div>
     <ul>
@@ -10,4 +10,3 @@
     </ul>
   </div>
 <%end%>
-

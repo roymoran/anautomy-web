@@ -85,20 +85,20 @@
             </div>
             <h5 class = "text-center">We'll be launching soon. Get on our waiting list for an invitation to our beta launch.</h5>
             
-
-            <form class="form-inline formPosition">
-         <%= form_for(@subscriber) do |f| %>
+         <%=form_for @subscriber, :html => {:class => 'formPosition form-inline'} do |f|%>
       <%= render 'shared/error_messages' %>
   <div class="form-group">
    <%= f.email_field :email, class: 'form-control input-lg', :placeholder => "Email"%>
    <%= f.text_field :zip, class: 'form-control input-lg', :placeholder => "Zip code"%>
+
   </div>
   <div class="form-group">
     <%= f.submit "Notify Me", class: "notifyButton btnbtn btn-lg" %>
+
 </div>
   </div>
   <% end %>
-</form>
+
 
 
 

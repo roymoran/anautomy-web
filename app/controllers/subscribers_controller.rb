@@ -1,4 +1,7 @@
 class SubscribersController < ApplicationController
+	def show
+		@subscriber = Subscriber.all
+	end
 
 	def new
 		@subscriber = Subscriber.new
@@ -9,7 +12,6 @@ class SubscribersController < ApplicationController
 	def create
 		@subscriber = Subscriber.new(subscriber_params)  
 		if @subscriber.save
-		#SubscriberMailer.new_subscriber_email(@subscriber).deliver_now
 		flash[:success] = "You will be hearing from us soon...very soon."
 		redirect_to :back
 		else
