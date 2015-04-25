@@ -1,129 +1,159 @@
-<!-- Header -->
-    <a id = "intro" name="intro"></a>
-    <div class="intro-header coverHeight">
-        <div class="container">
-
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="intro-message">
-                        <h1>Never Get Overcharged Again</h1>
-                        <h3>Be An Expert on Your Car Repairs</h3>
-                        <div class = "howButton">
-                                <a href = "#how" class="btn btn-default btn-md page-scroll"> <span class="network-name">How?</span></a>
-                        </div>
-                        <!--<hr class="intro-divider"> -->
-
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <!-- /.container -->
-
-    </div>
-    <!-- /.intro-header -->
-
-    <!--content-section-before a -->
-    <a  id="why" name="why"></a>
-    <div class="content-section-a whySection">
-
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-5 col-sm-6">
-                    <hr class="section-heading-spacer">
-                    <div class="clearfix"></div>
-                    <h2 class="section-heading sectionHeading">Why are we here?</h2>
-                    <p class="lead">The mechanical repair industry is one of the least transparent consumer facing industries that exists. Most people will ask friends and family if they know any honest mechanics whenever their car breaks down. Anautomy is not here to send you quotes for your repair from nearby shops. You don’t even know if any of those quotes are a fair price. <br><br>Anautomy is here to help show you what other people are paying for their repairs and where they got it done. Then you can determine if you are truly getting a good price for the repair and get your car back on the road.</p>
-                </div>
-                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                   <!--<%= image_tag("mechanic2.jpg", class: "img-responsive mechImage") %>-->
-                </div>
-            </div>
-
-        </div>
-        <!-- /.container -->
-    </div>
-    <!-- /.content-section-a -->
-   <!--<hr class="introDivider">-->
-   <div style="clear:both;"></div>
-    <!-- Page Content -->
-     <a  id = "how" name="how"></a>
-
-    <div class="content-section-b howSection">
-
-        <div class="container howSection">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-headin sectionHeading">How Anautomy Works</h2>
-                    <h3 class="section-subheading text-muted"></h3>
-                </div>
-            </div>
-            <div class="row text-center">
-                <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class = "howLabels">Find</h4>
-                    <p class="text-muted howDescriptions">Find your car and the repair you need through our powerful search tool.</p>
-                </div>
-                <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class="howLabels">Browse</h4>
-                    <p class="text-muted howDescriptions">See how much others are paying on the same repair for your vehicle.</p>
-                </div>
-                <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-lock fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class="howLabels">Save</h4>
-                    <p class="text-muted howDescriptions">Find the best place to get the repair done for a price that you know is fair.</p>
-                </div>
-            </div>
-            <h5 class = "text-center">We'll be launching soon. Get on our email list for an invitation to our beta launch.</h5>
-            
-         <%=form_for @subscriber, :html => {:class => 'cold-md-3 col-md-offset-3 form-inline'} do |f|%>
-      <%= render 'shared/error_messages' %>
-  <div class="form-group">
-    <label class="sr-only">Email</label>
-   <%= f.email_field :email, class: 'form-control input-lg', :placeholder => "Email"%>
-   <label class="sr-only">Zip Code</label>
-   <%= f.text_field :zip, class: 'form-control input-lg', :placeholder => "Zip code"%>
-
-  </div>
-  <div class="form-group">
-    <%= f.submit "Notify Me", class: " btnbtn btn-lg btn-primary btn-block" %>
+<!DOCTYPE html>
+<!-- saved from url=(0111)filesystem:chrome-extension://gplegfbjlmmehdoakndmohflojccocli/temporary/_be70c3b76f18609f7a0606abe3278b49.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<script type="text/javascript" src="./Anautomy_files/367b790b56"></script><script src="./Anautomy_files/nr-632.min.js"></script><script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"367b790b56","applicationID":"5783302","transactionName":"IAkLQhdWXlpRShpCRQEVBkQMW1dERxdbVEc=","queueTime":2,"applicationTime":10,"agent":"js-agent.newrelic.com/nr-632.min.js"}</script>
+<script>window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o?o:n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({QJf3ax:[function(e,n){function t(e){function n(n,t,a){e&&e(n,t,a),a||(a={});for(var u=c(n),f=u.length,s=i(a,o,r),p=0;f>p;p++)u[p].apply(s,t);return s}function a(e,n){f[e]=c(e).concat(n)}function c(e){return f[e]||[]}function u(){return t(n)}var f={};return{on:a,emit:n,create:u,listeners:c,_events:f}}function r(){return{}}var o="nr@context",i=e("gos");n.exports=t()},{gos:"7eSDFh"}],ee:[function(e,n){n.exports=e("QJf3ax")},{}],3:[function(e,n){function t(e){return function(){r(e,[(new Date).getTime()].concat(i(arguments)))}}var r=e("handle"),o=e(1),i=e(2);"undefined"==typeof window.newrelic&&(newrelic=window.NREUM);var a=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit","noticeError"];o(a,function(e,n){window.NREUM[n]=t("api-"+n)}),n.exports=window.NREUM},{1:12,2:13,handle:"D5DuLP"}],"7eSDFh":[function(e,n){function t(e,n,t){if(r.call(e,n))return e[n];var o=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return e[n]=o,o}var r=Object.prototype.hasOwnProperty;n.exports=t},{}],gos:[function(e,n){n.exports=e("7eSDFh")},{}],handle:[function(e,n){n.exports=e("D5DuLP")},{}],D5DuLP:[function(e,n){function t(e,n,t){return r.listeners(e).length?r.emit(e,n,t):(o[e]||(o[e]=[]),void o[e].push(n))}var r=e("ee").create(),o={};n.exports=t,t.ee=r,r.q=o},{ee:"QJf3ax"}],id:[function(e,n){n.exports=e("XL7HBI")},{}],XL7HBI:[function(e,n){function t(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:i(e,o,function(){return r++})}var r=1,o="nr@id",i=e("gos");n.exports=t},{gos:"7eSDFh"}],G9z0Bl:[function(e,n){function t(){var e=d.info=NREUM.info,n=f.getElementsByTagName("script")[0];if(e&&e.licenseKey&&e.applicationID&&n){c(p,function(n,t){n in e||(e[n]=t)});var t="https"===s.split(":")[0]||e.sslForHttp;d.proto=t?"https://":"http://",a("mark",["onload",i()]);var r=f.createElement("script");r.src=d.proto+e.agent,n.parentNode.insertBefore(r,n)}}function r(){"complete"===f.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=e("handle"),c=e(1),u=(e(2),window),f=u.document,s=(""+location).split("?")[0],p={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-632.min.js"},d=n.exports={offset:i(),origin:s,features:{}};f.addEventListener?(f.addEventListener("DOMContentLoaded",o,!1),u.addEventListener("load",t,!1)):(f.attachEvent("onreadystatechange",r),u.attachEvent("onload",t)),a("mark",["firstbyte",i()])},{1:12,2:3,handle:"D5DuLP"}],loader:[function(e,n){n.exports=e("G9z0Bl")},{}],12:[function(e,n){function t(e,n){var t=[],o="",i=0;for(o in e)r.call(e,o)&&(t[i]=n(o,e[o]),i+=1);return t}var r=Object.prototype.hasOwnProperty;n.exports=t},{}],13:[function(e,n){function t(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(0>o?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=t},{}]},{},["G9z0Bl"]);</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>Anautomy</title>
+<link rel="stylesheet" media="all" href="filesystem:chrome-extension://gplegfbjlmmehdoakndmohflojccocli/temporary/assets/application-146f28d8bc55e7f9ac821c7d8d7d7a2c24424fb836abf33f0c31f7dcf05c1508.css" data-turbolinks-track="true">
+<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="oSeChBhPUZoyExnroAbaxlzgRJAYq12jJFzqj1exE6kQAuwTLGf7vniGOyf9c039R0QZFHdzAvz4lXtcvnic0g==">
+<!--[if lt IE 9]>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
+  </script>
+<![endif]-->
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+<div class="container topnav">
+<div class="navbar-header page-scroll">
+<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a class="navbar-brand topnav page-scroll" href="filesystem:chrome-extension://gplegfbjlmmehdoakndmohflojccocli/temporary/_be70c3b76f18609f7a0606abe3278b49.html#intro">Anautomy</a>
+</div>
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+<ul class="nav navbar-nav navbar-right">
+<li class="hidden">
+<a class="page-scroll" href="filesystem:chrome-extension://gplegfbjlmmehdoakndmohflojccocli/temporary/_be70c3b76f18609f7a0606abe3278b49.html#page-top"></a>
+</li>
+<li>
+<a class="page-scroll" href="filesystem:chrome-extension://gplegfbjlmmehdoakndmohflojccocli/temporary/_be70c3b76f18609f7a0606abe3278b49.html#why">Anautomy?</a>
+</li>
+<li>
+<a class="page-scroll" href="filesystem:chrome-extension://gplegfbjlmmehdoakndmohflojccocli/temporary/_be70c3b76f18609f7a0606abe3278b49.html#how">How?</a>
+</li>
+<li>
+<a class="page-scroll" href="filesystem:chrome-extension://gplegfbjlmmehdoakndmohflojccocli/temporary/_be70c3b76f18609f7a0606abe3278b49.html#next">What's next?</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<a id="intro" name="intro"></a>
+<div class="intro-header coverHeight">
+<div class="container">
+<div class="row">
+<div class="col-lg-12">
+<div class="intro-message">
+<h1>Never Get Overcharged Again</h1>
+<h3>Be An Expert on Your Car Repairs</h3>
+<div class="howButton">
+<a href="filesystem:chrome-extension://gplegfbjlmmehdoakndmohflojccocli/temporary/_be70c3b76f18609f7a0606abe3278b49.html#how" class="btn btn-default btn-md page-scroll"> <span class="network-name">How?</span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<a id="why" name="why"></a>
+<div class="content-section-a whySection">
+<div class="container">
+<div class="row">
+<div class="col-lg-5 col-sm-6">
+<hr class="section-heading-spacer">
+<div class="clearfix"></div>
+<h2 class="section-heading sectionHeading">Why are we here?</h2>
+<p class="lead">The mechanical repair industry is one of the least transparent consumer facing industries that exists. Most people will ask friends and family if they know any honest mechanics whenever their car breaks down. Anautomy is not here to send you quotes for your repair from nearby shops. You don’t even know if any of those quotes are a fair price. <br><br>Anautomy is here to help show you what other people are paying for their repairs and where they got it done. Then you can determine if you are truly getting a good price for the repair and get your car back on the road.</p>
+</div>
+<div class="col-lg-5 col-lg-offset-2 col-sm-6">
+</div>
+</div>
+</div>
+</div>
+<div style="clear:both;"></div>
+<a id="how" name="how"></a>
+<div class="content-section-b howSection">
+<div class="container howSection">
+<div class="row">
+<div class="col-lg-12 text-center">
+<h2 class="section-headin sectionHeading">How Anautomy Works</h2>
+<h3 class="section-subheading text-muted"></h3>
+</div>
+</div>
+<div class="row text-center">
+<div class="col-md-4">
+<span class="fa-stack fa-4x">
+<i class="fa fa-circle fa-stack-2x text-primary"></i>
+<i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
+</span>
+<h4 class="howLabels">Find</h4>
+<p class="text-muted howDescriptions">Find your car and the repair you need through our powerful search tool.</p>
+</div>
+<div class="col-md-4">
+<span class="fa-stack fa-4x">
+<i class="fa fa-circle fa-stack-2x text-primary"></i>
+<i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
+</span>
+<h4 class="howLabels">Browse</h4>
+<p class="text-muted howDescriptions">See how much others are paying on the same repair for your vehicle.</p>
+</div>
+<div class="col-md-4">
+<span class="fa-stack fa-4x">
+<i class="fa fa-circle fa-stack-2x text-primary"></i>
+<i class="fa fa-lock fa-stack-1x fa-inverse"></i>
+</span>
+<h4 class="howLabels">Save</h4>
+<p class="text-muted howDescriptions">Find the best place to get the repair done for a price that you know is fair.</p>
+</div>
+</div>
+<h5 class="text-center">We'll be launching soon. Get on our email list for an invitation to our beta launch.</h5>
+<form class="cold-md-3 col-md-offset-3 form-inline" id="new_subscriber" action="filesystem:chrome-extension://gplegfbjlmmehdoakndmohflojccocli/temporary/subscribers" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="qzkAI7sYU7iwp2sCTEJJx1qX3FJMkD4PAXORY2SmpDkaHG60jzD5nPoySc4RN978QTOB1iNIYVDdugCwjW8rQg==">
+<div class="form-group">
+<label class="sr-only">Email</label>
+<input class="form-control input-lg" placeholder="Email" type="email" name="subscriber[email]" id="subscriber_email">
+<label class="sr-only">Zip Code</label>
+<input class="form-control input-lg" placeholder="Zip code" name="subscriber[zip]" id="subscriber_zip">
+</div>
+<div class="form-group">
+<input type="submit" name="commit" value="Notify Me" class=" btnbtn btn-lg btn-primary btn-block">
+</div>
+</form></div>
 
 </div>
-  </div>
-  <% end %>
+
+<div id="next">
+<a name="next"></a>
+<div class="banner nextSection">
+<div class="container">
+<h3 class="text-center ">Starting May 1st we'll be accepting initial submissions for prices you have paid on repairs.</h3>
+<hr class="intro-divider">
+<h3 class="text-center ">Leave us your email above and we'll notify you.</h3>
+</div>
+</div>
+</div>
+<footer>
+<div class="container">
+<div class="row">
+<div class="col-lg-12">
+<ul class="list-inline">
+<li>
+<a href="filesystem:chrome-extension://gplegfbjlmmehdoakndmohflojccocli/temporary/_be70c3b76f18609f7a0606abe3278b49.html#contact">Contact Us</a>
+</li>
+</ul>
+<p class="copyright text-muted small">Copyright © Anautomy 2015. All Rights Reserved</p>
+</div>
+</div>
+</div>
+</footer>
+<script src="filesystem:chrome-extension://gplegfbjlmmehdoakndmohflojccocli/temporary/assets/application-f295d375c9d298b4e3810a676cadd5ef125a6ea35c924b6e7f9656fa699b0db2.js" data-turbolinks-track="true"></script>
 
 
-
-
-
-
-        </div>
-    </div>
-
-   
-    <!-- /.content-section-a -->
-    <div id = "next">
-    <a  name="next"></a>
-    <div class="banner nextSection">
-
-        <div class="container">
-            <h3 class = "text-center ">Starting May 1st we'll be accepting initial submissions for prices you have paid on repairs.</h3>
-            <hr class="intro-divider">
-            <h3 class = "text-center ">Leave us your email above and we'll notify you.</h3>
-        </div>
-        <!-- /.container -->
-
-    </div>
-    </div>
-    <!-- /.banner -->
-
+</body></html>
