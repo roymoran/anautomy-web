@@ -13,7 +13,7 @@ class SubscribersController < ApplicationController
 		@subscriber = Subscriber.new(subscriber_params)  
 		if @subscriber.save 
 		SubscriberMailer.new_subscriber_email(@subscriber).deliver_now
-		redirect_to '/subscribers/new#how'
+		redirect_to :controller => 'anautomy', :action => 'home'
 		else
 			render 'new'
 		end

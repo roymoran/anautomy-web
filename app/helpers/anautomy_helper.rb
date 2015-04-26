@@ -1,0 +1,2 @@
+module AnautomyHelper
+end

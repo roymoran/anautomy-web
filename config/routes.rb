@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'anautomy/home'
+
   #root 'static_pages#home'
   root 'subscribers#new'
   #post   'sub'   => 'subscribers#create'
