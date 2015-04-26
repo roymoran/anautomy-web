@@ -11,16 +11,17 @@ class SubscribersController < ApplicationController
 
 	def create
 		@subscriber = Subscriber.new(subscriber_params)  
-		if @subscriber.save
+		if @subscriber.save 
 		SubscriberMailer.new_subscriber_email(@subscriber).deliver_now
-		flash[:success] = "You will be hearing from us soon...very soon."
-		redirect_to :back
+		redirect_to :controller => 'static_pages', :action => 'home'
+		
 		else
 			render 'new'
 		end
 	end
 
-
+	def thankyou
+	end
 
 	private
 
