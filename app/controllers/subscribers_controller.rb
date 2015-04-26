@@ -13,8 +13,7 @@ class SubscribersController < ApplicationController
 		@subscriber = Subscriber.new(subscriber_params)  
 		if @subscriber.save 
 		SubscriberMailer.new_subscriber_email(@subscriber).deliver_now
-		redirect_to :controller => 'static_pages', :action => 'home'
-		
+		redirect_to '/subscribers/new#how'
 		else
 			render 'new'
 		end
