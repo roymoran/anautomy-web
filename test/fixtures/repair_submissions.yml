@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  email: MyString
+  vehicleYear: 1
+  vehicleMake: MyString
+  vehicleModel: MyString
+  vehicleTrim: MyString
+  vehicleMileage: 1
+  repairDescription: MyString
+  partsCost: 9.99
+  laborCost: 9.99
+  vechicleDetails: MyText
+  repairDetails: MyText
+
+two:
+  email: MyString
+  vehicleYear: 1
+  vehicleMake: MyString
+  vehicleModel: MyString
+  vehicleTrim: MyString
+  vehicleMileage: 1
+  repairDescription: MyString
+  partsCost: 9.99
+  laborCost: 9.99
+  vechicleDetails: MyText
+  repairDetails: MyText

@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-
   get 'anautomy/home'
 
   #root 'static_pages#home'
   root 'subscribers#new'
   #post   'sub'   => 'subscribers#create'
   resources :subscribers
+  resources :repair_submissions
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

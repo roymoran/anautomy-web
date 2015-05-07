@@ -1,0 +1,2 @@
+class RepairSubmissionsController < ApplicationController
+end
