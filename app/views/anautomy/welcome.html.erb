@@ -120,7 +120,7 @@
                 <h3>Title 2</h3>
                 <p class="lead">Details</p>
                 <h3>Title 3</h3>
-                <p class="lead">Details<P>
+                <p class="lead">Details</p>
             </div>
 
           <div class="col-md-8 center-block">
@@ -141,13 +141,11 @@
    <%= f.text_field :zip, class: 'form-control input-md', :placeholder => "Zip code"%>
  </div>
 
-<h4 class = "lead">What kind of car?</h2>
+<h4 class = "lead">What kind of car?</h4>
  <div class = "form-inline">
 
-
-   <div class="form-group">
-  <%= f.select(:vehicleYear, options_for_select((Time.zone.now.year - 100)..(Time.zone.now.year)), {}, {class: "form-control"}) %>
-</div>
+  <label class="sr-only">Vehicle Year</label>
+  <%= f.select(:vehicleYear, options_for_select((Time.zone.now.year - 100)..(Time.zone.now.year), :selected => (Time.zone.now.year)), {}, {class: "form-control"}) %>
 
    <label class="sr-only">Vehicle Make</label>
    <%= f.text_field :vehicleMake, class: 'form-control input-md', :placeholder => "Vehicle Make"%>
@@ -164,7 +162,7 @@
 </div>
 </div>
 
-<h4 class = "lead">What repair?</h2>
+<h4 class = "lead">What repair?</h4>
  <div class = "form-inline">
    <label class="sr-only">Repair Description</label>
    <%= f.text_field :repairDescription, class: 'form-control input-md', :placeholder => "Repair Description"%>
@@ -176,27 +174,23 @@
    <%= f.text_field :laborCost, class: 'form-control input-md', :placeholder => "Labor Cost"%>
 </div>
 
-<h4 class = "lead">What did you get it done?</h2>
+<h4 class = "lead">Where did you get it done?</h4>
  <div class = "form-inline">
-  <div class="col-md-offset-0">
+
    <label class="sr-only">Shop Name</label>
    <%= f.text_field :shopName, class: 'form-control input-md', :placeholder => "Shop Name"%>
-</div>
-<div class="col-md-offset-8">
    <label class="sr-only">Shop City/State</label>
    <%= f.text_field :shopCityState, class: 'form-control input-md', :placeholder => "Shop City/State"%>
- </div>
    <br><br>
    <label class="sr-only">Review</label>
-   <%= f.text_area :review, class: 'form-control input-md',:rows => 5, :cols => 71,  :placeholder => "Review"%>
+   <%= f.text_area :review, class: 'form-control input-md',:rows => 5, :cols => 71,  :placeholder => "Give us a short description of your experience here."%>
 
   </div>
   <div class="col-md-offset-4">
     <%= f.submit "Submit", class: "btnbtn btn-lg btn-primary center" %>
   </div>
-  <% end %>
-
 </div>
+  <% end %>
 
           </div>
 

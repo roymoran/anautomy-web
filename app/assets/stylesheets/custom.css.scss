@@ -124,19 +124,20 @@ h6 {
 }
 .coverHeight{
 height:100%;
-overflow-y:auto;
 }
 .whySection{
     height:100%;
-    overflow-y:auto;
 }
 .howSection{
+height:100%;
+
 overflow-y:auto;
 }
 .nextSection{
     height:100%;
-    overflow-y:auto;
+
 }
+
 .btn-lg {
     padding: 20px 40px;
     border-color: #1767B5;
@@ -340,11 +341,11 @@ fieldset[disabled] .btn-lg.active {
 }
 
 .banner {
-    padding: 20px 0;
+    padding: 45px 0;
     color: #f8f8f8;
     background: url('http://i.imgur.com/7WdUZfg.jpg') no-repeat center center;
     background-size: cover;
-    height: 500px;
+    height: 100%;
 }
 
 .banner h2 {
