@@ -5,6 +5,7 @@ class SubscribersController < ApplicationController
 
 	def new
 		@subscriber = Subscriber.new
+		
 		#render plain: "test"
 		#render "static_pages/home"
 	end
@@ -17,9 +18,6 @@ class SubscribersController < ApplicationController
 		else
 			render 'new'
 		end
-	end
-
-	def thankyou
 	end
 
 	private

@@ -1,0 +1,41 @@
+
+<br><br><br><br><br><br><br><br><br>
+<%= form_for @repairSubmission, :html => {:class => 'cold-md-2 col-md-offset-2 form-inline'} do |f|%>
+  <div class="form-group">
+    <label class="sr-only">Email</label>
+   <%= f.email_field :email, class: 'form-control input-lg', :placeholder => "Email"%>
+   
+   <label class="sr-only">Vehicle Year</label>
+   <%= f.select :vehicleYear, (Time.zone.now.year - 100)...(Time.zone.now.year + 1), class: "form-control input-lg", :placeholder => "Vehicle Year", :selected => (Time.zone.now.year)%>
+
+   <label class="sr-only">Vehicle Make</label>
+   <%= f.text_field :vehicleMake, class: 'form-control input-lg', :placeholder => "Vehicle Make"%>
+   
+   <label class="sr-only">Vehicle Model</label>
+   <%= f.text_field :vehicleModel, class: 'form-control input-lg', :placeholder => "Vehicle Model"%>
+
+   <label class="sr-only">Vehicle Trime</label>
+   <%= f.text_field :vehicleTrim, class: 'form-control input-lg', :placeholder => "Vehicle Trim"%>
+   
+   <label class="sr-only">Vehicle Mileage</label>
+   <%= f.text_field :vehicleMileage, class: 'form-control input-lg', :placeholder => "Vehicle Mileage"%>
+
+   <label class="sr-only">Repair Description</label>
+   <%= f.text_field :repairDescription, class: 'form-control input-lg', :placeholder => "Repair Description"%>
+   
+   <label class="sr-only">Parts Cost</label>
+   <%= f.text_field :partsCost, class: 'form-control input-lg', :placeholder => "Parts Cost"%>
+
+   <label class="sr-only">Labor Cost</label>
+   <%= f.text_field :laborCost, class: 'form-control input-lg', :placeholder => "Labor Cost"%>
+   
+   <label class="sr-only">Review</label>
+   <%= f.text_field :review, class: 'form-control input-lg', :placeholder => "Review"%>
+
+  </div>
+  <div class="form-group">
+    <%= f.submit "Notify Me", class: " btnbtn btn-lg btn-primary btn-block" %>
+
+</div>
+  </div>
+  <% end %>

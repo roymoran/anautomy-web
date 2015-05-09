@@ -42,6 +42,7 @@ GEM
       debug_inspector (>= 0.0.1)
     bootstrap-sass (3.2.0.0)
       sass (~> 3.2)
+    bootstrap-select-rails (1.6.3)
     builder (3.2.2)
     byebug (4.0.5)
       columnize (= 0.9.0)
@@ -205,6 +206,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-sass (= 3.2.0.0)
+  bootstrap-select-rails
   byebug
   coffee-rails (~> 4.1.0)
   guard-minitest (= 2.3.1)
