@@ -13,7 +13,7 @@ class RepairSubmissionsController < ApplicationController
 		SubscriberMailer.repair_submission_email(@repairSubmission).deliver_now
 		redirect_to '/anautomy/thankyouforsubmitting#next' 
 		else
-			render 'welcome'
+			redirect_to url_for(:controller => :anautomy, :action => :welcome)
 		end
 
 	end

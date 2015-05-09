@@ -9,7 +9,6 @@ class RepairSubmission < ActiveRecord::Base
 	validates :vehicleMake, presence: true
 	validates :vehicleModel, presence: true
 	validates :vehicleTrim, presence: true
-	validates :vehicleMileage, presence: true
 
 	validates :repairDescription, presence: true
 	validates :partsCost, presence: true
@@ -17,5 +16,4 @@ class RepairSubmission < ActiveRecord::Base
 
 	validates :shopName, presence: true
 	validates :shopCityState, presence: true
-	validates :review, presence: true
 end

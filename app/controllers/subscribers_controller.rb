@@ -16,7 +16,7 @@ class SubscribersController < ApplicationController
 		SubscriberMailer.new_subscriber_email(@subscriber).deliver_now
 		redirect_to '/anautomy/thankyouforsubscribing#how' 
 		else
-			render 'new'
+			redirect_to url_for(:controller => :anautomy, :action => :welcome)
 		end
 	end
 
