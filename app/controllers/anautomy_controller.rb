@@ -6,4 +6,12 @@ class AnautomyController < ApplicationController
   	@subscriber = Subscriber.new
   	@repairSubmission = RepairSubmission.new
   end
+
+  def thankyouforsubscribing
+  	@repairSubmission = RepairSubmission.new
+  end
+
+  def thankyouforsubmitting
+  	@subscriber = Subscriber.new
+  end
 end

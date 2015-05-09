@@ -11,6 +11,15 @@ class RepairSubmissionsController < ApplicationController
 		@repairSubmission = RepairSubmission.new(repairSubmission_params)  
 		@repairSubmission.save 
 		redirect_to :back
+
+		@repairSubmission = RepairSubmission.new(repairSubmission_params)  
+		if @repairSubmission.save 
+		SubscriberMailer.repair_submission_email(@repairSubmission).deliver_now
+		redirect_to '/anautomy/thankyouforsubmitting#next' 
+		else
+			render 'new'
+		end
+
 	end
 
 	private
