@@ -95,7 +95,7 @@
    <%= f.text_field :zip, class: 'form-control input-lg', :placeholder => "Zip code"%>
   </div>
   <div class="form-group">
-    <%= f.submit "Notify Me", class: " btnbtn btn-lg btn-primary btn-block" %>
+    <%= f.submit "Notify Me", class: "btnbtn btn-lg btn-primary btn-block" %>
 
 </div>
   </div>
@@ -125,7 +125,7 @@
 
           <div class="col-md-8 center-block">
             <h3 class = "text-center">Make a contribution</h3>
-
+<div class = "col-md-offset-2">
             <%= form_for @repairSubmission, :html => {:class => ''} do |f|%>
 
             <div class="form-group">
@@ -143,20 +143,25 @@
 
 <h4 class = "lead">What kind of car?</h2>
  <div class = "form-inline">
-                <label class="sr-only">Vehicle Year</label>
-                <%= f.select :vehicleYear, (Time.zone.now.year - 100)...(Time.zone.now.year + 1), class: "form-control input-md", :placeholder => "Vehicle Year", :selected => (Time.zone.now.year)%>
 
-                <label class="sr-only">Vehicle Make</label>
-                <%= f.text_field :vehicleMake, class: 'form-control input-md', :placeholder => "Vehicle Make"%>
+
+   <div class="form-group">
+  <%= f.select(:vehicleYear, options_for_select((Time.zone.now.year - 100)..(Time.zone.now.year)), {}, {class: "form-control"}) %>
+</div>
+
+   <label class="sr-only">Vehicle Make</label>
+   <%= f.text_field :vehicleMake, class: 'form-control input-md', :placeholder => "Vehicle Make"%>
    
    <label class="sr-only">Vehicle Model</label>
    <%= f.text_field :vehicleModel, class: 'form-control input-md', :placeholder => "Vehicle Model"%>
-
+   <br><br>
+   <div class = "form-inline">
    <label class="sr-only">Vehicle Trime</label>
    <%= f.text_field :vehicleTrim, class: 'form-control input-md', :placeholder => "Vehicle Trim"%>
    
    <label class="sr-only">Vehicle Mileage</label>
    <%= f.text_field :vehicleMileage, class: 'form-control input-md', :placeholder => "Vehicle Mileage"%>
+</div>
 </div>
 
 <h4 class = "lead">What repair?</h2>
@@ -173,22 +178,25 @@
 
 <h4 class = "lead">What did you get it done?</h2>
  <div class = "form-inline">
+  <div class="col-md-offset-0">
    <label class="sr-only">Shop Name</label>
    <%= f.text_field :shopName, class: 'form-control input-md', :placeholder => "Shop Name"%>
-
+</div>
+<div class="col-md-offset-8">
    <label class="sr-only">Shop City/State</label>
    <%= f.text_field :shopCityState, class: 'form-control input-md', :placeholder => "Shop City/State"%>
-
+ </div>
+   <br><br>
    <label class="sr-only">Review</label>
-   <%= f.text_field :review, class: 'form-control input-md', :placeholder => "Review"%>
+   <%= f.text_area :review, class: 'form-control input-md',:rows => 5, :cols => 71,  :placeholder => "Review"%>
 
   </div>
-  <div class="form-group">
-    <%= f.submit "Notify Me", class: " btnbtn btn-lg btn-primary btn-block" %>
-
-</div>
+  <div class="col-md-offset-4">
+    <%= f.submit "Submit", class: "btnbtn btn-lg btn-primary center" %>
   </div>
   <% end %>
+
+</div>
 
           </div>
 
