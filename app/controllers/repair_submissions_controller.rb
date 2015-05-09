@@ -13,7 +13,7 @@ class RepairSubmissionsController < ApplicationController
 		SubscriberMailer.repair_submission_email(@repairSubmission).deliver_now
 		redirect_to '/anautomy/thankyouforsubmitting#next' 
 		else
-			render 'new'
+			render 'welcome'
 		end
 
 	end
