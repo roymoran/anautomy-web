@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20150507233309) do
     t.string   "vehicleMake"
     t.string   "vehicleModel"
     t.string   "vehicleTrim"
-    t.integer  "vehicleMileage"
+    t.string   "vehicleMileage"
     t.string   "repairDescription"
     t.string   "partsCost"
     t.string   "laborCost"
