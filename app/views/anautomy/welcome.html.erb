@@ -127,6 +127,7 @@
             <h3 class = "text-center">Make a contribution</h3>
 <div class = "col-md-offset-2">
             <%= form_for @repairSubmission, :html => {:class => ''} do |f|%>
+            <%= render 'shared/error_messages_repair' %>
 
             <div class="form-group">
               <div class = "form-inline">
@@ -195,10 +196,7 @@
           </div>
 
   </div>
-            <!--<h3 class = "text-center ">Starting May 8th we'll be accepting initial submissions for prices you have paid on repairs.</h3>
-            <hr class="intro-divider">
-            <h3 class = "text-center ">Leave us your email above and we'll notify you.</h3>
-        -->
+        
         </div>
         <!-- /.container -->
 
