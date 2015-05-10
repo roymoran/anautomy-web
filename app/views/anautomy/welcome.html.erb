@@ -37,7 +37,7 @@
                     <p class="lead">The mechanical repair industry is one of the least transparent consumer facing industries that exists. Most people will ask friends and family if they know any honest mechanics whenever their car breaks down. Anautomy is not here to send you quotes for your repair from nearby shops. You don’t even know if any of those quotes are a fair price. <br><br>Anautomy is here to help show you what other people are paying for their repairs and where they got it done. Then you can determine if you are truly getting a good price for the repair and get your car back on the road.</p>
                 </div>
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6 col-sm-off">
-                   <!--<%= image_tag("mechSmall.jpg", class: "img-responsive mechImage") %>-->
+                   <%= image_tag("mechSmall.jpg", size: "1000x1000" ,class: "img-responsive mechImage") %>
                 </div>
             </div>
 
@@ -115,18 +115,22 @@
             <div class="row">
              
              <div class="col-md-4">
-                <h3>Why we need your help</h3>
+                <h3>Submit your repair</h3>
                 <ul>
-                <p class="lead">With your help, we get a little closer to giving everyone the transparency that they want.</p>
+                  <p class="lead">We are passionate about creating transparency in the auto repair industry, and contributing your experience is a step towards creating that transparency.</p>
               </ul>
-                <h3>Title 2</h3>
-                <p class="lead">Details</p>
-                <h3>Title 3</h3>
-                <p class="lead">Details</p>
+                <h3>What's in it for you?</h3>
+                <ul>
+                  <p class="lead">Initial submitters get guaranteed access to the beta on launch date. You'll get a chance to see what others have paid on repairs for your car.</p>
+                </ul>
+                <h3>Where's the information going?</h3>
+                <ul>
+                  <p class="lead">The information will be part of our platform that will help other discover how much others have paid for a repair.</p>
+                </ul>
             </div>
 
           <div class="col-md-8 center-block">
-            <h3 class = "text-center">Make a contribution</h3>
+            <h3 class = "text-center"></h3>
 <div class = "col-md-offset-2">
             <%= form_for @repairSubmission, :html => {:class => ''} do |f|%>
             <%= render 'shared/error_messages_repair' %>
@@ -144,7 +148,7 @@
    <%= f.text_field :zip, class: 'form-control input-md', :placeholder => "Zip code"%>
  </div>
 
-<h4 class = "lead">What kind of car?</h4>
+<h4 class = "lead"><u>What kind of car?</u></h4>
  <div class = "form-inline">
 
   <label class="sr-only">Vehicle Year</label>
@@ -165,7 +169,7 @@
 </div>
 </div>
 
-<h4 class = "lead">What repair?</h4>
+<h4 class = "lead"><u>What repair?</u></h4>
 <!--<%= f.label :repair_description%>-->
  <div class = "form-inline">
    <label class="sr-only">Repair Description</label>
@@ -178,7 +182,7 @@
    <%= f.text_field :laborCost, class: 'form-control input-md', :placeholder => "Labor Cost"%>
 </div>
 
-<h4 class = "lead">Where did you get it done?</h4>
+<h4 class = "lead"><u>Where did you get it done?</u></h4>
  <div class = "form-inline">
 
    <label class="sr-only">Shop Name</label>
