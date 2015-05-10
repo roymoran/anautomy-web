@@ -8,4 +8,9 @@ class SubscriberMailerPreview < ActionMailer::Preview
     SubscriberMailer.new_subscriber_email(subscriber)
 end
 
+def repair_submission_email
+    repairSubmitter = RepairSubmission.first
+    SubscriberMailer.repair_submission_email(repairSubmitter)
+end
+
 end
