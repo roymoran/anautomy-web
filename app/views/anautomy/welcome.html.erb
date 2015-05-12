@@ -92,7 +92,7 @@
             </div>
             <h5 class = "text-center">We'll be launching soon. Get on our email list for an invitation to our beta launch.</h5>
             
-         <%= form_for @subscriber, :html => {:class => 'cold-md-3 col-md-offset-3 form-inline'}, remote: true do |f|%>
+         <%= form_for @subscriber, :html => {id: "reportform", :class => 'cold-md-3 col-md-offset-3 form-inline'}, remote: true, update: { success: "response", failure: "error"} do |f|%>
          <%= render 'shared/error_messages' %>
   <div class="form-group">
     <label class="sr-only">Email</label>
@@ -373,4 +373,16 @@ document.querySelector('ul.examples li.theme button').onclick = function() {
   ga('create', 'UA-62238284-1', 'auto');
   ga('send', 'pageview');
 
+</script>
+
+
+<script>
+
+ document.addEventListener("DOMContentLoaded", function(event) { 
+  $('#reportform').on('ajax:success',function(e, data, status, xhr){
+      $('#reportalert').text('Done.');
+    }).on('ajax:error',function(e, xhr, status, error){
+      $('#reportalert').text('Failed.');
+    });
+});
 </script>
