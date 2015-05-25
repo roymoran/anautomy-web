@@ -1,0 +1,17 @@
+<% if @subscriber.save %>
+
+swal({   
+	title: "Error ",   
+	text: "You're i",   
+	type: "success",   
+	confirmButtonText: "Cool" });
+
+<% else %>
+
+swal({   
+	title: "Error!",   
+	text: "You're i",   
+	type: "error",   
+	confirmButtonText: "Cool" });
+
+<%end%>
