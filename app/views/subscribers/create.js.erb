@@ -1,17 +1,17 @@
 <% if @subscriber.save %>
 
 swal({   
-	title: "Error ",   
-	text: "You're i",   
+	title: "Success",   
+	text: "Awesome. You're on our list. You will be getting an email from us shortly.",   
 	type: "success",   
 	confirmButtonText: "Cool" });
 
 <% else %>
 
 swal({   
-	title: "Error!",   
-	text: "You're i",   
+	title: "Error",   
+	text: "Make sure you filled in both fields. Otherwise, the email has already been taken.",   
 	type: "error",   
-	confirmButtonText: "Cool" });
+	confirmButtonText: "Okay" });
 
 <%end%>
