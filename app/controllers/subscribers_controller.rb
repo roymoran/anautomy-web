@@ -14,9 +14,15 @@ class SubscribersController < ApplicationController
 		@subscriber = Subscriber.new(subscriber_params)  
 		if @subscriber.save 
 		SubscriberMailer.new_subscriber_email(@subscriber).deliver_now
-		redirect_to '/anautomy/thankyouforsubscribing#how' 
+		
+		respond_to do |format|
+		format.js # actually means: if the client ask for js -> return file.js
+	    end
+		
 		else
-			redirect_to url_for(:controller => :anautomy, :action => :welcome)
+			respond_to do |format|
+			format.js
+			end
 		end
 	end
 
