@@ -11,9 +11,15 @@ class RepairSubmissionsController < ApplicationController
 		@repairSubmission = RepairSubmission.new(repairSubmission_params)  
 		if @repairSubmission.save 
 		SubscriberMailer.repair_submission_email(@repairSubmission).deliver_now
-		redirect_to '/anautomy/thankyouforsubmitting#next' 
+		
+		respond_to do |format|
+		format.js # actually means: if the client ask for js -> return file.js
+	    end
+		
 		else
-			redirect_to url_for(:controller => :anautomy, :action => :welcome)
+			respond_to do |format|
+			format.js
+			end
 		end
 
 	end
