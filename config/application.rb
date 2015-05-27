@@ -22,5 +22,7 @@ module AnautomySubscribersPage
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+    #line explained in http://edgeguides.rubyonrails.org/configuring.html 
+    config.action_view.embed_authenticity_token_in_remote_forms = true
   end
 end
