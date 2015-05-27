@@ -16,11 +16,13 @@ class SubscribersController < ApplicationController
 		SubscriberMailer.new_subscriber_email(@subscriber).deliver_now
 		
 		respond_to do |format|
+			#add fallback to html
 		format.js # actually means: if the client ask for js -> return file.js
 	    end
 		
 		else
 			respond_to do |format|
+				#add fallback to html
 			format.js
 			end
 		end
