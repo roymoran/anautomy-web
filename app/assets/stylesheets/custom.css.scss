@@ -48,8 +48,8 @@ h6 {
 }
 
 .navbar-default .navbar-toggle {
-    border-color: #fed136;
-    background-color: #fed136;
+    border-color: #5A5A5A;
+    background-color: #5A5A5A;
 }
 
 .navbar-default .navbar-toggle .icon-bar {
@@ -58,7 +58,7 @@ h6 {
 
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
-    background-color: #fed136;
+    background-color: #5A5A5A;
 }
 
 .navbar-default .nav li a {
@@ -78,7 +78,7 @@ h6 {
 .navbar-default .navbar-nav>.active>a {
     border-radius: 0;
     color: #fff;
-    background-color: #fed136;
+    background-color: #5A5A5A;
 }
 
 .navbar-default .navbar-nav>.active>a:hover,
@@ -89,8 +89,8 @@ h6 {
 
 @media(min-width:768px) {
     .navbar-default {
-        padding-top: 10px;
-        padding: 25px 0;
+        padding-top: 0;
+        padding: 0 0;
         background-color:rgba(70, 77, 87, .9);
         -webkit-transition: padding .1s;
         -moz-transition: padding .1s;
@@ -109,7 +109,7 @@ h6 {
     }
 
     .navbar-default.navbar-shrink {
-        padding: 5px 0;
+        padding: 0 0;
         background: rgb(70, 77, 87); 
         background: rgba(70, 77, 87, .9);
     }
