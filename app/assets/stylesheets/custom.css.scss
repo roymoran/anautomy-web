@@ -127,11 +127,9 @@ height:100%;
 }
 .whySection{
     height:100%;
-    overflow-y:auto;
 }
 .howSection{
 height:100%;
-overflow-y:auto;
 }
 .nextSection{
     height:100%;
@@ -510,7 +508,7 @@ position: relative;
                     width: 37px;
                     height: 37px;
                     cursor: pointer;
-                    background: url('http://i.imgur.com/dnPhc5K.png') no-repeat;
+                    background: url('https://i.imgur.com/9pJeM6c.png') no-repeat;
                     overflow: hidden;
                 }
                 .jssora11l { background-position: -11px -41px; }
@@ -519,3 +517,9 @@ position: relative;
                 .jssora11r:hover { background-position: -191px -41px; }
                 .jssora11l.jssora11ldn { background-position: -251px -41px; }
                 .jssora11r.jssora11rdn { background-position: -311px -41px; }
+
+                .captionFont{
+    font-family: 'Roboto', sans-sarif;
+    font-weight: 300;
+    font-size: 12px;
+}
