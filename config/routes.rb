@@ -3,12 +3,18 @@ Rails.application.routes.draw do
   get '/anautomy/thankyouforsubmitting' 
   get '/anautomy/repairs'
   get '/anautomy/submissions'
+  get '/anautomy/homepage'
   #root 'static_pages#home'
-  #root 'anautomy#homepage'
+  #root 'anautomy#welcome'
   root 'anautomy#homepage'
   #post   'sub'   => 'subscribers#create'
   resources :subscribers
   resources :repair_submissions
+  resources :anuatomy
+
+  resources :anautomy do
+  get :homepage, :on => :collection
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

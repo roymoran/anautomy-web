@@ -14,4 +14,17 @@ class AnautomyController < ApplicationController
   def thankyouforsubmitting
   	@subscriber = Subscriber.new
   end
+
+  def homepage
+    @subscriber = Subscriber.new
+    @repairSubmission = RepairSubmission.new
+
+    car = params['car_type']
+    repair = params['repair']
+
+    flash.now[:notice] = "#{car} #{repair}"
+    render "repairs"
+  end
+
+
 end
