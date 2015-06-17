@@ -1,4 +1,5 @@
 class AnautomyController < ApplicationController
+
   def home
   end
 
@@ -19,12 +20,24 @@ class AnautomyController < ApplicationController
     @subscriber = Subscriber.new
     @repairSubmission = RepairSubmission.new
 
-    car = params['car_type']
-    repair = params['repair']
+    # for demo purposes a global variable will be declared
+    $car = params['car_type']
+    $repair = params['repair']
 
-    flash.now[:notice] = "#{car} #{repair}"
-    render "repairs"
+    #flash.now[:notice] = "#{car} #{repair}"
+    if !($car.nil?) || !($repair.nil?)
+       redirect_to action: :repairs
+    end
+    #redirect_to "repairs"
   end
 
+  def repairs
+        flash.now[:notice] = "#{$car} #{$repair}"
+
+  end
+
+  def submissions
+    
+  end
 
 end
