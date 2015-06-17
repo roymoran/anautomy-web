@@ -84,7 +84,7 @@
 <br>
 <br>
 <ul class = "hiddenDataMessage">*To see details for all submissions, create a free account and submit at least once.</ul>
-<h5 class = "submissionsRepairTitle"><ul>REPAIR DETAILS FOR (2003-2006 (E46) BMW M3 SMG)</ul></h5>
+<h5 class = "submissionsRepairTitle"><ul>REPAIR DETAILS FOR (<%= @car %>)</ul></h5>
 
 <div class = "allSubissionsBlock container-fluid">
 <div class = "conatiner-fluid submissionBlock"> 
@@ -371,7 +371,7 @@
         <div id="accordion">
   <h3 class = "snapshotTitle">Geographic<i class="fa fa-angle-down snapshotArrowDown"></i></h3>
   <div>
-    <p>Zip code <strong>60607</strong> costs <font color = "red">13%</font> above the average for a <strong>Clutch</strong> on <strong>2003 BMW M3</strong>'s<br> <strong>Illinois</strong> costs  <font color = "red">4%</font> above average for a <strong>Clutch</strong> on <strong>2003 BMW M3</strong>'s<br> National Average: <strong>$1,557</strong> <br>Lowest price geography is <strong>Texas</strong> at <strong>$1,360</strong> <br>Highest price geography is <strong>Maryland</strong> at <strong>$1,706</strong> </p>
+    <p>Zip code <strong>60607</strong> costs <font color = "red">13%</font> above the average for a <strong>Clutch</strong> on <strong>2003 BMW M3</strong>'s<br> <strong>Illinois</strong> costs  <font color = "red">4%</font> above average for a <strong>Clutch</strong> on <strong><%= @car %></strong>'s<br> National Average: <strong>$1,557</strong> <br>Lowest price geography is <strong>Texas</strong> at <strong>$1,360</strong> <br>Highest price geography is <strong>Maryland</strong> at <strong>$1,706</strong> </p>
   </div>
   <h3 class = "snapshotTitle">Comparable Vehicles<i class="fa fa-angle-down snapshotArrowDown"></i></h3>
   <div>
@@ -402,7 +402,7 @@
       <div id="accordion3">
 <h3 class = "snapshotTitle">Vehicle<i class="fa fa-angle-down snapshotArrowDown"></i></h3>
   <div>
-    <p>Your location -<strong>$1,760</strong><br>2003 (e46) BMW M3 - <strong>$1,557</strong> - your vehicle is <font color = "red">13%</font> above this price<br>Previous generation (e36 M3) - <strong> $1,418</strong> - your vehicle is <font color = "red">24%</font> above this price<br>
+    <p>Your location -<strong>$1,760</strong><br><%= @car %> - <strong>$1,557</strong> - your vehicle is <font color = "red">13%</font> above this price<br>Previous generation (e36 M3) - <strong> $1,418</strong> - your vehicle is <font color = "red">24%</font> above this price<br>
             Subsequent generation (e90 M3) - <strong> $1,811</strong> - your vehicle is <font color = "green">3%</font> below this price<br>
 
 

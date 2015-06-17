@@ -20,7 +20,7 @@ class AnautomyController < ApplicationController
     @subscriber = Subscriber.new
     @repairSubmission = RepairSubmission.new
 
-    # for demo purposes a global variable will be declared
+    # for demo purposes a global variable will be declared for user input
     $car = params['car_type']
     $repair = params['repair']
 
@@ -32,12 +32,13 @@ class AnautomyController < ApplicationController
   end
 
   def repairs
-        flash.now[:notice] = "#{$car} #{$repair}"
-
+        @car = $car
+        @repair = $repairs
   end
 
   def submissions
-    
+    @car = $car
+    @repair = $repairs
   end
 
 end
