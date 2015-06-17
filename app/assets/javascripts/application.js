@@ -13,6 +13,6 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
-//= require sweet-alert
 //= require turbolinks
+//= require sweet-alert
 //= require_tree .

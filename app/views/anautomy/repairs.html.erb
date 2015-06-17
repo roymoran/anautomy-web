@@ -280,7 +280,7 @@
 </div>
       </div>
       <div class="col-sm-6 right-col backgroundVehicleImage">
-
+        <!-- update the right side of the page to make responsive -->
         <div class="my-container ">
             <div class = "topBlock text-center">
                 <h2 class = "rightHeader">2003 BMW M3 SMG</h2>
@@ -317,3 +317,59 @@
         <!-- /.row -->
     </div>
     <!-- /.container -->
+
+    
+
+    <script>
+$("select").selectOrDie();
+
+$( "#repairCategories" ).accordion({
+      collapsible: true,
+      active: false,
+      animate: 450,
+      heightStyle: "content",
+      header: "h3",
+      fillSpace: true
+  });
+
+$( "#engineRepairs, #exhaustEmissionsRepairs, #brakesRepairs, #electricalLightsRepairs, #suspensionSteeringRepairs, #suspensionSteeringRepairs" ).accordion({
+      collapsible: true,
+      active: false,
+      animate: 450,
+      heightStyle: "content",
+      header: "h4",
+      fillSpace: true
+    });
+
+jQuery('#repairCategories h3').click(function() {
+    jQuery(this).toggleClass('active').find('i').toggleClass('fa-angle-right fa-angle-down')
+           .closest('h3').siblings('h3')
+           .removeClass('active').find('i')
+           .removeClass('fa-angle-right').addClass('fa-angle-down');
+
+
+     jQuery(this).next('.repairName').slideToggle().siblings('.repairName').slideUp();
+});
+
+$(function () {
+
+        $("#range, #range2, #range3, #range4").ionRangeSlider({
+            hide_min_max: true,
+            keyboard: true,
+            min: 0,
+            max: 5000,
+            from: 1000,
+            to: 4000,
+            disable: true,
+            type: 'double',
+            step: 1,
+            prefix: "$",
+            grid: true,
+             prettify_enabled: true,
+             prettify_separator: ","
+        });
+
+    });
+
+    </script>
+<!-- Source http://stackoverflow.com/questions/21166436/jquery-accordion-change-font-awesome-icon-class-on-click -->

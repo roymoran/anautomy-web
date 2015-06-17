@@ -1,0 +1,1202 @@
+/*!
+ * Start Bootstrap - Logo Nav HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+@import url(http://fonts.googleapis.com/css?family=Josefin+Sans:400,500,600|Roboto:700,400,500);
+
+
+body, html {
+    padding-top: 0; /* Required padding for .navbar-fixed-top. Change if height of navigation changes. */
+    font-size: 12px;
+    
+    /*font-size: 100%;*/
+}
+
+
+.greenCar{
+	color: #52BB49;
+}
+
+.anautomyHeader{
+	font-size: 1.5em;
+	color: white;
+}
+
+
+.navbar-static-top .nav {
+    padding: 30px 0;
+}
+
+
+.navbar-static-top .navbar-brand {
+    padding: 35px 0;
+}
+
+@media(min-width:768px) {
+    body {
+        padding-top: 0; /* Required padding for .navbar-fixed-top. Change if height of navigation changes. */
+    }
+
+    .navbar-static-top .navbar-brand {
+        padding: 40px 0;
+    }
+}
+
+.header2{
+	height: 30px;
+}
+.mainNav{
+	height: 100%;
+	bottom: 21px;
+}
+.navText{
+	top:-30px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 600;
+}
+
+/*header sign up and login buttons*/
+
+.headerButton a:hover { text-decoration: none; }
+
+
+.ghost-button-signup {
+    color: #ffffff;
+    background: #52BB49;
+    border: 1px solid #52BB49;
+    font-size: 17px;
+    padding: 7px 12px;
+    font-weight: normal;
+    margin: 6px 0;
+    margin-right: 12px;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    min-width: 120px;
+
+    /* CSS Transition */
+	-webkit-transition: background .2s ease-in-out, border .2s ease-in-out;
+	-moz-transition: background .2s ease-in-out, border .2s ease-in-out;
+	-ms-transition: background .2s ease-in-out, border .2s ease-in-out;
+	-o-transition: background .2s ease-in-out, border .2s ease-in-out;
+	transition: background .2s ease-in-out, border .2s ease-in-out;
+}
+
+.ghost-button-signup:hover {
+	color:#ffffff;
+	background:#49a841;
+	border: 1px solid #49a841;
+ }
+
+.ghost-button-login {
+    color: #ffffff;
+    background: #5A5A5A;
+    border: 1px solid #9B9B9B;
+    font-size: 17px;
+    padding: 7px 12px;
+    font-weight: normal;
+    margin: 6px 0;
+    margin-right: 12px;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    min-width: 120px;
+
+    /* CSS Transition */
+	-webkit-transition: background .2s ease-in-out, border .2s ease-in-out;
+	-moz-transition: background .2s ease-in-out, border .2s ease-in-out;
+	-ms-transition: background .2s ease-in-out, border .2s ease-in-out;
+	-o-transition: background .2s ease-in-out, border .2s ease-in-out;
+	transition: background .2s ease-in-out, border .2s ease-in-out;
+}
+
+.ghost-button-login:hover{
+	color:#ffffff;
+    background:#7a7a7a;
+ }
+
+ .ghost-button-help {
+    color: #ffffff;
+    background: #5A5A5A;
+    border: 1px solid #5A5A5A;
+    font-size: 17px;
+    padding: 7px 12px;
+    font-weight: normal;
+    margin: 6px 0;
+    margin-right: 12px;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    min-width: 80px;
+
+    /* CSS Transition */
+	-webkit-transition: background .2s ease-in-out, border .2s ease-in-out;
+	-moz-transition: background .2s ease-in-out, border .2s ease-in-out;
+	-ms-transition: background .2s ease-in-out, border .2s ease-in-out;
+	-o-transition: background .2s ease-in-out, border .2s ease-in-out;
+	transition: background .2s ease-in-out, border .2s ease-in-out;
+}
+
+.ghost-button-help:hover{
+	color:#ffffff;
+    background:#5A5A5A;
+ }
+
+
+ /* end of header buttons */
+
+/*Header navbar bootstrap overide*/
+.navbar-default {
+  background-color: #5a5a5a;
+  border-color: #ffffff;
+}
+.navbar-default .navbar-brand {
+  color: #ffffff;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #ffffff;
+}
+.navbar-default .navbar-text {
+  color: #ffffff;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ffffff;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #ffffff;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #ffffff;
+  background-color: #ffffff;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #ffffff;
+  background-color: #ffffff;
+}
+.navbar-default .navbar-toggle {
+  border-color: #ffffff;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #ffffff;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ffffff;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ffffff;
+}
+.navbar-default .navbar-link {
+  color: #ffffff;
+}
+.navbar-default .navbar-link:hover {
+  color: #ffffff;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ffffff;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffffff;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffffff;
+    background-color: #ffffff;
+  }
+}
+
+/*Main navbar bootstrap override*/
+
+
+.navbar-inverse {
+  background-color: #52bb49;
+  border-color: #52bb49;
+}
+.navbar-inverse .navbar-brand {
+  color: #ffffff;
+}
+.navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus {
+  color: #ffffff;
+}
+.navbar-inverse .navbar-text {
+  color: #ffffff;
+}
+.navbar-inverse .navbar-nav > li > a {
+  color: #ffffff;
+}
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+  color: #ffffff;
+}
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+  color: #ffffff;
+  background-color: #52bb49;
+}
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+  color: #ffffff;
+  background-color: #52bb49;
+}
+.navbar-inverse .navbar-toggle {
+  border-color: #52bb49;
+}
+.navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
+  background-color: #52bb49;
+}
+.navbar-inverse .navbar-toggle .icon-bar {
+  background-color: #ffffff;
+}
+.navbar-inverse .navbar-collapse,
+.navbar-inverse .navbar-form {
+  border-color: #ffffff;
+}
+.navbar-inverse .navbar-link {
+  color: #ffffff;
+}
+.navbar-inverse .navbar-link:hover {
+  color: #ffffff;
+}
+
+@media (max-width: 767px) {
+  .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
+    color: #ffffff;
+  }
+  .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffffff;
+  }
+  .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a, .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffffff;
+    background-color: #52bb49;
+  }
+}
+
+/*
+.header2 .navbar {
+    padding: 0;
+}
+
+.header2 .navbar-inner {
+    padding: 0;
+}
+
+.header2 .navbar{
+    margin: 0;
+    display: table;
+    width: 100%;
+}
+
+.header2 .nav {
+    margin: 0;
+    display: table;
+    width: 100%;
+}
+
+.header2 .navbar{
+    display: table-cell;
+    width: 1%;
+    float: none;
+}
+*/
+
+.header2 .nav li {
+    display: table-cell;
+    width: 1%;
+    float: none;
+}
+
+.header2 .navbar {
+    text-align: center;
+    
+}
+
+.header2 .nav li a {
+    text-align: center;
+    
+}
+
+.header2 .navbar {
+    border-left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.header2 .nav li:first-child a {
+    border-left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.header2 .navbar {
+    border-right: 0;
+    border-radius: 0 3px 3px 0;
+}
+
+.header2 .nav li:last-child a {
+    border-right: 0;
+    border-radius: 0 3px 3px 0;
+}
+/*End Nav*/
+
+/*Body for Repairs Search Page*/
+
+/*Left Column for Repairs Page*/
+.searchForm{
+  width: 30%;
+  float: right;
+  border-radius: 0;
+
+}
+.searchButton{
+  background-color: white;
+  border: 1px solid white;
+}
+
+.newSearchTitle{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+.searchResultsTitle{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+.repairCategoryTitle{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+.totalSubmissionsTextMain{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: #52BB49;
+  padding-left: 30px;
+}
+
+.totalSubmissionsText{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: #52BB49;
+  padding-left: 30px;
+
+}
+
+.specificRepairCategoryTitle{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+}
+
+
+#repairCategories h3 .mainCategoryIcon{
+
+}
+
+#repairCategories {
+    color: #2F2F2F;
+    width: auto;
+}
+
+#repairCategories .ui-accordion-header {
+
+  border: 1px solid #CFCFCF;
+  margin-bottom: 5px;
+}
+
+.repairCategoryTitle{
+
+}
+
+#repairCategories .ui-accordion-content {
+
+  border: 1px solid #CFCFCF;
+
+    width: 100%;
+    margin-top: -5px;
+    background-color: #F2F2F2;
+    color: #2F2F2F;
+}
+
+#repairCategories h3 .mainCategoryIcon{
+  float: right;
+}
+
+#repairCategories div div .repairIcon{
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 18px;
+  background-color: #52BB49;
+  border-bottom-color: #52BB49;
+  border-bottom-width: 3px;
+  border-bottom-style: solid;
+
+  position: absolute;
+  right: -1px;
+  top: -1px;
+   padding-left: 13px;
+   padding-right: 8px;
+   padding-bottom: 45px;
+   padding-top: 45px;
+   margin-right: -1px;
+
+}
+
+#repairCategories div p span{
+display: block;
+
+}
+#engineRepairs , #exhaustEmissionsRepairs, #brakesRepairs, #electricalLightsRepairs, #suspensionSteeringRepairs, #suspensionSteeringRepairs{
+
+
+    /*
+    top margin is 10px
+    right margin is 5px
+    bottom margin is 15px
+    left margin is 20px
+    */
+    margin:-14px -31px -14px -31px;
+
+}
+
+#engineRepairs .ui-accordion-content, #exhaustEmissionsRepairs .ui-accordion-content, #brakesRepairs .ui-accordion-content, #electricalLightsRepairs .ui-accordion-content, #suspensionSteeringRepairs .ui-accordion-content, #suspensionSteeringRepairs .ui-accordion-content, #exhaustEmissionsRepairs .ui-accordion-content, #brakesRepairs .ui-accordion-content, #electricalLightsRepairs .ui-accordion-content, #suspensionSteeringRepairs .ui-accordion-content, #suspensionSteeringRepairs .ui-accordion-content {
+   
+
+    width: 100%;
+    background-color: #CFCFCF;
+    color: #2F2F2F;
+    position: relative;
+    max-height: 200px;
+}
+
+#engineRepairs .ui-accordion-header , #exhaustEmissionsRepairs .ui-accordion-header, #brakesRepairs .ui-accordion-header , #electricalLightsRepairs .ui-accordion-header, #suspensionSteeringRepairs .ui-accordion-header, #suspensionSteeringRepairs .ui-accordion-header {
+  border-style: none;
+  border-width: 0;
+  margin-bottom: 0;
+
+}
+.repairRangePositioning{
+  margin-top: -8px;
+}
+.repairDetailsPositioning{
+    margin-top: 4px;
+  
+}
+
+.repairCostBox{
+  width: 130px;
+}
+
+.repairCostBoxPrice{
+  background-color: #F2F0F1;
+  margin-top: 10px;
+  padding-top: 10px;
+  height: 40px;
+  
+}
+
+/*End Left Column for Repairs Page*/
+
+
+/*Right Column for Repairs Page*/
+.right-col{
+  
+}
+
+.backgroundVehicleImage{
+  
+    background: url('https://i.imgur.com/IN90y7G.jpg') no-repeat center center;
+    min-height: 800px;
+    margin-bottom: 50px;
+}
+
+.my-container {
+    height: 850px;
+    width: 95%;
+    left: 17px;
+    position: relative;
+    overflow: hidden;
+}
+.my-container .topBlock {
+    position: relative;
+    color: white;
+    margin-top: 120px;
+    z-index: 2;
+} 
+
+.rightHeader{
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 2.5em;
+  font-weight: 600;
+}
+
+.categoryHeader{
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1em;
+}
+.subHeader{
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 600;
+  font-size: 1em;
+}
+.carDatabox{
+  margin: 0 auto;
+  width: 220px;
+}
+
+.carData{
+  background-color: #F2F0F1;
+  color: #000000;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  padding-top: 5px;
+  height: 30px;
+  
+}
+
+.my-container .bottomBlock {
+    position: relative;
+    color: white;
+    z-index: 2;
+} 
+.my-container img {
+    position: absolute;
+    width: 86%;
+    height: 84%;
+    left: 0;
+    top: 80px;
+    width: 100%;
+    height: auto;
+    opacity: 0.54;
+}
+
+.leftBlock{
+ 
+position:absolute;
+margin-left: 25px;
+width:100%;
+ top:0;
+ left:0;
+ width:200px;
+}
+
+.rightBlock{
+ 
+  position:absolute;
+  margin-right: 25px;
+  width: 100%;
+ top:0;
+ right:0;
+ width:200px;
+
+}
+.centerLine{
+  border: 1px solid white;
+  margin: 0 auto;
+  width: 1px;
+  height: 180px;
+
+}
+.bottomCarDatabox{
+  margin: 0 auto;
+  width: 100%;
+}
+
+.bottomCarData{
+  background-color: #F2F0F1;
+  color: #000000;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  padding-top: 5px;
+  height: 30px;
+  
+}
+
+.backgroundVehicleImage div p span{
+  display: block;
+
+}
+/*End Right Column for Repairs Page*/
+
+
+/*Body for Submissions Page*/
+.hiddenDataMessage{
+  color: #52BB49;
+}
+.submissionsRepairTitle{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  background-color: #F2F0F1;
+  height: 40px;
+  padding-top: 13px;
+
+
+  -webkit-box-shadow: 0 8px 6px -6px #BCBCBC;
+     -moz-box-shadow: 0 8px 6px -6px #BCBCBC;
+          box-shadow: 0 8px 6px -6px #BCBCBC;
+
+}
+/*Left Column for Submissions Page*/
+
+.allSubissionsBlock{
+max-height: 600px;
+  overflow-y:auto;
+  width: 100%;
+
+}
+.searchForm{
+  position: relative;
+  border-radius: 0;
+  float: right;
+  width: 100%;
+}
+.searchForm div span {
+  display: block;
+}
+input[type=text] {padding:5px; border:1px solid #CFCFCF; 
+-webkit-border-radius: 0;
+border-radius: 0;
+}
+input[type=text]:focus {border-color:#CFCFCF; }
+
+input[type=submit] {padding:5px 15px; background:#ccc; border:0 none;
+cursor:pointer;
+-webkit-border-radius: 0;
+border-radius: 0; }
+
+.searchButton{
+  position: relative;
+  color: #5A5A5A;
+  width: 10px;
+  height: 10px;
+  right: -138px; 
+  top: -23px;
+  margin-bottom: 50px;
+  background-color: white;
+  display: block;
+  z-index: 3;
+}
+
+.newSearchTitle{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+.searchResultsTitle{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+.repairCategoryTitle{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+.submissionBlock{
+  background-color: #CFCFCF;
+  position: relative;
+  margin-top: 8px;
+}
+
+.submissionBlock span{
+  display: block;
+}
+
+
+.repairCostBoxSubmissionsPage{
+  width: 130px;
+}
+.repairCostBoxPriceSubmissionsPage{
+  background-color: #F2F0F1;
+  margin-top: 5px;
+  padding-top: 5px;
+  height: 25px;
+  
+}
+
+.submissionBlockPositioning{
+  padding-top: 15px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+.submissionBox{
+  padding-top: 15px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 1.2em;
+}
+.shopName{
+  color: #52BB49;
+  font-size: 0.8em;
+
+}
+.submissionRepairIcon{
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 2em;
+  background-color: #52BB49;
+  border-bottom-color: #52BB49;
+  border-bottom-width: 3px;
+  border-bottom-style: solid;
+
+   padding-left: 8px;
+   padding-right: 9px;
+   padding-bottom: 31px;
+   padding-top: 31px;
+}
+#repairCategories h3 .mainCategoryIcon{
+
+}
+
+#repairCategories {
+    color: #2F2F2F;
+    width: auto;
+}
+
+#repairCategories .ui-accordion-header {
+
+  border: 1px solid #CFCFCF;
+  margin-bottom: 5px;
+}
+
+.repairCategoryTitle{
+
+}
+
+#repairCategories .ui-accordion-content {
+
+  border: 1px solid #CFCFCF;
+
+    width: 100%;
+    margin-top: -5px;
+    background-color: #F2F2F2;
+    color: #2F2F2F;
+}
+
+#repairCategories h3 .mainCategoryIcon{
+  float: right;
+}
+
+#repairCategories div p span{
+display: block;
+
+}
+#engineRepairs , #exhaustEmissionsRepairs, #brakesRepairs, #electricalLightsRepairs, #suspensionSteeringRepairs, #suspensionSteeringRepairs{
+
+
+    /*
+    top margin is 10px
+    right margin is 5px
+    bottom margin is 15px
+    left margin is 20px
+    */
+    margin:-14px -31px -14px -31px;
+
+}
+
+#engineRepairs .ui-accordion-content, #exhaustEmissionsRepairs .ui-accordion-content, #brakesRepairs .ui-accordion-content, #electricalLightsRepairs .ui-accordion-content, #suspensionSteeringRepairs .ui-accordion-content, #suspensionSteeringRepairs .ui-accordion-content, #exhaustEmissionsRepairs .ui-accordion-content, #brakesRepairs .ui-accordion-content, #electricalLightsRepairs .ui-accordion-content, #suspensionSteeringRepairs .ui-accordion-content, #suspensionSteeringRepairs .ui-accordion-content {
+   
+
+    width: 100%;
+    background-color: #CFCFCF;
+    color: #2F2F2F;
+    position: relative;
+    max-height: 200px;
+}
+
+#engineRepairs .ui-accordion-header , #exhaustEmissionsRepairs .ui-accordion-header, #brakesRepairs .ui-accordion-header , #electricalLightsRepairs .ui-accordion-header, #suspensionSteeringRepairs .ui-accordion-header, #suspensionSteeringRepairs .ui-accordion-header {
+  border-style: none;
+  border-width: 0;
+  margin-bottom: 0;
+
+}
+.repairRangePositioning{
+  margin-top: -8px;
+}
+.repairDetailsPositioning{
+    margin-top: 4px;
+}
+
+
+.averageBarArrow{
+  color: #54BB4A;
+}
+
+h6 {
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    z-index: 1;
+    overflow: hidden;
+    text-align: center;
+}
+h6:before, h6:after {
+    position: absolute;
+    top: 38%;
+    overflow: hidden;
+    width: 50%;
+    height: 6px;
+    content: '\a0';
+    background-color: #52BB49;
+
+}
+h6:before {
+    margin-left: -50%;
+    text-align: right;
+}
+.averagePriceBarTitle{
+  font-size: 1.5em;
+  color: #515151;
+
+}
+/*End Left Column for Submissions Page*/
+
+
+/*Right Column for Submissions Page*/
+.right-col{
+  
+}
+
+.backgroundVehicleImage{
+    background: url('https://i.imgur.com/IN90y7G.jpg') no-repeat center center;
+    min-height: 800px;
+    margin-bottom: 50px;
+}
+
+.my-container {
+    height: 850px;
+    width: 95%;
+    left: 17px;
+    position: relative;
+    overflow: hidden;
+}
+.my-container2 {
+    height: 850px;
+    width: 95%;
+    left: 17px;
+    position: relative;
+    overflow: hidden;
+}
+.my-container .topBlock {
+    position: relative;
+    color: white;
+    margin-top: 120px;
+    z-index: 2;
+} 
+
+.my-container .bottomBlock {
+    position: relative;
+    color: white;
+    z-index: 2;
+} 
+
+.my-container2 .topBlock {
+    position: relative;
+    color: white;
+    margin-top: 120px;
+    z-index: 2;
+} 
+
+.my-container2 .bottomBlock {
+    position: relative;
+    color: white;
+    z-index: 2;
+} 
+.my-container2 a {
+    color: #52BB4A;
+    text-decoration: underline;
+} 
+.my-container img {
+    position: absolute;
+    width: 86%;
+    height: 84%;
+    left: 0;
+    top: 80px;
+    width: 100%;
+    height: 70%;
+    opacity: 0.54;
+}
+
+
+.my-container2 img {
+    position: absolute;
+    width: 86%;
+    height: 84%;
+    left: 0;
+    top: 80px;
+    width: 100%;
+    height: 90%;
+    opacity: 0.54;
+}
+
+.clutchImg{
+  height: 35%;
+  background: url('https://i.imgur.com/MZ0BbB8.png') no-repeat center center;
+  background-size: auto 80%;
+}
+
+.detailsLeftBlock{
+ 
+position:absolute;
+margin-left: 25px;
+width:100%;
+ top:0;
+ left:0;
+ width:250px;
+}
+
+.detailsRightBlock{
+ 
+  position:absolute;
+  margin-right: 25px;
+  width: 100%;
+ top:0;
+ right:0;
+ width:250px;
+
+}
+.centerLine{
+  border: 1px solid white;
+  margin: 0 auto;
+  width: 1px;
+  height: 200px;
+
+}
+
+.centerLine2{
+  border: 1px solid white;
+  margin: 0 auto;
+  width: 1px;
+  height: 375px;
+
+}
+
+.detailsHeader{
+  color: #4FB648;
+  font: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 1.2em;
+}
+.detailsDescription{
+  color: white;
+  font: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 1.1em;
+}
+.highUrgencyLevel{
+  color: red;
+}
+.mediumUrgencyLevel{
+
+}
+.lowUrgencyLevel{
+  
+}
+.my-container a{
+  color: #4FB648;
+  text-decoration: underline;
+}
+
+.topBlock img {
+    position: absolute;
+    opacity: 0.54;
+}
+
+.topBlock h3{
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+  padding-left: 15px;
+}
+
+.topBlock h4{
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+}
+
+
+/*End Right Column*/
+
+
+/*Analytics Snapshot Section*/
+.analyticsSnapshotTitle {
+  color: #5A5A5A;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+}
+
+.analyticsSnapshotGears{
+  color: #54BB4A;
+}
+
+h1 {
+    position: relative;
+    font-size: 30px;
+    z-index: 1;
+    overflow: hidden;
+    text-align: center;
+}
+h1:before, h1:after {
+    position: absolute;
+    top: 43%;
+    overflow: hidden;
+    width: 50%;
+    height: 1px;
+    content: '\a0';
+    background-color: #52BB49;
+
+}
+h1:before {
+    margin-left: -50%;
+    text-align: right;
+}
+.color {
+    background-color: #ccc;
+}
+
+.snapshotTitle{
+  padding-top: 20px;
+}
+
+#accordion .ui-accordion-header, #accordion2 .ui-accordion-header, #accordion3 .ui-accordion-header {
+  color: #5A5A5A;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 600;
+  font-size: 1.4em;
+  margin-bottom: 15px;
+  padding-top: 13px;
+  height: 40px;
+  background-color: #CFCFCF;
+
+}
+
+#accordion .ui-accordion-header.ui-state-active, #accordion2 .ui-accordion-header.ui-state-active, #accordion3 .ui-accordion-header.ui-state-active{ 
+  color: #ffffff;
+  margin-bottom: 20px;
+  background-color: #51BB49;
+}
+
+#accordion .ui-accordion-content, #accordion2 .ui-accordion-content, #accordion3 .ui-accordion-content  {
+
+  color: #5A5A5A;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1.3em;
+
+  width: 100%;
+  margin-top: -20px;
+  margin-bottom: 20px;
+  background-color: #F2F0F1;
+  color: #2F2F2F;
+}
+
+#accordion .ui-accordion-header:nth-of-type(2), #accordion2 .ui-accordion-header:nth-of-type(2), #accordion3 .ui-accordion-header:nth-of-type(2){
+  margin-bottom: 200px;
+}
+#accordion .ui-accordion-content:nth-of-type(2), #accordion2 .ui-accordion-content:nth-of-type(2), #accordion3 .ui-accordion-content:nth-of-type(2){
+  margin-top: -200px;
+}
+
+.snapshotArrowDown{
+  padding-left: 15px;
+}
+/* Footer */
+ footer {
+   background-color:#5a5a5a
+}
+
+.footerText {
+  
+    color: #CFCFCF;
+    font-size: 13px;
+    font-weight: 300;
+    display: inline-block;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  padding: 10px 0 0 0;
+  margin: 0 50px 0 40px;
+    min-width: 80px;
+  
+  -o-transition:.2s;
+  -ms-transition:.2s;
+  -moz-transition:.2s;
+  -webkit-transition:.2s;
+  /* ...and now for the proper property */
+  transition:.2s;
+}
+
+.footerText:hover {
+  
+  color:#52BB49;
+  background:#5A5A5A;
+  text-decoration:none;
+ }
+
+.footerTitle {
+  
+    color: #CFCFCF;
+    font-size: 17px;
+    font-weight: 400;
+    display: inline-block;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  padding: 70px 0 0 0;
+  margin: 0 50px 0 40px;
+    min-width: 80px;
+}
+
+.socialIcon{
+	color: #5A5A5A;
+
+  -o-transition:.3s;
+  -ms-transition:.3s;
+  -moz-transition:.3s;
+  -webkit-transition:.3s;
+  /* ...and now for the proper property */
+  transition:.3s;
+}
+
+.socialButton{
+	color: #CFCFCF;
+
+  -o-transition:.3s;
+  -ms-transition:.3s;
+  -moz-transition:.3s;
+  -webkit-transition:.3s;
+  /* ...and now for the proper property */
+  transition:.3s;
+
+}
+
+.socialButton:hover{
+	color: #52bb49;
+}
+.socialIcon:hover{
+	color: #ffffff;
+}
+
+.socialPadding{
+	padding-bottom: 40px;
+}
+
+.footerSplit{
+	padding-bottom: 0;
+  width: 65%;
+}
+
+
+/* centered columns styles */
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* inline-block space fix */
+    margin-right:-80px;
+}
+/*End Footer*/
