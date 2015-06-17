@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   get '/anautomy/thankyouforsubscribing' 
   get '/anautomy/thankyouforsubmitting' 
+  get '/anautomy/repairs'
+  get '/anautomy/submissions'
   #root 'static_pages#home'
   root 'anautomy#welcome'
   #post   'sub'   => 'subscribers#create'
