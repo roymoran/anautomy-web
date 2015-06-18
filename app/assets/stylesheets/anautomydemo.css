@@ -405,6 +405,7 @@ body, html {
 
   border: 1px solid #CFCFCF;
   margin-bottom: 5px;
+
 }
 
 .repairCategoryTitle{
@@ -449,6 +450,30 @@ body, html {
 display: block;
 
 }
+
+#top_repair .repairIcon, #top_repair2 .repairIcon, #top_repair3 .repairIcon{
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 18px;
+  background-color: #52BB49;
+  border-bottom-color: #52BB49;
+  border-bottom-width: 3px;
+  border-bottom-style: solid;
+
+  position: absolute;
+  right: -1px;
+  top: -1px;
+   padding-left: 13px;
+   padding-right: 8px;
+   padding-bottom: 45px;
+   padding-top: 45px;
+   margin-right: -1px;
+
+}
+#top_repair div span, #top_repair2 div span, #top_repair3 div span{
+display: block;
+
+}
 #engineRepairs , #exhaustEmissionsRepairs, #brakesRepairs, #electricalLightsRepairs, #suspensionSteeringRepairs, #suspensionSteeringRepairs{
 
 
@@ -467,6 +492,7 @@ display: block;
 
     width: 100%;
     background-color: #CFCFCF;
+
     color: #2F2F2F;
     position: relative;
     max-height: 200px;
@@ -478,6 +504,37 @@ display: block;
   margin-bottom: 0;
 
 }
+
+#top_repair, #top_repair2, #top_repair3, #top_repair4, #top_repair5{
+  /*
+    top margin is 10px
+    right margin is 5px
+    bottom margin is 15px
+    left margin is 20px
+    */
+    
+}
+
+#top_repair .ui-accordion-content, #top_repair2 .ui-accordion-content, #top_repair3 .ui-accordion-content, #top_repair4 .ui-accordion-content, #top_repair5 .ui-accordion-content{
+  width: 100%;
+    background-color: #CFCFCF;
+    color: #2F2F2F;
+    position: relative;
+    max-height: 200px;
+    background-color: #CFCFCF;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+#top_repair .ui-accordion-header, #top_repair2 .ui-accordion-header, #top_repair3 .ui-accordion-header, #top_repair4 .ui-accordion-header, #top_repair5 .ui-accordion-header{
+  
+  margin-bottom: 10px;
+  border-width: 0;
+  margin-bottom: 10px;
+  background-color: #F2F2F2;
+}
+
+
 .repairRangePositioning{
   margin-top: -8px;
 }
@@ -688,6 +745,7 @@ border-radius: 0; }
 .searchResultsTitle{
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
+  text-transform: uppercase;
 }
 
 .repairCategoryTitle{

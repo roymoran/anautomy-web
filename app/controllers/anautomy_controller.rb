@@ -33,12 +33,12 @@ class AnautomyController < ApplicationController
 
   def repairs
         @car = $car
-        @repair = $repairs
+        @repair = $repair
   end
 
   def submissions
     @car = $car
-    @repair = $repairs
+    @repair = $repair
   end
 
 end

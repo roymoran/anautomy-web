@@ -82,13 +82,73 @@
 <br>
 <br>
 <br>
-<h5 class = "searchResultsTitle"> COMMON SERVICES AND REPAIRS FOR <%= @car %> </h5>
+<%if "#{@repair}" != "ALL" %>
+<h5 class = "searchResultsTitle"> <%= @repair %> AND RELATED REPAIRS FOR THE <%= @car %> </h5>
+    <div id="top_repair">
+  <h4><ul class = "repairCategoryTitle"><%=@repair%><span class = "totalSubmissionsText">(Total <%= rand(30..80) %> Submissions)</span></ul></h4>
+  <div class = "conatiner-fluid"> 
+    <div class = "row repairDetailsPositioning">
+    <div class = "col-sm-4">
+    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$836</span></p>
+</div>
+<div class = "col-sm-3">
+    <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$260/$576</span></p>
+</div>
+<p class = "text-center">Price Range</p>
+<div class = "col-sm-5 repairRangePositioning">
+    <input type="text" id="range" value="" name="range" />
+</div>
+</div>
+<a href = "repair"><i class="fa fa-caret-right repairIcon"></i></a>
+</div>
+</div>
+
+<div id="top_repair2">
+  <h4><ul class = "repairCategoryTitle">Second Related Repair<span class = "totalSubmissionsText">(Total <%= rand(30..80) %> Submissions)</span></ul></h4>
+  <div class = "conatiner-fluid"> 
+    <div class = "row repairDetailsPositioning">
+    <div class = "col-sm-4">
+    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$836</span></p>
+</div>
+<div class = "col-sm-3">
+    <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$260/$576</span></p>
+</div>
+<p class = "text-center">Price Range</p>
+<div class = "col-sm-5 repairRangePositioning">
+    <input type="text" id="range" value="" name="range" />
+</div>
+</div>
+<a href = "repair"><i class="fa fa-caret-right repairIcon"></i></a>
+  </div>
+</div>
+
+
+<div id="top_repair3">
+  <h4><ul class = "repairCategoryTitle">Third Related Repair<span class = "totalSubmissionsText">(Total <%= rand(30..80) %> Submissions)</span></ul></h4>
+  <div class = "conatiner-fluid"> 
+    <div class = "row repairDetailsPositioning">
+    <div class = "col-sm-4">
+    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$836</span></p>
+</div>
+<div class = "col-sm-3">
+    <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$260/$576</span></p>
+</div>
+<p class = "text-center">Price Range</p>
+<div class = "col-sm-5 repairRangePositioning">
+    <input type="text" id="range" value="" name="range" />
+</div>
+</div>
+<a href = "repair"><i class="fa fa-caret-right repairIcon"></i></a>
+  </div>
+</div>
+<%end %>
+
+
+<h5 class = "searchResultsTitle"> COMMON SERVICES AND REPAIRS FOR THE <%= @car %> </h5>
   <div id="repairCategories">
-  <h3><span class = "repairCategoryTitle">ENGINE </span><span class = "totalSubmissionsTextMain">(Total 108 Submissions)</span><i class="fa fa-angle-right mainCategoryIcon"></i></h3>
+  <h3><span class = "repairCategoryTitle">ENGINE </span><span class = "totalSubmissionsTextMain">(Total <%= rand(50..150) %> Repairs)</span><i class="fa fa-angle-right mainCategoryIcon"></i></h3>
   <div>
     <div id="engineRepairs">
-
-
   <h4><ul class = "specificRepairCategoryTitle">Fuel Injector Replacement <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "conatiner-fluid"> 
     <div class = "row repairDetailsPositioning">
@@ -166,7 +226,7 @@
 </div>
   </div>
 
-  <h3><span class = "repairCategoryTitle">EXHAUST &amp; EMISSIONS</span><span class = "totalSubmissionsTextMain">(Total 72 Submissions)</span><i class="fa fa-angle-right mainCategoryIcon"></i></h3>
+  <h3><span class = "repairCategoryTitle">EXHAUST &amp; EMISSIONS</span><span class = "totalSubmissionsTextMain">(Total <%= rand(50..150) %> Submissions)</span><i class="fa fa-angle-right mainCategoryIcon"></i></h3>
   <div>
     <div id="exhaustEmissionsRepairs"> 
   <h4><ul>Test <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
@@ -187,7 +247,7 @@
   </div>
 </div>
   </div>
-  <h3><span class = "repairCategoryTitle">BRAKES</span><span class = "totalSubmissionsTextMain">(Total 72 Submissions)</span><i class="fa fa-angle-right mainCategoryIcon"></i></h3>
+  <h3><span class = "repairCategoryTitle">BRAKES</span><span class = "totalSubmissionsTextMain">(Total <%= rand(50..150) %> Submissions)</span><i class="fa fa-angle-right mainCategoryIcon"></i></h3>
   <div>
     <div id="brakesRepairs"> 
   <h4><ul>Test <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
@@ -208,7 +268,7 @@
   </div>
 </div>
   </div>
-  <h3><span class = "repairCategoryTitle">ELECTRICAL &amp; LIGHTS </span><span class = "totalSubmissionsTextMain">(Total 72 Submissions)</span><i class="fa fa-angle-right mainCategoryIcon"></i></h3>
+  <h3><span class = "repairCategoryTitle">ELECTRICAL &amp; LIGHTS </span><span class = "totalSubmissionsTextMain">(Total <%= rand(50..150) %> Submissions)</span><i class="fa fa-angle-right mainCategoryIcon"></i></h3>
   <div>
     <div id="electricalLightsRepairs"> 
   <h4><ul>Test <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
@@ -229,7 +289,7 @@
   </div>
 </div>
   </div>
-  <h3><span class = "repairCategoryTitle">SUSPENSION &amp; STEERING </span><span class = "totalSubmissionsTextMain">(Total 72 Submissions)</span><i class="fa fa-angle-right mainCategoryIcon"></i></h3>
+  <h3><span class = "repairCategoryTitle">SUSPENSION &amp; STEERING </span><span class = "totalSubmissionsTextMain">(Total <%= rand(50..150) %> Submissions)</span><i class="fa fa-angle-right mainCategoryIcon"></i></h3>
   <div>
     <div id="suspensionSteeringRepairs">
   <h4><ul>Test <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
@@ -250,7 +310,7 @@
   </div>
 </div>
   </div>
-  <h3><span class = "repairCategoryTitle">HEATING &amp; AIR CONDITIONING </span><span class = "totalSubmissionsTextMain">(Total 72 Submissions)</span><i class="fa fa-angle-right mainCategoryIcon"></i></h3>
+  <h3><span class = "repairCategoryTitle">HEATING &amp; AIR CONDITIONING </span><span class = "totalSubmissionsTextMain">(Total <%= rand(50..150) %> Submissions)</span><i class="fa fa-angle-right mainCategoryIcon"></i></h3>
   <div>
      <div id="suspensionSteeringRepairs"> 
   <h4><ul>Test <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
@@ -317,7 +377,8 @@
         <!-- /.row -->
     </div>
     <!-- /.container -->
-<!-- jQuery Version 1.11.1 -->
+
+    <!-- jQuery Version 1.11.1 -->
     <%= javascript_include_tag "jquery.js" %>
 
     <!-- Bootstrap Core JavaScript -->
@@ -351,6 +412,32 @@ $( "#repairCategories" ).accordion({
 $( "#engineRepairs, #exhaustEmissionsRepairs, #brakesRepairs, #electricalLightsRepairs, #suspensionSteeringRepairs, #suspensionSteeringRepairs" ).accordion({
       collapsible: true,
       active: false,
+      animate: 450,
+      heightStyle: "content",
+      header: "h4",
+      fillSpace: true
+    });
+
+$( "#top_repair").accordion({
+      collapsible: true,
+      active: true,
+      animate: 450,
+      heightStyle: "content",
+      header: "h4",
+      fillSpace: true
+    });
+
+$( "#top_repair2").accordion({
+      collapsible: true,
+      active: true,
+      animate: 450,
+      heightStyle: "content",
+      header: "h4",
+      fillSpace: true
+    });
+$( "#top_repair3").accordion({
+      collapsible: true,
+      active: true,
       animate: 450,
       heightStyle: "content",
       header: "h4",
