@@ -775,6 +775,57 @@ border-radius: 0; }
   
 }
 
+.rating{
+  color: #D20014;
+}
+.star5:after{
+  content: "\f005\f005\f005\f005\f005"; /* 5 Stars */
+  font-family: FontAwesome;
+  
+}
+.half4star:after{
+  content: "\f005\f005\f005\f005\f123"; /*  4.5 Stars */
+  font-family: FontAwesome;
+}
+.star4:after{
+  content: "\f005\f005\f005\f005"; /* 4 Stars */
+  font-family: FontAwesome;
+}
+.half3star:after{
+  content: "\f005\f005\f005\f123"; /*  3.5 Stars */
+  font-family: FontAwesome;
+}
+.star3:after{
+  content: "\f005\f005\f005"; /* 3 Stars */
+  font-family: FontAwesome;
+}
+.half2star:after{
+  content: "\f005\f005\f123"; /*  2.5 Stars */
+  font-family: FontAwesome;
+}
+.star2:after{
+  content: "\f005\f005"; /*  2 Stars */
+  font-family: FontAwesome;
+}
+.half1star:after{
+  content: "\f005\f123"; /*  1.5 Stars */
+  font-family: FontAwesome;
+}
+.star1:after{
+  content: "\f005"; /*  1 Stars */
+  font-family: FontAwesome;
+}
+.halfstar:after{
+  content: "\f123"; /*  .5 Stars */
+  font-family: FontAwesome;
+}
+
+.reviewText{
+  text-decoration: underline;
+  font-size: 13px;
+  color: black;
+}
+
 .submissionBlockPositioning{
   padding-top: 15px;
   font-family: 'Roboto', sans-serif;
