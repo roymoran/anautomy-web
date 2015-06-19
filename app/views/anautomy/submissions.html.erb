@@ -84,8 +84,7 @@
 <br>
 <br>
 <ul class = "hiddenDataMessage">*To see details for all submissions, create a free account and submit at least once.</ul>
-<h5 class = "submissionsRepairTitle"><ul>REPAIR DETAILS FOR (<%= @car %>)</ul></h5>
-
+<h5 class = "submissionsRepairTitle"><ul>REPAIR DETAILS FOR <%=@repair%> (<%= @car %>)</ul></h5>
 <div class = "allSubissionsBlock container-fluid">
 <div class = "conatiner-fluid submissionBlock"> 
     <div class = "row">
@@ -168,7 +167,8 @@
 </div>
   </div>
 
-<h6><i class="fa fa-caret-right fa-2x averageBarArrow"></i><span class = "averagePriceBarTitle">Average Price: <strong>$1760</strong></span><i class="fa fa-caret-left fa-2x averageBarArrow"></i></h6>
+<h6><i class="fa fa-caret-right fa-2x averageBarArrow"></i><span class = "averagePriceBarTitle">Average Price: <strong>$<%= @average_repair_cost %></strong></span><i class="fa fa-caret-left fa-2x averageBarArrow"></i></h6>
+
   <div class = "conatiner-fluid submissionBlock"> 
     <div class = "row">
     <div class = "col-sm-3">

@@ -4,5 +4,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   attr_accessor :car
   attr_accessor :repair
+  attr_accessor :average_repair_cost
 
 end

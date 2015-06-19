@@ -89,7 +89,7 @@
   <div class = "conatiner-fluid"> 
     <div class = "row repairDetailsPositioning">
     <div class = "col-sm-4">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$836</span></p>
+    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %></span></p>
 </div>
 <div class = "col-sm-3">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$260/$576</span></p>
@@ -99,7 +99,7 @@
     <input type="text" id="range" value="" name="range" />
 </div>
 </div>
-<a href = "repair"><i class="fa fa-caret-right repairIcon"></i></a>
+<%= link_to "<i class = 'fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path%>
 </div>
 </div>
 
