@@ -82,7 +82,7 @@
 <br>
 <br>
 <br>
-<%if ("#{@repair}" != "") || ("#{@repair}" != "ALL")%>
+<%if ("#{@repair}" != "")%>
 <h5 class = "searchResultsTitle"> <%= @repair %> AND RELATED REPAIRS FOR THE <%= @car %> </h5>
     <div id="top_repair">
   <h4><ul class = "repairCategoryTitle"><%=@repair%><span class = "totalSubmissionsText">(Total <%= rand(30..80) %> Submissions)</span></ul></h4>
