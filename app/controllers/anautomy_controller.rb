@@ -25,6 +25,9 @@ class AnautomyController < ApplicationController
     $repair = params['repair']
     $average_repair_cost = rand(600..1200)
 
+    $average_parts_cost = (0.3 * $average_repair_cost).round(3)
+    $average_labor_cost = (0.7 * $average_repair_cost).round(3)
+
     #flash.now[:notice] = "#{car} #{repair}"
     if !($car.nil?) || !($repair.nil?)
        redirect_to action: :repairs
@@ -36,12 +39,16 @@ class AnautomyController < ApplicationController
         @car = $car
         @repair = $repair
         @average_repair_cost = $average_repair_cost
+        @average_parts_cost = $average_parts_cost
+        @average_labor_cost = $average_labor_cost
   end
 
   def submissions
     @car = $car
     @repair = $repair
     @average_repair_cost = $average_repair_cost
+    @average_parts_cost = $average_parts_cost
+    @average_labor_cost = $average_labor_cost
   end
 
 end
