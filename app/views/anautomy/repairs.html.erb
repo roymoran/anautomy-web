@@ -400,7 +400,7 @@
     <script>
 $("select").selectOrDie();
 
-$( "#repairCategories" ).accordion({
+$("#repairCategories").accordion({
       collapsible: true,
       active: false,
       animate: 450,
@@ -409,7 +409,7 @@ $( "#repairCategories" ).accordion({
       fillSpace: true
   });
 
-$( "#engineRepairs, #exhaustEmissionsRepairs, #brakesRepairs, #electricalLightsRepairs, #suspensionSteeringRepairs, #suspensionSteeringRepairs" ).accordion({
+$("#engineRepairs, #exhaustEmissionsRepairs, #brakesRepairs, #electricalLightsRepairs, #suspensionSteeringRepairs, #suspensionSteeringRepairs").accordion({
       collapsible: true,
       active: false,
       animate: 450,
@@ -453,6 +453,7 @@ jQuery('#repairCategories h3').click(function() {
 
      jQuery(this).next('.repairName').slideToggle().siblings('.repairName').slideUp();
 });
+
 
 $(function () {
 
