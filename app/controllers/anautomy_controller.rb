@@ -41,6 +41,7 @@ class AnautomyController < ApplicationController
         @average_repair_cost = $average_repair_cost
         @average_parts_cost = $average_parts_cost
         @average_labor_cost = $average_labor_cost
+
   end
 
   def submissions
