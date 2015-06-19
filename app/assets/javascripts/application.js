@@ -10,9 +10,11 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require ion.rangeSlider.js
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
+//= require selectordie.min.js
 //= require turbolinks
 //= require sweet-alert
 //= require_tree .
