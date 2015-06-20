@@ -7,5 +7,5 @@ class ApplicationController < ActionController::Base
   attr_accessor :average_repair_cost
   attr_accessor :average_labor_cost
   attr_accessor :average_parts_cost
-
+  attr_accessor :image_link
 end
