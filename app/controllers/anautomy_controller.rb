@@ -51,8 +51,12 @@ class AnautomyController < ApplicationController
 
   def repairs
     flash.now[:notice] = "#{$image_link}"
-        @car = $car
-        @repair = $repair
+        @car_lower = $car
+        @car = @car_lower.split.map(&:capitalize).join(' ')
+
+        @repair_lower = $repair
+        @repair = @repair_lower.split.map(&:capitalize).join(' ')
+
         @average_repair_cost = $average_repair_cost
         @average_parts_cost = $average_parts_cost
         @average_labor_cost = $average_labor_cost
@@ -61,8 +65,12 @@ class AnautomyController < ApplicationController
   end
 
   def submissions
-    @car = $car
-    @repair = $repair
+    @car_lower = $car
+    @car = @car_lower.split.map(&:capitalize).join(' ')
+
+    @repair_lower = $repair
+    @repair = @repair_lower.split.map(&:capitalize).join(' ')
+
     @average_repair_cost = $average_repair_cost
     @average_parts_cost = $average_parts_cost
     @average_labor_cost = $average_labor_cost
