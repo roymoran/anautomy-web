@@ -1,5 +1,5 @@
 <!-- Page Content -->
-    <div class="container-fluid">
+    <div class="container-fluid mainContainerPadding">
 
         <div class="row">
             
@@ -78,7 +78,7 @@
 
 </div>
 <ul class = "hiddenDataMessage">*To see details for all submissions, create a free account and submit at least once.</ul>
-<h5 class = "submissionsRepairTitle"><ul>REPAIR DETAILS FOR <%=@repair%> (<%= @car %>)</ul></h5>
+<h5 class = "submissionsRepairTitle" ><ul>REPAIR DETAILS FOR <%=@repair%> (<%= @car %>)</ul></h5>
 <div class = "allSubissionsBlock container-fluid">
 <div class = "conatiner-fluid submissionBlock"> 
     <div class = "row">
@@ -329,15 +329,15 @@
                <div class = "centerLine2"></div>
                 <div class = "detailsLeftBlock">
                   <h5 class = "detailsHeader">DESCRIPTION</h5>
-                  <p class = "detailsDescription">- The clutch is a critical component of your vehicle. It is used to engage and disengage the power transmission. Essentially, the clutch gives and cits off power to your vehicle and is an important piece of your transmission...<a href = "#moreinfo">read more</a></p>
+                  <p class = "detailsDescription">- The <%=@repair%> is a critical component of your vehicle. It is used to engage and disengage the power transmission. Essentially, the <%=@repair%> gives and cuts off power to your vehicle and is an important piece of your...<a href = "#moreinfo">read more</a></p>
                   <h5 class = "detailsHeader">REPAIR/REPLACEMENT URGENCY</h5>
                   <p class = "highUrgencyLevel detailsDescription">Very High</p>
                   <h5 class = "detailsHeader">STANDARD REPLACEMENT TIME</h5>
-                  <p class = "detailsDescription">- 100,000 miles on the <%= @car %>, but this is highly variable on clutch shift time and driving style. Individuals experienced in driving manual transmission cars may see more lengevity from their clutch.</p>
+                  <p class = "detailsDescription">- 100,000 miles on the <%= @car %>, but this is highly variable on <%=@repair%> shift time and driving style. Individuals experienced in driving manual transmission cars may see more lengevity from their <%=@repair%>.</p>
             </div>
             <div class = "detailsRightBlock">
-                <h5 class = "detailsHeader">SYMPTOMS OF CLUTCH PROBLEMS</h5>
-                <p class = "detailsDescription">- Slipping or missing gears, burnt smell from under hood, loose clutch pedal, 'spongy' clutch, <a href = "#seemore">see all</a></p>
+                <h5 class = "detailsHeader">SYMPTOMS OF <%=@repair%> PROBLEMS</h5>
+                <p class = "detailsDescription">- Slipping or missing gears, burnt smell from under hood, loose <%=@repair%> pedal, 'spongy' <%=@repair%>, <a href = "#seemore">see all</a></p>
                 <h5 class = "detailsHeader">IF THIS PART IS NOT REPLACED IMMEDIATELY</h5>
                 <p class = "detailsDescription">- You can anticipate major complications while attempting to start your car, drive, or shift gears. It is recommended that this is repaired immediately and the vehicle should not be driven, even to the mechanic/auto shop.</p>
                 <h5 class = "detailsHeader">ASSOCIATED DIAGNOOSTIC FAULT CODES</h5>
@@ -365,7 +365,7 @@
         <div id="accordion">
   <h3 class = "snapshotTitle">Geographic<i class="fa fa-angle-down snapshotArrowDown"></i></h3>
   <div>
-    <p>Zip code <strong>60607</strong> costs <font color = "red">13%</font> above the average for a <strong>Clutch</strong> on <strong><%= @car %></strong>'s<br> <strong>Illinois</strong> costs  <font color = "red">4%</font> above average for a <strong>Clutch</strong> on <strong><%= @car %></strong>'s<br> National Average: <strong>$1,557</strong> <br>Lowest price geography is <strong>Texas</strong> at <strong>$1,360</strong> <br>Highest price geography is <strong>Maryland</strong> at <strong>$1,706</strong> </p>
+    <p>Zip code <strong>60607</strong> costs <font color = "red">13%</font> above the average for a <strong><%=@repair%></strong> on <strong><%= @car %></strong>'s<br> <strong>Illinois</strong> costs  <font color = "red">4%</font> above average for a <strong><%=@repair%></strong> on <strong><%= @car %></strong>'s<br> National Average: <strong>$1,557</strong> <br>Lowest price geography is <strong>Texas</strong> at <strong>$1,360</strong> <br>Highest price geography is <strong>Maryland</strong> at <strong>$1,706</strong> </p>
   </div>
   <h3 class = "snapshotTitle">Comparable Vehicles<i class="fa fa-angle-down snapshotArrowDown"></i></h3>
   <div>
@@ -385,8 +385,8 @@
   </div>
   <h3 class = "snapshotTitle">Potential Additions<i class="fa fa-angle-down snapshotArrowDown"></i></h3>
   <div>
-   <p>Slave cylinders works with the master cyclinder to conver non-hydraulic pressure into hydraulic pressure. Given that SMG vehicles operates with hydraulic clutch systems, slave cyliinders are a common additional replacement and replacing a clutch </p><br> <a>Expected Parts Cost: $87 additional</a> <a>Expected Labor Cost: $60 additional</a></p>
-   <p>The flywheel is the rotating component that receives energy which will further transfer the energy to the clutch when the clutch plate becomes in contact with the flywheel itself. Since these components work together very closely, it is very likely that a flywheel replacements will be necessary in addition to the clutch. A bad clutch will cause the flywheel to dull and lose grip </P><br> <a>Expected Parts Cost: $418 additional</a> <a>Expected Labor Cost: $213 additional</a></p>
+   <p>Slave cylinders works with the master cyclinder to conver non-hydraulic pressure into hydraulic pressure. Given that SMG vehicles operates with hydraulic <%=@repair%> systems, slave cyliinders are a common additional replacement and replacing a <%=@repair%> </p><br> <a>Expected Parts Cost: $87 additional</a> <a>Expected Labor Cost: $60 additional</a></p>
+   <p>The flywheel is the rotating component that receives energy which will further transfer the energy to the <%=@repair%> when the <%=@repair%> plate becomes in contact with the flywheel itself. Since these components work together very closely, it is very likely that a flywheel replacements will be necessary in addition to the <%=@repair%>. A bad <%=@repair%> will cause the flywheel to dull and lose grip </P><br> <a>Expected Parts Cost: $418 additional</a> <a>Expected Labor Cost: $213 additional</a></p>
   </div>
   
 </div>

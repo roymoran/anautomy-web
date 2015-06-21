@@ -1,4 +1,4 @@
-<!-- Navigation -->
+ <!-- Navigation -->
     <header>
     <nav class="navbar navbar-default navbar-static-top" role="navigation">
         <div class="container">
@@ -12,6 +12,7 @@
                 </button>
                 <a class="navbar-brand" href="#">
                     <i class="fa fa-car fa-2x greenCar"></i><span class = "anautomyHeader">&nbsp; ANAUTOMY</span>
+
                 </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -59,7 +60,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#HOME" class = "navText">HOME</a>
+                        <%= link_to "HOME", {controller: "anautomy", action: "homepage"}, class: "navText" %>
                     </li>
                     <li>
                         <a href="#SERVICES" class = "navText">SERVICES</a>

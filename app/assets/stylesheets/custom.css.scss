@@ -14,111 +14,6 @@ html {
     height: 100%;
 }
 
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-weight: 700;
-}
-
-.navbar-default {
-    border-color: transparent;
-    background-color: #222;
-}
-
-.navbar-default .navbar-brand {
-    font-family: "Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive;
-    font-weight: 400;
-    color: white;
-}
-
-.navbar-default .navbar-brand:hover,
-.navbar-default .navbar-brand:focus,
-.navbar-default .navbar-brand:active,
-.navbar-default .navbar-brand.active {
-    color: #51a190;
-}
-
-.navbar-default .navbar-collapse {
-    border-color: rgba(255,255,255,.02);
-}
-
-.navbar-default .navbar-toggle {
-    border-color: #5A5A5A;
-    background-color: #5A5A5A;
-}
-
-.navbar-default .navbar-toggle .icon-bar {
-    background-color: #fff;
-}
-
-.navbar-default .navbar-toggle:hover,
-.navbar-default .navbar-toggle:focus {
-    background-color: #5A5A5A;
-}
-
-.navbar-default .nav li a {
-    text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-weight: 400;
-    letter-spacing: 1px;
-    color: #fff;
-}
-
-.navbar-default .nav li a:hover,
-.navbar-default .nav li a:focus {
-    outline: 0;
-    color: #51a190;
-}
-
-.navbar-default .navbar-nav>.active>a {
-    border-radius: 0;
-    color: #fff;
-    background-color: #5A5A5A;
-}
-
-.navbar-default .navbar-nav>.active>a:hover,
-.navbar-default .navbar-nav>.active>a:focus {
-    color: #fff;
-    background-color: #fec503;
-}
-
-@media(min-width:768px) {
-    .navbar-default {
-        padding-top: 0;
-        padding: 0 0;
-        background-color:rgba(70, 77, 87, .9);
-        -webkit-transition: padding .1s;
-        -moz-transition: padding .1s;
-        transition: padding .1s;
-    }
-
-    .navbar-default .navbar-brand {
-        font-size: 1.7em;
-        -webkit-transition: all .1s;
-        -moz-transition: all .1s;
-        transition: all .1s;
-    }
-
-    .navbar-default .navbar-nav>.active>a {
-        border-radius: 3px;
-    }
-
-    .navbar-default.navbar-shrink {
-        padding: 0 0;
-        background: rgb(70, 77, 87); 
-        background: rgba(70, 77, 87, .9);
-    }
-
-    .navbar-default.navbar-shrink .navbar-brand {
-        font-size: 1.7em;
-    }
-}
-
 .topnav {
     font-size: 14px; 
 }
@@ -437,19 +332,6 @@ html {
     height: 100%;
 }
 
-@media(min-width:767px) {
-    .navbar {
-        padding: 0 0;
-        -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
-        -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
-        transition: background .5s ease-in-out,padding .5s ease-in-out;
-        
-    }
-
-    .top-nav-collapse {
-        padding: 0;
-    }
-}
 
 /* Demo Sections - You can use these as guides or delete them - the scroller will work with any sort of height, fixed, undefined, or percentage based.
 The padding is very important to make sure the scrollspy picks up the right area when scrolled to. Adjust the margin and padding of sections and children 

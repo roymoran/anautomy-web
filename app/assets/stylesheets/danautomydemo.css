@@ -363,6 +363,8 @@ body, html {
 .searchResultsTitle{
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
+  text-transform: uppercase;
+  font-size: 1.2em;
 }
 
 .repairCategoryTitle{
@@ -375,6 +377,13 @@ body, html {
   font-weight: 400;
   color: #52BB49;
   padding-left: 30px;
+  font-size: 1.1em;
+}
+
+.specificRepairCategoryTitle{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 1.2em;
 }
 
 .totalSubmissionsText{
@@ -382,16 +391,9 @@ body, html {
   font-weight: 400;
   color: #52BB49;
   padding-left: 30px;
+  font-size: 0.9em;
 
 }
-
-.specificRepairCategoryTitle{
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-  font-size: 12px;
-}
-
-
 #repairCategories h3 .mainCategoryIcon{
 
 }
@@ -545,6 +547,7 @@ display: block;
 
 .repairCostBox{
   width: 130px;
+  font-size: 1.2em;
 }
 
 .repairCostBoxPrice{
@@ -552,6 +555,7 @@ display: block;
   margin-top: 10px;
   padding-top: 10px;
   height: 40px;
+  font-size: 1.2em;
   
 }
 
@@ -593,12 +597,15 @@ display: block;
 .categoryHeader{
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 400;
-  font-size: 1em;
+  font-size: 1.3em;
 }
 .subHeader{
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 600;
-  font-size: 1em;
+  font-size: 1.2em;
+}
+.carSubheader{
+  text-transform: uppercase;
 }
 .carDatabox{
   margin: 0 auto;
@@ -612,6 +619,7 @@ display: block;
   margin-bottom: 10px;
   padding-top: 5px;
   height: 30px;
+  font-size: 1.2em;
   
 }
 
@@ -670,6 +678,7 @@ width:100%;
   margin-bottom: 10px;
   padding-top: 5px;
   height: 30px;
+  font-size: 1.2em;
   
 }
 
@@ -683,6 +692,7 @@ width:100%;
 /*Body for Submissions Page*/
 .hiddenDataMessage{
   color: #52BB49;
+  font-size: 1.2em;
 }
 .submissionsRepairTitle{
   font-family: 'Roboto', sans-serif;
@@ -695,6 +705,8 @@ width:100%;
   -webkit-box-shadow: 0 8px 6px -6px #BCBCBC;
      -moz-box-shadow: 0 8px 6px -6px #BCBCBC;
           box-shadow: 0 8px 6px -6px #BCBCBC;
+
+          text-transform: uppercase;
 
 }
 /*Left Column for Submissions Page*/
@@ -746,11 +758,13 @@ border-radius: 0; }
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   text-transform: uppercase;
+  font-size: 1.2em;
 }
 
 .repairCategoryTitle{
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
+  font-size: 1.2em;
 }
 
 .submissionBlock{
@@ -830,12 +844,13 @@ border-radius: 0; }
   padding-top: 15px;
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
+  font-size: 1.2em;
 }
 .submissionBox{
   padding-top: 15px;
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
-  font-size: 1.2em;
+  font-size: 1.3em;
 }
 .shopName{
   color: #52BB49;
@@ -1309,3 +1324,7 @@ h1:before {
     margin-right:-80px;
 }
 /*End Footer*/
+
+.mainContainerPadding{
+  padding-top: 50px;
+}
