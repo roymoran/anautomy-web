@@ -476,7 +476,7 @@ display: block;
 display: block;
 
 }
-#engineRepairs , #exhaustEmissionsRepairs, #brakesRepairs, #electricalLightsRepairs, #suspensionSteeringRepairs, #suspensionSteeringRepairs{
+#engineRepairs , #transmissionRepairs, #exhaustEmissionsRepairs, #brakesRepairs, #electricalLightsRepairs, #suspensionSteeringRepairs, #suspensionSteeringRepairs{
 
 
     /*
@@ -489,7 +489,7 @@ display: block;
 
 }
 
-#engineRepairs .ui-accordion-content, #exhaustEmissionsRepairs .ui-accordion-content, #brakesRepairs .ui-accordion-content, #electricalLightsRepairs .ui-accordion-content, #suspensionSteeringRepairs .ui-accordion-content, #suspensionSteeringRepairs .ui-accordion-content, #exhaustEmissionsRepairs .ui-accordion-content, #brakesRepairs .ui-accordion-content, #electricalLightsRepairs .ui-accordion-content, #suspensionSteeringRepairs .ui-accordion-content, #suspensionSteeringRepairs .ui-accordion-content {
+#engineRepairs .ui-accordion-content, #transmissionRepairs .ui-accordion-content, #exhaustEmissionsRepairs .ui-accordion-content, #brakesRepairs .ui-accordion-content, #electricalLightsRepairs .ui-accordion-content, #suspensionSteeringRepairs .ui-accordion-content, #suspensionSteeringRepairs .ui-accordion-content, #exhaustEmissionsRepairs .ui-accordion-content, #brakesRepairs .ui-accordion-content, #electricalLightsRepairs .ui-accordion-content, #suspensionSteeringRepairs .ui-accordion-content, #suspensionSteeringRepairs .ui-accordion-content {
    
 
     width: 100%;
@@ -500,7 +500,7 @@ display: block;
     max-height: 200px;
 }
 
-#engineRepairs .ui-accordion-header , #exhaustEmissionsRepairs .ui-accordion-header, #brakesRepairs .ui-accordion-header , #electricalLightsRepairs .ui-accordion-header, #suspensionSteeringRepairs .ui-accordion-header, #suspensionSteeringRepairs .ui-accordion-header {
+#engineRepairs .ui-accordion-header , #transmissionRepairs .ui-accordion-header, #exhaustEmissionsRepairs .ui-accordion-header, #brakesRepairs .ui-accordion-header , #electricalLightsRepairs .ui-accordion-header, #suspensionSteeringRepairs .ui-accordion-header, #suspensionSteeringRepairs .ui-accordion-header {
   border-style: none;
   border-width: 0;
   margin-bottom: 0;
@@ -908,7 +908,7 @@ border-radius: 0; }
 display: block;
 
 }
-#engineRepairs , #exhaustEmissionsRepairs, #brakesRepairs, #electricalLightsRepairs, #suspensionSteeringRepairs, #suspensionSteeringRepairs{
+#engineRepairs , #exhaustEmissionsRepairs #transmissionRepairs, #brakesRepairs, #electricalLightsRepairs, #suspensionSteeringRepairs, #suspensionSteeringRepairs{
 
 
     /*
@@ -921,7 +921,7 @@ display: block;
 
 }
 
-#engineRepairs .ui-accordion-content, #exhaustEmissionsRepairs .ui-accordion-content, #brakesRepairs .ui-accordion-content, #electricalLightsRepairs .ui-accordion-content, #suspensionSteeringRepairs .ui-accordion-content, #suspensionSteeringRepairs .ui-accordion-content, #exhaustEmissionsRepairs .ui-accordion-content, #brakesRepairs .ui-accordion-content, #electricalLightsRepairs .ui-accordion-content, #suspensionSteeringRepairs .ui-accordion-content, #suspensionSteeringRepairs .ui-accordion-content {
+#engineRepairs .ui-accordion-content, #transmissionRepairs .ui-accordion-content, #exhaustEmissionsRepairs .ui-accordion-content, #brakesRepairs .ui-accordion-content, #electricalLightsRepairs .ui-accordion-content, #suspensionSteeringRepairs .ui-accordion-content, #suspensionSteeringRepairs .ui-accordion-content, #exhaustEmissionsRepairs .ui-accordion-content, #brakesRepairs .ui-accordion-content, #electricalLightsRepairs .ui-accordion-content, #suspensionSteeringRepairs .ui-accordion-content, #suspensionSteeringRepairs .ui-accordion-content {
    
 
     width: 100%;
@@ -931,7 +931,7 @@ display: block;
     max-height: 200px;
 }
 
-#engineRepairs .ui-accordion-header , #exhaustEmissionsRepairs .ui-accordion-header, #brakesRepairs .ui-accordion-header , #electricalLightsRepairs .ui-accordion-header, #suspensionSteeringRepairs .ui-accordion-header, #suspensionSteeringRepairs .ui-accordion-header {
+#engineRepairs .ui-accordion-header , #transmissionRepairs .ui-accordion-header, #exhaustEmissionsRepairs .ui-accordion-header, #brakesRepairs .ui-accordion-header , #electricalLightsRepairs .ui-accordion-header, #suspensionSteeringRepairs .ui-accordion-header, #suspensionSteeringRepairs .ui-accordion-header {
   border-style: none;
   border-width: 0;
   margin-bottom: 0;
@@ -1327,4 +1327,8 @@ h1:before {
 
 .mainContainerPadding{
   padding-top: 50px;
+}
+
+.input-field{
+  color: black;
 }

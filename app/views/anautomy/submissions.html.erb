@@ -17,10 +17,6 @@
                 <option value="one">BMW</option>
                 <option value="two">Two</option>
                 <option value="three">Three</option>
-                <!--<optgroup label="Option Group Label">
-                    <option value="group.one">Option Group.One</option>
-                    <option value="group.two">Option Group.Two</option>
-                </optgroup>-->
                 <option value="four">Four</option>
                 <option value="five">Five</option>
             </select>
@@ -30,10 +26,6 @@
                 <option value="one">M3</option>
                 <option value="two">Two</option>
                 <option value="three">Three</option>
-                <!--<optgroup label="Option Group Label">
-                    <option value="group.one">Option Group.One</option>
-                    <option value="group.two">Option Group.Two</option>
-                </optgroup>-->
                 <option value="four">Four</option>
                 <option value="five">Five</option>
             </select>
@@ -43,10 +35,6 @@
                 <option value="one">2003</option>
                 <option value="two">Two</option>
                 <option value="three">Three</option>
-                <!--<optgroup label="Option Group Label">
-                    <option value="group.one">Option Group.One</option>
-                    <option value="group.two">Option Group.Two</option>
-                </optgroup>-->
                 <option value="four">Four</option>
                 <option value="five">Five</option>
                 <option value="four">Four</option>
@@ -58,10 +46,6 @@
                 <option value="one">SMG</option>
                 <option value="two">Two</option>
                 <option value="three">Three</option>
-                <!--<optgroup label="Option Group Label">
-                    <option value="group.one">Option Group.One</option>
-                    <option value="group.two">Option Group.Two</option>
-                </optgroup>-->
                 <option value="four">Four</option>
                 <option value="five">Five</option>
             </select>
@@ -86,10 +70,10 @@
     <p class="text-center submissionBox"><span class>Submission</span><span class = "shopName">AMX Auto</span></p>
 </div>
 <div class = "col-sm-3">
-    <p class="text-center submissionBlockPositioning" ><span>Total Cost</span><span class = "repairCostBoxPriceSubmissionsPage">$260/$576</span></p>
+    <p class="text-center submissionBlockPositioning" ><span>Total Cost</span><span class = "repairCostBoxPriceSubmissionsPage">$<%= @firstResult %></span></p>
 </div>
 <div class = "col-sm-3">
-    <p class="text-center submissionBlockPositioning" ><span>Parts/Labor</span><span class = "repairCostBoxPriceSubmissionsPage">$260/$576</span></p>
+    <p class="text-center submissionBlockPositioning" ><span>Parts/Labor</span><span class = "repairCostBoxPriceSubmissionsPage">$<%=@firstPart%>/$<%=@firstLabor%></span></p>
 </div>
 <div class = "col-sm-2">
     <p class="text-center submissionBlockPositioning"><span class = " rating star5"></span><span class = "reviewText"><a href = "#review">Read Full Review</span></p>
@@ -106,13 +90,13 @@
     <p class="text-center submissionBox"><span class>Submission</span><span class = "shopName">Exotic Motorsports</span></p>
 </div>
 <div class = "col-sm-3">
-    <p class="text-center submissionBlockPositioning" ><span>Total Cost</span><span class = "repairCostBoxPriceSubmissionsPage">$260/$576</span></p>
+    <p class="text-center submissionBlockPositioning" ><span>Total Cost</span><span class = "repairCostBoxPriceSubmissionsPage">$<%= @secondResult %> </span></p>
 </div>
 <div class = "col-sm-3">
-    <p class="text-center submissionBlockPositioning" ><span>Parts/Labor</span><span class = "repairCostBoxPriceSubmissionsPage">$260/$576</span></p>
+    <p class="text-center submissionBlockPositioning" ><span>Parts/Labor</span><span class = "repairCostBoxPriceSubmissionsPage">$<%=@secondPart%>/$<%=@secondLabor%></span></p>
 </div>
 <div class = "col-sm-2">
-    <p class="text-center submissionBlockPositioning"><span class = " rating half4star"></span><span><a href = "#review">Read Full Review</span></p>
+    <p class="text-center submissionBlockPositioning"><span class = " rating half4star"></span><span class = "reviewText" ><a href = "#review">Read Full Review</span></p>
 </div>
 <div class = "col-sm-1">
     <a href = "#submission"><i class="fa fa-caret-right submissionRepairIcon"></i></a>
@@ -124,16 +108,16 @@
   <div class = "conatiner-fluid submissionBlock"> 
     <div class = "row">
     <div class = "col-sm-3">
-    <p class="text-center submissionBox"><span class>Submission</span><span class = "shopName">Ricardos Automotive</span></p>
+    <p class="text-center submissionBox"><span class>Submission</span><span class = "shopName">xxx</span></p>
 </div>
 <div class = "col-sm-3">
-    <p class="text-center submissionBlockPositioning" ><span>Total Cost</span><span class = "repairCostBoxPriceSubmissionsPage">$260/$576</span></p>
+    <p class="text-center submissionBlockPositioning" ><span>Total Cost</span><span class = "repairCostBoxPriceSubmissionsPage">$xxx</span></p>
 </div>
 <div class = "col-sm-3">
-    <p class="text-center submissionBlockPositioning" ><span>Parts/Labor</span><span class = "repairCostBoxPriceSubmissionsPage">$260/$576</span></p>
+    <p class="text-center submissionBlockPositioning" ><span>Parts/Labor</span><span class = "repairCostBoxPriceSubmissionsPage">$xxx</span></p>
 </div>
 <div class = "col-sm-2">
-    <p class="text-center submissionBlockPositioning"><span class = " rating star4"></span><span><a href = "#review">Read Full Review</span></p>
+    <p class="text-center submissionBlockPositioning"><span class = " rating star4"></span><span class = "reviewText"><a href = "#review">Read Full Review</span></p>
 </div>
 <div class = "col-sm-1">
     <a href = "#submission"><i class="fa fa-caret-right submissionRepairIcon"></i></a>
@@ -144,16 +128,16 @@
   <div class = "conatiner-fluid submissionBlock"> 
     <div class = "row">
     <div class = "col-sm-3">
-    <p class="text-center submissionBox"><span class>Submission</span><span class = "shopName">East Town Auto Body</span></p>
+    <p class="text-center submissionBox"><span class>Submission</span><span class = "shopName">xxx</span></p>
 </div>
 <div class = "col-sm-3">
-    <p class="text-center submissionBlockPositioning" ><span>Total Cost</span><span class = "repairCostBoxPriceSubmissionsPage">$260/$576</span></p>
+    <p class="text-center submissionBlockPositioning" ><span>Total Cost</span><span class = "repairCostBoxPriceSubmissionsPage"> $xxx</span></p>
 </div>
 <div class = "col-sm-3">
-    <p class="text-center submissionBlockPositioning" ><span>Parts/Labor</span><span class = "repairCostBoxPriceSubmissionsPage">$260/$576</span></p>
+    <p class="text-center submissionBlockPositioning" ><span>Parts/Labor</span><span class = "repairCostBoxPriceSubmissionsPage">$xxx</span></p>
 </div>
 <div class = "col-sm-2">
-    <p class="text-center submissionBlockPositioning"><span class = " rating half3star"></span><span><a href = "#review">Read Full Review</span></p>
+    <p class="text-center submissionBlockPositioning"><span class = " rating half3star"></span><span class = "reviewText"><a href = "#review">Read Full Review</span></p>
 </div>
 <div class = "col-sm-1">
     <a href = "#submission"><i class="fa fa-caret-right submissionRepairIcon"></i></a>
@@ -169,13 +153,13 @@
     <p class="text-center submissionBox"><span class>Submission</span><span class = "shopName">Bennys Brakes</span></p>
 </div>
 <div class = "col-sm-3">
-    <p class="text-center submissionBlockPositioning" ><span>Total Cost</span><span class = "repairCostBoxPriceSubmissionsPage">$260/$576</span></p>
+    <p class="text-center submissionBlockPositioning" ><span>Total Cost</span><span class = "repairCostBoxPriceSubmissionsPage">$<%= @fifthResult %></span></p>
 </div>
 <div class = "col-sm-3">
-    <p class="text-center submissionBlockPositioning" ><span>Parts/Labor</span><span class = "repairCostBoxPriceSubmissionsPage">$260/$576</span></p>
+    <p class="text-center submissionBlockPositioning" ><span>Parts/Labor</span><span class = "repairCostBoxPriceSubmissionsPage">$<%=@fifthPart%>/$<%=@fifthLabor%></span></p>
 </div>
 <div class = "col-sm-2">
-    <p class="text-center submissionBlockPositioning"><span class = " rating star3"></span><span><a href = "#review">Read Full Review</span></p>
+    <p class="text-center submissionBlockPositioning"><span class = " rating star3"></span><span class = "reviewText"><a href = "#review">Read Full Review</span></p>
 </div>
 <div class = "col-sm-1">
     <a href = "#submission"><i class="fa fa-caret-right submissionRepairIcon"></i></a>
@@ -191,13 +175,13 @@
     <p class="text-center submissionBox"><span class>Submission</span><span class = "shopName">Uncle Ricos Auto &amp; Body</span></p>
 </div>
 <div class = "col-sm-3">
-    <p class="text-center submissionBlockPositioning" ><span>Total Cost</span><span class = "repairCostBoxPriceSubmissionsPage">$260/$576</span></p>
+    <p class="text-center submissionBlockPositioning" ><span>Total Cost</span><span class = "repairCostBoxPriceSubmissionsPage">$<%= @sixthResult %></span></p>
 </div>
 <div class = "col-sm-3">
-    <p class="text-center submissionBlockPositioning" ><span>Parts/Labor</span><span class = "repairCostBoxPriceSubmissionsPage">$260/$576</span></p>
+    <p class="text-center submissionBlockPositioning" ><span>Parts/Labor</span><span class = "repairCostBoxPriceSubmissionsPage">$<%=@sixthPart%>/$<%=@sixthLabor%></span></p>
 </div>
 <div class = "col-sm-2">
-    <p class="text-center submissionBlockPositioning"><span class = " rating half2star"></span><span><a href = "#review">Read Full Review</span></p>
+    <p class="text-center submissionBlockPositioning"><span class = " rating half2star"></span><span class = "reviewText"><a href = "#review">Read Full Review</span></p>
 </div>
 <div class = "col-sm-1">
     <a href = "#submission"><i class="fa fa-caret-right submissionRepairIcon"></i></a>
@@ -213,13 +197,13 @@
     <p class="text-center submissionBox"><span class>Submission</span><span class = "shopName">Shop Name</span></p>
 </div>
 <div class = "col-sm-3">
-    <p class="text-center submissionBlockPositioning" ><span>Total Cost</span><span class = "repairCostBoxPriceSubmissionsPage">$260/$576</span></p>
+    <p class="text-center submissionBlockPositioning" ><span>Total Cost</span><span class = "repairCostBoxPriceSubmissionsPage">$<%= @seventhResult %></span></p>
 </div>
 <div class = "col-sm-3">
-    <p class="text-center submissionBlockPositioning" ><span>Parts/Labor</span><span class = "repairCostBoxPriceSubmissionsPage">$260/$576</span></p>
+    <p class="text-center submissionBlockPositioning" ><span>Parts/Labor</span><span class = "repairCostBoxPriceSubmissionsPage">$<%=@seventhPart%>/$<%=@seventhLabor%></span></p>
 </div>
 <div class = "col-sm-2">
-    <p class="text-center submissionBlockPositioning"><span class = " rating star2"></span><span><a href = "#review">Read Full Review</span></p>
+    <p class="text-center submissionBlockPositioning"><span class = " rating star2"></span><span class = "reviewText"><a href = "#review">Read Full Review</span></p>
 </div>
 <div class = "col-sm-1">
     <a href = "#submission"><i class="fa fa-caret-right submissionRepairIcon"></i></a>
@@ -235,13 +219,13 @@
     <p class="text-center submissionBox"><span class>Submission</span><span class = "shopName">Shop Name</span></p>
 </div>
 <div class = "col-sm-3">
-    <p class="text-center submissionBlockPositioning" ><span>Total Cost</span><span class = "repairCostBoxPriceSubmissionsPage">$260/$576</span></p>
+    <p class="text-center submissionBlockPositioning" ><span>Total Cost</span><span class = "repairCostBoxPriceSubmissionsPage">$<%= @eighthResult %></span></p>
 </div>
 <div class = "col-sm-3">
-    <p class="text-center submissionBlockPositioning" ><span>Parts/Labor</span><span class = "repairCostBoxPriceSubmissionsPage">$260/$576</span></p>
+    <p class="text-center submissionBlockPositioning" ><span>Parts/Labor</span><span class = "repairCostBoxPriceSubmissionsPage">$<%=@eighthPart%>/$<%=@eighthLabor%></span></p>
 </div>
 <div class = "col-sm-2">
-    <p class="text-center submissionBlockPositioning"><span class = " rating half1star"></span><span><a href = "#review">Read Full Review</span></p>
+    <p class="text-center submissionBlockPositioning"><span class = " rating half1star"></span><span class = "reviewText"><a href = "#review">Read Full Review</span></p>
 </div>
 <div class = "col-sm-1">
     <a href = "#submission"><i class="fa fa-caret-right submissionRepairIcon"></i></a>
@@ -256,13 +240,13 @@
     <p class="text-center submissionBox"><span class>Submission</span><span class = "shopName">Shop Name</span></p>
 </div>
 <div class = "col-sm-3">
-    <p class="text-center submissionBlockPositioning" ><span>Total Cost</span><span class = "repairCostBoxPriceSubmissionsPage">$260/$576</span></p>
+    <p class="text-center submissionBlockPositioning" ><span>Total Cost</span><span class = "repairCostBoxPriceSubmissionsPage">$<%= @ninthResult %></span></p>
 </div>
 <div class = "col-sm-3">
-    <p class="text-center submissionBlockPositioning" ><span>Parts/Labor</span><span class = "repairCostBoxPriceSubmissionsPage">$260/$576</span></p>
+    <p class="text-center submissionBlockPositioning" ><span>Parts/Labor</span><span class = "repairCostBoxPriceSubmissionsPage">$<%=@ninthPart%>/$<%=@ninthLabor%></span></p>
 </div>
 <div class = "col-sm-2">
-    <p class="text-center submissionBlockPositioning"><span class = " rating star1"></span><span><a href = "#review">Read Full Review</span></p>
+    <p class="text-center submissionBlockPositioning"><span class = " rating star1"></span><span class = "reviewText"><a href = "#review">Read Full Review</span></p>
 </div>
 <div class = "col-sm-1">
     <a href = "#submission"><i class="fa fa-caret-right submissionRepairIcon"></i></a>
@@ -277,13 +261,13 @@
     <p class="text-center submissionBox"><span class>Submission</span><span class = "shopName">Shop Name</span></p>
 </div>
 <div class = "col-sm-3">
-    <p class="text-center submissionBlockPositioning" ><span>Total Cost</span><span class = "repairCostBoxPriceSubmissionsPage">$260/$576</span></p>
+    <p class="text-center submissionBlockPositioning" ><span>Total Cost</span><span class = "repairCostBoxPriceSubmissionsPage">$<%= @tenthResult %></span></p>
 </div>
 <div class = "col-sm-3">
-    <p class="text-center submissionBlockPositioning" ><span>Parts/Labor</span><span class = "repairCostBoxPriceSubmissionsPage">$260/$576</span></p>
+    <p class="text-center submissionBlockPositioning" ><span>Parts/Labor</span><span class = "repairCostBoxPriceSubmissionsPage">$<%=@tenthPart%>/$<%=@tenthLabor%></span></p>
 </div>
 <div class = "col-sm-2">
-    <p class="text-center submissionBlockPositioning"><span class = " rating halfstar"></span><span><a href = "#review">Read Full Review</span></p>
+    <p class="text-center submissionBlockPositioning"><span class = " rating halfstar"></span><span class = "reviewText"><a href = "#review">Read Full Review</span></p>
 </div>
 <div class = "col-sm-1">
     <a href = "#submission"><i class="fa fa-caret-right submissionRepairIcon"></i></a>
@@ -298,13 +282,13 @@
     <p class="text-center submissionBox"><span class>Submission</span><span class = "shopName">Shop Name</span></p>
 </div>
 <div class = "col-sm-3">
-    <p class="text-center submissionBlockPositioning" ><span>Total Cost</span><span class = "repairCostBoxPriceSubmissionsPage">$260/$576</span></p>
+    <p class="text-center submissionBlockPositioning" ><span>Total Cost</span><span class = "repairCostBoxPriceSubmissionsPage">$<%= @eleventhResult %></span></p>
 </div>
 <div class = "col-sm-3">
-    <p class="text-center submissionBlockPositioning" ><span>Parts/Labor</span><span class = "repairCostBoxPriceSubmissionsPage">$260/$576</span></p>
+    <p class="text-center submissionBlockPositioning" ><span>Parts/Labor</span><span class = "repairCostBoxPriceSubmissionsPage">$<%=@eleventhPart%>/$<%=@eleventhLabor%></span></p>
 </div>
 <div class = "col-sm-2">
-    <p class="text-center submissionBlockPositioning"><span class = " halfstar rating "></span><span><a href = "#review">Read Full Review</span></p>
+    <p class="text-center submissionBlockPositioning"><span class = " halfstar rating "></span><span class = "reviewText"><a href = "#review">Read Full Review</span></p>
 </div>
 <div class = "col-sm-1">
     <a href = "#submission"><i class="fa fa-caret-right submissionRepairIcon"></i></a>
@@ -318,38 +302,43 @@
 
 </div>
       </div>
-      <div class="col-xs-6 right-col backgroundVehicleImage" style = "background: url(<%= @image_link %>) no-repeat center center; background-size: auto 100%;">
+<div class = "container-fluid">
+  <div class="col-sm-6 right-col backgroundVehicleImage" style = "background: url(<%= @image_link %>) no-repeat center center; background-size: auto 100%;">
 
         <div class="my-container2">
             <div class = "topBlock text-left clutchImg">
                 <h3 >Repair Details</h3>
-                <h4><ul><%=@repair%></ul></h4>
+                <%if !(@repair.blank?)%>
+                <h4><ul>(<%=@repair%>)</ul></h4>
+                <%end%>
             </div>
             <div class = "bottomBlock text-left">
                <div class = "centerLine2"></div>
                 <div class = "detailsLeftBlock">
                   <h5 class = "detailsHeader">DESCRIPTION</h5>
-                  <p class = "detailsDescription">- The <%=@repair%> is a critical component of your vehicle. It is used to engage and disengage the power transmission. Essentially, the <%=@repair%> gives and cuts off power to your vehicle and is an important piece of your...<a href = "#moreinfo">read more</a></p>
+                  <p class = "detailsDescription">- The <%=@repair%> is a critical component of your vehicle. It is used to engage and disengage the power transmission. Essentially, the <%=@repair%> gives and cuts off power to your vehicle and is an important piece of your transmission...<a href = "#moreinfo">read more</a></p>
                   <h5 class = "detailsHeader">REPAIR/REPLACEMENT URGENCY</h5>
                   <p class = "highUrgencyLevel detailsDescription">Very High</p>
                   <h5 class = "detailsHeader">STANDARD REPLACEMENT TIME</h5>
-                  <p class = "detailsDescription">- 100,000 miles on the <%= @car %>, but this is highly variable on <%=@repair%> shift time and driving style. Individuals experienced in driving manual transmission cars may see more lengevity from their <%=@repair%>.</p>
+                  <p class = "detailsDescription">- 100,000 miles on BMW M3's, but this is highly variable on clutch shift time and driving style. Individuals experienced in driving manual transmission cars may see more lengevity from their clutch.</p>
             </div>
             <div class = "detailsRightBlock">
-                <h5 class = "detailsHeader">SYMPTOMS OF <%=@repair%> PROBLEMS</h5>
+                <h5 class = "detailsHeader">SYMPTOMS OF CLUTCH PROBLEMS</h5>
                 <p class = "detailsDescription">- Slipping or missing gears, burnt smell from under hood, loose <%=@repair%> pedal, 'spongy' <%=@repair%>, <a href = "#seemore">see all</a></p>
                 <h5 class = "detailsHeader">IF THIS PART IS NOT REPLACED IMMEDIATELY</h5>
                 <p class = "detailsDescription">- You can anticipate major complications while attempting to start your car, drive, or shift gears. It is recommended that this is repaired immediately and the vehicle should not be driven, even to the mechanic/auto shop.</p>
-                <h5 class = "detailsHeader">ASSOCIATED DIAGNOOSTIC FAULT CODES</h5>
+                <h5 class = "detailsHeader">ASSOCIATED DIAGNOSTIC FAULT CODES</h5>
                 <p class = "detailsDescription">- 0028, 0029, 0031, 0035, <a href = "#seeall">see all</a></p>
             </div>
             </div>
     <%= image_tag("mesh.png" ,class: "img-responsive") %>
     <%= image_tag("black.png" ,class: "img-responsive") %>
+
 </div>
 
 
   </div>
+</div>
 
   <!--<p class="repairCostBox"><span>Owner Rating</span><span class = "repairCostBoxPrice">4.5/5</span></p>
                         <p class="repairCostBox"><span>Maintenance Rating</span><span class = "repairCostBoxPrice">$$$</span></p>

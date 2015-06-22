@@ -8,10 +8,12 @@
                         <h3>Be An Expert on Your Car Repairs</h3>
                         <div class = "howButton">
                                 <a href = "#how" class="btn btn-default btn-md page-scroll"> <span class="network-name">How?</span></a>
+                                <br>
+                                <br>
                                 <%= form_tag(anautomy_homepage_path(:controller => "anautomy", :action => "homepage"), :method => "get") do%>
-                                <%= text_field_tag :car_type %>
-                                <%= text_field_tag :repair %>
-                                <%= submit_tag "Send input" %>
+                                <%= text_field_tag :car_type, params[:null], :class => "input-field", placeholder: 'Car Type' %>
+                                <%= text_field_tag :repair, params[:null], :class => "input-field", placeholder: 'Repair'%>
+                                <%= submit_tag "Search", :class => "input-field" %>
                                 <% end %>
                         </div>
                         <!--<hr class="intro-divider"> -->
