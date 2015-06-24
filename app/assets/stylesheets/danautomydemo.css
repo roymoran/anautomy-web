@@ -1444,7 +1444,7 @@ h1:before {
 
 }
 .diagnostic_custom_btn{
-  border: none;
+  border: 1px solid #3E8736;
 
   -webkit-border-radius: 0;
     -moz-border-radius: 0;
@@ -1458,6 +1458,7 @@ h1:before {
 }
 .diagnostic_app_btn_text{
   text-transform: uppercase;
+  
   background-color: #3E8736;
   background-size: 100%;
   background-size: 100%;
