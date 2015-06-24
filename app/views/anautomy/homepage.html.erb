@@ -145,7 +145,7 @@
             </div>
             <div class = "row">
                 <div class =  "col-md-6 col-md-offset-3" style = "padding-top: 55px;">
-                <h5 class = "text-center launch-message">We'll be launching soon. Get on our email list for an invitation to our beta launch.</h5>
+                <h5 class = "text-center launch-message">We'll be launching soon. Get on our email list for an invitation to our private beta launch.</h5>
             </div>
             <!--
             <div class = "col-md-3">
@@ -162,22 +162,23 @@
             <div class = "row" >
                 <div class =  "col-md-6 col-md-offset-3 ">
                 <div class = "row">
+                    <%= form_for @subscriber, :html => {:class => ''}, remote: true do |f|%>
                     <div class = "col-sm-5">
                     <div class="form-group ">
                         <label class = "sr-only">Email</label>
-                        <input type="email" class="form-control form-custom" placeholder="EMAIL">
+                         <%= f.email_field :email, class: 'form-control form-custom', :placeholder => "EMAIL"%>
                     </div>
                     </div>
                     <div class = "col-sm-5">
                     <div class="form-group">
                         <label class = "sr-only">Zip Code</label>
-                        <input type="text" class="form-control form-custom" placeholder="ZIP CODE">
+                        <%= f.text_field :zip, class: 'form-control form-custom', :placeholder => "ZIP CODE"%>
                     </div>
                 </div>
                 <div class = "col-sm-2">
-                    <button type="submit" class="btn btn-custom">Notify Me</button>
+                    <%= f.submit "LET ME IN", class: "btn btn-custom" %>
                 </div>
-                
+                 <% end %>
             </div>
             </div>
         </div>
@@ -194,7 +195,8 @@
 <br>
 <br>
 <br>
-
+<br>
+<br>
 <!-- whats next section -->
 <div class = "conatiner-fluid">
     <div class = "row">
@@ -211,11 +213,11 @@
         <div class =  "col-sm-4 col-md-offset-1">
             <h3 class = "next_section_heading">Make a submission</h3>
                 
-                  <p class="next_section_subheading">Your initial submissions are critical in creating our initial database of information. This pricing info is the driver behind the transparency that Anautomy will bring.</p>
+                  <p class="next_section_subheading">Your submissions are critical in continuing the growth of information. This pricing information is the driver behind the transparency that Anautomy will bring.</p>
               
                 <h3 class = "next_section_heading">What's in it for you?</h3>
                 
-                  <p class="next_section_subheading">Initial submitters will have lifetime access to Anautomy, be the first to test drive any new features, and have priority access to our beta test when we launch.</p>
+                  <p class="next_section_subheading">Early submitters will have lifetime access to Anautomy, be the first to test drive any new features, and have priority access to our beta test when we launch.</p>
                 
                 <h3 class = "next_section_heading">Where's the information going?</h3>
                 
@@ -223,6 +225,7 @@
                 
         </div>
         <div class =  "col-sm-6">
+            <%= form_for @repairSubmission, :html => {:class => ''}, remote: true do |f|%>
             <div class = "row">
                 <div class = "col-lg-4">
                     <div class = "small_form_title">
@@ -245,20 +248,20 @@
             <div class = "row">
                     <div class = "col-sm-4">
                         <div class="form-group ">
-                            <label class = "sr-only">Name</label>
-                            <input type="text" class="form-control form-custom" placeholder="NAME">
+                            <label class = "sr-only">First Name</label>
+                            <%= f.text_field :name, class: 'form-control form-custom', :placeholder => "FIRST NAME*"%>
                         </div>
                     </div>
                     <div class = "col-sm-4">
                         <div class="form-group ">
                             <label class = "sr-only">Email</label>
-                             <input type="email" class="form-control form-custom" placeholder="EMAIL">
+                             <%= f.email_field :email, class: 'form-control form-custom', :placeholder => "EMAIL*"%>
                         </div>
                     </div>
                     <div class = "col-sm-4">
                         <div class="form-group">
                             <label class = "sr-only">Zip Code</label>
-                            <input type="text" class="form-control form-custom" placeholder="ZIP CODE">
+                            <%= f.text_field :zip, class: 'form-control form-custom', :placeholder => "ZIP CODE*"%>
                         </div>
                     </div>
             </div>
@@ -283,33 +286,30 @@
             </div>
             <div class = "row">
                     <div class = "col-sm-4">
-                        <div class="form-group ">
-                            <label class = "sr-only">Year</label>
-                            <input type="text" class="form-control form-custom" placeholder="YEAR">
-                        </div>
+                        <%= f.select(:vehicleYear, options_for_select((Time.zone.now.year - 100)..(Time.zone.now.year), :selected => (Time.zone.now.year)), {}, {class: "select_submission_form"}) %>
                     </div>
                     <div class = "col-sm-4">
                         <div class="form-group ">
                             <label class = "sr-only">Make</label>
-                             <input type="text" class="form-control form-custom" placeholder="MAKE">
+                              <%= f.text_field :vehicleMake, class: 'form-control form-custom', :placeholder => "MAKE*"%>
                         </div>
                     </div>
                     <div class = "col-sm-4">
                         <div class="form-group">
                             <label class = "sr-only">Model</label>
-                            <input type="text" class="form-control form-custom" placeholder="MODEL">
+                             <%= f.text_field :vehicleModel, class: 'form-control form-custom', :placeholder => "MODEL*"%>
                         </div>
                     </div>
                     <div class = "col-sm-4">
                         <div class="form-group ">
                             <label class = "sr-only">Vehicle Trime</label>
-                             <input type="text" class="form-control form-custom" placeholder="VEHICLE TRIM">
+                             <%= f.text_field :vehicleTrim, class: 'form-control form-custom', :placeholder => "TRIM*"%>
                         </div>
                     </div>
                     <div class = "col-sm-4">
                         <div class="form-group">
                             <label class = "sr-only">Mileage</label>
-                            <input type="text" class="form-control form-custom" placeholder="MILEAGE">
+                            <%= f.text_field :vehicleMileage, class: 'form-control form-custom', :placeholder => "MILEAGE"%>
                         </div>
                     </div>
             </div>
@@ -336,19 +336,19 @@
                 <div class = "col-sm-4">
                         <div class="form-group ">
                             <label class = "sr-only">Repair Name</label>
-                            <input type="text" class="form-control form-custom" placeholder="REPAIR NAME">
+                            <%= f.text_field :repairDescription, class: 'form-control form-custom', :placeholder => 'REPAIR NAME*'%>
                         </div>
                     </div>
                     <div class = "col-sm-4">
                         <div class="form-group ">
                             <label class = "sr-only">Parts Cost</label>
-                             <input type="text" class="form-control form-custom" placeholder="PARTS COST">
+                             <%= f.text_field :partsCost, class: 'form-control form-custom', :placeholder => "PARTS COST*"%>
                         </div>
                     </div>
                     <div class = "col-sm-4">
                         <div class="form-group">
                             <label class = "sr-only">Labor Cost</label>
-                            <input type="text" class="form-control form-custom" placeholder="LABOR COST">
+                            <%= f.text_field :laborCost, class: 'form-control form-custom', :placeholder => "LABOR COST*"%>
                         </div>
                     </div>
             </div>
@@ -375,30 +375,30 @@
                 <div class = "col-sm-4">
                         <div class="form-group ">
                             <label class = "sr-only">Shop Name</label>
-                            <input type="text" class="form-control form-custom" placeholder="SHOP NAME">
+                            <%= f.text_field :shopName, class: 'form-control form-custom', :placeholder => "SHOP NAME*"%>
                         </div>
                     </div>
                     <div class = "col-sm-4">
                         <div class="form-group ">
                             <label class = "sr-only">City State</label>
-                             <input type="text" class="form-control form-custom" placeholder="CITY/STATE">
+                             <%= f.text_field :shopCityState, class: 'form-control form-custom', :placeholder => "SHOP CITY/STATE*"%>
                         </div>
                     </div>
             </div>
             <div class = "row">
                 <div class = "col-sm-12">
                         <div class="form-group">
-                            <label class = "sr-only"></label>
-                            <input type="text_area" class="form-control form-custom" row = "5" cols = "71" placeholder="GIVE US A SHORT DESCRIPTION OF YOUR EXPERIENCE HERE!">
+                            <label class = "sr-only">Review</label>
+                            <%= f.text_area :review, class: 'form-control form-custom',:rows => 5, :cols => 71,  :placeholder => "GIVE US A SHORT DESCRIPTION OF YOUR EXPERIENCE HERE! (OPTIONAL)"%>
                         </div>
                     </div>
                 </div>
                 <div class = "row" style = "padding-bottom: 50px;">
                      <div class =  "col-md-12">
-                    <button type="submit" class="btn btn-custom btn-block">Submit</button>
+                    <%= f.submit "SHARE", class: "btn btn-custom btn-block" %>
                 </div>
                 </div>
-                
+                <% end %>
         </div>
     </div>
 
