@@ -46,6 +46,8 @@ src: url("MyriadPro-Cond.otf") format("opentype");
 
 
 .navbar-static-top .navbar-brand {
+  background: url("logo-rim.svg");
+  background-size: 100px 82px;
     padding: 35px 0;
 }
 
@@ -1462,7 +1464,7 @@ h1:before {
   text-transform: uppercase;
   background-color: #3E8736;
   color: white;
-  font-size: 1em;
+  font-size: 0.9em;
   padding-top: 13px;
   -webkit-border-radius: 0;
     -moz-border-radius: 0;
@@ -1519,9 +1521,7 @@ padding-top: 100px;
 padding-bottom: 100px;
 
 }
-.layoutContainer{
-  position: relative; 
-}
+
 .banner_how{
   background: url('https://i.imgur.com/TbQHSds.png') no-repeat;
      /* Set rules to fill background */
@@ -1574,39 +1574,33 @@ padding-bottom: 100px;
   font-weight: 400;
   font-size:1.3em;
 }
-.meshOverlay{
-  position: absolute;
-  top:0;
- right:0;
-
-    opacity: 0.54;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
-.blackOverlay{
-   position: absolute;
-  top:0;
- right:0;
-
-    opacity: 0.54;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+.banner_next{
+  background: url('https://i.imgur.com/LxJZzKJ.png') no-repeat;
+     /* Set rules to fill background */
+  background-size: cover;
+  min-height: 800px;
 }
 .greenHeader{
-  position: absolute;
-  top:0;
- right:0;
-
-    opacity: 0.85;
+  background-color: rgba(82,187,73,0.6) !important;
     width: 100%;
     height: 130px;
     overflow: hidden;
-    z-index: 2;
     background-color: #52BB49;
 }
-
+.next_section_heading{
+  text-transform: uppercase;
+  color: white;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+  font-size:2.3em;
+}
+.next_section_subheading{
+  color: white;
+  font-family: 'MyriadPro-Regular', sans-serif;
+  font-weight: normal;
+  font-size:1.5em;
+  padding-top: 35px;
+}
 .bannerText{
 text-transform: uppercase; 
 text-align: center; 
@@ -1615,14 +1609,7 @@ font-family: 'Josefin Sans', sans-serif;
   font-weight: 400;
   font-size: 2em;
 }
-.nextmaintext{
-  position: absolute;
-  top:160px;
- right:0;
-    overflow: hidden;
-    color: white;
-    z-index: 2;
-}
+
 .btn-custom {
   background: rgba(69, 134, 52, 0.7) !important;
   opacity: 0.7;
