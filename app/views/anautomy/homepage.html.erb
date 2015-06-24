@@ -22,15 +22,15 @@
                         </div>
                         <br>
                         <div class = "row">
-                            <form>
+                                <%= form_tag(anautomy_homepage_path(:controller => "anautomy", :action => "homepage"), :method => "get") do%>
                             <div class =  "col-xs-3 col-xs-offset-4">
                                 <div class="form-group ">
                                     <label class = "sr-only">What kind of car?</label>
-                                    <input type="email" class="form-control main_form_custom" placeholder="WHAT KIND OF CAR?">
+                                    <%= text_field_tag :car_type, params[:null], :class => "form-control main_form_custom", placeholder: 'WHAT KIND OF CAR?' %>
                                 </div>
                                 <div class="form-group">
                                     <label class = "sr-only">What Repair?</label>
-                                    <input type="text" class="form-control main_form_custom" placeholder="WHAT REPAIR?">
+                                    <%= text_field_tag :repair, params[:null], :class => "form-control main_form_custom", placeholder: 'WHAT REPAIR?'%>
                                 </div>
                             </div>
                             <div class =  "col-xs-1">
@@ -38,26 +38,28 @@
                                     <i class="fa fa-search fa-inverse fa-2x" style = "color: #52BB49"></i>
                                 </button>
                             </div>
-                            </form>
+                             <% end %>
                         </div>
-                        <div class = "row text-center">
+                        <div class = "row text-center" style = "padding-top: 50px;">
                             <div class =  "col-xs-4 col-xs-offset-2">
                                 <span class "main_lower_message">Something's wrong...But I don't know what.</span>
-                                <i class="fa fa-angle-down" style = "color: #52BB49; display: block;"></i>
-                                <button type="button" class="btn diagnostic_custom_btn">
-                                    <div class = "diagnostic_app_btn_text" style = "display: inline-block;">download diagnostic app</div>
-                                    
-                                    <i class="fa fa-download"></i>
-
-                                </button>
+                                <i class="fa fa-angle-down" style = "color: #52BB49; display: block; padding-bottom: 5px; font-size: 1.5em;"></i>
+                                <a href = "#link">
+                                <div class="input-group margin-bottom-sm">
+                                    <div class = "diagnostic_app_btn_text form-control">submit diagnostics report </div>
+                                    <span class="input-group-addon diagnostic_app_icon_background"><i class="fa fa-download diagnostic_app_icon fa-lg"></i></span>
+                                </div>
+                            </a>
                             </div>
                             <div class =  "col-xs-4">
                                 <span class "main_lower_message">Have the app already?</span>
-                                <i class="fa fa-angle-down" style = "color: #52BB49; display: block;"></i>
-                                <button type="button" class="btn diagnostic_custom_btn">
-                                    <div class = "diagnostic_report_btn_text" style = "display: inline-block;">submit diagnostic report </div>
-                                    <i class="fa fa-share"></i>
-                                </button>
+                                <i class="fa fa-angle-down" style = "color: #52BB49; display: block; padding-bottom: 5px; font-size: 1.5em;"></i>
+                                <a href = "#link">
+                                <div class="input-group margin-bottom-sm">
+                                    <div class = "diagnostic_report_btn_text form-control">submit diagnostics report </div>
+                                    <span class="input-group-addon diagnostic_report_icon_background"><i class="fa fa-share diagnostic_report_icon fa-lg"></i></span>
+                                </div>
+                            </a>
                             </div>
                         </div>
                     </div>

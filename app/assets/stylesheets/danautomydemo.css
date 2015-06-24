@@ -1352,13 +1352,13 @@ h1:before {
     min-height:600px;
 }
 .background_main_mesh{
-  background: url('https://i.imgur.com/LSJe7oG.png');
+  background: url('httpd://i.imgur.com/Dqe512x.png');
   min-height: 400px;
-  opacity: 0.7;
+  /*opacity: 0.7;*/
   margin: auto 0;
 }
 .background_main_black{
-  background-color: rgba(0,0,0,0.95);
+  background-color: rgba(0,0,0,0.57);
   min-height: 400px;
   /*opacity: 0.95;*/
 }
@@ -1413,7 +1413,7 @@ h1:before {
   .main_form_custom{
   background: white !important;
   border: none;
-  color: #FFFFFF !important;
+  color: #000000 !important;
   text-transform: uppercase;
 
 
@@ -1445,7 +1445,7 @@ h1:before {
 }
 .diagnostic_custom_btn{
   border: 1px solid #3E8736;
-
+  height: 40px;
   -webkit-border-radius: 0;
     -moz-border-radius: 0;
     border-radius: 0;
@@ -1458,13 +1458,49 @@ h1:before {
 }
 .diagnostic_app_btn_text{
   text-transform: uppercase;
-  
   background-color: #3E8736;
-  background-size: 100%;
-  background-size: 100%;
+  color: white;
+  font-size: 1em;
+  padding-top: 10px;
+  -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    border: none;
+
+  }
+.diagnostic_app_icon{
+    color: #FFFFFF;
+
+}
+.diagnostic_app_icon_background{
+    background-color: #5A5A5A;
+    
+  -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    border: none;
+}
+.diagnostic_report_icon_background{
+  background-color: #5A5A5A;
+  -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    border: none;
+
 }
 .diagnostic_report_btn_text{
   text-transform: uppercase;
+  background-color: white;
+  font-size: 1em;
+  padding-top: 10px;
+  -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    border: none;
+}
+.diagnostic_report_icon{
+  background-color: #5A5A5A;
+  color: #52BB49;
 }
 .bg { /*not used*/
   position: relative; 
