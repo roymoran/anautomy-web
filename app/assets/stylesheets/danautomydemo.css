@@ -1349,7 +1349,7 @@ h1:before {
     color: #f8f8f8;
     background: url('https://i.imgur.com/3ehjM2L.png') no-repeat center center;
     background-size: cover;
-    min-height:600px;
+    min-height:700px;
 }
 .background_main_mesh{
   background: url('httpd://i.imgur.com/Dqe512x.png');
@@ -1441,6 +1441,7 @@ h1:before {
   font-family: "MyriadPro-Cond", sans-serif;
   font-size: 1em;
   text-align: center;
+  min-width: 200px;
 
 }
 .diagnostic_custom_btn{
@@ -1456,12 +1457,13 @@ h1:before {
     -o-transition: background .2s ease-in-out, border .2s ease-in-out;
     transition: background .2s ease-in-out, border .2s ease-in-out;
 }
+
 .diagnostic_app_btn_text{
   text-transform: uppercase;
   background-color: #3E8736;
   color: white;
   font-size: 1em;
-  padding-top: 10px;
+  padding-top: 13px;
   -webkit-border-radius: 0;
     -moz-border-radius: 0;
     border-radius: 0;
@@ -1474,7 +1476,7 @@ h1:before {
 }
 .diagnostic_app_icon_background{
     background-color: #5A5A5A;
-    
+
   -webkit-border-radius: 0;
     -moz-border-radius: 0;
     border-radius: 0;
@@ -1492,7 +1494,7 @@ h1:before {
   text-transform: uppercase;
   background-color: white;
   font-size: 1em;
-  padding-top: 10px;
+  padding-top: 13px;
   -webkit-border-radius: 0;
     -moz-border-radius: 0;
     border-radius: 0;
@@ -1521,10 +1523,10 @@ padding-bottom: 100px;
   position: relative; 
 }
 .banner_how{
-  background: url('https://i.imgur.com/jOdKHFC.png') no-repeat;
+  background: url('https://i.imgur.com/TbQHSds.png') no-repeat;
      /* Set rules to fill background */
   background-size: cover;
-  min-height: 400px;
+  min-height: 500px;
 }
 .how_title{
   text-transform: uppercase;
@@ -1556,6 +1558,7 @@ padding-bottom: 100px;
 /* centered columns styles */
 .row-centered {
     text-align:center;
+    padding-top: 80px;
 }
 .col-centered {
     display:inline-block;
@@ -1621,8 +1624,8 @@ font-family: 'Josefin Sans', sans-serif;
     z-index: 2;
 }
 .btn-custom {
-  background: rgba(69, 134, 52, 0.5) !important;
-  opacity: 0.5;
+  background: rgba(69, 134, 52, 0.7) !important;
+  opacity: 0.7;
   border: 1px solid #FFFFFF;
   color: #FFFFFF !important;
   float: right;

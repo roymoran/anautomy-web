@@ -23,7 +23,7 @@
                         <br>
                         <div class = "row">
                                 <%= form_tag(anautomy_homepage_path(:controller => "anautomy", :action => "homepage"), :method => "get") do%>
-                            <div class =  "col-xs-3 col-xs-offset-4">
+                            <div class =  "col-xs-5 col-xs-offset-3">
                                 <div class="form-group ">
                                     <label class = "sr-only">What kind of car?</label>
                                     <%= text_field_tag :car_type, params[:null], :class => "form-control main_form_custom", placeholder: 'WHAT KIND OF CAR?' %>
@@ -34,29 +34,31 @@
                                 </div>
                             </div>
                             <div class =  "col-xs-1">
-                                <button type="button" class="btn main_btn_custom">
-                                    <i class="fa fa-search fa-inverse fa-2x" style = "color: #52BB49"></i>
-                                </button>
+                                
+                                <%= button_tag(type: "submit", class: "btn main_btn_custom") do %>
+                                <i class="fa fa-search fa-inverse fa-2x" style = "color: #52BB49"></i>
+                                <% end %>
                             </div>
                              <% end %>
                         </div>
                         <div class = "row text-center" style = "padding-top: 50px;">
-                            <div class =  "col-xs-4 col-xs-offset-2">
+                            <div class =  "col-sm-5 col-sm-offset-1">
                                 <span class "main_lower_message">Something's wrong...But I don't know what.</span>
                                 <i class="fa fa-angle-down" style = "color: #52BB49; display: block; padding-bottom: 5px; font-size: 1.5em;"></i>
-                                <a href = "#link">
+                                <a href = "#link" style = "height: 40px">
                                 <div class="input-group margin-bottom-sm">
-                                    <div class = "diagnostic_app_btn_text form-control">submit diagnostics report </div>
+                                    <div class = "diagnostic_app_btn_text form-control" style = "height: 40px">download the diagnostics app </div>
                                     <span class="input-group-addon diagnostic_app_icon_background"><i class="fa fa-download diagnostic_app_icon fa-lg"></i></span>
+
                                 </div>
                             </a>
                             </div>
-                            <div class =  "col-xs-4">
+                            <div class =  "col-sm-5">
                                 <span class "main_lower_message">Have the app already?</span>
                                 <i class="fa fa-angle-down" style = "color: #52BB49; display: block; padding-bottom: 5px; font-size: 1.5em;"></i>
-                                <a href = "#link">
+                                <a href = "#link" style = "height: 40px">
                                 <div class="input-group margin-bottom-sm">
-                                    <div class = "diagnostic_report_btn_text form-control">submit diagnostics report </div>
+                                    <div class = "diagnostic_report_btn_text form-control" style = "height: 40px">submit diagnostics report </div>
                                     <span class="input-group-addon diagnostic_report_icon_background"><i class="fa fa-share diagnostic_report_icon fa-lg"></i></span>
                                 </div>
                             </a>
@@ -110,7 +112,7 @@
                     <div class = "how_title">
                         how anautomy works
                     </div>
-                    <div class =  "col-md-6 col-md-offset-3">
+                    <div class =  "col-md-6 col-md-offset-3" style = "padding-bottom: 30px;">
                         <hr class = "how_title_divider">
                     </div>
                 </div>
@@ -121,14 +123,14 @@
 
             <i class="fa fa-search fa-inverse fa-3x"></i>
                   
-                    <div class = "how_subtitle">Find</div>
+                    <div class = "how_subtitle" style = "padding-top: 20px;">Find</div>
                     <p class = "how_text">Find your car and the repair you need through our powerful search tool.</p>
             
         </div>
         <div class="col-sm-3 col-centered">
             <i class="fa fa-eye fa-inverse fa-3x"></i>
 
-                    <h4 class="how_subtitle">Browse</h4>
+                    <h4 class="how_subtitle" style = "padding-top: 15px;">Browse</h4>
                     <p class=" how_text">See how much others are paying on the same repair for your vehicle.</p>
         </div>
         
@@ -136,13 +138,13 @@
 
             <i class="fa fa-usd fa-inverse fa-3x"></i>
                 
-                    <h4 class="how_subtitle">Save</h4>
+                    <h4 class="how_subtitle" style = "padding-top: 15px;">Save</h4>
                     <p class=" how_text">Find the best place to get the repair done for a price that you know is fair.</p>
         </div>
     </div>
             </div>
             <div class = "row">
-                <div class =  "col-md-6 col-md-offset-3">
+                <div class =  "col-md-6 col-md-offset-3" style = "padding-top: 55px;">
                 <h5 class = "text-center launch-message">We'll be launching soon. Get on our email list for an invitation to our beta launch.</h5>
             </div>
             <!--
@@ -157,8 +159,8 @@
             </div>-->
 
             </div>
-            <div class = "row">
-                <div class =  "col-md-6 col-md-offset-3">
+            <div class = "row" >
+                <div class =  "col-md-6 col-md-offset-3 ">
                 <div class = "row">
                     <div class = "col-sm-5">
                     <div class="form-group ">
@@ -178,10 +180,9 @@
                 
             </div>
             </div>
-
-
-
         </div>
+        <br>
+        
     </div>
    </div>
     </div>
