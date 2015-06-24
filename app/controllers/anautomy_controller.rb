@@ -66,6 +66,10 @@ class AnautomyController < ApplicationController
     @image_link = session[:image_link]
     @car = session[:current_car]
     @repair = session[:current_repair]
+
+    @low_range = (@average_repair_cost-(@average_repair_cost*0.35)).round
+    @high_range = (@average_repair_cost+(@average_repair_cost*0.35)).round
+
   end
 
   def submissions

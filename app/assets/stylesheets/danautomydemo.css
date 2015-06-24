@@ -6,6 +6,9 @@
 
 @import url(http://fonts.googleapis.com/css?family=Josefin+Sans:400,500,600|Roboto:700,400,500);
 
+html, body {
+    height:100%;
+} 
 
 body, html {
     padding-top: 0; /* Required padding for .navbar-fixed-top. Change if height of navigation changes. */
@@ -13,7 +16,19 @@ body, html {
     
     /*font-size: 100%;*/
 }
+@media (max-width: @screen-xs) {
+    body{font-size: 10px;}
+}
 
+@media (max-width: @screen-sm) {
+    body{font-size: 14px;}
+}
+
+@font-face {
+font-family: 'myriadpro', 'MyriadPro-Cond';
+src: url("MyriadPro-Regular.otf") format("opentype");
+src: url("MyriadPro-Cond.otf") format("opentype");
+}
 
 .greenCar{
 	color: #52BB49;
@@ -439,12 +454,12 @@ body, html {
 
   position: absolute;
   right: -1px;
-  top: -1px;
+  top: -15px;
    padding-left: 13px;
    padding-right: 8px;
    padding-bottom: 45px;
    padding-top: 45px;
-   margin-right: -1px;
+   margin-right: -10px;
 
 }
 
@@ -464,12 +479,12 @@ display: block;
 
   position: absolute;
   right: -1px;
-  top: -1px;
+  top: -15px;
    padding-left: 13px;
    padding-right: 8px;
    padding-bottom: 45px;
    padding-top: 45px;
-   margin-right: -1px;
+   margin-right: -10px;
 
 }
 #top_repair div span, #top_repair2 div span, #top_repair3 div span{
@@ -1329,6 +1344,307 @@ h1:before {
   padding-top: 50px;
 }
 
-.input-field{
-  color: black;
+/*Homepage*/
+.banner_jaguar{
+    color: #f8f8f8;
+    background: url('https://i.imgur.com/3ehjM2L.png') no-repeat center center;
+    background-size: cover;
+    min-height:600px;
+}
+.background_main_mesh{
+  background: url('https://i.imgur.com/LSJe7oG.png');
+  min-height: 400px;
+  opacity: 0.7;
+  margin: auto 0;
+}
+.background_main_black{
+  background-color: rgba(0,0,0,0.95);
+  min-height: 400px;
+  /*opacity: 0.95;*/
+}
+
+.main_heading{
+  padding-top: 10px;
+  text-align: center;
+  font-family: "MyriadPro-Regular", sans-serif;
+  font-weight: bold;
+  font-size: 4.5em;
+  color: rgba(255, 255, 255, 1);
+
+}
+.main_heading_divider{
+  width: 94%;
+  border-color: #52BB49;
+  margin-top: -5px;
+  color: rgba(255, 255, 255, 1);
+  }
+.main_subheading{
+ text-align: center;
+ font-family: "MyriadPro-Regular", sans-serif;
+  font-weight: normal;
+  letter-spacing: 0.1em;
+  font-size: 2em;
+ color: rgba(255, 255, 255, 1);
+  }
+  .main_btn_custom{
+    background: #5A5A5A !important;
+    border: none;
+    color: #52BB49 !important;
+    height: 84px;
+    width: 58px;
+    margin-left: -8px;
+
+
+
+    
+    color: #FDFDFD;
+
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    /* CSS Transition */
+    -webkit-transition: background .2s ease-in-out, border .2s ease-in-out;
+    -moz-transition: background .2s ease-in-out, border .2s ease-in-out;
+    -ms-transition: background .2s ease-in-out, border .2s ease-in-out;
+    -o-transition: background .2s ease-in-out, border .2s ease-in-out;
+    transition: background .2s ease-in-out, border .2s ease-in-out;
+  }
+
+  .main_form_custom{
+  background: white !important;
+  border: none;
+  color: #FFFFFF !important;
+  text-transform: uppercase;
+
+
+  -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+
+ .main_form_custom:focus {
+  -webkit-box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.075), 0 0 0 rgba(82, 168, 236, 0.6);
+          box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.075), 0 0 0 rgba(82, 168, 236, 0.6);
+  -webkit-box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.075), 0 0 0 rgba(102, 175, 233, 0.6);
+         box-shadow: inset 0 0 0rgba(0, 0, 0, 0.075), 0 0 0 rgba(102, 175, 233, 0.6);
+         border-color: none;
+ }
+  .main_form_custom:active {
+  -webkit-box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.075), 0 0 0 rgba(82, 168, 236, 0.6);
+          box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.075), 0 0 0 rgba(82, 168, 236, 0.6);
+  -webkit-box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.075), 0 0 0 rgba(102, 175, 233, 0.6);
+         box-shadow: inset 0 0 0rgba(0, 0, 0, 0.075), 0 0 0 rgba(102, 175, 233, 0.6);
+         border-color: none;
+ }
+.main_lower_message{
+  color: white;
+  font-family: "MyriadPro-Cond", sans-serif;
+  font-size: 1em;
+  text-align: center;
+
+}
+.diagnostic_custom_btn{
+  border: none;
+
+  -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    /* CSS Transition */
+    -webkit-transition: background .2s ease-in-out, border .2s ease-in-out;
+    -moz-transition: background .2s ease-in-out, border .2s ease-in-out;
+    -ms-transition: background .2s ease-in-out, border .2s ease-in-out;
+    -o-transition: background .2s ease-in-out, border .2s ease-in-out;
+    transition: background .2s ease-in-out, border .2s ease-in-out;
+}
+.diagnostic_app_btn_text{
+  text-transform: uppercase;
+  background-color: #3E8736;
+  background-size: 100%;
+  background-size: 100%;
+}
+.diagnostic_report_btn_text{
+  text-transform: uppercase;
+}
+.bg { /*not used*/
+  position: relative; 
+  top: 0; 
+  left: 0; 
+  
+  /* Preserve aspet ratio */
+  min-width: 100%;
+  min-height: 100%;
+  clear: both;
+}
+.whySectionPositioning{
+padding-top: 100px;
+padding-bottom: 100px;
+
+}
+.layoutContainer{
+  position: relative; 
+}
+.banner_how{
+  background: url('https://i.imgur.com/jOdKHFC.png') no-repeat;
+     /* Set rules to fill background */
+  background-size: cover;
+  min-height: 400px;
+}
+.how_title{
+  text-transform: uppercase;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+  font-size: 2.5em;
+  color: white;
+  text-align: center;
+  padding-top: 20px;
+  }
+  .how_title_divider{
+    width: 33%;
+
+  }
+  .how_subtitle{
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 2.5em;
+    color: white;
+  }
+  .how_text{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 1.3em;
+    color: white;
+  }
+
+/* centered columns styles */
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align: center;
+    /* inline-block space fix */
+    margin-right:-4px;
+}
+.launch-message{
+  color: white;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+  font-size:1.3em;
+}
+.meshOverlay{
+  position: absolute;
+  top:0;
+ right:0;
+
+    opacity: 0.54;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.blackOverlay{
+   position: absolute;
+  top:0;
+ right:0;
+
+    opacity: 0.54;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.greenHeader{
+  position: absolute;
+  top:0;
+ right:0;
+
+    opacity: 0.85;
+    width: 100%;
+    height: 130px;
+    overflow: hidden;
+    z-index: 2;
+    background-color: #52BB49;
+}
+
+.bannerText{
+text-transform: uppercase; 
+text-align: center; 
+padding-top: 55px;
+font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+  font-size: 2em;
+}
+.nextmaintext{
+  position: absolute;
+  top:160px;
+ right:0;
+    overflow: hidden;
+    color: white;
+    z-index: 2;
+}
+.btn-custom {
+  background: rgba(69, 134, 52, 0.5) !important;
+  opacity: 0.5;
+  border: 1px solid #FFFFFF;
+  color: #FFFFFF !important;
+  float: right;
+
+    
+    color: #FDFDFD;
+
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    /* CSS Transition */
+    -webkit-transition: background .2s ease-in-out, border .2s ease-in-out;
+    -moz-transition: background .2s ease-in-out, border .2s ease-in-out;
+    -ms-transition: background .2s ease-in-out, border .2s ease-in-out;
+    -o-transition: background .2s ease-in-out, border .2s ease-in-out;
+    transition: background .2s ease-in-out, border .2s ease-in-out;
+}
+
+.form-custom{
+  background: rgba(187, 187, 189, 0.5) !important;
+  border: 1px solid #FFFFFF;
+  color: #FFFFFF !important;
+  text-transform: uppercase;
+
+
+  -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+
+ .form-custom:focus {
+  -webkit-box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.075), 0 0 0 rgba(82, 168, 236, 0.6);
+          box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.075), 0 0 0 rgba(82, 168, 236, 0.6);
+  -webkit-box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.075), 0 0 0 rgba(102, 175, 233, 0.6);
+         box-shadow: inset 0 0 0rgba(0, 0, 0, 0.075), 0 0 0 rgba(102, 175, 233, 0.6);
+         border-color: none;
+ }
+  .form-custom:active {
+  -webkit-box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.075), 0 0 0 rgba(82, 168, 236, 0.6);
+          box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.075), 0 0 0 rgba(82, 168, 236, 0.6);
+  -webkit-box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.075), 0 0 0 rgba(102, 175, 233, 0.6);
+         box-shadow: inset 0 0 0rgba(0, 0, 0, 0.075), 0 0 0 rgba(102, 175, 233, 0.6);
+         border-color: none;
+ }
+.subscriber_form{
+  width: 100%;
+}
+.form-custom::-webkit-input-placeholder {
+   color: white;
+}
+
+.form-custom:-moz-placeholder { /* Firefox 18- */
+   color: white;  
+}
+
+.form-custom::-moz-placeholder {  /* Firefox 19+ */
+   color: white;  
+}
+
+.form-custom:-ms-input-placeholder {  
+   color: white;  
 }
