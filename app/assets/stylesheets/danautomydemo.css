@@ -685,7 +685,7 @@ width:100%;
 }
 .bottomCarDatabox{
   margin: 0 auto;
-  width: 100%;
+  width: 80%;
 }
 
 .bottomCarData{
@@ -885,8 +885,8 @@ border-radius: 0; }
 
    padding-left: 8px;
    padding-right: 9px;
-   padding-bottom: 31px;
-   padding-top: 31px;
+   padding-bottom: 35px;
+   padding-top: 35px;
 }
 #repairCategories h3 .mainCategoryIcon{
 
@@ -1081,22 +1081,22 @@ h6:before {
 
 .detailsLeftBlock{
  
-position:absolute;
+position:relative;
 margin-left: 25px;
 width:100%;
- top:0;
- left:0;
- width:250px;
+ top:-400px;
+ left:-10px;
+ width:183px;
 }
 
 .detailsRightBlock{
  
-  position:absolute;
+  position:relative;
   margin-right: 25px;
   width: 100%;
- top:0;
- right:0;
- width:250px;
+ top:-400px;
+ right:-35px;
+ width:183px;
 
 }
 .centerLine{
