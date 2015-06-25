@@ -120,5 +120,9 @@ class AnautomyController < ApplicationController
         @eleventhLabor = (0.7 * @eleventhResult).round
       
   end
+  def shop_profile
+    
+
+  end
 
 end
