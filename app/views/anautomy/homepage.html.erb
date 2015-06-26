@@ -1,0 +1,375 @@
+<!-- Main banner section -->
+
+<div class = "conatiner-fluid ">
+   <div class = "row">
+    <div class = "col-lg-12">
+        <div class = "banner_jaguar">
+            <div class =  "col-md-8 col-md-offset-2" style = "padding-top: 100px;">
+                <div class = "background_main_mesh">
+                    <div class = "background_main_black">
+                        <div class = "col-lg-12 main_heading">
+                            Never Get Overcharged Again
+                        </div>
+                        <div class = "row">
+                            <div class =  "col-md-8 col-md-offset-2">
+                                <hr class = "main_heading_divider" >
+                            </div>
+                        </div>
+                        <div class = "row">
+                            <div class =  "col-lg-12 main_subheading">
+                                Be An Expert on Your Car Repairs
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   </div>
+    </div>
+
+<!--end main banner section-->
+
+<!-- why section -->
+
+<div class = "conatiner-fluid">
+    <div class="row whySectionPositioning">
+    <div class="col-md-1">
+    </div>
+  <div class="col-md-5">
+  <h2 class = "why_section_title" style="color:#000">WHY ARE WE HERE?</h2>
+  <p class = "why_section_text"style="color:#000" >The mechanical repair industry is one of the least transparent consumer facing  industries that exists. Most people will ask friends and family if they ikniow any honest mechanics whenever their car breaks down. Anautomy is not here to send you quotes  for your repair from nearby shops. you don't even know if any of those quotes are a fair price.<br> <br> Anautomy is here to help show you what other people are paying for their repairs and  where they got it done. Then you can determine if you are truly getting a good price for the repair and get your car back on the road.</p> 
+</div>
+<div class="col-md-5">
+<%= image_tag("mechSmall.jpg" ,class: "img-responsive") %>
+</div>
+
+<div class="col-md-1">
+    </div>
+    </div>
+    
+    </div>
+
+<!--end why section-->
+
+
+<!-- how anautomy works section -->
+
+<div class = "conatiner-fluid">
+    <div class = "row">
+    <div class = "col-lg-12">
+        <div class = "banner_how">
+            
+
+            <div class = "row">
+                <div class = "col-lg-12">
+                    <div class = "how_title">
+                        how anautomy works
+                    </div>
+                    <div class =  "col-md-6 col-md-offset-3" style = "padding-bottom: 30px;">
+                        <hr class = "how_title_divider">
+                    </div>
+                </div>
+                <div class="row row-centered">
+        <div class="col-sm-6 col-centered"><div class="item"><div class="content"></div></div></div>
+        <div class="col-sm-6 col-centered"><div class="item"><div class="content"></div></div></div>
+        <div class="col-sm-3 col-centered">
+
+            <i class="fa fa-search fa-inverse fa-3x"></i>
+                  
+                    <div class = "how_subtitle" style = "padding-top: 20px;">Find</div>
+                    <p class = "how_text">Find your car and the repair you need through our powerful search tool.</p>
+            
+        </div>
+        <div class="col-sm-3 col-centered">
+            <i class="fa fa-eye fa-inverse fa-3x"></i>
+
+                    <h4 class="how_subtitle" style = "padding-top: 15px;">Browse</h4>
+                    <p class=" how_text">See how much others are paying on the same repair for your vehicle.</p>
+        </div>
+        
+        <div class="col-sm-3 col-centered">
+
+            <i class="fa fa-usd fa-inverse fa-3x"></i>
+                
+                    <h4 class="how_subtitle" style = "padding-top: 15px;">Save</h4>
+                    <p class=" how_text">Find the best place to get the repair done for a price that you know is fair.</p>
+        </div>
+    </div>
+            </div>
+            <div class = "row">
+                <div class =  "col-md-6 col-md-offset-3" style = "padding-top: 55px;">
+                <h5 class = "text-center launch-message">We'll be launching soon. Get on our email list for an invitation to our private beta launch.</h5>
+            </div>
+            <!--
+            <div class = "col-md-3">
+                <hr class = "launch_message_line">
+            </div>
+                <div class =  "col-md-5">
+                <h5 class = "text-center launch-message">We'll be launching soon. Get on our email list for an invitation to our beta launch.</h5>
+            </div>
+            <div class = "col-md-3">
+                <hr class = "launch_message_line">
+            </div>-->
+
+            </div>
+            <div class = "row" >
+                <div class =  "col-md-6 col-md-offset-3 ">
+                <div class = "row">
+                    <%= form_for @subscriber, :html => {:class => ''}, remote: true do |f|%>
+                    <div class = "col-sm-5">
+                    <div class="form-group ">
+                        <label class = "sr-only">Email</label>
+                         <%= f.email_field :email, class: 'form-control form-custom', :placeholder => "EMAIL"%>
+                    </div>
+                    </div>
+                    <div class = "col-sm-5">
+                    <div class="form-group">
+                        <label class = "sr-only">Zip Code</label>
+                        <%= f.text_field :zip, class: 'form-control form-custom', :placeholder => "ZIP CODE"%>
+                    </div>
+                </div>
+                <div class = "col-sm-2">
+                    <%= f.submit "NOTIFY ME", class: "btn btn-custom" %>
+                </div>
+                 <% end %>
+            </div>
+            </div>
+        </div>
+        <br>
+
+    </div>
+   </div>
+    </div>
+</div>
+
+<!-- end how anautomy works section-->
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<!-- whats next section -->
+<div class = "conatiner-fluid">
+    <div class = "row">
+        <div class = "col-lg-12">
+            <div class = "banner_next">
+    <div class = "row">
+        <div class = "col-lg-12">
+            <div class = "greenHeader">
+                <p class = "bannerText"><span style = "color: black;">get started now </span><span style = "color: white">and improve your car repair service/experience!</span></p>
+            </div>
+        </div>
+    </div>
+    <div class = "row" style = "padding-top: 50px;">
+        <div class =  "col-sm-4 col-sm-offset-1">
+            <h3 class = "next_section_heading">Make a submission</h3>
+                
+                  <p class="next_section_subheading">Your submissions are critical in continuing the growth of information. This pricing information is the driver behind the transparency that Anautomy will bring.</p>
+              
+                <h3 class = "next_section_heading">What's in it for you?</h3>
+                
+                  <p class="next_section_subheading">Early submitters will have lifetime access to Anautomy, be the first to test drive any new features, and have priority access to our beta test when we launch.</p>
+                
+                <h3 class = "next_section_heading">Where's the information going?</h3>
+                
+                  <p class="next_section_subheading">This information will be part of our platform and help everyone discover how much others are paying for car repairs.</p>
+                
+        </div>
+        <div class =  "col-sm-6">
+            <%= form_for @repairSubmission, :html => {:class => ''}, remote: true do |f|%>
+            <div class = "row">
+                <div class = "col-sm-4">
+                    <div class = "small_form_title">
+                        <hr style = "border-color:#52BB49">
+
+                    </div>
+                </div>
+                <div class = "col-sm-4">
+                    <div class = "small_form_title">
+                        Personal Details
+                    </div>
+                </div>
+                <div class = "col-sm-4">
+                    <div class = "small_form_title">
+                        <hr style = "border-color:#52BB49">
+
+                    </div>
+                </div>
+            </div>
+            <div class = "row">
+                    <div class = "col-sm-4">
+                        <div class="form-group ">
+                            <label class = "sr-only">First Name</label>
+                            <%= f.text_field :name, class: 'form-control form-custom', :placeholder => "FIRST NAME*"%>
+                        </div>
+                    </div>
+                    <div class = "col-sm-4">
+                        <div class="form-group ">
+                            <label class = "sr-only">Email</label>
+                             <%= f.email_field :email, class: 'form-control form-custom', :placeholder => "EMAIL*"%>
+                        </div>
+                    </div>
+                    <div class = "col-sm-4">
+                        <div class="form-group">
+                            <label class = "sr-only">Zip Code</label>
+                            <%= f.text_field :zip, class: 'form-control form-custom', :placeholder => "ZIP CODE*"%>
+                        </div>
+                    </div>
+            </div>
+            <div class = "row">
+                <div class = "col-sm-4">
+                    <div class = "small_form_title">
+                        <hr style = "border-color:#52BB49">
+
+                    </div>
+                </div>
+                <div class = "col-sm-4">
+                    <div class = "small_form_title">
+                        What kind of car?
+                    </div>
+                </div>
+                <div class = "col-sm-4">
+                    <div class = "small_form_title">
+                        <hr style = "border-color:#52BB49">
+
+                    </div>
+                </div>
+            </div>
+            <div class = "row">
+                    <div class = "col-sm-4">
+                        <%= f.select(:vehicleYear, options_for_select((Time.zone.now.year - 100)..(Time.zone.now.year), :selected => (Time.zone.now.year)), {}, {class: "select_submission_form"}) %>
+                    </div>
+                    <div class = "col-sm-4">
+                        <div class="form-group ">
+                            <label class = "sr-only">Make</label>
+                              <%= f.text_field :vehicleMake, class: 'form-control form-custom', :placeholder => "MAKE*"%>
+                        </div>
+                    </div>
+                    <div class = "col-sm-4">
+                        <div class="form-group">
+                            <label class = "sr-only">Model</label>
+                             <%= f.text_field :vehicleModel, class: 'form-control form-custom', :placeholder => "MODEL*"%>
+                        </div>
+                    </div>
+                    <div class = "col-sm-4">
+                        <div class="form-group ">
+                            <label class = "sr-only">Vehicle Trime</label>
+                             <%= f.text_field :vehicleTrim, class: 'form-control form-custom', :placeholder => "TRIM*"%>
+                        </div>
+                    </div>
+                    <div class = "col-sm-4">
+                        <div class="form-group">
+                            <label class = "sr-only">Mileage</label>
+                            <%= f.text_field :vehicleMileage, class: 'form-control form-custom', :placeholder => "MILEAGE"%>
+                        </div>
+                    </div>
+            </div>
+            <div class = "row">
+                <div class = "col-sm-4">
+                    <div class = "small_form_title">
+                        <hr style = "border-color:#52BB49">
+
+                    </div>
+                </div>
+                <div class = "col-sm-4">
+                    <div class = "small_form_title">
+                        What repair?
+                    </div>
+                </div>
+                <div class = "col-sm-4">
+                    <div class = "small_form_title">
+                        <hr style = "border-color:#52BB49">
+
+                    </div>
+                </div>
+            </div>
+            <div class = "row">
+                <div class = "col-sm-4">
+                        <div class="form-group ">
+                            <label class = "sr-only">Repair Name</label>
+                            <%= f.text_field :repairDescription, class: 'form-control form-custom', :placeholder => 'REPAIR NAME*'%>
+                        </div>
+                    </div>
+                    <div class = "col-sm-4">
+                        <div class="form-group ">
+                            <label class = "sr-only">Parts Cost</label>
+                             <%= f.text_field :partsCost, class: 'form-control form-custom', :placeholder => "PARTS COST*"%>
+                        </div>
+                    </div>
+                    <div class = "col-sm-4">
+                        <div class="form-group">
+                            <label class = "sr-only">Labor Cost</label>
+                            <%= f.text_field :laborCost, class: 'form-control form-custom', :placeholder => "LABOR COST*"%>
+                        </div>
+                    </div>
+            </div>
+            <div class = "row">
+                <div class = "col-sm-4">
+                    <div class = "small_form_title">
+                        <hr style = "border-color:#52BB49">
+
+                    </div>
+                </div>
+                <div class = "col-sm-4">
+                    <div class = "small_form_title">
+                        Where did you get it done?
+                    </div>
+                </div>
+                <div class = "col-sm-4">
+                    <div class = "small_form_title">
+                        <hr style = "border-color:#52BB49">
+
+                    </div>
+                </div>
+            </div>
+            <div class = "row">
+                <div class = "col-sm-4">
+                        <div class="form-group ">
+                            <label class = "sr-only">Shop Name</label>
+                            <%= f.text_field :shopName, class: 'form-control form-custom', :placeholder => "SHOP NAME*"%>
+                        </div>
+                    </div>
+                    <div class = "col-sm-4">
+                        <div class="form-group ">
+                            <label class = "sr-only">City State</label>
+                             <%= f.text_field :shopCityState, class: 'form-control form-custom', :placeholder => "SHOP CITY/STATE*"%>
+                        </div>
+                    </div>
+            </div>
+            <div class = "row">
+                <div class = "col-sm-12">
+                        <div class="form-group">
+                            <label class = "sr-only">Review</label>
+                            <%= f.text_area :review, class: 'form-control form-custom',:rows => 5, :cols => 71,  :placeholder => "GIVE US A SHORT DESCRIPTION OF YOUR EXPERIENCE HERE! (OPTIONAL)"%>
+                        </div>
+                    </div>
+                </div>
+                <div class = "row" style = "padding-bottom: 50px;">
+                     <div class =  "col-md-12">
+                    <%= f.submit "SHARE", class: "btn btn-custom btn-block" %>
+                </div>
+                </div>
+                <% end %>
+        </div>
+    </div>
+
+</div>
+
+</div>
+</div>
+    </div>
+
+<!-- end how anautomy works section-->
+
+
+
+<!--as seen on section-->
+
+
+
+<!--as seen on section-->
+ <%= javascript_include_tag "jquery-1.9.1.min.js"%>

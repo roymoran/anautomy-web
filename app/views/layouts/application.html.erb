@@ -12,7 +12,7 @@
   <%= csrf_meta_tags %>
    <%= render 'layouts/shim' %>
 </head>
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" >
+<body>
 	<%= render 'layouts/header' %>
 <% flash.each do |message_type, message| %>
 
@@ -20,7 +20,7 @@
       <% end %>
 <%= yield %>
 <%= render 'layouts/footer' %>
-<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-
 </body>
+
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </html>

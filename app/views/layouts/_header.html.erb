@@ -1,41 +1,94 @@
  <!-- Navigation -->
-    <nav class=" navbar-default navbar-static-top" role="navigation">
+    <header>
+    <nav class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
-            <div class = "row">
-                <div class = "col-sm-12">
-            <div class="navbar-header page-scroll">
+            <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand topnav page-scroll" href="#intro">Anautomy</a>
+                <a class="navbar-brand" href="#">
+                    
+                </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <div class = "navbar-left" style = "position:relative; top: -40px; left: -30px;height: 100px">
+                    <img src = "/assets/logo-rim-58bba415b2981b0799ec0707a7b43306e8789ff88d444abe02616872055cdd5d.svg"  height="200" width="250">
+                </div>
                 <ul class="nav navbar-nav navbar-right">
-                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                    <li class="hidden">
-                        <a class="page-scroll" href="#page-top"></a>
+                    <li>
+                        <div class = "headerButton">
+                                <a href="#signup" class="ghost-button-signup">Sign Up</a>
+                            </div>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#why">Anautomy?</a>
+                    <div class = "headerButton">
+                                <a href="#login" class="ghost-button-login">Log In</a>
+                        </div>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#walkthrough">Walkthrough</a>
-                    </li>
-
-                    <li>
-                        <a class="page-scroll" href="#how">Sign Up</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#next">What's next?</a>
+                    <div class = "headerButton">
+                                <a href="#help" class="ghost-button-help">Help<i class="fa fa-angle-down fa-fw"></i></a>
+                        </div>
                     </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>
+        <!-- /.container -->
+    </nav>
+
+
+
+
+    <!-- Navigation -->
+    <div class = "header2">
+    <nav class="navbar navbar-inverse navbar-static-top mainNav" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <%= link_to "HOME", {controller: "anautomy", action: "homepage"}, class: "navText" %>
+                    </li>
+                    <li>
+<<<<<<< HEAD
+                        <a class="page-scroll" href="#how">Sign Up</a>
+=======
+                        <a href="#SERVICES" class = "navText">SERVICES</a>
+>>>>>>> anautomy_demo
+                    </li>
+                    <li>
+                        <a href="#COMPANY" class = "navText">COMPANY</a>
+                    </li>
+                    <li>
+                        <a href="#NEWS" class = "navText">NEWS</a>
+                    </li>
+                    <li>
+                        <a href="#FAQ'S" class = "navText">FAQ'S</a>
+                    </li>
+                    <li>
+                        <a href="#CONTACT" class = "navText">CONTACT</a>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
     </nav>
+</div>
+</header>

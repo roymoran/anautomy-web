@@ -25,6 +25,7 @@ gem 'bootstrap-select-rails'
 gem "font-awesome-rails"
 gem 'sweet-alert'
 gem 'jquery-turbolinks'
+gem 'httparty'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

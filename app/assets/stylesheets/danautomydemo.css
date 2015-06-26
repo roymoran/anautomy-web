@@ -1,0 +1,1707 @@
+/*!
+ * Start Bootstrap - Logo Nav HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+@import url(http://fonts.googleapis.com/css?family=Josefin+Sans:400,500,600|Roboto:700,400,500);
+
+html, body {
+    height:100%;
+} 
+
+body, html {
+    padding-top: 0; /* Required padding for .navbar-fixed-top. Change if height of navigation changes. */
+    font-size: 12px;
+    
+    /*font-size: 100%;*/
+}
+@media (max-width: @screen-xs) {
+    body{font-size: 10px;}
+}
+
+@media (max-width: @screen-sm) {
+    body{font-size: 14px;}
+}
+
+@font-face {
+font-family: 'myriadpro', 'MyriadPro-Cond';
+src: url("MyriadPro-Regular.otf") format("opentype");
+src: url("MyriadPro-Cond.otf") format("opentype");
+}
+
+.greenCar{
+	color: #52BB49;
+}
+
+.anautomyHeader{
+	font-size: 1.5em;
+	color: white;
+}
+
+
+.navbar-static-top .nav {
+    padding: 30px 0;
+}
+
+
+.navbar-static-top .navbar-brand {
+  background: url("logo-rim.svg");
+  background-size: 100px 82px;
+    padding: 35px 0;
+}
+
+@media(min-width:768px) {
+    body {
+        padding-top: 0; /* Required padding for .navbar-fixed-top. Change if height of navigation changes. */
+    }
+
+    .navbar-static-top .navbar-brand {
+        padding: 40px 0;
+    }
+}
+
+.header2{
+	height: 30px;
+}
+.mainNav{
+	height: 100%;
+	bottom: 21px;
+}
+.navText{
+	top:-30px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 600;
+}
+
+/*header sign up and login buttons*/
+
+.headerButton a:hover { text-decoration: none; }
+
+
+.ghost-button-signup {
+    color: #ffffff;
+    background: #52BB49;
+    border: 1px solid #52BB49;
+    font-size: 17px;
+    padding: 7px 12px;
+    font-weight: normal;
+    margin: 6px 0;
+    margin-right: 12px;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    min-width: 120px;
+
+    /* CSS Transition */
+	-webkit-transition: background .2s ease-in-out, border .2s ease-in-out;
+	-moz-transition: background .2s ease-in-out, border .2s ease-in-out;
+	-ms-transition: background .2s ease-in-out, border .2s ease-in-out;
+	-o-transition: background .2s ease-in-out, border .2s ease-in-out;
+	transition: background .2s ease-in-out, border .2s ease-in-out;
+}
+
+.ghost-button-signup:hover {
+	color:#ffffff;
+	background:#49a841;
+	border: 1px solid #49a841;
+ }
+
+.ghost-button-login {
+    color: #ffffff;
+    background: #5A5A5A;
+    border: 1px solid #9B9B9B;
+    font-size: 17px;
+    padding: 7px 12px;
+    font-weight: normal;
+    margin: 6px 0;
+    margin-right: 12px;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    min-width: 120px;
+
+    /* CSS Transition */
+	-webkit-transition: background .2s ease-in-out, border .2s ease-in-out;
+	-moz-transition: background .2s ease-in-out, border .2s ease-in-out;
+	-ms-transition: background .2s ease-in-out, border .2s ease-in-out;
+	-o-transition: background .2s ease-in-out, border .2s ease-in-out;
+	transition: background .2s ease-in-out, border .2s ease-in-out;
+}
+
+.ghost-button-login:hover{
+	color:#ffffff;
+    background:#7a7a7a;
+ }
+
+ .ghost-button-help {
+    color: #ffffff;
+    background: #5A5A5A;
+    border: 1px solid #5A5A5A;
+    font-size: 17px;
+    padding: 7px 12px;
+    font-weight: normal;
+    margin: 6px 0;
+    margin-right: 12px;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    min-width: 80px;
+
+    /* CSS Transition */
+	-webkit-transition: background .2s ease-in-out, border .2s ease-in-out;
+	-moz-transition: background .2s ease-in-out, border .2s ease-in-out;
+	-ms-transition: background .2s ease-in-out, border .2s ease-in-out;
+	-o-transition: background .2s ease-in-out, border .2s ease-in-out;
+	transition: background .2s ease-in-out, border .2s ease-in-out;
+}
+
+.ghost-button-help:hover{
+	color:#ffffff;
+    background:#5A5A5A;
+ }
+
+
+ /* end of header buttons */
+
+/*Header navbar bootstrap overide*/
+.navbar-default {
+  background-color: #5a5a5a;
+  border-color: #ffffff;
+}
+.navbar-default .navbar-brand {
+  color: #ffffff;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #ffffff;
+}
+.navbar-default .navbar-text {
+  color: #ffffff;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ffffff;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #ffffff;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #ffffff;
+  background-color: #ffffff;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #ffffff;
+  background-color: #ffffff;
+}
+.navbar-default .navbar-toggle {
+  border-color: #ffffff;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #ffffff;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ffffff;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ffffff;
+}
+.navbar-default .navbar-link {
+  color: #ffffff;
+}
+.navbar-default .navbar-link:hover {
+  color: #ffffff;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ffffff;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffffff;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffffff;
+    background-color: #ffffff;
+  }
+}
+
+/*Main navbar bootstrap override*/
+
+
+.navbar-inverse {
+  background-color: #52bb49;
+  border-color: #52bb49;
+}
+.navbar-inverse .navbar-brand {
+  color: #ffffff;
+}
+.navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus {
+  color: #ffffff;
+}
+.navbar-inverse .navbar-text {
+  color: #ffffff;
+}
+.navbar-inverse .navbar-nav > li > a {
+  color: #ffffff;
+}
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+  color: #ffffff;
+}
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+  color: #ffffff;
+  background-color: #52bb49;
+}
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+  color: #ffffff;
+  background-color: #52bb49;
+}
+.navbar-inverse .navbar-toggle {
+  border-color: #52bb49;
+}
+.navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
+  background-color: #52bb49;
+}
+.navbar-inverse .navbar-toggle .icon-bar {
+  background-color: #ffffff;
+}
+.navbar-inverse .navbar-collapse,
+.navbar-inverse .navbar-form {
+  border-color: #ffffff;
+}
+.navbar-inverse .navbar-link {
+  color: #ffffff;
+}
+.navbar-inverse .navbar-link:hover {
+  color: #ffffff;
+}
+
+@media (max-width: 767px) {
+  .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
+    color: #ffffff;
+  }
+  .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffffff;
+  }
+  .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a, .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffffff;
+    background-color: #52bb49;
+  }
+}
+
+/*
+.header2 .navbar {
+    padding: 0;
+}
+
+.header2 .navbar-inner {
+    padding: 0;
+}
+
+.header2 .navbar{
+    margin: 0;
+    display: table;
+    width: 100%;
+}
+
+.header2 .nav {
+    margin: 0;
+    display: table;
+    width: 100%;
+}
+
+.header2 .navbar{
+    display: table-cell;
+    width: 1%;
+    float: none;
+}
+*/
+
+.header2 .nav li {
+    display: table-cell;
+    width: 1%;
+    float: none;
+}
+
+.header2 .navbar {
+    text-align: center;
+    
+}
+
+.header2 .nav li a {
+    text-align: center;
+    
+}
+
+.header2 .navbar {
+    border-left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.header2 .nav li:first-child a {
+    border-left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.header2 .navbar {
+    border-right: 0;
+    border-radius: 0 3px 3px 0;
+}
+
+.header2 .nav li:last-child a {
+    border-right: 0;
+    border-radius: 0 3px 3px 0;
+}
+/*End Nav*/
+
+/*Body for Repairs Search Page*/
+
+/*Left Column for Repairs Page*/
+.searchForm{
+  width: 30%;
+  float: right;
+  border-radius: 0;
+
+}
+.searchButton{
+  background-color: white;
+  border: 1px solid white;
+}
+
+.newSearchTitle{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+.searchResultsTitle{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 1.2em;
+}
+
+.repairCategoryTitle{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+.totalSubmissionsTextMain{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: #52BB49;
+  padding-left: 30px;
+  font-size: 1.1em;
+}
+
+.specificRepairCategoryTitle{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 1.2em;
+}
+
+.totalSubmissionsText{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: #52BB49;
+  padding-left: 30px;
+  font-size: 0.9em;
+
+}
+#repairCategories h3 .mainCategoryIcon{
+
+}
+
+#repairCategories {
+    color: #2F2F2F;
+    width: auto;
+}
+
+#repairCategories .ui-accordion-header {
+
+  border: 1px solid #CFCFCF;
+  margin-bottom: 5px;
+
+}
+
+.repairCategoryTitle{
+
+}
+
+#repairCategories .ui-accordion-content {
+
+  border: 1px solid #CFCFCF;
+
+    width: 100%;
+    margin-top: -5px;
+    background-color: #F2F2F2;
+    color: #2F2F2F;
+}
+
+#repairCategories h3 .mainCategoryIcon{
+  float: right;
+}
+
+#repairCategories div div .repairIcon{
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 18px;
+  background-color: #52BB49;
+  border-bottom-color: #52BB49;
+  border-bottom-width: 3px;
+  border-bottom-style: solid;
+
+  position: absolute;
+  right: -1px;
+  top: -15px;
+   padding-left: 13px;
+   padding-right: 8px;
+   padding-bottom: 45px;
+   padding-top: 45px;
+   margin-right: -10px;
+
+}
+
+#repairCategories div p span{
+display: block;
+
+}
+
+#top_repair .repairIcon, #top_repair2 .repairIcon, #top_repair3 .repairIcon{
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 18px;
+  background-color: #52BB49;
+  border-bottom-color: #52BB49;
+  border-bottom-width: 3px;
+  border-bottom-style: solid;
+
+  position: absolute;
+  right: -1px;
+  top: -15px;
+   padding-left: 13px;
+   padding-right: 8px;
+   padding-bottom: 45px;
+   padding-top: 45px;
+   margin-right: -10px;
+
+}
+#top_repair div span, #top_repair2 div span, #top_repair3 div span{
+display: block;
+
+}
+#engineRepairs , #transmissionRepairs, #exhaustEmissionsRepairs, #brakesRepairs, #electricalLightsRepairs, #suspensionSteeringRepairs, #suspensionSteeringRepairs{
+
+
+    /*
+    top margin is 10px
+    right margin is 5px
+    bottom margin is 15px
+    left margin is 20px
+    */
+    margin:-14px -31px -14px -31px;
+
+}
+
+#engineRepairs .ui-accordion-content, #transmissionRepairs .ui-accordion-content, #exhaustEmissionsRepairs .ui-accordion-content, #brakesRepairs .ui-accordion-content, #electricalLightsRepairs .ui-accordion-content, #suspensionSteeringRepairs .ui-accordion-content, #suspensionSteeringRepairs .ui-accordion-content, #exhaustEmissionsRepairs .ui-accordion-content, #brakesRepairs .ui-accordion-content, #electricalLightsRepairs .ui-accordion-content, #suspensionSteeringRepairs .ui-accordion-content, #suspensionSteeringRepairs .ui-accordion-content {
+   
+
+    width: 100%;
+    background-color: #CFCFCF;
+
+    color: #2F2F2F;
+    position: relative;
+    max-height: 200px;
+}
+
+#engineRepairs .ui-accordion-header , #transmissionRepairs .ui-accordion-header, #exhaustEmissionsRepairs .ui-accordion-header, #brakesRepairs .ui-accordion-header , #electricalLightsRepairs .ui-accordion-header, #suspensionSteeringRepairs .ui-accordion-header, #suspensionSteeringRepairs .ui-accordion-header {
+  border-style: none;
+  border-width: 0;
+  margin-bottom: 0;
+
+}
+
+#top_repair, #top_repair2, #top_repair3, #top_repair4, #top_repair5{
+  /*
+    top margin is 10px
+    right margin is 5px
+    bottom margin is 15px
+    left margin is 20px
+    */
+    
+}
+
+#top_repair .ui-accordion-content, #top_repair2 .ui-accordion-content, #top_repair3 .ui-accordion-content, #top_repair4 .ui-accordion-content, #top_repair5 .ui-accordion-content{
+  width: 100%;
+    background-color: #CFCFCF;
+    color: #2F2F2F;
+    position: relative;
+    max-height: 200px;
+    background-color: #CFCFCF;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+#top_repair .ui-accordion-header, #top_repair2 .ui-accordion-header, #top_repair3 .ui-accordion-header, #top_repair4 .ui-accordion-header, #top_repair5 .ui-accordion-header{
+  
+  margin-bottom: 10px;
+  border-width: 0;
+  margin-bottom: 10px;
+  background-color: #F2F2F2;
+}
+
+
+.repairRangePositioning{
+  margin-top: -8px;
+}
+.repairDetailsPositioning{
+    margin-top: 4px;
+  
+}
+
+.repairCostBox{
+  width: 130px;
+  font-size: 1.2em;
+}
+
+.repairCostBoxPrice{
+  background-color: #F2F0F1;
+  margin-top: 10px;
+  padding-top: 10px;
+  height: 40px;
+  font-size: 1.2em;
+  
+}
+
+/*End Left Column for Repairs Page*/
+
+
+/*Right Column for Repairs Page*/
+.right-col{
+  
+}
+
+.backgroundVehicleImage{
+  
+    background: url('https://i.imgur.com/IN90y7G.jpg') no-repeat center center;
+    min-height: 800px;
+    margin-bottom: 50px;
+}
+
+.my-container {
+    height: 850px;
+    width: 95%;
+    left: 17px;
+    position: relative;
+    overflow: hidden;
+}
+.my-container .topBlock {
+    position: relative;
+    color: white;
+    margin-top: 120px;
+    z-index: 2;
+} 
+
+.rightHeader{
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 2.5em;
+  font-weight: 600;
+}
+
+.categoryHeader{
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1.3em;
+}
+.subHeader{
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 600;
+  font-size: 1.2em;
+}
+.carSubheader{
+  text-transform: uppercase;
+}
+.carDatabox{
+  margin: 0 auto;
+  width: 220px;
+}
+
+.carData{
+  background-color: #F2F0F1;
+  color: #000000;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  padding-top: 5px;
+  height: 30px;
+  font-size: 1.2em;
+  
+}
+
+.my-container .bottomBlock {
+    position: relative;
+    color: white;
+    z-index: 2;
+} 
+.my-container img {
+    position: absolute;
+    width: 86%;
+    height: 84%;
+    left: 0;
+    top: 80px;
+    width: 100%;
+    height: auto;
+    opacity: 0.54;
+}
+
+.leftBlock{
+ 
+position:absolute;
+margin-left: 25px;
+width:100%;
+ top:0;
+ left:0;
+ width:200px;
+}
+
+.rightBlock{
+ 
+  position:absolute;
+  margin-right: 25px;
+  width: 100%;
+ top:0;
+ right:0;
+ width:200px;
+
+}
+.centerLine{
+  border: 1px solid white;
+  margin: 0 auto;
+  width: 1px;
+  height: 180px;
+
+}
+.bottomCarDatabox{
+  margin: 0 auto;
+  width: 80%;
+}
+
+.bottomCarData{
+  background-color: #F2F0F1;
+  color: #000000;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  padding-top: 5px;
+  height: 30px;
+  font-size: 1.2em;
+  
+}
+
+.backgroundVehicleImage div p span{
+  display: block;
+
+}
+/*End Right Column for Repairs Page*/
+
+
+/*Body for Submissions Page*/
+.hiddenDataMessage{
+  color: #52BB49;
+  font-size: 1.2em;
+}
+.submissionsRepairTitle{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  background-color: #F2F0F1;
+  height: 40px;
+  padding-top: 13px;
+
+
+  -webkit-box-shadow: 0 8px 6px -6px #BCBCBC;
+     -moz-box-shadow: 0 8px 6px -6px #BCBCBC;
+          box-shadow: 0 8px 6px -6px #BCBCBC;
+
+          text-transform: uppercase;
+
+}
+/*Left Column for Submissions Page*/
+
+.allSubissionsBlock{
+max-height: 600px;
+  overflow-y:auto;
+  width: 100%;
+
+}
+.searchForm{
+  position: relative;
+  border-radius: 0;
+  float: right;
+  width: 100%;
+}
+.searchForm div span {
+  display: block;
+}
+input[type=text] {padding:5px; border:1px solid #CFCFCF; 
+-webkit-border-radius: 0;
+border-radius: 0;
+}
+input[type=text]:focus {border-color:#CFCFCF; }
+
+input[type=submit] {padding:5px 15px; background:#ccc; border:0 none;
+cursor:pointer;
+-webkit-border-radius: 0;
+border-radius: 0; }
+
+.searchButton{
+  position: relative;
+  color: #5A5A5A;
+  width: 10px;
+  height: 10px;
+  right: -138px; 
+  top: -23px;
+  margin-bottom: 50px;
+  background-color: white;
+  display: block;
+  z-index: 3;
+}
+
+.newSearchTitle{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+.searchResultsTitle{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 1.2em;
+}
+
+.repairCategoryTitle{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 1.2em;
+}
+
+.submissionBlock{
+  background-color: #CFCFCF;
+  position: relative;
+  margin-top: 8px;
+}
+
+.submissionBlock span{
+  display: block;
+}
+
+
+.repairCostBoxSubmissionsPage{
+  width: 130px;
+}
+.repairCostBoxPriceSubmissionsPage{
+  background-color: #F2F0F1;
+  margin-top: 5px;
+  padding-top: 5px;
+  height: 25px;
+  
+}
+
+.rating{
+  color: #D20014;
+}
+.star5:after{
+  content: "\f005\f005\f005\f005\f005"; /* 5 Stars */
+  font-family: FontAwesome;
+  
+}
+.half4star:after{
+  content: "\f005\f005\f005\f005\f123"; /*  4.5 Stars */
+  font-family: FontAwesome;
+}
+.star4:after{
+  content: "\f005\f005\f005\f005"; /* 4 Stars */
+  font-family: FontAwesome;
+}
+.half3star:after{
+  content: "\f005\f005\f005\f123"; /*  3.5 Stars */
+  font-family: FontAwesome;
+}
+.star3:after{
+  content: "\f005\f005\f005"; /* 3 Stars */
+  font-family: FontAwesome;
+}
+.half2star:after{
+  content: "\f005\f005\f123"; /*  2.5 Stars */
+  font-family: FontAwesome;
+}
+.star2:after{
+  content: "\f005\f005"; /*  2 Stars */
+  font-family: FontAwesome;
+}
+.half1star:after{
+  content: "\f005\f123"; /*  1.5 Stars */
+  font-family: FontAwesome;
+}
+.star1:after{
+  content: "\f005"; /*  1 Stars */
+  font-family: FontAwesome;
+}
+.halfstar:after{
+  content: "\f123"; /*  .5 Stars */
+  font-family: FontAwesome;
+}
+
+.reviewText{
+  text-decoration: underline;
+  font-size: 13px;
+  color: black;
+}
+
+.submissionBlockPositioning{
+  padding-top: 15px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 1.2em;
+}
+.submissionBox{
+  padding-top: 15px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 1.3em;
+}
+.shopName{
+  color: #52BB49;
+  font-size: 0.8em;
+
+}
+.submissionRepairIcon{
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 2em;
+  background-color: #52BB49;
+  border-bottom-color: #52BB49;
+  border-bottom-width: 3px;
+  border-bottom-style: solid;
+
+   padding-left: 8px;
+   padding-right: 9px;
+   padding-bottom: 35px;
+   padding-top: 35px;
+}
+#repairCategories h3 .mainCategoryIcon{
+
+}
+
+#repairCategories {
+    color: #2F2F2F;
+    width: auto;
+}
+
+#repairCategories .ui-accordion-header {
+
+  border: 1px solid #CFCFCF;
+  margin-bottom: 5px;
+}
+
+.repairCategoryTitle{
+
+}
+
+#repairCategories .ui-accordion-content {
+
+  border: 1px solid #CFCFCF;
+
+    width: 100%;
+    margin-top: -5px;
+    background-color: #F2F2F2;
+    color: #2F2F2F;
+}
+
+#repairCategories h3 .mainCategoryIcon{
+  float: right;
+}
+
+#repairCategories div p span{
+display: block;
+
+}
+#engineRepairs , #exhaustEmissionsRepairs #transmissionRepairs, #brakesRepairs, #electricalLightsRepairs, #suspensionSteeringRepairs, #suspensionSteeringRepairs{
+
+
+    /*
+    top margin is 10px
+    right margin is 5px
+    bottom margin is 15px
+    left margin is 20px
+    */
+    margin:-14px -31px -14px -31px;
+
+}
+
+#engineRepairs .ui-accordion-content, #transmissionRepairs .ui-accordion-content, #exhaustEmissionsRepairs .ui-accordion-content, #brakesRepairs .ui-accordion-content, #electricalLightsRepairs .ui-accordion-content, #suspensionSteeringRepairs .ui-accordion-content, #suspensionSteeringRepairs .ui-accordion-content, #exhaustEmissionsRepairs .ui-accordion-content, #brakesRepairs .ui-accordion-content, #electricalLightsRepairs .ui-accordion-content, #suspensionSteeringRepairs .ui-accordion-content, #suspensionSteeringRepairs .ui-accordion-content {
+   
+
+    width: 100%;
+    background-color: #CFCFCF;
+    color: #2F2F2F;
+    position: relative;
+    max-height: 200px;
+}
+
+#engineRepairs .ui-accordion-header , #transmissionRepairs .ui-accordion-header, #exhaustEmissionsRepairs .ui-accordion-header, #brakesRepairs .ui-accordion-header , #electricalLightsRepairs .ui-accordion-header, #suspensionSteeringRepairs .ui-accordion-header, #suspensionSteeringRepairs .ui-accordion-header {
+  border-style: none;
+  border-width: 0;
+  margin-bottom: 0;
+
+}
+.repairRangePositioning{
+  margin-top: -8px;
+}
+.repairDetailsPositioning{
+    margin-top: 4px;
+}
+
+
+.averageBarArrow{
+  color: #54BB4A;
+}
+
+h6 {
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    z-index: 1;
+    overflow: hidden;
+    text-align: center;
+}
+h6:before, h6:after {
+    position: absolute;
+    top: 38%;
+    overflow: hidden;
+    width: 50%;
+    height: 6px;
+    content: '\a0';
+    background-color: #52BB49;
+
+}
+h6:before {
+    margin-left: -50%;
+    text-align: right;
+}
+.averagePriceBarTitle{
+  font-size: 1.5em;
+  color: #515151;
+
+}
+/*End Left Column for Submissions Page*/
+
+
+/*Right Column for Submissions Page*/
+.right-col{
+  
+}
+
+.backgroundVehicleImage{
+    background: url('https://i.imgur.com/IN90y7G.jpg') no-repeat center center;
+    min-height: 800px;
+    margin-bottom: 50px;
+}
+
+.my-container {
+    height: 850px;
+    width: 95%;
+    left: 17px;
+    position: relative;
+    overflow: hidden;
+}
+.my-container2 {
+    height: 850px;
+    width: 95%;
+    left: 17px;
+    position: relative;
+    overflow: hidden;
+}
+.my-container .topBlock {
+    position: relative;
+    color: white;
+    margin-top: 120px;
+    z-index: 2;
+} 
+
+.my-container .bottomBlock {
+    position: relative;
+    color: white;
+    z-index: 2;
+} 
+
+.my-container2 .topBlock {
+    position: relative;
+    color: white;
+    margin-top: 120px;
+    z-index: 2;
+} 
+
+.my-container2 .bottomBlock {
+    position: relative;
+    color: white;
+    z-index: 2;
+} 
+.my-container2 a {
+    color: #52BB4A;
+    text-decoration: underline;
+} 
+.my-container img {
+    position: absolute;
+    width: 86%;
+    height: 84%;
+    left: 0;
+    top: 80px;
+    width: 100%;
+    height: 70%;
+    opacity: 0.54;
+}
+
+
+.my-container2 img {
+    position: absolute;
+    width: 86%;
+    height: 84%;
+    left: 0;
+    top: 80px;
+    width: 100%;
+    height: 90%;
+    opacity: 0.54;
+}
+
+.clutchImg{
+  height: 35%;
+  background: url('https://i.imgur.com/MZ0BbB8.png') no-repeat center center;
+  background-size: auto 80%;
+}
+
+.detailsLeftBlock{
+ 
+position:relative;
+margin-left: 25px;
+width:100%;
+ top:-400px;
+ left:-10px;
+ width:183px;
+}
+
+.detailsRightBlock{
+ 
+  position:relative;
+  margin-right: 25px;
+  width: 100%;
+ top:-400px;
+ right:-35px;
+ width:183px;
+
+}
+.centerLine{
+  border: 1px solid white;
+  margin: 0 auto;
+  width: 1px;
+  height: 200px;
+
+}
+
+.centerLine2{
+  border: 1px solid white;
+  margin: 0 auto;
+  width: 1px;
+  height: 375px;
+
+}
+
+.detailsHeader{
+  color: #4FB648;
+  font: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 1.2em;
+}
+.detailsDescription{
+  color: white;
+  font: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 1.1em;
+}
+.highUrgencyLevel{
+  color: red;
+}
+.mediumUrgencyLevel{
+
+}
+.lowUrgencyLevel{
+  
+}
+.my-container a{
+  color: #4FB648;
+  text-decoration: underline;
+}
+
+.topBlock img {
+    position: absolute;
+    opacity: 0.54;
+}
+
+.topBlock h3{
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+  padding-left: 15px;
+}
+
+.topBlock h4{
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+}
+
+
+/*End Right Column*/
+
+
+/*Analytics Snapshot Section*/
+.analyticsSnapshotTitle {
+  color: #5A5A5A;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+}
+
+.analyticsSnapshotGears{
+  color: #54BB4A;
+}
+
+h1 {
+    position: relative;
+    font-size: 30px;
+    z-index: 1;
+    overflow: hidden;
+    text-align: center;
+}
+h1:before, h1:after {
+    position: absolute;
+    top: 43%;
+    overflow: hidden;
+    width: 50%;
+    height: 1px;
+    content: '\a0';
+    background-color: #52BB49;
+
+}
+h1:before {
+    margin-left: -50%;
+    text-align: right;
+}
+.color {
+    background-color: #ccc;
+}
+
+.snapshotTitle{
+  padding-top: 20px;
+}
+
+#accordion .ui-accordion-header, #accordion2 .ui-accordion-header, #accordion3 .ui-accordion-header {
+  color: #5A5A5A;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 600;
+  font-size: 1.4em;
+  margin-bottom: 15px;
+  padding-top: 13px;
+  height: 40px;
+  background-color: #CFCFCF;
+
+}
+
+#accordion .ui-accordion-header.ui-state-active, #accordion2 .ui-accordion-header.ui-state-active, #accordion3 .ui-accordion-header.ui-state-active{ 
+  color: #ffffff;
+  margin-bottom: 20px;
+  background-color: #51BB49;
+}
+
+#accordion .ui-accordion-content, #accordion2 .ui-accordion-content, #accordion3 .ui-accordion-content  {
+
+  color: #5A5A5A;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1.3em;
+
+  width: 100%;
+  margin-top: -20px;
+  margin-bottom: 20px;
+  background-color: #F2F0F1;
+  color: #2F2F2F;
+}
+
+#accordion .ui-accordion-header:nth-of-type(2), #accordion2 .ui-accordion-header:nth-of-type(2), #accordion3 .ui-accordion-header:nth-of-type(2){
+  margin-bottom: 200px;
+}
+#accordion .ui-accordion-content:nth-of-type(2), #accordion2 .ui-accordion-content:nth-of-type(2), #accordion3 .ui-accordion-content:nth-of-type(2){
+  margin-top: -200px;
+}
+
+.snapshotArrowDown{
+  padding-left: 15px;
+}
+/* Footer */
+ footer {
+   background-color:#5a5a5a
+}
+
+.footerText {
+  
+    color: #CFCFCF;
+    font-size: 13px;
+    font-weight: 300;
+    display: inline-block;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  padding: 10px 0 0 0;
+  margin: 0 50px 0 40px;
+    min-width: 80px;
+  
+  -o-transition:.2s;
+  -ms-transition:.2s;
+  -moz-transition:.2s;
+  -webkit-transition:.2s;
+  /* ...and now for the proper property */
+  transition:.2s;
+}
+
+.footerText:hover {
+  
+  color:#52BB49;
+  background:#5A5A5A;
+  text-decoration:none;
+ }
+
+.footerTitle {
+  
+    color: #CFCFCF;
+    font-size: 17px;
+    font-weight: 400;
+    display: inline-block;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  padding: 70px 0 0 0;
+  margin: 0 50px 0 40px;
+    min-width: 80px;
+}
+
+.socialIcon{
+	color: #5A5A5A;
+
+  -o-transition:.3s;
+  -ms-transition:.3s;
+  -moz-transition:.3s;
+  -webkit-transition:.3s;
+  /* ...and now for the proper property */
+  transition:.3s;
+}
+
+.socialButton{
+	color: #CFCFCF;
+
+  -o-transition:.3s;
+  -ms-transition:.3s;
+  -moz-transition:.3s;
+  -webkit-transition:.3s;
+  /* ...and now for the proper property */
+  transition:.3s;
+
+}
+
+.socialButton:hover{
+	color: #52bb49;
+}
+.socialIcon:hover{
+	color: #ffffff;
+}
+
+.socialPadding{
+	padding-bottom: 40px;
+}
+
+.footerSplit{
+	padding-bottom: 0;
+  width: 65%;
+}
+
+
+/* centered columns styles */
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* inline-block space fix */
+    margin-right:-80px;
+}
+/*End Footer*/
+
+.mainContainerPadding{
+  padding-top: 50px;
+}
+
+/*Homepage*/
+.banner_jaguar{
+    color: #f8f8f8;
+    background: url('https://i.imgur.com/3ehjM2L.png') no-repeat center center;
+    background-size: cover;
+    min-height:700px;
+}
+.background_main_mesh{
+  /*background: url('https://i.imgur.com/Dqe512x.png');*/
+  min-height: 400px;
+  /*opacity: 0.7;*/
+  margin: auto 0;
+}
+.background_main_black{
+  background-color: rgba(0,0,0,0.57);
+  min-height: 400px;
+  /*opacity: 0.95;*/
+}
+
+.main_heading{
+  padding-top: 140px;
+  text-align: center;
+  font-family: "MyriadPro-Regular", sans-serif;
+  font-weight: bold;
+  font-size: 4.5em;
+  color: rgba(255, 255, 255, 1);
+
+}
+.main_heading_divider{
+  width: 94%;
+  border-color: #52BB49;
+  margin-top: -5px;
+  color: rgba(255, 255, 255, 1);
+  }
+.main_subheading{
+ text-align: center;
+ font-family: "MyriadPro-Regular", sans-serif;
+  font-weight: normal;
+  letter-spacing: 0.1em;
+  font-size: 2em;
+ color: rgba(255, 255, 255, 1);
+  }
+  .main_btn_custom{
+    background: #5A5A5A !important;
+    border: none;
+    color: #52BB49 !important;
+    height: 84px;
+    width: 58px;
+    margin-left: -8px;
+
+
+
+    
+    color: #FDFDFD;
+
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    /* CSS Transition */
+    -webkit-transition: background .2s ease-in-out, border .2s ease-in-out;
+    -moz-transition: background .2s ease-in-out, border .2s ease-in-out;
+    -ms-transition: background .2s ease-in-out, border .2s ease-in-out;
+    -o-transition: background .2s ease-in-out, border .2s ease-in-out;
+    transition: background .2s ease-in-out, border .2s ease-in-out;
+  }
+
+  .main_form_custom{
+  background: white !important;
+  border: none;
+  color: #000000 !important;
+  text-transform: uppercase;
+
+
+  -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+
+ .main_form_custom:focus {
+  -webkit-box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.075), 0 0 0 rgba(82, 168, 236, 0.6);
+          box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.075), 0 0 0 rgba(82, 168, 236, 0.6);
+  -webkit-box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.075), 0 0 0 rgba(102, 175, 233, 0.6);
+         box-shadow: inset 0 0 0rgba(0, 0, 0, 0.075), 0 0 0 rgba(102, 175, 233, 0.6);
+         border-color: none;
+ }
+  .main_form_custom:active {
+  -webkit-box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.075), 0 0 0 rgba(82, 168, 236, 0.6);
+          box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.075), 0 0 0 rgba(82, 168, 236, 0.6);
+  -webkit-box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.075), 0 0 0 rgba(102, 175, 233, 0.6);
+         box-shadow: inset 0 0 0rgba(0, 0, 0, 0.075), 0 0 0 rgba(102, 175, 233, 0.6);
+         border-color: none;
+ }
+.main_lower_message{
+  color: white;
+  font-family: "MyriadPro-Cond", sans-serif;
+  font-size: 1em;
+  text-align: center;
+  min-width: 200px;
+
+}
+.diagnostic_custom_btn{
+  border: 1px solid #3E8736;
+  height: 40px;
+  -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    /* CSS Transition */
+    -webkit-transition: background .2s ease-in-out, border .2s ease-in-out;
+    -moz-transition: background .2s ease-in-out, border .2s ease-in-out;
+    -ms-transition: background .2s ease-in-out, border .2s ease-in-out;
+    -o-transition: background .2s ease-in-out, border .2s ease-in-out;
+    transition: background .2s ease-in-out, border .2s ease-in-out;
+}
+
+.diagnostic_app_btn_text{
+  text-transform: uppercase;
+  background-color: #3E8736;
+  color: white;
+  font-size: 1em;
+  padding-top: 13px;
+  -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    border: none;
+
+  }
+.diagnostic_app_icon{
+    color: #FFFFFF;
+
+}
+.diagnostic_app_icon_background{
+    background-color: #5A5A5A;
+
+  -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    border: none;
+}
+.diagnostic_report_icon_background{
+  background-color: #5A5A5A;
+  -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    border: none;
+
+}
+.diagnostic_report_btn_text{
+  text-transform: uppercase;
+  background-color: white;
+  font-size: 1em;
+  padding-top: 13px;
+  -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    border: none;
+}
+.diagnostic_report_icon{
+  background-color: #5A5A5A;
+  color: #52BB49;
+}
+.bg { /*not used*/
+  position: relative; 
+  top: 0; 
+  left: 0; 
+  
+  /* Preserve aspet ratio */
+  min-width: 100%;
+  min-height: 100%;
+  clear: both;
+}
+.why_section_title{
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+  font-size: 2.5em;
+  color: black;
+}
+.why_section_text{
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1.4em;
+  color: white;
+}
+.whySectionPositioning{
+padding-top: 100px;
+padding-bottom: 100px;
+
+}
+
+.banner_how{
+  background: url('https://i.imgur.com/TbQHSds.png') no-repeat;
+     /* Set rules to fill background */
+  background-size: cover;
+  min-height: 500px;
+}
+.how_title{
+  text-transform: uppercase;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+  font-size: 2.5em;
+  color: white;
+  text-align: center;
+  padding-top: 20px;
+  }
+  .how_title_divider{
+    width: 33%;
+
+  }
+  .how_subtitle{
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 2.5em;
+    color: white;
+  }
+  .how_text{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 1.3em;
+    color: white;
+  }
+
+/* centered columns styles */
+.row-centered {
+    text-align:center;
+    padding-top: 80px;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align: center;
+    /* inline-block space fix */
+    margin-right:-4px;
+}
+.launch-message{
+  color: white;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+  font-size:1.3em;
+}
+.banner_next{
+  background: url('https://i.imgur.com/LxJZzKJ.png') no-repeat;
+     /* Set rules to fill background */
+  background-size: cover;
+  min-height: 800px;
+}
+.greenHeader{
+  background-color: rgba(82,187,73,0.75) !important;
+    width: 100%;
+    min-height: 130px;
+    overflow: hidden;
+    background-color: #52BB49;
+}
+.next_section_heading{
+  text-transform: uppercase;
+  color: white;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+  font-size:2.3em;
+}
+.next_section_subheading{
+  color: white;
+  font-family: 'MyriadPro-Regular', sans-serif;
+  font-weight: normal;
+  font-size:1.5em;
+  padding-top: 35px;
+}
+.small_form_title{
+  color: white;
+  font-family: 'MyriadPro-Regular', sans-serif;
+  font-weight: normal;
+  font-size:1.5em;
+  margin-top: 8px;
+  text-align: center;
+}
+.bannerText{
+text-transform: uppercase; 
+text-align: center; 
+padding-top: 55px;
+font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+  font-size: 2em;
+}
+.select_submission_form{
+   background: rgba(187, 187, 189, 0.5) !important;
+  border: 1px solid #FFFFFF;
+  color: #FFFFFF !important;
+  text-transform: uppercase;
+  width: 100%;
+  height: 33px;
+
+
+  -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+.btn-custom {
+  background: rgba(69, 134, 52, 0.7) !important;
+  opacity: 0.8;
+  border: 1px solid #FFFFFF;
+  color: #FFFFFF !important;
+ 
+
+    
+    color: #FDFDFD;
+
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    /* CSS Transition */
+    -webkit-transition: background .2s ease-in-out, border .2s ease-in-out;
+    -moz-transition: background .2s ease-in-out, border .2s ease-in-out;
+    -ms-transition: background .2s ease-in-out, border .2s ease-in-out;
+    -o-transition: background .2s ease-in-out, border .2s ease-in-out;
+    transition: background .2s ease-in-out, border .2s ease-in-out;
+}
+
+.form-custom{
+  background: rgba(187, 187, 189, 0.5) !important;
+  border: 1px solid #FFFFFF;
+  color: #FFFFFF !important;
+
+  -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+
+ .form-custom:focus {
+  -webkit-box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.075), 0 0 0 rgba(82, 168, 236, 0.6);
+          box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.075), 0 0 0 rgba(82, 168, 236, 0.6);
+  -webkit-box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.075), 0 0 0 rgba(102, 175, 233, 0.6);
+         box-shadow: inset 0 0 0rgba(0, 0, 0, 0.075), 0 0 0 rgba(102, 175, 233, 0.6);
+         border-color: none;
+ }
+  .form-custom:active {
+  -webkit-box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.075), 0 0 0 rgba(82, 168, 236, 0.6);
+          box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.075), 0 0 0 rgba(82, 168, 236, 0.6);
+  -webkit-box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.075), 0 0 0 rgba(102, 175, 233, 0.6);
+         box-shadow: inset 0 0 0rgba(0, 0, 0, 0.075), 0 0 0 rgba(102, 175, 233, 0.6);
+         border-color: none;
+ }
+.subscriber_form{
+  width: 100%;
+}
+.form-custom::-webkit-input-placeholder {
+   color: white;
+}
+
+.form-custom:-moz-placeholder { /* Firefox 18- */
+   color: white;  
+}
+
+.form-custom::-moz-placeholder {  /* Firefox 19+ */
+   color: white;  
+}
+
+.form-custom:-ms-input-placeholder {  
+   color: white;  
+}
