@@ -1516,6 +1516,18 @@ h1:before {
   min-height: 100%;
   clear: both;
 }
+.why_section_title{
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+  font-size: 2.5em;
+  color: black;
+}
+.why_section_text{
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1.4em;
+  color: white;
+}
 .whySectionPositioning{
 padding-top: 100px;
 padding-bottom: 100px;
