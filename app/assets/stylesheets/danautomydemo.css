@@ -1705,3 +1705,8 @@ font-family: 'Josefin Sans', sans-serif;
 .form-custom:-ms-input-placeholder {  
    color: white;  
 }
+
+.navbar a:focus{
+  color: white;
+  text-decoration: none;
+}
