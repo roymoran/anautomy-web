@@ -4,8 +4,9 @@ Rails.application.routes.draw do
   get '/anautomy/homepage'
   get '/anautomy/shop_profile'
   #root 'static_pages#home'
-  root 'anautomy#welcome'
+  #root 'anautomy#welcome'
   #root 'anautomy#homepage'
+  root '/anautomy/homepage'
   #post   'sub'   => 'subscribers#create'
   resources :subscribers
   resources :repair_submissions
