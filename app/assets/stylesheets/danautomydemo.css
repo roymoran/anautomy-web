@@ -609,17 +609,21 @@ display: block;
   font-family: 'Josefin Sans', sans-serif;
   font-size: 2.5em;
   font-weight: 600;
+  color: white;
+  padding-top: 10px;
 }
 
 .categoryHeader{
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 400;
   font-size: 1.3em;
+  color: white;
 }
 .subHeader{
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 600;
   font-size: 1.2em;
+  color: white;
 }
 .carSubheader{
   text-transform: uppercase;
@@ -640,41 +644,13 @@ display: block;
   
 }
 
-.my-container .bottomBlock {
-    position: relative;
-    color: white;
-    z-index: 2;
-} 
-.my-container img {
-    position: absolute;
-    width: 86%;
-    height: 84%;
-    left: 0;
-    top: 80px;
-    width: 100%;
-    height: auto;
-    opacity: 0.54;
-}
-
-.leftBlock{
+.background_main_black_repairs{
+  background-color: rgba(0,0,0,0.57);
  
-position:absolute;
-margin-left: 25px;
-width:100%;
- top:0;
- left:0;
- width:200px;
-}
-
-.rightBlock{
- 
-  position:absolute;
-  margin-right: 25px;
-  width: 100%;
- top:0;
- right:0;
- width:200px;
-
+  min-height: 600px;
+  margin-top: 20%;
+  /*opacity: 0.95;*/
+  
 }
 .centerLine{
   border: 1px solid white;

@@ -2181,38 +2181,68 @@
 
 </div>
       </div>
+      <!-- Start of right side of repairs page -->
 <div class = "container-fluid">
-      <div class="col-sm-6 right-col backgroundVehicleImage" style = " background: url(<%= @image_link %>) no-repeat center center; background-size: auto 100%;">
-        <!-- update the right side of the page to make responsive -->
-        <div class="my-container ">
-            <div class = "topBlock text-center">
-                <h2 class = "rightHeader"><%= @car %></h2>
-                <p class="carDatabox"><span class = "categoryHeader">Owner Rating</span><span class = "carData">4.5/5</span></p>
-                        <p class="carDatabox"><span class = "categoryHeader">Maintenance Rating</span><span class = "carData">$$$</span></p>
-                        <p class="carDatabox"><span class = "categoryHeader">5 year cost to own</span><span class = "carData">$145,000</span></p>
-                        <p class="carDatabox"><span class = "categoryHeader">Enter Miles for Average KBB Value</span><span class = "carData">KBB Value: $11,536</span></p>
-            </div>
-            <div class = "bottomBlock text-center">
-               <div class = "centerLine"></div>
-                <div class = "leftBlock">
-                    <h5 class = "subHeader carSubheader"><%= @car %> REVIEWS</h5>
-                <p class="bottomCarDatabox"><span class = "categoryHeader">Car &amp; Driver</span><span class = "bottomCarData">8.8/10</span></p>
-                <p class="bottomCarDatabox"><span class = "categoryHeader">Car Guru's</span><span class = "bottomCarData">4.8/5</span></p>
-            </div>
-            <div class = "rightBlock">
-                <h5 class = "subHeader">RELATED VEHICLES</h5>
-                <p class="bottomCarDatabox"><span class = "categoryHeader">Audi A4</span><span class = "bottomCarData">4.2/5</span></p>
-                <p class="bottomCarDatabox"><span class = "categoryHeader">Mercedes C-Class</span><span class = "bottomCarData">4.5/5</span></p>
-            </div>
-            </div>
-    <%= image_tag("mesh.png" ,class: "img-responsive") %>
-    <%= image_tag("black.png" ,class: "img-responsive") %>
+  <div class="col-sm-6 right-col backgroundVehicleImage" style = " background: url(<%= @image_link %>) no-repeat center center; background-size: auto 100%;">
+    <div class = "background_main_black_repairs">
+      <div class = "row">
+        <div class = "col-lg-12 text-center">
+          <h2 class = "rightHeader"><%= @car %></h2>
+        </div>
+      </div>
+      <div class = "row">
+        <div class = "col-lg-12 text-center">
+          <p class="carDatabox">
+            <span class = "categoryHeader">Owner Rating</span>
+            <span class = "carData">4.5/5</span>
+          </p>
+          <p class="carDatabox">
+            <span class = "categoryHeader">Maintenance Rating</span>
+            <span class = "carData">$$$</span></p>
+          <p class="carDatabox">
+            <span class = "categoryHeader">5 year cost to own</span>
+            <span class = "carData">$145,000</span></p>
+          <p class="carDatabox">
+            <span class = "categoryHeader">Enter Miles for Average KBB Value</span>
+            <span class = "carData">KBB Value: $11,536</span>
+          </p>
+        </div>
+      </div>
 
-</div>
+      <div class = "row">
+        <div class = "col-sm-6 text-center">
+          <h5 class = "subHeader carSubheader"><%= @car %> REVIEWS</h5>
+                <p class="bottomCarDatabox">
+                  <span class = "categoryHeader">Car &amp; Driver</span>
+                  <span class = "bottomCarData">8.8/10</span>
+                </p>
+                <p class="bottomCarDatabox">
+                  <span class = "categoryHeader">Car Guru's</span>
+                  <span class = "bottomCarData">4.8/5</span>
+                </p>
+        </div>
+        <!--
+        <div class = "col-sm-1">
+          <div class = "centerLine">
+          </div>
+        </div> -->
+        <div class = "col-sm-6 text-center">
+          <h5 class = "subHeader">RELATED VEHICLES</h5>
+                <p class="bottomCarDatabox">
+                  <span class = "categoryHeader">Audi A4</span>
+                  <span class = "bottomCarData">4.2/5</span>
+                </p>
+                <p class="bottomCarDatabox">
+                  <span class = "categoryHeader">Mercedes C-Class</span>
+                  <span class = "bottomCarData">4.5/5</span>
+                </p>
+        </div>
+      </div>
 
-
+    </div>
   </div>
 </div>
+<!-- End of right side for repairs page -->
   <!--<p class="repairCostBox"><span>Owner Rating</span><span class = "repairCostBoxPrice">4.5/5</span></p>
                         <p class="repairCostBox"><span>Maintenance Rating</span><span class = "repairCostBoxPrice">$$$</span></p>
                         <p class="repairCostBox"><span>5 year cost to own</span><span class = "repairCostBoxPrice">145,000</span></p>
