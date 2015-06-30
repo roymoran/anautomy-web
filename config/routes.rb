@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   #root 'static_pages#home'
   #root 'anautomy#welcome'
   #root 'anautomy#homepage'
-  root '/anautomy/homepage'
+  root 'anautomy#homepage'
   #post   'sub'   => 'subscribers#create'
   resources :subscribers
   resources :repair_submissions
