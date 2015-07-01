@@ -302,47 +302,56 @@
 
 </div>
       </div>
+
 <div class = "container-fluid">
-  <div class="col-sm-6 right-col backgroundVehicleImage" style = "background: url(<%= @image_link %>) no-repeat center center; background-size: auto 100%;">
-
-        <div class="my-container2">
-            <div class = "topBlock text-left clutchImg">
-                <h3 >Repair Details</h3>
-                <%if !(@repair.blank?)%>
-                <h4><ul>(<%=@repair%>)</ul></h4>
-                <%end%>
-            </div>
-            <div class = "row">
-            <div class = "bottomBlock text-left">
-               <div class = "centerLine2"></div>
-            <div class = "col-sm-5">
-                <div class = "detailsLeftBlock">
-                  <h5 class = "detailsHeader">DESCRIPTION</h5>
-                  <p class = "detailsDescription">- The <%=@repair%> is a critical component of your vehicle. It is used to engage and disengage the power transmission. Essentially, the <%=@repair%> gives and cuts off power to your vehicle and is an important piece of your transmission...<a href = "#moreinfo">read more</a></p>
-                  <h5 class = "detailsHeader">REPAIR/REPLACEMENT URGENCY</h5>
-                  <p class = "highUrgencyLevel detailsDescription">Very High</p>
-                  <h5 class = "detailsHeader">STANDARD REPLACEMENT TIME</h5>
-                  <p class = "detailsDescription">- 100,000 miles on BMW M3's, but this is highly variable on clutch shift time and driving style. Individuals experienced in driving manual transmission cars may see more lengevity from their clutch.</p>
-            </div>
-          </div>
-          <div class = "col-sm-6">
-            <div class = "detailsRightBlock">
-                <h5 class = "detailsHeader">SYMPTOMS OF CLUTCH PROBLEMS</h5>
-                <p class = "detailsDescription">- Slipping or missing gears, burnt smell from under hood, loose <%=@repair%> pedal, 'spongy' <%=@repair%>, <a href = "#seemore">see all</a></p>
-                <h5 class = "detailsHeader">IF THIS PART IS NOT REPLACED IMMEDIATELY</h5>
-                <p class = "detailsDescription">- You can anticipate major complications while attempting to start your car, drive, or shift gears. It is recommended that this is repaired immediately and the vehicle should not be driven, even to the mechanic/auto shop.</p>
-                <h5 class = "detailsHeader">ASSOCIATED DIAGNOSTIC FAULT CODES</h5>
-                <p class = "detailsDescription">- 0028, 0029, 0031, 0035, <a href = "#seeall">see all</a></p>
-            </div>
-            </div>
-          </div> 
+  <div class = "col-sm-6 backgroundVehicleImage" style = "background: url(<%= @image_link %>) no-repeat center center; background-size: auto 100%;">
+    <div class = "background_main_black_repairs">
+      
+      <div class = "row">
+        <div class = " topBlock col-lg-12 text-left">
+          <h3 >Repair Details</h3>
+          <%if !(@repair.blank?)%>
+          <h4><ul>(<%=@repair%>)</ul></h4>
+          <%end%>
         </div>
-    <%= image_tag("mesh.png" ,class: "img-responsive") %>
-    <%= image_tag("black.png" ,class: "img-responsive") %>
+      </div>
+      <div class = "row">
+        <div class = "col-lg-12">
+          <div class = "clutchImg">
+            <br><br>
+            <br><br>
+            <br><br>
+            <br><br>
+            <br><br>
+            <br><br>
+            <br><br>
+            <br><br>
+            <br><br>
+          </div>
+        </div>
+      </div>
+      <div class = "row">
+        <div class = "col-xs-6" style = "padding-left:">
+          <h5 class = "detailsHeader">DESCRIPTION</h5>
+          <p class = "detailsDescription">- The <%=@repair%> is a critical component of your vehicle. It is used to engage and disengage the power transmission. Essentially, the <%=@repair%> gives and cuts off power to your vehicle and is an important piece of your transmission...<a href = "#moreinfo">read more</a></p>
+          <h5 class = "detailsHeader">REPAIR/REPLACEMENT URGENCY</h5>
+          <p class = "highUrgencyLevel detailsDescription">Very High</p>
+          <h5 class = "detailsHeader">STANDARD REPLACEMENT TIME</h5>
+          <p class = "detailsDescription">- 100,000 miles on BMW M3's, but this is highly variable on clutch shift time and driving style. Individuals experienced in driving manual transmission cars may see more lengevity from their clutch.</p>
+        </div>
+        <div class = "col-xs-6">
+          <h5 class = "detailsHeader">SYMPTOMS OF CLUTCH PROBLEMS</h5>
+          <p class = "detailsDescription">- Slipping or missing gears, burnt smell from under hood, loose <%=@repair%> pedal, 'spongy' <%=@repair%>, <a href = "#seemore">see all</a></p>
+          <h5 class = "detailsHeader">IF THIS PART IS NOT REPLACED IMMEDIATELY</h5>
+          <p class = "detailsDescription">- You can anticipate major complications while attempting to start your car, drive, or shift gears. It is recommended that this is repaired immediately and the vehicle should not be driven, even to the mechanic/auto shop.</p>
+          <h5 class = "detailsHeader">ASSOCIATED DIAGNOSTIC FAULT CODES</h5>
+          <p class = "detailsDescription">- 0028, 0029, 0031, 0035, <a href = "#seeall">see all</a></p>
+        </div>
+      </div>
 
-</div>
 
 
+    </div>
   </div>
 </div>
 

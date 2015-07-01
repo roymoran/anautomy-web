@@ -646,12 +646,16 @@ display: block;
 
 .background_main_black_repairs{
   background-color: rgba(0,0,0,0.57);
- 
   min-height: 600px;
   margin-top: 20%;
   /*opacity: 0.95;*/
   
 }
+.background_main_black_repairs a {
+    color: #52BB4A;
+    text-decoration: underline;
+} 
+
 .centerLine{
   border: 1px solid white;
   margin: 0 auto;
@@ -1126,11 +1130,13 @@ width:100%;
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 400;
   padding-left: 15px;
+  color: white;
 }
 
 .topBlock h4{
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 400;
+  color: white;
 }
 
 
