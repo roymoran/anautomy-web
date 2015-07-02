@@ -469,30 +469,37 @@ src: url("MyriadPro-Cond.otf") format("opentype");
 display: block;
 
 }
+.media-object{
+  height: 200px;
+}
+
+.demo_button_custom{
+  background: #52BB49;
+  border: none;
+  color: white;
+  text-decoration: none;
+  font-size: 1.4em;
+  height: 100px;
+  width:100%;
+
+
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
 
 #top_repair .repairIcon, #top_repair2 .repairIcon, #top_repair3 .repairIcon{
   text-decoration: none;
   color: #ffffff;
-  font-size: 18px;
-  background-color: #52BB49;
-  border-bottom-color: #52BB49;
-  border-bottom-width: 3px;
-  border-bottom-style: solid;
-
-  position: absolute;
-  right: -1px;
-  top: -15px;
-   padding-left: 13px;
-   padding-right: 8px;
-   padding-bottom: 45px;
-   padding-top: 45px;
-   margin-right: -10px;
+  text-align: center;
+  position:relative;
+  top: calc(50% - 10px); /* 50% - 3/4 of icon height */
 
 }
 #top_repair div span, #top_repair2 div span, #top_repair3 div span{
 display: block;
-
 }
+
 #engineRepairs , #transmissionRepairs, #exhaustEmissionsRepairs, #brakesRepairs, #electricalLightsRepairs, #suspensionSteeringRepairs, #suspensionSteeringRepairs{
 
 
@@ -535,18 +542,21 @@ display: block;
 }
 
 #top_repair .ui-accordion-content, #top_repair2 .ui-accordion-content, #top_repair3 .ui-accordion-content, #top_repair4 .ui-accordion-content, #top_repair5 .ui-accordion-content{
-  width: 100%;
+  
     background-color: #CFCFCF;
     color: #2F2F2F;
     position: relative;
-    max-height: 200px;
     background-color: #CFCFCF;
     margin-top: -10px;
     margin-bottom: 10px;
+
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 #top_repair .ui-accordion-header, #top_repair2 .ui-accordion-header, #top_repair3 .ui-accordion-header, #top_repair4 .ui-accordion-header, #top_repair5 .ui-accordion-header{
-  
   margin-bottom: 10px;
   border-width: 0;
   margin-bottom: 10px;
@@ -558,12 +568,14 @@ display: block;
   margin-top: -8px;
 }
 .repairDetailsPositioning{
-    margin-top: 4px;
-  
+  margin-top: 4px;
 }
 
 .repairCostBox{
-  width: 130px;
+  font-size: 1.2em;
+  padding-top: 10px;
+}
+.price_range_title{
   font-size: 1.2em;
 }
 
@@ -645,9 +657,9 @@ display: block;
 }
 
 .background_main_black_repairs{
-  background-color: rgba(0,0,0,0.57);
+  background: url('Transparent_Background_2.png');
   min-height: 600px;
-  margin-top: 20%;
+  margin-top: 15%;
   /*opacity: 0.95;*/
   
 }

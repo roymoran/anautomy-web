@@ -66,24 +66,22 @@
 <h5 class = "searchResultsTitle"> <%= @repair %> AND RELATED REPAIRS FOR THE <%= @car %> </h5>
     <div id="top_repair">
   <h4><ul class = "repairCategoryTitle"><%=@repair%><span class = "totalSubmissionsText">(Total <%= rand(30..80) %> Submissions)</span></ul></h4>
-  <div class = "conatiner-fluid"> 
-    <div class = "row repairDetailsPositioning">
-    <div class = "col-sm-4">
+    <div class = "row">
+    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
     <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
-</div>
-<div class = "col-sm-4">
+  </div>
+<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
-<div class = "col-sm-3 repairRangePositioning">
-  <p class = "text-center ">Price Range</p>
+<div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
+  <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range" value="" name="range" />
 </div>
-<div class = "col-sm-1">
-    <%= link_to "<i class = 'fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path%>
+<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
 </div>
 
-</div>
-</div>
 </div>
 
 <div id="top_repair2">
