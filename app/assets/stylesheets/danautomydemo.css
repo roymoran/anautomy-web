@@ -664,8 +664,9 @@ display: block;
 
 .background_main_black_repairs{
   background: url('Transparent_Background_2.png');
-  min-height: 600px;
+
   margin-top: 15%;
+  height: auto;
   /*opacity: 0.95;*/
   
 }
