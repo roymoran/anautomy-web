@@ -63,11 +63,13 @@
 </div>
 <ul class = "hiddenDataMessage">*To see details for all submissions, create a free account and submit at least once.</ul>
 <h5 class = "submissionsRepairTitle" ><ul>REPAIR DETAILS FOR <%=@repair%> (<%= @car %>)</ul></h5>
-<div class = "allSubissionsBlock container-fluid">
+<div class = "allSubissionsBlock container-fluid main_tool_tip" title = "We'll only show you what matters - shops with above average rating that charged a below average price for this repair.">
 <div class = " submissionBlock"> 
     <div class = "row">
-    <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center submissionBox"><span>Submission</span><span class = "shopName">AMX Auto</span></p>
+    <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2 shopToolTop" title = "We'll show you the shop where the work was done.">
+        <p class="text-center submissionBox">
+          <span>Submission</span>
+          <span class = "shopName">AMX Auto</span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2">
     <p class="text-center submissionBlockPositioning"><span>Total Cost</span><span class = "repairCostBoxPriceSubmissionsPage">$<%= @firstResult %></span></p>
@@ -75,7 +77,7 @@
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2">
     <p class="text-center submissionBlockPositioning" ><span>Parts/Labor</span><span class = "repairCostBoxPriceSubmissionsPage">$<%=@firstPart%>/$<%=@firstLabor%></span></p>
 </div>
-<div class = "col-md-2 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-2 col-md-offset-0 col-xs-8 col-xs-offset-2 ratingsToolTip" title = "Yelp integrated ratings for shops">
     <p class="text-center submissionBlockPositioning"><span class = " rating star5"></span><span class = "reviewText"><a href = "#review">Read Full Review</a></span></p>
 </div>
 <div class = "col-md-1 col-md-offset-0 col-xs-4 col-xs-offset-4">
@@ -276,7 +278,7 @@
   <div class = " submissionBlock"> 
     <div class = "row">
     <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center submissionBox"><span>Submission</span><span class = "shopName">Shop Name</span></p>
+    <p class="text-center submissionBox"><span>Submission</span><span class = "shopName tooltip">Shop Name</span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2">
     <p class="text-center submissionBlockPositioning"><span>Total Cost</span><span class = "repairCostBoxPriceSubmissionsPage">$<%= @eleventhResult %></span></p>
@@ -303,7 +305,7 @@
       </div>
 
 <div class = "container-fluid">
-  <div class = "col-sm-6 backgroundVehicleImage" style = "background: url(<%= @image_link %>) no-repeat center center; background-size: auto 100%;">
+  <div class = "col-sm-6 backgroundVehicleImage repair_info_tooltip" title = "Valuable information about the repair." style = "background: url(<%= @image_link %>) no-repeat center center; background-size: auto 100%;">
     <div class = "background_main_black_repairs">
       
       <div class = "row">
@@ -361,7 +363,7 @@
         </div>
         <!-- /.row -->
     </div>
-    <div class = "container-fluid text-center analyticsSnapshot" style = "margin-bottom: 150px;">
+    <div class = "container-fluid text-center analyticsSnapshot analytics_tooltip" title = "Analytics help you understand how much you are paying overtime compared to other cars and geographies." style = "margin-bottom: 150px;">
     <h1 class = "analyticsSnapshotTitle">ANALYTICS <i class="fa fa-cogs analyticsSnapshotGears"></i> SNAPSHOT</h1>
     <div class = "row">
       <div class = "col-sm-4">
@@ -388,8 +390,8 @@
   </div>
   <h3 class = "snapshotTitle">Potential Additions<i class="fa fa-angle-down snapshotArrowDown"></i></h3>
   <div>
-   <p>Slave cylinders works with the master cyclinder to conver non-hydraulic pressure into hydraulic pressure. Given that SMG vehicles operates with hydraulic <%=@repair%> systems, slave cyliinders are a common additional replacement and replacing a <%=@repair%> </p><br> <a>Expected Parts Cost: $87 additional</a> <a>Expected Labor Cost: $60 additional</a></p>
-   <p>The flywheel is the rotating component that receives energy which will further transfer the energy to the <%=@repair%> when the <%=@repair%> plate becomes in contact with the flywheel itself. Since these components work together very closely, it is very likely that a flywheel replacements will be necessary in addition to the <%=@repair%>. A bad <%=@repair%> will cause the flywheel to dull and lose grip </P><br> <a>Expected Parts Cost: $418 additional</a> <a>Expected Labor Cost: $213 additional</a></p>
+   <p>Slave cylinders works with the master cyclinder to conver non-hydraulic pressure into hydraulic pressure. Given that SMG vehicles operates with hydraulic <%=@repair%> systems, slave cyliinders are a common additional replacement and replacing a <%=@repair%><br> <a>Expected Parts Cost: $87 additional</a> <a>Expected Labor Cost: $60 additional</a></p>
+   <p>The flywheel is the rotating component that receives energy which will further transfer the energy to the <%=@repair%> when the <%=@repair%> plate becomes in contact with the flywheel itself. Since these components work together very closely, it is very likely that a flywheel replacements will be necessary in addition to the <%=@repair%>. A bad <%=@repair%> will cause the flywheel to dull and lose grip<br> <a>Expected Parts Cost: $418 additional</a> <a>Expected Labor Cost: $213 additional</a></p>
   </div>
   
 </div>
@@ -452,6 +454,54 @@ $( "#accordion, #accordion2, #accordion3" ).accordion({
       heightStyle: "content",
       active: false
     });
+
+$(document).ready(function() {
+            $('.shopToolTop').tooltipster({
+              animation: 'fade',
+              delay: 0,
+              theme: 'tooltipster-default',
+              touchDevices: false,
+              trigger: 'hover',
+              position: 'bottom'
+            });
+
+            $('.ratingsToolTip').tooltipster({
+              animation: 'fade',
+              delay: 0,
+              theme: 'tooltipster-default',
+              touchDevices: false,
+              trigger: 'hover',
+              position: 'bottom'
+            });
+            $('.main_tool_tip').tooltipster({
+              animation: 'fade',
+              delay: 0,
+              theme: 'tooltipster-default',
+              touchDevices: false,
+              trigger: 'hover',
+              position: 'top',
+              maxWidth: 400
+            });
+            $('.repair_info_tooltip').tooltipster({
+              animation: 'fade',
+              delay: 0,
+              theme: 'tooltipster-default',
+              touchDevices: false,
+              trigger: 'hover',
+              position: 'left',
+              maxWidth: 100
+            });
+            $('.analytics_tooltip').tooltipster({
+              animation: 'fade',
+              delay: 0,
+              theme: 'tooltipster-default',
+              touchDevices: false,
+              trigger: 'hover',
+              position: 'top',
+              maxWidth: 400
+            });
+        });
+
 
     </script>
 <!-- Source http://stackoverflow.com/questions/21166436/jquery-accordion-change-font-awesome-icon-class-on-click -->
