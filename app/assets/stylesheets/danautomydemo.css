@@ -448,20 +448,9 @@ src: url("MyriadPro-Cond.otf") format("opentype");
 #repairCategories div div .repairIcon{
   text-decoration: none;
   color: #ffffff;
-  font-size: 18px;
-  background-color: #52BB49;
-  border-bottom-color: #52BB49;
-  border-bottom-width: 3px;
-  border-bottom-style: solid;
-
-  position: absolute;
-  right: -1px;
-  top: -15px;
-   padding-left: 13px;
-   padding-right: 8px;
-   padding-bottom: 45px;
-   padding-top: 45px;
-   margin-right: -10px;
+  text-align: center;
+  position:relative;
+  top: calc(50% - 10px); /* 50% - 3/4 of icon height */
 
 }
 
@@ -496,8 +485,9 @@ display: block;
   top: calc(50% - 10px); /* 50% - 3/4 of icon height */
 
 }
-#top_repair div span, #top_repair2 div span, #top_repair3 div span{
-display: block;
+#top_repair div span, #top_repair2 div span, #top_repair3 div span
+{
+  display: block;
 }
 
 #engineRepairs , #transmissionRepairs, #exhaustEmissionsRepairs, #brakesRepairs, #electricalLightsRepairs, #suspensionSteeringRepairs, #suspensionSteeringRepairs{
@@ -519,9 +509,11 @@ display: block;
     width: 100%;
     background-color: #CFCFCF;
 
-    color: #2F2F2F;
-    position: relative;
-    max-height: 200px;
+
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 #engineRepairs .ui-accordion-header , #transmissionRepairs .ui-accordion-header, #exhaustEmissionsRepairs .ui-accordion-header, #brakesRepairs .ui-accordion-header , #electricalLightsRepairs .ui-accordion-header, #suspensionSteeringRepairs .ui-accordion-header, #suspensionSteeringRepairs .ui-accordion-header {
@@ -537,8 +529,7 @@ display: block;
     right margin is 5px
     bottom margin is 15px
     left margin is 20px
-    */
-    
+  */  
 }
 
 #top_repair .ui-accordion-content, #top_repair2 .ui-accordion-content, #top_repair3 .ui-accordion-content, #top_repair4 .ui-accordion-content, #top_repair5 .ui-accordion-content{
@@ -722,9 +713,8 @@ display: block;
 
 .allSubissionsBlock{
 max-height: 600px;
-  overflow-y:auto;
-  width: 100%;
-
+overflow-y:auto;
+width: 100%;
 }
 .searchForm{
   position: relative;
@@ -937,7 +927,6 @@ display: block;
     background-color: #CFCFCF;
     color: #2F2F2F;
     position: relative;
-    max-height: 200px;
 }
 
 #engineRepairs .ui-accordion-header , #transmissionRepairs .ui-accordion-header, #exhaustEmissionsRepairs .ui-accordion-header, #brakesRepairs .ui-accordion-header , #electricalLightsRepairs .ui-accordion-header, #suspensionSteeringRepairs .ui-accordion-header, #suspensionSteeringRepairs .ui-accordion-header {
@@ -954,7 +943,8 @@ display: block;
 }
 
 
-.averageBarArrow{
+.averageBarArrow
+{
   color: #54BB4A;
 }
 
@@ -1211,6 +1201,7 @@ h1:before {
   color: #ffffff;
   margin-bottom: 20px;
   background-color: #51BB49;
+
 }
 
 #accordion .ui-accordion-content, #accordion2 .ui-accordion-content, #accordion3 .ui-accordion-content  {
@@ -1564,7 +1555,7 @@ padding-bottom: 100px;
 /* centered columns styles */
 .row-centered {
     text-align:center;
-    padding-top: 80px;
+    padding-top: 20px;
 }
 .col-centered {
     display:inline-block;
