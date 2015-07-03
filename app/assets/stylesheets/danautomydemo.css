@@ -477,6 +477,21 @@ display: block;
     border-radius: 0;
 }
 
+.demo_button_custom_submission{
+  background: #52BB49;
+  border: none;
+  color: white;
+  text-decoration: none;
+  font-size: 1.4em;
+  height: 85px;
+  width:100%;
+
+
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+
 #top_repair .repairIcon, #top_repair2 .repairIcon, #top_repair3 .repairIcon{
   text-decoration: none;
   color: #ffffff;
@@ -859,16 +874,9 @@ border-radius: 0; }
 .submissionRepairIcon{
   text-decoration: none;
   color: #ffffff;
-  font-size: 2em;
-  background-color: #52BB49;
-  border-bottom-color: #52BB49;
-  border-bottom-width: 3px;
-  border-bottom-style: solid;
-
-   padding-left: 8px;
-   padding-right: 9px;
-   padding-bottom: 35px;
-   padding-top: 35px;
+  text-align: center;
+  position:relative;
+  top: calc(50% - 10px); /* 50% - 3/4 of icon height */
 }
 #repairCategories h3 .mainCategoryIcon{
 
@@ -1219,10 +1227,10 @@ h1:before {
 }
 
 #accordion .ui-accordion-header:nth-of-type(2), #accordion2 .ui-accordion-header:nth-of-type(2), #accordion3 .ui-accordion-header:nth-of-type(2){
-  margin-bottom: 200px;
+  margin-bottom: 20px;
 }
 #accordion .ui-accordion-content:nth-of-type(2), #accordion2 .ui-accordion-content:nth-of-type(2), #accordion3 .ui-accordion-content:nth-of-type(2){
-  margin-top: -200px;
+  margin-top: -20px;
 }
 
 .snapshotArrowDown{
