@@ -664,7 +664,7 @@ display: block;
 
 .background_main_black_repairs{
   background: url('Transparent_Background_2.png');
-
+  min-height: 600px;
   margin-top: 15%;
   height: auto;
   /*opacity: 0.95;*/
@@ -731,6 +731,10 @@ display: block;
 max-height: 600px;
 overflow-y:auto;
 width: 100%;
+}
+.allRepairsBlock{
+max-height: 500px;
+overflow-y:auto;
 }
 .searchForm{
   position: relative;

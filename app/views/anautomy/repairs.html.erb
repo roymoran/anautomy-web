@@ -61,12 +61,12 @@
 </div>
 
 </div>
-<div class = "row">
+<div class = "row main_info_tooltip" title = "You can see any repair for this car, and the top repairs will be relevant to the repair that you searched for.">
 <%if !(@repair.blank?)%>
 <h5 class = "searchResultsTitle"> <%= @repair %> AND RELATED REPAIRS FOR THE <%= @car %> </h5>
     <div id="top_repair">
   <h4><ul class = "repairCategoryTitle"><%=@repair%><span class = "totalSubmissionsText">(Total <%= rand(30..80) %> Submissions)</span></ul></h4>
-    <div class = "row">
+    <div class = "row cost_tooltip" title = "Average parts costs, labor costs, and price range for each repair on this vehicle specifically.">
     <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
     <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
@@ -124,8 +124,8 @@
 </div>
 <% end %>
 
-
 <h5 class = "searchResultsTitle"> COMMON SERVICES AND REPAIRS FOR THE <%= @car %> </h5>
+<div class = "allRepairsBlock">
   <div id="repairCategories">
   <h3><span class = "repairCategoryTitle">ENGINE </span><span class = "totalSubmissionsTextMain">(Total <%= rand(50..150) %> Repairs)</span><i class="fa fa-angle-right mainCategoryIcon"></i></h3>
   <div>
@@ -2070,6 +2070,7 @@
 </div>
 </div>
 </div>
+</div>
 <br>
 <br>
 <br>
@@ -2079,13 +2080,13 @@
       <!-- Start of right side of repairs page -->
 <div class = "container-fluid">
   <div class="col-sm-6 right-col backgroundVehicleImage" style = " background: url(<%= @image_link %>) no-repeat center center; background-size: auto 100%;">
-    <div class = "background_main_black_repairs">
+    <div class = "background_main_black_repairs data_compare_tooltip" title = "Understanding your car compared to other cars.">
       <div class = "row">
         <div class = "col-lg-12 text-center">
           <h2 class = "rightHeader"><%= @car %></h2>
         </div>
       </div>
-      <div class = "row">
+      <div class = "row kbb_tooltip" title = "KKB/Edmunds API for your cars value.">
         <div class = "col-lg-12 text-center">
           <p class="carDatabox">
             <span class = "categoryHeader">Owner Rating</span>
@@ -2256,11 +2257,44 @@ $("#range").ionRangeSlider({
              prettify_enabled: true,
              prettify_separator: ","
         });
-        $(function () {
-          $('[data-toggle="tooltip"]').tooltip()
-        })
-
-        $('#example').tooltip('show')
+        
+        $(document).ready(function() {
+            $('.data_compare_tooltip').tooltipster({
+              animation: 'fade',
+              delay: 0,
+              theme: 'tooltipster-default',
+              touchDevices: false,
+              trigger: 'hover',
+              position: 'left',
+              maxWidth: 200
+            });
+            $('.kbb_tooltip').tooltipster({
+              animation: 'fade',
+              delay: 0,
+              theme: 'tooltipster-default',
+              touchDevices: false,
+              trigger: 'hover',
+              position: 'top'
+            });
+            $('.cost_tooltip').tooltipster({
+              animation: 'fade',
+              delay: 0,
+              theme: 'tooltipster-default',
+              touchDevices: false,
+              trigger: 'hover',
+              position: 'right',
+              maxWidth: 200
+            });
+            $('.main_info_tooltip').tooltipster({
+              animation: 'fade',
+              delay: 0,
+              theme: 'tooltipster-default',
+              touchDevices: false,
+              trigger: 'hover',
+              position: 'top',
+              maxWidth: 400
+            });
+        });
 
 
     </script>
