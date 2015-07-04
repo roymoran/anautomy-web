@@ -491,6 +491,20 @@ display: block;
     -moz-border-radius: 0;
     border-radius: 0;
 }
+.demo_button_custom_submission_sm{
+  background: #52BB49;
+  border: none;
+  color: white;
+  text-decoration: none;
+  font-size: 1.4em;
+  height: 22px;
+  width:100%;
+
+
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
 
 #top_repair .repairIcon, #top_repair2 .repairIcon, #top_repair3 .repairIcon{
   text-decoration: none;
@@ -855,7 +869,7 @@ border-radius: 0; }
 
 .reviewText{
   text-decoration: underline;
-  font-size: 13px;
+  font-size: 0.8em;
   color: black;
 }
 
