@@ -67,18 +67,21 @@
     <div id="top_repair">
   <h4><ul class = "repairCategoryTitle"><%=@repair%><span class = "totalSubmissionsText">(Total <%= rand(30..80) %> Submissions)</span></ul></h4>
     <div class = "row cost_tooltip" title = "Average parts costs, labor costs, and price range for each repair on this vehicle specifically.">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 </div>
 
@@ -87,18 +90,21 @@
 <div id="top_repair2">
   <h4><ul class = "repairCategoryTitle">Flywheel Replacement<span class = "totalSubmissionsText">(Total <%= rand(30..80) %> Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 </div>
 </div>
@@ -107,18 +113,21 @@
 <div id="top_repair3">
   <h4><ul class = "repairCategoryTitle">Rear Differential<span class = "totalSubmissionsText">(Total <%= rand(30..80) %> Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 </div>
 </div>
@@ -132,58 +141,65 @@
     <div id="engineRepairs">
   <h4><ul class = "specificRepairCategoryTitle">Fuel Injector Replacement<span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
 </div>
-
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
+</div>
 </div>
   
 
 
   <h4><ul class = "specificRepairCategoryTitle">Fuel Pump Replacement  <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
 </div>
-
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
+</div>
 </div>
   
 
 
   <h4><ul class = "specificRepairCategoryTitle">Head Gasket(s) Replacement<span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -192,36 +208,42 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Ignition Coil Replacement <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
 
   <h4><ul class = "specificRepairCategoryTitle">Timing Belt Replacement<span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -230,18 +252,21 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Fuel Pump Replacement  <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -250,18 +275,21 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Head Gasket(s) Replacement <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -270,36 +298,42 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Ignition Coil Replacement <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
 
 <h4><ul class = "specificRepairCategoryTitle">Ignition Coil Replacement <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -308,18 +342,21 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Fuel Injector Replacement <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
 <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -328,18 +365,21 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Fuel Pump Replacement  <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -348,18 +388,21 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Head Gasket(s) Replacement <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -368,36 +411,42 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Ignition Coil Replacement <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
 
 <h4><ul class = "specificRepairCategoryTitle">Ignition Coil Replacement <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -411,18 +460,21 @@
     <div id="transmissionRepairs">
   <h4><ul class = "specificRepairCategoryTitle">Clutch<span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -431,18 +483,21 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Fuel Pump Replacement  <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -451,18 +506,21 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Head Gasket(s) Replacement<span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -471,36 +529,42 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Ignition Coil Replacement <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
 
   <h4><ul class = "specificRepairCategoryTitle">Timing Belt Replacement<span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -509,18 +573,21 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Fuel Pump Replacement  <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -529,56 +596,64 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Head Gasket(s) Replacement <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
 </div>
-
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
+</div>
 </div>
 
 
 
   <h4><ul class = "specificRepairCategoryTitle">Ignition Coil Replacement <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
 
 <h4><ul class = "specificRepairCategoryTitle">Ignition Coil Replacement <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
    <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -587,18 +662,21 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Fuel Injector Replacement <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -607,18 +685,21 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Fuel Pump Replacement  <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -627,18 +708,21 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Head Gasket(s) Replacement <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -647,36 +731,42 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Ignition Coil Replacement <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
 
 <h4><ul class = "specificRepairCategoryTitle">Ignition Coil Replacement <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -695,18 +785,21 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Exhaust Pipe Repair<span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -715,18 +808,21 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Tail Pipe Repair<span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -735,18 +831,21 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Crossover Pipe Repair <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -755,36 +854,42 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Exhaust Manifold Repair<span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
 
   <h4><ul class = "specificRepairCategoryTitle">Catalytic Converter Repair<span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -793,18 +898,21 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Gasket Replacement <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -813,18 +921,21 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Muffler Repair <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+   <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -833,36 +944,41 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Resonator Repair <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
 </div>
-
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
+</div>
 </div>
 
 <h4><ul class = "specificRepairCategoryTitle">Ignition Coil Replacement <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -871,18 +987,21 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Fuel Injector Replacement <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -891,18 +1010,21 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Fuel Pump Replacement  <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -911,18 +1033,21 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Head Gasket(s) Replacement <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+   <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -931,36 +1056,42 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Ignition Coil Replacement <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
 
 <h4><ul class = "specificRepairCategoryTitle">Ignition Coil Replacement <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -982,18 +1113,21 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Brake Pads Replacement<span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -1002,18 +1136,21 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Hose &amp; Line Replacement<span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -1022,18 +1159,21 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Fluid Exchange<span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -1042,36 +1182,42 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Hydraulics Repair<span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
 
   <h4><ul class = "specificRepairCategoryTitle">Emergency Brakes Repair<span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -1080,18 +1226,21 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Rear Drum Repair<span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -1100,18 +1249,21 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Chemical Brake Fluid Service<span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -1120,36 +1272,42 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Brake Rotor Replacement<span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
 
 <h4><ul class = "specificRepairCategoryTitle">Brake Lining Replacement<span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -1158,18 +1316,21 @@
 
   <h4><ul class = "specificRepairCategoryTitle">ABS Repair<span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+   <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -1178,18 +1339,21 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Wheel Cylinders Repair<span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -1198,18 +1362,21 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Shoe Replacement <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -1218,36 +1385,42 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Master Cylinders Replacement<span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
 
 <h4><ul class = "specificRepairCategoryTitle">Caliper Replacement<span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -1262,18 +1435,21 @@
     <div id="electricalLightsRepairs"> 
   <h4><ul class = "specificRepairCategoryTitle">Heater &amp; AC Controls <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -1282,18 +1458,21 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Door Locks<span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -1302,18 +1481,21 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Cruise Control<span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -1322,36 +1504,42 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Starter &amp; Alternator<span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
 
   <h4><ul class = "specificRepairCategoryTitle">Battery Replacement <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -1360,18 +1548,21 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Warning Lights<span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -1380,18 +1571,21 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Power Windows<span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -1399,36 +1593,42 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Power Steering<span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
 
 <h4><ul class = "specificRepairCategoryTitle">Headlights<span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -1437,18 +1637,21 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Tail Lights<span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -1457,18 +1660,21 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Windshield Wipers<span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -1477,18 +1683,21 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Defroster<span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -1509,18 +1718,21 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Fuel Injector Replacement <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -1529,18 +1741,21 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Fuel Pump Replacement  <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -1549,18 +1764,21 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Head Gasket(s) Replacement <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -1569,36 +1787,42 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Ignition Coil Replacement <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
 
   <h4><ul class = "specificRepairCategoryTitle">Fuel Injector Replacement <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -1607,18 +1831,21 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Fuel Pump Replacement  <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -1627,18 +1854,21 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Head Gasket(s) Replacement <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -1647,36 +1877,42 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Ignition Coil Replacement <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
 
 <h4><ul class = "specificRepairCategoryTitle">Ignition Coil Replacement <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -1685,18 +1921,21 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Fuel Injector Replacement <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -1705,18 +1944,21 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Fuel Pump Replacement  <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -1725,18 +1967,21 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Head Gasket(s) Replacement <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -1745,36 +1990,42 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Ignition Coil Replacement <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
 
 <h4><ul class = "specificRepairCategoryTitle">Ignition Coil Replacement <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -1792,38 +2043,43 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Fuel Injector Replacement <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
 </div>
-
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
+</div>
 </div>
   
 
 
   <h4><ul class = "specificRepairCategoryTitle">Fuel Pump Replacement  <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -1832,18 +2088,21 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Head Gasket(s) Replacement <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -1852,36 +2111,42 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Ignition Coil Replacement <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
 
   <h4><ul class = "specificRepairCategoryTitle">Fuel Injector Replacement <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -1890,18 +2155,21 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Fuel Pump Replacement  <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -1910,18 +2178,21 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Head Gasket(s) Replacement <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -1930,36 +2201,42 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Ignition Coil Replacement <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
 
 <h4><ul class = "specificRepairCategoryTitle">Ignition Coil Replacement <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -1968,18 +2245,21 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Fuel Injector Replacement <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -1988,18 +2268,21 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Fuel Pump Replacement  <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -2008,18 +2291,21 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Head Gasket(s) Replacement <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
@@ -2028,36 +2314,42 @@
 
   <h4><ul class = "specificRepairCategoryTitle">Ignition Coil Replacement <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
 
 <h4><ul class = "specificRepairCategoryTitle">Ignition Coil Replacement <span class = "totalSubmissionsText">(Total 108 Submissions)</span></ul></h4>
   <div class = "row">
-    <div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center repairCostBox"><span>Total Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
+    <div class = "col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-2">
+    <p class="text-center repairCostBox"><span>Average Cost</span><span class = "repairCostBoxPrice">$<%= @average_repair_cost %> </span></p>
   </div>
-<div class = "col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2">
+<div class = "col-md-4 col-md-offset-0 col-xs-4">
     <p class="text-center repairCostBox" ><span>Parts/Labor</span><span class = "repairCostBoxPrice">$<%=@average_parts_cost%>/$<%=@average_labor_cost%></span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2" style = "padding-bottom: 15px; padding-top: 10px;">
   <p class = "text-center price_range_title">Price Range</p>
     <input type="text" id="range2" value="" name="range" />
 </div>
-<div class = "col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-5" style = "padding-right: 0; margin-right: 0;">
+<div class = "col-md-1 col-md-offset-0 col-xs-12 hidden-sm hidden-xs" style = "padding-right: 0;">
   <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom" }%>
+</div>
+<div class = "col-md-1 col-md-offset-0 col-xs-12 visible-sm visible-xs" style = "padding-right: 0; padding-left: 0;">
+  <%= link_to "<i class='fa fa-caret-right repairIcon'></i>".html_safe, anautomy_submissions_path, { :class=>"btn demo_button_custom_submission_sm" }%>
 </div>
 
 </div>
