@@ -499,7 +499,7 @@ $(document).ready(function() {
               theme: 'tooltipster-default',
               trigger: 'hover',
               position: 'top',
-              maxWidth: 100
+              maxWidth: 400
             });
             $('.analytics_tooltip').tooltipster({
               animation: 'fade',
@@ -509,7 +509,21 @@ $(document).ready(function() {
               position: 'top',
               maxWidth: 400
             });
-        });
+            $('.under_construction_footer_tooltip').tooltipster({
+              animation: 'fade',
+              delay: 0,
+              theme: 'tooltipster-default',
+              trigger: 'click',
+              position: 'right'
+            });
+            $('.under_construction_header_tooltip').tooltipster({
+              animation: 'fade',
+              delay: 0,
+              theme: 'tooltipster-default',
+              trigger: 'click',
+              position: 'bottom'
+            });
+             });
 
 
     </script>
