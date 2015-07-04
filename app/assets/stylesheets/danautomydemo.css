@@ -401,14 +401,15 @@ src: url("MyriadPro-Cond.otf") format("opentype");
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 1.2em;
+  padding-left: 10px;
 }
 
 .totalSubmissionsText{
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   color: #52BB49;
-  padding-left: 30px;
-  font-size: 0.9em;
+  padding-left: 20px;
+  font-size: 0.8em;
 
 }
 #repairCategories h3 .mainCategoryIcon{
