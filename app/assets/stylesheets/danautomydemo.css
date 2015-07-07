@@ -1642,6 +1642,13 @@ font-family: 'Josefin Sans', sans-serif;
   font-weight: 400;
   font-size: 2em;
 }
+.bannerText2{
+text-transform: uppercase; 
+text-align: center; 
+font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+  font-size: 2em;
+}
 .select_submission_form{
    background: rgba(187, 187, 189, 0.5) !important;
   border: 1px solid #FFFFFF;
