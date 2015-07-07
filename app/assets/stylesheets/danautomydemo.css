@@ -590,6 +590,9 @@ display: block;
 .repairCostBox{
   font-size: 1.2em;
   padding-top: 10px;
+  margin-left: -12px;
+  margin-right: -12px;
+  
 }
 .price_range_title{
   font-size: 1.2em;
@@ -601,6 +604,7 @@ display: block;
   padding-top: 10px;
   height: 40px;
   font-size: 1.2em;
+
   
 }
 
