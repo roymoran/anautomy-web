@@ -728,8 +728,9 @@ display: block;
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
   background-color: #F2F0F1;
-  height: 40px;
-  padding-top: 13px;
+  height: auto;
+  padding-top: 1px;
+  padding-bottom: 1px;
 
 
   -webkit-box-shadow: 0 8px 6px -6px #BCBCBC;
