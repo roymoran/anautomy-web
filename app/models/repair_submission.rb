@@ -5,15 +5,15 @@ class RepairSubmission < ActiveRecord::Base
 	validates :zip, presence: true, length: {maximum: 10} 
 	validates :email, presence: true, length: {maximum: 255}, format: {with: VALID_EMAIL_REGEX} #removed email unqiueness for submission
 	
-	validates :vehicleYear, presence: true, length: {maximum: 255}
-	validates :vehicleMake, presence: true, length: {maximum: 5}
-	validates :vehicleModel, presence: true, length: {maximum: 50}
-	validates :vehicleTrim, presence: true, length: {maximum: 50}
+	validates :vehicle_year, presence: true, length: {maximum: 255}
+	validates :vehicle_make, presence: true, length: {maximum: 5}
+	validates :vehicle_model, presence: true, length: {maximum: 50}
+	validates :vehicle_trim, presence: true, length: {maximum: 50}
 
-	validates :repairDescription, presence: true
-	validates :partsCost, presence: true
-	validates :laborCost, presence: true
+	validates :repair_description, presence: true
+	validates :parts_cost, presence: true
+	validates :labor_cost, presence: true
 
-	validates :shopName, presence: true
-	validates :shopCityState, presence: true, length: {maximum: 50}
+	validates :shop_name, presence: true
+	validates :shop_city_state, presence: true, length: {maximum: 50}
 end
