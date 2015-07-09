@@ -10,7 +10,7 @@ class RepairSubmissionsController < ApplicationController
 	def create
 		@repairSubmission = RepairSubmission.new(repairSubmission_params)  
 		if @repairSubmission.save 
-		#SubscriberMailer.repair_submission_email(@repairSubmission).deliver_now
+		SubscriberMailer.repair_submission_email(@repairSubmission).deliver_now
 		
 		respond_to do |format|
 			#add fallback to html
