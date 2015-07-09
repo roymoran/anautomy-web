@@ -279,30 +279,30 @@
             </div>
             <div class = "row">
                     <div class = "col-sm-4">
-                        <%= f.select(:vehicleYear, options_for_select((Time.zone.now.year - 100)..(Time.zone.now.year), :selected => (Time.zone.now.year)), {}, {class: "select_submission_form"}) %>
+                        <%= f.select(:vehicle_year, options_for_select((Time.zone.now.year - 100)..(Time.zone.now.year), :selected => (Time.zone.now.year)), {}, {class: "select_submission_form"}) %>
                     </div>
                     <div class = "col-sm-4">
                         <div class="form-group ">
                             <label class = "sr-only">Make</label>
-                              <%= f.text_field :vehicleMake, class: 'form-control form-custom', :placeholder => "MAKE*"%>
+                              <%= f.text_field :vehicle_make, class: 'form-control form-custom', :placeholder => "MAKE*"%>
                         </div>
                     </div>
                     <div class = "col-sm-4">
                         <div class="form-group">
                             <label class = "sr-only">Model</label>
-                             <%= f.text_field :vehicleModel, class: 'form-control form-custom', :placeholder => "MODEL*"%>
+                             <%= f.text_field :vehicle_model, class: 'form-control form-custom', :placeholder => "MODEL*"%>
                         </div>
                     </div>
                     <div class = "col-sm-4">
                         <div class="form-group ">
                             <label class = "sr-only">Vehicle Trime</label>
-                             <%= f.text_field :vehicleTrim, class: 'form-control form-custom', :placeholder => "TRIM*"%>
+                             <%= f.text_field :vehicle_trim, class: 'form-control form-custom', :placeholder => "TRIM*"%>
                         </div>
                     </div>
                     <div class = "col-sm-4">
                         <div class="form-group">
                             <label class = "sr-only">Mileage</label>
-                            <%= f.text_field :vehicleMileage, class: 'form-control form-custom', :placeholder => "MILEAGE"%>
+                            <%= f.text_field :vehicle_mileage, class: 'form-control form-custom', :placeholder => "MILEAGE"%>
                         </div>
                     </div>
             </div>
@@ -329,19 +329,19 @@
                 <div class = "col-sm-4">
                         <div class="form-group ">
                             <label class = "sr-only">Repair Name</label>
-                            <%= f.text_field :repairDescription, class: 'form-control form-custom', :placeholder => 'REPAIR NAME*'%>
+                            <%= f.text_field :repair_description, class: 'form-control form-custom', :placeholder => 'REPAIR NAME*'%>
                         </div>
                     </div>
                     <div class = "col-sm-4">
                         <div class="form-group ">
                             <label class = "sr-only">Parts Cost</label>
-                             <%= f.text_field :partsCost, class: 'form-control form-custom', :placeholder => "PARTS COST*"%>
+                             <%= f.text_field :parts_cost, class: 'form-control form-custom', :placeholder => "PARTS COST*"%>
                         </div>
                     </div>
                     <div class = "col-sm-4">
                         <div class="form-group">
                             <label class = "sr-only">Labor Cost</label>
-                            <%= f.text_field :laborCost, class: 'form-control form-custom', :placeholder => "LABOR COST*"%>
+                            <%= f.text_field :labor_cost, class: 'form-control form-custom', :placeholder => "LABOR COST*"%>
                         </div>
                     </div>
             </div>
@@ -368,13 +368,13 @@
                 <div class = "col-sm-4">
                         <div class="form-group ">
                             <label class = "sr-only">Shop Name</label>
-                            <%= f.text_field :shopName, class: 'form-control form-custom', :placeholder => "SHOP NAME*"%>
+                            <%= f.text_field :shop_name, class: 'form-control form-custom', :placeholder => "SHOP NAME*"%>
                         </div>
                     </div>
                     <div class = "col-sm-4">
                         <div class="form-group ">
                             <label class = "sr-only">City State</label>
-                             <%= f.text_field :shopCityState, class: 'form-control form-custom', :placeholder => "SHOP CITY/STATE*"%>
+                             <%= f.text_field :shop_city_state, class: 'form-control form-custom', :placeholder => "SHOP CITY/STATE*"%>
                         </div>
                     </div>
             </div>

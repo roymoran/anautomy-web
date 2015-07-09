@@ -11,25 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150507233309) do
+ActiveRecord::Schema.define(version: 20150708235620) do
 
   create_table "repair_submissions", force: :cascade do |t|
     t.string   "name"
     t.integer  "zip"
     t.string   "email"
-    t.integer  "vehicleYear"
-    t.string   "vehicleMake"
-    t.string   "vehicleModel"
-    t.string   "vehicleTrim"
-    t.string   "vehicleMileage"
-    t.string   "repairDescription"
-    t.string   "partsCost"
-    t.string   "laborCost"
-    t.string   "shopName"
-    t.string   "shopCityState"
+    t.integer  "vehicle_year"
+    t.string   "vehicle_make"
+    t.string   "vehicle_model"
+    t.string   "vehicle_trim"
+    t.string   "vehicle_mileage"
+    t.string   "repair_description"
+    t.string   "parts_cost"
+    t.string   "labor_cost"
+    t.string   "shop_name"
+    t.string   "shop_city_state"
     t.text     "review"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
   create_table "subscribers", force: :cascade do |t|
