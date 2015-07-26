@@ -1,18 +1,14 @@
 <% if @subscriber.save %>
-
 swal({   
 	title: "Success",   
 	text: "Awesome. You're on our list. You will be getting an email from us shortly.",   
 	type: "success",   
 	confirmButtonText: "Cool" });
-
-
+$('#subscriber_form').trigger("reset");
 <% else %>
-
 swal({   
 	title: "Error",   
 	text: "Make sure you filled in both fields. Otherwise, the email has already been submitted.",   
 	type: "error",   
 	confirmButtonText: "Okay" });
-
 <%end%>
