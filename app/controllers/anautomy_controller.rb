@@ -3,12 +3,9 @@ class AnautomyController < ApplicationController
   def homepage
     @subscriber = Subscriber.new
     @repairSubmission = RepairSubmission.new
-
-    # for demo purposes global variables will be declared for user input
     @car = params['car_type']
     @repair = params['repair']
 
-    #flash.now[:notice] = "#{car} #{repair}"
     if !(@car.nil?) || !(@repair.nil?)
 
       if !(@repair.nil?)
@@ -24,15 +21,10 @@ class AnautomyController < ApplicationController
       @car_url = @car.dup
       @car_url.gsub!(" ","+")
       @url = "https://www.googleapis.com/customsearch/v1?cx=009468579186160092243%3Awxdfq1__0fm&q=/#{@car_url}&imgSize=xlarge&searchType=image&num=1&key=AIzaSyAmhpV6pFbasloHZzO7Byr-lenZVB3Bd1Y"
-      @image_link = JSON.parse(HTTParty.get(@url).body)["items"][0]["link"]
-      #@image_link = "http://rack.2.mshcdn.com/media/ZgkyMDEzLzA1LzA5L2RiL1Rlc2xhTW9kZWxTLjY2YzRlLmpwZwpwCXRodW1iCTEyMDB4NjI3IwplCWpwZw/651c4379/334/Tesla-Model-S.jpg"
+      #@image_body = HTTParty.get(@url).body
+      #@image_link = JSON.parse(@image_body)["items"][0]["link"]
+      @image_link = "http://rack.2.mshcdn.com/media/ZgkyMDEzLzA1LzA5L2RiL1Rlc2xhTW9kZWxTLjY2YzRlLmpwZwpwCXRodW1iCTEyMDB4NjI3IwplCWpwZw/651c4379/334/Tesla-Model-S.jpg"
       session[:image_link] = @image_link
-
-
-      #google_json_response = HTTParty.get("https://api.stackexchange.com/2.2/questions?site=stackoverflow")
-      #puts google_json_response.body
-      #$image_link = google_json_response["link"]
-      #$image_link = "testtestetstststs"
 
       redirect_to action: :repairs
     end
@@ -113,9 +105,4 @@ class AnautomyController < ApplicationController
         @eleventhLabor = (0.7 * @eleventhResult).round
       
   end
-  def shop_profile
-    
-
-  end
-
 end
