@@ -26,6 +26,7 @@ gem "font-awesome-rails"
 gem 'sweet-alert'
 gem 'jquery-turbolinks'
 gem 'httparty'
+gem 'oj'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

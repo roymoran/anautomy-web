@@ -21,9 +21,9 @@ class AnautomyController < ApplicationController
       @car_url = @car.dup
       @car_url.gsub!(" ","+")
       @url = "https://www.googleapis.com/customsearch/v1?cx=009468579186160092243%3Awxdfq1__0fm&q=/#{@car_url}&imgSize=xlarge&searchType=image&num=1&key=AIzaSyAmhpV6pFbasloHZzO7Byr-lenZVB3Bd1Y"
-      #@image_body = HTTParty.get(@url).body
-      #@image_link = JSON.parse(@image_body)["items"][0]["link"]
-      @image_link = "http://rack.2.mshcdn.com/media/ZgkyMDEzLzA1LzA5L2RiL1Rlc2xhTW9kZWxTLjY2YzRlLmpwZwpwCXRodW1iCTEyMDB4NjI3IwplCWpwZw/651c4379/334/Tesla-Model-S.jpg"
+      @image_body = HTTParty.get(@url).body
+      @image_link = Oj.load(@image_body)["items"][0]["link"]
+      #@image_link = "http://rack.2.mshcdn.com/media/ZgkyMDEzLzA1LzA5L2RiL1Rlc2xhTW9kZWxTLjY2YzRlLmpwZwpwCXRodW1iCTEyMDB4NjI3IwplCWpwZw/651c4379/334/Tesla-Model-S.jpg"
       session[:image_link] = @image_link
 
       redirect_to action: :repairs
