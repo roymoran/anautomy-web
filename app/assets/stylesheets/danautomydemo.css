@@ -62,21 +62,25 @@ src: url("MyriadPro-Cond.otf") format("opentype");
 }
 
 .header2{
-	height: 30px;
+	height: 28px;
 }
 .mainNav{
 	height: 100%;
 	bottom: 21px;
 }
 .navText{
-	top:-30px;
+	top:0px;
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 600;
 }
 
 /*header sign up and login buttons*/
-
-.headerButton a:hover { text-decoration: none; }
+.headerButton{
+  margin-top: 30px;
+}
+.headerButton a:hover { 
+  text-decoration: none; 
+}
 
 
 .ghost-button-signup {
@@ -293,7 +297,17 @@ src: url("MyriadPro-Cond.otf") format("opentype");
     background-color: #52bb49;
   }
 }
+.navbar-nav{
+  max-height: 0px !important;
+  margin: 0px 0px 0px 0px !important;
+  padding: 0px 0px 0px 0px !important;
+}
+.nav_option{
+  max-height: 0px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
 
+}
 /*
 .header2 .navbar {
     padding: 0;
