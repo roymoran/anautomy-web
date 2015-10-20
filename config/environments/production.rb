@@ -85,8 +85,8 @@ Rails.application.configure do
     :address        => 'smtp.mandrillapp.com',
     :port           => '587',
     :authentication => :plain,
-    :user_name      => "app36147600@heroku.com",
-    :password       => "Hcyb_VFdZNZIgUlkVCuzHw",
+    :user_name      => "MANDRILL_USERNAME",
+    :password       => "MANDRILL_PASSWORD",
     :domain         => 'heroku.com',
     :enable_starttls_auto => true
   }
