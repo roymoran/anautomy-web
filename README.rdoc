@@ -1,9 +1,10 @@
-== README
+== Repo for Anautomy Web Application
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This repository currently houses the Anautomy web application. The two main branches master and development are the production and development website respectively. 
 
-Things you may want to cover:
+The platform uses the Ruby on Rails web development framework, Bootstrap, and jQuery. 
+
+Things that will be covered on this README on a future update include:
 
 * Ruby version
 
@@ -22,7 +23,3 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
