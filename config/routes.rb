@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  get '/anautomy/repairs'
-  get '/anautomy/submissions'
+  get 'home' => 'anautomy#home'
+
+  get 'repairs' => 'anautomy#repairs'
+  get 'submissions' => 'anautomy#submissions'
   get '/anautomy/homepage'
   get '/anautomy/shop_profile'
   #root 'static_pages#home'
