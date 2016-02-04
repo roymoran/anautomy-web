@@ -17,25 +17,54 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <a href = "/">
-                <div class = "navbar-left" style = "position:relative; top: -40px; left: -30px;height: 100px">
+                <div class = "navbar-left " style = "position:relative; top: -40px; left: -30px;height: 100px">
                     <img src = "/assets/logo-rim-58bba415b2981b0799ec0707a7b43306e8789ff88d444abe02616872055cdd5d.svg"  height="200" width="250">
                 </div>
             </a>
                 <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <div class = "headerButton">
-                                <a href="#signup" class="ghost-button-signup page-scroll">Sign Up</a>
+                    <% if logged_in? %>
+                        <li>
+                            <%= link_to "Profile", current_user %>
+                        </li>
+                        <li>
+                            <%= link_to "Account Settings", edit_user_path(current_user) %>
+                        </li>
+                        <li>
+                            <%= link_to "Log out", logout_path, method: "delete" %>
+                        </li>
+                    <% else %>
+                        <li>
+                            <div class = "headerButton hidden-xs">
+                                <%= link_to "Sign Up", signup_path, class: "ghost-button-signup" %>
                             </div>
+                        </li>
+                        <li>
+                            <div class = "headerButton hidden-xs">
+                                <%= link_to "Log In", login_path, class: "ghost-button-login" %>
+                            </div>
+                        </li>
+                        <li>
+                            <div class = "header-button-xs visible-xs">
+                                <%= link_to "Sign Up", signup_path, class: "ghost-button-signup" %>
+                            </div>
+                        </li>
+                        <li>
+                            <div class = "header-button-xs visible-xs">
+                                <%= link_to "Log In", login_path, class: "ghost-button-login" %>
+                            </div>
+                        </li>
+                    <% end %>
+                    <li>
+                        <%= link_to "ABOUT", about_path, class: "navText visible-xs" %>
                     </li>
                     <li>
-                    <div class = "headerButton">
-                                <a href="#link_under_construction" class="ghost-button-login under_construction_header_tooltip" title = "Under Construction">Log In</a>
-                        </div>
+                        <%= link_to "TRANSPARENCY", transparency_path, class: "navText visible-xs" %>
                     </li>
                     <li>
-                    <div class = "headerButton">
-                                <a href="#link_under_construction" class="ghost-button-help under_construction_header_tooltip" title = "Under Construction">Help<i class="fa fa-angle-down fa-fw"></i></a>
-                        </div>
+                        <%= link_to "OAQ", oaq_path, class: "navText visible-xs" %>
+                    </li>
+                    <li>
+                        <%= link_to "NEWS", about_path, class: "navText visible-xs" %>
                     </li>
                 </ul>
             </div>
@@ -48,7 +77,7 @@
 
 
     <!-- Navigation -->
-    <div class = "header2">
+    <div class = "header2 hidden-xs">
     <nav class="navbar navbar-inverse navbar-static-top mainNav" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -64,24 +93,18 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <%= link_to "HOME", root_path, class: "navText" %>
+                        <%= link_to "ABOUT", about_path, class: "navText" %>
                     </li>
                     <li>
-                        <a href="#link_under_construction" class = "navText under_construction_header_tooltip" title = "Under Construction">SERVICES</a>
-                    </li>
-                    <li>
-                        <a href="#link_under_construction" class = "navText under_construction_header_tooltip" title = "Under Construction">COMPANY</a>
-                    </li>
-                    <li>
-                        <a href="#link_under_construction" class = "navText under_construction_header_tooltip" title = "Under Construction">NEWS</a>
-                    </li>
-                    <li>
-                        <a href="#link_under_construction" class = "navText under_construction_header_tooltip" title = "Under Construction">FAQ'S</a>
-                    </li>
-                    <li>
-                        <a href="#link_under_construction" class = "navText under_construction_header_tooltip" title = "Under Construction">CONTACT</a>
-                    </li>
+                        <%= link_to "TRANSPARENCY", transparency_path, class: "navText" %>
 
+                    </li>
+                    <li>
+                        <%= link_to "OAQ", oaq_path, class: "navText" %>
+                    </li>
+                    <li>
+                        <%= link_to "NEWS", about_path, class: "navText" %>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
