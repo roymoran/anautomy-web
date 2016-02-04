@@ -1,97 +1,143 @@
 <footer class = "container-fluid">
-      <div class="row row-centered">
-        <div class="col-xs-6 col-centered"></div>
-        <div class="col-xs-6 col-centered"></div>
-        
-        <div class="col-md-3 col-centered">
-          <ul class="list-unstyled ">
-          <li class = "footerTitle">
-            COMPANY
-          </li>
-          <li>
-            <a href = "#aboutus" class = "footerText under_construction_footer_tooltip" title = "Under Construction">About Us</a>
-          </li>
-          <li>
-            <a href = "#faqs" class = "footerText under_construction_footer_tooltip" title = "Under Construction">FAQ's</a>
-          </li>
-          <li>
-            <a href = "#contact" class = "footerText under_construction_footer_tooltip" title = "Under Construction">Contact Us</a>
-          </li>
-          <li>
-            <a href = "#tos" class = "footerText under_construction_footer_tooltip" title = "Under Construction">Terms of Service</a>
-          </li>
-        </ul>
-        </div>
-        <div class="col-md-3 col-centered">
-          <ul class="list-unstyled">
-          <li class = "footerTitle">
-            METHODOLOGY
-          </li>
-          <li>
-            <a href = "#how" class = "footerText under_construction_footer_tooltip" title = "Under Construction">How It Works</a>
-          </li>
-          <li>
-            <a href = "#why" class = "footerText under_construction_footer_tooltip" title = "Under Construction">Why It Matters</a>
-          </li>
-          <li>
-            <a href = "#why2" class = "footerText  under_construction_footer_tooltip" title = "Under Construction">Why Contribute</a>
-          </li>
-          <li>
-            <a href = "#future" class = "footerText under_construction_footer_tooltip" title = "Under Construction">How To Contribute</a>
-          </li>
-        </ul>
-        </div>
-        
-        <div class="col-md-3 col-centered">
-          <ul class="list-unstyled">
-          <li class = "footerTitle ">
-            PRESS
-          </li>
-          <li>
-            <a href = "#news" class = "footerText under_construction_footer_tooltip" title = "Under Construction">Latest News</a>
-          </li>
-          <li>
-            <a href = "#blog" class = "footerText under_construction_footer_tooltip" title = "Under Construction">Blog</a>
-          </li>
-          <li>
-            <a href = "#feedback" class = "footerText under_construction_footer_tooltip" title = "Under Construction">Send Us Feedback</a>
-          </li>
-          <li>
-            <a href = "#future" class = "footerText under_construction_footer_tooltip" title = "Under Construction">Future Concepts</a>
-          </li>
-        </ul>
-        </div>
+  <div class = "row hidden-xs hidden-md hidden-lg">
+    <div class = "col-md-4 text-center">
+      <p class = "copyright-text">Copyright &copy; <%= Date.today.year %> Anautomy<p>
     </div>
-      <br>
-                <br>
-      <hr class = "footerSplit">
-      
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 socialPadding">
-                    <ul class="list-inline text-center">
-                        <li>
-                            <a target="_blank" href="https://www.twitter.com/anautomy">
-                                <span class="fa-stack fa-2x socialButton">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-twitter fa-stack-1x socialIcon"></i>
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a target="_blank" href="https://www.facebook.com/Anautomy">
-                                <span class="fa-stack fa-2x socialButton">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-facebook fa-stack-1x socialIcon"></i>
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#email">
-                                <span class="fa-stack fa-2x socialButton">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-envelope-o fa-stack-1x socialIcon"></i>
-                                </span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+    <div class = "col-md-6 text-center">
+          <span>
+            <%= link_to "About", about_path, class: "footer-link" %>
+          </span>
+          <span>
+            <%= link_to "Transparency", transparency_path, class: "footer-link" %>
+          </span>
+          <span>
+            <%= link_to "Ocassionally Asked Questions", oaq_path, class: "footer-link" %>
+          </span>
+          <span>
+            <%= link_to "News", about_path, class: "footer-link" %>
+          </span>
+    </div>
+     <div class = "col-md-2">
+    </div>
+  </div>
+
+  <div class = "row hidden-xs hidden-sm">
+    <div class = "col-md-4 text-right">
+      <p class = "copyright-text">Copyright &copy; <%= Date.today.year %> Anautomy<p>
+    </div>
+    <div class = "col-md-6 text-right">
+          <span>
+            <%= link_to "About", about_path, class: "footer-link" %>
+          </span>
+          <span>
+            <%= link_to "Transparency", transparency_path, class: "footer-link" %>
+          </span>
+          <span>
+            <%= link_to "Ocassionally Asked Questions", oaq_path, class: "footer-link" %>
+          </span>
+          <span>
+            <%= link_to "News", about_path, class: "footer-link" %>
+          </span>
+    </div>
+     <div class = "col-md-2">
+    </div>
+  </div>
+
+  <div class = "row visible-xs">
+    <div class = "col-md-4">
+      <ul class="list-unstyled text-center visible-xs" style = "display:inline;">
+          <li>
+            <%= link_to "About", about_path, class: "footer-link" %>
+          </li>
+          <li>
+            <%= link_to "Transparency", transparency_path, class: "footer-link" %>
+          </li>
+          <li>
+            <%= link_to "OAQ", oaq_path, class: "footer-link" %>
+          </li>
+          <li>
+            <%= link_to "News", about_path, class: "footer-link" %>
+          </li>
+        </ul>
+    </div>
+    <div class = "col-md-4 hidden-xs">
+      <ul class="list-inline text-right">
+          <li>
+            <%= link_to "About", about_path, class: "footer-link" %>
+          </li>
+          <li>
+            <%= link_to "Transparency", transparency_path, class: "footer-link" %>
+          </li>
+          <li>
+            <%= link_to "Ocassionally Asked Questions", oaq_path, class: "footer-link" %>
+          </li>
+          <li>
+            <%= link_to "News", about_path, class: "footer-link" %>
+          </li>
+        </ul>
+    </div>
+    <div class = "col-md-4 text-center" style = "padding-top:10px; margin-bottom:-25px;">
+      <p class = "copyright-text">Copyright &copy; 2016 Anautomy<p>
+    </div>
+  </div>
+  
+  <hr class = "footerSplit">
+  
+  <div class = "row">
+    <div class = "col-md-12">
+      <ul class="list-inline text-center hidden-xs">
+        <li>
+          <a target="_blank" href="https://www.twitter.com/anautomy">
+            <span class="fa-stack fa-2x socialButton">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-twitter fa-stack-1x socialIcon"></i>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="https://www.facebook.com/Anautomy">
+            <span class="fa-stack fa-2x socialButton">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-facebook fa-stack-1x socialIcon"></i>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="mailto:questions@anautomybeta.com">
+            <span class="fa-stack fa-2x socialButton">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-envelope-o fa-stack-1x socialIcon"></i>
+            </span>
+          </a>
+        </li>
+      </ul>
+
+      <ul class="list-inline text-center visible-xs">
+        <li>
+          <a target="_blank" href="https://www.twitter.com/anautomy">
+            <span class="fa-stack fa-2x socialButton">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-twitter fa-stack-1x socialIcon"></i>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="https://www.facebook.com/Anautomy">
+            <span class="fa-stack fa-2x socialButton">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-facebook fa-stack-1x socialIcon"></i>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="mailto:questions@anautomybeta.com">
+            <span class="fa-stack fa-2x socialButton">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-envelope-o fa-stack-1x socialIcon"></i>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
 </footer>
