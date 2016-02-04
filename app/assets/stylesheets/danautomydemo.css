@@ -4,7 +4,7 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
-@import url(http://fonts.googleapis.com/css?family=Josefin+Sans:400,500,600|Roboto:700,400,500);
+@import url(http://fonts.googleapis.com/css?family=Josefin+Sans:400,500,600|Roboto:700,400,500,300,100);
 
 html, body {
     height:100%;
@@ -16,6 +16,17 @@ body, html {
     
     /*font-size: 100%;*/
 }
+
+/* quick fix for white space on right hand side due to bootstrap navbar. 
+  From stackoverflow, 'there's some extra padding in the navbar-right element
+  that shouldn't be there. It has a margin-right of 15px that causes this gap. 
+  Overwrite it and problem solved!' This can also be a solution that is 
+  probably better, but I'll stick to this for now. */
+html, body {
+  width: auto !important;
+  overflow-x: hidden !important;
+}
+
 @media (max-width: @screen-xs) {
     body{font-size: 10px;}
 }
@@ -31,24 +42,17 @@ src: url("MyriadPro-Cond.otf") format("opentype");
 }
 
 .greenCar{
-	color: #52BB49;
+  color: #52BB49;
 }
 
 .anautomyHeader{
-	font-size: 1.5em;
-	color: white;
+  font-size: 1.5em;
+  color: white;
 }
 
 
 .navbar-static-top .nav {
     padding: 30px 0;
-}
-
-
-.navbar-static-top .navbar-brand {
-  background: url("logo-rim.svg");
-  background-size: 100px 82px;
-    padding: 35px 0;
 }
 
 @media(min-width:768px) {
@@ -62,26 +66,32 @@ src: url("MyriadPro-Cond.otf") format("opentype");
 }
 
 .header2{
-	height: 28px;
+  height: 28px;
 }
 .mainNav{
-	height: 100%;
-	bottom: 21px;
+  height: 100%;
+  bottom: 21px;
 }
 .navText{
-	top:0px;
+  top:0px;
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 600;
 }
 
 /*header sign up and login buttons*/
 .headerButton{
-  margin-top: 30px;
+  padding-top: 30px;
 }
 .headerButton a:hover { 
   text-decoration: none; 
 }
 
+.header-button-xs{
+  padding-top: 0;
+}
+.header-button-xs a:hover { 
+  text-decoration: none; 
+}
 
 .ghost-button-signup {
     color: #ffffff;
@@ -100,17 +110,17 @@ src: url("MyriadPro-Cond.otf") format("opentype");
     min-width: 120px;
 
     /* CSS Transition */
-	-webkit-transition: background .2s ease-in-out, border .2s ease-in-out;
-	-moz-transition: background .2s ease-in-out, border .2s ease-in-out;
-	-ms-transition: background .2s ease-in-out, border .2s ease-in-out;
-	-o-transition: background .2s ease-in-out, border .2s ease-in-out;
-	transition: background .2s ease-in-out, border .2s ease-in-out;
+  -webkit-transition: background .2s ease-in-out, border .2s ease-in-out;
+  -moz-transition: background .2s ease-in-out, border .2s ease-in-out;
+  -ms-transition: background .2s ease-in-out, border .2s ease-in-out;
+  -o-transition: background .2s ease-in-out, border .2s ease-in-out;
+  transition: background .2s ease-in-out, border .2s ease-in-out;
 }
 
 .ghost-button-signup:hover {
-	color:#ffffff;
-	background:#49a841;
-	border: 1px solid #49a841;
+  color:#ffffff;
+  background:#49a841;
+  border: 1px solid #49a841;
  }
 
 .ghost-button-login {
@@ -130,15 +140,15 @@ src: url("MyriadPro-Cond.otf") format("opentype");
     min-width: 120px;
 
     /* CSS Transition */
-	-webkit-transition: background .2s ease-in-out, border .2s ease-in-out;
-	-moz-transition: background .2s ease-in-out, border .2s ease-in-out;
-	-ms-transition: background .2s ease-in-out, border .2s ease-in-out;
-	-o-transition: background .2s ease-in-out, border .2s ease-in-out;
-	transition: background .2s ease-in-out, border .2s ease-in-out;
+  -webkit-transition: background .2s ease-in-out, border .2s ease-in-out;
+  -moz-transition: background .2s ease-in-out, border .2s ease-in-out;
+  -ms-transition: background .2s ease-in-out, border .2s ease-in-out;
+  -o-transition: background .2s ease-in-out, border .2s ease-in-out;
+  transition: background .2s ease-in-out, border .2s ease-in-out;
 }
 
 .ghost-button-login:hover{
-	color:#ffffff;
+  color:#ffffff;
     background:#7a7a7a;
  }
 
@@ -159,15 +169,15 @@ src: url("MyriadPro-Cond.otf") format("opentype");
     min-width: 80px;
 
     /* CSS Transition */
-	-webkit-transition: background .2s ease-in-out, border .2s ease-in-out;
-	-moz-transition: background .2s ease-in-out, border .2s ease-in-out;
-	-ms-transition: background .2s ease-in-out, border .2s ease-in-out;
-	-o-transition: background .2s ease-in-out, border .2s ease-in-out;
-	transition: background .2s ease-in-out, border .2s ease-in-out;
+  -webkit-transition: background .2s ease-in-out, border .2s ease-in-out;
+  -moz-transition: background .2s ease-in-out, border .2s ease-in-out;
+  -ms-transition: background .2s ease-in-out, border .2s ease-in-out;
+  -o-transition: background .2s ease-in-out, border .2s ease-in-out;
+  transition: background .2s ease-in-out, border .2s ease-in-out;
 }
 
 .ghost-button-help:hover{
-	color:#ffffff;
+  color:#ffffff;
     background:#5A5A5A;
  }
 
@@ -1277,18 +1287,15 @@ h1:before {
    background-color:#5a5a5a
 }
 
-.footerText {
+.footer-link {
   
-    color: #CFCFCF;
-    font-size: 13px;
-    font-weight: 300;
-    display: inline-block;
-    text-decoration: none;
-    font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-  padding: 10px 0 0 0;
-  margin: 0 50px 0 40px;
-    min-width: 80px;
+  color: #CFCFCF;
+  font-size: 1.1em;    
+  font-weight: 300;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  margin-right: 14px;
   
   -o-transition:.2s;
   -ms-transition:.2s;
@@ -1298,29 +1305,21 @@ h1:before {
   transition:.2s;
 }
 
-.footerText:hover {
-  
+.footer-link:hover {
   color:#52BB49;
-  background:#5A5A5A;
   text-decoration:none;
  }
-
-.footerTitle {
-  
-    color: #CFCFCF;
-    font-size: 17px;
-    font-weight: 400;
+.copyright-text{
+  color: #CFCFCF;
+    font-size: 1.1em;
+    font-weight: 300;
     display: inline-block;
     text-decoration: none;
     font-family: 'Roboto', sans-serif;
-  font-weight: 500;
-  padding: 70px 0 0 0;
-  margin: 0 50px 0 40px;
-    min-width: 80px;
 }
 
 .socialIcon{
-	color: #5A5A5A;
+  color: #5A5A5A;
 
   -o-transition:.3s;
   -ms-transition:.3s;
@@ -1331,7 +1330,7 @@ h1:before {
 }
 
 .socialButton{
-	color: #CFCFCF;
+  color: #CFCFCF;
 
   -o-transition:.3s;
   -ms-transition:.3s;
@@ -1343,31 +1342,16 @@ h1:before {
 }
 
 .socialButton:hover{
-	color: #52bb49;
+  color: #52bb49;
 }
 .socialIcon:hover{
-	color: #ffffff;
-}
-
-.socialPadding{
-	padding-bottom: 40px;
+  color: #ffffff;
 }
 
 .footerSplit{
-	padding-bottom: 0;
+  padding-bottom: 0;
   width: 65%;
-}
-
-
-/* centered columns styles */
-.row-centered {
-    text-align:center;
-}
-.col-centered {
-    display:inline-block;
-    float:none;
-    /* inline-block space fix */
-    margin-right:-80px;
+  border-color: #7a7a7a;
 }
 /*End Footer*/
 
@@ -1376,6 +1360,19 @@ h1:before {
 }
 
 /*Homepage*/
+.main-container{
+  min-height:500px;
+}
+.main-headline-home{
+  font-size:2.3em; 
+  color:#52BB49; 
+  text-align:center; 
+  font-family:'Roboto'; 
+  font-weight:300; 
+  padding-top:40px; 
+  padding-bottom:25px;
+}
+
 .banner_jaguar{
     color: #f8f8f8;
     background: url('https://i.imgur.com/7iht5Trh.png') no-repeat center center;
@@ -1609,11 +1606,19 @@ padding-bottom: 100px;
     /* inline-block space fix */
     margin-right:-4px;
 }
+.main-launch-message{
+  color: #52BB49;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size:1.1em;
+}
+
 .launch-message{
-  color: white;
-  font-family: 'Josefin Sans', sans-serif;
-  font-weight: 400;
-  font-size:1.3em;
+  color: #FFFFFF;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size:1.2em;
+
 }
 .banner_next{
   background: url('https://i.imgur.com/LxJZzKJh.png') no-repeat;
@@ -1678,6 +1683,7 @@ font-family: 'Josefin Sans', sans-serif;
     -moz-border-radius: 0;
     border-radius: 0;
 }
+/* Main form submission button*/
 .btn-custom {
   background: rgba(69, 134, 52, 0.7) !important;
   opacity: 0.8;
@@ -1742,7 +1748,209 @@ font-family: 'Josefin Sans', sans-serif;
    color: white;  
 }
 
+/* Modified email submission button and field */
+.btn-custom-2 {
+  background: rgba(82, 187, 73, 1) !important;
+  opacity: 1;
+  border: 1px solid #FFFFFF;
+  color: #FFFFFF !important;
+
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    /* CSS Transition */
+    -webkit-transition: background .2s ease-in-out, border .2s ease-in-out;
+    -moz-transition: background .2s ease-in-out, border .2s ease-in-out;
+    -ms-transition: background .2s ease-in-out, border .2s ease-in-out;
+    -o-transition: background .2s ease-in-out, border .2s ease-in-out;
+    transition: background .2s ease-in-out, border .2s ease-in-out;
+}
+.button-text-style{
+  font-family: 'Roboto', sans-serif;
+  font-weight:300;
+  font-size: 1.3em;
+}
+.form-custom-2{
+  background: rgba(242, 243, 243, 1) !important;
+  border: 1px solid #FFFFFF;
+  color: #000000 !important;
+
+  -webkit-border-radius: 8px;
+    -moz-border-radius:8px;
+    border-radius:8px;
+}
+
+ .form-custom-2:focus {
+  -webkit-box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.075), 0 0 0 rgba(82, 168, 236, 0.6);
+          box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.075), 0 0 0 rgba(82, 168, 236, 0.6);
+  -webkit-box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.075), 0 0 0 rgba(102, 175, 233, 0.6);
+         box-shadow: inset 0 0 0rgba(0, 0, 0, 0.075), 0 0 0 rgba(102, 175, 233, 0.6);
+         border-color: none;
+ }
+  .form-custom-2:active {
+  -webkit-box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.075), 0 0 0 rgba(82, 168, 236, 0.6);
+          box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.075), 0 0 0 rgba(82, 168, 236, 0.6);
+  -webkit-box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.075), 0 0 0 rgba(102, 175, 233, 0.6);
+         box-shadow: inset 0 0 0rgba(0, 0, 0, 0.075), 0 0 0 rgba(102, 175, 233, 0.6);
+         border-color: none;
+ }
+.subscriber_form{
+  width: 100%;
+}
+.form-custom-2::-webkit-input-placeholder {
+   color: #B7BDC2;
+}
+
+.form-custom-2:-moz-placeholder { /* Firefox 18- */
+   color: #B7BDC2;  
+}
+
+.form-custom-2::-moz-placeholder {  /* Firefox 19+ */
+   color: #B7BDC2;  
+}
+
+.form-custom-2:-ms-input-placeholder {  
+   color: #B7BDC2;  
+}
+/* end of modified button and field */
+
 .navbar a:focus{
   color: white;
   text-decoration: none;
 }
+
+/* About Page */
+.about-container{
+  min-height: 300px;
+}
+
+.about-left-title{
+  font-size:3em;
+  color:#52BB49; 
+  text-align:center; 
+  font-family: 'Roboto', sans-serif;
+  font-weight:300; 
+
+  padding-top: 151px;
+}
+
+.about-right-text{
+  font-size:2.5em;
+  color:#52BB49; 
+  text-align:center; 
+  font-family: 'Roboto', sans-serif;
+  font-weight:300; 
+  padding-top: 115px;
+}
+
+.about-left-title-small{
+  font-size:3em;
+  color:#52BB49; 
+  text-align:center; 
+  font-family: 'Roboto', sans-serif;
+  font-weight:300; 
+
+}
+
+.about-right-text-small{
+  font-size:2.5em;
+  color:#52BB49; 
+  text-align:center; 
+  font-family: 'Roboto', sans-serif; 
+  font-weight:300; 
+  padding-top: 60px;
+}
+
+.line-split{
+  padding-bottom: 0;
+  width: 100%;
+  border-color: #E8E9EB;
+}
+
+.about-us-text{
+  font-size:1.5em;
+  color:#545E69; 
+  text-align:left; 
+  font-family: 'Roboto', sans-serif; 
+  font-weight:300; 
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.more-about-container{
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
+
+.more-about-us-text-xs{
+  font-size:2em;
+  color:#52BB49; 
+  text-align:center; 
+  font-family: 'Roboto', sans-serif;
+  font-weight:300;
+  margin-top: -20px;
+  padding-bottom:30px;
+}
+
+.logo-img-xs{
+    -webkit-filter: grayscale(100%);
+       -moz-filter: grayscale(100%);
+         -o-filter: grayscale(100%);
+        -ms-filter: grayscale(100%);
+            filter: grayscale(100%); 
+  padding-bottom: 35px;
+}
+
+.img-center{
+  margin: 0 auto;
+}
+
+.more-about-us-text{
+  font-size:2em;
+  color:#52BB49; 
+  text-align:left; 
+  font-family: 'Roboto', sans-serif;
+  font-weight:300;
+}
+
+
+.logo-img{
+    -webkit-filter: grayscale(100%);
+       -moz-filter: grayscale(100%);
+         -o-filter: grayscale(100%);
+        -ms-filter: grayscale(100%);
+            filter: grayscale(100%); 
+}
+.inno-img{
+  margin-top: -8px;
+}
+/* end About Page */
+
+/* Start OAQ Page */
+.question-text{
+  font-size:1.2em;
+  color:#52BB49; 
+  text-align:left; 
+  font-family: 'Roboto', sans-serif;
+  font-weight:300; 
+  }
+
+.answer-text{
+  font-size:1.1em;
+  color:#545E69; 
+  text-align:left; 
+  font-family: 'Roboto', sans-serif; 
+  font-weight:300; 
+  }
+
+  .email-qs-text{
+  font-size:1.3em; 
+  color:#52BB49; 
+  text-align:center; 
+  font-family: 'Roboto', sans-serif;
+  font-weight:300; 
+  padding-top: 40px;
+  padding-bottom: 40px;
+  }
+
+/* End OAQ Page */
