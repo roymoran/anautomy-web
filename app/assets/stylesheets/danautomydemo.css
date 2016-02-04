@@ -1309,6 +1309,17 @@ h1:before {
   color:#52BB49;
   text-decoration:none;
  }
+
+  .footer-link:active {
+  color:#52BB49;
+  text-decoration:none;
+ }
+
+ .footer-link:focus {
+  color:#52BB49;
+  text-decoration:none;
+ }
+
 .copyright-text{
   color: #CFCFCF;
     font-size: 1.1em;
