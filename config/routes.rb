@@ -1,14 +1,19 @@
 Rails.application.routes.draw do
+  root 'anautomy#home'
+
   get 'home' => 'anautomy#home'
+  get 'about' => 'anautomy#about'
+  get 'oaq' => 'anautomy#oaq'
+  get 'transparency' => 'anautomy#transparency'
 
   get 'repairs' => 'anautomy#repairs'
   get 'submissions' => 'anautomy#submissions'
   get '/anautomy/homepage'
   get '/anautomy/shop_profile'
+
   #root 'static_pages#home'
   #root 'anautomy#welcome'
   #root 'anautomy#homepage'
-  root 'anautomy#homepage'
   #post   'sub'   => 'subscribers#create'
   resources :subscribers
   resources :repair_submissions
