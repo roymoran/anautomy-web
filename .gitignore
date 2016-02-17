@@ -16,3 +16,4 @@
 !/log/.keep
 /tmp
 /app/views/subscribers/show.html.erb
+/config/environment_variables.yml
