@@ -1,4 +1,4 @@
-== Repo for Anautomy Web Application
+# Repo for Anautomy Web Application
 
 This repository currently houses the Anautomy web application. The two main branches master and development are the production and development web applications respectively. 
 
@@ -14,7 +14,7 @@ This repository currently houses the Anautomy web application. The two main bran
 
 #### Repairs Available for Given Car Model
 
-![alt text](http://i.imgur.com/LocFmAh.png "Repairs Page")
+![alt text](http://i.imgur.com/P1VCSXJ.png "Repairs Page")
 
 #### Number of Submissions Available for Given Shop
 
