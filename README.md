@@ -4,21 +4,21 @@ This repository currently houses the Anautomy web application. The two main bran
 
 ### Anautomy Homepage Overview
 
-![alt text](http://imgur.com/lhgK5E8 "Homepage")
+![alt text](http://i.imgur.com/lhgK5E8.png "Homepage")
 
 ### Anautomy Demo Overview
 
 #### Car Repair Search Form
 
-![alt text](http://imgur.com/vODar95 "Search Car Repair Form")
+![alt text](http://i.imgur.com/vODar95.png "Search Car Repair Form")
 
 #### Repairs Available for Given Car Model
 
-![alt text](http://imgur.com/P1VCSXJ "Repairs Page")
+![alt text](http://i.imgur.com/LocFmAh.png "Repairs Page")
 
 #### Number of Submissions Available for Given Shop
 
-![alt text](http://imgur.com/CxBcuRS "Submissions Page")
+![alt text](http://i.imgur.com/CxBcuRS.png "Submissions Page")
 
 ## More Information
 
