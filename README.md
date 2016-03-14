@@ -16,7 +16,7 @@ This repository currently houses the Anautomy web application. The two main bran
 
 ![alt text](http://i.imgur.com/P1VCSXJ.png "Repairs Page")
 
-#### Number of Submissions Available for Given Shop
+#### Submissions Available for Given Shop
 
 ![alt text](http://i.imgur.com/CxBcuRS.png "Submissions Page")
 
