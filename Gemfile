@@ -36,8 +36,6 @@ gem 'oj'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem 'newrelic_rpm'
-
 
 group :test do
   gem 'minitest-reporters', '1.0.5'
@@ -56,6 +54,8 @@ group :development, :test do
   gem 'spring'
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
+
+  gem 'rails-erd'
 
 end
 
