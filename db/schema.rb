@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160520192300) do
+ActiveRecord::Schema.define(version: 20160520202654) do
 
   create_table "repair_submissions", force: :cascade do |t|
     t.string   "email"
@@ -26,7 +26,10 @@ ActiveRecord::Schema.define(version: 20160520192300) do
     t.text     "review"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+    t.integer  "shop_id"
   end
+
+  add_index "repair_submissions", ["shop_id"], name: "index_repair_submissions_on_shop_id"
 
   create_table "shops", force: :cascade do |t|
     t.string   "shop_name"
