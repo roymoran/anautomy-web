@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  shop_name: MyString
+  shop_zip: MyString
+  shop_city: MyString
+  shop_state_code: MyString
+  shop_country_code: MyString
+  shop_neighborhood: MyString
+  shop_address: MyString
+  shop_claimed: false
+
+two:
+  shop_name: MyString
+  shop_zip: MyString
+  shop_city: MyString
+  shop_state_code: MyString
+  shop_country_code: MyString
+  shop_neighborhood: MyString
+  shop_address: MyString
+  shop_claimed: false

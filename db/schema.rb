@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160520180653) do
+ActiveRecord::Schema.define(version: 20160520192300) do
 
   create_table "repair_submissions", force: :cascade do |t|
     t.string   "email"
@@ -26,6 +26,19 @@ ActiveRecord::Schema.define(version: 20160520180653) do
     t.text     "review"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+  end
+
+  create_table "shops", force: :cascade do |t|
+    t.string   "shop_name"
+    t.string   "shop_zip"
+    t.string   "shop_city"
+    t.string   "shop_state_code"
+    t.string   "shop_country_code"
+    t.string   "shop_neighborhood"
+    t.string   "shop_address"
+    t.boolean  "shop_claimed",      default: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
   end
 
   create_table "subscribers", force: :cascade do |t|
