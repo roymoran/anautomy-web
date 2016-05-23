@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160523014305) do
+ActiveRecord::Schema.define(version: 20160523024003) do
 
   create_table "repair_submissions", force: :cascade do |t|
     t.string   "email"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20160523014305) do
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
     t.integer  "shop_id"
+    t.string   "total_cost"
   end
 
   add_index "repair_submissions", ["shop_id"], name: "index_repair_submissions_on_shop_id"
@@ -43,6 +44,7 @@ ActiveRecord::Schema.define(version: 20160523014305) do
     t.datetime "created_at",                        null: false
     t.datetime "updated_at",                        null: false
     t.boolean  "shop_closed",       default: false
+    t.string   "shop_phone"
   end
 
   create_table "subscribers", force: :cascade do |t|
