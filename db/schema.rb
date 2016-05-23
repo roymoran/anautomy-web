@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160523024003) do
+ActiveRecord::Schema.define(version: 20160523052158) do
 
   create_table "repair_submissions", force: :cascade do |t|
     t.string   "email"
@@ -40,11 +40,12 @@ ActiveRecord::Schema.define(version: 20160523024003) do
     t.string   "shop_country_code"
     t.string   "shop_neighborhood"
     t.string   "shop_address"
-    t.boolean  "shop_claimed",      default: false
-    t.datetime "created_at",                        null: false
-    t.datetime "updated_at",                        null: false
-    t.boolean  "shop_closed",       default: false
+    t.boolean  "shop_claimed",             default: false
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
+    t.boolean  "shop_closed",              default: false
     t.string   "shop_phone"
+    t.integer  "repair_submissions_count", default: 0
   end
 
   create_table "subscribers", force: :cascade do |t|
