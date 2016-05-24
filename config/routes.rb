@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get 'about' => 'anautomy#about'
   get 'oaq' => 'anautomy#oaq'
   get 'transparency' => 'anautomy#transparency'
+  get 'submission' => 'anautomy#submission'
+
 
   get 'repairs' => 'anautomy#repairs'
   get 'submissions' => 'anautomy#submissions'

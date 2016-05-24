@@ -41,6 +41,9 @@ class AnautomyController < ApplicationController
   def transparency
   end
 
+  def submission
+  end
+
   def repairs
     @average_repair_cost = rand(600..1200)
     session[:average_repair_cost] = @average_repair_cost
