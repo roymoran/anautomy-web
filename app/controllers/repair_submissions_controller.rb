@@ -29,7 +29,7 @@ class RepairSubmissionsController < ApplicationController
 	private
 
     def repairSubmission_params
-      params.require(:repair_submission).permit(:name, :zip, :email, :vehicle_year, :vehicle_make, :vehicle_model, :vehicle_trim, :vehicle_mileage, :repair_description, :parts_cost, :labor_cost, :shop_name, :shop_city_state, :review)
+      params.require(:repair_submission).permit(:email, :vehicle_year, :vehicle_make, :vehicle_model, :vehicle_trim, :vehicle_mileage, :repair_description, :parts_cost, :labor_cost, :total_cost, :review)
     end
 
 end
