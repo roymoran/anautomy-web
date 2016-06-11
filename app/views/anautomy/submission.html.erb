@@ -1,9 +1,9 @@
-<% provide(:title, "Submission") %>
+<% provide(:title, "Create Submission") %>
 <div class = "container">
 	<div class = "row">
 		<h2> Submit Your Repair Experience</h2>
 		<h4> <a href = "#">Snap A Picture of Your Invoice</a></h4>
 		<h4>or</h4>
-		<h4><%= link_to "Start by Searching the Shop", new_repair_submission_path %></h4>
+		<h4><%= link_to "Start by Searching the Shop", :controller => :repair_submissions, :action => :search %></h4>
 	</div>
 </div>
