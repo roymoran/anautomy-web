@@ -1,0 +1,19 @@
+<% provide(:title, "Search Shop") %>
+
+<div class = "row">
+	<div class = "row">
+  		<div class="col-md-6 col-md-offset-3">
+  			<h2>Search Shop</h2>
+  			<% @shop.each do |s| %>
+  				<p><strong>Name:</strong> <%= s.shop_name %><br>
+  				<strong>Address:</strong> <%= s.shop_address %><br>
+  				<strong>Zip:</strong> <%= s.shop_zip %><br>
+  				<strong>Phone:</strong> <%= s.shop_phone %><br>
+  				<strong>Shop ID:</strong> <%= s.id %>
+  			</p>
+  			<% end %>
+  		</div>
+	</div>
+</div>
+
+
