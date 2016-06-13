@@ -1,4 +1,6 @@
 class ShopsController < ApplicationController
+  #before action calls private method (set_shop) to set an instance 
+  #variable (@shop) for the actions :show :edit :update and :destroy
   before_action :set_shop, only: [:show, :edit, :update, :destroy]
 
   # GET /shops
@@ -59,6 +61,10 @@ class ShopsController < ApplicationController
       format.html { redirect_to shops_url, notice: 'Shop was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def search_result
+    @shop = Shop.where("shop_name = ? OR shop_zip = ?", params[:shop_name], params[:shop_zip])
   end
 
   private
