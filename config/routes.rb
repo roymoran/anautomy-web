@@ -6,11 +6,16 @@ Rails.application.routes.draw do
   get 'oaq' => 'anautomy#oaq'
   get 'transparency' => 'anautomy#transparency'
   get 'submission' => 'anautomy#submission'
+  #get 'new_submission' => "repair_submissions#new"
+  get 'search' => "repair_submissions#search"
+  get 'results' => "shops#search_result"
+
 
 
   get 'repairs' => 'anautomy#repairs'
   get 'submissions' => 'anautomy#submissions'
   get '/anautomy/home'
+  get '/repair_submissions/search'
   #root 'static_pages#home'
   #root 'anautomy#welcome'
   #root 'anautomy#homepage'
