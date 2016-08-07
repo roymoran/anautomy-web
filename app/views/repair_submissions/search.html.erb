@@ -1,0 +1,17 @@
+<% provide(:title, "Search Shop") %>
+
+<div class = "container-fluid">
+	<div class = "row">
+  		<div class="col-md-6 col-md-offset-3">
+  			<h2>Search Shop</h2>
+  				<%= form_tag({controller: "shops", action: "search_result"}, method: "get", class: "") do %>
+  					<%= label_tag(:q, "Search for shop:") %>
+					<%= text_field_tag(:shop_name) %>
+  					<%= text_field_tag(:shop_zip) %>
+  					<%= submit_tag("Select") %>
+				<% end %>
+  		</div>
+	</div>
+</div>
+
+
