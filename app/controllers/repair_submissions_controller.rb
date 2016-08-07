@@ -4,6 +4,7 @@ class RepairSubmissionsController < ApplicationController
 	end
 
 	def new
+		@shop = Shop.find(params[:shop_id])
 		@repairSubmission = RepairSubmission.new
 	end
 
@@ -24,6 +25,10 @@ class RepairSubmissionsController < ApplicationController
 			end
 		end
 
+	end
+
+	def search
+		
 	end
 
 	private
