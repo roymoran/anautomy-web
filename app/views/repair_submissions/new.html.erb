@@ -1,103 +1,55 @@
 <% provide(:title, "Repair Submission") %>
 <div class="container-fluid">
-
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-
-    <p> Repair submission for <%= @shop.shop_name%> on <%= @shop.shop_address%></p>
-      <%= form_for(@repairSubmission, :html => {:class => ''}, remote: true) do |f| %>
-
-      <%= f.label :email %>
-      <%= f.email_field :email, class: 'form-control' %>
-      
-      <%= f.label :vehicle_year %>
-      <!-- Top of range is current year-->
-      <%= f.number_field :vehicle_year, class: 'form-control'%>
-
-      <%= f.label :vehicle_make %>
-      <%= f.text_field :vehicle_make, class: 'form-control' %>
-
-      <%= f.label :vehicle_model %>
-      <%= f.text_field :vehicle_model, class: 'form-control' %>
-
-      <%= f.label :vehicle_trim %>
-      <%= f.text_field :vehicle_trim, class: 'form-control' %>
-
-      <%= f.label :vehicle_mileage %>
-      <%= f.text_field :vehicle_mileage, class: 'form-control' %>
-
-      <%= f.label :repair_description %>
-      <%= f.text_field :repair_description, class: 'form-control' %>
-
-      <%= f.label :parts_cost %>
-      <%= f.text_field :parts_cost, class: 'form-control' %>
-
-      <%= f.label :labor_cost %>
-      <%= f.text_field :labor_cost, class: 'form-control' %>
-
-      <%= f.label :total_cost %>
-      <%= f.text_field :total_cost, class: 'form-control' %>
-
-      <%= f.label :review %>
-      <%= f.text_area :review, class: 'form-control' %>
-      <br>
-      <%= f.submit "Submit Repair", class: "btn btn-custom btn-block" %>
-      <br>
-    <% end %>
-  </div>
-
-</div>
-
-
-
-
-
-
-
-<div class="row">
-
+<!--Update jQuery to include local copies of jquery-1.9.1.mis.js and jquery.easing.min.js and update form inputs with rails form helpers (form for) and update copy and update color/font-->
+<div class="row" style="font-family: montserrat, arial, verdana">
     <!-- multistep form -->
-<form id="msform">
+<p class="text-center"> Repair submission for <%= @shop.shop_name%> on <%= @shop.shop_address%></p>
+<div class = "col-lg-12">
+
+<%= form_for @repairSubmission, :html => {:id => 'msform', :class => ''}, remote: true do |f|%>
   <!-- progressbar -->
   <ul id="progressbar">
-    <li class="active">Account Setup</li>
-    <li>Social Profiles</li>
-    <li>Personal Details</li>
+    <li class="active" style="color:#5A5A5A;">Your Info</li>
+    <li style="color:#5A5A5A;">Car Details</li>
+    <li style="color:#5A5A5A;">Repair Details</li>
   </ul>
   <!-- fieldsets -->
   <fieldset>
-    <h2 class="fs-title">Create your account</h2>
-    <h3 class="fs-subtitle">This is step 1</h3>
-    <input type="text" name="email" placeholder="Email" />
-    <input type="password" name="pass" placeholder="Password" />
-    <input type="password" name="cpass" placeholder="Confirm Password" />
+    <h2 class="fs-title">Your Info</h2>
+    <h3 class="fs-subtitle"></h3>
+    <%= f.email_field :email, class: '', :placeholder => "Email"%>
     <input type="button" name="next" class="next action-button" value="Next" />
   </fieldset>
   <fieldset>
-    <h2 class="fs-title">Social Profiles</h2>
-    <h3 class="fs-subtitle">Your presence on the social network</h3>
-    <input type="text" name="twitter" placeholder="Twitter" />
-    <input type="text" name="facebook" placeholder="Facebook" />
-    <input type="text" name="gplus" placeholder="Google Plus" />
+    <h2 class="fs-title">What kind of car?</h2>
+    <h3 class="fs-subtitle"></h3>
+
+    <%= f.select(:vehicle_year, options_for_select((Time.zone.now.year - 100)..(Time.zone.now.year), :selected => (Time.zone.now.year)), {}, {class: "select_submission_form"}) %>
+    <%= f.text_field :vehicle_make, class: '', :placeholder => "MAKE*"%>
+    <%= f.text_field :vehicle_model, class: '', :placeholder => "MODEL*"%>
+    <%= f.text_field :vehicle_trim, class: '', :placeholder => "TRIM*"%>
+    <%= f.text_field :vehicle_mileage, class: '', :placeholder => "MILEAGE"%>
+
     <input type="button" name="previous" class="previous action-button" value="Previous" />
     <input type="button" name="next" class="next action-button" value="Next" />
   </fieldset>
   <fieldset>
-    <h2 class="fs-title">Personal Details</h2>
-    <h3 class="fs-subtitle">We will never sell it</h3>
-    <input type="text" name="fname" placeholder="First Name" />
-    <input type="text" name="lname" placeholder="Last Name" />
-    <input type="text" name="phone" placeholder="Phone" />
-    <textarea name="address" placeholder="Address"></textarea>
+    <h2 class="fs-title">What repair?</h2>
+    <h3 class="fs-subtitle"></h3>
+    <%= f.text_field :repair_description, class: '', :placeholder => 'REPAIR NAME*'%>
+    <%= f.text_field :parts_cost, class: '', :placeholder => "PARTS COST*"%>
+    <%= f.text_field :labor_cost, class: '', :placeholder => "LABOR COST*"%>
+    <%= f.text_field :total_cost, class: '', :placeholder => "TOTAL COST*"%>
+    <%= f.text_area :review, class: '',:rows => 3, :cols => 71,  :placeholder => "POVIDE A SHORT DESCRIPTION OF YOUR EXPERIENCE (OPTIONAL)"%>
     <input type="button" name="previous" class="previous action-button" value="Previous" />
-    <input type="submit" name="submit" class="submit action-button" value="Submit" />
+    <%= f.submit "Submit", class: "action-button" %>
+
   </fieldset>
-</form>
+<% end %>
   
-
 </div>
 </div>
-
+</div>
 <!-- jQuery -->
 <script src="http://thecodeplayer.com/uploads/js/jquery-1.9.1.min.js" type="text/javascript"></script>
 <!-- jQuery easing plugin -->
