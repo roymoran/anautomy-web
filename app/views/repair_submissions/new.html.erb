@@ -41,6 +41,7 @@
     <%= f.text_field :labor_cost, class: '', :placeholder => "LABOR COST*"%>
     <%= f.text_field :total_cost, class: '', :placeholder => "TOTAL COST*"%>
     <%= f.text_area :review, class: '',:rows => 3, :cols => 71,  :placeholder => "POVIDE A SHORT DESCRIPTION OF YOUR EXPERIENCE (OPTIONAL)"%>
+    <%= f.hidden_field :shop_id, :value => @repairSubmission.shop_id %>
     <input type="button" name="previous" class="previous action-button" value="Previous" />
     <%= f.submit "Submit", class: "action-button" %>
 
