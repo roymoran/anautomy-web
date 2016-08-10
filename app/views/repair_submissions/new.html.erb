@@ -24,8 +24,8 @@
     <h2 class="fs-title">What kind of car?</h2>
     <h3 class="fs-subtitle"></h3>
 
-    <%= f.select(:vehicle_year, options_for_select((Time.zone.now.year - 100)..(Time.zone.now.year), :selected => (Time.zone.now.year)), {}, {class: "select_submission_form"}) %>
-    <%= f.text_field :vehicle_make, class: '', :placeholder => "MAKE*"%>
+    <%= f.select(:vehicle_year, options_for_select((Time.zone.now.year - 100)..(Time.zone.now.year)), {prompt: "Select Year"}, {class: "select_submission_form"}) %>
+    <%= f.collection_select(:vehicle_make, CarMake.all, :id, :name, {prompt: "Select Make"}, {class: "select_submission_form"}) %>
     <%= f.text_field :vehicle_model, class: '', :placeholder => "MODEL*"%>
     <%= f.text_field :vehicle_trim, class: '', :placeholder => "TRIM*"%>
     <%= f.text_field :vehicle_mileage, class: '', :placeholder => "MILEAGE"%>
