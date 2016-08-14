@@ -60,4 +60,27 @@ CarMake.create(name: 'Toyota')
 CarMake.create(name: 'Volkswagen')
 CarMake.create(name: 'Volvo')
 
+#Seed data for car models table
+CarModel.create(name: 'ILX', car_make_id: 1)
+CarModel.create(name: 'MDX', car_make_id: 1)
+CarModel.create(name: 'RDX', car_make_id: 1)
+CarModel.create(name: 'ILX', car_make_id: 1)
+CarModel.create(name: 'RLX', car_make_id: 1)
+CarModel.create(name: 'TLX', car_make_id: 1)
+CarModel.create(name: 'NSX', car_make_id: 1)
+CarModel.create(name: 'CDX', car_make_id: 1)
+
+CarModel.create(name: 'MiTo', car_make_id: 2)
+CarModel.create(name: 'Giulietta', car_make_id: 2)
+CarModel.create(name: '4C', car_make_id: 2)
+CarModel.create(name: 'Giulia', car_make_id: 2)
+
+#Seed data for shops
+Shop.create(shop_name: "Aby's Shop", shop_zip: "60609", shop_city: "Chicago", shop_state_code: "IL", shop_country_code: "US", shop_neighborhood: "Brighton Park", shop_address: "4146 S. Western Ave.", shop_phone: "(773) 691-2638")
+Shop.create(shop_name: "Aby's Shop", shop_zip: "60609", shop_city: "Chicago", shop_state_code: "IL", shop_country_code: "US", shop_neighborhood: "Brighton Park", shop_address: "4146 S. Western Ave.", shop_phone: "(773) 691-2638")
+Shop.create(shop_name: "Aby's Shop", shop_zip: "60609", shop_city: "Chicago", shop_state_code: "IL", shop_country_code: "US", shop_neighborhood: "Brighton Park", shop_address: "4146 S. Western Ave.", shop_phone: "(773) 691-2638")
+Shop.create(shop_name: "Aby's Shop", shop_zip: "60609", shop_city: "Chicago", shop_state_code: "IL", shop_country_code: "US", shop_neighborhood: "Brighton Park", shop_address: "4146 S. Western Ave.", shop_phone: "(773) 691-2638")
+Shop.create(shop_name: "Aby's Shop", shop_zip: "60609", shop_city: "Chicago", shop_state_code: "IL", shop_country_code: "US", shop_neighborhood: "Brighton Park", shop_address: "4146 S. Western Ave.", shop_phone: "(773) 691-2638")
+Shop.create(shop_name: "Aby's Shop", shop_zip: "60609", shop_city: "Chicago", shop_state_code: "IL", shop_country_code: "US", shop_neighborhood: "Brighton Park", shop_address: "4146 S. Western Ave.", shop_phone: "(773) 691-2638")
+Shop.create(shop_name: "Aby's Shop", shop_zip: "60609", shop_city: "Chicago", shop_state_code: "IL", shop_country_code: "US", shop_neighborhood: "Brighton Park", shop_address: "4146 S. Western Ave.", shop_phone: "(773) 691-2638")
 
