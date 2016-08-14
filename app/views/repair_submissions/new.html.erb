@@ -25,8 +25,8 @@
     <h3 class="fs-subtitle"></h3>
 
     <%= f.select(:vehicle_year, options_for_select((Time.zone.now.year - 100)..(Time.zone.now.year)), {prompt: "Select Year"}, {class: "select_submission_form"}) %>
-    <%= f.collection_select(:vehicle_make, CarMake.all, :id, :name, {prompt: "Select Make"}, {class: "select_submission_form"}) %>
-    <%= f.text_field :vehicle_model, class: '', :placeholder => "MODEL*"%>
+    <%= f.collection_select(:vehicle_make, CarMake.all, :id, :name, {prompt: "Select Make"}, {class: "select_submission_form", id: "car_make_select"}) %>
+    <%= f.grouped_collection_select(:vehicle_model, CarMake.all, :car_models, :name, :id, :name, {prompt: "Select Model"}, {class: "select_submission_form", id: "car_model_select"}) %>
     <%= f.text_field :vehicle_trim, class: '', :placeholder => "TRIM*"%>
     <%= f.text_field :vehicle_mileage, class: '', :placeholder => "MILEAGE"%>
 
