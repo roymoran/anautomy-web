@@ -1,4 +1,5 @@
 class RepairSubmissionsController < ApplicationController
+
 	def show
 		@repairSubmission = RepairSubmission.all
 	end
@@ -10,8 +11,12 @@ class RepairSubmissionsController < ApplicationController
 	end
 
 	def create
-		@repairSubmission = RepairSubmission.new(repairSubmission_params)  
+		@repairSubmission = RepairSubmission.new(repairSubmission_params)
 		if @repairSubmission.save 
+		# @repairSubmission.create_car is used to create and save the associated car to
+		# the repair submission. Params passed by new action is passed as field values  
+		@repairSubmission.create_car(car_make_id: @repairSubmission.car_make, car_model_id: @repairSubmission.car_model)
+
 		SubscriberMailer.repair_submission_email(@repairSubmission).deliver_now
 		
 		respond_to do |format|
@@ -35,7 +40,7 @@ class RepairSubmissionsController < ApplicationController
 	private
 
     def repairSubmission_params
-      params.require(:repair_submission).permit(:email, :vehicle_year, :vehicle_make, :vehicle_model, :vehicle_trim, :vehicle_mileage, :repair_description, :parts_cost, :labor_cost, :total_cost, :review, :shop_id)
+      params.require(:repair_submission).permit(:email, :vehicle_year, :vehicle_trim, :vehicle_mileage, :repair_description, :parts_cost, :labor_cost, :total_cost, :review, :car_make, :car_model, :shop_id)
     end
 
 end
