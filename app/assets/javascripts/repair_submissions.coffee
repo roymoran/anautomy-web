@@ -9,6 +9,7 @@ jQuery ->
 		options = $(car_models).filter("optgroup[label='#{car_make}']").html()
 		if options
 			$('#car_model_select').html(options)
+			$('#car_model_select').prepend $("<option selected>Select Model</option>")
 			$('#car_model_select').show()
 		else
 			$('#car_model_select').empty()
