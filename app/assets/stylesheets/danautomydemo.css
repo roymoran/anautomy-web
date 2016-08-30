@@ -1284,7 +1284,9 @@ h1:before {
 }
 /* Footer */
  footer {
-   background-color:#5a5a5a
+   background-color:#5a5a5a;
+
+   width:100%;
 }
 
 .footer-link {
@@ -1681,19 +1683,43 @@ font-family: 'Josefin Sans', sans-serif;
   font-weight: 400;
   font-size: 2em;
 }
+
 .select_submission_form{
-   background: rgba(187, 187, 189, 0.5) !important;
-  border: 1px solid #FFFFFF;
-  color: #FFFFFF !important;
-  text-transform: uppercase;
+  background: transparent;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  height: 48px;
   width: 100%;
-  height: 33px;
+  box-sizing: border-box;
+  font-family: montserrat;
+  color: #2C3E50;
+  font-size: 13px;
 
 
-  -webkit-border-radius: 0;
-    -moz-border-radius: 0;
-    border-radius: 0;
+  -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
 }
+
+.select_date_submission_form{
+  background: transparent;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  height: 48px;
+  box-sizing: border-box;
+  font-family: montserrat;
+  color: #2C3E50;
+  font-size: 13px;
+
+  -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
 /* Main form submission button*/
 .btn-custom {
   background: rgba(69, 134, 52, 0.7) !important;
@@ -1967,10 +1993,12 @@ font-family: 'Josefin Sans', sans-serif;
 /* End OAQ Page */
 
 /* Repair Submission Form */
+
 /*form styles*/
 #msform {
   width: 400px;
   margin: 50px auto;
+  height: 550px;
   text-align: center;
   position: relative;
 }
@@ -2007,7 +2035,7 @@ font-family: 'Josefin Sans', sans-serif;
 /*buttons*/
 #msform .action-button {
   width: 100px;
-  background: #27AE60;
+  background: #52BB49;
   font-weight: bold;
   color: white;
   border: 0 none;
@@ -2078,7 +2106,7 @@ font-family: 'Josefin Sans', sans-serif;
 /*marking active/completed steps green*/
 /*The number of the step and the connector before it = green*/
 #progressbar li.active:before,  #progressbar li.active:after{
-  background: #27AE60;
+  background: #52BB49;
   color: white;
 }
 /* End Repair Submission Form */
