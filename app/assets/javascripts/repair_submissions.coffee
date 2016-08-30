@@ -3,6 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 jQuery ->
 	$('#car_model_select').hide()
+	$('.total_cost_field').hide()
 	car_models = $('#car_model_select').html()
 	$('#car_make_select').change ->
 		car_make = $('#car_make_select :selected').text()
@@ -14,3 +15,18 @@ jQuery ->
 		else
 			$('#car_model_select').empty()
 			$('#car_model_select').hide()
+
+	# Update total_cost_field on date_select focus
+	$(".select_date_submission_form").focus ->
+		# implicitly convert string by multiplying it by 1
+		parts_cost = 1 * $('.parts_cost_field').val()
+		labor_cost = 1 * $('.labor_cost_field').val()
+		total_cost = parts_cost + labor_cost
+		$('.total_cost_field').val(total_cost)
+	
+	# The blur event is sent to an element when it loses focus.
+	$(".parts_cost_field").blur ->
+    	parts_cost = $('.parts_cost_field').val()
+
+    $(".labor_cost_field").blur ->
+    	labor_cost = $('.labor_cost_field').val()

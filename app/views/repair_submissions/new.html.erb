@@ -23,14 +23,13 @@
   <fieldset>
     <h2 class="fs-title">What kind of car?</h2>
     <h3 class="fs-subtitle"></h3>
-
-    <%= f.select(:vehicle_year, options_for_select((Time.zone.now.year - 100)..(Time.zone.now.year)), {prompt: "Select Year"}, {class: "select_submission_form"}) %>
+    <%= f.select(:vehicle_year, options_for_select([*(Time.zone.now.year-80)..(Time.zone.now.year + 1)].reverse), {prompt: "Select Year"}, {class: "select_submission_form"}) %>
     <%= f.collection_select(:car_make, CarMake.all, :id, :name, {prompt: "Select Make"}, {class: "select_submission_form", id: "car_make_select"}) %>
     <%= f.grouped_collection_select(:car_model, CarMake.all, :car_models, :name, :id, :name, {prompt: "Select Model"}, {class: "select_submission_form", id: "car_model_select"}) %>
-
+    <!--
     <%= f.text_field :vehicle_trim, class: '', :placeholder => "TRIM*"%>
     <%= f.text_field :vehicle_mileage, class: '', :placeholder => "MILEAGE"%>
-
+    -->
     <input type="button" name="previous" class="previous action-button" value="Previous" />
     <input type="button" name="next" class="next action-button" value="Next" />
   </fieldset>
@@ -38,9 +37,11 @@
     <h2 class="fs-title">What repair?</h2>
     <h3 class="fs-subtitle"></h3>
     <%= f.text_field :repair_description, class: '', :placeholder => 'REPAIR NAME*'%>
-    <%= f.text_field :parts_cost, class: '', :placeholder => "PARTS COST*"%>
-    <%= f.text_field :labor_cost, class: '', :placeholder => "LABOR COST*"%>
-    <%= f.text_field :total_cost, class: '', :placeholder => "TOTAL COST*"%>
+    <%= f.text_field :parts_cost, class: 'parts_cost_field', :placeholder => "PARTS COST*"%>
+    <%= f.text_field :labor_cost, class: 'labor_cost_field', :placeholder => "LABOR COST*"%>
+    <%= f.text_field :total_cost, class: 'total_cost_field', :placeholder => "TOTAL COST*"%>
+    <%= f.date_select :repair_date, {order: [:month,:day,:year], start_year: Time.zone.now.year, end_year: (Time.zone.now.year-100), prompt: { day: 'Day', month: 'Month', year: "Year" }}, {class: 'select_date_submission_form col-sm-4'}  %>
+
     <%= f.text_area :review, class: '',:rows => 3, :cols => 71,  :placeholder => "POVIDE A SHORT DESCRIPTION OF YOUR EXPERIENCE (OPTIONAL)"%>
     <%= f.hidden_field :shop_id, :value => @repairSubmission.shop_id %>
     <input type="button" name="previous" class="previous action-button" value="Previous" />
