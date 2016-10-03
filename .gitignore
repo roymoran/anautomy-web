@@ -17,3 +17,6 @@
 /tmp
 /app/views/subscribers/show.html.erb
 /config/environment_variables.yml
+
+# Ignore gnerated entity-relationship diagram
+erd.pdf
