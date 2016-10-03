@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160825023142) do
+ActiveRecord::Schema.define(version: 20160829032913) do
 
   create_table "car_makes", force: :cascade do |t|
     t.string   "name"
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 20160825023142) do
     t.datetime "updated_at",         null: false
     t.integer  "shop_id"
     t.string   "total_cost"
+    t.date     "repair_date"
   end
 
   add_index "repair_submissions", ["shop_id"], name: "index_repair_submissions_on_shop_id"
