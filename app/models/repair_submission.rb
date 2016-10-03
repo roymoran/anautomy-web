@@ -4,7 +4,7 @@ class RepairSubmission < ActiveRecord::Base
 	# when create the car in the create action
 	attr_accessor :car_make
     attr_accessor :car_model
-    
+
 	belongs_to :shop, inverse_of: :repair_submissions, counter_cache: true
 	has_one :car
 
@@ -13,8 +13,7 @@ class RepairSubmission < ActiveRecord::Base
 	validates :email, presence: true, length: {maximum: 255}, format: {with: VALID_EMAIL_REGEX} #removed email unqiueness for submission
 	
 	validates :vehicle_year, presence: true, length: {maximum: 255}
-	validates :vehicle_trim, presence: true, length: {maximum: 50}
-
+	#validates :vehicle_trim, presence: true, length: {maximum: 50}
 	validates :repair_description, presence: true
 	validates :parts_cost, presence: true
 	validates :labor_cost, presence: true
