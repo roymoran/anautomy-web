@@ -19,4 +19,4 @@
 /config/environment_variables.yml
 
 # Ignore gnerated entity-relationship diagram
-erd.pdf
+/erd.pdf
