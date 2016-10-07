@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  repair_submission_id: 
+  repair_category_id: 
+  repair_name_id: 
+
+two:
+  repair_submission_id: 
+  repair_category_id: 
+  repair_name_id: 
