@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160829032913) do
+ActiveRecord::Schema.define(version: 20161007052802) do
 
   create_table "car_makes", force: :cascade do |t|
     t.string   "name"
@@ -40,23 +40,49 @@ ActiveRecord::Schema.define(version: 20160829032913) do
   add_index "cars", ["car_model_id"], name: "index_cars_on_car_model_id"
   add_index "cars", ["repair_submission_id"], name: "index_cars_on_repair_submission_id"
 
+  create_table "repair_categories", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "repair_names", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "repair_category_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  add_index "repair_names", ["repair_category_id"], name: "index_repair_names_on_repair_category_id"
+
   create_table "repair_submissions", force: :cascade do |t|
     t.string   "email"
     t.integer  "vehicle_year"
     t.string   "vehicle_trim"
     t.string   "vehicle_mileage"
-    t.string   "repair_description"
     t.string   "parts_cost"
     t.string   "labor_cost"
     t.text     "review"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.integer  "shop_id"
     t.string   "total_cost"
     t.date     "repair_date"
   end
 
   add_index "repair_submissions", ["shop_id"], name: "index_repair_submissions_on_shop_id"
+
+  create_table "repairs", force: :cascade do |t|
+    t.integer  "repair_submission_id"
+    t.integer  "repair_category_id"
+    t.integer  "repair_name_id"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  add_index "repairs", ["repair_category_id"], name: "index_repairs_on_repair_category_id"
+  add_index "repairs", ["repair_name_id"], name: "index_repairs_on_repair_name_id"
+  add_index "repairs", ["repair_submission_id"], name: "index_repairs_on_repair_submission_id"
 
   create_table "shops", force: :cascade do |t|
     t.string   "shop_name"

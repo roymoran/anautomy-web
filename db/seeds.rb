@@ -84,3 +84,26 @@ Shop.create(shop_name: "Aby's Shop", shop_zip: "60609", shop_city: "Chicago", sh
 Shop.create(shop_name: "Aby's Shop", shop_zip: "60609", shop_city: "Chicago", shop_state_code: "IL", shop_country_code: "US", shop_neighborhood: "Brighton Park", shop_address: "4146 S. Western Ave.", shop_phone: "(773) 691-2638")
 Shop.create(shop_name: "Aby's Shop", shop_zip: "60609", shop_city: "Chicago", shop_state_code: "IL", shop_country_code: "US", shop_neighborhood: "Brighton Park", shop_address: "4146 S. Western Ave.", shop_phone: "(773) 691-2638")
 
+#Seed data for Repair Categories table
+RepairCategory.create(name: 'Engine')
+RepairCategory.create(name: 'Exhaust and Emissions')
+RepairCategory.create(name: 'Heating and Air Conditioning')
+RepairCategory.create(name: 'Brakes')
+RepairCategory.create(name: 'Electrical and Lights')
+RepairCategory.create(name: 'Suspension and Steering')
+RepairCategory.create(name: 'General Maintenance')
+RepairCategory.create(name: 'Diagnoses')
+RepairCategory.create(name: 'Drive Train')
+
+#Seed data for Repair Categories table
+RepairName.create(name: 'Fuel Injector Replacement', repair_category_id: 1)
+RepairName.create(name: 'Catalytic Converter Replacement', repair_category_id: 2)
+RepairName.create(name: 'AC Compressor Replacement', repair_category_id: 3)
+RepairName.create(name: 'ABS Control Module Replacement', repair_category_id: 4)
+RepairName.create(name: 'Alternator Replacement', repair_category_id: 5)
+RepairName.create(name: 'Wheel Alignment', repair_category_id: 6)
+RepairName.create(name: 'Oil and Filter Change', repair_category_id: 7)
+RepairName.create(name: 'ABS System Diagnoses', repair_category_id: 8)
+RepairName.create(name: 'Clutch Replacement', repair_category_id: 9)
+
+
