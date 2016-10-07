@@ -7,6 +7,7 @@ class RepairSubmission < ActiveRecord::Base
 
 	belongs_to :shop, inverse_of: :repair_submissions, counter_cache: true
 	has_one :car
+	has_one :repair
 
 	before_save { self.email = email.downcase }
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
