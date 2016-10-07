@@ -63,6 +63,7 @@ class ShopsController < ApplicationController
     end
   end
 
+  #Action called on to display search result of shops from localhost:3000/search page
   def search_result
     @shop = Shop.where("shop_name = ? OR shop_zip = ?", params[:shop_name], params[:shop_zip])
   end
