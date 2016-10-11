@@ -6,9 +6,9 @@
   			<h2>Search Shop</h2>
   				<%= form_tag({controller: "shops", action: "search_result"}, method: "get", class: "") do %>
   					<%= label_tag(:q, "Search for shop:") %>
-					<%= text_field_tag(:shop_name) %>
+            <%= text_field_tag(:shop_name) %>
   					<%= text_field_tag(:shop_zip) %>
-  					<%= submit_tag("Select") %>
+  					<%= submit_tag("Search") %>
 				<% end %>
   		</div>
 	</div>
