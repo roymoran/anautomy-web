@@ -95,15 +95,53 @@ RepairCategory.create(name: 'General Maintenance')
 RepairCategory.create(name: 'Diagnoses')
 RepairCategory.create(name: 'Drive Train')
 
-#Seed data for Repair Categories table
+#Seed data for Repair Names table
 RepairName.create(name: 'Fuel Injector Replacement', repair_category_id: 1)
+RepairName.create(name: 'Fuel Pump Replacement', repair_category_id: 1)
+RepairName.create(name: 'Head Gasket(s) Replacement', repair_category_id: 1)
+RepairName.create(name: 'Ignition Coil Replacement', repair_category_id: 1)
+RepairName.create(name: 'Mass Airflow Sensor Replacement', repair_category_id: 1)
+RepairName.create(name: 'Intake Manifold Gasket Replacement', repair_category_id: 1)
+
 RepairName.create(name: 'Catalytic Converter Replacement', repair_category_id: 2)
+RepairName.create(name: 'Exhaust Manifold Gasket(s) Replacement', repair_category_id: 2)
+RepairName.create(name: 'Exhaust Manifold Replacement', repair_category_id: 2)
+RepairName.create(name: 'Oxygen Sensor Replacement - Front', repair_category_id: 2)
+RepairName.create(name: 'Oxygen Sensor Replacement - Rear', repair_category_id: 2)
+
+
 RepairName.create(name: 'AC Compressor Replacement', repair_category_id: 3)
+RepairName.create(name: 'AC Condenser Replacement', repair_category_id: 3)
+RepairName.create(name: 'AC Evaporator Replacement', repair_category_id: 3)
+RepairName.create(name: 'AC Recharge', repair_category_id: 3)
+RepairName.create(name: 'Heater Blower Motor Replacement', repair_category_id: 3)
+RepairName.create(name: 'Heater Blower Motor Resistor Replacement', repair_category_id: 3)
+RepairName.create(name: 'Heater Core Replacement', repair_category_id: 3)
+
+
 RepairName.create(name: 'ABS Control Module Replacement', repair_category_id: 4)
+RepairName.create(name: 'ABS Wheel Speed Sensor Replacement', repair_category_id: 4)
+RepairName.create(name: 'Brake Caliper Replacement - Front', repair_category_id: 4)
+RepairName.create(name: 'Brake Caliper Replacement - Rear', repair_category_id: 4)
+RepairName.create(name: 'Brake Master Cylinder Replacement', repair_category_id: 4)
+
 RepairName.create(name: 'Alternator Replacement', repair_category_id: 5)
+RepairName.create(name: 'Battery Replacement', repair_category_id: 5)
+RepairName.create(name: 'Door Window Motor Replacement', repair_category_id: 5)
+RepairName.create(name: 'Door Window Regulator Replacement', repair_category_id: 5)
+RepairName.create(name: 'Headlamp Bulb Replacement', repair_category_id: 5)
+
 RepairName.create(name: 'Wheel Alignment', repair_category_id: 6)
+RepairName.create(name: 'Wheel Alignment', repair_category_id: 6)
+RepairName.create(name: 'Wheel Alignment', repair_category_id: 6)
+RepairName.create(name: 'Wheel Alignment', repair_category_id: 6)
+RepairName.create(name: 'Wheel Alignment', repair_category_id: 6)
+
+
 RepairName.create(name: 'Oil and Filter Change', repair_category_id: 7)
+
 RepairName.create(name: 'ABS System Diagnoses', repair_category_id: 8)
+
 RepairName.create(name: 'Clutch Replacement', repair_category_id: 9)
 
 
