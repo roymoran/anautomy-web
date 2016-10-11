@@ -36,17 +36,49 @@
   <fieldset>
     <h2 class="fs-title">What repair?</h2>
     <h3 class="fs-subtitle"></h3>
-    <%= f.text_field :repair_description, class: '', :placeholder => 'REPAIR NAME*'%>
+    <select class="select_submission_form" data-toggle="modal" data-target="#myModal">
+      <option class="repair_select_option" selected disabled hidden></option>
+     </select>
+
+     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Select Repair</h4>
+          </div>
+          <div class="modal-body">
+            <% @repair_category.each do |category| %>
+            <h4 class="text-left"><u><%= category.name%></u></h4>
+            <div class="row">
+              <% category.repair_names.each do |repair| %>
+              <div class="col-sm-4">
+                <p>
+                  <a class="repair-name-text" href="#" data-cat="<%=category.name%>" data-dismiss="modal">
+                    <%= repair.name %>
+                  </a>
+                </p>
+              </div>
+            <% end %>
+          </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
     <%= f.text_field :parts_cost, class: 'parts_cost_field', :placeholder => "PARTS COST*"%>
     <%= f.text_field :labor_cost, class: 'labor_cost_field', :placeholder => "LABOR COST*"%>
     <%= f.text_field :total_cost, class: 'total_cost_field', :placeholder => "TOTAL COST*"%>
+
     <%= f.date_select :repair_date, {order: [:month,:day,:year], start_year: Time.zone.now.year, end_year: (Time.zone.now.year-100), prompt: { day: 'Day', month: 'Month', year: "Year" }}, {class: 'select_date_submission_form col-sm-4'}  %>
 
     <%= f.text_area :review, class: '',:rows => 3, :cols => 71,  :placeholder => "POVIDE A SHORT DESCRIPTION OF YOUR EXPERIENCE (OPTIONAL)"%>
     <%= f.hidden_field :shop_id, :value => @repairSubmission.shop_id %>
+    <%= f.hidden_field :repair_category, :value => 1 %>
+    <%= f.hidden_field :repair_name, :value => 2 %>
     <input type="button" name="previous" class="previous action-button" value="Previous" />
-    <%= f.submit "Submit", class: "action-button" %>
-
+    <%= f.submit "Submit", {class: "action-button"}%>
+ 
   </fieldset>
 <% end %>
   

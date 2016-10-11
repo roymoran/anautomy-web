@@ -1684,42 +1684,6 @@ font-family: 'Josefin Sans', sans-serif;
   font-size: 2em;
 }
 
-.select_submission_form{
-  background: transparent;
-  padding: 15px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  margin-bottom: 10px;
-  height: 48px;
-  width: 100%;
-  box-sizing: border-box;
-  font-family: montserrat;
-  color: #2C3E50;
-  font-size: 13px;
-
-
-  -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-}
-
-.select_date_submission_form{
-  background: transparent;
-  padding: 15px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  margin-bottom: 10px;
-  height: 48px;
-  box-sizing: border-box;
-  font-family: montserrat;
-  color: #2C3E50;
-  font-size: 13px;
-
-  -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-}
-
 /* Main form submission button*/
 .btn-custom {
   background: rgba(69, 134, 52, 0.7) !important;
@@ -2109,4 +2073,41 @@ font-family: 'Josefin Sans', sans-serif;
   background: #52BB49;
   color: white;
 }
+
+.select_submission_form{
+  background: transparent;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  height: 48px;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: montserrat;
+  color: #2C3E50;
+  font-size: 13px;
+
+
+  -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.select_date_submission_form{
+  background: transparent;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  height: 48px;
+  box-sizing: border-box;
+  font-family: montserrat;
+  color: #2C3E50;
+  font-size: 13px;
+
+  -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
 /* End Repair Submission Form */
