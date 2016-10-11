@@ -1,3 +1,6 @@
+<% provide(:title, "Home") %>
+
+
 <!--Start of main container section-->
 <a id = "signup" name="signup"></a>
 <div class = "container-fluid main-container"> 
@@ -26,13 +29,15 @@
                 	<div class =  "col-md-7 col-md-offset-2" style = "padding-bottom: 15px;">
                 		<div class = "row">
                     		<%= form_for @subscriber, :html => {:id => 'subscriber_form', :class => ''}, remote: true do |f|%>
-                    		<div class = "col-sm-9">
-                    			<div class="form-group">
-                        			<label class = "sr-only">Email</label>
-                         			<%= f.email_field :email, class: 'form-control form-custom-2', :placeholder => "EMAIL ADDRESS"%>
-                    			</div>
+                    		<div class = "col-sm-5" style="padding-bottom:5px;">
+                         			<label class = "sr-only">Email</label>
+                         			<%= f.email_field :email, class: 'form-control form-custom-2', :placeholder => "EMAIL"%>
                     		</div>
-                    		<div class = "col-sm-3">
+                        <div class = "col-sm-5" style="padding-bottom:5px;">
+                              <label class = "sr-only">Zip Code</label>
+                              <%= f.text_field :zip, class: 'form-control form-custom-2', :placeholder => "ZIP CODE"%>
+                        </div>
+                    		<div class = "col-sm-2">
                     			<%= f.submit "SAVE ME MONEY", class: "btn btn-custom-2 button-text-style" %>
                 			</div>
                  			<% end %>
