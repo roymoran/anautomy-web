@@ -8,7 +8,6 @@ Rails.application.routes.draw do
 
   get 'repairs' => 'anautomy#repairs'
   get 'submissions' => 'anautomy#submissions'
-  get '/anautomy/homepage'
   get '/anautomy/shop_profile'
 
   #root 'static_pages#home'
