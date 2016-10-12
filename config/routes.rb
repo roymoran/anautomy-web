@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   get 'repairs' => 'anautomy#repairs'
   get 'submissions' => 'anautomy#submissions'
+  get '/anautomy/home'
   get '/anautomy/shop_profile'
 
   #root 'static_pages#home'
@@ -16,8 +17,7 @@ Rails.application.routes.draw do
   #post   'sub'   => 'subscribers#create'
   resources :subscribers
   resources :repair_submissions
-  resources :anuatomy
-
+  
   resources :anautomy do
   get :home, :on => :collection
   end
