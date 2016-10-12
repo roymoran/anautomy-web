@@ -67,7 +67,7 @@
 				How do I contribute?
 			<p>
 			<p class = "answer-text">
-				If you have ever gone through a car repair experience, we would love for you to share it with out community. <a href="/home#signup">Submit</a> your information, and we will reach out on sharing more information about your experience.
+				If you have ever gone through a car repair experience, we would love for you to share it with our community. <a href="/home#signup">Submit</a> your information, and we will reach out on sharing more information about your experience.
 			<p>
 		</div>
 	</div>
@@ -97,6 +97,15 @@
 
 
   $(document).ready(function() {
+
+  			$('.closed_header_tooltip').tooltipster({
+              animation: 'fade',
+              delay: 0,
+              theme: 'tooltipster-default',
+              trigger: 'click',
+              position: 'bottom'
+            });
+            
             $('.under_construction_header_tooltip').tooltipster({
               animation: 'fade',
               delay: 0,
