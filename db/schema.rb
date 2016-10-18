@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161007052802) do
+ActiveRecord::Schema.define(version: 20161018035945) do
 
   create_table "car_makes", force: :cascade do |t|
     t.string   "name"
@@ -84,6 +84,19 @@ ActiveRecord::Schema.define(version: 20161007052802) do
   add_index "repairs", ["repair_name_id"], name: "index_repairs_on_repair_name_id"
   add_index "repairs", ["repair_submission_id"], name: "index_repairs_on_repair_submission_id"
 
+  create_table "shop_ratings", force: :cascade do |t|
+    t.integer  "cost_rating"
+    t.integer  "quality_rating"
+    t.integer  "quickness_rating"
+    t.integer  "shop_id"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.integer  "repair_submission_id"
+  end
+
+  add_index "shop_ratings", ["repair_submission_id"], name: "index_shop_ratings_on_repair_submission_id"
+  add_index "shop_ratings", ["shop_id"], name: "index_shop_ratings_on_shop_id"
+
   create_table "shops", force: :cascade do |t|
     t.string   "shop_name"
     t.string   "shop_zip"
@@ -98,6 +111,8 @@ ActiveRecord::Schema.define(version: 20161007052802) do
     t.boolean  "shop_closed",              default: false
     t.string   "shop_phone"
     t.integer  "repair_submissions_count", default: 0
+    t.float    "shop_master_rating"
+    t.integer  "shop_ratings_count",       default: 0
   end
 
   create_table "subscribers", force: :cascade do |t|

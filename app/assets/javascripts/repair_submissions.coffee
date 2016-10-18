@@ -38,3 +38,25 @@ jQuery ->
     	repair_name = $(this).text()
     	repair_category = $(this).data();
     	$('.repair_select_option').text(repair_category.cat + ' - ' + repair_name)
+
+   	#implement gradual rating for cost, quality, and quickness of repair
+   	$('.quality-rating-row').hide()
+   	$('.quickness-rating-row').hide()
+
+   	$("input[name$='cost_rating']").click ->
+   		#$('.cost-rating-row').hide("slow")
+   		#$('.quality-rating-row').show("slow")
+   		$('.cost-rating-row').slideUp()
+   		$('.quality-rating-row').slideDown()
+
+   	$("input[name$='quality_rating']").click ->
+   		#$('.quality-rating-row').hide("slow")
+   		#$('.quickness-rating-row').show("slow")
+   		$('.quality-rating-row').slideUp()
+   		$('.quickness-rating-row').slideDown()
+
+   	$("input[name$='quickness_rating']").click ->
+   		#$('.quickness-rating-row').hide("slow")
+   		$('.quickness-rating-row').slideUp ->
+   			$('.fs-subtitle-rate').hide("slow")
+

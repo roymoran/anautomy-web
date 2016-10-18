@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cost_rating: 1
+  quality_rating: 1
+  quickness_rating: 1
+  shop_id: 
+
+two:
+  cost_rating: 1
+  quality_rating: 1
+  quickness_rating: 1
+  shop_id: 

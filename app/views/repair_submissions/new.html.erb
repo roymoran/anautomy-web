@@ -70,15 +70,82 @@
     <%= f.text_field :labor_cost, class: 'labor_cost_field', :placeholder => "LABOR COST*"%>
     <%= f.text_field :total_cost, class: 'total_cost_field', :placeholder => "TOTAL COST*"%>
 
-    <%= f.date_select :repair_date, {order: [:month,:day,:year], start_year: Time.zone.now.year, end_year: (Time.zone.now.year-100), prompt: { day: 'Day', month: 'Month', year: "Year" }}, {class: 'select_date_submission_form col-sm-4'}  %>
+    <%= f.date_select :repair_date, {order: [:month,:year], start_year: Time.zone.now.year, end_year: (Time.zone.now.year-100), prompt: { day: 'Day', month: 'Month', year: "Year" }}, {class: 'select_date_submission_form col-sm-6'}  %>
 
+    <h3 class="fs-subtitle fs-subtitle-rate">Rate your experience at <%= @shop.shop_name%></h3>
+
+    <div class="row cost-rating-row">
+      <div class="col-xs-3 text-left">
+        Cost:
+      </div>
+      <div class="col-xs-3">
+        <%= radio_button_tag(:cost_rating, 3, false, {class: "with-fa-smile with-fa"}) %>
+        <label for="cost_rating_3" style="
+        margin-top:-8px;"></label>
+      </div>
+      <div class="col-xs-3">
+        <%= radio_button_tag(:cost_rating, 2, false, {class: "with-fa-meh with-fa"}) %>
+        <label for="cost_rating_2" style="
+        margin-top:-8px;"></label>
+      </div>
+      <div class="col-xs-3">
+        <%= radio_button_tag(:cost_rating, 1, false, {class: "with-fa-frown with-fa"}) %>
+        <label for="cost_rating_1" style="
+        margin-top:-8px;"></label>
+      </div>
+    </div>
+
+    <div class="row quality-rating-row">
+      <div class="col-xs-3 text-left">
+        Quality:
+      </div>
+      <div class="col-xs-3">
+        <%= radio_button_tag(:quality_rating, 3, false, {class: "with-fa-smile with-fa"}) %>
+        <label for="quality_rating_3" style="
+        margin-top:-8px;"></label>
+      </div>
+      <div class="col-xs-3">
+        <%= radio_button_tag(:quality_rating, 2, false, {class: "with-fa-meh with-fa"}) %>
+        <label for="quality_rating_2" style="
+        margin-top:-8px;"></label>
+      </div>
+      <div class="col-xs-3">
+        <%= radio_button_tag(:quality_rating, 1, false, {class: "with-fa-frown with-fa"}) %>
+        <label for="quality_rating_1" style="
+        margin-top:-8px;"></label>
+      </div>
+    </div>
+
+    <div class="row quickness-rating-row">
+      <div class="col-xs-3 text-left">
+        Quickness:
+      </div>
+      <div class="col-xs-3"`>
+        <%= radio_button_tag(:quickness_rating, 3, false, {class: "with-fa-smile with-fa"}) %>
+        <label for="quickness_rating_3" style="
+        margin-top:-8px;"></label>
+      </div>
+      <div class="col-xs-3">
+        <%= radio_button_tag(:quickness_rating, 2, false, {class: "with-fa-meh with-fa"}) %>
+        <label for="quickness_rating_2" style="
+        margin-top:-8px;"></label>
+      </div>
+      <div class="col-xs-3">
+        <%= radio_button_tag(:quickness_rating, 1, false, {class: "with-fa-frown with-fa"}) %>
+        <label for="quickness_rating_1" style="
+        margin-top:-8px;"></label>
+      </div>
+    </div>
+    <!--
     <%= f.text_area :review, class: '',:rows => 3, :cols => 71,  :placeholder => "POVIDE A SHORT DESCRIPTION OF YOUR EXPERIENCE (OPTIONAL)"%>
+  -->
+    <%= hidden_field_tag :shop_id, @repairSubmission.shop_id %>
     <%= f.hidden_field :shop_id, :value => @repairSubmission.shop_id %>
     <%= f.hidden_field :repair_category, :value => 1 %>
     <%= f.hidden_field :repair_name, :value => 2 %>
+
     <input type="button" name="previous" class="previous action-button" value="Previous" />
     <%= f.submit "Submit", {class: "action-button"}%>
- 
   </fieldset>
 <% end %>
   

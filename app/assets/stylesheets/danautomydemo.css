@@ -2110,4 +2110,57 @@ font-family: 'Josefin Sans', sans-serif;
     border-radius: 3px;
 }
 
+input[type=radio].with-fa {
+    border: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+}
+
+input[type=radio].with-fa-smile ~ label:before{
+    font-family: FontAwesome;
+    content: "\f118";
+    font-size: 2em;
+    cursor:pointer;
+    font-weight: lighter;
+}
+
+input[type=radio].with-fa-meh ~ label:before{
+    font-family: FontAwesome;
+    content: "\f11a";
+    font-size: 2em;
+    cursor:pointer;
+    font-weight: lighter;
+}
+
+input[type=radio].with-fa-frown ~ label:before{
+    font-family: FontAwesome;
+    content: "\f119";
+    font-size: 2em;
+    cursor:pointer;
+    font-weight: lighter;
+}
+
+input[type=radio].with-fa-smile:checked ~ label:before {
+    content: "\f118";
+    font-size: 2em;
+    color: #52BB49;
+    font-weight: lighter;
+}
+
+input[type=radio].with-fa-meh:checked ~ label:before {
+    content: "\f11a";
+    font-size: 2em;
+    color: #52BB49;
+    font-weight: lighter;
+}
+
+input[type=radio].with-fa-frown:checked ~ label:before {
+    content: "\f119";
+    font-size: 2em;
+    color: #52BB49;
+    font-weight: lighter;
+}
+
 /* End Repair Submission Form */
