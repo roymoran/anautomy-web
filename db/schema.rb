@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161018035945) do
+ActiveRecord::Schema.define(version: 20161018233508) do
 
   create_table "car_makes", force: :cascade do |t|
     t.string   "name"
@@ -102,7 +102,7 @@ ActiveRecord::Schema.define(version: 20161018035945) do
     t.string   "shop_zip"
     t.string   "shop_city"
     t.string   "shop_state_code"
-    t.string   "shop_country_code"
+    t.string   "shop_iso_country_code"
     t.string   "shop_neighborhood"
     t.string   "shop_address"
     t.boolean  "shop_claimed",             default: false
