@@ -11,8 +11,11 @@ default: &default
 
 #Development db will be local postgresql version 9.5.4
 development:
-  <<: *default
-  database: db/development.sqlite3
+  adapter: postgresql
+  encoding: unicode
+  database: innvoy_dev
+  username: roy
+  pool: 5
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -21,7 +24,7 @@ test:
   <<: *default
   database: db/test.sqlite3
 
-#Development db will be Azure hosted postgresql version 9.3.14 (to be upgraded to same version as development db)
+#Production db will be Azure hosted postgresql version 9.3.14 (to be upgraded to same version as development db)
 production:
   adapater: postgresql
   encoding: unicode

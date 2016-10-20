@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161018233508) do
+ActiveRecord::Schema.define(version: 20161020033828) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "car_makes", force: :cascade do |t|
     t.string   "name"
@@ -26,7 +29,7 @@ ActiveRecord::Schema.define(version: 20161018233508) do
     t.datetime "updated_at",  null: false
   end
 
-  add_index "car_models", ["car_make_id"], name: "index_car_models_on_car_make_id"
+  add_index "car_models", ["car_make_id"], name: "index_car_models_on_car_make_id", using: :btree
 
   create_table "cars", force: :cascade do |t|
     t.integer  "car_make_id"
@@ -36,9 +39,9 @@ ActiveRecord::Schema.define(version: 20161018233508) do
     t.integer  "repair_submission_id"
   end
 
-  add_index "cars", ["car_make_id"], name: "index_cars_on_car_make_id"
-  add_index "cars", ["car_model_id"], name: "index_cars_on_car_model_id"
-  add_index "cars", ["repair_submission_id"], name: "index_cars_on_repair_submission_id"
+  add_index "cars", ["car_make_id"], name: "index_cars_on_car_make_id", using: :btree
+  add_index "cars", ["car_model_id"], name: "index_cars_on_car_model_id", using: :btree
+  add_index "cars", ["repair_submission_id"], name: "index_cars_on_repair_submission_id", using: :btree
 
   create_table "repair_categories", force: :cascade do |t|
     t.string   "name"
@@ -53,7 +56,7 @@ ActiveRecord::Schema.define(version: 20161018233508) do
     t.datetime "updated_at",         null: false
   end
 
-  add_index "repair_names", ["repair_category_id"], name: "index_repair_names_on_repair_category_id"
+  add_index "repair_names", ["repair_category_id"], name: "index_repair_names_on_repair_category_id", using: :btree
 
   create_table "repair_submissions", force: :cascade do |t|
     t.string   "email"
@@ -70,19 +73,19 @@ ActiveRecord::Schema.define(version: 20161018233508) do
     t.date     "repair_date"
   end
 
-  add_index "repair_submissions", ["shop_id"], name: "index_repair_submissions_on_shop_id"
+  add_index "repair_submissions", ["shop_id"], name: "index_repair_submissions_on_shop_id", using: :btree
 
   create_table "repairs", force: :cascade do |t|
     t.integer  "repair_submission_id"
-    t.integer  "repair_category_id"
-    t.integer  "repair_name_id"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
+    t.integer  "repair_category_id"
+    t.integer  "repair_name_id"
   end
 
-  add_index "repairs", ["repair_category_id"], name: "index_repairs_on_repair_category_id"
-  add_index "repairs", ["repair_name_id"], name: "index_repairs_on_repair_name_id"
-  add_index "repairs", ["repair_submission_id"], name: "index_repairs_on_repair_submission_id"
+  add_index "repairs", ["repair_category_id"], name: "index_repairs_on_repair_category_id", using: :btree
+  add_index "repairs", ["repair_name_id"], name: "index_repairs_on_repair_name_id", using: :btree
+  add_index "repairs", ["repair_submission_id"], name: "index_repairs_on_repair_submission_id", using: :btree
 
   create_table "shop_ratings", force: :cascade do |t|
     t.integer  "cost_rating"
@@ -94,8 +97,8 @@ ActiveRecord::Schema.define(version: 20161018233508) do
     t.integer  "repair_submission_id"
   end
 
-  add_index "shop_ratings", ["repair_submission_id"], name: "index_shop_ratings_on_repair_submission_id"
-  add_index "shop_ratings", ["shop_id"], name: "index_shop_ratings_on_shop_id"
+  add_index "shop_ratings", ["repair_submission_id"], name: "index_shop_ratings_on_repair_submission_id", using: :btree
+  add_index "shop_ratings", ["shop_id"], name: "index_shop_ratings_on_shop_id", using: :btree
 
   create_table "shops", force: :cascade do |t|
     t.string   "shop_name"
@@ -122,6 +125,17 @@ ActiveRecord::Schema.define(version: 20161018233508) do
     t.integer  "zip"
   end
 
-  add_index "subscribers", ["email"], name: "index_subscribers_on_email", unique: true
+  add_index "subscribers", ["email"], name: "index_subscribers_on_email", unique: true, using: :btree
 
+  add_foreign_key "car_models", "car_makes"
+  add_foreign_key "cars", "car_makes"
+  add_foreign_key "cars", "car_models"
+  add_foreign_key "cars", "repair_submissions"
+  add_foreign_key "repair_names", "repair_categories"
+  add_foreign_key "repair_submissions", "shops"
+  add_foreign_key "repairs", "repair_categories"
+  add_foreign_key "repairs", "repair_names"
+  add_foreign_key "repairs", "repair_submissions"
+  add_foreign_key "shop_ratings", "repair_submissions"
+  add_foreign_key "shop_ratings", "shops"
 end
