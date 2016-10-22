@@ -16,7 +16,6 @@ e# See https://help.github.com/articles/ignoring-files for more about ignoring f
 !/log/.keep
 /tmp
 /app/views/subscribers/show.html.erb
-/config/environment_variables.yml
 
 # Ignore generated entity-relationship diagram
 erd.pdf
