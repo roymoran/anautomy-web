@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   root 'anautomy#home'
-
   get 'home' => 'anautomy#home'
   get 'about' => 'anautomy#about'
   get 'oaq' => 'anautomy#oaq'
@@ -24,7 +23,8 @@ Rails.application.routes.draw do
   resources :repair_submissions
   resources :anuatomy
   resources :shops
-
+  resources :invoices
+  match 'snap', to: 'invoices#new', via: [:get, :post]
   resources :anautomy do
   get :home, :on => :collection
   end

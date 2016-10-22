@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161020033828) do
+ActiveRecord::Schema.define(version: 20161021225315) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,15 @@ ActiveRecord::Schema.define(version: 20161020033828) do
   add_index "cars", ["car_make_id"], name: "index_cars_on_car_make_id", using: :btree
   add_index "cars", ["car_model_id"], name: "index_cars_on_car_model_id", using: :btree
   add_index "cars", ["repair_submission_id"], name: "index_cars_on_repair_submission_id", using: :btree
+
+  create_table "invoices", force: :cascade do |t|
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.string   "invoice_image_file_name"
+    t.string   "invoice_image_content_type"
+    t.integer  "invoice_image_file_size"
+    t.datetime "invoice_image_updated_at"
+  end
 
   create_table "repair_categories", force: :cascade do |t|
     t.string   "name"

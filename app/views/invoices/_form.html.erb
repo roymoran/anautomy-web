@@ -1,0 +1,4 @@
+<%= form_for @invoice, html: { multipart: true } do |f| %>
+    <%= f.file_field :invoice_image %>
+    <%= f.submit "Submit", {class: ""}%>
+    <% end %>
