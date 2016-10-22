@@ -28,6 +28,8 @@ gem 'jquery-turbolinks'
 gem 'httparty'
 gem 'oj'
 gem 'pg',             '0.17.1'
+gem "paperclip", "~> 5.0.0"
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
