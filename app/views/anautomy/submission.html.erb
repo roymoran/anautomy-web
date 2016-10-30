@@ -1,9 +1,9 @@
 <% provide(:title, "Create Submission") %>
 <div class = "container">
 	<div class = "row">
-		<h2> Submit Your Repair Experience</h2>
-		<h4><%= link_to "Snap A Picture of Your Invoice", snap_path %></h4>
-		<h4>or</h4>
-		<h4><%= link_to "Start by Searching the Shop", :controller => :repair_submissions, :action => :search %></h4>
+		<div class="col-sm-6 col-sm-offset-3">
+			<h3 class="text-center main-headline" style="padding-top:25px;"> Submit Your Repair Experience</h3>
+			<h4 style="padding-top:125px; padding-bottom:125px;"><%= link_to "Snap A Picture of Your Invoice", snap_path , {class:"text-center sub-headline"}%> <spans class="sub-headline" style="color:black;">or</span> <%= link_to "Start by Searching the Shop", search_path, {class:"text-center sub-headline"} %></h4>
+	</div>
 	</div>
 </div>
