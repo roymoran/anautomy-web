@@ -1376,14 +1376,22 @@ h1:before {
 .main-container{
   min-height:500px;
 }
-.main-headline-home{
+
+.main-headline{
   font-size:2.3em; 
   color:#52BB49; 
-  text-align:center; 
   font-family:'Roboto'; 
   font-weight:300; 
+}
+.main-headline-padding{
   padding-top:40px; 
   padding-bottom:25px;
+}
+.sub-headline{
+  font-size:1em; 
+  color:#52BB49; 
+  font-family:'Roboto'; 
+  font-weight:300;
 }
 
 .banner_jaguar{
@@ -1953,6 +1961,13 @@ font-family: 'Josefin Sans', sans-serif;
   padding-top: 40px;
   padding-bottom: 40px;
   }
+
+/* End OAQ Page */
+
+/* Shop Search Results Page */
+
+
+/* End Shop Search Results Page */
 
 /* End OAQ Page */
 

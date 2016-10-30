@@ -381,26 +381,3 @@ position: relative;
 .formPosition{
     margin-left: 180px;
 }
-
-.jssora11l, .jssora11r {
-                    display: block;
-                    position: absolute;
-                    /* size of arrow element */
-                    width: 37px;
-                    height: 37px;
-                    cursor: pointer;
-                    background: url('https://i.imgur.com/9pJeM6c.png') no-repeat;
-                    overflow: hidden;
-                }
-                .jssora11l { background-position: -11px -41px; }
-                .jssora11r { background-position: -71px -41px; }
-                .jssora11l:hover { background-position: -131px -41px; }
-                .jssora11r:hover { background-position: -191px -41px; }
-                .jssora11l.jssora11ldn { background-position: -251px -41px; }
-                .jssora11r.jssora11rdn { background-position: -311px -41px; }
-
-                .captionFont{
-    font-family: 'Roboto', sans-sarif;
-    font-weight: 300;
-    font-size: 12px;
-}

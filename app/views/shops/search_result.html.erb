@@ -1,23 +1,54 @@
 <% provide(:title, "Find Shop") %>
 
 <div class = "container-fluid">
-<div class = "row">
-  <div class="col-md-6 col-md-offset-3">
-    <h2>Select Shop</h2>
+    <div class="col-sm-6 col-sm-offset-3">
+      <h3 class="text-center main-headline ">Select Shop</h3>
+      <%if params[:shop_zip].blank? and params[:shop_name].blank?%> 
+      <%else%>
+        <%if params[:shop_zip].present? and params[:shop_name].present?%>
+          <div class="text-left sub-headline ">(Results for <%=params[:shop_name]%> in <%= params[:shop_zip]%>)</div>
+        <%elsif params[:shop_zip].present?%>
+          <div class="text-left sub-headline ">(Results for <%= params[:shop_zip]%>)</div>
+        <%elsif params[:shop_zip].present?%>
+        <div class="text-left sub-headline ">(Results for <%=params[:shop_name]%>)</div>
+        <%end%>
+      <%end%>
+      <div class = "row">
+        <div class="col-sm-12">
+          <hr class="line-split">
+        </div>
+      </div>
       <% @shop.each do |s| %>
-        <%= form_tag({controller: "repair_submissions", action: "new"}, method: "get", class: "") do %>
-  			     <p>
-  				    <strong>Name:</strong> <%= s.shop_name %><br>
-              <strong>Address:</strong> <%= s.shop_address %><br>
-              <strong>Zip:</strong> <%= s.shop_zip %><br>
-              <strong>Phone:</strong> <%= s.shop_phone %><br>
-              <%= hidden_field_tag :shop_id, s.id %>
-              <%= submit_tag "Select" %>
-            </p>
-        <% end %>
+      <%= form_tag({controller: "repair_submissions", action: "new"}, method: "get", class: "") do %>
+      <div class="row">
+        <div class="col-sm-12 col-sm-offset-3">
+          <div class = "shop_name" style="font-size:1.2em;">
+            <%= s.shop_name %><br>
+          </div>
+          <div class = "shop_location" style="font-size:1.2em;">
+            <%= s.shop_address %><br>
+            <%= s.shop_city %>, <%= s.shop_state_code %> <%= s.shop_zip %>
+            <%= submit_tag "Select", {class: "btn btn-custom-2 button-text-style", style:"font-size:1.0em; margin-left:100px;"}%>
+          </div>
+          <div class = "shop_contact" style="font-size:1.2em;">
+            <%= s.shop_phone %><br>
+          </div>
+          <div class="row">
+            <div class="col-sm-12 col-sm-offset-3">
+            <%= hidden_field_tag :shop_id, s.id %>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+      <div class = "row">
+        <div class="col-sm-12">
+          <hr class="line-split">
+        </div>
+      </div>
       <% end %>
-  </div>
-</div>
+    </div>
+
 </div>
 
 
