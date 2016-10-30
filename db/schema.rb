@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161021225315) do
+ActiveRecord::Schema.define(version: 20161029042640) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -125,6 +125,9 @@ ActiveRecord::Schema.define(version: 20161021225315) do
     t.integer  "repair_submissions_count", default: 0
     t.float    "shop_master_rating"
     t.integer  "shop_ratings_count",       default: 0
+    t.boolean  "missing_info",             default: false
+    t.string   "shop_url"
+    t.integer  "yelp_rc"
   end
 
   create_table "subscribers", force: :cascade do |t|
