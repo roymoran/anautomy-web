@@ -2,14 +2,18 @@
 
 <div class = "container-fluid">
 	<div class = "row">
-  		<div class="col-md-6 col-md-offset-3">
-  			<h2>Search Shop</h2>
+  		<div class="col-sm-6 col-sm-offset-3">
+  			<h2 class="text-center main-headline">Search Shop</h2>
+        <h3 class=" text-center sub-headline ">Search by name, zip, or both.</h3>
+        <div class="row" style="padding-top:12%; padding-bottom:12%;">
+          <div class="col-sm-12 text-center">
   				<%= form_tag({controller: "shops", action: "search_result"}, method: "get", class: "") do %>
-  					<%= label_tag(:q, "Search for shop:") %>
-            <%= text_field_tag(:shop_name) %>
-  					<%= text_field_tag(:shop_zip) %>
-  					<%= submit_tag("Search") %>
+            <%= text_field_tag(:shop_name, nil, {placeholder: "Aby's Shop"}) %>
+  					<%= text_field_tag(:shop_zip, nil, {placeholder: "60609"}) %>
+  					<%= submit_tag("Search",  {class: "btn btn-custom-2 button-text-style"}) %>
 				<% end %>
+      </div>
+      </div>
   		</div>
 	</div>
 </div>
