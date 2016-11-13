@@ -2,6 +2,7 @@
 <%= form_for @invoice, html: { multipart: true } do |f| %>
     <%= f.file_field :invoice_image, {class: "input-invoice"} %>
     <label for="invoice_invoice_image"><i class="fa fa-camera fa-5x" style="color:#52BB49;" aria-hidden="true"></i></label>
+    <h3 class="text-center sub-headline file-uploaded">File selected: None</h3>
     <div class="row" style="padding-top:20%;">
     <%= f.submit "Submit", {class: "btn btn-custom-2 button-text-style", style:"width:50%;"}%>
 	</div>

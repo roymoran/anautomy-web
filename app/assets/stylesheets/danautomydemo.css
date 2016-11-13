@@ -2181,6 +2181,7 @@ input[type=radio].with-fa-frown:checked ~ label:before {
 /* End Repair Submission Form */
 
 /* Snap Invoice */
+/*Guide to styling file input http://tympanus.net/codrops/2015/09/15/styling-customizing-file-inputs-smart-way/ */
 .input-invoice{
   width: 0.1px;
   height: 0.1px;
@@ -2195,5 +2196,14 @@ input[type=radio].with-fa-frown:checked ~ label:before {
 
 .input-invoice:focus + label,
 .input-invoice + label:hover {
+}
+
+.input-invoice:focus + label {
+  outline: 1px dotted #000;
+  outline: -webkit-focus-ring-color auto 5px;
+}
+
+.input-invoice + label {
+  cursor: pointer; /* "hand" cursor */
 }
 /* End Snap Invoice */
