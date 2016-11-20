@@ -4,6 +4,7 @@ class RepairSubmission < ActiveRecord::Base
 	# when creating the car in the create action
 	attr_accessor :car_make
     attr_accessor :car_model
+    attr_accessor :car_year
 
     attr_accessor :repair_category
     attr_accessor :repair_name
