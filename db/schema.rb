@@ -11,25 +11,99 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161108234323) do
+ActiveRecord::Schema.define(version: 20161120093706) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "car_makes", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.boolean  "year_1984",  default: false
+    t.boolean  "year_1985",  default: false
+    t.boolean  "year_1986",  default: false
+    t.boolean  "year_1987",  default: false
+    t.boolean  "year_1988",  default: false
+    t.boolean  "year_1989",  default: false
+    t.boolean  "year_1990",  default: false
+    t.boolean  "year_1991",  default: false
+    t.boolean  "year_1992",  default: false
+    t.boolean  "year_1993",  default: false
+    t.boolean  "year_1994",  default: false
+    t.boolean  "year_1995",  default: false
+    t.boolean  "year_1996",  default: false
+    t.boolean  "year_1997",  default: false
+    t.boolean  "year_1998",  default: false
+    t.boolean  "year_1999",  default: false
+    t.boolean  "year_2000",  default: false
+    t.boolean  "year_2001",  default: false
+    t.boolean  "year_2002",  default: false
+    t.boolean  "year_2003",  default: false
+    t.boolean  "year_2004",  default: false
+    t.boolean  "year_2005",  default: false
+    t.boolean  "year_2006",  default: false
+    t.boolean  "year_2007",  default: false
+    t.boolean  "year_2008",  default: false
+    t.boolean  "year_2009",  default: false
+    t.boolean  "year_2010",  default: false
+    t.boolean  "year_2011",  default: false
+    t.boolean  "year_2012",  default: false
+    t.boolean  "year_2013",  default: false
+    t.boolean  "year_2014",  default: false
+    t.boolean  "year_2015",  default: false
+    t.boolean  "year_2016",  default: false
+    t.boolean  "year_2017",  default: false
   end
 
   create_table "car_models", force: :cascade do |t|
     t.string   "name"
     t.integer  "car_make_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.boolean  "year_1984",   default: false
+    t.boolean  "year_1985",   default: false
+    t.boolean  "year_1986",   default: false
+    t.boolean  "year_1987",   default: false
+    t.boolean  "year_1988",   default: false
+    t.boolean  "year_1989",   default: false
+    t.boolean  "year_1990",   default: false
+    t.boolean  "year_1991",   default: false
+    t.boolean  "year_1992",   default: false
+    t.boolean  "year_1993",   default: false
+    t.boolean  "year_1994",   default: false
+    t.boolean  "year_1995",   default: false
+    t.boolean  "year_1996",   default: false
+    t.boolean  "year_1997",   default: false
+    t.boolean  "year_1998",   default: false
+    t.boolean  "year_1999",   default: false
+    t.boolean  "year_2000",   default: false
+    t.boolean  "year_2001",   default: false
+    t.boolean  "year_2002",   default: false
+    t.boolean  "year_2003",   default: false
+    t.boolean  "year_2004",   default: false
+    t.boolean  "year_2005",   default: false
+    t.boolean  "year_2006",   default: false
+    t.boolean  "year_2007",   default: false
+    t.boolean  "year_2008",   default: false
+    t.boolean  "year_2009",   default: false
+    t.boolean  "year_2010",   default: false
+    t.boolean  "year_2011",   default: false
+    t.boolean  "year_2012",   default: false
+    t.boolean  "year_2013",   default: false
+    t.boolean  "year_2014",   default: false
+    t.boolean  "year_2015",   default: false
+    t.boolean  "year_2016",   default: false
+    t.boolean  "year_2017",   default: false
   end
 
   add_index "car_models", ["car_make_id"], name: "index_car_models_on_car_make_id", using: :btree
+
+  create_table "car_years", force: :cascade do |t|
+    t.integer  "year"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "cars", force: :cascade do |t|
     t.integer  "car_make_id"
@@ -37,10 +111,12 @@ ActiveRecord::Schema.define(version: 20161108234323) do
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.integer  "repair_submission_id"
+    t.integer  "car_year_id"
   end
 
   add_index "cars", ["car_make_id"], name: "index_cars_on_car_make_id", using: :btree
   add_index "cars", ["car_model_id"], name: "index_cars_on_car_model_id", using: :btree
+  add_index "cars", ["car_year_id"], name: "index_cars_on_car_year_id", using: :btree
   add_index "cars", ["repair_submission_id"], name: "index_cars_on_repair_submission_id", using: :btree
 
   create_table "invoices", force: :cascade do |t|
@@ -143,6 +219,7 @@ ActiveRecord::Schema.define(version: 20161108234323) do
   add_foreign_key "car_models", "car_makes"
   add_foreign_key "cars", "car_makes"
   add_foreign_key "cars", "car_models"
+  add_foreign_key "cars", "car_years"
   add_foreign_key "cars", "repair_submissions"
   add_foreign_key "repair_names", "repair_categories"
   add_foreign_key "repair_submissions", "shops"
