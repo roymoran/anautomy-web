@@ -45,10 +45,24 @@ class RepairSubmissionsController < ApplicationController
     	@shop = Shop.find(params[:shop_id])
     end
 
+    def fetch_car_makes
+    	@makes = CarMake.where(params[:car_year] + " = TRUE").order(name: :asc)
+    	respond_to do |format|
+    		format.json { render :json => @makes.as_json(:only => [:id, :name]) }
+    	end
+    end
+
+    def fetch_car_models
+    	@models = CarModel.where(params[:car_year] + " = TRUE AND car_make_id = ?", params[:car_make_id]).order(name: :asc)
+    	respond_to do |format|
+    		format.json { render :json => @models.as_json(:only => [:id, :name]) }
+    	end
+    end
+
 	private
 
     def repairSubmission_params
-      params.require(:repair_submission).permit(:email, :vehicle_year, :vehicle_trim, :vehicle_mileage, :repair_description, :parts_cost, :labor_cost, :total_cost, :review, :car_make, :car_model, :shop_id, :repair_date, :repair_name, :repair_category)
+      params.require(:repair_submission).permit(:email, :vehicle_year, :vehicle_trim, :vehicle_mileage, :repair_description, :parts_cost, :labor_cost, :total_cost, :review, :car_make, :car_model, :car_year, :shop_id, :repair_date, :repair_name, :repair_category)
     end
 
 end

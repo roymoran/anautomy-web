@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
 
 
+
   get 'repairs' => 'anautomy#repairs'
   get 'submissions' => 'anautomy#submissions'
   get '/anautomy/home'
@@ -28,6 +29,10 @@ Rails.application.routes.draw do
   resources :anautomy do
   get :home, :on => :collection
   end
+
+  # ajax routes 
+  get 'fetch_car_makes' => "repair_submissions#fetch_car_makes"
+  get 'fetch_car_models' => "repair_submissions#fetch_car_models"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

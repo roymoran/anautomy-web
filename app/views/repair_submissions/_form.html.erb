@@ -15,9 +15,9 @@
   <fieldset>
     <h2 class="fs-title">What kind of car?</h2>
     <h3 class="fs-subtitle"></h3>
-    <%= f.select(:vehicle_year, options_for_select([*(Time.zone.now.year-80)..(Time.zone.now.year + 1)].reverse), {prompt: "Select Year"}, {class: "select_submission_form"}) %>
-    <%= f.collection_select(:car_make, CarMake.all, :id, :name, {prompt: "Select Make"}, {class: "select_submission_form", id: "car_make_select"}) %>
-    <%= f.grouped_collection_select(:car_model, CarMake.all, :car_models, :name, :id, :name, {prompt: "Select Model"}, {class: "select_submission_form", id: "car_model_select"}) %>
+    <%= f.collection_select(:car_year, (CarYear.all).reverse, :id, :year, {prompt: "Year"}, {class: "select_submission_form", id: "car_year_select"}) %>
+    <%= f.collection_select(:car_make, CarMake.all, :id, :name, {prompt: "Make"}, {class: "select_submission_form", id: "car_make_select"}) %>
+    <%= f.grouped_collection_select(:car_model, CarMake.all, :car_models, :name, :id, :name, {prompt: "Model"}, {class: "select_submission_form", id: "car_model_select"}) %>
     <!--
     <%= f.text_field :vehicle_trim, class: '', :placeholder => "TRIM*"%>
     <%= f.text_field :vehicle_mileage, class: '', :placeholder => "MILEAGE"%>
@@ -62,9 +62,9 @@
     <%= f.text_field :labor_cost, class: 'labor_cost_field', :placeholder => "LABOR COST*"%>
     <%= f.text_field :total_cost, class: 'total_cost_field', :placeholder => "TOTAL COST*"%>
 
-    <%= f.date_select :repair_date, {order: [:month,:year], start_year: Time.zone.now.year, end_year: (Time.zone.now.year-100), prompt: { month: 'Month', year: "Year" }}, {class: 'select_date_submission_form col-sm-6'}  %>
-
-    <h3 class="fs-subtitle fs-subtitle-rate">Rate your experience at <%= @shop.shop_name%></h3>
+    <%= f.date_select :repair_date, {order: [:month,:year], start_year: Time.zone.now.year, end_year: (Time.zone.now.year-36), prompt: { month: 'Month', year: "Year" }}, {class: 'select_date_submission_form col-sm-6 repair_date_select'}  %>
+<div class="rate_experience_section">
+    <h3 class="fs-subtitle fs-subtitle-rate">Rate your experience</h3>
 
     <div class="row cost-rating-row">
       <div class="col-xs-3 text-left">
@@ -128,6 +128,7 @@
         margin-top:-8px;"></label>
       </div>
     </div>
+  </div>
     <!--
     <%= f.text_area :review, class: '',:rows => 3, :cols => 71,  :placeholder => "POVIDE A SHORT DESCRIPTION OF YOUR EXPERIENCE (OPTIONAL)"%>
   -->
