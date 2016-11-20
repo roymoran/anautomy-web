@@ -27,6 +27,7 @@ class RepairSubmission < ActiveRecord::Base
 	validates :repair_category, presence: true
 	validates :repair_name, presence: true
 
-	validates :parts_cost, presence: true
-	validates :labor_cost, presence: true
+	#validates :parts_cost, presence: true
+	#validates :labor_cost, presence: true
+	validates :total_cost, presence: true
 end
