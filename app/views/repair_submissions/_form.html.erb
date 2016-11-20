@@ -17,7 +17,7 @@
     <h3 class="fs-subtitle"></h3>
     <%= f.collection_select(:car_year, (CarYear.all).reverse, :id, :year, {prompt: "Year"}, {class: "select_submission_form", id: "car_year_select"}) %>
     <%= f.collection_select(:car_make, CarMake.all, :id, :name, {prompt: "Make"}, {class: "select_submission_form", id: "car_make_select"}) %>
-    <%= f.grouped_collection_select(:car_model, CarMake.all, :car_models, :name, :id, :name, {prompt: "Model"}, {class: "select_submission_form", id: "car_model_select"}) %>
+     <%= f.select(:car_model, options_for_select(['Model']), {prompt: "Model"}, {class: "select_submission_form", id: "car_model_select"}) %>
     <!--
     <%= f.text_field :vehicle_trim, class: '', :placeholder => "TRIM*"%>
     <%= f.text_field :vehicle_mileage, class: '', :placeholder => "MILEAGE"%>
