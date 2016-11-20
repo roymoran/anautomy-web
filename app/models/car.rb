@@ -4,6 +4,6 @@ class Car < ActiveRecord::Base
 	#both car_make and car_model are static lookup tables
 	has_one :car_make
 	has_one :car_model
+	has_one :car_year
 	#will later belong_to user
-	#might add has_one :car_year? 
 end
