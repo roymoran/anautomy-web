@@ -4,8 +4,9 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 /*custom font*/
-@import url(http://fonts.googleapis.com/css?family=Josefin+Sans:400,500,600|Roboto:700,400,500,300,100);
+@import url(http://fonts.googleapis.com/css?family=Josefin+Sans:400,500,600|Roboto:400,500,300);
 @import url(http://fonts.googleapis.com/css?family=Montserrat);
+
 html, body {
     height:100%;
 } 
@@ -185,6 +186,7 @@ src: url("MyriadPro-Cond.otf") format("opentype");
  /* end of header buttons */
 
 /*Header navbar bootstrap overide*/
+
 .navbar-default {
   background-color: #5a5a5a;
   border-color: #ffffff;
@@ -308,16 +310,10 @@ src: url("MyriadPro-Cond.otf") format("opentype");
   }
 }
 .navbar-nav{
-  max-height: 0px !important;
-  margin: 0px 0px 0px 0px !important;
   padding: 0px 0px 0px 0px !important;
 }
-.nav_option{
-  max-height: 0px;
-  margin-bottom: 0px;
-  padding-bottom: 0px;
 
-}
+
 /*
 .header2 .navbar {
     padding: 0;
@@ -345,6 +341,7 @@ src: url("MyriadPro-Cond.otf") format("opentype");
     float: none;
 }
 */
+
 
 .header2 .nav li {
     display: table-cell;
@@ -381,6 +378,7 @@ src: url("MyriadPro-Cond.otf") format("opentype");
     border-right: 0;
     border-radius: 0 3px 3px 0;
 }
+
 /*End Nav*/
 
 /*Body for Repairs Search Page*/

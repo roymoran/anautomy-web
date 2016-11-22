@@ -8,29 +8,34 @@
 		</div>
 	</div>
 	<div class = "row"> 
-		<div class = "col-md-6 col-md-offset-3 text-center">
-			 <iframe src="https://player.vimeo.com/video/153328983" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-		</div>
+     <div class = "visible-xs col-md-6 text-center">
+      <iframe src="https://player.vimeo.com/video/153328983" width="100%" height="281px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      </div>
+      <div class = "hidden-xs col-md-6 col-md-offset-3 text-center">
+        <iframe src="https://player.vimeo.com/video/153328983" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      </div>
 	</div>
 	<div class = "row">
 		<div class="col-md-6 col-md-offset-3">
 			<div class="text-center">
 				<div class = "row">
-                	<div class = "text-center col-sm-9 col-sm-offset-2" style = "padding-top: 15px;">
-                		<h5 class = "main-launch-message">Help bring transparency to auto repair by being part of our early launch.</h5>
+                	<div class = "text-center col-sm-9 col-sm-offset-1" style = "padding-top: 15px;">
+                		<h5 class = "main-launch-message">Bring transparency to auto repair by being part of our early launch.</h5>
             		</div>
             	</div>
 		 		<div class = "row" >
-                	<div class =  "col-md-7 col-md-offset-2" style = "padding-bottom: 15px;">
+                	<div class =  "col-md-12" style = "padding-bottom: 15px;">
                 		<div class = "row">
                     		<%= form_for @subscriber, :html => {:id => 'subscriber_form', :class => ''}, remote: true do |f|%>
-                    		<div class = "col-sm-9">
-                    			<div class="form-group">
-                        			<label class = "sr-only">Email</label>
-                         			<%= f.email_field :email, class: 'form-control form-custom-2', :placeholder => "EMAIL ADDRESS"%>
-                    			</div>
+                    		<div class = "col-sm-5" style="padding-bottom:5px;">
+                         			<label class = "sr-only">Email</label>
+                         			<%= f.email_field :email, class: 'form-control form-custom-2', :placeholder => "EMAIL"%>
                     		</div>
-                    		<div class = "col-sm-3">
+                        <div class = "col-sm-5" style="padding-bottom:5px;">
+                              <label class = "sr-only">Zip Code</label>
+                              <%= f.text_field :zip, class: 'form-control form-custom-2', :placeholder => "ZIP CODE"%>
+                        </div>
+                    		<div class = "col-sm-2">
                     			<%= f.submit "SAVE ME MONEY", class: "btn btn-custom-2 button-text-style" %>
                 			</div>
                  			<% end %>
@@ -88,7 +93,11 @@
             	<div class = "row" >
                 	<div class =  "col-md-9 col-md-offset-2 ">
                 		<div class = "row">
+<<<<<<< HEAD:app/views/anautomy/home.html.erb
                 			<%= form_tag(anautomy_home_path(:controller => "anautomy", :action => "home"), :method => "get") do%>
+=======
+                			<%= form_tag(home_path(:controller => "anautomy", :action => "home"), :method => "get") do%>
+>>>>>>> master:app/views/anautomy/home.html
                 			<div class =  "col-xs-5 col-xs-offset-3">
                 				<div class="form-group ">
                 					<label class = "sr-only">What kind of car?</label>
@@ -121,6 +130,15 @@
 
 
   $(document).ready(function() {
+
+            $('.closed_header_tooltip').tooltipster({
+              animation: 'fade',
+              delay: 0,
+              theme: 'tooltipster-default',
+              trigger: 'click',
+              position: 'bottom'
+            });
+            
             $('.under_construction_header_tooltip').tooltipster({
               animation: 'fade',
               delay: 0,

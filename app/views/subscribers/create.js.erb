@@ -1,14 +1,14 @@
 <% if @subscriber.save %>
 swal({   
 	title: "Success",   
-	text: "You're on our list. Expect an email soon.",   
+	text: "You're on our list.",   
 	type: "success",   
 	confirmButtonText: "Cool" });
 $('#subscriber_form').trigger("reset");
 <% else %>
 swal({   
 	title: "Error",   
-	text: "The email has already been submitted or is invalid.",   
+	text: "Please include both email and zip code.",   
 	type: "error",   
 	confirmButtonText: "Okay" });
 <%end%>

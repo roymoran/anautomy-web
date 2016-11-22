@@ -1,11 +1,12 @@
 <% provide(:title, "Transparency") %>
+
 <div class = "container-fluid about-container hidden-xs">
 	<div class = "row">
 		<div class = "col-sm-6 about-left-title">
 			Transparency
 		</div>
 		<div class = "col-sm-5 about-right-text">
-			Our goal is to give car owners transparency on their next auto repair. 
+			Our purpose is to bring complete transparency to the car repair industry.
 		</div>
 	</div>
 </div>
@@ -16,7 +17,7 @@
 			Transparency
 		</div>
 		<div class = "col-sm-5 about-right-text-small">
-			Our goal is to give car owners transparency on their next auto repair. 
+			Our purpose is to bring complete transparency to the car repair industry.
 		</div>
 	</div>
 </div>
@@ -25,9 +26,13 @@
 
 <div class = "container-fluid">
 	<div class = "row">
-		<div class = "col-sm-6 col-sm-offset-3 about-us-text">
-			<p>To bring complete transparency in an industry that is notoriously known for the lack of it, we firmly belive providing pricing and repair information is key.</p> 
-			<p>By providing exact prices paid for any given car repair, the anxiety car owners experience from visiting a local shop is relieved, and the feeling of being overcharged subsides. With transparency, we want to give you a positive experience on your next auto repair.</p> 
+		<div class = "col-sm-6 col-sm-offset-3 about-us-text" style="padding-bottom: 100px;">
+			<p>
+				Our mission is to bring transparency to your car repair experience by providing a community and information. Pricing information available to all car owners and a community driven by those same car owners. 
+			</p> 
+			<p>
+				Through the power of information the anxiety car owners experience from visiting a local shop is relieved, and the feeling of being overcharged subsides. Our purpose won't be without effort, and we hope you <a href = "/home#signup">join us</a> on our mission.
+			</p> 
 		</div>
 	</div>
 </div>
@@ -36,6 +41,15 @@
 
 
   $(document).ready(function() {
+
+  			$('.closed_header_tooltip').tooltipster({
+              animation: 'fade',
+              delay: 0,
+              theme: 'tooltipster-default',
+              trigger: 'click',
+              position: 'bottom'
+            });
+            
             $('.under_construction_header_tooltip').tooltipster({
               animation: 'fade',
               delay: 0,

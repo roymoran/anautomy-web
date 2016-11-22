@@ -16,16 +16,19 @@ Rails.application.routes.draw do
   get 'submissions' => 'anautomy#submissions'
   get '/anautomy/home'
   get '/repair_submissions/search'
+
   #root 'static_pages#home'
   #root 'anautomy#welcome'
   #root 'anautomy#homepage'
   #post   'sub'   => 'subscribers#create'
   resources :subscribers
   resources :repair_submissions
+
   resources :anuatomy
   resources :shops
   resources :invoices
   match 'snap', to: 'invoices#new', via: [:get, :post]
+
   resources :anautomy do
   get :home, :on => :collection
   end

@@ -13,6 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20161120102239) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -210,7 +211,7 @@ ActiveRecord::Schema.define(version: 20161120102239) do
     t.string   "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "zip"
+    t.string   "zip"
   end
 
   add_index "subscribers", ["email"], name: "index_subscribers_on_email", unique: true, using: :btree
