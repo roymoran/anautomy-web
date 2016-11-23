@@ -38,12 +38,12 @@ jQuery ->
     $('.rate_experience_section').slideDown()
 
   # Update repair select title based on repair chosen
-  $('.repair_select_option').text("Repair Name")
+  $('.repair_name_div').text('Repair Name').append('<i class="fa fa-th text-right" aria-hidden="true" style="float:right; padding-top:4px;">')
   $(".repair-name-text").click ->
     # Update Select field text based on repair clicked
     repair_name = $(this).text()
     repair_category = $(this).data();
-    $('.repair_select_option').text(repair_category.cat + ' - ' + repair_name)
+    $('.repair_name_div').text(repair_category.cat + ' - ' + repair_name).append('<i class="fa fa-th text-right" aria-hidden="true" style="float:right; padding-top:4px;">')
     $('.repair-cat-hidden').val(repair_category.catid)
     $('.repair-name-hidden').val(repair_category.repid)
 

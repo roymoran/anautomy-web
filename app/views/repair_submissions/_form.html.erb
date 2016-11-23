@@ -28,16 +28,15 @@
   <fieldset>
     <h2 class="fs-title">What repair?</h2>
     <h3 class="fs-subtitle"></h3>
-    <select class="select_submission_form" data-toggle="modal" data-target="#myModal">
-      <option class="repair_select_option" selected disabled hidden></option>
-     </select>
+    <div class="select_submission_form repair_name_div text-left" data-toggle="modal" data-target="#myModal" style="overflow:hidden;">Select Repair <i class="fa fa-th text-right" aria-hidden="true" style="float:right; padding-top:4px;"></i>
+     </div>
 
      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel">Select Repair</h4>
+            <h4 class="modal-title" id="myModalLabel" style="color:#52BB49;">Select Repair</h4>
           </div>
           <div class="modal-body">
             <% @repair_category.each do |category| %>
