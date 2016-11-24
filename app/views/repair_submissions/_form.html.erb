@@ -38,10 +38,18 @@
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             <h4 class="modal-title" id="myModalLabel" style="color:#52BB49;">Select Repair</h4>
           </div>
-          <div class="modal-body">
+          <div class="modal-body" id="carddata">
+            <div class="row" >
+              <div class="col-sm-4">
+                <input id="cardsearchinput" placeholder="Quick Filter"/ >
+              </div>
+            </div>
             <% @repair_category.each do |category| %>
-            <h4 class="text-left"><u><%= category.name%></u></h4>
-            <div class="row">
+            
+            <div class="row card">
+              <div class="col-sm-12">
+                <h4 class="text-left"><u><%= category.name%></u></h4>
+              </div>
               <% category.repair_names.each do |repair| %>
               <div class="col-sm-4">
                 <p>
@@ -125,6 +133,7 @@
         <label for="quickness_rating_1" style="
         margin-top:-8px;"></label>
       </div>
+
     </div>
   </div>
     <!--
@@ -139,3 +148,22 @@
     <%= f.submit "Submit", {class: "action-button"}%>
   </fieldset>
 <% end %>
+<%= javascript_include_tag "jquery.js" %>
+<%= javascript_include_tag "jquery.searcher.min" %>
+<script>
+
+$('#carddata').searcher({
+  itemSelector: '.card',
+  textSelector: 'div',
+  inputSelector: '#cardsearchinput',
+  highlight: "<span class='highlight'>$1</span>",
+  toggle: function(item, containsText) {
+    if (containsText) {
+      $(item).fadeIn();
+    } else {
+      $(item).fadeOut();
+    }
+  }
+});
+
+</script>

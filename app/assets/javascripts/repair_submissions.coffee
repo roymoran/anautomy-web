@@ -38,7 +38,7 @@ jQuery ->
     $('.rate_experience_section').slideDown()
 
   # Update repair select title based on repair chosen
-  $('.repair_name_div').text('Repair Name').append('<i class="fa fa-th text-right" aria-hidden="true" style="float:right; padding-top:4px;">')
+  $('.repair_name_div').text('Select Repair').append('<i class="fa fa-th text-right" aria-hidden="true" style="float:right; padding-top:4px;">')
   $(".repair-name-text").click ->
     # Update Select field text based on repair clicked
     repair_name = $(this).text()
@@ -68,3 +68,4 @@ jQuery ->
     $('.quickness-rating-row').slideUp ->
       $('.fs-subtitle-rate').hide("slow")
 
+  
