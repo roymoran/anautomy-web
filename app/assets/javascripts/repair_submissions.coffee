@@ -3,8 +3,16 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 jQuery ->
   $('#car_model_select').hide()
+  $('.repair-name-custom-input').hide()
   $('#car_make_select').hide()
   $('.rate_experience_section').hide()
+
+  $(".repair-name-custom").click ->
+    $('.repair-name-custom-input').show()
+    $('.repair-cat-hidden').val(0)
+    $('.repair-name-hidden').val(0)
+    $('.repair_name_div').text('Select Repair').append('<i class="fa fa-th text-right" aria-hidden="true" style="float:right; padding-top:4px;">')
+    $('.repair-name-custom-input').focus()
 
   $('#car_year_select').change ->
     $('#car_make_select').show()
@@ -40,6 +48,8 @@ jQuery ->
   # Update repair select title based on repair chosen
   $('.repair_name_div').text('Select Repair').append('<i class="fa fa-th text-right" aria-hidden="true" style="float:right; padding-top:4px;">')
   $(".repair-name-text").click ->
+    $('.repair-name-custom-input').hide()
+    $('.repair-name-custom-input').val("")
     # Update Select field text based on repair clicked
     repair_name = $(this).text()
     repair_category = $(this).data();
@@ -68,4 +78,3 @@ jQuery ->
     $('.quickness-rating-row').slideUp ->
       $('.fs-subtitle-rate').hide("slow")
 
-  

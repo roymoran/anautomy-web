@@ -8,6 +8,7 @@ class RepairSubmission < ActiveRecord::Base
 
     attr_accessor :repair_category
     attr_accessor :repair_name
+    attr_accessor :repair_name_custom
 
 	belongs_to :shop, inverse_of: :repair_submissions, counter_cache: true
 	has_one :car

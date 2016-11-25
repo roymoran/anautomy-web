@@ -43,6 +43,9 @@
               <div class="col-sm-4">
                 <input id="cardsearchinput" placeholder="Quick Filter"/ >
               </div>
+              <div class="col-sm-4 col-sm-offset-4 text-right">
+                <a href="#" class="repair-name-custom" data-dismiss="modal" style="font-size:0.9em;">Repair not listed?</a>
+              </div>
             </div>
             <% @repair_category.each do |category| %>
             
@@ -65,7 +68,7 @@
         </div>
       </div>
     </div>
-    
+    <%= f.text_field :repair_name_custom, class: 'repair-name-custom-input', :placeholder => "ENTER REPAIR NAME"%>
     <%= f.text_field :total_cost, class: 'total_cost_field', :placeholder => "TOTAL COST"%>
 
     <%= f.date_select :repair_date, {order: [:month,:year], start_year: Time.zone.now.year, end_year: (Time.zone.now.year-36), prompt: { month: 'Month', year: "Year" }}, {class: 'select_date_submission_form col-sm-6 repair_date_select'}  %>

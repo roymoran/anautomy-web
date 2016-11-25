@@ -3,14 +3,15 @@
 <div class = "container-fluid">
     <div class="col-sm-6 col-sm-offset-3">
       <h3 class="text-center main-headline ">Select Shop</h3>
-      <%if params[:shop_zip].blank? and params[:shop_name].blank?%> 
+      <%if @shop.blank?%> 
+
       <%else%>
         <%if params[:shop_zip].present? and params[:shop_name].present?%>
-          <div class="text-left sub-headline ">(Results for <%=params[:shop_name]%> in <%= params[:shop_zip]%>)</div>
+          <div class="text-left sub-headline ">(Showing 10 of <%= params[:shop_count] %> results for <%=params[:shop_name]%> in <%= params[:shop_zip]%>)</div>
         <%elsif params[:shop_zip].present?%>
-          <div class="text-left sub-headline ">(Results for <%= params[:shop_zip]%>)</div>
+          <div class="text-left sub-headline ">(Showing 10 of <%= params[:shop_count] %> results for <%= params[:shop_zip]%>)</div>
         <%elsif params[:shop_zip].present?%>
-        <div class="text-left sub-headline ">(Results for <%=params[:shop_name]%>)</div>
+        <div class="text-left sub-headline ">(Showing 10 of <%= params[:shop_count] %> results for <%=params[:shop_name]%>)</div>
         <%end%>
       <%end%>
       <div class = "row">
@@ -18,6 +19,34 @@
           <hr class="line-split">
         </div>
       </div>
+
+      <% if @shop.blank? %>
+      <div class ="row">
+        <p class="answer-text">
+          It looks like there aren't any shops listed for your search. We're continually updating shops on our platform while focusing on specific geographic areas. Please leave us your information for our early launch, and we'll let you know as soon as we add shops in your area. 
+        </p>
+        <br>
+        <br>
+      <%= form_for @subscriber, :html => {:id => 'subscriber_form', :class => ''}, remote: true do |f|%>
+        <div class = "col-sm-6 col-sm-offset-3">
+          <div class = "" style="padding-bottom:5px;">
+            <label class = "sr-only">Email</label>
+            <%= f.email_field :email, class: 'form-control form-custom-2', :placeholder => "EMAIL"%>
+          </div>
+          <div class = "" style="padding-bottom:5px;">
+            <label class = "sr-only">Zip Code</label>
+            <%= f.text_field :zip, class: 'form-control form-custom-2', :placeholder => "ZIP CODE"%>
+          </div>
+          <div class = "text-center">
+            <%= f.submit "Let Me Know", class: "btn btn-custom-2 button-text-style" %>
+          </div>
+        </div>
+        <% end %>
+      </div>
+        <br>
+        <br>
+        <br>
+      <% else %>
       <% @shop.each do |s| %>
       <%= form_tag({controller: "repair_submissions", action: "new"}, method: "get", class: "") do %>
       <div class="row">
@@ -46,9 +75,19 @@
           <hr class="line-split">
         </div>
       </div>
+      
+
       <% end %>
-    </div>
+
+      <% end %>
+    <nav class = "text-center" aria-label="Shop search results">
+  <ul class="pagination">
+    <% for i in 0..(params[:shop_count] / 10) do %>
+    <li><a href="/results?utf8=✓&shop_name=<%=params[:shop_name]%>&shop_zip=<%=params[:shop_zip]%>&shop_offset=<%=i*10%>&commit=Search"><%=i + 1%></a></li>
+    <% end %>
+  </ul>
+</nav>
 
 </div>
 
-
+</div>
