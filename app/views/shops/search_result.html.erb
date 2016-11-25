@@ -7,11 +7,11 @@
 
       <%else%>
         <%if params[:shop_zip].present? and params[:shop_name].present?%>
-          <div class="text-left sub-headline ">(Showing 10 of <%= params[:shop_count] %> results for <%=params[:shop_name]%> in <%= params[:shop_zip]%>)</div>
+          <div class="text-left sub-headline ">(Showing <%= params[:shop_count] %> results for <%=params[:shop_name]%> in <%= params[:shop_zip]%>)</div>
         <%elsif params[:shop_zip].present?%>
-          <div class="text-left sub-headline ">(Showing 10 of <%= params[:shop_count] %> results for <%= params[:shop_zip]%>)</div>
+          <div class="text-left sub-headline ">(Showing <%= params[:shop_count] %> results for <%= params[:shop_zip]%>)</div>
         <%elsif params[:shop_zip].present?%>
-        <div class="text-left sub-headline ">(Showing 10 of <%= params[:shop_count] %> results for <%=params[:shop_name]%>)</div>
+        <div class="text-left sub-headline ">(Showing <%= params[:shop_count] %> results for <%=params[:shop_name]%>)</div>
         <%end%>
       <%end%>
       <div class = "row">
