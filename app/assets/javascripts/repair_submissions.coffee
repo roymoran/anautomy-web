@@ -15,7 +15,6 @@ jQuery ->
     $('.repair-name-custom-input').focus()
 
   $('#car_year_select').change ->
-    $('#car_make_select').show()
     $('#car_make_select').empty().append('<option selected>Make</option>')
     $('#car_model_select').empty().append('<option selected>Model</option>')
     car_year = $('#car_year_select :selected').text()
@@ -27,6 +26,7 @@ jQuery ->
       success: (data) ->
         $.each data, (index, value) ->
           $('#car_make_select').append('<option value='+ data[index].id+'>'+data[index].name+'</option>')
+        $('#car_make_select').show()
 
   $('#car_make_select').change ->
     car_year = $('#car_year_select :selected').text()
@@ -37,10 +37,10 @@ jQuery ->
       data: {car_year:"year_" + car_year, car_make_id: car_make}
       dataType: "json"
       success: (data) ->
-        $('#car_model_select').show()
         $('#car_model_select').empty().append('<option selected>Model</option>')
         $.each data, (index, value) ->
           $('#car_model_select').append('<option value='+ data[index].id+'>'+data[index].name+'</option>')
+        $('#car_model_select').show()
 
   $('.repair_date_select').change ->
     $('.rate_experience_section').slideDown()
