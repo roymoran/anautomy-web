@@ -5,7 +5,7 @@ class RepairSubmissionsController < ApplicationController
 	end
 
 	def new
-		@repair_category = RepairCategory.all
+		@repair_category = RepairCategory.all.offset(1)
 		#@shop = Shop.find(params[:shop_id])
 		@repairSubmission = RepairSubmission.new
 		@repairSubmission.shop_id = @shop.id
