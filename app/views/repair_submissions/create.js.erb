@@ -1,17 +1,30 @@
 <% if @repairSubmission.save  %>
 
-swal({   
-	title: "Success",   
-	text: "Awesome. You just made the world a little more transparent.",   
-	type: "success",   
-	confirmButtonText: "Cool" });
+swal({
+  title: 'Thank You!',
+  type: 'success',
+  text:
+    "You just made the world a little more transparent. You'll be redirected home.",
+  showCloseButton: false,
+  showCancelButton: false,
+  confirmButtonText:'Cool',
+  allowOutsideClick: false
+}).then(function () {
+  window.location.href = '/';
+});
+
+
 
 <% else %>
 
-swal({   
-	title: "Error",   
-	text: "Make sure you filled in out the fields correctly.",   
-	type: "error",   
-	confirmButtonText: "Okay" });
-
+swal({
+  title: 'Error',
+  type: 'error',
+  text:
+    "Make sure you filled out all the fields correctly.",
+  showCloseButton: false,
+  showCancelButton: false,
+  confirmButtonText:'Okay',
+})
+  
 <%end%>

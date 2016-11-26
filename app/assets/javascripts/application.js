@@ -14,7 +14,6 @@
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require turbolinks
-//= require sweet-alert
 //= require jquery.litelighter
 //= repair-submission-form
 //= require_tree .
