@@ -6,14 +6,20 @@
   			<h2 class="text-center main-headline">Find the Shop</h2>
         <h3 class=" text-center sub-headline ">Search by name or zip</h3>
         <div class="row" style="padding-top:12%; padding-bottom:12%;">
-          <div class="col-sm-12 text-center">
+          
   				<%= form_tag({controller: "shops", action: "search_result"}, method: "get", class: "") do %>
+          <div class="col-sm-12 text-center">
             <%= text_field_tag(:shop_name, nil, {placeholder: "Aby's Shop"}) %>
   					<%= text_field_tag(:shop_zip, nil, {placeholder: "60609"}) %>
-            <%= hidden_field_tag :shop_offset, 0 %>
+          </div>
+            <br>
+            <br>
+            <div class="col-sm-12 text-center">
   					<%= submit_tag("Search",  {class: "btn btn-custom-2 button-text-style"}) %>
+          </div>
+          <%= hidden_field_tag :shop_offset, 0 %>
 				<% end %>
-      </div>
+      
       </div>
   		</div>
 	</div>
