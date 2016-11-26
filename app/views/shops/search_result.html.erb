@@ -7,11 +7,11 @@
 
       <%else%>
         <%if params[:shop_zip].present? and params[:shop_name].present?%>
-          <div class="text-left sub-headline ">(Showing <%= params[:shop_count] %> results for <%=params[:shop_name]%> in <%= params[:shop_zip]%>)</div>
+          <div class="text-left sub-headline ">(Showing <%= @shop.count %> of <%= params[:shop_count] %> results for <%=params[:shop_name]%> in <%= params[:shop_zip]%>)</div>
         <%elsif params[:shop_zip].present?%>
-          <div class="text-left sub-headline ">(Showing <%= params[:shop_count] %> results for <%= params[:shop_zip]%>)</div>
+          <div class="text-left sub-headline ">(Showing <%= @shop.count %> of <%= params[:shop_count] %> results for <%= params[:shop_zip]%>)</div>
         <%elsif params[:shop_zip].present?%>
-        <div class="text-left sub-headline ">(Showing <%= params[:shop_count] %> results for <%=params[:shop_name]%>)</div>
+        <div class="text-left sub-headline ">(Showing <%= @shop.count %> of <%= params[:shop_count] %> results for <%=params[:shop_name]%>)</div>
         <%end%>
       <%end%>
       <div class = "row">
@@ -23,7 +23,7 @@
       <% if @shop.blank? %>
       <div class ="row">
         <p class="answer-text">
-          It looks like there aren't any shops listed for your search. We're continually updating shops on our platform while focusing on specific geographic areas. Please leave us your information for our early launch, and we'll let you know as soon as we add shops in your area. 
+          It looks like there aren't any shops listed for your search. We're continually updating shops on our platform while focusing on specific geographic areas. Please leave us your information to let us know that you would like to see shops in your area. 
         </p>
         <br>
         <br>
