@@ -23,7 +23,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass',          '3.2.0.0'
 gem 'bootstrap-select-rails'
 gem "font-awesome-rails"
-gem 'sweet-alert'
 gem 'jquery-turbolinks'
 gem 'httparty'
 gem 'oj'
@@ -58,7 +57,7 @@ group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
 
-  gem 'rails-erd'
+  gem 'rails-erd', '1.4.3'
 
 end
 
