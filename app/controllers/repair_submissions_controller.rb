@@ -17,7 +17,12 @@ class RepairSubmissionsController < ApplicationController
 		# @repairSubmission.create_car is used to create and save the associated car to
 		# the repair submission. Params passed by new action is passed as field values
 		@repairSubmission.create_car(car_make_id: @repairSubmission.car_make, car_model_id: @repairSubmission.car_model, car_year_id: @repairSubmission.car_year)
-		@repairSubmission.create_repair(repair_category_id: @repairSubmission.repair_category, repair_name_id: @repairSubmission.repair_name)
+		#@repairSubmission.create_repair(repair_category_id: @repairSubmission.repair_category, repair_name_id: @repairSubmission.repair_name, repair_name_custom: @repairSubmission.repair_name_custom)
+			if (@repairSubmission.repair_category == "1" and @repairSubmission.repair_name == "1")
+				@repairSubmission.create_repair(repair_category_id: @repairSubmission.repair_category, repair_name_id: @repairSubmission.repair_name, repair_name_custom: @repairSubmission.repair_name_custom)
+			else
+				@repairSubmission.create_repair(repair_category_id: @repairSubmission.repair_category, repair_name_id: @repairSubmission.repair_name)
+			end
 		@repairSubmission.create_shop_rating(cost_rating: params[:cost_rating], quality_rating: params[:quality_rating], quickness_rating: params[:quickness_rating])
 		@shop.shop_ratings.create(cost_rating: params[:cost_rating], quality_rating: params[:quality_rating], quickness_rating: params[:quickness_rating])
 
@@ -62,7 +67,7 @@ class RepairSubmissionsController < ApplicationController
 	private
 
     def repairSubmission_params
-      params.require(:repair_submission).permit(:email, :vehicle_trim, :vehicle_mileage, :repair_description, :parts_cost, :labor_cost, :total_cost, :review, :car_make, :car_model, :car_year, :shop_id, :repair_date, :repair_name, :repair_category)
+      params.require(:repair_submission).permit(:email, :vehicle_trim, :vehicle_mileage, :repair_description, :parts_cost, :labor_cost, :total_cost, :review, :car_make, :car_model, :car_year, :shop_id, :repair_date, :repair_name, :repair_category, :repair_name_custom)
     end
 
 end

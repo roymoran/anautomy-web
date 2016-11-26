@@ -9,8 +9,8 @@ jQuery ->
 
   $(".repair-name-custom").click ->
     $('.repair-name-custom-input').show()
-    $('.repair-cat-hidden').val(0)
-    $('.repair-name-hidden').val(0)
+    $('.repair-cat-hidden').val(1)
+    $('.repair-name-hidden').val(1)
     $('.repair_name_div').text('Select Repair').append('<i class="fa fa-th text-right" aria-hidden="true" style="float:right; padding-top:4px;">')
     $('.repair-name-custom-input').focus()
 
