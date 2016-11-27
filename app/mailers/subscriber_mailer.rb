@@ -2,7 +2,7 @@ class SubscriberMailer < ApplicationMailer
 
   def new_subscriber_email(subscriber)
 	@subscriber = subscriber
-    mail to: subscriber.email, subject: "Thanks for expressing interest in Anautomy!"
+    mail to: subscriber.email, subject: "Thanks for expressing interest in Innvoy!"
   end
 
   def repair_submission_email(repairSubmitter)

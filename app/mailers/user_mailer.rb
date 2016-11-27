@@ -7,7 +7,7 @@ class UserMailer < ApplicationMailer
   #
   def account_activation(user)
     @user = user
-    mail to: user.email, subject: "Anautomy Account Activation"
+    mail to: user.email, subject: "Innvoy Account Activation"
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml
@@ -17,6 +17,6 @@ class UserMailer < ApplicationMailer
   #
   def password_reset(user)
     @user = user
-    mail to: user.email, subject: "Anautomy Password Reset"
+    mail to: user.email, subject: "Innvoy Password Reset"
   end
 end

@@ -12,7 +12,8 @@ jQuery ->
     $('.repair-cat-hidden').val(1)
     $('.repair-name-hidden').val(1)
     $('.repair_name_div').text('Select Repair').append('<i class="fa fa-th text-right" aria-hidden="true" style="float:right; padding-top:4px;">')
-    $('.repair-name-custom-input').focus()
+    $("#repair_submission_repair_name_custom").focus()
+    
 
   $('#car_year_select').change ->
     $('#car_make_select').empty().append('<option selected>Make</option>')

@@ -1,12 +1,12 @@
-# Repo for Anautomy Web Application
+# Repo for Innvoy Web Application
 
-This repository currently houses the Anautomy web application. The two main branches master and development are the production and development web applications respectively. 
+This repository currently houses the Innvoy web application. The two main branches master and development are the production and development web applications respectively. 
 
-### Anautomy Homepage Overview
+### Innvoy Homepage Overview
 
 ![alt text](http://i.imgur.com/lhgK5E8.png "Homepage")
 
-### Anautomy Demo Overview
+### Innvoy Demo Overview
 
 #### Car Repair Search Form
 
