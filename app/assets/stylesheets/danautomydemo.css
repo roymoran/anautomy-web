@@ -1965,7 +1965,7 @@ font-family: 'Josefin Sans', sans-serif;
 
 /*form styles*/
 #msform {
-  width: 400px;
+  width: auto;
   margin: 50px auto;
   height: 550px;
   text-align: center;
@@ -2041,7 +2041,7 @@ font-family: 'Josefin Sans', sans-serif;
   color: white;
   text-transform: uppercase;
   font-size: 9px;
-  width: 33.33%;
+  width: 30%;
   float: left;
   position: relative;
 }

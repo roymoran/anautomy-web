@@ -68,10 +68,10 @@
         </div>
       </div>
     </div>
-    <%= f.text_field :repair_name_custom, class: 'repair-name-custom-input', :placeholder => "ENTER REPAIR NAME"%>
-    <%= f.text_field :total_cost, class: 'total_cost_field', :placeholder => "TOTAL COST"%>
+    <%= f.text_field :repair_name_custom, class: 'repair-name-custom-input', :placeholder => "Enter Repair Name"%>
+    <%= f.text_field :total_cost, class: 'total_cost_field', :placeholder => "Total Cost (e.g. 543.67)"%>
 
-    <%= f.date_select :repair_date, {order: [:month,:year], start_year: Time.zone.now.year, end_year: (Time.zone.now.year-36), prompt: { month: 'Month', year: "Year" }}, {class: 'select_date_submission_form col-sm-6 repair_date_select'}  %>
+    <%= f.date_select :repair_date, {order: [:month,:year], start_year: Time.zone.now.year, end_year: (Time.zone.now.year-36), prompt: { month: 'Month', year: "Year" }}, {class: 'select_date_submission_form col-xs-6 repair_date_select'}  %>
 <div class="rate_experience_section">
     <h3 class="fs-subtitle fs-subtitle-rate">Rate your experience</h3>
 
