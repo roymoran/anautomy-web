@@ -152,13 +152,14 @@
   </fieldset>
 <% end %>
 
+<%= javascript_include_tag "jquery.js" %>
+<%= javascript_include_tag "jquery.searcher.min.js" %>
 <script>
 
 $('#carddata').searcher({
   itemSelector: '.card',
   textSelector: 'div',
   inputSelector: '#cardsearchinput',
-  highlight: "<span class='highlight'>$1</span>",
   toggle: function(item, containsText) {
     if (containsText) {
       $(item).fadeIn();
