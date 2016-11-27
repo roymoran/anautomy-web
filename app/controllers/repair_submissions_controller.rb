@@ -14,6 +14,10 @@ class RepairSubmissionsController < ApplicationController
 	def create
 		@repairSubmission = RepairSubmission.new(repairSubmission_params)  
 		if @repairSubmission.save 
+		respond_to do |format|
+			#add fallback to html
+		format.js # actually means: if the client ask for js -> return file.js
+	    end
 		# @repairSubmission.create_car is used to create and save the associated car to
 		# the repair submission. Params passed by new action is passed as field values
 		@repairSubmission.create_car(car_make_id: @repairSubmission.car_make, car_model_id: @repairSubmission.car_model, car_year_id: @repairSubmission.car_year)
@@ -25,14 +29,10 @@ class RepairSubmissionsController < ApplicationController
 			end
 		@repairSubmission.create_shop_rating(cost_rating: params[:cost_rating], quality_rating: params[:quality_rating], quickness_rating: params[:quickness_rating])
 		@shop.shop_ratings.create(cost_rating: params[:cost_rating], quality_rating: params[:quality_rating], quickness_rating: params[:quickness_rating])
-
+		
+		# Email user
 		SubscriberMailer.repair_submission_email(@repairSubmission).deliver_now
-		
-		respond_to do |format|
-			#add fallback to html
-		format.js # actually means: if the client ask for js -> return file.js
-	    end
-		
+
 		else
 			respond_to do |format|
 				#add fallback to html

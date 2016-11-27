@@ -12,12 +12,13 @@ class SubscribersController < ApplicationController
 
 	def create
 		@subscriber = Subscriber.new(subscriber_params)  
-		if @subscriber.save 
-		SubscriberMailer.new_subscriber_email(@subscriber).deliver_now
-		
+		if @subscriber.save
 		respond_to do |format|
 			#add fallback to html
 		format.js # actually means: if the client ask for js -> return file.js
+		
+		SubscriberMailer.new_subscriber_email(@subscriber).deliver_now
+		
 	    end
 		
 		else
