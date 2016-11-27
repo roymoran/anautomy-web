@@ -15,11 +15,9 @@ class SubscribersController < ApplicationController
 		if @subscriber.save
 		respond_to do |format|
 			#add fallback to html
-		format.js # actually means: if the client ask for js -> return file.js
-		
+		format.js # actually means: if the client ask for js -> return file.jsend
+		end
 		SubscriberMailer.new_subscriber_email(@subscriber).deliver_now
-		
-	    end
 		
 		else
 			respond_to do |format|
