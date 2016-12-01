@@ -155,23 +155,27 @@ Shop.create(shop_name: "35. Aby's Shop", shop_zip: "60609", shop_city: "Chicago"
 #Seed data for Repair Categories table
 RepairCategory.create(name: 'Custom Repair Category') # 1
 RepairCategory.create(name: 'General Maintenance') # 2
-RepairCategory.create(name: 'Scheduled Maintenance') # 3
+RepairCategory.create(name: 'Drivetrain') # 3
 RepairCategory.create(name: 'Heating and Air Conditioning') # 4
 RepairCategory.create(name: 'Brakes and Braking System') # 5
 RepairCategory.create(name: 'Electrical Systems and Lights') # 6
 RepairCategory.create(name: 'Suspension and Steering Systems') # 7
-RepairCategory.create(name: 'Engine Repair') # 8
-RepairCategory.create(name: 'Diagnoses') # 9
-RepairCategory.create(name: 'Drivetrain') # 10
-RepairCategory.create(name: 'Exhaust and Emissions') # 11
-RepairCategory.create(name: 'Transmission (Automatic and Manual)') # 12
+RepairCategory.create(name: 'Engine') # 8
+RepairCategory.create(name: 'Exhaust and Emissions') # 9
+
+RepairCategory.create(name: 'Transmission (Automatic and Manual)') # 10
+RepairCategory.create(name: 'Scheduled Maintenance') # 11
+RepairCategory.create(name: 'Diagnoses') # 12
 
 
 #Seed data for Repair Names table
+
+#Custom Repair Category
 RepairName.create(name: 'Custom Repair Name', repair_category_id: 1)
 
+#General Maintenance
 RepairName.create(name: 'Oil Change', repair_category_id: 2)
-RepairName.create(name: 'Engine Coolant (Antifreeze) Change', repair_category_id: 2)
+RepairName.create(name: 'Engine Coolant Change', repair_category_id: 2)
 RepairName.create(name: 'Brake Fluid Change', repair_category_id: 2)
 RepairName.create(name: 'Transmission Fluid Change', repair_category_id: 2)
 RepairName.create(name: 'Engine Air Filter Replacement', repair_category_id: 2)
@@ -179,9 +183,13 @@ RepairName.create(name: 'Cabin Air Filter Replacement', repair_category_id: 2)
 RepairName.create(name: 'Spark Plug(s) Replacement', repair_category_id: 2)
 RepairName.create(name: 'Timing Belt Replacement', repair_category_id: 2)
 
-RepairName.create(name: '8,000 Mile Service', repair_category_id: 3)
+#Drivetrain
+RepairName.create(name: 'Clutch Replacement', repair_category_id: 3)
+RepairName.create(name: 'Clutch Master Cylinder Replacement', repair_category_id: 3)
+RepairName.create(name: 'Clutch Slave Cylinder Replacement', repair_category_id: 3)
+RepairName.create(name: 'Axle/Half Shaft Replacement', repair_category_id: 3)
 
-
+#Heating and Air Conditioning
 RepairName.create(name: 'AC Compressor Replacement', repair_category_id: 4)
 RepairName.create(name: 'AC Condenser Replacement', repair_category_id: 4)
 RepairName.create(name: 'AC Evaporator Replacement', repair_category_id: 4)
@@ -189,40 +197,94 @@ RepairName.create(name: 'AC Recharge', repair_category_id: 4)
 RepairName.create(name: 'Heater Blower Motor Replacement', repair_category_id: 4)
 RepairName.create(name: 'Heater Blower Motor Resistor Replacement', repair_category_id: 4)
 RepairName.create(name: 'Heater Core Replacement', repair_category_id: 4)
+RepairName.create(name: 'Heater Hose Replacement', repair_category_id: 4)
 
-
+#Brakes and Braking System
 RepairName.create(name: 'ABS Control Module Replacement', repair_category_id: 5)
 RepairName.create(name: 'ABS Wheel Speed Sensor Replacement', repair_category_id: 5)
-RepairName.create(name: 'Brake Caliper Replacement - Front', repair_category_id: 5)
-RepairName.create(name: 'Brake Caliper Replacement - Rear', repair_category_id: 5)
+RepairName.create(name: 'Brake Caliper(s) Replacement', repair_category_id: 5)
+RepairName.create(name: 'Brake Rotor(s) Replacement', repair_category_id: 5)
+RepairName.create(name: 'Brake Pad(s) Replacement', repair_category_id: 5)
+RepairName.create(name: 'Brake Pad(s) Replacement and Rotor(s) Resurface', repair_category_id: 5)
 RepairName.create(name: 'Brake Master Cylinder Replacement', repair_category_id: 5)
 
+#Electrical Systems and Lights
 RepairName.create(name: 'Alternator Replacement', repair_category_id: 6)
 RepairName.create(name: 'Battery Replacement', repair_category_id: 6)
 RepairName.create(name: 'Door Window Motor Replacement', repair_category_id: 6)
+RepairName.create(name: 'Headlight(s) Repair', repair_category_id: 6)
+RepairName.create(name: 'Tail Light(s) Repair', repair_category_id: 6)
 RepairName.create(name: 'Door Window Regulator Replacement', repair_category_id: 6)
-RepairName.create(name: 'Headlamp Bulb Replacement', repair_category_id: 6)
+RepairName.create(name: 'Starter Replacement', repair_category_id: 6)
 
+#Suspension and Steering Systems
 RepairName.create(name: 'Wheel Alignment', repair_category_id: 7)
-RepairName.create(name: 'Wheel Alignment', repair_category_id: 7)
-RepairName.create(name: 'Wheel Alignment', repair_category_id: 7)
-RepairName.create(name: 'Wheel Alignment', repair_category_id: 7)
-RepairName.create(name: 'Wheel Alignment', repair_category_id: 7)
+RepairName.create(name: 'Power Steering Pump Replacement', repair_category_id: 7)
+RepairName.create(name: 'Power Steering Pressure Hose Replacement', repair_category_id: 7)
+RepairName.create(name: 'Steering Gearbox Replacement', repair_category_id: 7)
+RepairName.create(name: 'Steering Rack Replacement', repair_category_id: 7)
+RepairName.create(name: 'Wheel Bearing(s) Replacement', repair_category_id: 7)
+RepairName.create(name: 'Ball Joint(s) Replacement', repair_category_id: 7)
+RepairName.create(name: 'Strut(s) Replacement', repair_category_id: 7)
+RepairName.create(name: 'Shock Absorber(s) Replacement', repair_category_id: 7)
+RepairName.create(name: 'Tie Rod End(s) Replacement', repair_category_id: 7)
 
+
+#Engine
 RepairName.create(name: 'Fuel Injector Replacement', repair_category_id: 8)
 RepairName.create(name: 'Fuel Pump Replacement', repair_category_id: 8)
 RepairName.create(name: 'Head Gasket(s) Replacement', repair_category_id: 8)
 RepairName.create(name: 'Ignition Coil Replacement', repair_category_id: 8)
 RepairName.create(name: 'Mass Airflow Sensor Replacement', repair_category_id: 8)
 RepairName.create(name: 'Intake Manifold Gasket Replacement', repair_category_id: 8)
+RepairName.create(name: 'Water Pump Replacement', repair_category_id: 8)
+RepairName.create(name: 'Alternator Replacement', repair_category_id: 8)
+RepairName.create(name: 'Drive (Serpentine) Belt(s) Replacement', repair_category_id: 8)
+RepairName.create(name: 'Drive Belt Tensioner(s) Replacement', repair_category_id: 8)
+RepairName.create(name: 'Timing Belt Tensioner(s) Replacement', repair_category_id: 8)
+RepairName.create(name: 'Thermostat Replacement', repair_category_id: 8)
+RepairName.create(name: 'Crankshaft Repair', repair_category_id: 8)
+RepairName.create(name: 'Camshaft Repair', repair_category_id: 8)
+RepairName.create(name: 'Cam Bearing(s) Repair', repair_category_id: 8)
+RepairName.create(name: 'Ignition Lock Cylinder Replacement', repair_category_id: 8)
+RepairName.create(name: 'Piston(s) Repair', repair_category_id: 8)
+RepairName.create(name: 'Piston(s) Ring Repair', repair_category_id: 8)
+RepairName.create(name: 'Coolant Reservoir Replacement', repair_category_id: 8)
+RepairName.create(name: 'PCV Valve Repair', repair_category_id: 8)
+RepairName.create(name: 'Carburetor Repair', repair_category_id: 8)
+RepairName.create(name: 'Oil Pump Replacement', repair_category_id: 8)
+RepairName.create(name: 'Oil Pressure Sensor Replacement', repair_category_id: 8)
+RepairName.create(name: 'Valve Cover Gasket Replacement', repair_category_id: 8)
+RepairName.create(name: 'Ignition Switch Replacement', repair_category_id: 8)
+RepairName.create(name: 'Radiator Cap Replacement', repair_category_id: 8)
+RepairName.create(name: 'Radiator Fan Motor Replacement', repair_category_id: 8)
+RepairName.create(name: 'Radiator Hose Replacement', repair_category_id: 8)
+RepairName.create(name: 'Radiator Fan Assembly Replacement', repair_category_id: 8)
+RepairName.create(name: 'Radiator Replacement', repair_category_id: 8)
+RepairName.create(name: 'Coolant Bypass Repair', repair_category_id: 8)
+RepairName.create(name: 'Cylinder Head/Valve Train Repair', repair_category_id: 8)
 
-RepairName.create(name: 'ABS System Diagnoses', repair_category_id: 9)
+#Exhaust and Emissions
+RepairName.create(name: 'Catalytic Converter Replacement', repair_category_id: 9)
+RepairName.create(name: 'Exhaust Manifold Gasket(s) Replacement', repair_category_id: 9)
+RepairName.create(name: 'Exhaust Manifold Replacement', repair_category_id: 9)
+RepairName.create(name: 'Camshaft Position Sensor Replacement', repair_category_id: 9)
+RepairName.create(name: 'Canister Purge Valve Replacement', repair_category_id: 9)
+RepairName.create(name: 'Crankshaft Position Sensor Replacement', repair_category_id: 9)
+RepairName.create(name: 'EGR Valve Replacement', repair_category_id: 9)
+RepairName.create(name: 'Exhaust Manifold Replacement', repair_category_id: 9)
+RepairName.create(name: 'Oxygen Sensor Replacement', repair_category_id: 9)
+RepairName.create(name: 'Knock Sensor Replacement', repair_category_id: 9)
+RepairName.create(name: 'Throttle Position Sensor Replacement', repair_category_id: 9)
+RepairName.create(name: 'Engine Coolant Temperature Sensor Replacement', repair_category_id: 9)
 
-RepairName.create(name: 'Clutch Replacement', repair_category_id: 10)
 
-RepairName.create(name: 'Catalytic Converter Replacement', repair_category_id: 11)
-RepairName.create(name: 'Exhaust Manifold Gasket(s) Replacement', repair_category_id: 11)
-RepairName.create(name: 'Exhaust Manifold Replacement', repair_category_id: 11)
-RepairName.create(name: 'Oxygen Sensor Replacement - Front', repair_category_id: 11)
-RepairName.create(name: 'Oxygen Sensor Replacement - Rear', repair_category_id: 11)
+#Transmission (Automatic and Manual)
+RepairName.create(name: 'Oxygen Sensor Replacement - Rear', repair_category_id: 10)
+
+#Scheduled Maintenance
+RepairName.create(name: '8,000 Mile Service', repair_category_id: 11)
+
+#Diagnoses
+RepairName.create(name: 'ABS System Diagnoses', repair_category_id: 12)
 

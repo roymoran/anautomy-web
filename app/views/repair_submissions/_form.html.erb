@@ -28,7 +28,7 @@
   <fieldset>
     <h2 class="fs-title">What repair?</h2>
     <h3 class="fs-subtitle"></h3>
-    <div class="select_submission_form repair_name_div text-left" data-toggle="modal" data-target="#myModal" style="overflow:hidden;">Select Repair <i class="fa fa-th text-right" aria-hidden="true" style="float:right; padding-top:4px;"></i>
+    <div class="select_submission_form text-left" data-toggle="modal" data-target="#myModal"><div class ="repair_name_div" style="float:left; width:93%; overflow: hidden; text-overflow:ellipsis; white-space: nowrap;">Select Repair</div><i class="fa fa-th text-right" aria-hidden="true" style="float:right; padding-top:4px;"></i>
      </div>
 
      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -36,7 +36,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel" style="color:#52BB49;">Select Repair</h4>
+            <h4 class="modal-title" id="myModalLabel">Select Repair</h4>
           </div>
           <div class="modal-body" id="carddata">
             <div class="row" >
@@ -52,13 +52,7 @@
                 <h4 class="text-left"><u><%= category.name%></u></h4>
               </div>
               <% category.repair_names.each do |repair| %>
-              <div class="col-sm-4">
-                <p>
-                  <a class="repair-name-text" href="#" data-cat="<%=category.name%>" data-catid="<%=category.id%>" data-repid="<%=repair.id%>" data-dismiss="modal">
-                    <%= repair.name %>
-                  </a>
-                </p>
-              </div>
+              <div class="col-sm-4"><p><a class="repair-name-text" href="#" data-cat="<%=category.name%>" data-catid="<%=category.id%>" data-repid="<%=repair.id%>" data-dismiss="modal"><%= repair.name %></a></p></div>
             <% end %>
           </div>
             <% end %>
