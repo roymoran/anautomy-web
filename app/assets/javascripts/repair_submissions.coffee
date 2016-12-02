@@ -54,7 +54,7 @@ jQuery ->
     # Update Select field text based on repair clicked
     repair_name = $(this).text()
     repair_category = $(this).data();
-    $('.repair_name_div').text(repair_category.cat + ' - ' + repair_name)
+    $('.repair_name_div').text(repair_name)
     $('.repair-cat-hidden').val(repair_category.catid)
     $('.repair-name-hidden').val(repair_category.repid)
 
