@@ -29,7 +29,6 @@ gem 'oj'
 gem 'pg',             '0.17.1'
 gem "paperclip", "~> 5.0.0"
 
-
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -63,7 +62,6 @@ end
 
 group :production do
   gem 'rails_12factor', '0.0.2'
-  gem 'puma',           '2.11.1'
   gem 'heroku-deflater'
 end
 
