@@ -10,7 +10,7 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -63,7 +63,6 @@ end
 
 group :production do
   gem 'rails_12factor', '0.0.2'
-  gem 'puma',           '2.11.1'
   gem 'heroku-deflater'
 end
 
