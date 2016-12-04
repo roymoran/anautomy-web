@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: '"Anautomy" <team@anautomybeta.com>'
+  default from: '"Innvoy" <team@innvoy.com>'
   layout 'mailer'
 end
