@@ -83,8 +83,6 @@ GEM
     guard-minitest (2.3.1)
       guard (~> 2.0)
       minitest (>= 3.0)
-    heroku-deflater (0.5.3)
-      rack (>= 1.4.5)
     hitimes (1.2.2)
     httparty (0.13.5)
       json (~> 1.8)
@@ -171,11 +169,6 @@ GEM
       ruby-graphviz (~> 1.2)
     rails-html-sanitizer (1.0.2)
       loofah (~> 2.0)
-    rails_12factor (0.0.2)
-      rails_serve_static_assets
-      rails_stdout_logging
-    rails_serve_static_assets (0.0.4)
-    rails_stdout_logging (0.0.3)
     railties (4.2.0)
       actionpack (= 4.2.0)
       activesupport (= 4.2.0)
@@ -241,7 +234,6 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   font-awesome-rails
   guard-minitest (= 2.3.1)
-  heroku-deflater
   httparty
   jbuilder (~> 2.0)
   jquery-rails
@@ -253,7 +245,6 @@ DEPENDENCIES
   pg (= 0.17.1)
   rails (= 4.2.0)
   rails-erd (= 1.4.3)
-  rails_12factor (= 0.0.2)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring
