@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161126032550) do
+ActiveRecord::Schema.define(version: 20161211101155) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -204,7 +204,7 @@ ActiveRecord::Schema.define(version: 20161126032550) do
     t.boolean  "missing_info",             default: false
     t.string   "shop_url"
     t.integer  "yelp_rc"
-    t.boolean  "contacted_yelp_users",     default: false
+    t.string   "yelp_contact_date"
   end
 
   create_table "subscribers", force: :cascade do |t|
@@ -217,15 +217,26 @@ ActiveRecord::Schema.define(version: 20161126032550) do
   add_index "subscribers", ["email"], name: "index_subscribers_on_email", unique: true, using: :btree
 
   add_foreign_key "car_models", "car_makes"
+  add_foreign_key "car_models", "car_makes"
   add_foreign_key "cars", "car_makes"
+  add_foreign_key "cars", "car_makes"
+  add_foreign_key "cars", "car_models"
   add_foreign_key "cars", "car_models"
   add_foreign_key "cars", "car_years"
   add_foreign_key "cars", "repair_submissions"
+  add_foreign_key "cars", "repair_submissions"
+  add_foreign_key "repair_names", "repair_categories"
   add_foreign_key "repair_names", "repair_categories"
   add_foreign_key "repair_submissions", "shops"
+  add_foreign_key "repair_submissions", "shops"
+  add_foreign_key "repairs", "repair_categories"
   add_foreign_key "repairs", "repair_categories"
   add_foreign_key "repairs", "repair_names"
+  add_foreign_key "repairs", "repair_names"
+  add_foreign_key "repairs", "repair_submissions"
   add_foreign_key "repairs", "repair_submissions"
   add_foreign_key "shop_ratings", "repair_submissions"
+  add_foreign_key "shop_ratings", "repair_submissions"
+  add_foreign_key "shop_ratings", "shops"
   add_foreign_key "shop_ratings", "shops"
 end
