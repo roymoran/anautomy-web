@@ -1,0 +1,26 @@
+<% provide(:title, "Sign Up") %>
+
+<div class = "container-fluid">
+	<div class="row">
+  <div class="col-md-6 col-md-offset-3 text-center">
+  	<h2>Sign up</h2>
+    <%= form_for(@car_owner, url: signup_path) do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      <br>
+      <%= f.label :email %>
+      <%= f.email_field :email %>
+      <br>
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+      <br>
+      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.password_field :password_confirmation %>
+      <br>
+      <br>
+      <%= f.submit "Create my account", class: "btn btn-primary" %>
+    <% end %>
+    <br><br>
+  </div>
+</div>
+</div>

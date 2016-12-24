@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161211101155) do
+ActiveRecord::Schema.define(version: 20161223082444) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -98,6 +98,16 @@ ActiveRecord::Schema.define(version: 20161211101155) do
   end
 
   add_index "car_models", ["car_make_id"], name: "index_car_models_on_car_make_id", using: :btree
+
+  create_table "car_owners", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "password_digest"
+  end
+
+  add_index "car_owners", ["email"], name: "index_car_owners_on_email", unique: true, using: :btree
 
   create_table "car_years", force: :cascade do |t|
     t.integer  "year"

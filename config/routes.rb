@@ -14,6 +14,9 @@ Rails.application.routes.draw do
 
   get 'repairs' => 'anautomy#repairs'
   get 'submissions' => 'anautomy#submissions'
+  get  '/signup',  to: 'car_owners#new'
+  post '/signup',  to: 'car_owners#create'
+  
   get '/anautomy/home'
   get '/repair_submissions/search'
 
@@ -27,6 +30,7 @@ Rails.application.routes.draw do
   resources :anuatomy
   resources :shops
   resources :invoices
+  resources :car_owners
   match 'snap', to: 'invoices#new', via: [:get, :post]
 
   resources :anautomy do
