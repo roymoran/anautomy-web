@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+
   root 'anautomy#home'
   get 'home' => 'anautomy#home'
   get 'about' => 'anautomy#about'
@@ -10,13 +12,16 @@ Rails.application.routes.draw do
   get 'results' => "shops#search_result"
 
 
-
-
   get 'repairs' => 'anautomy#repairs'
   get 'submissions' => 'anautomy#submissions'
+  
+  # signup, login, and logout routes
   get  '/signup',  to: 'car_owners#new'
   post '/signup',  to: 'car_owners#create'
-  
+  get    '/login',   to: 'sessions#new'
+  post   '/login',   to: 'sessions#create'
+  delete '/logout',  to: 'sessions#destroy'
+
   get '/anautomy/home'
   get '/repair_submissions/search'
 

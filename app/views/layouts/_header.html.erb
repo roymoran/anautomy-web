@@ -21,6 +21,39 @@
                 </a>
 
                 <ul class="nav navbar-nav navbar-right">
+                    <% if logged_in? %>
+
+                    <li class = "hidden-xs">
+                        <div class = "headerButton">
+                            <%= link_to "Users", '#' %>
+                        </div>
+                    </li>
+                    <li class = "hidden-xs">
+                        <div class = "headerButton">
+                            <%= link_to "Profile", current_car_owner %>
+                        </div>
+                    </li>
+                    <li class = "hidden-xs">
+                        <div class = "headerButton">
+                            <%= link_to "Settings", '#' %>
+                        </div>
+                    </li>
+                    <li class = "hidden-xs">
+                        <div class = "headerButton">
+                            <%= link_to "Log out", logout_path, method: "delete" %>
+                        </div>
+                    </li>
+                    
+                    
+                    <li>
+                        <a href="/home#signup" class="navText visible-xs" style="color:#52BB49;">SIGN UP</a>
+                    </li>
+                    <li>
+                        <a href="#closed" class="navText visible-xs closed_header_tooltip" title = "Closed">LOG IN</a>
+                    </li>
+
+                    <% else %>
+
                     <li class = "hidden-xs">
                         <div class = "headerButton">
                             <a href="/home#signup" class="ghost-button-signup page-scroll">Sign Up</a>
@@ -37,6 +70,7 @@
                     <li>
                         <a href="#closed" class="navText visible-xs closed_header_tooltip" title = "Closed">LOG IN</a>
                     </li>
+                    <% end %>
                     <li>
                         <%= link_to "ABOUT", about_path, class: "navText visible-xs" %>
                     </li>

@@ -9,4 +9,6 @@ class ApplicationController < ActionController::Base
   attr_accessor :average_parts_cost
   attr_accessor :image_link
   
+  include SessionsHelper
+  
 end

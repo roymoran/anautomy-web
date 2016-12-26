@@ -11,7 +11,7 @@ class CarOwnersController < ApplicationController
   		@car_owner = CarOwner.new(car_owner_params)
   		if @car_owner.save
   		# Handle a successful save.
-  			
+  			log_in @car_owner
   			redirect_to @car_owner #redirect to root
   		else
       		render 'new'
