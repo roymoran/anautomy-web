@@ -7,6 +7,7 @@ class SessionsController < ApplicationController
     if @car_owner && @car_owner.authenticate(params[:session][:password])
       # Log the user in and redirect to the user's show page.
       log_in @car_owner
+      remember @car_owner
       redirect_to @car_owner
     else
       # Create an error message.
@@ -16,7 +17,7 @@ class SessionsController < ApplicationController
   end
   
   def destroy
-  	log_out
+  	log_out if logged_in?
     redirect_to root_url
   end
 end
