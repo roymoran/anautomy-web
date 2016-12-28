@@ -3,6 +3,7 @@ class AnautomyController < ApplicationController
   def home
     @subscriber = Subscriber.new
     @repairSubmission = RepairSubmission.new
+    @car_owner = CarOwner.new
     @car = params['car_type']
     @repair = params['repair']
 
@@ -33,18 +34,23 @@ class AnautomyController < ApplicationController
   end
 
   def about
+    @car_owner = CarOwner.new
   end
 
   def oaq
+    @car_owner = CarOwner.new
   end
 
   def transparency
+    @car_owner = CarOwner.new
   end
 
   def submission
+    @car_owner = CarOwner.new
   end
 
   def repairs
+    @car_owner = CarOwner.new
     @average_repair_cost = rand(600..1200)
     session[:average_repair_cost] = @average_repair_cost
 
@@ -63,7 +69,7 @@ class AnautomyController < ApplicationController
   end
 
   def submissions
-
+    @car_owner = CarOwner.new
         @car = session[:current_car]
         @repair = session[:current_repair]
         @average_repair_cost = session[:average_repair_cost]

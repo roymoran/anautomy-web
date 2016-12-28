@@ -56,12 +56,13 @@
 
                     <li class = "hidden-xs">
                         <div class = "headerButton">
-                            <a href="/home#signup" class="ghost-button-signup page-scroll">Sign Up</a>
+                            <a href="/home#signup" class="ghost-button-signup page-scroll" data-toggle="modal" data-target="#signup-modal">Sign Up</a>
+                            <%= link_to "ABOUT", about_path, class: "navText visible-xs" %>
                         </div>
                     </li>
                     <li class = "hidden-xs">
                         <div class = "headerButton">
-                            <a href="#closed" class="ghost-button-login closed_header_tooltip" title = "Closed">Log In</a>
+                            <a href="#closed" class="ghost-button-login closed_header_tooltip" data-toggle="modal" data-target="#login-modal">Log In</a>
                         </div>
                     </li>
                     <li>
@@ -70,6 +71,7 @@
                     <li>
                         <a href="#closed" class="navText visible-xs closed_header_tooltip" title = "Closed">LOG IN</a>
                     </li>
+
                     <% end %>
                     <li>
                         <%= link_to "ABOUT", about_path, class: "navText visible-xs" %>
@@ -140,3 +142,59 @@
     </nav>
 </div>
 </header>
+
+<div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        <%= form_for(@car_owner, url: signup_path) do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+      <br>
+      <%= f.label :email %>
+      <%= f.email_field :email, class: 'form-control'%>
+      <br>
+      <%= f.label :password %>
+      <%= f.password_field :password, class: 'form-control' %>
+      <br>
+      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.password_field :password_confirmation, class: 'form-control' %>
+      <br>
+      <br>
+      <%= f.submit "Create my account", class: "btn btn-primary" %>
+    <% end %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        <%= form_for(:session, url: login_path) do |f| %>
+
+      <%= f.label :email %>
+      <%= f.email_field :email, class: 'form-control' %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password, class: 'form-control' %>
+
+      <%= f.submit "Log in", class: "btn btn-primary" %>
+    <% end %>
+      </div>
+    </div>
+  </div>
+</div>
