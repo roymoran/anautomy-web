@@ -145,56 +145,59 @@
 
 <div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-      </div>
+
+    <div class = "container-fluid">
+      <div class = "row">
+        <div class = "col-sm-10 col-sm-offset-1">
+
+    <div class="modal-content" style="padding-top:25px;">
       <div class="modal-body">
-        <%= form_for(@car_owner, url: signup_path) do |f| %>
-      <%= f.label :name %>
-      <%= f.text_field :name, class: 'form-control' %>
-      <br>
-      <%= f.label :email %>
-      <%= f.email_field :email, class: 'form-control'%>
-      <br>
-      <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %>
-      <br>
-      <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation, class: 'form-control' %>
-      <br>
-      <br>
-      <%= f.submit "Create my account", class: "btn btn-primary" %>
+      <%= form_for(@car_owner, url: signup_path) do |f| %>
+      <%= f.label :name, class: 'hidden' %>
+      <%= f.text_field :name, class: 'signup-form', :placeholder => 'Name' %>
+      
+      <%= f.label :email, class: 'hidden' %>
+      <%= f.email_field :email, class: 'signup-form', :placeholder => 'Email Address' %>
+      
+      <%= f.label :password, class: 'hidden' %>
+      <%= f.password_field :password, class: 'signup-form', :placeholder => 'Password' %>
+      
+      <%= f.label :password_confirmation, "Confirmation", class: 'hidden' %>
+      <%= f.password_field :password_confirmation, class: 'signup-form', :placeholder => 'Confirm Password' %>
+      
+      <%= f.submit "Sign Up", class: "btn btn-auth-form" %>
     <% end %>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
     </div>
+
+    </div>
+  </div>
+  </div>
+
   </div>
 </div>
 
 <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-      </div>
+    <div class = "container-fluid">
+      <div class = "row">
+        <div class = "col-sm-10 col-sm-offset-1">
+    <div class="modal-content" style="padding-top:25px;">
       <div class="modal-body">
         <%= form_for(:session, url: login_path) do |f| %>
 
-      <%= f.label :email %>
-      <%= f.email_field :email, class: 'form-control' %>
+      <%= f.label :email, class: 'hidden' %>
+      <%= f.email_field :email, class: 'login-form', :placeholder => 'Email Address' %>
 
-      <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %>
+      <%= f.label :password, class: 'hidden' %>
+      <%= f.password_field :password, class: 'login-form', :placeholder => 'Password' %>
 
-      <%= f.submit "Log in", class: "btn btn-primary" %>
+      <%= f.submit "Log In", class: "btn btn-auth-form" %>
     <% end %>
       </div>
     </div>
+  </div>
+  </div>
+  </div>
   </div>
 </div>

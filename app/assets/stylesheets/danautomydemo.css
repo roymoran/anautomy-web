@@ -2185,7 +2185,7 @@ input[type=radio].with-fa-frown:checked ~ label:before {
 }
 
 .input-invoice:focus + label,
-.input-invoice + label:hover {
+.input-invoice + label:hover { 
 }
 
 .input-invoice:focus + label {
@@ -2197,3 +2197,40 @@ input[type=radio].with-fa-frown:checked ~ label:before {
   cursor: pointer; /* "hand" cursor */
 }
 /* End Snap Invoice */
+
+/* Hidden Labels */
+.hidden{
+  display: none;
+}
+
+/* Modal Forms */
+.signup-form, .login-form{
+  height: 50px;
+  width: 100%;
+  font-size: 1.5em;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  padding-left: 10px;
+}
+
+.btn-auth-form{
+  height: 50px;
+  width: 100%;
+  margin-bottom: 25px;
+  background: rgba(82, 187, 73, 1) !important;
+  opacity: 1;
+  border: 1px solid #FFFFFF;
+  color: #FFFFFF !important;
+
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  
+  /* CSS Transition */  
+  -webkit-transition: background .2s ease-in-out, border .2s ease-in-out;
+  -moz-transition: background .2s ease-in-out, border .2s ease-in-out;
+  -ms-transition: background .2s ease-in-out, border .2s ease-in-out;
+  -o-transition: background .2s ease-in-out, border .2s ease-in-out;
+  transition: background .2s ease-in-out, border .2s ease-in-out;
+}
+
