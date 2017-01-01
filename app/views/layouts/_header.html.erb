@@ -30,7 +30,7 @@
                     </li>
                     <li class = "hidden-xs">
                         <div class = "headerButton">
-                            <%= link_to "Profile", current_car_owner %>
+                            <%= link_to "My Dashboard", current_car_owner %>
                         </div>
                     </li>
                     <li class = "hidden-xs">
@@ -46,29 +46,26 @@
                     
                     
                     <li>
-                        <a href="/home#signup" class="navText visible-xs" style="color:#52BB49;">SIGN UP</a>
-                    </li>
-                    <li>
-                        <a href="#closed" class="navText visible-xs closed_header_tooltip" title = "Closed">LOG IN</a>
+                      <%= link_to "MY DASHBOARD", current_car_owner, class: "navText visible-xs", style: "color:#52BB49;" %>
                     </li>
 
                     <% else %>
 
                     <li class = "hidden-xs">
                         <div class = "headerButton">
-                            <a class="ghost-button-signup page-scroll" data-toggle="modal" data-target="#signup-modal">Sign Up</a>
+                            <a class="ghost-button-signup page-scroll" data-toggle="modal" data-target="#signup-modal" href="">Sign Up</a>
                         </div>
                     </li>
                     <li class = "hidden-xs">
                         <div class = "headerButton">
-                            <a class="ghost-button-login closed_header_tooltip" data-toggle="modal" data-target="#login-modal">Log In</a>
+                            <a class="ghost-button-login closed_header_tooltip" data-toggle="modal" data-target="#login-modal" href="">Log In</a>
                         </div>
                     </li>
                     <li>
-                        <a class="navText visible-xs" style="color:#52BB49;" data-toggle="modal" data-target="#signup-modal">SIGN UP</a>
+                        <a class="navText visible-xs" style="color:#52BB49;" data-toggle="modal" data-target="#signup-modal" href="">SIGN UP</a>
                     </li>
                     <li>
-                        <a class="navText visible-xs closed_header_tooltip" data-toggle="modal" data-target="#login-modal">LOG IN</a>
+                        <a class="navText visible-xs closed_header_tooltip" data-toggle="modal" data-target="#login-modal" href="">LOG IN</a>
                     </li>
 
                     <% end %>
@@ -169,7 +166,7 @@
 
     <div class = "row">
       <div class = "col-sm-12">
-        By signing up, I agree to Innvoy’s <a href="#">Terms of Service</a>.
+        By signing up, I agree to Innvoy’s <a href="#tos">Terms of Service</a>.
       </div>
      </div>
 
@@ -185,9 +182,11 @@
 
 <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
+
     <div class = "container-fluid">
       <div class = "row">
         <div class = "col-sm-10 col-sm-offset-1">
+
     <div class="modal-content" style="padding-top:10px;">
       <div class="modal-body">
         <%= form_for(:session, url: login_path) do |f| %>

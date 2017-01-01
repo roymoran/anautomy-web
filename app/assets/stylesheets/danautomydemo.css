@@ -2207,7 +2207,7 @@ input[type=radio].with-fa-frown:checked ~ label:before {
 .signup-form, .login-form{
   height: 50px;
   width: 100%;
-  font-size: 1.5em;
+  font-size: 1.3em;
   margin: 0 auto;
   margin-bottom: 10px;
   padding-left: 10px;
@@ -2221,6 +2221,7 @@ input[type=radio].with-fa-frown:checked ~ label:before {
 }
 
 .btn-auth-form{
+  font-size: 1.3em;
   height: 50px;
   width: 100%;
   margin-bottom: 15px;
