@@ -56,20 +56,19 @@
 
                     <li class = "hidden-xs">
                         <div class = "headerButton">
-                            <a href="/home#signup" class="ghost-button-signup page-scroll" data-toggle="modal" data-target="#signup-modal">Sign Up</a>
-                            <%= link_to "ABOUT", about_path, class: "navText visible-xs" %>
+                            <a class="ghost-button-signup page-scroll" data-toggle="modal" data-target="#signup-modal">Sign Up</a>
                         </div>
                     </li>
                     <li class = "hidden-xs">
                         <div class = "headerButton">
-                            <a href="#closed" class="ghost-button-login closed_header_tooltip" data-toggle="modal" data-target="#login-modal">Log In</a>
+                            <a class="ghost-button-login closed_header_tooltip" data-toggle="modal" data-target="#login-modal">Log In</a>
                         </div>
                     </li>
                     <li>
-                        <a href="/home#signup" class="navText visible-xs" style="color:#52BB49;">SIGN UP</a>
+                        <a class="navText visible-xs" style="color:#52BB49;" data-toggle="modal" data-target="#signup-modal">SIGN UP</a>
                     </li>
                     <li>
-                        <a href="#closed" class="navText visible-xs closed_header_tooltip" title = "Closed">LOG IN</a>
+                        <a class="navText visible-xs closed_header_tooltip" data-toggle="modal" data-target="#login-modal">LOG IN</a>
                     </li>
 
                     <% end %>
@@ -150,7 +149,7 @@
       <div class = "row">
         <div class = "col-sm-10 col-sm-offset-1">
 
-    <div class="modal-content" style="padding-top:25px;">
+    <div class="modal-content" style="padding-top:10px;">
       <div class="modal-body">
       <%= form_for(@car_owner, url: signup_path) do |f| %>
       <%= f.label :name, class: 'hidden' %>
@@ -167,6 +166,13 @@
       
       <%= f.submit "Sign Up", class: "btn btn-auth-form" %>
     <% end %>
+
+    <div class = "row">
+      <div class = "col-sm-12">
+        By signing up, I agree to Innvoy’s <a href="#">Terms of Service</a>.
+      </div>
+     </div>
+
       </div>
     </div>
 
@@ -182,7 +188,7 @@
     <div class = "container-fluid">
       <div class = "row">
         <div class = "col-sm-10 col-sm-offset-1">
-    <div class="modal-content" style="padding-top:25px;">
+    <div class="modal-content" style="padding-top:10px;">
       <div class="modal-body">
         <%= form_for(:session, url: login_path) do |f| %>
 
@@ -194,6 +200,12 @@
 
       <%= f.submit "Log In", class: "btn btn-auth-form" %>
     <% end %>
+    <hr class = "auth-form-split">
+     <div class = "row">
+      <div class = "col-sm-12">
+        <a href="#" data-dismiss="modal" aria-label="Sign-Up" data-toggle="modal" data-target="#signup-modal" >Not signed up? Create a free account now.</a>
+      </div>
+     </div>
       </div>
     </div>
   </div>
