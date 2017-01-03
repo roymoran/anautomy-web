@@ -1,4 +1,7 @@
 class CarOwnersController < ApplicationController
+  before_action :logged_in_car_owner, only: [:edit, :update, :show]
+  before_action :correct_car_owner,   only: [:edit, :update, :show]
+
 	def new
 		@car_owner = CarOwner.new
 	end
@@ -39,4 +42,21 @@ class CarOwnersController < ApplicationController
 		def car_owner_params
 			params.require(:car_owner).permit(:name, :email, :password, :password_confirmation)
 		end
+
+    # Before filters
+
+    # Confirms a logged-in user.
+    def logged_in_car_owner
+      unless logged_in?
+        flash[:danger] = "Login first please."
+        redirect_to login_url
+      end
+    end
+
+    # Confirms the correct user.
+    def correct_car_owner
+      @car_owner = CarOwner.find(params[:id])
+      redirect_to(root_url) unless current_car_owner?(@car_owner)
+    end
+
 end

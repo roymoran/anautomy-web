@@ -5,6 +5,11 @@ module SessionsHelper
     session[:car_owner_id] = car_owner.id
   end
 
+  # Returns true if the given user is the current user.
+  def current_car_owner?(car_owner)
+    car_owner == current_car_owner
+  end
+
   # Returns the current logged-in user (if any).
   def current_car_owner
     if (car_owner_id = session[:car_owner_id])
