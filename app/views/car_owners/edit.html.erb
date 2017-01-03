@@ -1,0 +1,26 @@
+<% provide(:title, "Account") %>
+
+<div class = "container-fluid">
+	<div class="row">
+  <div class="col-md-6 col-md-offset-3 text-center">
+  	<h2>Update Account</h2>
+    <%= form_for(@car_owner) do |f| %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+
+      <%= f.label :email %>
+      <%= f.email_field :email, class: 'form-control' %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password, class: 'form-control' %>
+
+      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.password_field :password_confirmation, class: 'form-control' %>
+
+      <%= f.submit "Save changes", class: "btn btn-primary" %>
+    <% end %>
+    <br><br>
+  </div>
+</div>
+</div>

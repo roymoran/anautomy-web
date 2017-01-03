@@ -19,6 +19,10 @@ class CarOwnersController < ApplicationController
     end
 	end
 
+  def edit
+    @car_owner = CarOwner.find(params[:id])
+  end
+
 	private
 
 		def car_owner_params

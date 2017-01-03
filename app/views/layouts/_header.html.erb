@@ -25,17 +25,12 @@
 
                     <li class = "hidden-xs">
                         <div class = "headerButton">
-                            <%= link_to "Users", '#' %>
-                        </div>
-                    </li>
-                    <li class = "hidden-xs">
-                        <div class = "headerButton">
                             <%= link_to "My Dashboard", current_car_owner %>
                         </div>
                     </li>
                     <li class = "hidden-xs">
                         <div class = "headerButton">
-                            <%= link_to "Settings", '#' %>
+                            <%= link_to "Account Settings",  edit_car_owner_path(current_car_owner) %>
                         </div>
                     </li>
                     <li class = "hidden-xs">
@@ -47,6 +42,12 @@
                     
                     <li>
                       <%= link_to "MY DASHBOARD", current_car_owner, class: "navText visible-xs", style: "color:#52BB49;" %>
+                    </li>
+                    <li>
+                      <%= link_to "ACCOUNT SETTINGS", edit_car_owner_path(current_car_owner), class: "navText visible-xs" %>
+                    </li>
+                    <li>
+                      <%= link_to "LOG OUT", logout_path, method: "delete", class: "navText visible-xs" %>
                     </li>
 
                     <% else %>
