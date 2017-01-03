@@ -23,6 +23,17 @@ class CarOwnersController < ApplicationController
     @car_owner = CarOwner.find(params[:id])
   end
 
+  def update
+    @car_owner = CarOwner.find(params[:id])
+    if @car_owner.update_attributes(car_owner_params)
+      # Handle a successful update.
+      flash[:success] = "Account Updated"
+      redirect_to @car_owner
+    else
+      render 'edit'
+    end
+  end
+
 	private
 
 		def car_owner_params

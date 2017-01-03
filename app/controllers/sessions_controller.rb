@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       redirect_to @car_owner
     else
       # Create an error message.
-      flash[:danger] = 'Invalid email/password combination' # Not quite right!
+      flash.now[:danger] = 'Invalid email/password combination' # Not quite right!
       render 'new'
     end
   end
