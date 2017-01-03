@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161226071540) do
+ActiveRecord::Schema.define(version: 20170103051455) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -196,6 +196,20 @@ ActiveRecord::Schema.define(version: 20161226071540) do
   add_index "shop_ratings", ["repair_submission_id"], name: "index_shop_ratings_on_repair_submission_id", using: :btree
   add_index "shop_ratings", ["shop_id"], name: "index_shop_ratings_on_shop_id", using: :btree
 
+  create_table "shop_users", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "password_digest"
+    t.string   "remember_digest"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "shop_id"
+  end
+
+  add_index "shop_users", ["email"], name: "index_shop_users_on_email", unique: true, using: :btree
+  add_index "shop_users", ["shop_id"], name: "index_shop_users_on_shop_id", using: :btree
+
   create_table "shops", force: :cascade do |t|
     t.string   "shop_name"
     t.string   "shop_zip"
@@ -216,6 +230,8 @@ ActiveRecord::Schema.define(version: 20161226071540) do
     t.string   "shop_url"
     t.integer  "yelp_rc"
     t.string   "yelp_contact_date"
+    t.string   "register_id"
+    t.integer  "shop_users_count",         default: 0
   end
 
   create_table "subscribers", force: :cascade do |t|
@@ -228,26 +244,16 @@ ActiveRecord::Schema.define(version: 20161226071540) do
   add_index "subscribers", ["email"], name: "index_subscribers_on_email", unique: true, using: :btree
 
   add_foreign_key "car_models", "car_makes"
-  add_foreign_key "car_models", "car_makes"
   add_foreign_key "cars", "car_makes"
-  add_foreign_key "cars", "car_makes"
-  add_foreign_key "cars", "car_models"
   add_foreign_key "cars", "car_models"
   add_foreign_key "cars", "car_years"
   add_foreign_key "cars", "repair_submissions"
-  add_foreign_key "cars", "repair_submissions"
-  add_foreign_key "repair_names", "repair_categories"
   add_foreign_key "repair_names", "repair_categories"
   add_foreign_key "repair_submissions", "shops"
-  add_foreign_key "repair_submissions", "shops"
-  add_foreign_key "repairs", "repair_categories"
   add_foreign_key "repairs", "repair_categories"
   add_foreign_key "repairs", "repair_names"
-  add_foreign_key "repairs", "repair_names"
-  add_foreign_key "repairs", "repair_submissions"
   add_foreign_key "repairs", "repair_submissions"
   add_foreign_key "shop_ratings", "repair_submissions"
-  add_foreign_key "shop_ratings", "repair_submissions"
   add_foreign_key "shop_ratings", "shops"
-  add_foreign_key "shop_ratings", "shops"
+  add_foreign_key "shop_users", "shops"
 end

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'shop_users/new'
+
   get 'sessions/new'
 
   root 'anautomy#home'
@@ -15,12 +17,19 @@ Rails.application.routes.draw do
   get 'repairs' => 'anautomy#repairs'
   get 'submissions' => 'anautomy#submissions'
   
-  # signup, login, and logout routes
+  # signup, login, and logout routes for car owners
   get  '/signup',  to: 'car_owners#new'
   post '/signup',  to: 'car_owners#create'
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
+
+  # signup, login, and logout routes for shop users
+  get  '/signup_shop',  to: 'shop_users#new'
+  post '/signup_shop',  to: 'shop_users#create'
+
+
+
 
   get '/anautomy/home'
   get '/repair_submissions/search'
@@ -36,6 +45,7 @@ Rails.application.routes.draw do
   resources :shops
   resources :invoices
   resources :car_owners
+  resources :shop_users
   match 'snap', to: 'invoices#new', via: [:get, :post]
 
   resources :anautomy do
