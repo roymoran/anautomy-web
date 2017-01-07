@@ -21,24 +21,7 @@
                 </a>
 
                 <ul class="nav navbar-nav navbar-right">
-                    <% if logged_in? %>
-
-                    <li class = "hidden-xs">
-                        <div class = "headerButton">
-                            <%= link_to "My Dashboard", current_car_owner %>
-                        </div>
-                    </li>
-                    <li class = "hidden-xs">
-                        <div class = "headerButton">
-                            <%= link_to "Account Settings",  edit_car_owner_path(current_car_owner) %>
-                        </div>
-                    </li>
-                    <li class = "hidden-xs">
-                        <div class = "headerButton">
-                            <%= link_to "Log out", logout_path, method: "delete" %>
-                        </div>
-                    </li>
-                    
+                    <% if logged_in? %>                    
                     
                     <li>
                       <%= link_to "MY DASHBOARD", current_car_owner, class: "navText visible-xs", style: "color:#52BB49;" %>
@@ -47,9 +30,11 @@
                       <%= link_to "ACCOUNT SETTINGS", edit_car_owner_path(current_car_owner), class: "navText visible-xs" %>
                     </li>
                     <li>
+                        <%= link_to "SUBMIT", submission_path, class: "navText visible-xs" %>
+                    </li>
+                    <li>
                       <%= link_to "LOG OUT", logout_path, method: "delete", class: "navText visible-xs" %>
                     </li>
-
                     <% else %>
 
                     <li class = "hidden-xs">
@@ -69,8 +54,7 @@
                         <a class="navText visible-xs closed_header_tooltip" data-toggle="modal" data-target="#login-modal" href="">LOG IN</a>
                     </li>
 
-                    <% end %>
-                    <li>
+                     <li>
                         <%= link_to "ABOUT", about_path, class: "navText visible-xs" %>
                     </li>
                     <li>
@@ -82,6 +66,9 @@
                     <li>
                         <%= link_to "SUBMIT", submission_path, class: "navText visible-xs" %>
                     </li>
+
+                    <% end %>
+                   
                     <!--
                     <li>
                         <a href="#link_under_construction" class="navText visible-xs under_construction_header_tooltip" title = "Under Construction">NEWS</a>
@@ -113,6 +100,20 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
+                  <% if logged_in? %>
+                    <li>
+                      <%= link_to "MY DASHBOARD", current_car_owner, class: "navText" %>
+                    </li>
+                    <li>
+                      <%= link_to "ACCOUNT SETTINGS", edit_car_owner_path(current_car_owner), class: "navText" %>
+                    </li>
+                    <li>
+                        <%= link_to "SUBMIT", submission_path, class: "navText" %>
+                    </li>
+                    <li>
+                        <%= link_to "LOG OUT", logout_path, method: "delete", class: "navText" %>
+                    </li>
+                    <% else %>
                     <li>
                         <%= link_to "ABOUT", about_path, class: "navText" %>
                     </li>
@@ -126,6 +127,7 @@
                     <li>
                         <%= link_to "SUBMIT", submission_path, class: "navText" %>
                     </li>
+                    <%end%>
                     <!--
                     <li>
                         <a href="#link_under_construction" class="navText under_construction_header_tooltip" title = "Under Construction">NEWS</a>
@@ -140,7 +142,7 @@
 </div>
 </header>
 
-<div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="signupModal">
   <div class="modal-dialog" role="document">
 
     <div class = "container-fluid">
@@ -181,7 +183,7 @@
   </div>
 </div>
 
-<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="loginModal">
   <div class="modal-dialog" role="document">
 
     <div class = "container-fluid">
