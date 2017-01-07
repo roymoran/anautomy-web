@@ -1,0 +1,121 @@
+<!-- Navigation -->
+    <header>
+    <nav class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar" style"color:#52BB49;"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/" class="navbar-brand visible-xs">Innvoy</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <a class = "hidden-xs" href = "/">
+                    <div class = "navbar-left navbar-brand" style = "height: 100px; color: #D0D0D0; font-size:3.2em; font-weight:300;">
+                        Innvoy
+                    </div>
+                </a>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <% if logged_in? %>
+
+                    <li class = "hidden-xs">
+                        <div class = "headerButton">
+                            <%= link_to "My Dashboard", current_car_owner %>
+                        </div>
+                    </li>
+                    <li class = "hidden-xs">
+                        <div class = "headerButton">
+                            <%= link_to "Account Settings",  edit_car_owner_path(current_car_owner) %>
+                        </div>
+                    </li>
+                    <li class = "hidden-xs">
+                        <div class = "headerButton">
+                            <%= link_to "Log out", logout_path, method: "delete" %>
+                        </div>
+                    </li>
+                    
+                    
+                    <li>
+                      <%= link_to "MY DASHBOARD", current_car_owner, class: "navText visible-xs", style: "color:#52BB49;" %>
+                    </li>
+                    <li>
+                      <%= link_to "ACCOUNT SETTINGS", edit_car_owner_path(current_car_owner), class: "navText visible-xs" %>
+                    </li>
+                    <li>
+                      <%= link_to "LOG OUT", logout_path, method: "delete", class: "navText visible-xs" %>
+                    </li>
+
+                    <% else %>
+
+                    <% end %>
+                    <li>
+                        <%= link_to "ABOUT", about_path, class: "navText visible-xs" %>
+                    </li>
+                    <li>
+                        <%= link_to "TRANSPARENCY", transparency_path, class: "navText visible-xs" %>
+                    </li>
+                    <li>
+                        <%= link_to "OAQ", oaq_path, class: "navText visible-xs" %>
+                    </li>
+                    <li>
+                        <%= link_to "SUBMIT", submission_path, class: "navText visible-xs" %>
+                    </li>
+                    <!--
+                    <li>
+                        <a href="#link_under_construction" class="navText visible-xs under_construction_header_tooltip" title = "Under Construction">NEWS</a>
+                    </li>
+                -->
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+
+
+
+    <!-- Navigation -->
+    <div class = "header2 hidden-xs">
+    <nav class="navbar navbar-inverse navbar-static-top mainNav" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <%= link_to "ABOUT", about_path, class: "navText " %>
+                    </li>
+                    <li>
+                        <%= link_to "TRANSPARENCY", transparency_path, class: "navText " %>
+
+                    </li>
+                    <li>
+                        <%= link_to "OAQ", oaq_path, class: "navText " %>
+                    </li>
+                    <!--
+                    <li>
+                        <a href="#link_under_construction" class="navText under_construction_header_tooltip" title = "Under Construction">NEWS</a>
+                    </li>
+                -->
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+</div>
+</header>

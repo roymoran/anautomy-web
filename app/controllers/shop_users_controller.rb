@@ -1,4 +1,5 @@
 class ShopUsersController < ApplicationController
+  layout "shop"
   def new
   	@shop_user = ShopUser.new
   	@shop = Shop.find(params[:sid])

@@ -2203,7 +2203,7 @@ input[type=radio].with-fa-frown:checked ~ label:before {
   display: none;
 }
 
-/* Modal Forms */
+/* Modal Authentication Forms */
 .signup-form, .login-form{
   height: 50px;
   width: 100%;
@@ -2241,4 +2241,29 @@ input[type=radio].with-fa-frown:checked ~ label:before {
   -o-transition: background .2s ease-in-out, border .2s ease-in-out;
   transition: background .2s ease-in-out, border .2s ease-in-out;
 }
+
+.shop-auth-heading{
+  font-size:1.8em;
+  color:#52BB49; 
+  font-family: 'Roboto', sans-serif;
+  font-weight:400; 
+}
+
+.shop-auth-subheading{
+  font-size:1.5em;
+  color:#545E69; 
+  font-family: 'Roboto', sans-serif; 
+  font-weight:400;
+  padding-top: 10px;
+}
+.more-help{
+  font-size:1.5em; 
+  color:#52BB49; 
+  text-align:center; 
+  font-family: 'Roboto', sans-serif;
+  font-weight:400; 
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+/* Modal Authentication Forms */
 
