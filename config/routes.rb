@@ -27,6 +27,8 @@ Rails.application.routes.draw do
   # signup, login, and logout routes for shop users
   get  '/signup_shop',  to: 'shop_users#new'
   post '/signup_shop',  to: 'shop_users#create'
+  get    '/login_shop',   to: 'sessions#new_shop'
+  post   '/login_shop',   to: 'sessions#create_shop'
 
 
 
