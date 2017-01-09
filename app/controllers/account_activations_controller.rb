@@ -12,9 +12,10 @@ class AccountActivationsController < ApplicationController
       			flash[:danger] = "Invalid activation link"
       			redirect_to root_url
     		end
-		end
-	shop_user = ShopUser.find_by(email: params[:email])
-		if !shop_user.nil?
+		  end
+
+    shop_user = ShopUser.find_by(email: params[:email])
+		  if !shop_user.nil?
     		if shop_user && !shop_user.activated? && shop_user.authenticated?(:activation, params[:id])
       			shop_user.activate
       			log_in shop_user
@@ -24,7 +25,8 @@ class AccountActivationsController < ApplicationController
       			flash[:danger] = "Invalid activation link"
       			redirect_to root_url
     		end
-		end
-  	end
+		  end
+
+  end
 
 end
