@@ -46,6 +46,7 @@ Rails.application.routes.draw do
   resources :invoices
   resources :car_owners
   resources :shop_users
+  resources :account_activations, only: [:edit]
   match 'snap', to: 'invoices#new', via: [:get, :post]
 
   resources :anautomy do
