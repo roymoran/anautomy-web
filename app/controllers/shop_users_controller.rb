@@ -23,7 +23,7 @@ class ShopUsersController < ApplicationController
   	#@shop_user.shop_id = params[:sid]
   	if @shop_user.save && (params[:rid] == @shop.register_id)
   		# Handle a successful save.
-      #@shop_user.send_activation_email
+      @shop_user.send_activation_email
       flash[:info] = "Please check your email to activate your account."
       #redirect_to root_url
   		log_in @shop_user
