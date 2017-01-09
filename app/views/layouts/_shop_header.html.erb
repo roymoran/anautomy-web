@@ -21,33 +21,16 @@
                 </a>
 
                 <ul class="nav navbar-nav navbar-right">
-                    <% if logged_in? %>
-
-                    <li class = "hidden-xs">
-                        <div class = "headerButton">
-                            <%= link_to "My Dashboard", current_car_owner %>
-                        </div>
-                    </li>
-                    <li class = "hidden-xs">
-                        <div class = "headerButton">
-                            <%= link_to "Account Settings",  edit_car_owner_path(current_car_owner) %>
-                        </div>
-                    </li>
-                    <li class = "hidden-xs">
-                        <div class = "headerButton">
-                            <%= link_to "Log out", logout_path, method: "delete" %>
-                        </div>
-                    </li>
-                    
+                    <% if shop_user_logged_in? %>
                     
                     <li>
-                      <%= link_to "MY DASHBOARD", current_car_owner, class: "navText visible-xs", style: "color:#52BB49;" %>
+                      <%= link_to "MY SHOP", current_shop_user, class: "navText visible-xs", style: "color:#52BB49;" %>
                     </li>
                     <li>
-                      <%= link_to "ACCOUNT SETTINGS", edit_car_owner_path(current_car_owner), class: "navText visible-xs" %>
+                      <%= link_to "ACCOUNT SETTINGS", edit_shop_user_path(current_shop_user), class: "navText visible-xs" %>
                     </li>
                     <li>
-                      <%= link_to "LOG OUT", logout_path, method: "delete", class: "navText visible-xs" %>
+                      <%= link_to "LOG OUT", logout_shop_path, method: "delete", class: "navText visible-xs" %>
                     </li>
 
                     <% else %>
@@ -61,9 +44,6 @@
                     </li>
                     <li>
                         <%= link_to "OAQ", oaq_path, class: "navText visible-xs" %>
-                    </li>
-                    <li>
-                        <%= link_to "SUBMIT", submission_path, class: "navText visible-xs" %>
                     </li>
                     <!--
                     <li>
@@ -96,21 +76,28 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
+                    <% if shop_user_logged_in? %>
                     <li>
-                        <%= link_to "ABOUT", about_path, class: "navText " %>
+                      <%= link_to "MY SHOP", current_shop_user, class: "navText" %>
                     </li>
                     <li>
-                        <%= link_to "TRANSPARENCY", transparency_path, class: "navText " %>
+                      <%= link_to "ACCOUNT SETTINGS", edit_shop_user_path(current_shop_user), class: "navText" %>
+                    </li>
+                    <li>
+                        <%= link_to "LOG OUT", logout_shop_path, method: "delete", class: "navText" %>
+                    </li>
+                    <% else %>
+                    <li>
+                        <%= link_to "ABOUT", about_path, class: "navText" %>
+                    </li>
+                    <li>
+                        <%= link_to "TRANSPARENCY", transparency_path, class: "navText" %>
 
                     </li>
                     <li>
-                        <%= link_to "OAQ", oaq_path, class: "navText " %>
+                        <%= link_to "OAQ", oaq_path, class: "navText" %>
                     </li>
-                    <!--
-                    <li>
-                        <a href="#link_under_construction" class="navText under_construction_header_tooltip" title = "Under Construction">NEWS</a>
-                    </li>
-                -->
+                    <%end%>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

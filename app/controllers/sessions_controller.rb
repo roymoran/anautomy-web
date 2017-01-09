@@ -42,9 +42,9 @@ class SessionsController < ApplicationController
     @shop_user = ShopUser.find_by(email: params[:session][:email].downcase)
     if @shop_user && @shop_user.authenticate(params[:session][:password])
       # Log the user in and redirect to the user's show page.
-      log_in @shop_user
-      remember @shop_user
-      redirect_to @shop_user
+      shop_user_log_in @shop_user
+      shop_user_remember @shop_user
+      redirect_to @shop_user 
       
       #if user.activated?
         #log_in user
@@ -64,8 +64,8 @@ class SessionsController < ApplicationController
     end
   end
   
-  def destroy
-    log_out if logged_in?
+  def destroy_shop
+    shop_user_log_out if shop_user_logged_in?
     redirect_to root_url
   end
 

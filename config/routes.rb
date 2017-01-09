@@ -29,9 +29,7 @@ Rails.application.routes.draw do
   post '/signup_shop',  to: 'shop_users#create'
   get    '/login_shop',   to: 'sessions#new_shop'
   post   '/login_shop',   to: 'sessions#create_shop'
-
-
-
+  delete '/logout_shop',  to: 'sessions#destroy_shop'
 
   get '/anautomy/home'
   get '/repair_submissions/search'
