@@ -14,9 +14,13 @@ class CarOwnersController < ApplicationController
   	@car_owner = CarOwner.new(car_owner_params)
   	if @car_owner.save
   		# Handle a successful save.
+      @car_owner.send_activation_email
+      flash[:info] = "Please check your email to activate your account."
+      #redirect_to root_url
   		log_in @car_owner
       remember @car_owner
-  		redirect_to @car_owner #redirect to root
+  		redirect_to @car_owner #redirect to root      
+
   	else
       render 'new'
     end
@@ -24,6 +28,11 @@ class CarOwnersController < ApplicationController
 
   def edit
     @car_owner = CarOwner.find(params[:id])
+    if !@car_owner.activated?
+      message  = "Your account is not activated. "
+      message += "Check your email for the activation link."
+      flash.now[:warning] = message
+    end
   end
 
   def update

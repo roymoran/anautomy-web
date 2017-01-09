@@ -3,7 +3,9 @@ class ShopUserMailerPreview < ActionMailer::Preview
 
   # Preview this email at http://localhost:3000/rails/mailers/shop_user_mailer/account_activation
   def account_activation
-    ShopUserMailer.account_activation
+    shop_user = ShopUser.first
+    shop_user.activation_token = ShopUser.new_token
+    ShopUserMailer.account_activation(shop_user)
   end
 
   # Preview this email at http://localhost:3000/rails/mailers/shop_user_mailer/password_reset

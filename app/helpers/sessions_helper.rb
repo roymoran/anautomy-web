@@ -16,7 +16,7 @@ module SessionsHelper
       @current_car_owner ||= CarOwner.find_by(id: car_owner_id)
     elsif (car_owner_id = cookies.signed[:car_owner_id])
       car_owner = CarOwner.find_by(id: car_owner_id)
-      if car_owner && car_owner.authenticated?(cookies[:remember_token])
+      if car_owner && car_owner.authenticated?(:remember, cookies[:remember_token])
         log_in car_owner
         @current_car_owner = car_owner
       end

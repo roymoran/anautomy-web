@@ -1,3 +1,5 @@
-ShopUserMailer#account_activation
+Hi <%= @shop_user.first_name %>,
 
-<%= @greeting %>, find me in app/views/shop_user_mailer/account_activation.text.erb
+Thanks for registering at Innvoy! Click on the link below to activate your account:
+
+<%= edit_account_activation_url(@shop_user.activation_token, email: @shop_user.email) %>

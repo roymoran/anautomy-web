@@ -1,3 +1,5 @@
-CarOwnerMailer#account_activation
+Hi <%= @car_owner.name %>,
 
-<%= @greeting %>, find me in app/views/car_owner_mailer/account_activation.text.erb
+Thanks for registering at Innvoy! Click on the link below to activate your account:
+
+<%= edit_account_activation_url(@car_owner.activation_token, email: @car_owner.email) %>

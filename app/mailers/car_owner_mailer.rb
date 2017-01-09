@@ -4,11 +4,6 @@ class CarOwnerMailer < ApplicationMailer
   #
   #   en.car_owner_mailer.account_activation.subject
   #
-  def account_activation
-    @greeting = "Hi"
-
-    mail to: "to@example.org"
-  end
 
   def account_activation(car_owner)
     @car_owner = car_owner
