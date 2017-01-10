@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170109002928) do
+ActiveRecord::Schema.define(version: 20170110063823) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -109,6 +109,7 @@ ActiveRecord::Schema.define(version: 20170109002928) do
     t.string   "activation_digest"
     t.boolean  "activated",         default: false
     t.datetime "activated_at"
+    t.integer  "cars_count",        default: 0
   end
 
   add_index "car_owners", ["email"], name: "index_car_owners_on_email", unique: true, using: :btree
@@ -126,10 +127,12 @@ ActiveRecord::Schema.define(version: 20170109002928) do
     t.datetime "updated_at",           null: false
     t.integer  "repair_submission_id"
     t.integer  "car_year_id"
+    t.integer  "car_owner_id"
   end
 
   add_index "cars", ["car_make_id"], name: "index_cars_on_car_make_id", using: :btree
   add_index "cars", ["car_model_id"], name: "index_cars_on_car_model_id", using: :btree
+  add_index "cars", ["car_owner_id"], name: "index_cars_on_car_owner_id", using: :btree
   add_index "cars", ["car_year_id"], name: "index_cars_on_car_year_id", using: :btree
   add_index "cars", ["repair_submission_id"], name: "index_cars_on_repair_submission_id", using: :btree
 
@@ -252,6 +255,7 @@ ActiveRecord::Schema.define(version: 20170109002928) do
   add_foreign_key "car_models", "car_makes"
   add_foreign_key "cars", "car_makes"
   add_foreign_key "cars", "car_models"
+  add_foreign_key "cars", "car_owners"
   add_foreign_key "cars", "car_years"
   add_foreign_key "cars", "repair_submissions"
   add_foreign_key "repair_names", "repair_categories"
