@@ -9,13 +9,13 @@
           
   				<%= form_tag({controller: "shops", action: "search_result"}, method: "get", class: "") do %>
           <div class="col-sm-12 text-center">
-            <%= text_field_tag(:shop_name, nil, {placeholder: "Aby's Shop"}) %>
+            <%= text_field_tag(:shop_name, nil, {placeholder: "Aby's Shop", class: "shop-search-field"}) %>
   					<%= text_field_tag(:shop_zip, nil, {placeholder: "60609"}) %>
           </div>
             <br>
             <br>
             <div class="col-sm-12 text-center">
-  					<%= submit_tag("Search",  {class: "btn btn-custom-2 button-text-style"}) %>
+  					<%= submit_tag("Search",  {class: "btn btn-custom-2 button-text-style mp-shop-search"}) %>
           </div>
           <%= hidden_field_tag :shop_offset, 0 %>
 				<% end %>
@@ -25,4 +25,7 @@
 	</div>
 </div>
 
+<script type="text/javascript">
+    mixpanel.track("Search Shop Page");
+</script>
 
