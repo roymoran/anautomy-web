@@ -79,3 +79,22 @@ jQuery ->
     $('.quickness-rating-row').slideUp ->
       $('.fs-subtitle-rate').hide("slow")
 
+  $('.mp-shop-search').click ->
+    shop_search_name = $('#shop_name').val()
+    zip_search = $('#shop_zip').val()
+    mixpanel.track 'Shop Searched',
+      'Shop Searched': shop_search_name
+      'Zip Searched': zip_search
+
+  $('.mp-pg-1-next').click ->
+    # can extract info from pg 1
+    mixpanel.track 'Page 1 Complete'
+
+  $('.mp-pg-2-next').click ->
+    # can extract info from pg 1
+    mixpanel.track 'Page 2 Complete'
+
+  $('.mp-pg-3-submit').click ->
+    # can extract info from pg 1
+    mixpanel.track 'Form Submitted'
+

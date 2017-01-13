@@ -10,7 +10,7 @@
     <h2 class="fs-title">Your Info</h2>
     <h3 class="fs-subtitle"></h3>
     <%= f.email_field :email, class: '', :placeholder => "Email"%>
-    <input type="button" name="next" class="next action-button" value="Next" />
+    <input type="button" name="next" class="next action-button mp-pg-1-next" value="Next" />
   </fieldset>
   <fieldset>
     <h2 class="fs-title">What kind of car?</h2>
@@ -23,7 +23,7 @@
     <%= f.text_field :vehicle_mileage, class: '', :placeholder => "MILEAGE"%>
     -->
     <input type="button" name="previous" class="previous action-button" value="Previous" />
-    <input type="button" name="next" class="next action-button" value="Next" />
+    <input type="button" name="next" class="next action-button mp-pg-2-next" value="Next" />
   </fieldset>
   <fieldset>
     <h2 class="fs-title">What repair?</h2>
@@ -140,7 +140,7 @@
     <%= f.hidden_field :repair_name, {:value => nil, :class => 'repair-name-hidden'} %>
 
     <input type="button" name="previous" class="previous action-button" value="Previous" />
-    <%= f.submit "Submit", {class: "action-button"}%>
+    <%= f.submit "Submit", {class: "action-button mp-pg-3-submit"}%>
   </fieldset>
 <% end %>
 

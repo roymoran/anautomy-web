@@ -23,7 +23,7 @@
       <% if @shop.blank? %>
       <div class ="row">
         <p class="answer-text">
-          It looks like there aren't any shops listed for your search. We're continually updating shops on our platform while focusing on specific geographic areas. Please leave us your information to let us know that you would like to see shops in your area. 
+          It looks like there aren't any shops listed for your search. We're continually updating shops listed on our platform. Leave us your information to let us know that you would like to see shops in your area. 
         </p>
         <br>
         <br>
@@ -57,7 +57,7 @@
           <div class = "shop_location" style="font-size:1.2em;">
             <%= s.shop_address %><br>
             <%= s.shop_city %>, <%= s.shop_state_code %> <%= s.shop_zip %>
-            <%= submit_tag "Select", {class: "btn btn-custom-2 button-text-style", style:"font-size:1.0em; margin-left:100px;"}%>
+            <%= submit_tag "Select", {class: "btn btn-custom-2 button-text-style mp-track-shop-selected", style:"font-size:1.0em; margin-left:100px;"}%>
           </div>
           <div class = "shop_contact" style="font-size:1.2em;">
             <%= s.shop_phone %><br>
