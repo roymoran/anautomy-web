@@ -32,7 +32,7 @@ jQuery ->
         $('#car_make_select').show()
 
   $('#car_make_select').change ->
-    $('#car_option_select').empty().append('<option selected>Engine Size</option>')
+    $('#car_option_select').empty().append('<option selected>Engine</option>')
     car_year = $('#car_year_select :selected').text()
     car_make = $('#car_make_select :selected').val()
     $.ajax
@@ -55,7 +55,7 @@ jQuery ->
       data: {car_year:"year_" + car_year, car_model_id: car_model}
       dataType: "json"
       success: (data) ->
-        $('#car_option_select').empty().append('<option selected>Engine Size</option><option>Not Sure</option>')
+        $('#car_option_select').empty().append('<option selected>Engine</option><option>Not Sure</option>')
         $.each data, (index, value) ->
           $('#car_option_select').append('<option value='+ data[index].id+'>'+data[index].name+'</option>')
         $('#car_option_select').show()
