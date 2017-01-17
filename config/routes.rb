@@ -36,6 +36,7 @@ Rails.application.routes.draw do
   # ajax routes 
   get 'fetch_car_makes' => "repair_submissions#fetch_car_makes"
   get 'fetch_car_models' => "repair_submissions#fetch_car_models"
+  get 'fetch_car_options' => "repair_submissions#fetch_car_options"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

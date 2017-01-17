@@ -5,5 +5,6 @@ class Car < ActiveRecord::Base
 	has_one :car_make
 	has_one :car_model
 	has_one :car_year
+	has_one :car_option
 	#will later belong_to user
 end

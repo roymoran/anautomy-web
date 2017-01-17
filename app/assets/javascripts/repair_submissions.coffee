@@ -5,6 +5,7 @@ jQuery ->
   $('#car_model_select').hide()
   $('.repair-name-custom-input').hide()
   $('#car_make_select').hide()
+  $('#car_option_select').hide()
   $('.rate_experience_section').hide()
 
   $(".repair-name-custom").click ->
@@ -18,6 +19,7 @@ jQuery ->
   $('#car_year_select').change ->
     $('#car_make_select').empty().append('<option selected>Make</option>')
     $('#car_model_select').empty().append('<option selected>Model</option>')
+    $('#car_option_select').empty().append('<option selected>Engine Size</option>')
     car_year = $('#car_year_select :selected').text()
     $.ajax
       type: "GET"
@@ -30,6 +32,7 @@ jQuery ->
         $('#car_make_select').show()
 
   $('#car_make_select').change ->
+    $('#car_option_select').empty().append('<option selected>Engine</option>')
     car_year = $('#car_year_select :selected').text()
     car_make = $('#car_make_select :selected').val()
     $.ajax
@@ -42,6 +45,20 @@ jQuery ->
         $.each data, (index, value) ->
           $('#car_model_select').append('<option value='+ data[index].id+'>'+data[index].name+'</option>')
         $('#car_model_select').show()
+
+  $('#car_model_select').change ->
+    car_year = $('#car_year_select :selected').text()
+    car_model = $('#car_model_select :selected').val()
+    $.ajax
+      type: "GET"
+      url: "/fetch_car_options"
+      data: {car_year:"year_" + car_year, car_model_id: car_model}
+      dataType: "json"
+      success: (data) ->
+        $('#car_option_select').empty().append('<option selected>Engine</option><option>Not Sure</option>')
+        $.each data, (index, value) ->
+          $('#car_option_select').append('<option value='+ data[index].id+'>'+data[index].name+'</option>')
+        $('#car_option_select').show()
 
   $('.repair_date_select').change ->
     $('.rate_experience_section').slideDown()

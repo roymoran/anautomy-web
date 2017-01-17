@@ -18,9 +18,12 @@ class RepairSubmissionsController < ApplicationController
 			#add fallback to html
 		format.js # actually means: if the client ask for js -> return file.js
 	    end
+	    if @repairSubmission.car_option = 0
+	    	@repairSubmission.car_option = nil #special case if car_option is selected as "Not sure"
+	    end
 		# @repairSubmission.create_car is used to create and save the associated car to
 		# the repair submission. Params passed by new action is passed as field values
-		@repairSubmission.create_car(car_make_id: @repairSubmission.car_make, car_model_id: @repairSubmission.car_model, car_year_id: @repairSubmission.car_year)
+		@repairSubmission.create_car(car_make_id: @repairSubmission.car_make, car_model_id: @repairSubmission.car_model, car_year_id: @repairSubmission.car_year, car_option_id: @repairSubmission.car_option)
 		#@repairSubmission.create_repair(repair_category_id: @repairSubmission.repair_category, repair_name_id: @repairSubmission.repair_name, repair_name_custom: @repairSubmission.repair_name_custom)
 			if (@repairSubmission.repair_category == "1" and @repairSubmission.repair_name == "1")
 				@repairSubmission.create_repair(repair_category_id: @repairSubmission.repair_category, repair_name_id: @repairSubmission.repair_name, repair_name_custom: @repairSubmission.repair_name_custom)
@@ -64,10 +67,17 @@ class RepairSubmissionsController < ApplicationController
     	end
     end
 
+    def fetch_car_options
+    	@options = CarOption.where(params[:car_year] + " = TRUE AND car_model_id = ?", params[:car_model_id]).order(name: :asc)
+    	respond_to do |format|
+    		format.json { render :json => @options.as_json(:only => [:id, :name]) }
+    	end
+    end
+
 	private
 
     def repairSubmission_params
-      params.require(:repair_submission).permit(:email, :vehicle_trim, :vehicle_mileage, :repair_description, :parts_cost, :labor_cost, :total_cost, :review, :car_make, :car_model, :car_year, :shop_id, :repair_date, :repair_name, :repair_category, :repair_name_custom)
+      params.require(:repair_submission).permit(:email, :vehicle_trim, :vehicle_mileage, :repair_description, :parts_cost, :labor_cost, :total_cost, :review, :car_make, :car_model, :car_option, :car_year, :shop_id, :repair_date, :repair_name, :repair_category, :repair_name_custom)
     end
 
 end
