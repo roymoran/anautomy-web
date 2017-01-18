@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170111195302) do
+ActiveRecord::Schema.define(version: 20170116204745) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -99,6 +99,49 @@ ActiveRecord::Schema.define(version: 20170111195302) do
 
   add_index "car_models", ["car_make_id"], name: "index_car_models_on_car_make_id", using: :btree
 
+  create_table "car_options", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "car_model_id"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.boolean  "year_1984",    default: false
+    t.boolean  "year_1985",    default: false
+    t.boolean  "year_1986",    default: false
+    t.boolean  "year_1987",    default: false
+    t.boolean  "year_1988",    default: false
+    t.boolean  "year_1989",    default: false
+    t.boolean  "year_1990",    default: false
+    t.boolean  "year_1991",    default: false
+    t.boolean  "year_1992",    default: false
+    t.boolean  "year_1993",    default: false
+    t.boolean  "year_1994",    default: false
+    t.boolean  "year_1995",    default: false
+    t.boolean  "year_1996",    default: false
+    t.boolean  "year_1997",    default: false
+    t.boolean  "year_1998",    default: false
+    t.boolean  "year_1999",    default: false
+    t.boolean  "year_2000",    default: false
+    t.boolean  "year_2001",    default: false
+    t.boolean  "year_2002",    default: false
+    t.boolean  "year_2003",    default: false
+    t.boolean  "year_2004",    default: false
+    t.boolean  "year_2005",    default: false
+    t.boolean  "year_2006",    default: false
+    t.boolean  "year_2007",    default: false
+    t.boolean  "year_2008",    default: false
+    t.boolean  "year_2009",    default: false
+    t.boolean  "year_2010",    default: false
+    t.boolean  "year_2011",    default: false
+    t.boolean  "year_2012",    default: false
+    t.boolean  "year_2013",    default: false
+    t.boolean  "year_2014",    default: false
+    t.boolean  "year_2015",    default: false
+    t.boolean  "year_2016",    default: false
+    t.boolean  "year_2017",    default: false
+  end
+
+  add_index "car_options", ["car_model_id"], name: "index_car_options_on_car_model_id", using: :btree
+
   create_table "car_owners", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
@@ -127,11 +170,13 @@ ActiveRecord::Schema.define(version: 20170111195302) do
     t.datetime "updated_at",           null: false
     t.integer  "repair_submission_id"
     t.integer  "car_year_id"
+    t.integer  "car_option_id"
     t.integer  "car_owner_id"
   end
 
   add_index "cars", ["car_make_id"], name: "index_cars_on_car_make_id", using: :btree
   add_index "cars", ["car_model_id"], name: "index_cars_on_car_model_id", using: :btree
+  add_index "cars", ["car_option_id"], name: "index_cars_on_car_option_id", using: :btree
   add_index "cars", ["car_owner_id"], name: "index_cars_on_car_owner_id", using: :btree
   add_index "cars", ["car_year_id"], name: "index_cars_on_car_year_id", using: :btree
   add_index "cars", ["repair_submission_id"], name: "index_cars_on_repair_submission_id", using: :btree
@@ -254,8 +299,10 @@ ActiveRecord::Schema.define(version: 20170111195302) do
   add_index "subscribers", ["email"], name: "index_subscribers_on_email", unique: true, using: :btree
 
   add_foreign_key "car_models", "car_makes"
+  add_foreign_key "car_options", "car_models"
   add_foreign_key "cars", "car_makes"
   add_foreign_key "cars", "car_models"
+  add_foreign_key "cars", "car_options"
   add_foreign_key "cars", "car_owners"
   add_foreign_key "cars", "car_years"
   add_foreign_key "cars", "repair_submissions"
