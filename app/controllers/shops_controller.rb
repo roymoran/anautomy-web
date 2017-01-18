@@ -66,7 +66,7 @@ class ShopsController < ApplicationController
   #Action called on to display search result of shops from localhost:3000/search page
   def search_result
     params[:shop_count] = Shop.where("shop_name = ? OR shop_zip = ?", params[:shop_name], params[:shop_zip]).count
-    @shop = Shop.where("shop_name = ? OR shop_zip = ?", params[:shop_name], params[:shop_zip]).limit(10).offset(params[:shop_offset])
+    @shop = Shop.where("lower(shop_name) = ? OR shop_zip = ?", params[:shop_name].downcase, params[:shop_zip]).limit(10).offset(params[:shop_offset])
     @subscriber = Subscriber.new
   end
 
