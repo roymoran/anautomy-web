@@ -63,7 +63,6 @@ class AnautomyController < ApplicationController
   end
 
   def submissions
-
         @car = session[:current_car]
         @repair = session[:current_repair]
         @average_repair_cost = session[:average_repair_cost]

@@ -1,0 +1,48 @@
+<% provide(:title, "Register " + @shop.shop_name) %>
+
+<div class = "container-fluid">
+	<div class="row">
+  <div class="col-md-5 col-sm-offset-1 text-center">
+  	<h2>Register Your Shop</h2>
+    <%= form_for(@shop_user, url: signup_shop_path) do |f| %>
+    <div class = "row">
+    <div class = "col-md-6">
+      <%= f.label :first_name, class: 'hidden' %>
+      <%= f.text_field :first_name, class: 'signup-form', :placeholder => 'First Name' %>
+      </div>
+      <div class = "col-md-6">
+      <%= f.label :last_name, class: 'hidden' %>
+      <%= f.text_field :last_name, class: 'signup-form', :placeholder => 'Last Name' %>
+      </div>
+    </div>
+      <%= f.label :email, class: 'hidden' %>
+      <%= f.email_field :email, class: 'signup-form', :placeholder => 'Business Email' %>
+
+      <%= f.label :password, class: 'hidden' %>
+      <%= f.password_field :password, class: 'signup-form', :placeholder => 'Password' %>
+      
+      <%= f.label :password_confirmation, "Confirmation", class: 'hidden' %>
+      <%= f.password_field :password_confirmation, class: 'signup-form', :placeholder => 'Password Confirmation'  %>
+
+      <%= f.hidden_field :shop_id, :value => @shop.id %>
+      <%= hidden_field_tag :rid, params[:rid] %>
+
+      <%= f.submit "Register " + @shop.shop_name, class: "btn btn-auth-form" %>
+    <% end %>
+    <br><br>
+  </div>
+
+  <div class="col-md-5 text-left">
+    <div class="shop-auth-heading">Why should <%= @shop.shop_name %> be on Innvoy?</div>
+      <div class = "shop-auth-subheading">Innvoy connects you to relevant <strong>new customers</strong> and helps your shop succeed in an increasingly connected world.</div>
+      <div class = "shop-auth-subheading">Innvoy increases your revenue by exposing your shop to the local community.</div>
+      <div class = "shop-auth-subheading">Innvoy makes your shop easy to find based on the services your shop offers and the cars your shop services.</div>
+      <br><br>
+    <br><br>
+  </div>
+
+
+
+
+</div>
+</div>

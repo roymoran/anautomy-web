@@ -1,0 +1,7 @@
+<p>Hi <%= @shop_user.first_name %>,</p>
+
+<p>
+Thanks for registering at Innvoy! Click on the link below to activate your account:
+</p>
+
+<%= link_to "Activate", edit_account_activation_url(@shop_user.activation_token, email: @shop_user.email) %>

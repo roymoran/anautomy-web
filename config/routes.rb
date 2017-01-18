@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'password_resets/new'
+
+  get 'password_resets/edit'
+
+  get 'shop_users/new'
+
+  get 'sessions/new'
+
   root 'anautomy#home'
   get 'home' => 'anautomy#home'
   get 'about' => 'anautomy#about'
@@ -10,10 +18,23 @@ Rails.application.routes.draw do
   get 'results' => "shops#search_result"
 
 
-
-
   get 'repairs' => 'anautomy#repairs'
   get 'submissions' => 'anautomy#submissions'
+  
+  # signup, login, and logout routes for car owners
+  get  '/signup',  to: 'car_owners#new'
+  post '/signup',  to: 'car_owners#create'
+  get    '/login',   to: 'sessions#new'
+  post   '/login',   to: 'sessions#create'
+  delete '/logout',  to: 'sessions#destroy'
+
+  # signup, login, and logout routes for shop users
+  get  '/signup_shop',  to: 'shop_users#new'
+  post '/signup_shop',  to: 'shop_users#create'
+  get    '/login_shop',   to: 'sessions#new_shop'
+  post   '/login_shop',   to: 'sessions#create_shop'
+  delete '/logout_shop',  to: 'sessions#destroy_shop'
+
   get '/anautomy/home'
   get '/repair_submissions/search'
 
@@ -27,6 +48,10 @@ Rails.application.routes.draw do
   resources :anuatomy
   resources :shops
   resources :invoices
+  resources :car_owners
+  resources :shop_users
+  resources :account_activations, only: [:edit]
+  resources :password_resets,     only: [:new, :create, :edit, :update]
   match 'snap', to: 'invoices#new', via: [:get, :post]
 
   resources :anautomy do

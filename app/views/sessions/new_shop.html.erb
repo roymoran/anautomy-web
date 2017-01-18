@@ -1,0 +1,16 @@
+<% provide(:title, "Shop Login") %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+  	<h2>Shop Login</h2>
+    <%= form_for(:session, url: login_shop_path) do |f| %>
+
+      <%= f.label :email %>
+      <%= f.email_field :email, class: 'form-control' %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password, class: 'form-control' %>
+
+      <%= f.submit "Log in", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
