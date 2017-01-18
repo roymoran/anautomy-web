@@ -15,9 +15,8 @@ class CarOwnerMailer < ApplicationMailer
   #
   #   en.car_owner_mailer.password_reset.subject
   #
-  def password_reset
-    @greeting = "Hi"
-
-    mail to: "to@example.org"
+  def password_reset(car_owner)
+    @car_owner = car_owner
+    mail to: car_owner.email, subject: "Password reset"
   end
 end

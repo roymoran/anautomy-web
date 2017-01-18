@@ -1,0 +1,19 @@
+<% provide(:title, 'Reset password') %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+  	<h2 class="text-center">Reset Password</h2>
+  	<%= form_for(@car_owner, url: password_reset_path(params[:id])) do |f| %>
+
+      <%= hidden_field_tag :email, @car_owner.email %>
+
+      <%= f.label :password, class: 'hidden' %>
+      <%= f.password_field :password, class: 'signup-form', :placeholder => 'Password' %>
+
+      <%= f.label :password_confirmation, "Confirmation", class: 'hidden' %>
+      <%= f.password_field :password_confirmation, class: 'signup-form', :placeholder => 'Password Confirmation' %>
+      <br>
+      <br>
+      <%= f.submit "Update Password", class: "btn btn-auth-form" %>
+    <% end %>
+  </div>
+</div>

@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'password_resets/new'
+
+  get 'password_resets/edit'
+
   get 'shop_users/new'
 
   get 'sessions/new'
@@ -47,6 +51,7 @@ Rails.application.routes.draw do
   resources :car_owners
   resources :shop_users
   resources :account_activations, only: [:edit]
+  resources :password_resets,     only: [:new, :create, :edit, :update]
   match 'snap', to: 'invoices#new', via: [:get, :post]
 
   resources :anautomy do

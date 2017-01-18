@@ -199,13 +199,17 @@
 
       <%= f.label :password, class: 'hidden' %>
       <%= f.password_field :password, class: 'login-form', :placeholder => 'Password' %>
-
+      
+      
       <%= f.submit "Log In", class: "btn btn-auth-form" %>
     <% end %>
     <hr class = "auth-form-split">
      <div class = "row">
       <div class = "col-sm-12">
-        <a href="#" data-dismiss="modal" aria-label="Sign-Up" data-toggle="modal" data-target="#signup-modal" >Not signed up? Create a free account now.</a>
+        Not signed up? <a href="#" data-dismiss="modal" aria-label="Sign-Up" data-toggle="modal" data-target="#signup-modal" >Create a free account now.</a>
+      </div>
+      <div class = "col-sm-12">
+        <%= link_to "Forgot password?", new_password_reset_path %>
       </div>
      </div>
       </div>
