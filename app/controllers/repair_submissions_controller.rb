@@ -14,13 +14,13 @@ class RepairSubmissionsController < ApplicationController
 	def create
 		@repairSubmission = RepairSubmission.new(repairSubmission_params)  
 		if @repairSubmission.save 
-		respond_to do |format|
-			#add fallback to html
-		format.js # actually means: if the client ask for js -> return file.js
-	    end
-	    if @repairSubmission.car_option = 0
-	    	@repairSubmission.car_option = nil #special case if car_option is selected as "Not sure"
-	    end
+			respond_to do |format|
+				#add fallback to html
+				format.js # actually means: if the client ask for js -> return file.js
+	    	end
+	    	if @repairSubmission.car_option = 0
+	    		@repairSubmission.car_option = nil #special case if car_option is selected as "Not sure"
+	    	end
 		# @repairSubmission.create_car is used to create and save the associated car to
 		# the repair submission. Params passed by new action is passed as field values
 		@repairSubmission.create_car(car_make_id: @repairSubmission.car_make, car_model_id: @repairSubmission.car_model, car_year_id: @repairSubmission.car_year, car_option_id: @repairSubmission.car_option)
@@ -30,11 +30,11 @@ class RepairSubmissionsController < ApplicationController
 			else
 				@repairSubmission.create_repair(repair_category_id: @repairSubmission.repair_category, repair_name_id: @repairSubmission.repair_name)
 			end
-		@repairSubmission.create_shop_rating(cost_rating: params[:cost_rating], quality_rating: params[:quality_rating], quickness_rating: params[:quickness_rating])
-		@shop.shop_ratings.create(cost_rating: params[:cost_rating], quality_rating: params[:quality_rating], quickness_rating: params[:quickness_rating])
+		@repairSubmission.create_shop_rating(cost_rating: params[:cost_rating], quality_rating: params[:quality_rating], quickness_rating: params[:quickness_rating], shop_id: @shop.id)
+		#@shop.shop_ratings.create(cost_rating: params[:cost_rating], quality_rating: params[:quality_rating], quickness_rating: params[:quickness_rating])
 		
 		# Email user
-		SubscriberMailer.repair_submission_email(@repairSubmission).deliver_now
+		#SubscriberMailer.repair_submission_email(@repairSubmission).deliver_now
 
 		else
 			respond_to do |format|
