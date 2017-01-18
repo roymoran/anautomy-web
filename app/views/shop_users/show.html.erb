@@ -1,0 +1,10 @@
+<% provide(:title, @shop_user.shop.shop_name) %>
+<div class = "container-fluid">
+	<div class="col-sm-12">
+		<p>
+			Name: <%= @shop_user.first_name %><br>
+			Email: <%= @shop_user.email %><br>
+			Shop Name: <%= @shop_user.shop.shop_name %>
+		</p>
+	</div>
+</div>
