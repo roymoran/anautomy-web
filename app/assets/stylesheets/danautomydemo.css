@@ -1367,21 +1367,36 @@ h1:before {
   min-height:500px;
 }
 
+.main-headline-landing{
+  font-size:2.5em; 
+  color:#52BB49; 
+  font-family:'Roboto'; 
+  font-weight:400; 
+}
+.main-headline-padding{
+  padding-top:10%; 
+  padding-bottom:0;
+}
+.sub-headline-landing{
+  font-size:1.3em; 
+  color:#52BB49; 
+  font-family:'Roboto'; 
+  font-weight:300;
+  padding-bottom:20px;
+}
+
 .main-headline{
   font-size:2.3em; 
   color:#52BB49; 
   font-family:'Roboto'; 
   font-weight:300; 
 }
-.main-headline-padding{
-  padding-top:40px; 
-  padding-bottom:25px;
-}
 .sub-headline{
   font-size:1em; 
   color:#52BB49; 
   font-family:'Roboto'; 
   font-weight:300;
+  padding-bottom:20px;
 }
 
 .banner_jaguar{
