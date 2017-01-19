@@ -2,23 +2,24 @@
 
 <div class = "container-fluid">
 	<div class="row">
-  <div class="col-md-6 col-md-offset-3 text-center">
-  	<h2>Sign up</h2>
+  <div class="col-sm-4 col-sm-offset-4 text-center">
+  	<h2 class="main-headline">Sign up</h2>
+    <br>
     <%= form_for(@car_owner, url: signup_path) do |f| %>
-      <%= f.label :name %>
-      <%= f.text_field :name %>
+      <%= f.label :name, class: "hidden" %>
+      <%= f.text_field :name, class: "signup-form", :placeholder => "Name" %>
+      
+      <%= f.label :email, class: "hidden" %>
+      <%= f.email_field :email,  class: "signup-form", :placeholder => "Email" %>
+      
+      <%= f.label :password, class: "hidden" %>
+      <%= f.password_field :password,  class: "signup-form", :placeholder => "Password" %>
+      
+      <%= f.label :password_confirmation, "Confirmation", class: "hidden" %>
+      <%= f.password_field :password_confirmation,  class: "signup-form", :placeholder => "Password Confirmation" %>
       <br>
-      <%= f.label :email %>
-      <%= f.email_field :email %>
       <br>
-      <%= f.label :password %>
-      <%= f.password_field :password %>
-      <br>
-      <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation %>
-      <br>
-      <br>
-      <%= f.submit "Create my account", class: "btn btn-primary" %>
+      <%= f.submit "Create my account", class: "btn btn-auth-form" %>
     <% end %>
     <br><br>
   </div>
