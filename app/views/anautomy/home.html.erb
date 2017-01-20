@@ -3,27 +3,44 @@
 <a id = "signup" name="signup"></a>
 <div class = "container-fluid main-container"> 
 	<div class = "row">
-		<div class = "col-md-6 col-md-offset-3 main-headline text-center main-headline-padding">
-			Creating a Transparent Car Repair Experience
+		<div class = "col-md-6 col-md-offset-3 main-headline-landing text-center main-headline-padding">
+			Find the best value for your repair
 		</div>
+    <div class = "col-md-6 col-md-offset-3 text-center sub-headline-landing">
+      Discover how much others are paying for their car repairs and where they are getting the job done.
+    </div>
 	</div>
-	<div class = "row"> 
+  <div class = "row">
+  <%= form_tag({controller: "shops", action: "search_result"}, method: "get", class: "") do %>
+          <div class="col-sm-4 col-sm-offset-1 text-center">
+            <%= text_field_tag(:shop_name, nil, {placeholder: "Car", class: "signup-form"}) %>
+          </div>
+          <div class="col-sm-4 text-center">
+            <%= text_field_tag(:shop_zip, nil, {placeholder: "Repair",  class: "signup-form"}) %>
+          </div>
+            <div class="col-sm-2 text-center">
+            <%= submit_tag("Find shop",  {class: "btn btn-auth-form mp-shop-search"}) %>
+          </div>
+          <%= hidden_field_tag :shop_offset, 0 %>
+        <% end %>
+        </div>
+	<!--<div class = "row"> 
      <div class = "visible-xs col-md-6 text-center">
       <iframe src="https://player.vimeo.com/video/153328983" width="100%" height="281px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
       </div>
       <div class = "hidden-xs col-md-6 col-md-offset-3 text-center">
         <iframe src="https://player.vimeo.com/video/153328983" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
       </div>
-	</div>
-	<div class = "row">
+	</div> -->
+<!--	<div class = "row">
 		<div class="col-md-6 col-md-offset-3">
-			<div class="text-center">
-				<div class = "row">
+			<div class="text-center"> -->
+				<!--<div class = "row">
                 	<div class = "text-center col-sm-9 col-sm-offset-1" style = "padding-top: 15px;">
                 		<h5 class = "main-launch-message">Bring transparency to auto repair by being part of our early launch.</h5>
             		</div>
-            	</div>
-		 		<div class = "row" >
+            	</div>-->
+		 		<!--<div class = "row" >
                 	<div class =  "col-md-12" style = "padding-bottom: 15px;">
                 		<div class = "row">
                     		<%= form_for @subscriber, :html => {:id => 'subscriber_form', :class => ''}, remote: true do |f|%>
@@ -41,12 +58,12 @@
                  			<% end %>
             			</div>
             		</div>
-       		 	</div>
-			</div>
+       		 	</div>-->
+			<!--</div>
 		</div>
 		<div class = "col-md-3">
 		</div>
-	</div>
+	</div> -->
 </div>
 <!--end main container section-->
 
@@ -111,8 +128,10 @@
                                 <% end %>
                         	</div>
                         	<% end %>
+                          
                     	</div>
                 	</div>
+
         		</div>
     		</div>
    		</div>
@@ -154,5 +173,33 @@
             });
         });
 
+      function geoFindMe() {
+  var output = document.getElementById("out");
+
+  if (!navigator.geolocation){
+    output.innerHTML = "<p>Geolocation is not supported by your browser</p>";
+    return;
+  }
+
+  function success(position) {
+    var latitude  = position.coords.latitude;
+    var longitude = position.coords.longitude;
+
+    output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>';
+
+    var img = new Image();
+    img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false";
+
+    output.appendChild(img);
+  }
+
+  function error() {
+    output.innerHTML = "Unable to retrieve your location";
+  }
+
+  output.innerHTML = "<p>Locating…</p>";
+
+  navigator.geolocation.getCurrentPosition(success, error);
+}
   
  </script>
