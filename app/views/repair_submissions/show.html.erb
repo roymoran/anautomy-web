@@ -1,4 +1,4 @@
-<% provide(:title, "Demo") %>
+<% provide(:title, @repair_name + " Repairs for " + @car_make[0].name) %>
 
 <!-- Page Content -->
     <div class="container-fluid mainContainerPadding">
@@ -19,7 +19,7 @@
 <div class = "submissionsRepairTitle">
 <h5><ul><%= @repair_name %> for <%= @car %></ul></h5>
 </div>
-<div class = "allSubissionsBlock container-fluid main_tool_tip" title = "We'll only show you what matters - shops with above average rating that charged a below average price for this repair.">
+<div class = "allSubissionsBlock container-fluid">
 
   <% @final_submissions.each do |s| %>
   <div class = "submissionBlock"> 
@@ -29,19 +29,19 @@
     <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2">
         <p class="text-center submissionBox">
           <span>Submission</span>
-          <span class = "shopName"><%= CarYear.find(s.car.car_year_id).year %> <%= CarModel.find(s.car.car_model_id).name %></span></p>
+          <span class = "shopName"><%= s.shop.shop_name %> </span></p>
 </div>
 <div class = "col-md-6 col-md-offset-0 col-xs-8 col-xs-offset-2">
-   <div class = "submission-title text-center"><%= s.shop.shop_name %> - $<%= s.total_cost %>
+   <div class = "submission-title text-center"><%= CarYear.find(s.car.car_year_id).year %> <%= CarMake.find(s.car.car_make_id).name %> <%= CarModel.find(s.car.car_model_id).name%> - $<%= s.total_cost %>
       </div>
-    <p class="text-left review-text "><i>"Real honest shop. It's the place I reccommend all my friends and family."</i></p>
+    <p class="text-left review-text "></p>
 </div>
 <div class = "col-md-2 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center submissionBlockPositioning"><span class = "rating star5"></span></p>
+    <p class="text-center submissionBlockPositioning"><span class = "rating star5"></span><span class = "reviewText"><a href = "#review">Read Review</a></span></p>
 </div>
 <div class = "col-md-1 col-md-offset-0 col-xs-12">
-    <a class="btn demo_button_custom_submission  hidden-xs" href="/home#signup"><i class="fa fa-caret-right submissionRepairIcon"></i></a>
-    <a class="btn demo_button_custom_submission_sm  visible-xs" href="/home#signup"><i class="fa fa-caret-right submissionRepairIcon"></i></a>
+    <a class="btn demo_button_custom_submission  hidden-xs" href="#"><i class="fa fa-caret-right submissionRepairIcon"></i></a>
+    <a class="btn demo_button_custom_submission_sm  visible-xs" href="#"><i class="fa fa-caret-right submissionRepairIcon"></i></a>
 </div>
 </div>
   </div>
@@ -96,13 +96,13 @@
 <div class = " submissionBlock"> 
     <div class = "row">
     <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center submissionBox"><span>Submission</span><span class = "shopName">xxx</span></p>
+    <p class="text-center submissionBox"><span>Submission</span><span class = "shopName">Jeff’s Auto Repair</span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-4 col-xs-offset-2">
-    <p class="text-center submissionBlockPositioning"><span>Total Cost</span><span class = "repairCostBoxPriceSubmissionsPage">$xxx</span></p>
+    <p class="text-center submissionBlockPositioning"><span>Total Cost</span><span class = "repairCostBoxPriceSubmissionsPage">$</span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-4">
-    <p class="text-center submissionBlockPositioning" ><span>Parts/Labor</span><span class = "repairCostBoxPriceSubmissionsPage">$xxx</span></p>
+    <p class="text-center submissionBlockPositioning" ><span>Parts/Labor</span><span class = "repairCostBoxPriceSubmissionsPage">$</span></p>
 </div>
 <div class = "col-md-2 col-md-offset-0 col-xs-8 col-xs-offset-2">
     <p class="text-center submissionBlockPositioning"><span class = " rating star4"></span><span class = "reviewText"><a href = "#review">Read Review</a></span></p>
@@ -117,13 +117,13 @@
 <div class = " submissionBlock"> 
     <div class = "row">
     <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center submissionBox"><span>Submission</span><span class = "shopName">xxx</span></p>
+    <p class="text-center submissionBox"><span>Submission</span><span class = "shopName">Johnson’s Auto Repair</span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-4 col-xs-offset-2">
-    <p class="text-center submissionBlockPositioning"><span>Total Cost</span><span class = "repairCostBoxPriceSubmissionsPage">$xxx</span></p>
+    <p class="text-center submissionBlockPositioning"><span>Total Cost</span><span class = "repairCostBoxPriceSubmissionsPage">$</span></p>
 </div>
 <div class = "col-md-3 col-md-offset-0 col-xs-4">
-    <p class="text-center submissionBlockPositioning" ><span>Parts/Labor</span><span class = "repairCostBoxPriceSubmissionsPage">$xxx</span></p>
+    <p class="text-center submissionBlockPositioning" ><span>Parts/Labor</span><span class = "repairCostBoxPriceSubmissionsPage">$</span></p>
 </div>
 <div class = "col-md-2 col-md-offset-0 col-xs-8 col-xs-offset-2">
     <p class="text-center submissionBlockPositioning"><span class = " rating half3star"></span><span class = "reviewText"><a href = "#review">Read Review</a></span></p>
@@ -181,114 +181,6 @@
   </div>
 
 
-  <div class = " submissionBlock"> 
-    <div class = "row">
-    <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center submissionBox"><span>Submission</span><span class = "shopName">Shop Name</span></p>
-</div>
-<div class = "col-md-3 col-md-offset-0 col-xs-4 col-xs-offset-2">
-    <p class="text-center submissionBlockPositioning"><span>Total Cost</span><span class = "repairCostBoxPriceSubmissionsPage">$<%= @seventhResult %></span></p>
-</div>
-<div class = "col-md-3 col-md-offset-0 col-xs-4">
-    <p class="text-center submissionBlockPositioning" ><span>Parts/Labor</span><span class = "repairCostBoxPriceSubmissionsPage">$<%=@seventhPart%>/$<%=@seventhLabor%></span></p>
-</div>
-<div class = "col-md-2 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center submissionBlockPositioning"><span class = " rating star2"></span><span class = "reviewText"><a href = "#review">Read Review</a></span></p>
-</div>
-<div class = "col-md-1 col-md-offset-0 col-xs-12">
-    <a class="btn demo_button_custom_submission hidden-sm hidden-xs" href="/home#signup"><i class="fa fa-caret-right submissionRepairIcon"></i></a>
-  <a class="btn demo_button_custom_submission_sm visible-sm visible-xs" href="/home#signup"><i class="fa fa-caret-right submissionRepairIcon"></i></a>
-</div>
-</div>
-  </div>
-
-  <div class = " submissionBlock"> 
-    <div class = "row">
-    <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center submissionBox"><span>Submission</span><span class = "shopName">Shop Name</span></p>
-</div>
-<div class = "col-md-3 col-md-offset-0 col-xs-4 col-xs-offset-2">
-    <p class="text-center submissionBlockPositioning"><span>Total Cost</span><span class = "repairCostBoxPriceSubmissionsPage">$<%= @eighthResult %></span></p>
-</div>
-<div class = "col-md-3 col-md-offset-0 col-xs-4">
-    <p class="text-center submissionBlockPositioning" ><span>Parts/Labor</span><span class = "repairCostBoxPriceSubmissionsPage">$<%=@eighthPart%>/$<%=@eighthLabor%></span></p>
-</div>
-<div class = "col-md-2 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center submissionBlockPositioning"><span class = " rating half1star"></span><span class = "reviewText"><a href = "#review">Read Review</a></span></p>
-</div>
-<div class = "col-md-1 col-md-offset-0 col-xs-12">
-    <a class="btn demo_button_custom_submission hidden-sm hidden-xs" href="/home#signup"><i class="fa fa-caret-right submissionRepairIcon"></i></a>
-  <a class="btn demo_button_custom_submission_sm visible-sm visible-xs" href="/home#signup"><i class="fa fa-caret-right submissionRepairIcon"></i></a>
-</div>
-</div>
-  </div>
-
-
-<div class = " submissionBlock"> 
-    <div class = "row">
-    <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center submissionBox"><span>Submission</span><span class = "shopName">Shop Name</span></p>
-</div>
-<div class = "col-md-3 col-md-offset-0 col-xs-4 col-xs-offset-2">
-    <p class="text-center submissionBlockPositioning"><span>Total Cost</span><span class = "repairCostBoxPriceSubmissionsPage">$<%= @ninthResult %></span></p>
-</div>
-<div class = "col-md-3 col-md-offset-0 col-xs-4">
-    <p class="text-center submissionBlockPositioning" ><span>Parts/Labor</span><span class = "repairCostBoxPriceSubmissionsPage">$<%=@ninthPart%>/$<%=@ninthLabor%></span></p>
-</div>
-<div class = "col-md-2 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center submissionBlockPositioning"><span class = " rating star1"></span><span class = "reviewText"><a href = "#review">Read Review</a></span></p>
-</div>
-<div class = "col-md-1 col-md-offset-0 col-xs-12">
-    <a class="btn demo_button_custom_submission hidden-sm hidden-xs" href="/home#signup"><i class="fa fa-caret-right submissionRepairIcon"></i></a>
-  <a class="btn demo_button_custom_submission_sm visible-sm visible-xs" href="/home#signup"><i class="fa fa-caret-right submissionRepairIcon"></i></a>
-</div>
-</div>
-  </div>
-
-<div class = " submissionBlock"> 
-    <div class = "row">
-    <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center submissionBox"><span>Submission</span><span class = "shopName">Shop Name</span></p>
-</div>
-<div class = "col-md-3 col-md-offset-0 col-xs-4 col-xs-offset-2">
-    <p class="text-center submissionBlockPositioning"><span>Total Cost</span><span class = "repairCostBoxPriceSubmissionsPage">$<%= @tenthResult %></span></p>
-</div>
-<div class = "col-md-3 col-md-offset-0 col-xs-4">
-    <p class="text-center submissionBlockPositioning" ><span>Parts/Labor</span><span class = "repairCostBoxPriceSubmissionsPage">$<%=@tenthPart%>/$<%=@tenthLabor%></span></p>
-</div>
-<div class = "col-md-2 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center submissionBlockPositioning"><span class = " rating halfstar"></span><span class = "reviewText"><a href = "#review">Read Review</a></span></p>
-</div>
-<div class = "col-md-1 col-md-offset-0 col-xs-12">
-   <a class="btn demo_button_custom_submission hidden-sm hidden-xs" href="/home#signup"><i class="fa fa-caret-right submissionRepairIcon"></i></a>
-  <a class="btn demo_button_custom_submission_sm visible-sm visible-xs" href="/home#signup"><i class="fa fa-caret-right submissionRepairIcon"></i></a>
-</div>
-</div>
-  </div>
-
-
-  <div class = " submissionBlock"> 
-    <div class = "row">
-    <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center submissionBox"><span>Submission</span><span class = "shopName">Shop Name</span></p>
-</div>
-<div class = "col-md-3 col-md-offset-0 col-xs-4 col-xs-offset-2">
-    <p class="text-center submissionBlockPositioning"><span>Total Cost</span><span class = "repairCostBoxPriceSubmissionsPage">$<%= @eleventhResult %></span></p>
-</div>
-<div class = "col-md-3 col-md-offset-0 col-xs-4">
-    <p class="text-center submissionBlockPositioning" ><span>Parts/Labor</span><span class = "repairCostBoxPriceSubmissionsPage">$<%=@eleventhPart%>/$<%=@eleventhLabor%></span></p>
-</div>
-<div class = "col-md-2 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center submissionBlockPositioning"><span class = " rating halfstar"></span><span class = "reviewText"><a href = "#review">Read Review</a></span></p>
-</div>
-<div class = "col-md-1 col-md-offset-0 col-xs-12">
-    <a class="btn demo_button_custom_submission hidden-sm hidden-xs" href="/home#signup"><i class="fa fa-caret-right submissionRepairIcon"></i></a>
-  <a class="btn demo_button_custom_submission_sm visible-sm visible-xs" href="/home#signup"><i class="fa fa-caret-right submissionRepairIcon"></i></a>
-</div>
-</div>
-  </div>
-
-
 </div>
 <br>
 <br>
@@ -298,7 +190,7 @@
       </div>
 
 <div class = "container-fluid">
-  <div class = "col-sm-6 backgroundVehicleImage repair_info_tooltip" title = "Valuable information about the repair." style = "background: url(<%= @image_link %>) no-repeat center center; background-size: auto 100%;">
+  <div class = "col-sm-6 backgroundVehicleImage" style = "background: url(<%= @image_link %>) no-repeat center center; background-size: auto 100%;">
     <div class = "background_main_black_repairs">
       
       <div class = "row">
@@ -366,17 +258,3 @@
     <%= javascript_include_tag "jquery.js" %>
 
     <%= javascript_include_tag "jquery-ui.js" %>
-
-    <!--Range slider-->
-    <%= javascript_include_tag "ion.rangeSlider.js" %>
-
-<script>
-
-$( "#accordion, #accordion2, #accordion3" ).accordion({
-      collapsible: true,
-      heightStyle: "content",
-      active: false
-    });
-    </script>
-
-<!-- Source http://stackoverflow.com/questions/21166436/jquery-accordion-change-font-awesome-icon-class-on-click -->

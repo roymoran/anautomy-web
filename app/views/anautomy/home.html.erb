@@ -23,14 +23,7 @@
           </div>
         <% end %>
         </div>
-	<!--<div class = "row"> 
-     <div class = "visible-xs col-md-6 text-center">
-      <iframe src="https://player.vimeo.com/video/153328983" width="100%" height="281px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-      </div>
-      <div class = "hidden-xs col-md-6 col-md-offset-3 text-center">
-        <iframe src="https://player.vimeo.com/video/153328983" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-      </div>
-	</div> -->
+
 <!--	<div class = "row">
 		<div class="col-md-6 col-md-offset-3">
 			<div class="text-center"> -->
@@ -102,35 +95,13 @@
                 		</div>
     				</div>
             	</div>
-            	<div class = "row">
-                	<div class =  "col-md-4 col-md-offset-4" style = "padding-top: 20px;">
-                		<h5 class = "text-center launch-message">Try the demo. Search for any car and repair.</h5>
-            		</div>
-            	</div>
-            	<div class = "row" >
-                	<div class =  "col-md-9 col-md-offset-2 ">
-                		<div class = "row">
-                			<%= form_tag(anautomy_home_path(:controller => "anautomy", :action => "home"), :method => "get") do%>
-                			<div class =  "col-xs-5 col-xs-offset-3">
-                				<div class="form-group ">
-                					<label class = "sr-only">What kind of car?</label>
-                                	<%= text_field_tag :car_type, params[:null], :class => "form-control form-custom", placeholder: 'WHAT KIND OF CAR?' %>
-                            	</div>
-                            	<div class="form-group">
-                                	<label class = "sr-only">What Repair?</label>
-                                	<%= text_field_tag :repair, params[:null], :class => "form-control form-custom", placeholder: 'WHAT REPAIR?'%>
-                            	</div>
-                        	</div>
-                        	<div class =  "col-xs-1">
-                        		<%= button_tag(type: "submit", class: "btn main_btn_custom") do %>
-                                <i class="fa fa-search fa-inverse fa-2x" style = "color: #52BB49"></i>
-                                <% end %>
-                        	</div>
-                        	<% end %>
-
-                    	</div>
-                	</div>
-
+            	<div class = "row" style="padding-top:20px; padding-bottom:40px;">
+                			<div class = "visible-xs col-md-6 text-center">
+      <iframe src="https://player.vimeo.com/video/153328983" width="100%" height="281px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      </div>
+      <div class = "hidden-xs col-md-6 col-md-offset-3 text-center">
+        <iframe src="https://player.vimeo.com/video/153328983" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      </div>
         		</div>
     		</div>
    		</div>

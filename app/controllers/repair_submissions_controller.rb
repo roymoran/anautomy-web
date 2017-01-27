@@ -51,9 +51,9 @@ class RepairSubmissionsController < ApplicationController
 
 	def show
 		@car = params[:car]
-		car_make = params[:car].split(' ')[0]
-		car_model = params[:car].split(' ')[1]
-		@repair_name = params[:repair_name]
+		car_make = params[:car].split(' ', 2)[0]
+		car_model = params[:car].split(' ', 2)[1]
+		@repair_name = params[:repair_name].dup()
 		
 		repair_name = params[:repair_name]
 		repair_name << "%"
@@ -64,9 +64,9 @@ class RepairSubmissionsController < ApplicationController
 		car_model << "%"
 		car_model.prepend("%")
 
-		@repair = Repair.where("repair_name_custom LIKE ?", repair_name)
-		@car_make = CarMake.where("name LIKE ?", car_make)
-		@car_model = CarModel.where("name LIKE ?", car_model)
+		@repair = Repair.where("lower(repair_name_custom) LIKE lower(?)", repair_name)
+		@car_make = CarMake.where("lower(name) LIKE lower(?)", car_make)
+		@car_model = CarModel.where("lower(name) LIKE lower(?)", car_model)
 
 		@car_make_id = @car_make.ids[0]
 		@car_model_ids = []
