@@ -49,6 +49,47 @@ class RepairSubmissionsController < ApplicationController
 		
 	end
 
+	def show
+		@car = params[:car]
+		car_make = params[:car].split(' ')[0]
+		car_model = params[:car].split(' ')[1]
+		@repair_name = params[:repair_name]
+		
+		repair_name = params[:repair_name]
+		repair_name << "%"
+		repair_name.prepend("%")
+		
+		car_make << "%"
+		car_make.prepend("%")
+		car_model << "%"
+		car_model.prepend("%")
+
+		@repair = Repair.where("repair_name_custom LIKE ?", repair_name)
+		@car_make = CarMake.where("name LIKE ?", car_make)
+		@car_model = CarModel.where("name LIKE ?", car_model)
+
+		@car_make_id = @car_make.ids[0]
+		@car_model_ids = []
+		@repair_submission_ids = []
+
+		@repair.each do |repair_sub|
+			@repair_submission_ids.push(repair_sub.repair_submission_id)
+		end
+
+		@car_model.each do |model|
+			@car_model_ids.push(model.id)
+		end
+
+		@final_submissions = []
+		@repair_submission_ids.each do |id|
+			@repair_submission_car = Car.where(repair_submission_id: id)
+			if @repair_submission_car[0].car_make_id == @car_make_id && @car_model_ids.include?(@repair_submission_car[0].car_model_id)
+				@final_submissions.push(RepairSubmission.find(id))
+			end
+		end 
+
+	end
+
 	def set_shop
     	@shop = Shop.find(params[:shop_id])
     end

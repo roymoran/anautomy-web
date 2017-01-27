@@ -11,17 +11,16 @@
     </div>
 	</div>
   <div class = "row">
-  <%= form_tag({controller: "shops", action: "search_result"}, method: "get", class: "") do %>
+  <%= form_tag({controller: "repair_submissions", action: "show"}, method: "get", class: "") do %>
           <div class="col-sm-4 col-sm-offset-1 text-center">
-            <%= text_field_tag(:shop_name, nil, {placeholder: "Car", class: "signup-form"}) %>
+            <%= text_field_tag(:car, nil, {placeholder: "Car (e.g. Mazda 3)", class: "signup-form"}) %>
           </div>
           <div class="col-sm-4 text-center">
-            <%= text_field_tag(:shop_zip, nil, {placeholder: "Repair",  class: "signup-form"}) %>
+            <%= text_field_tag(:repair_name, nil, {placeholder: "Repair (e.g.  Brake Replacement)",  class: "signup-form"}) %>
           </div>
             <div class="col-sm-2 text-center">
             <%= submit_tag("Find shop",  {class: "btn btn-auth-form mp-shop-search"}) %>
           </div>
-          <%= hidden_field_tag :shop_offset, 0 %>
         <% end %>
         </div>
 	<!--<div class = "row"> 
@@ -128,7 +127,7 @@
                                 <% end %>
                         	</div>
                         	<% end %>
-                          
+
                     	</div>
                 	</div>
 
