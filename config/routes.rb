@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get 'submission' => 'anautomy#submission'
   #get 'new_submission' => "repair_submissions#new"
   get 'search' => "repair_submissions#search"
+  get 'show' => "repair_submissions#show"
   get 'results' => "shops#search_result"
 
 

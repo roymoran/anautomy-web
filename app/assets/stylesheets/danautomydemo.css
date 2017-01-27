@@ -891,13 +891,13 @@ border-radius: 0; }
 }
 
 .submissionBlockPositioning{
-  padding-top: 15px;
+  padding-top: 25px;
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 1.2em;
 }
 .submissionBox{
-  padding-top: 15px;
+  padding-top: 20px;
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
   font-size: 1.3em;
@@ -907,6 +907,22 @@ border-radius: 0; }
   font-size: 0.8em;
 
 }
+
+.submission-title{
+  color: #52BB49;
+  font-size: 1.3em;
+  padding-top: 10px;
+
+}
+
+.review-text{
+  color: #333333;
+  font-size: 1.0em;
+  padding-top: 5px;
+
+}
+
+
 .submissionRepairIcon{
   text-decoration: none;
   color: #ffffff;
@@ -1590,7 +1606,7 @@ padding-bottom: 100px;
   background: url('https://i.imgur.com/TbQHSdsh.png') no-repeat;
      /* Set rules to fill background */
   background-size: cover;
-  min-height: 500px;
+  min-height: 400px;
 }
 .how_title{
   text-transform: uppercase;
@@ -1956,7 +1972,13 @@ font-family: 'Josefin Sans', sans-serif;
   font-family: 'Roboto', sans-serif; 
   font-weight:300; 
   }
-
+.profile-text{
+  font-size:1.2em;
+  color:#545E69; 
+  text-align:left; 
+  font-family: 'Roboto', sans-serif; 
+  font-weight:400; 
+}
   .email-qs-text{
   font-size:1.3em; 
   color:#52BB49; 
