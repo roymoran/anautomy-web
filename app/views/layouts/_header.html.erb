@@ -39,19 +39,19 @@
 
                     <li class = "hidden-xs">
                         <div class = "headerButton">
-                            <a class="ghost-button-signup page-scroll" data-toggle="modal" data-target="#signup-modal" href="">Sign Up</a>
+                            <a class="ghost-button-signup page-scroll mp-signup-modal" data-toggle="modal" data-target="#signup-modal" href="">Sign Up</a>
                         </div>
                     </li>
                     <li class = "hidden-xs">
                         <div class = "headerButton">
-                            <a class="ghost-button-login closed_header_tooltip" data-toggle="modal" data-target="#login-modal" href="">Log In</a>
+                            <a class="ghost-button-login mp-login-modal" data-toggle="modal" data-target="#login-modal" href="">Log In</a>
                         </div>
                     </li>
                     <li>
-                        <a class="navText visible-xs" style="color:#52BB49;" data-toggle="modal" data-target="#signup-modal" href="">SIGN UP</a>
+                        <a class="navText visible-xs mp-signup-modal" style="color:#52BB49;" data-toggle="modal" data-target="#signup-modal" href="">SIGN UP</a>
                     </li>
                     <li>
-                        <a class="navText visible-xs closed_header_tooltip" data-toggle="modal" data-target="#login-modal" href="">LOG IN</a>
+                        <a class="navText visible-xs mp-login-modal" data-toggle="modal" data-target="#login-modal" href="">LOG IN</a>
                     </li>
 
                      <li>
@@ -153,10 +153,10 @@
       <div class="modal-body">
       <%= form_for(@car_owner, url: signup_path) do |f| %>
       <%= f.label :name, class: 'hidden' %>
-      <%= f.text_field :name, class: 'signup-form', :placeholder => 'Name' %>
+      <%= f.text_field :name, class: 'signup-form mp-signup-modal-name', :placeholder => 'Name' %>
       
       <%= f.label :email, class: 'hidden' %>
-      <%= f.email_field :email, class: 'signup-form', :placeholder => 'Email Address' %>
+      <%= f.email_field :email, class: 'signup-form mp-signup-modal-email', :placeholder => 'Email Address' %>
       
       <%= f.label :password, class: 'hidden' %>
       <%= f.password_field :password, class: 'signup-form', :placeholder => 'Password' %>
@@ -164,7 +164,7 @@
       <%= f.label :password_confirmation, "Confirmation", class: 'hidden' %>
       <%= f.password_field :password_confirmation, class: 'signup-form', :placeholder => 'Confirm Password' %>
       
-      <%= f.submit "Sign Up", class: "btn btn-auth-form" %>
+      <%= f.submit "Sign Up", class: "btn btn-auth-form mp-signup-modal-submitted" %>
     <% end %>
 
     <div class = "row">
@@ -201,7 +201,7 @@
       <%= f.password_field :password, class: 'login-form', :placeholder => 'Password' %>
       
       
-      <%= f.submit "Log In", class: "btn btn-auth-form" %>
+      <%= f.submit "Log In", class: "btn btn-auth-form mp-login-modal-submitted" %>
     <% end %>
     <hr class = "auth-form-split">
      <div class = "row">

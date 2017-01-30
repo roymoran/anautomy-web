@@ -13,13 +13,13 @@
   <div class = "row">
   <%= form_tag({controller: "repair_submissions", action: "show"}, method: "get", class: "") do %>
           <div class="col-sm-4 col-sm-offset-1 text-center">
-            <%= text_field_tag(:car, nil, {placeholder: "Car (e.g. Mazda 3)", class: "signup-form"}) %>
+            <%= text_field_tag(:car, nil, {placeholder: "Car (e.g. Mazda 3)", class: "signup-form mp-car-searched"}) %>
           </div>
           <div class="col-sm-4 text-center">
-            <%= text_field_tag(:repair_name, nil, {placeholder: "Repair (e.g.  Brake Replacement)",  class: "signup-form"}) %>
+            <%= text_field_tag(:repair_name, nil, {placeholder: "Repair (e.g.  Brake Replacement)",  class: "signup-form mp-repair-name-searched"}) %>
           </div>
             <div class="col-sm-2 text-center">
-            <%= submit_tag("Find shop",  {class: "btn btn-auth-form mp-shop-search"}) %>
+            <%= submit_tag("Find shop",  {class: "btn btn-auth-form mp-repair-searched"}) %>
           </div>
         <% end %>
         </div>
