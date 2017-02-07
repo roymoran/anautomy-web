@@ -31,7 +31,11 @@
 				Our mission is to bring transparency to your car repair experience by providing a community and information. Pricing information available to all car owners and a community driven by those same car owners. 
 			</p> 
 			<p>
-				Through the power of information the anxiety car owners experience from visiting a local shop is relieved, and the feeling of being overcharged subsides. Our purpose won't be without effort, and we hope you <a href = "/home#signup">join us</a> on our mission.
+				<% if logged_in? %>
+				Through the power of information the anxiety car owners experience from visiting a local shop is relieved, and the feeling of being overcharged subsides. Our purpose won't be without effort, and we hope you join us on our mission.
+				<% else %>
+				Through the power of information the anxiety car owners experience from visiting a local shop is relieved, and the feeling of being overcharged subsides. Our purpose won't be without effort, and we hope you <a class="mp-signup-modal" data-toggle="modal" data-target="#signup-modal" href="">join us</a> on our mission.
+				<% end %>
 			</p> 
 		</div>
 	</div>
