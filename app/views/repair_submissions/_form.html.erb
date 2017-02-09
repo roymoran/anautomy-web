@@ -132,9 +132,7 @@
 
     </div>
   </div>
-    <!--
-    <%= f.text_area :review, class: '',:rows => 3, :cols => 71,  :placeholder => "POVIDE A SHORT DESCRIPTION OF YOUR EXPERIENCE (OPTIONAL)"%>
-  -->
+    <%= f.text_area :review, class: '',:rows => 3, :cols => 71,  :placeholder => "SHORT DESCRIPTION OF YOUR EXPERIENCE (OPTIONAL)"%>
     <%= hidden_field_tag :shop_id, @repairSubmission.shop_id %>
     <%= f.hidden_field :shop_id, :value => @repairSubmission.shop_id %>
     <%= f.hidden_field :repair_category, {:value => nil, :class => 'repair-cat-hidden'} %>
