@@ -172,8 +172,8 @@ ActiveRecord::Schema.define(version: 20170118042519) do
     t.datetime "updated_at",           null: false
     t.integer  "repair_submission_id"
     t.integer  "car_year_id"
-    t.integer  "car_option_id"
     t.integer  "car_owner_id"
+    t.integer  "car_option_id"
   end
 
   add_index "cars", ["car_make_id"], name: "index_cars_on_car_make_id", using: :btree
