@@ -9,7 +9,9 @@ class SessionsController < ApplicationController
       log_in @car_owner
       remember @car_owner
       redirect_to @car_owner
-      
+
+      puts "hello"
+
       #if user.activated?
         #log_in user
         #params[:session][:remember_me] == '1' ? remember(user) : forget(user)
@@ -27,7 +29,7 @@ class SessionsController < ApplicationController
       render 'new'
     end
   end
-  
+
   def destroy
   	log_out if logged_in?
     redirect_to root_url
@@ -44,8 +46,8 @@ class SessionsController < ApplicationController
       # Log the user in and redirect to the user's show page.
       shop_user_log_in @shop_user
       shop_user_remember @shop_user
-      redirect_to @shop_user 
-      
+      redirect_to @shop_user
+
       #if user.activated?
         #log_in user
         #params[:session][:remember_me] == '1' ? remember(user) : forget(user)
@@ -63,7 +65,7 @@ class SessionsController < ApplicationController
       render 'new'
     end
   end
-  
+
   def destroy_shop
     shop_user_log_out if shop_user_logged_in?
     redirect_to root_url
