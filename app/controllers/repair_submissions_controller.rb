@@ -94,6 +94,7 @@ class RepairSubmissionsController < ApplicationController
     	@shop = Shop.find(params[:shop_id])
     end
 
+    # Functions used to make async calls to populate car details select boxes 
     def fetch_car_makes
     	@makes = CarMake.where(params[:car_year] + " = TRUE").order(name: :asc)
     	respond_to do |format|
