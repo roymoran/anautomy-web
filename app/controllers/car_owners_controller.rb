@@ -1,4 +1,5 @@
 class CarOwnersController < ApplicationController
+  require 'net/http'
   before_action :logged_in_car_owner, only: [:edit, :update, :show]
   before_action :correct_car_owner,   only: [:edit, :update, :show]
 
@@ -43,6 +44,31 @@ class CarOwnersController < ApplicationController
       redirect_to @car_owner
     else
       render 'edit'
+    end
+  end
+
+  def model_year_id
+    year = params[:car_year]
+    make = params[:car_make]
+    model = params[:car_model]
+    api_key = Rails.application.secrets.edmunds_api_key
+    uri = URI('https://api.edmunds.com/api/vehicle/v2/'+make+'/'+model+'/'+year+'?fmt=json&api_key='+api_key)
+    res = Net::HTTP.get_response(uri)
+
+    respond_to do |format|
+      format.json { render :json => res.body}
+    end
+
+  end
+
+  def maintenance_schedule
+    api_key = Rails.application.secrets.edmunds_api_key
+    modelyearid = params[:modelyearid]
+    uri = URI('https://api.edmunds.com/v1/api/maintenance/actionrepository/findbymodelyearid?modelyearid=200419750&fmt=json&api_key=' + api_key)
+    res = Net::HTTP.get_response(uri)
+
+    respond_to do |format|
+      format.json { render :json => res.body}
     end
   end
 

@@ -59,10 +59,14 @@ Rails.application.routes.draw do
   get :home, :on => :collection
   end
 
-  # ajax routes 
+  # ajax routes for repair submission form
   get 'fetch_car_makes' => "repair_submissions#fetch_car_makes"
   get 'fetch_car_models' => "repair_submissions#fetch_car_models"
   get 'fetch_car_options' => "repair_submissions#fetch_car_options"
+
+  # ajax route for user dashboard
+  get 'api/model_year_id' => "car_owners#model_year_id"
+  get 'api/maintenance_schedule' => "car_owners#maintenance_schedule"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
