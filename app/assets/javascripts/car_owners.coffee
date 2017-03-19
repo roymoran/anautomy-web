@@ -3,6 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 jQuery ->
+	# getting modelyearid from edmunds
 	# example async call to get model year id for given car year make and model
 	year = '2013'
 	make = 'honda'
@@ -16,13 +17,75 @@ jQuery ->
 			console.log("Call for model year id: " + data.id)
 			console.log(data)
 
+	# getting maintenance schedule from edmunds
 	# example async call to get maintenance schedule given model_year_id 
-	id = '100537293'
+	modelyearid = '100537293'
 	$.ajax
 		type: "GET"
 		url: "/api/maintenance_schedule"
-		data: {model_year_id: id}
+		data: {model_year_id: modelyearid}
 		dataType: "json"
 		success: (data) ->
 			console.log("Maintenance schedule: ")
+			console.log(data)
+
+	# getting car true cost to own
+	styleid = '200434889'
+	zip = '60608'
+	$.ajax
+		type: "GET"
+		url: "/api/tco_used"
+		data: {style_id: styleid, zipcode: zip}
+		dataType: "json"
+		success: (data) ->
+			console.log("TCO Used: ")
+			console.log(data)
+
+	# getting car true cost to own breakdown
+	styleid = '200434889'
+	zip = '60608'
+	$.ajax
+		type: "GET"
+		url: "/api/tco_used_detailed"
+		data: {style_id: styleid, zipcode: zip}
+		dataType: "json"
+		success: (data) ->
+			console.log("TCO Used 5-yr Breakdown: ")
+			console.log(data)
+
+	# getting car true market value with typical options
+	styleid = '200434889'
+	zip = '60608'
+	$.ajax
+		type: "GET"
+		url: "/api/tmv_typical"
+		data: {style_id: styleid, zipcode: zip}
+		dataType: "json"
+		success: (data) ->
+			console.log("TMV w/ Typical Options: ")
+			console.log(data)
+
+	# getting car true market value with given detailed car info
+	styleid = '200434889'
+	condition = 'rough'
+	zip = '60608'
+	mileage = '55464'
+	$.ajax
+		type: "GET"
+		url: "/api/tmv_detailed"
+		data: {style_id: styleid, zipcode: zip, condition: condition, mileage: mileage}
+		dataType: "json"
+		success: (data) ->
+			console.log("TMV Given Details: ")
+			console.log(data)
+
+	# getting car recall information for car given modelyearid
+	modelyearid = '100537293'
+	$.ajax
+		type: "GET"
+		url: "/api/recalls"
+		data: {model_year_id: modelyearid}
+		dataType: "json"
+		success: (data) ->
+			console.log("Recalls w/ model_year_id: ")
 			console.log(data)
