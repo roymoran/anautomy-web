@@ -20,5 +20,8 @@ e# See https://help.github.com/articles/ignoring-files for more about ignoring f
 # Ignore generated entity-relationship diagram
 erd.pdf
 
+# Ignore secrets.yml
+/config/secrets.yml
+
 # Ignore image uploads by paperclip
 /public/system/*
