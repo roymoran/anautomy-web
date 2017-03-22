@@ -8,6 +8,7 @@ class CarOwnersController < ApplicationController
 
 	def show
 		@car_owner = CarOwner.find(params[:id])
+    @car = Car.new
   end
   	
   def create

@@ -3,11 +3,27 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 jQuery ->
+
+  car_year = $('#car_year_select :selected').text() 
+  $("#car_year_select").change ->
+    car_year = $('#car_year_select :selected').text()
+    console.log(car_year) 
+ 
+  car_make = $('#car_make_select :selected').text()
+  $('#car_make_select').change ->
+  	car_make = $('#car_make_select :selected').text()
+  	console.log(car_make)
+
+  car_model = $('#car_model_select :selected').text()
+  $('#car_model_select').change ->
+  	car_make = $('#car_model_select :selected').text()
+  	console.log(car_model)
+
 	# getting modelyearid from edmunds
 	# example async call to get model year id for given car year make and model
-	year = '2013'
-	make = 'honda'
-	model = 'accord'
+	year = '2015'
+	make = 'Honda'
+	model = 'Accord'
 	$.ajax
 		type: "GET"
 		url: "/api/model_year_id"
