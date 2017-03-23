@@ -2,6 +2,7 @@ class CarsController < ApplicationController
 	def create
 		@car = Car.new(car_params)
 		@car.save
+		head :created
 	end
 
 	private
