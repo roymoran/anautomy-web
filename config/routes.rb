@@ -53,6 +53,7 @@ Rails.application.routes.draw do
   resources :shop_users
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
+  resources :cars
   match 'snap', to: 'invoices#new', via: [:get, :post]
 
   resources :anautomy do
