@@ -2,7 +2,7 @@ class CarsController < ApplicationController
 	def create
 		@car = Car.new(car_params)
 		@car.save
-		head :created
+		head :created # returning status 201 on creation
 	end
 
 	private
