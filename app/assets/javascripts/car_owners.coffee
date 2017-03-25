@@ -26,13 +26,12 @@ jQuery ->
   	year_id = parseInt($('#car_year_select :selected').val())
   	make_id = parseInt($('#car_make_select :selected').val())
   	model_id = parseInt($('#car_model_select :selected').val())
-  	user_id = parseInt($('#car_car_owner_id').val())
-  	if isNaN(year_id) || isNaN(model_id) || isNaN(make_id) || isNaN(user_id)
+  	if isNaN(year_id) || isNaN(model_id) || isNaN(make_id)
   		return
   	$.ajax
   		type: "POST"
   		url: "/cars"
-  		data: {car:{car_year_id: year_id, car_make_id: make_id, car_model_id: model_id, car_owner_id: user_id}}
+  		data: {car:{car_year_id: year_id, car_make_id: make_id, car_model_id: model_id}}
   		success: (data) ->
   			console.log("Car Created")
 

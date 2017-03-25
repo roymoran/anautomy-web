@@ -1,6 +1,7 @@
 class CarsController < ApplicationController
 	def create
 		@car = Car.new(car_params)
+		@car.car_owner_id = session[:car_owner_id] 
 		@car.save
 		head :created # returning status 201 on creation
 	end
