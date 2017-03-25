@@ -4,12 +4,11 @@
 	 	<h2 class = "main-headline text-center">Your Dashboard</h2>
 	 	<p class = "profile-text text-left">This is your dashboard. You'll be able to add your cars to make searching for repairs easier. We will also include your cars maintenance schedule so you have a better idea when your maintenance and repairs are due based on your cars mileage. If there is a recall on one of your cars, we'll also let you know here. This is a community platform so feel free to email us at team@innvoy.com to let us know what else you are interested in seeing here.</p>
   	  <div id="dash">
-        <%= form_for(@car, remote: true) do |f| %>
+        <%= form_for(@car) do |f| %>
           <%= f.collection_select(:car_year_id, (CarYear.all).reverse, :id, :year, {prompt: "Year"}, {class: "select_submission_form", id: "car_year_select"}) %>
           <%= f.select(:car_make_id, options_for_select(['Make']), {prompt: "Make"}, {class: "select_submission_form", id: "car_make_select"}) %>
           <%= f.select(:car_model_id, options_for_select(['Model']), {prompt: "Model"}, {class: "select_submission_form", id: "car_model_select"}) %>
           <%= f.hidden_field :car_owner_id, :value => params[:id] %>
-          <%= f.submit 'Submit' %>
         <% end %>
       </div>
    </div>

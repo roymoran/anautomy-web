@@ -4,20 +4,37 @@
 
 jQuery ->
 
-  car_year = $('#car_year_select :selected').text() 
   $("#car_year_select").change ->
+    $('#car_make_select').empty().append('<option selected>Make</option>')
+    $('#car_model_select').empty().append('<option selected>Model</option>')
     car_year = $('#car_year_select :selected').text()
     console.log(car_year) 
+    tryFormSubmit()
  
-  car_make = $('#car_make_select :selected').text()
   $('#car_make_select').change ->
-  	car_make = $('#car_make_select :selected').text()
-  	console.log(car_make)
+    $('#car_model_select').empty().append('<option selected>Model</option>')  
+    car_make = $('#car_make_select :selected').text()
+    console.log(car_make)
+    tryFormSubmit()
 
-  car_model = $('#car_model_select :selected').text()
   $('#car_model_select').change ->
   	car_model = $('#car_model_select :selected').text()
   	console.log(car_model)
+  	tryFormSubmit()
+
+  @tryFormSubmit = () -> 
+  	year_id = parseInt($('#car_year_select :selected').val())
+  	make_id = parseInt($('#car_make_select :selected').val())
+  	model_id = parseInt($('#car_model_select :selected').val())
+  	user_id = parseInt($('#car_car_owner_id').val())
+  	if isNaN(year_id) || isNaN(model_id) || isNaN(make_id) || isNaN(user_id)
+  		return
+  	$.ajax
+  		type: "POST"
+  		url: "/cars"
+  		data: {car:{car_year_id: year_id, car_make_id: make_id, car_model_id: model_id, car_owner_id: user_id}}
+  		success: (data) ->
+  			console.log("Car Created")
 
 	# getting modelyearid from edmunds
 	# example async call to get model year id for given car year make and model
