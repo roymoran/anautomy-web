@@ -16,7 +16,7 @@ jQuery ->
 
   car_model = $('#car_model_select :selected').text()
   $('#car_model_select').change ->
-  	car_make = $('#car_model_select :selected').text()
+  	car_model = $('#car_model_select :selected').text()
   	console.log(car_model)
 
 	# getting modelyearid from edmunds
