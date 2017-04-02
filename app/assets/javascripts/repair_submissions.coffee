@@ -2,10 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 jQuery ->
-  $('#car_model_select').hide()
   $('.repair-name-custom-input').hide()
-  $('#car_make_select').hide()
-  $('#car_option_select').hide()
   $('.rate_experience_section').hide()
 
   $(".repair-name-custom").click ->
@@ -19,7 +16,7 @@ jQuery ->
   $('#car_year_select').change ->
     $('#car_make_select').empty().append('<option selected>Make</option>')
     $('#car_model_select').empty().append('<option selected>Model</option>')
-    $('#car_option_select').empty().append('<option selected>Engine Size</option>')
+    $('#car_option_select').empty().append('<option selected>Engine</option>')
     car_year = $('#car_year_select :selected').text()
     $.ajax
       type: "GET"
