@@ -50,8 +50,8 @@ class CarOwnersController < ApplicationController
   # Actions for Edmunds API calls
   def model_year_id
     year = params[:car_year]
-    make = params[:car_make]
-    model = params[:car_model]
+    make = URI.encode(params[:car_make])
+    model = URI.encode(params[:car_model])
     api_key = Rails.application.secrets.edmunds_api_key
     uri = URI('https://api.edmunds.com/api/vehicle/v2/'+make+'/'+model+'/'+year+'?fmt=json&api_key='+api_key)
     res = Net::HTTP.get_response(uri)
