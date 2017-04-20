@@ -53,6 +53,9 @@ jQuery ->
 			data: {model_year_id: modelyearid}
 			dataType: "json"
 			success: (data) ->
+				maintenanceList = data.actionHolder
+				$.each maintenanceList, (index, value) ->
+					$('.maintenance-item').append('<div style="font-size:0.5em;">Repair: ' + maintenanceList[index].action + ' ' + maintenanceList[index].item+ ' Frequency: '+maintenanceList[index].frequency+' intervalMileage: ' + maintenanceList[index].intervalMileage+ ' intervalMileage: ' + maintenanceList[index].intervalMonth+' Description: '+ maintenanceList[index].itemDescription + '</div>')
 				console.log("Maintenance schedule: ")
 				console.log(data)
 
@@ -113,7 +116,14 @@ jQuery ->
 			data: {model_year_id: modelyearid}
 			dataType: "json"
 			success: (data) ->
-				console.log("Recalls w/ model_year_id: ")
+				recalls = data.recallHolder
+				if data.recallHolder.length == 0
+					$('.recall-items').append('Good news. No recalls for this car.')
+					return
+				$.each recalls, (index, value) ->
+					$('.recall-name').append('<div style="font-size:0.5em;">'+recalls[index].componentDescription+'</div>')
+					$('.recall-description').append('<div style="font-size:0.5em;">'+recalls[index].defectDescription+'</div>')
+				console.log("Recalls w/ model_year_id")
 				console.log(data)
 
 	@getModelYearId = () ->
@@ -130,6 +140,7 @@ jQuery ->
 				if data.status == "NOT_FOUND"
 					console.log("Error getting model year id.")
 					return
+				$('#dashboard-car-name').append(year + ' ' + make + ' ' + model)
 				buildDashboard(modelYearId)
 			error: (data) ->
 				console.log("error getting model yearid")
