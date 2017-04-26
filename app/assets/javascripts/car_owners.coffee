@@ -55,58 +55,8 @@ jQuery ->
 			success: (data) ->
 				maintenanceList = data.actionHolder
 				$.each maintenanceList, (index, value) ->
-					$('.maintenance-item').append('<div style="font-size:0.5em;">Repair: ' + maintenanceList[index].action + ' ' + maintenanceList[index].item+ ' Frequency: '+maintenanceList[index].frequency+' intervalMileage: ' + maintenanceList[index].intervalMileage+ ' intervalMileage: ' + maintenanceList[index].intervalMonth+' Description: '+ maintenanceList[index].itemDescription + '</div>')
+					$('.maintenance-item').append('<div style="font-size:0.5em;">Repair: ' + maintenanceList[index].action + ' ' + maintenanceList[index].item+ ' Frequency: '+maintenanceList[index].frequency+' intervalMileage: ' + maintenanceList[index].intervalMileage+ ' intervalMonth: ' + maintenanceList[index].intervalMonth+' Description: '+ maintenanceList[index].itemDescription + '</div>')
 				console.log("Maintenance schedule: ")
-				console.log(data)
-
-		# getting car true cost to own
-		styleid = '200434889'
-		zip = '60608'
-		$.ajax
-			type: "GET"
-			url: "/api/tco_used"
-			data: {style_id: styleid, zipcode: zip}
-			dataType: "json"
-			success: (data) ->
-				console.log("TCO Used: ")
-				console.log(data)
-
-		# getting car true cost to own breakdown
-		styleid = '200434889'
-		zip = '60608'
-		$.ajax
-			type: "GET"
-			url: "/api/tco_used_detailed"
-			data: {style_id: styleid, zipcode: zip}
-			dataType: "json"
-			success: (data) ->
-				console.log("TCO Used 5-yr Breakdown: ")
-				console.log(data)
-
-		# getting car true market value with typical options
-		styleid = '200434889'
-		zip = '60608'
-		$.ajax
-			type: "GET"
-			url: "/api/tmv_typical"
-			data: {style_id: styleid, zipcode: zip}
-			dataType: "json"
-			success: (data) ->
-				console.log("TMV w/ Typical Options: ")
-				console.log(data)
-
-		# getting car true market value with given detailed car info
-		styleid = '200434889'
-		condition = 'rough'
-		zip = '60608'
-		mileage = '55464'
-		$.ajax
-			type: "GET"
-			url: "/api/tmv_detailed"
-			data: {style_id: styleid, zipcode: zip, condition: condition, mileage: mileage}
-			dataType: "json"
-			success: (data) ->
-				console.log("TMV Given Details: ")
 				console.log(data)
 
 		# getting car recall information for car given modelyearid

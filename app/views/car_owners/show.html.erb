@@ -8,13 +8,13 @@
  </div>
    <div id="dash" class="row">
     <%= form_for(@car) do |f| %>
-      <div class="col-xs-12 col-sm-4">
+      <div class="col-xs-12 col-sm-3 col-sm-offset-1">
     <%= f.collection_select(:car_year_id, (CarYear.all).reverse, :id, :year, {prompt: "Year"}, {class: "select_submission_form", id: "car_year_select"}) %>
       </div>
-      <div class="col-xs-12 col-sm-4">
+      <div class="col-xs-12 col-sm-3">
     <%= f.select(:car_make_id, options_for_select([]), {prompt: "Make"}, {class: "select_submission_form", id: "car_make_select"}) %>
       </div>
-      <div class="col-xs-12 col-sm-4">
+      <div class="col-xs-12 col-sm-3">
     <%= f.select(:car_model_id, options_for_select([]), {prompt: "Model"}, {class: "select_submission_form", id: "car_model_select"}) %>
   </div>
     <% end %>
@@ -28,6 +28,11 @@
     <div class="row maintenance-schedule-container" style="border-style:solid; border-color:#7a7a7a; border-width:1px; border-radius:10px;">
       <div class="col-sm-3" style="border-right:1px solid #7a7a7a;">Maintenance<br>Schedule</div>
       <div class="col-sm-9 text-center maintenance-item">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
       </div>
     </div>
 
@@ -47,6 +52,18 @@
     </div>
   </div>
  </div>
+ <div>
+  <br>
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-1 text-left" style="font-size: 1.8em; color: #545E69; font-family: 'Roboto'; font-weight: 300;">
+    <div class="row maintenance-schedule-container" style="border-style:solid; border-color:#7a7a7a; border-width:1px; border-radius:10px;">
+      <div class="col-sm-3" style="border-right:1px solid #7a7a7a;">Maintenance and Repair<br>History</div>
+      <div class="col-sm-9 text-center">
+      </div>
+    </div>
+
+  </div>
+  </div>
    
  </div>
 
