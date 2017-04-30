@@ -36,9 +36,11 @@ jQuery ->
 		make = $('#car_make_select :selected').text()
 		model = $('#car_model_select :selected').text()
 		console.log('Edmunds API calls for ' + year + ' ' + make + ' ' + model)
+		
+		# getting maintenance schedule information for given modelyearid
 		buildMaintenanceSchedule(modelyearid)
 
-		# getting car recall information for car given modelyearid
+		# getting car recall information for given modelyearid
 		$.ajax
 			type: "GET"
 			url: "/api/recalls"
@@ -72,12 +74,10 @@ jQuery ->
 					return
 				$('#dashboard-car-name').append(year + ' ' + make + ' ' + model)
 				createCar(modelYearId)
-				buildDashboard(modelYearId)
 			error: (data) ->
 				console.log("error getting model yearid")
 
 	@buildMaintenanceSchedule = (modelyearid) ->
-		$('#car_owner_car_id').val('')
 		# getting maintenance schedule from edmunds
 		# example async call to get maintenance schedule given model_year_id 
 		$.ajax
@@ -103,7 +103,8 @@ jQuery ->
   			success: (data) ->
   				$('#dash').fadeOut()
   				$('#car_current_mileage').attr('action', '/cars/' + data);
-  				console.log("Car Created")
+  				console.log("Car Created, building dash")
+  				buildDashboard(modelyearid)
   			error: (data) ->
   				console.log("Error setting up dashboard")
 
