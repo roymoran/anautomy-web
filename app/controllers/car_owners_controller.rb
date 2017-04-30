@@ -73,59 +73,6 @@ class CarOwnersController < ApplicationController
     end
   end
 
-  def tco_used
-    api_key = Rails.application.secrets.edmunds_api_key
-    styleid = params[:style_id]
-    zipcode = params[:zipcode]
-    uri = URI('https://api.edmunds.com/v1/api/tco/usedtruecosttoownbystyleidandzip/'+styleid+'/'+zipcode+'?fmt=json&api_key=' + api_key)
-    res = Net::HTTP.get_response(uri)
-
-    respond_to do |format|
-      format.json { render :json => res.body}
-    end
-  end
-
-  def tco_used_detailed
-    api_key = Rails.application.secrets.edmunds_api_key
-    styleid = params[:style_id]
-    zipcode = params[:zipcode]
-    state_code = 'il' # should be pulled from api based on zipcode
-    uri = URI('https://api.edmunds.com/api/tco/v1/details/allusedtcobystyleidzipandstate/'+styleid+'/'+zipcode+'/'+state_code+'?fmt=json&api_key=' + api_key)
-    res = Net::HTTP.get_response(uri)
-
-    respond_to do |format|
-      format.json { render :json => res.body}
-    end
-  end
-
-  def tmv_typical
-    api_key = Rails.application.secrets.edmunds_api_key
-    styleid = params[:style_id]
-    zipcode = params[:zipcode]
-    uri = URI('https://api.edmunds.com/v1/api/tmv/tmvservice/calculatetypicallyequippedusedtmv?styleid='+styleid+'&zip='+zipcode+'&fmt=json&api_key=' + api_key)
-    res = Net::HTTP.get_response(uri)
-
-    respond_to do |format|
-      format.json { render :json => res.body}
-    end
-
-  end
-
-  def tmv_detailed
-    api_key = Rails.application.secrets.edmunds_api_key
-    styleid = params[:style_id]
-    zipcode = params[:zipcode]
-    mileage = params[:mileage]
-    condition = params[:condition]
-    uri = URI('https://api.edmunds.com/v1/api/tmv/tmvservice/calculateusedtmv?styleid='+styleid+'&condition='+condition+'&mileage='+mileage+'&zip='+zipcode+'&fmt=json&api_key=' + api_key)
-    res = Net::HTTP.get_response(uri)
-
-    respond_to do |format|
-      format.json { render :json => res.body}
-    end
-
-  end
-
   def recalls
     api_key = Rails.application.secrets.edmunds_api_key
     modelyearid = params[:model_year_id]
