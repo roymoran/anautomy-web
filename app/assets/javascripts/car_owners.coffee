@@ -27,16 +27,7 @@ jQuery ->
   	model_id = parseInt($('#car_model_select :selected').val())
   	if isNaN(year_id) || isNaN(model_id) || isNaN(make_id)
   		return
-  	$.ajax
-  		type: "POST"
-  		url: "/cars"
-  		data: {car:{car_year_id: year_id, car_make_id: make_id, car_model_id: model_id}}
-  		success: (data) ->
-  			$('#dash').fadeOut()
-  			getModelYearId()
-  			console.log("Car Created")
-  		error: (data) ->
-  			console.log("Error setting up dashboard")
+  	getModelYearId()
 
 	# getting modelyearid from edmunds
 	# example async call to get model year id for given car year make and model
@@ -45,19 +36,7 @@ jQuery ->
 		make = $('#car_make_select :selected').text()
 		model = $('#car_model_select :selected').text()
 		console.log('Edmunds API calls for ' + year + ' ' + make + ' ' + model)
-		# getting maintenance schedule from edmunds
-		# example async call to get maintenance schedule given model_year_id 
-		$.ajax
-			type: "GET"
-			url: "/api/maintenance_schedule"
-			data: {model_year_id: modelyearid}
-			dataType: "json"
-			success: (data) ->
-				maintenanceList = data.actionHolder
-				$.each maintenanceList, (index, value) ->
-					$('.maintenance-item').append('<div style="font-size:0.5em;">Repair: ' + maintenanceList[index].action + ' ' + maintenanceList[index].item+ ' Frequency: '+maintenanceList[index].frequency+' intervalMileage: ' + maintenanceList[index].intervalMileage+ ' intervalMonth: ' + maintenanceList[index].intervalMonth+' Description: '+ maintenanceList[index].itemDescription + '</div>')
-				console.log("Maintenance schedule: ")
-				console.log(data)
+		buildMaintenanceSchedule(modelyearid)
 
 		# getting car recall information for car given modelyearid
 		$.ajax
@@ -88,9 +67,52 @@ jQuery ->
 			success: (data) ->
 				modelYearId = data.id
 				if data.status == "NOT_FOUND"
+					# TODO: retry getting modelyearid with modified model name 
 					console.log("Error getting model year id.")
 					return
 				$('#dashboard-car-name').append(year + ' ' + make + ' ' + model)
+				createCar(modelYearId)
 				buildDashboard(modelYearId)
 			error: (data) ->
 				console.log("error getting model yearid")
+
+	@buildMaintenanceSchedule = (modelyearid) ->
+		$('#car_owner_car_id').val('')
+		# getting maintenance schedule from edmunds
+		# example async call to get maintenance schedule given model_year_id 
+		$.ajax
+			type: "GET"
+			url: "/api/maintenance_schedule"
+			data: {model_year_id: modelyearid}
+			dataType: "json"
+			success: (data) ->
+				maintenanceList = data.actionHolder
+				$.each maintenanceList, (index, value) ->
+					$('.maintenance-item').append('<div style="font-size:0.5em;">Repair: ' + maintenanceList[index].action + ' ' + maintenanceList[index].item+ ' Frequency: '+maintenanceList[index].frequency+' intervalMileage: ' + maintenanceList[index].intervalMileage+ ' intervalMonth: ' + maintenanceList[index].intervalMonth+' Description: '+ maintenanceList[index].itemDescription + '</div>')
+				console.log("Maintenance schedule: ")
+				console.log(data)
+
+	@createCar = (modelyearid) ->
+		year_id = parseInt($('#car_year_select :selected').val())
+		make_id = parseInt($('#car_make_select :selected').val())
+		model_id = parseInt($('#car_model_select :selected').val())
+		$.ajax
+  			type: "POST"
+  			url: "/cars"
+  			data: {car:{car_year_id: year_id, car_make_id: make_id, car_model_id: model_id, edmunds_modelyearid: modelyearid}}
+  			success: (data) ->
+  				$('#dash').fadeOut()
+  				$('#car_current_mileage').attr('action', '/cars/' + data);
+  				console.log("Car Created")
+  			error: (data) ->
+  				console.log("Error setting up dashboard")
+
+
+	$("form#car_current_mileage").on("ajax:success", (e, data, status, xhr) ->
+		console.log('Current Mileage updated')
+		# call edmunds api and run algorithm to parse maintenance schedule
+		# based on mileage input by car owner
+	).on "ajax:error", (e, xhr, status, error) ->
+		console.log('Error updating current mileage')
+
+
