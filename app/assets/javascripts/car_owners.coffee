@@ -37,8 +37,8 @@ jQuery ->
 		model = $('#car_model_select :selected').text()
 		console.log('Edmunds API calls for ' + year + ' ' + make + ' ' + model)
 		
-		# getting general maintenance schedule w/ no mileage data
-		buildMaintenanceSchedule(modelyearid, opts)
+		# getting maintenance schedule
+		buildMaintenanceSchedule(modelyearid, opts['current_mileage'])
 
 		# getting car recall information for given modelyearid
 		$.ajax
@@ -77,26 +77,22 @@ jQuery ->
 			error: (data) ->
 				console.log("error getting model yearid")
 
-	@buildMaintenanceSchedule = (modelyearid, opts) ->
-		# getting maintenance schedule from edmunds
-		# example async call to get maintenance schedule given model_year_id 
+	@buildMaintenanceSchedule = (modelyearid, currentMileage) ->
+		# getting maintenance schedule from edmunds api
 		$.ajax
 			type: "GET"
 			url: "/api/maintenance_schedule"
 			data: {model_year_id: modelyearid}
 			dataType: "json"
 			success: (data) ->
-				if opts['current_mileage']
-					#get maintenace schedule for provided mileage data
-					console.log('current mileage item exists' + opts['current_mileage'])
-				else
-					#mileage data not provided not, give general maintenance schedule
-					console.log('no current mileage provided')
 				maintenanceList = data.actionHolder
-				$.each maintenanceList, (index, value) ->
-					$('.maintenance-item').append('<div style="font-size:0.5em;">Repair: ' + maintenanceList[index].action + ' ' + maintenanceList[index].item+ ' Frequency: '+maintenanceList[index].frequency+' intervalMileage: ' + maintenanceList[index].intervalMileage+ ' intervalMonth: ' + maintenanceList[index].intervalMonth+' Description: '+ maintenanceList[index].itemDescription + '</div>')
+				sortedMaintenanceList = sortMaintenanceList(maintenanceList, currentMileage)
+				$('.maintenance-item').empty()
+				$.each sortedMaintenanceList, (index, value) ->
+					$('.maintenance-item').append('<div class="text-left" style="font-size:0.5em;"><span style="font-weight: bold;">Repair name: </span>' + maintenanceList[index].action + ' ' + maintenanceList[index].item+ '<br>'+ '<span style="font-weight:bold;">Description: </span>'+ maintenanceList[index].itemDescription + '</div><br>')
 				console.log("Maintenance schedule: ")
 				console.log(data)
+
 
 	@createCar = (modelyearid) ->
 		year_id = parseInt($('#car_year_select :selected').val())
@@ -108,18 +104,39 @@ jQuery ->
   			data: {car:{car_year_id: year_id, car_make_id: make_id, car_model_id: model_id, edmunds_modelyearid: modelyearid}}
   			success: (data) ->
   				$('#dash').fadeOut()
-  				$('#car_current_mileage').attr('action', '/cars/' + data);
+  				$('#car_current_mileage_form').attr('action', '/cars/' + data);
   				console.log("Car Created, building dash")
   				buildDashboard(modelyearid, {})
   			error: (data) ->
   				console.log("Error setting up dashboard")
 
+  	@sortMaintenanceList = (maintenanceList, currentMileage) ->
+  		newMaintenanceList = []
+  		if currentMileage
+  			#get maintenace schedule for provided mileage data
+  			$.each maintenanceList, (index, value) ->
+  				if maintenanceList[index].intervalMileage == 0
+  					return true # if interval mileage is 0 remove from list
+  				newIntervalMileage = maintenanceList[index].intervalMileage
+  				while newIntervalMileage < currentMileage
+  					newIntervalMileage = maintenanceList[index].intervalMileage + newIntervalMileage 
+  				mileageRemainder = newIntervalMileage - currentMileage
+  				if(mileageRemainder <= 1000)
+  					newMaintenanceList.push(maintenanceList[index]);
+  			return newMaintenanceList
+  			console.log('Sorting by mileage ' + typeof(maintenanceList).toString())
+  		else
+  			#mileage data not provided, return general maintenance schedule
+  			return maintenanceList
+  			console.log('no current mileage provided')
 
-	$("form#car_current_mileage").on("ajax:success", (e, data, status, xhr) ->
+  		console.log('Sorting maintenance list')
+
+	$("form#car_current_mileage_form").on("ajax:success", (e, data, status, xhr) ->
 		console.log('Current Mileage updated')
 		# call edmunds api and run algorithm to parse maintenance schedule
 		# getting maintenance schedule information for given modelyearid
-		buildMaintenanceSchedule(modelyearid, {"current_mileage":"23213"})
+		buildMaintenanceSchedule(data.edmunds_modelyearid, $('#car_current_mileage').val())
 
 		# based on mileage input by car owner
 	).on "ajax:error", (e, xhr, status, error) ->
