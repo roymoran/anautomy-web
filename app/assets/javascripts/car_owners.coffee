@@ -61,10 +61,19 @@ jQuery ->
 		year = $('#car_year_select :selected').text()
 		make = $('#car_make_select :selected').text()
 		model = $('#car_model_select :selected').text()
+		model_parsed = model
+
+		model_parsed = model_parsed.replace("2WD", "")
+		model_parsed = model_parsed.replace("4WD", "")
+		model_parsed = model_parsed.replace("AWD", "")
+		model_parsed = model_parsed.replace("FWD", "")
+		model_parsed = model_parsed.replace("RWD", "")
+		model_parsed = model_parsed.trim()
+
 		$.ajax
 			type: "GET"
 			url: "/api/model_year_id"
-			data: {car_year: year, car_make: make, car_model: model}
+			data: {car_year: year, car_make: make, car_model: model_parsed}
 			dataType: "json"
 			success: (data) ->
 				modelYearId = data.id
@@ -129,8 +138,6 @@ jQuery ->
   			#mileage data not provided, return general maintenance schedule
   			return maintenanceList
   			console.log('no current mileage provided')
-
-  		console.log('Sorting maintenance list')
 
 	$("form#car_current_mileage_form").on("ajax:success", (e, data, status, xhr) ->
 		console.log('Current Mileage updated')
