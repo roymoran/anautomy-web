@@ -27,11 +27,12 @@
   <div class="col-sm-6 col-sm-offset-1 text-left" style="font-size: 1.8em; color: #545E69; font-family: 'Roboto'; font-weight: 300;">
     <div class="row maintenance-schedule-container" style="border-style:solid; border-color:#7a7a7a; border-width:1px; border-radius:10px;">
       <div class="col-sm-3" style="border-right:1px solid #7a7a7a;">Maintenance<br>Schedule</div>
-      <div class="col-sm-9 text-center maintenance-item">
-        <%= form_tag({controller: "cars", action: "update", id: 1}, method: "patch", class: "", id: "car_current_mileage", remote: true) do %>
+      <%= form_tag({controller: "cars", action: "update", id: 1}, method: "patch", class: "", id: "car_current_mileage_form", remote: true) do %>
         <%= text_field_tag('car[current_mileage]', nil, {placeholder: "Enter current mileage",  class: ""}) %>
         <%= submit_tag("Enter",  {class: ""}) %>
         <% end %>
+      <div class="col-sm-9 text-center maintenance-item">
+        
       </div>
     </div>
 
