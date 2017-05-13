@@ -15,11 +15,14 @@ class CarsController < ApplicationController
 		@car = Car.find(params[:id])
 		#respond_to do |format|
 			# update car if validated and if car belongs to current user 
-			if  session[:car_owner_id] == @car.car_owner_id
-				@car.update_attributes(car_params)
-				head :ok
-			else
-				head :bad_request
+			respond_to do |format|
+				if  session[:car_owner_id] == @car.car_owner_id
+					@car.update_attributes(car_params)
+					#head :ok
+					format.json {render json: @car, status: :ok} # returning car for model year id 
+				else
+					head :bad_request
+				end
 			end
 		#end
 		# TODO - update car owner car mileage from user dashboard
