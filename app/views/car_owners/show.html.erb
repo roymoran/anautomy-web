@@ -1,4 +1,5 @@
 <% provide(:title, @car_owner.name + "'s Dashboard") %>
+<!--
 <div class = "container-fluid" style="min-height:500px;">
 <div class="row">
 	 <div class="col-md-6 col-md-offset-3">
@@ -66,5 +67,131 @@
   </div>
    
  </div>
+
+</div>
+-->
+<style>
+.profile-header-section{
+  background-color: #f1f1f1;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border: 1px solid #cfcfcf;
+  border-radius: 5px;
+}
+.profile-name{
+  color:#2e2e2e;
+  font-size: 2em;
+  font-weight: bold;
+}
+.profile-location{
+  color:#2e2e2e;
+  font-size: 1.3em;
+  font-weight: normal;
+  font-style: italic;
+}
+.profile-icon-details{
+  color:#2e2e2e;
+  font-size: 1em;
+  font-weight: bold;
+  display: inline-block;
+}
+.profile-icon{
+  color:#52bb49;
+}
+.profile-img{
+  border-radius: 3%;
+}
+.mobile-profile-img{
+  width: 125px;
+  height: 125px;
+  border-radius: 50%;
+}
+.profile-section-nav{
+  border-bottom: 1px solid #cfcfcf;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+.profile-nav-menu-item{
+  font-size: 1.3em;
+  font-weight: lighter;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border: 1px solid #cfcfcf;
+  border-bottom-color: #ffffff;
+  color:#5c5c5c;
+  text-align: center;
+}
+.profile-nav-menu-item-active{
+  font-size: 1.3em;
+  font-weight: lighter;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border: 1px solid #52bb49;
+  background-color: #52bb49;
+  color:#FFFFFF;
+  text-align: center;
+}
+</style>
+<div class = "container">
+  <div class="row">
+    <div class="profile-header-section col-xs-12">
+
+        <div class="profile-img-container col-sm-2 col-xs-12">
+          <img class="hidden-xs profile-img" src="https://scontent-sea1-1.xx.fbcdn.net/v/t1.0-9/13645216_10154234913297976_7031743884618637758_n.jpg?oh=dfe8e57486f123ee2a63cfe0f7aa320f&oe=59AB2708" height="150px" width="150px">
+          <img class="visible-xs mobile-profile-img img-responsive center-block" src="https://scontent-sea1-1.xx.fbcdn.net/v/t1.0-9/13645216_10154234913297976_7031743884618637758_n.jpg?oh=dfe8e57486f123ee2a63cfe0f7aa320f&oe=59AB2708">
+        </div>
+        <div class="profile-details col-sm-8 col-xs-12">
+          <div class="hidden-xs">
+            <div class="profile-name">Roy Moran</div>
+          <div class="profile-location">Chicago, Illinois, United States - Joined June 2014</div>
+          <div class="profile-icon-details">
+            <div><i class="fa fa-car profile-icon" aria-hidden="true"></i> 3 Cars Owned</div>
+            <div><i class="fa fa-camera profile-icon" aria-hidden="true"></i> 5 Photos</div>
+          </div>
+        </div>
+        <div class="visible-xs text-center">
+          <div class="profile-name">Roy Moran</div>
+          <div class="profile-location">Chicago, Illinois, United States - Joined June 2014</div>
+          <div class="profile-icon-details">
+            <div><i class="fa fa-car profile-icon" aria-hidden="true"></i> 3 Cars Owned</div>
+            <div><i class="fa fa-camera profile-icon" aria-hidden="true"></i> 5 Photos</div>
+          </div>
+        </div>
+
+        </div>
+
+        <div class="profile-add-car col-sm-2">
+          
+        </div>
+
+
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="profile-section-nav col-sm-10 col-sm-offset-1">
+      <div class="row">
+        <div class="col-sm-10 col-sm-offset-2">
+          <div class="col-sm-3 profile-nav-menu-item-active">Maintenance Schedule</div>
+          <div class="col-sm-3 profile-nav-menu-item">Recalls</div>
+          <div class="col-sm-3 profile-nav-menu-item">Maintenance History</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="maintenance-section">
+
+    </div>
+  </div>
+
+  <div class="recalls-section">
+
+  </div>
+
+  <div class="maintenanance-history-section">
+
+  </div>
 
 </div>
