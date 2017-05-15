@@ -134,13 +134,11 @@
   cursor: pointer;
 }
 .maintenance-section{
-  border: 1px solid #cfcfcf;
+  border: 1px solid #e7e7e7;
   padding-top: 25px;
   padding-bottom: 25px;
-    margin-top: 25px;
-        margin-bottom: 20px;
-
-
+  margin-top: 25px;
+  margin-bottom: 20px;
 }
 .maintenance-schedule-title{
   font-size: 1.6em;
@@ -164,6 +162,22 @@
   margin-bottom: 0;
   width: 100%;
   border-color: #cfcfcf;
+}
+.recalls-section-main-title{
+  border: 1px solid #e7e7e7;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-top: 25px;
+  margin-bottom: 20px;
+}
+
+
+.maintenanance-history-section-main-title{
+  border: 1px solid #e7e7e7;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-top: 25px;
+  margin-bottom: 20px;
 }
 </style>
 <div class = "container">
@@ -239,13 +253,22 @@
 
     </div>
   </div>
-
-  <div class="recalls-section">
-
+  <div class="row">
+    <div class="recalls-section col-xs-12">
+      <div class="row">
+        <div class="recalls-section-main-title text-center"><span class="maintenance-schedule-title">Recalls for</span> <span class="maintenance-schedule-car-title">2007 Mazda 5</span></div>
+      </div>
+    </div>
   </div>
+    
+    <div class="row">
 
-  <div class="maintenanance-history-section">
-
+  <div class="maintenanance-history-section col-xs-12">
+    <div class="row">
+        <div class="maintenanance-history-section-main-title text-center"><span class="maintenance-schedule-title">Maintenance and repair history</span> for your <span class="maintenance-schedule-car-title">2007 Mazda 5</span></div>
+      </div>
+    </div>
+  </div>
   </div>
 
 </div>
