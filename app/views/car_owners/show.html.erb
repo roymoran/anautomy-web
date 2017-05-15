@@ -120,6 +120,7 @@
   border-bottom-color: #ffffff;
   color:#5c5c5c;
   text-align: center;
+  cursor: pointer;
 }
 .profile-nav-menu-item-active{
   font-size: 1.3em;
@@ -130,6 +131,39 @@
   background-color: #52bb49;
   color:#FFFFFF;
   text-align: center;
+  cursor: pointer;
+}
+.maintenance-section{
+  border: 1px solid #cfcfcf;
+  padding-top: 25px;
+  padding-bottom: 25px;
+    margin-top: 25px;
+        margin-bottom: 20px;
+
+
+}
+.maintenance-schedule-title{
+  font-size: 1.6em;
+  color: #303030;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+.maintenance-schedule-main-title{
+  padding-bottom: 30px;
+  font-size: 1.1em;
+}
+.maintenance-schedule-car-title{
+  font-size: 1.6em;
+  color: #52bb49;
+    letter-spacing: 1px;
+  font-weight: bold;
+}
+.profile-hr{
+    margin-top: 0;
+  margin-bottom: 0;
+  width: 100%;
+  border-color: #cfcfcf;
 }
 </style>
 <div class = "container">
@@ -181,7 +215,27 @@
   </div>
 
   <div class="row">
-    <div class="maintenance-section">
+    <div class="maintenance-section col-xs-12">
+      <!-- ERB to check if car select menus should be displayed -->
+      <!-- if car_owner car count == 0 -->
+              <!-- Display select drop downs to add car -->
+
+      <!-- else show car maintenance schedule -->
+
+              <!-- Show maintenance schedule -->
+      <div class="col-sm-6 col-sm-offset-1" >
+        <div class="maintenance-schedule-main-title"><span class="maintenance-schedule-title">Maintenance schedule</span> for your <span class="maintenance-schedule-car-title">2007 Mazda 5</span></div>
+        <hr class = "profile-hr">
+      </div>
+        
+
+        <div class="col-sm-4">
+
+          <img class="profile-car-img img-responsive center-block" src="http://www.cstatic-images.com/stock/900x600/243611.jpg" height="500px" width="500px">
+
+        </div>
+
+      <!-- -->
 
     </div>
   </div>
