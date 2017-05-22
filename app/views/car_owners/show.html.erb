@@ -331,15 +331,15 @@
     <div class="profile-section-nav col-sm-10 col-sm-offset-1">
       <div class="row">
         <div class="col-sm-10 col-sm-offset-2">
-          <div class="col-sm-3 profile-menu-item profile-nav-menu-item-active">Maintenance Schedule</div>
-          <div class="col-sm-3 profile-menu-item profile-nav-menu-item">Recalls</div>
-          <div class="col-sm-3 profile-menu-item profile-nav-menu-item">Repair History</div>
+          <div class="col-sm-3 profile-menu-item profile-nav-menu-item-active" data-id="dashboard-maintenance-schedule">Maintenance Schedule</div>
+          <div class="col-sm-3 profile-menu-item profile-nav-menu-item" data-id="dashboard-recalls">Recalls</div>
+          <div class="col-sm-3 profile-menu-item profile-nav-menu-item" data-id="dashboard-maintenance-history">Repair History</div>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="row">
+  <div id="dashboard-maintenance-schedule" class="row hide">
     <div class="maintenance-section col-xs-12">
       <!-- ERB to check if car select menus should be displayed -->
       <!-- if car_owner car count == 0 -->
@@ -384,7 +384,7 @@
     </div>
   </div>
 
-  <div class="row">
+  <div id="dashboard-recalls" class="row hide">
     <div class="recalls-section col-xs-12">
       <div class="row">
         <div class="recalls-section-main-title text-center"><span class="maintenance-schedule-title">Recalls</span> for <span class="maintenance-schedule-car-title">2007 Mazda 5</span></div>
@@ -392,7 +392,7 @@
     </div>
   </div>
 
-  <div class="row">
+  <div id="dashboard-maintenance-history" class="row hide">
     <div class="maintenanance-history-section col-xs-12">
       <div class="row">
         <div class="maintenanance-history-section-main-title text-center"><span class="maintenance-schedule-title">Maintenance and repair history</span> for your <span class="maintenance-schedule-car-title">2007 Mazda 5</span>
@@ -413,10 +413,17 @@ $( "#maintenance-item, #accordian5" ).accordion({
       active: false
     });
 
+$("#dashboard-maintenance-schedule").removeClass("hide");
+
 $(".profile-menu-item").click(function (e) {
+  var x = $('.profile-nav-menu-item-active').attr("data-id");
+  $("#" + x).addClass("hide");
   $('.profile-nav-menu-item-active').addClass('profile-nav-menu-item').removeClass('profile-nav-menu-item-active');
+  
 
   $(this).removeClass("profile-nav-menu-item");
   $(this).addClass("profile-nav-menu-item-active");
+  var x = $(this).attr("data-id");
+  $("#" + x).removeClass("hide");
 });
 </script>
