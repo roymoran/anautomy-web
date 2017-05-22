@@ -113,7 +113,7 @@
 }
 .profile-nav-menu-item{
   font-size: 1.3em;
-  font-weight: lighter;
+  font-weight: normal;
   padding-top: 5px;
   padding-bottom: 5px;
   border: 1px solid #cfcfcf;
@@ -124,7 +124,7 @@
 }
 .profile-nav-menu-item-active{
   font-size: 1.3em;
-  font-weight: lighter;
+  font-weight: normal;
   padding-top: 5px;
   padding-bottom: 5px;
   border: 1px solid #52bb49;
@@ -154,9 +154,83 @@
 .maintenance-schedule-car-title{
   font-size: 1.6em;
   color: #52bb49;
-    letter-spacing: 1px;
+  letter-spacing: 1px;
   font-weight: bold;
 }
+.maintenance-schedule-detailed{
+  background-color: #f1f1f1;
+}
+.maintenance-schedule-item{
+   
+}
+.maintenance-item{
+
+}
+  .maintenance-item-title{
+    text-transform: uppercase;
+  }
+#maintenance-item .ui-accordion-header, #accordion5 .ui-accordion-header, #accordion3 .ui-accordion-header {
+  color: #303030;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 600;
+  font-size: 1.4em;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-top: 13px;
+  height: 40px;
+  background-color: #ffffff;
+
+}
+
+#maintenance-item .ui-accordion-header.ui-state-active, #accordion5 .ui-accordion-header.ui-state-active, #accordion3 .ui-accordion-header.ui-state-active{ 
+  color: #303030;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+
+}
+
+#maintenance-item .ui-accordion-content, #accordion5 .ui-accordion-content, #accordion3 .ui-accordion-content  {
+
+  color: #ffffff;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1.3em;
+
+  width: 100%;
+  margin-top: -20px;
+  margin-bottom: 20px;
+  background-color: #5A5A5A;
+}
+
+#maintenance-item .ui-accordion-header:nth-of-type(2), #accordion5 .ui-accordion-header:nth-of-type(2), #accordion3 .ui-accordion-header:nth-of-type(2){
+  margin-bottom: 20px;
+}
+#maintenance-item .ui-accordion-content:nth-of-type(2), #accordion5 .ui-accordion-content:nth-of-type(2), #accordion3 .ui-accordion-content:nth-of-type(2){
+  margin-top: -20px;
+}
+
+.btn-maintenance-item{
+  font-size: 1em;
+  width: 100%;
+  background: rgba(255, 255, 255, 1) !important;
+  opacity: 1;
+  border: 1px solid #5A5A5A;
+  color: #5A5A5A !important;
+  cursor: default !important;
+
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  
+  /* CSS Transition */  
+  -webkit-transition: background .2s ease-in-out, border .2s ease-in-out;
+  -moz-transition: background .2s ease-in-out, border .2s ease-in-out;
+  -ms-transition: background .2s ease-in-out, border .2s ease-in-out;
+  -o-transition: background .2s ease-in-out, border .2s ease-in-out;
+  transition: background .2s ease-in-out, border .2s ease-in-out;
+}
+
+
 .profile-hr{
     margin-top: 0;
   margin-bottom: 0;
@@ -252,23 +326,62 @@
       <!-- -->
 
     </div>
+    
+
+    <div class="maintenance-schedule-detailed col-xs-12">
+      <div class="row">
+        <div class="maintenance-schedule-item col-xs-10 col-xs-offset-1">
+          <div id="maintenance-item">
+            <div class = "maintenance-item-title">CHANGE ENGINE OIL<i class="fa fa-plus" style="float:right; padding-right:20px;"></i></div>
+            <div class="row">
+              <div class="col-sm-9">
+              <p>Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.</p>
+              </div>
+              <div class="col-sm-3">
+                <button type="" class="btn btn-maintenance-item">Check Frequently</button>
+              </div>
+            </div>
+          </div>
+
+          <div id="maintenance-item">
+            <div class = "maintenance-item-title">CHANGE ENGINE OIL<i class="fa fa-plus" style="float:right; padding-right:20px;"></i></div>
+            <div>
+              <p>Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
   </div>
+
   <div class="row">
     <div class="recalls-section col-xs-12">
       <div class="row">
-        <div class="recalls-section-main-title text-center"><span class="maintenance-schedule-title">Recalls for</span> <span class="maintenance-schedule-car-title">2007 Mazda 5</span></div>
+        <div class="recalls-section-main-title text-center"><span class="maintenance-schedule-title">Recalls</span> for <span class="maintenance-schedule-car-title">2007 Mazda 5</span></div>
       </div>
     </div>
   </div>
-    
-    <div class="row">
 
-  <div class="maintenanance-history-section col-xs-12">
-    <div class="row">
-        <div class="maintenanance-history-section-main-title text-center"><span class="maintenance-schedule-title">Maintenance and repair history</span> for your <span class="maintenance-schedule-car-title">2007 Mazda 5</span></div>
+  <div class="row">
+    <div class="maintenanance-history-section col-xs-12">
+      <div class="row">
+        <div class="maintenanance-history-section-main-title text-center"><span class="maintenance-schedule-title">Maintenance and repair history</span> for your <span class="maintenance-schedule-car-title">2007 Mazda 5</span>
+        </div>
       </div>
     </div>
   </div>
-  </div>
+</div>
 
 </div>
+
+<%= javascript_include_tag "jquery.js" %>
+
+    <%= javascript_include_tag "jquery-ui.js" %>    
+<script>
+$( "#maintenance-item, #accordian5" ).accordion({
+      collapsible: true,
+      heightStyle: "content",
+      active: false
+    });
+</script>
