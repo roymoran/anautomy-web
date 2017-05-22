@@ -331,9 +331,9 @@
     <div class="profile-section-nav col-sm-10 col-sm-offset-1">
       <div class="row">
         <div class="col-sm-10 col-sm-offset-2">
-          <div class="col-sm-3 profile-nav-menu-item-active">Maintenance Schedule</div>
-          <div class="col-sm-3 profile-nav-menu-item">Recalls</div>
-          <div class="col-sm-3 profile-nav-menu-item">Repair History</div>
+          <div class="col-sm-3 profile-menu-item profile-nav-menu-item-active">Maintenance Schedule</div>
+          <div class="col-sm-3 profile-menu-item profile-nav-menu-item">Recalls</div>
+          <div class="col-sm-3 profile-menu-item profile-nav-menu-item">Repair History</div>
         </div>
       </div>
     </div>
@@ -412,4 +412,11 @@ $( "#maintenance-item, #accordian5" ).accordion({
       heightStyle: "content",
       active: false
     });
+
+$(".profile-menu-item").click(function (e) {
+  $('.profile-nav-menu-item-active').addClass('profile-nav-menu-item').removeClass('profile-nav-menu-item-active');
+
+  $(this).removeClass("profile-nav-menu-item");
+  $(this).addClass("profile-nav-menu-item-active");
+});
 </script>
