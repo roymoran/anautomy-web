@@ -127,7 +127,7 @@
   height: 100px;
   width:50%;
   margin-left: -16px;
-  margin-top: 22px;
+  margin-top: 40px;
 
 
     -webkit-border-radius: 0;
@@ -200,7 +200,7 @@
   height: 100px;
   width:50%;
   margin-left: 24px;
-  margin-top: 22px;
+  margin-top: 40px;
 
 
     -webkit-border-radius: 0;
@@ -242,6 +242,39 @@
   letter-spacing: 1px;
   font-weight: bold;
 }
+.current-mileage-input{
+  height: 50px;
+  width: 100%;
+  font-size: 1.3em;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  padding-left: 10px;
+}
+.mileage-input-section{
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.btn-current-mileage-form{
+  height: 50px;
+  width:100%;
+  font-size: 1.3em;
+  background: rgba(82, 187, 73, 1) !important;
+  opacity: 1;
+  border: 1px solid #FFFFFF;
+  color: #FFFFFF !important;
+
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  
+  /* CSS Transition */  
+  -webkit-transition: background .2s ease-in-out, border .2s ease-in-out;
+  -moz-transition: background .2s ease-in-out, border .2s ease-in-out;
+  -ms-transition: background .2s ease-in-out, border .2s ease-in-out;
+  -o-transition: background .2s ease-in-out, border .2s ease-in-out;
+  transition: background .2s ease-in-out, border .2s ease-in-out;
+}
+
 .maintenance-schedule-detailed{
   background-color: #f1f1f1;
 }
@@ -512,8 +545,26 @@
 
           </div>
           <div class="col-sm-6" >
-            <div class="maintenance-schedule-main-title"><span class="maintenance-schedule-title">Maintenance schedule</span> for your <span class="maintenance-schedule-car-title">2007 Mazda 5</span></div>
-            <hr class = "profile-hr">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="maintenance-schedule-main-title"><span class="maintenance-schedule-title">Maintenance schedule</span> for your <span class="maintenance-schedule-car-title">2007 Mazda 5</span></div>
+              </div>
+              <hr class = "profile-hr">
+              <div class="col-sm-8 col-sm-offset-2 mileage-input-section">
+                <div class="row">
+                  
+                <%= form_tag({controller: "cars", action: "update", id: 1}, method: "patch", class: "", id: "car_current_mileage_form", remote: true) do %>
+                <div class="col-sm-8">
+                <%= text_field_tag('car[current_mileage]', nil, {placeholder: "Current Mileage",  class: "form-control current-mileage-input"}) %>
+                </div><!-- /input-group -->
+                 <div class="col-sm-4">
+                <%= submit_tag("Submit",  {class: "btn btn-current-mileage-form"}) %>
+              </div>
+                <% end %>
+              </div>
+              </div>
+              
+            </div>
           </div>
         
 
