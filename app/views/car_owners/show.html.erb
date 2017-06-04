@@ -468,7 +468,7 @@
             <div class="profile-name"><%= @car_owner.name %></div>
             <div class="profile-location">Chicago, Illinois, United States - Joined June 2014</div>
             <div class="profile-icon-details">
-              <div><i class="fa fa-car profile-icon" aria-hidden="true"></i> <%=@car_owner.cars_count%> Cars Owned</div>
+              <div><i class="fa fa-car profile-icon" aria-hidden="true"></i> <%= @car_owner.cars_count%> <%= "Car".pluralize(@car_owner.cars_count)%></div>
               <div><i class="fa fa-camera profile-icon" aria-hidden="true"></i> 5 Photos</div>
             </div>
           </div>
@@ -476,7 +476,7 @@
             <div class="profile-name"><%= @car_owner.name %></div>
             <div class="profile-location">Chicago, Illinois, United States - Joined June 2014</div>
             <div class="profile-icon-details">
-              <div><i class="fa fa-car profile-icon" aria-hidden="true"></i> <%=@car_owner.cars_count%> Cars Owned</div>
+              <div><i class="fa fa-car profile-icon" aria-hidden="true"></i> <%=@car_owner.cars_count%> <%= "Car".pluralize(@car_owner.cars_count)%></div>
               <div><i class="fa fa-camera profile-icon" aria-hidden="true"></i> 5 Photos</div>
             </div>
           </div>
@@ -491,11 +491,14 @@
   </div>
 
   <% if @car_owner.cars_count == 0 %>
-
+  <div id="intial-dashboard-container" class="">
+    <% else %>
+    <div id="intial-dashboard-container" class="hide">
+    <% end %>
   <div class="row dashboard-main-message">
    <div class="col-md-6 col-md-offset-3">
-    <h2 class = "main-headline text-center">Your Dashboard</h2>
-    <p class = "profile-text text-left">This is your dashboard. Get started by adding your cars here. By adding a car, you'll be able to see your maintenance schedule so you have a better idea when your maintenance and repairs are due based on your cars mileage. We'll let you keep track of your cars maintenance history for your record keeping, and if there is a recall on your car we'll also let you know here. This is a community platform so feel free to email us at team@innvoy.com to let us know what else you might be interested in seeing here.</p>
+    <h2 class = "main-headline text-center"></h2>
+    <p class = "profile-text text-left">Get started by adding your cars here. By adding a car, you'll be able to see your maintenance schedule so you have a better idea when your maintenance and repairs are due. We'll let you keep track of your cars maintenance history for your record keeping, and if there is a recall on your car we'll also let you know here. This is a community platform so feel free to email us at team@innvoy.com to let us know what else you might be interested in seeing here.</p>
    </div>
   </div>
 
@@ -512,9 +515,13 @@
     </div>
     <% end %>
   </div>
+</div>
 
-  <% else %>
-
+<% if @car_owner.cars_count == 0 %>
+  <div id="dashboard-container" class="hide">
+    <% else %>
+    <div id="dashboard-container" class="">
+    <% end %>
   <div class="row">
     <div class="profile-section-nav col-sm-10 col-sm-offset-1">
       <div class="row">
@@ -526,6 +533,7 @@
       </div>
     </div>
   </div>
+
 
   <div id="dashboard-maintenance-schedule" class="row hide">
     <div class="maintenance-section col-xs-12">
@@ -547,7 +555,7 @@
           <div class="col-sm-6" >
             <div class="row">
               <div class="col-sm-12">
-                <div class="maintenance-schedule-main-title"><span class="maintenance-schedule-title">Maintenance schedule</span> for your <span class="maintenance-schedule-car-title">2007 Mazda 5</span></div>
+                <div class="maintenance-schedule-main-title"><span class="maintenance-schedule-title">Maintenance schedule</span> for your <span class="maintenance-schedule-car-title" id="dashboard-car-name-1"></span></div>
               </div>
               <hr class = "profile-hr">
               <div class="col-sm-8 col-sm-offset-2 mileage-input-section">
@@ -609,7 +617,7 @@
   <div id="dashboard-recalls" class="row hide">
     <div class="recalls-section col-xs-12">
       <div class="row">
-        <div class="recalls-section-main-title text-center"><span class="maintenance-schedule-title">Recalls</span> for <span class="maintenance-schedule-car-title">2007 Mazda 5</span></div>
+        <div class="recalls-section-main-title text-center"><span class="maintenance-schedule-title">Recalls</span> for <span class="maintenance-schedule-car-title" id="dashboard-car-name-2"></span></div>
       </div>
     </div>
   </div>
@@ -617,12 +625,12 @@
   <div id="dashboard-maintenance-history" class="row hide">
     <div class="maintenanance-history-section col-xs-12">
       <div class="row">
-        <div class="maintenanance-history-section-main-title text-center"><span class="maintenance-schedule-title">Maintenance and repair history</span> for your <span class="maintenance-schedule-car-title">2007 Mazda 5</span>
+        <div class="maintenanance-history-section-main-title text-center"><span class="maintenance-schedule-title">Maintenance and repair history</span> for your <span class="maintenance-schedule-car-title" id="dashboard-car-name-3"></span>
         </div>
       </div>
     </div>
   </div>
-  <% end %>
+</div>
 </div>
 
 <%= javascript_include_tag "jquery.js" %>
