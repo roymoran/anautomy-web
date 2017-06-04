@@ -7,30 +7,28 @@ jQuery ->
     $('#car_make_select').empty().append('<option selected>Make</option>')
     $('#car_model_select').empty().append('<option selected>Model</option>')
     car_year = $('#car_year_select :selected').text()
-    console.log(car_year) 
     tryFormSubmit()
  
   $('#car_make_select').change ->
     $('#car_model_select').empty().append('<option selected>Model</option>')  
     car_make = $('#car_make_select :selected').text()
-    console.log(car_make)
     tryFormSubmit()
 
   $('#car_model_select').change ->
   	car_model = $('#car_model_select :selected').text()
-  	console.log(car_model)
   	tryFormSubmit()
 
   @tryFormSubmit = () -> 
   	year_id = parseInt($('#car_year_select :selected').val())
   	make_id = parseInt($('#car_make_select :selected').val())
   	model_id = parseInt($('#car_model_select :selected').val())
+  	# only get model year id when all fields are present
+  	# TODO: This wil break when we change primary keys for car makes/models to text
   	if isNaN(year_id) || isNaN(model_id) || isNaN(make_id)
   		return
   	getModelYearId()
 
 	# getting modelyearid from edmunds
-	# example async call to get model year id for given car year make and model
 	@buildDashboard = (modelyearid, opts) ->
 		year = $('#car_year_select :selected').text()
 		make = $('#car_make_select :selected').text()
@@ -81,7 +79,9 @@ jQuery ->
 					# TODO: retry getting modelyearid with modified model name 
 					console.log("Error getting model year id.")
 					return
-				$('#dashboard-car-name').append(year + ' ' + make + ' ' + model)
+				$('#dashboard-car-name-1').append(year + ' ' + make + ' ' + model)
+				$('#dashboard-car-name-2').append(year + ' ' + make + ' ' + model)
+				$('#dashboard-car-name-3').append(year + ' ' + make + ' ' + model)
 				createCar(modelYearId)
 			error: (data) ->
 				console.log("error getting model yearid")
@@ -99,6 +99,8 @@ jQuery ->
 				$('.maintenance-item').empty()
 				$.each sortedMaintenanceList, (index, value) ->
 					$('.maintenance-item').append('<div class="text-left" style="font-size:0.5em;"><span style="font-weight: bold;">Repair name: </span>' + maintenanceList[index].action + ' ' + maintenanceList[index].item+ '<br>'+ '<span style="font-weight:bold;">Description: </span>'+ maintenanceList[index].itemDescription + '</div><br>')
+				$('#dashboard-container').removeClass("hide")
+				$('#intial-dashboard-container').addClass("hide")
 				console.log("Maintenance schedule: ")
 				console.log(data)
 
