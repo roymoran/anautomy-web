@@ -9,6 +9,9 @@ class CarOwnersController < ApplicationController
 	def show
 		@car_owner = CarOwner.find(params[:id])
     @car = Car.new
+    if @car_owner.cars_count > 0
+      @first_car = first_car(@car_owner)
+    end
   end
   	
   def create
@@ -105,6 +108,17 @@ class CarOwnersController < ApplicationController
     def correct_car_owner
       @car_owner = CarOwner.find(params[:id])
       redirect_to(root_url) unless current_car_owner?(@car_owner)
+    end
+
+    def first_car(car_owner)
+      @year = CarYear.find(car_owner.cars[0].car_year_id).year
+      @make = CarMake.find(car_owner.cars[0].car_make_id).name
+      @model = CarModel.find(car_owner.cars[0].car_model_id).name
+      return @year.to_s + ' ' + @make + ' ' + @model
+    end
+
+    def default_car 
+      # to be implented to allow user to choose default car
     end
 
 end
