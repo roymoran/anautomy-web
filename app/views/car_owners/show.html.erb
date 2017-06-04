@@ -555,13 +555,13 @@
           <div class="col-sm-6" >
             <div class="row">
               <div class="col-sm-12">
-                <div class="maintenance-schedule-main-title"><span class="maintenance-schedule-title">Maintenance schedule</span> for your <span class="maintenance-schedule-car-title" id="dashboard-car-name-1"><%= defined?(@first_car) ? @first_car : '' %></span></div>
+                <div class="maintenance-schedule-main-title"><span class="maintenance-schedule-title">Maintenance schedule</span> for your <span class="maintenance-schedule-car-title" id="dashboard-car-name-1"><%= defined?(@first_car_name) ? @first_car_name : '' %></span></div>
               </div>
               <hr class = "profile-hr">
               <div class="col-sm-8 col-sm-offset-2 mileage-input-section">
                 <div class="row">
                   
-                <%= form_tag({controller: "cars", action: "update", id: 1}, method: "patch", class: "", id: "car_current_mileage_form", remote: true) do %>
+                <%= form_tag({controller: "cars", action: "update", id: defined?(@first_car_id) ? @first_car_id : '1' }, method: "patch", class: "", id: "car_current_mileage_form", remote: true) do %>
                 <div class="col-sm-8">
                 <%= text_field_tag('car[current_mileage]', nil, {placeholder: "Current Mileage",  class: "form-control current-mileage-input"}) %>
                 </div><!-- /input-group -->
@@ -617,7 +617,7 @@
   <div id="dashboard-recalls" class="row hide">
     <div class="recalls-section col-xs-12">
       <div class="row">
-        <div class="recalls-section-main-title text-center"><span class="maintenance-schedule-title">Recalls</span> for <span class="maintenance-schedule-car-title" id="dashboard-car-name-2"><%= defined?(@first_car) ? @first_car : '' %></span></div>
+        <div class="recalls-section-main-title text-center"><span class="maintenance-schedule-title">Recalls</span> for <span class="maintenance-schedule-car-title" id="dashboard-car-name-2"><%= defined?(@first_car_name) ? @first_car_name : '' %></span></div>
       </div>
     </div>
   </div>
@@ -625,7 +625,7 @@
   <div id="dashboard-maintenance-history" class="row hide">
     <div class="maintenanance-history-section col-xs-12">
       <div class="row">
-        <div class="maintenanance-history-section-main-title text-center"><span class="maintenance-schedule-title">Maintenance and repair history</span> for your <span class="maintenance-schedule-car-title" id="dashboard-car-name-3"><%= defined?(@first_car) ? @first_car : '' %></span>
+        <div class="maintenanance-history-section-main-title text-center"><span class="maintenance-schedule-title">Maintenance and repair history</span> for your <span class="maintenance-schedule-car-title" id="dashboard-car-name-3"><%= defined?(@first_car_name) ? @first_car_name : '' %></span>
         </div>
       </div>
     </div>

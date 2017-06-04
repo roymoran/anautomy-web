@@ -10,7 +10,8 @@ class CarOwnersController < ApplicationController
 		@car_owner = CarOwner.find(params[:id])
     @car = Car.new
     if @car_owner.cars_count > 0
-      @first_car = first_car(@car_owner)
+      @first_car_name = first_car(@car_owner)
+      @first_car_id = @car_owner.cars[0].id
     end
   end
   	
