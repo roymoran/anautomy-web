@@ -297,7 +297,7 @@
 .dashboard-car-select{
   padding-bottom: 100px;
 }
-#maintenance-item .ui-accordion-header, #accordion5 .ui-accordion-header, #accordion3 .ui-accordion-header{
+.maintenance-item .ui-accordion-header{
   color: #303030;
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 600;
@@ -310,14 +310,14 @@
 
 }
 
-#maintenance-item .ui-accordion-header.ui-state-active, #accordion5 .ui-accordion-header.ui-state-active, #accordion3 .ui-accordion-header.ui-state-active{ 
+.maintenance-item .ui-accordion-header.ui-state-active{ 
   color: #303030;
   margin-bottom: 20px;
   background-color: #ffffff;
 
 }
 
-#maintenance-item .ui-accordion-content, #accordion5 .ui-accordion-content, #accordion3 .ui-accordion-content  {
+.maintenance-item .ui-accordion-content {
 
   color: #ffffff;
   font-family: 'Josefin Sans', sans-serif;
@@ -330,10 +330,10 @@
   background-color: #5A5A5A;
 }
 
-#maintenance-item .ui-accordion-header:nth-of-type(2), #accordion5 .ui-accordion-header:nth-of-type(2), #accordion3 .ui-accordion-header:nth-of-type(2){
+.maintenance-item .ui-accordion-header:nth-of-type(2){
   margin-bottom: 20px;
 }
-#maintenance-item .ui-accordion-content:nth-of-type(2), #accordion5 .ui-accordion-content:nth-of-type(2), #accordion3 .ui-accordion-content:nth-of-type(2){
+.maintenance-item .ui-accordion-content:nth-of-type(2){
   margin-top: -20px;
 }
 
@@ -563,7 +563,7 @@
                   
                 <%= form_tag({controller: "cars", action: "update", id: defined?(@first_car_id) ? @first_car_id : '1' }, method: "patch", class: "", id: "car_current_mileage_form", remote: true) do %>
                 <div class="col-sm-8">
-                <%= text_field_tag('car[current_mileage]', nil, {placeholder: "Current Mileage",  class: "form-control current-mileage-input"}) %>
+                <%= text_field_tag('car[current_mileage]', nil, {placeholder: "Current Mileage",  class: "form-control current-mileage-input", value: defined?(@first_car_mileage) ? @first_car_mileage : '' }) %>
                 </div><!-- /input-group -->
                  <div class="col-sm-4">
                 <%= submit_tag("Update",  {class: "btn btn-current-mileage-form"}) %>
@@ -598,7 +598,7 @@
     <div class="maintenance-schedule-detailed col-xs-12">
       <div class="row">
         <div class="maintenance-schedule-item col-xs-10 col-xs-offset-1">
-          <div id="maintenance-item">
+          <div class="maintenance-item">
             <div class = "maintenance-item-title">CHANGE ENGINE OIL<i class="fa fa-plus maintenance-item-icon"></i></div>
             <div class="row">
               <div class="col-sm-9">
@@ -609,6 +609,19 @@
               </div>
             </div>
           </div>
+
+          <div class="maintenance-item">
+            <div class = "maintenance-item-title">CHANGE ENGINE OIL<i class="fa fa-plus maintenance-item-icon"></i></div>
+            <div class="row">
+              <div class="col-sm-9">
+              <p>Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.</p>
+              </div>
+              <div class="col-sm-3">
+                <button type="" class="btn btn-maintenance-item">Check Frequently</button>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
@@ -637,7 +650,7 @@
 
     <%= javascript_include_tag "jquery-ui.js" %>    
 <script>
-$( "#maintenance-item, #accordian5" ).accordion({
+$( ".maintenance-item" ).accordion({
       collapsible: true,
       heightStyle: "content",
       active: false

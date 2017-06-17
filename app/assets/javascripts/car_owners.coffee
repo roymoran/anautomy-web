@@ -98,11 +98,12 @@ jQuery ->
 				sortedMaintenanceList = sortMaintenanceList(maintenanceList, currentMileage)
 				$('.maintenance-item').empty()
 				$.each sortedMaintenanceList, (index, value) ->
-					$('.maintenance-item').append('<div class="text-left" style="font-size:0.5em;"><span style="font-weight: bold;">Repair name: </span>' + maintenanceList[index].action + ' ' + maintenanceList[index].item+ '<br>'+ '<span style="font-weight:bold;">Description: </span>'+ maintenanceList[index].itemDescription + '</div><br>')
+					$('.maintenance-schedule-item').append('<div class="maintenance-item"><div class = "maintenance-item-title">' + sortedMaintenanceList[index].action + ' ' + sortedMaintenanceList[index].item + '<i class="fa fa-plus maintenance-item-icon"></i></div><div class="row"><div class="col-sm-9"><p>'+ sortedMaintenanceList[index].itemDescription+'</p></div><div class="col-sm-3"><button type="" class="btn btn-maintenance-item">Check Frequently</button></div></div></div>')
+				$( ".maintenance-item" ).accordion({collapsible: true,heightStyle: "content",active: false});
 				$('#dashboard-container').removeClass("hide")
 				$('#intial-dashboard-container').addClass("hide")
-				console.log("Maintenance schedule: ")
-				console.log(data)
+				console.log("Sorted maintenance schedule: ")
+				console.log(sortedMaintenanceList)
 
 
 	@createCar = (modelyearid) ->
@@ -121,7 +122,7 @@ jQuery ->
   			error: (data) ->
   				console.log("Error setting up dashboard")
 
-  	@sortMaintenanceList = (maintenanceList, currentMileage) ->
+	@sortMaintenanceList = (maintenanceList, currentMileage) ->
   		newMaintenanceList = []
   		if currentMileage
   			#get maintenace schedule for provided mileage data

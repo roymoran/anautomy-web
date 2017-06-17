@@ -12,6 +12,7 @@ class CarOwnersController < ApplicationController
     if @car_owner.cars_count > 0
       @first_car_name = first_car(@car_owner)
       @first_car_id = @car_owner.cars[0].id
+      @first_car_mileage = @car_owner.cars[0].current_mileage
     end
   end
   	
