@@ -98,7 +98,7 @@ jQuery ->
 				sortedMaintenanceList = sortMaintenanceList(maintenanceList, currentMileage)
 				$('.maintenance-item').empty()
 				$.each sortedMaintenanceList, (index, value) ->
-					$('.maintenance-schedule-item').append('<div class="maintenance-item"><div class = "maintenance-item-title">' + sortedMaintenanceList[index].action + ' ' + sortedMaintenanceList[index].item + '<i class="fa fa-plus maintenance-item-icon"></i></div><div class="row"><div class="col-sm-9"><p>'+ sortedMaintenanceList[index].itemDescription+'</p></div><div class="col-sm-3"><button type="" class="btn btn-maintenance-item">Check Frequently</button></div></div></div>')
+					$('.maintenance-schedule-item').append('<div class="maintenance-item"><div class = "maintenance-item-title">' + sortedMaintenanceList[index].action + ' ' + sortedMaintenanceList[index].item + '<i class="fa fa-plus maintenance-item-icon"></i></div><div class="row"><div class="col-sm-9"><p>'+ sortedMaintenanceList[index].itemDescription+'</p></div><div class="col-sm-3"><button type="" class="btn btn-maintenance-item">Check Every '+sortedMaintenanceList[index].intervalMileage+' mi.</button></div></div></div>')
 				$( ".maintenance-item" ).accordion({collapsible: true,heightStyle: "content",active: false});
 				$('#dashboard-container').removeClass("hide")
 				$('#intial-dashboard-container').addClass("hide")
