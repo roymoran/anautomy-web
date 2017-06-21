@@ -13,6 +13,7 @@ class CarOwnersController < ApplicationController
       @first_car_name = first_car(@car_owner)
       @first_car_id = @car_owner.cars[0].id
       @first_car_mileage = @car_owner.cars[0].current_mileage
+      @first_car_modelyearid = @car_owner.cars[0].edmunds_modelyearid
     end
   end
   	

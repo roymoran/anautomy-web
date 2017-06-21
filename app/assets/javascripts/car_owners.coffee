@@ -3,6 +3,10 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 jQuery ->
+
+  opts = {current_mileage: $('#car_current_mileage').val()}
+  buildDashboard($('#edmunds_modelyearid').val(), opts)
+
   $("#car_year_select").change ->
     $('#car_make_select').empty().append('<option selected>Make</option>')
     $('#car_model_select').empty().append('<option selected>Model</option>')
@@ -30,30 +34,14 @@ jQuery ->
 
 	# getting modelyearid from edmunds
 	@buildDashboard = (modelyearid, opts) ->
-		year = $('#car_year_select :selected').text()
-		make = $('#car_make_select :selected').text()
-		model = $('#car_model_select :selected').text()
-		console.log('Edmunds API calls for ' + year + ' ' + make + ' ' + model)
+		if isNaN(parseInt(modelyearid)) && isNaN(parseInt(opts['current_mileage'])) 
+			return
 		
-		# getting maintenance schedule
+		# populate maintenance schedule
 		buildMaintenanceSchedule(modelyearid, opts['current_mileage'])
 
-		# getting car recall information for given modelyearid
-		$.ajax
-			type: "GET"
-			url: "/api/recalls"
-			data: {model_year_id: modelyearid}
-			dataType: "json"
-			success: (data) ->
-				recalls = data.recallHolder
-				if data.recallHolder.length == 0
-					$('.recall-items').append('Good news. No recalls for this car.')
-					return
-				$.each recalls, (index, value) ->
-					$('.recall-name').append('<div style="font-size:0.5em;">'+recalls[index].componentDescription+'</div>')
-					$('.recall-description').append('<div style="font-size:0.5em;">'+recalls[index].defectDescription+'</div>')
-				console.log("Recalls w/ model_year_id")
-				console.log(data)
+		# populate recalls 
+		buildRecalls(modelyearid)
 
 	@getModelYearId = () ->
 		year = $('#car_year_select :selected').text()
@@ -96,15 +84,39 @@ jQuery ->
 			success: (data) ->
 				maintenanceList = data.actionHolder
 				sortedMaintenanceList = sortMaintenanceList(maintenanceList, currentMileage)
-				$('.maintenance-item').empty()
+				$('.maintenance-schedule-item').empty()
 				$.each sortedMaintenanceList, (index, value) ->
-					$('.maintenance-schedule-item').append('<div class="maintenance-item"><div class = "maintenance-item-title">' + sortedMaintenanceList[index].action + ' ' + sortedMaintenanceList[index].item + '<i class="fa fa-plus maintenance-item-icon"></i></div><div class="row"><div class="col-sm-9"><p>'+ sortedMaintenanceList[index].itemDescription+'</p></div><div class="col-sm-3"><button type="" class="btn btn-maintenance-item">Check Every '+sortedMaintenanceList[index].intervalMileage+' mi.</button></div></div></div>')
-				$( ".maintenance-item" ).accordion({collapsible: true,heightStyle: "content",active: false});
+					$('.maintenance-schedule-item').append('<div class="maintenance-item"><div class = "maintenance-item-title">' + sortedMaintenanceList[index].action + ' ' + sortedMaintenanceList[index].item + '<i class="fa fa-plus maintenance-item-icon"></i></div><div class="row"><div class="col-sm-9" style="font-size:1.2em;"><p>'+ sortedMaintenanceList[index].itemDescription+'</p></div><div class="col-sm-3"><button type="" class="btn btn-maintenance-item">Check Every '+sortedMaintenanceList[index].intervalMileage+' mi.</button></div></div></div>')
+				$( ".maintenance-item, .recall-item" ).accordion({collapsible: true,heightStyle: "content",active: false});
+				$('.maintenance-schedule-message').empty()
+				if sortedMaintenanceList.length == 0
+					$('.maintenance-schedule-message').append('Good news, you don\'t have any upcoming repairs.')
+				else
+					$('.maintenance-schedule-message').append('You have '+sortedMaintenanceList.length+' repairs due in the next 1,000 miles')
+
 				$('#dashboard-container').removeClass("hide")
 				$('#intial-dashboard-container').addClass("hide")
 				console.log("Sorted maintenance schedule: ")
 				console.log(sortedMaintenanceList)
 
+	@buildRecalls = (modelyearid) ->
+		# getting car recall information for given modelyearid
+		$.ajax
+			type: "GET"
+			url: "/api/recalls"
+			data: {model_year_id: modelyearid}
+			dataType: "json"
+			success: (data) ->
+				recalls = data.recallHolder
+				if data.recallHolder.length == 0
+					$('.recalls-section-sub-title').append('There are no recalls for your car')
+					return
+				$.each recalls, (index, value) ->
+					$('.recall-items').append('<div class="recall-item"><div class = "maintenance-item-title">' + recalls[index].componentDescription + '<i class="fa fa-plus maintenance-item-icon"></i></div><div class="row"><div class="col-sm-12" style="font-size:1.2em;"><p>'+ recalls[index].defectCorrectiveAction+'</p></div></div></div>')
+				$('.recalls-section-sub-title').append('There are '+recalls.length+' recalls for your car')
+				$( ".maintenance-item, .recall-item" ).accordion({collapsible: true,heightStyle: "content",active: false});
+				console.log("Recalls w/ model_year_id")
+				console.log(data)
 
 	@createCar = (modelyearid) ->
 		year_id = parseInt($('#car_year_select :selected').val())
@@ -151,5 +163,7 @@ jQuery ->
 		# based on mileage input by car owner
 	).on "ajax:error", (e, xhr, status, error) ->
 		console.log('Error updating current mileage')
+
+
 
 
