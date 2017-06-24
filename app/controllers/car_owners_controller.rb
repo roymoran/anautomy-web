@@ -90,6 +90,17 @@ class CarOwnersController < ApplicationController
     end
   end
 
+  def car_image
+    api_key = Rails.application.secrets.edmunds_api_key
+    modelyearid = params[:model_year_id]
+    uri = URI('https://api.edmunds.com/v1/api/maintenance/recallrepository/findbymodelyearid?modelyearid='+modelyearid+'&fmt=json&api_key=' + api_key)
+    res = Net::HTTP.get_response(uri)
+
+    respond_to do |format|
+      format.json { render :json => res.body}
+    end
+  end
+
 
 	private
 
