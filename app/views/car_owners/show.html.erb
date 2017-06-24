@@ -283,6 +283,33 @@
   background-color: #f1f1f1;
   margin-bottom: 25px;
 }
+.maintenanance-history-detailed{
+  background-color: #f1f1f1;
+  margin-bottom: 25px;
+}
+.mh-title-block{
+  background-color: #ffffff;
+  color: #2f2f2f;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+
+}
+.maintenanance-history-item-light{
+  background-color: #f1f1f1;
+}
+.maintenanance-history-item-dark{
+  background-color: #ffffff;
+}
+.mh-text-block{
+  color: #2f2f2f;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+}
+
 .maintenance-schedule-item{
    
 }
@@ -534,10 +561,10 @@
   <div class="row">
     <div class="profile-section-nav col-sm-10 col-sm-offset-1">
       <div class="row">
-        <div class="col-sm-10 col-sm-offset-2">
+        <div class="col-sm-10 col-sm-offset-3">
           <div class="col-sm-3 profile-menu-item profile-nav-menu-item-active" data-id="dashboard-maintenance-schedule">Maintenance Schedule</div>
           <div class="col-sm-3 profile-menu-item profile-nav-menu-item" data-id="dashboard-recalls">Recalls</div>
-          <div class="col-sm-3 profile-menu-item profile-nav-menu-item" data-id="dashboard-maintenance-history">Repair History</div>
+          <!--<div class="col-sm-3 profile-menu-item profile-nav-menu-item" data-id="dashboard-maintenance-history">Repair History</div>-->
         </div>
       </div>
     </div>
@@ -649,13 +676,43 @@
         </div>
       </div>
     </div>
+
+     <div class="maintenanance-history-detailed col-xs-12">
+      <div class="row">
+        <div class="mh-title-block col-xs-1 col-xs-offset-1">Date</div>
+        <div class="mh-title-block col-xs-2 col-xs-offset-1">Repiar</div>
+        <div class="mh-title-block col-xs-1 col-xs-offset-1">Cost</div>
+        <div class="mh-title-block col-xs-3 col-xs-offset-1">Shop</div>
+
+        <div class="maintenanance-history-item-light col-xs-10 col-xs-offset-1">
+          <div class="mh-text-block col-xs-1 col-xs-offset-1">09/07/2014</div>
+          <div class="mh-text-block col-xs-2 col-xs-offset-1">Rotate/adjust tire air pressure</div>
+          <div class="mh-text-block col-xs-1 col-xs-offset-1">$369</div>
+          <div class="mh-text-block col-xs-3 col-xs-offset-1">John Doe Repair Center <br>Chicago, Illinois</div>
+        </div>
+
+        <div class="maintenanance-history-item-dark col-xs-10 col-xs-offset-1">
+          <div class="mh-text-block col-xs-1 col-xs-offset-1">Date</div>
+          <div class="mh-text-block col-xs-2 col-xs-offset-1">Repair</div>
+          <div class="mh-text-block col-xs-1 col-xs-offset-1">Cost</div>
+          <div class="mh-text-block col-xs-3 col-xs-offset-1">Shop</div>
+        </div>
+
+        <div class="maintenanance-history-item-light col-xs-10 col-xs-offset-1">
+          <div class="mh-text-block col-xs-1 col-xs-offset-1">Date</div>
+          <div class="mh-text-block col-xs-2 col-xs-offset-1">Repair</div>
+          <div class="mh-text-block col-xs-1 col-xs-offset-1">Cost</div>
+          <div class="mh-text-block col-xs-3 col-xs-offset-1">Shop</div>
+        </div>
+
+      </div>
+    </div>
   </div>
 </div>
 </div>
 
 <%= javascript_include_tag "jquery.js" %>
-
-    <%= javascript_include_tag "jquery-ui.js" %>    
+<%= javascript_include_tag "jquery-ui.js" %>    
 <script>
 $( ".maintenance-item, .recall-item" ).accordion({
       collapsible: true,
