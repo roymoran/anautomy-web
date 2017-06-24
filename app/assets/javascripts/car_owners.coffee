@@ -109,14 +109,14 @@ jQuery ->
 			success: (data) ->
 				recalls = data.recallHolder
 				if data.recallHolder.length == 0
-					$('.recalls-section-sub-title').append('There are no recalls for your car')
+					$('.recalls-section-sub-title').append('There are no recalls for your car.')
 					return
 				$.each recalls, (index, value) ->
 					$('.recall-items').append('<div class="recall-item"><div class = "maintenance-item-title">' + recalls[index].componentDescription + '<i class="fa fa-plus maintenance-item-icon"></i></div><div class="row"><div class="col-sm-12" style="font-size:1.2em;"><p>'+ recalls[index].defectCorrectiveAction+'</p></div></div></div>')
-				$('.recalls-section-sub-title').append('There are '+recalls.length+' recalls for your car')
+				$('.recalls-section-sub-title').append('There are '+recalls.length+' recalls for your car.')
 				$( ".maintenance-item, .recall-item" ).accordion({collapsible: true,heightStyle: "content",active: false});
 				console.log("Recalls w/ model_year_id")
-				console.log(data)
+				console.log(recalls)
 
 	@createCar = (modelyearid) ->
 		year_id = parseInt($('#car_year_select :selected').val())
