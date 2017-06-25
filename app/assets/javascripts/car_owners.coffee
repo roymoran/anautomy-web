@@ -49,6 +49,8 @@ jQuery ->
 		model = $('#car_model_select :selected').text()
 		model_parsed = model
 
+		# Removing any instance of 2WD, 4WD, AWD, etc. to increase likliehood of getting
+		# modelyearid
 		model_parsed = model_parsed.replace("2WD", "")
 		model_parsed = model_parsed.replace("4WD", "")
 		model_parsed = model_parsed.replace("AWD", "")
@@ -70,7 +72,7 @@ jQuery ->
 				$('#dashboard-car-name-1').append(year + ' ' + make + ' ' + model)
 				$('#dashboard-car-name-2').append(year + ' ' + make + ' ' + model)
 				$('#dashboard-car-name-3').append(year + ' ' + make + ' ' + model)
-				createCar(modelYearId)
+				getCarImage(modelYearId)
 			error: (data) ->
 				console.log("error getting model yearid")
 
@@ -118,14 +120,14 @@ jQuery ->
 				console.log("Recalls w/ model_year_id")
 				console.log(recalls)
 
-	@createCar = (modelyearid) ->
+	@createCar = (modelyearid, carImage) ->
 		year_id = parseInt($('#car_year_select :selected').val())
 		make_id = parseInt($('#car_make_select :selected').val())
 		model_id = parseInt($('#car_model_select :selected').val())
 		$.ajax
   			type: "POST"
   			url: "/cars"
-  			data: {car:{car_year_id: year_id, car_make_id: make_id, car_model_id: model_id, edmunds_modelyearid: modelyearid}}
+  			data: {car:{car_year_id: year_id, car_make_id: make_id, car_model_id: model_id, edmunds_modelyearid: modelyearid, car_image: carImage}}
   			success: (data) ->
   				$('#dash').fadeOut()
   				$('#car_current_mileage_form').attr('action', '/cars/' + data);
@@ -133,6 +135,24 @@ jQuery ->
   				buildDashboard(modelyearid, {})
   			error: (data) ->
   				console.log("Error setting up dashboard")
+  	
+	@getCarImage = (modelyearid) ->
+		year = $('#car_year_select :selected').text()
+		make = $('#car_make_select :selected').text()
+		model = $('#car_model_select :selected').text()
+
+		$.ajax
+			type: "GET"
+			url: "/api/car_image"
+			data: {car_year: year, car_make: make, car_model: model}
+			dataType: "json"
+			success: (data) ->
+				carImage = data.items[0].link
+				$(".profile-car-img").attr("src", carImage);
+				createCar(modelyearid, carImage)
+			error: (data) ->
+				console.log("error getting model yearid")
+
 
 	@sortMaintenanceList = (maintenanceList, currentMileage) ->
   		newMaintenanceList = []

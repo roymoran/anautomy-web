@@ -73,6 +73,7 @@ Rails.application.routes.draw do
   get 'api/tmv_typical' => "car_owners#tmv_typical"
   get 'api/tmv_detailed' => "car_owners#tmv_detailed"
   get 'api/recalls' => "car_owners#recalls"
+  get 'api/car_image' => "car_owners#car_image"
 
 
   # The priority is based upon order of creation: first created -> highest priority.
