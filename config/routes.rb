@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'searches/new'
+
+  get 'searches/show'
+
   get 'password_resets/new'
 
   get 'password_resets/edit'
