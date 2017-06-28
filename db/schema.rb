@@ -175,8 +175,8 @@ ActiveRecord::Schema.define(version: 20170625024113) do
     t.datetime "updated_at",           null: false
     t.integer  "repair_submission_id"
     t.integer  "car_year_id"
-    t.integer  "car_option_id"
     t.integer  "car_owner_id"
+    t.integer  "car_option_id"
     t.integer  "current_mileage"
     t.string   "edmunds_modelyearid"
     t.string   "car_image"
@@ -188,6 +188,13 @@ ActiveRecord::Schema.define(version: 20170625024113) do
   add_index "cars", ["car_owner_id"], name: "index_cars_on_car_owner_id", using: :btree
   add_index "cars", ["car_year_id"], name: "index_cars_on_car_year_id", using: :btree
   add_index "cars", ["repair_submission_id"], name: "index_cars_on_repair_submission_id", using: :btree
+
+  create_table "dashboards", force: :cascade do |t|
+    t.string  "name"
+    t.integer "vehicleYear"
+    t.string  "vehicleMake"
+    t.string  "vehicleModel"
+  end
 
   create_table "invoices", force: :cascade do |t|
     t.datetime "created_at",                 null: false
@@ -307,19 +314,35 @@ ActiveRecord::Schema.define(version: 20170625024113) do
   add_index "subscribers", ["email"], name: "index_subscribers_on_email", unique: true, using: :btree
 
   add_foreign_key "car_models", "car_makes"
+  add_foreign_key "car_models", "car_makes"
+  add_foreign_key "car_options", "car_models"
   add_foreign_key "car_options", "car_models"
   add_foreign_key "cars", "car_makes"
+  add_foreign_key "cars", "car_makes"
+  add_foreign_key "cars", "car_models"
   add_foreign_key "cars", "car_models"
   add_foreign_key "cars", "car_options"
+  add_foreign_key "cars", "car_options"
+  add_foreign_key "cars", "car_owners"
   add_foreign_key "cars", "car_owners"
   add_foreign_key "cars", "car_years"
+  add_foreign_key "cars", "car_years"
+  add_foreign_key "cars", "repair_submissions"
   add_foreign_key "cars", "repair_submissions"
   add_foreign_key "repair_names", "repair_categories"
+  add_foreign_key "repair_names", "repair_categories"
+  add_foreign_key "repair_submissions", "shops"
   add_foreign_key "repair_submissions", "shops"
   add_foreign_key "repairs", "repair_categories"
+  add_foreign_key "repairs", "repair_categories"
+  add_foreign_key "repairs", "repair_names"
   add_foreign_key "repairs", "repair_names"
   add_foreign_key "repairs", "repair_submissions"
+  add_foreign_key "repairs", "repair_submissions"
+  add_foreign_key "shop_ratings", "repair_submissions"
   add_foreign_key "shop_ratings", "repair_submissions"
   add_foreign_key "shop_ratings", "shops"
+  add_foreign_key "shop_ratings", "shops"
+  add_foreign_key "shop_users", "shops"
   add_foreign_key "shop_users", "shops"
 end
