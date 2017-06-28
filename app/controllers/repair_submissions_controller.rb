@@ -50,6 +50,7 @@ class RepairSubmissionsController < ApplicationController
 	end
 
 	def show
+		# current search logic
 		@car = params[:car]
 		car_make = params[:car].split(' ', 2)[0]
 		car_model = params[:car].split(' ', 2)[1]
