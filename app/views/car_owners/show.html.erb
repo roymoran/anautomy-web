@@ -24,6 +24,13 @@
   font-size: 1em;
   font-weight: bold;
   display: inline-block;
+  padding-top: 60px;
+}
+.profile-icon-details-xs{
+  color:#2e2e2e;
+  font-size: 1em;
+  font-weight: bold;
+  display: inline-block;
 }
 .profile-icon{
   color:#52bb49;
@@ -505,15 +512,17 @@
             <div class="profile-location">Chicago, Illinois, United States - joined <%= @car_owner.created_at.strftime("%B %Y") %> </div>
             <div class="profile-icon-details">
               <div><i class="fa fa-car profile-icon" aria-hidden="true"></i> <%= @car_owner.cars_count%> <%= "Car".pluralize(@car_owner.cars_count)%></div>
-              <div><i class="fa fa-camera profile-icon" aria-hidden="true"></i> 5 Photos</div>
+              <!--<div><i class="fa fa-camera profile-icon" aria-hidden="true"></i> 5 Photos</div>-->
             </div>
           </div>
           <div class="visible-xs text-center">
             <div class="profile-name"><%= @car_owner.name %></div>
             <div class="profile-location">Chicago, Illinois, United States - joined <%= @car_owner.created_at.strftime("%B %Y") %> </div>
             <div class="profile-icon-details">
+            <div class="profile-location">Chicago, Illinois, United States - Joined June 2014</div>
+            <div class="profile-icon-details-xs">
               <div><i class="fa fa-car profile-icon" aria-hidden="true"></i> <%=@car_owner.cars_count%> <%= "Car".pluralize(@car_owner.cars_count)%></div>
-              <div><i class="fa fa-camera profile-icon" aria-hidden="true"></i> 5 Photos</div>
+              <!--<div><i class="fa fa-camera profile-icon" aria-hidden="true"></i> 5 Photos</div>-->
             </div>
           </div>
         </div>
@@ -562,7 +571,7 @@
     <div class="profile-section-nav col-sm-10 col-sm-offset-1">
       <div class="row">
         <div class="col-sm-10 col-sm-offset-3">
-          <div class="col-sm-3 profile-menu-item profile-nav-menu-item-active" data-id="dashboard-maintenance-schedule">Maintenance Schedule</div>
+          <div class="col-sm-3 profile-menu-item profile-nav-menu-item-active" data-id="dashboard-maintenance-schedule">Maintenance</div>
           <div class="col-sm-3 profile-menu-item profile-nav-menu-item" data-id="dashboard-recalls">Recalls</div>
           <!--<div class="col-sm-3 profile-menu-item profile-nav-menu-item" data-id="dashboard-maintenance-history">Repair History</div>-->
         </div>
