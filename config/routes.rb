@@ -49,6 +49,7 @@ Rails.application.routes.draw do
   #post   'sub'   => 'subscribers#create'
   resources :subscribers
   resources :repair_submissions
+  resources :searches, only: [:new, :create]
 
   resources :anuatomy
   resources :shops
