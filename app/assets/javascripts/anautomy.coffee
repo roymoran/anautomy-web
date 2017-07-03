@@ -31,3 +31,19 @@ jQuery ->
 	$('.mp-login-modal-submitted').click ->
 		mixpanel.track 'Login Modal Submitted'
 
+	$( ".search-location" ).focus ->
+		if 'geolocation' of navigator
+			console.log("geolocation is available")
+			navigator.geolocation.getCurrentPosition (position) ->
+				console.log("Lat: " + position.coords.latitude + "\n" + "Long:" + position.coords.longitude)
+				$.ajax
+					type: "GET"
+					url: "https://maps.googleapis.com/maps/api/geocode/json?latlng="+position.coords.latitude+","+position.coords.longitude+"&key="
+					dataType: "json"
+					success: (data) ->
+						console.log(data)
+						console.log(data.results[3].formatted_address)
+						$('.search-location').val(data.results[3].formatted_address)
+		else
+			console.log("geolocation IS NOT available")
+

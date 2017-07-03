@@ -3,9 +3,10 @@ class AnautomyController < ApplicationController
   def home
     @subscriber = Subscriber.new
     @repairSubmission = RepairSubmission.new
+    @search = Search.new
     @car = params['car_type']
     @repair = params['repair']
-
+    @ip = ipToGeolocation
     if !(@car.nil?) || !(@repair.nil?)
 
       if !(@repair.nil?)
@@ -117,4 +118,13 @@ class AnautomyController < ApplicationController
         @eleventhLabor = (0.7 * @eleventhResult).round
       
   end
+
+  # Methods for API calls
+  def ipToGeolocation
+    api_key = Rails.application.secrets.dbip_api_key
+    uri = URI('http://api.db-ip.com/v2/'+'e09e1b757869979c84b1bef5ed1972d80b30ca47'+'/'+'172.81.154.92')
+    res = Net::HTTP.get_response(uri)
+    return res.body
+  end
+
 end
