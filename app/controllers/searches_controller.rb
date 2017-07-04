@@ -4,6 +4,13 @@ class SearchesController < ApplicationController
   end
 
   def create
+    # validate input for car, repair, and location
+    # check which values are available and which are missing
+    # based on input create a search strategy for each
+    @search = Search.new(search_params)
+    flash[:info] = "In Create action with year: " + @search.car_year_id + " make: " + @search.car_make_id + " model: " +  @search.car_model_id
+    render :show
+    
   end
   
   def show
@@ -38,4 +45,12 @@ class SearchesController < ApplicationController
   	@ip = request.remote_ip
 
   end
+
+  private
+
+    def search_params
+      params.require(:search).permit(:car_make_id, :car_model_id, :car_year_id)
+    end
+
+
 end

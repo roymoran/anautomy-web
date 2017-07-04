@@ -47,3 +47,28 @@ jQuery ->
 		else
 			console.log("geolocation IS NOT available")
 
+	$('#car_year_select_home').change ->
+		$('#car_make_select_home').empty().append('<option selected>Make</option>')
+		$('#car_model_select_home').empty().append('<option selected>Model</option>')
+		car_year = $('#car_year_select_home :selected').text()
+		$.ajax
+			type: "GET"
+			url: "/fetch_car_makes"
+			data: {car_year:"year_" + car_year}
+			dataType: "json"
+			success: (data) ->
+				$.each data, (index, value) ->
+					$('#car_make_select_home').append('<option value='+ data[index].id+'>'+data[index].name+'</option>')
+
+	$('#car_make_select_home').change ->
+		car_year = $('#car_year_select_home :selected').text()
+		car_make = $('#car_make_select_home :selected').val()
+		$.ajax
+			type: "GET"
+			url: "/fetch_car_models"
+			data: {car_year:"year_" + car_year, car_make_id: car_make}
+			dataType: "json"
+			success: (data) ->
+				$('#car_model_select_home').empty().append('<option selected>Model</option>')
+				$.each data, (index, value) ->
+					$('#car_model_select_home').append('<option value='+ data[index].id+'>'+data[index].name+'</option>')
