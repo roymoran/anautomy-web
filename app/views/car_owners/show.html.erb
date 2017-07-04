@@ -426,78 +426,6 @@
 }
 </style>
 
-<!--
-<div class = "container-fluid" style="min-height:500px;">
-  <div class="row">
-   <div class="col-md-6 col-md-offset-3">
-    <h2 class = "main-headline text-center">Your Dashboard</h2>
-    <p class = "profile-text text-left">This is your dashboard. You'll be able to add your cars to make searching for repairs easier. We will also include your cars maintenance schedule so you have a better idea when your maintenance and repairs are due based on your cars mileage. If there is a recall on one of your cars, we'll also let you know here. This is a community platform so feel free to email us at team@innvoy.com to let us know what else you are interested in seeing here.</p>
-   </div>
- </div>
-   <div id="dash" class="row">
-    <%= form_for(@car) do |f| %>
-      <div class="col-xs-12 col-sm-3 col-sm-offset-1">
-    <%= f.collection_select(:car_year_id, (CarYear.all).reverse, :id, :year, {prompt: "Year"}, {class: "select_submission_form", id: "car_year_select"}) %>
-      </div>
-      <div class="col-xs-12 col-sm-3">
-    <%= f.select(:car_make_id, options_for_select([]), {prompt: "Make"}, {class: "select_submission_form", id: "car_make_select"}) %>
-      </div>
-      <div class="col-xs-12 col-sm-3">
-    <%= f.select(:car_model_id, options_for_select([]), {prompt: "Model"}, {class: "select_submission_form", id: "car_model_select"}) %>
-  </div>
-    <% end %>
-  </div>
-
-  <div class="row">
-   <div class="main-headline text-left col-sm-11 col-sm-offset-1" id="dashboard-car-name"></div>
- </div>
- <div class="row">
-  <div class="col-sm-6 col-sm-offset-1 text-left" style="font-size: 1.8em; color: #545E69; font-family: 'Roboto'; font-weight: 300;">
-    <div class="row maintenance-schedule-container" style="border-style:solid; border-color:#7a7a7a; border-width:1px; border-radius:10px;">
-      <div class="col-sm-3" style="border-right:1px solid #7a7a7a;">Maintenance<br>Schedule</div>
-      <%= form_tag({controller: "cars", action: "update", id: 1}, method: "patch", class: "", id: "car_current_mileage_form", remote: true) do %>
-        <%= text_field_tag('car[current_mileage]', nil, {placeholder: "Enter current mileage",  class: ""}) %>
-        <%= submit_tag("Enter",  {class: ""}) %>
-        <% end %>
-      <div class="col-sm-9 text-center maintenance-item">
-        
-      </div>
-    </div>
-
-  </div>
-  <div class="col-sm-3 col-sm-offset-1" style="font-size: 1.8em; color: #545E69; font-family: 'Roboto'; font-weight: 300;">
-    <div class="row recalls-container" style="border-style:solid; border-color:#7a7a7a; border-width:1px;">
-      <div class="col-sm-12 text-center">Recalls</div>
-      <hr style="width:100%; height:1px; background: #7a7a7a"/>
-      <div class="row recall-items">
-      <div class="col-sm-3 text-left recall-name">
-        
-      </div>
-      <div class="col-sm-9 text-left recall-description">
-        
-      </div>
-    </div>
-    </div>
-  </div>
- </div>
- <div>
-  <br>
-  <div class="row">
-    <div class="col-sm-6 col-sm-offset-1 text-left" style="font-size: 1.8em; color: #545E69; font-family: 'Roboto'; font-weight: 300;">
-    <div class="row maintenance-schedule-container" style="border-style:solid; border-color:#7a7a7a; border-width:1px; border-radius:10px;">
-      <div class="col-sm-3" style="border-right:1px solid #7a7a7a;">Maintenance and Repair<br>History</div>
-      <div class="col-sm-9 text-center">
-      </div>
-    </div>
-
-  </div>
-  </div>
-   
- </div>
-
-</div>
--->
-
 <div class = "container">
   <div class="row">
     <div class="profile-header-section col-xs-12">
@@ -509,7 +437,7 @@
         <div class="profile-details col-sm-8 col-xs-12">
           <div class="hidden-xs">
             <div class="profile-name"><%= @car_owner.name %></div>
-            <div class="profile-location">Chicago, Illinois, United States - joined <%= @car_owner.created_at.strftime("%B %Y") %> </div>
+            <div class="profile-location">Chicago, Illinois, United States - Joined <%= @car_owner.created_at.strftime("%b %Y") %> </div>
             <div class="profile-icon-details">
               <div><i class="fa fa-car profile-icon" aria-hidden="true"></i> <%= @car_owner.cars_count%> <%= "Car".pluralize(@car_owner.cars_count)%></div>
               <!--<div><i class="fa fa-camera profile-icon" aria-hidden="true"></i> 5 Photos</div>-->
@@ -517,9 +445,8 @@
           </div>
           <div class="visible-xs text-center">
             <div class="profile-name"><%= @car_owner.name %></div>
-            <div class="profile-location">Chicago, Illinois, United States - joined <%= @car_owner.created_at.strftime("%B %Y") %> </div>
+            <div class="profile-location">Chicago, Illinois, United States - Joined <%= @car_owner.created_at.strftime("%b %Y") %> </div>
             <div class="profile-icon-details">
-            <div class="profile-location">Chicago, Illinois, United States - Joined June 2014</div>
             <div class="profile-icon-details-xs">
               <div><i class="fa fa-car profile-icon" aria-hidden="true"></i> <%=@car_owner.cars_count%> <%= "Car".pluralize(@car_owner.cars_count)%></div>
               <!--<div><i class="fa fa-camera profile-icon" aria-hidden="true"></i> 5 Photos</div>-->
@@ -719,7 +646,7 @@
   </div>
 </div>
 </div>
-
+</div>
 <%= javascript_include_tag "jquery.js" %>
 <%= javascript_include_tag "jquery-ui.js" %>    
 <script>
