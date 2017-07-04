@@ -1,7 +1,672 @@
 <% provide(:title, @car_owner.name + "'s Dashboard") %>
-<div class = "container-fluid" style="height:350px;">
-	 <div class="col-md-6 col-md-offset-3">
-	 	<h2 class = "main-headline text-center">Your Dashboard</h2>
-	 	<p class = "profile-text text-left">This is your dashboard. You'll be able to add your cars to make searching for repairs easier. We will also include your cars maintenance schedule so you have a better idea when your maintenance and repairs are due based on your cars mileage. If there is a recall on one of your cars, we'll also let you know here. This is a community platform so feel free to email us at team@innvoy.com to let us know what else you are interested in seeing here.</p>
-	 </div>
+
+<style>
+.profile-header-section{
+  background-color: #f1f1f1;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border: 1px solid #cfcfcf;
+  border-radius: 5px;
+}
+.profile-name{
+  color:#2e2e2e;
+  font-size: 2.8em;
+  font-weight: bold;
+}
+.profile-location{
+  color:#2e2e2e;
+  font-size: 1.3em;
+  font-weight: normal;
+  font-style: italic;
+}
+.profile-icon-details{
+  color:#2e2e2e;
+  font-size: 1em;
+  font-weight: bold;
+  display: inline-block;
+  padding-top: 60px;
+}
+.profile-icon-details-xs{
+  color:#2e2e2e;
+  font-size: 1em;
+  font-weight: bold;
+  display: inline-block;
+}
+.profile-icon{
+  color:#52bb49;
+}
+.profile-img{
+  border-radius: 3%;
+}
+.mobile-profile-img{
+  width: 125px;
+  height: 125px;
+  border-radius: 50%;
+}
+.profile-section-nav{
+  border-bottom: 1px solid #cfcfcf;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+.profile-nav-menu-item{
+  font-size: 1.3em;
+  font-weight: normal;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border: 1px solid #cfcfcf;
+  border-bottom-color: #ffffff;
+  color:#5c5c5c;
+  text-align: center;
+  cursor: pointer;
+}
+.profile-nav-menu-item-active{
+  font-size: 1.3em;
+  font-weight: normal;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border: 1px solid #52bb49;
+  background-color: #52bb49;
+  color:#FFFFFF;
+  text-align: center;
+  cursor: pointer;
+}
+.maintenance-section{
+  border: 1px solid #e7e7e7;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  margin-top: 25px;
+  margin-bottom: 20px;
+}
+.btn-car-select-left-lg{
+  background: #5a5a5a;
+  border: none;
+  color: white;
+  text-decoration: none;
+  font-size: 1.4em;
+  height: 100px;
+  width:50%;
+  margin-left: -16px;
+  margin-top: 70px;
+
+
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+
+    /* CSS Transition */
+  -webkit-transition: background .1s ease-in-out, border .1s ease-in-out;
+  -moz-transition: background .1s ease-in-out, border .1s ease-in-out;
+  -ms-transition: background .1s ease-in-out, border .1s ease-in-out;
+  -o-transition: background .1s ease-in-out, border .1s ease-in-out;
+  transition: background .1s ease-in-out, border .1s ease-in-out;
+
+}
+.btn-car-select-left-md{
+  background: #5a5a5a;
+  border: none;
+  color: white;
+  text-decoration: none;
+  font-size: 1.4em;
+  height: 100px;
+  width:50%;
+  margin-left: -16px;
+  margin-top: 50px;
+
+
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+
+    /* CSS Transition */
+  -webkit-transition: background .1s ease-in-out, border .1s ease-in-out;
+  -moz-transition: background .1s ease-in-out, border .1s ease-in-out;
+  -ms-transition: background .1s ease-in-out, border .1s ease-in-out;
+  -o-transition: background .1s ease-in-out, border .1s ease-in-out;
+  transition: background .1s ease-in-out, border .1s ease-in-out;
+
+}
+.btn-car-select-left-sm{
+  background: #5a5a5a;
+  border: none;
+  color: white;
+  text-decoration: none;
+  font-size: 1.4em;
+  height: 100px;
+  width:50%;
+  margin-left: -16px;
+  margin-top: 40px;
+
+
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+
+    /* CSS Transition */
+  -webkit-transition: background .1s ease-in-out, border .1s ease-in-out;
+  -moz-transition: background .1s ease-in-out, border .1s ease-in-out;
+  -ms-transition: background .1s ease-in-out, border .1s ease-in-out;
+  -o-transition: background .1s ease-in-out, border .1s ease-in-out;
+  transition: background .1s ease-in-out, border .1s ease-in-out;
+
+}
+.btn-car-select-right-lg{
+  background: #5a5a5a;
+  border: none;
+  color: white;
+  text-decoration: none;
+  font-size: 1.4em;
+  height: 100px;
+  width:50%;
+  margin-left: 50px;
+  margin-top: 70px;
+
+
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+
+    /* CSS Transition */
+  -webkit-transition: background .1s ease-in-out, border .1s ease-in-out;
+  -moz-transition: background .1s ease-in-out, border .1s ease-in-out;
+  -ms-transition: background .1s ease-in-out, border .1s ease-in-out;
+  -o-transition: background .1s ease-in-out, border .1s ease-in-out;
+  transition: background .1s ease-in-out, border .1s ease-in-out;
+
+}
+.btn-car-select-right-md{
+  background: #5a5a5a;
+  border: none;
+  color: white;
+  text-decoration: none;
+  font-size: 1.4em;
+  height: 100px;
+  width:50%;
+  margin-left: 42px;
+  margin-top: 50px;
+
+
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+
+    /* CSS Transition */
+  -webkit-transition: background .1s ease-in-out, border .1s ease-in-out;
+  -moz-transition: background .1s ease-in-out, border .1s ease-in-out;
+  -ms-transition: background .1s ease-in-out, border .1s ease-in-out;
+  -o-transition: background .1s ease-in-out, border .1s ease-in-out;
+  transition: background .1s ease-in-out, border .1s ease-in-out;
+
+}
+
+.btn-car-select-right-sm{
+  background: #5a5a5a;
+  border: none;
+  color: white;
+  text-decoration: none;
+  font-size: 1.4em;
+  height: 100px;
+  width:50%;
+  margin-left: 24px;
+  margin-top: 40px;
+
+
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+
+    /* CSS Transition */
+  -webkit-transition: background .1s ease-in-out, border .1s ease-in-out;
+  -moz-transition: background .1s ease-in-out, border .1s ease-in-out;
+  -ms-transition: background .1s ease-in-out, border .1s ease-in-out;
+  -o-transition: background .1s ease-in-out, border .1s ease-in-out;
+  transition: background .1s ease-in-out, border .1s ease-in-out;
+
+}
+.btn-car-select-right-lg:hover, .btn-car-select-right-md:hover, .btn-car-select-right-sm:hover, .btn-car-select-left-lg:hover, .btn-car-select-left-md:hover, .btn-car-select-left-sm:hover{
+  background: #52BB49; 
+}
+.btn-car-select-icon{
+  text-decoration: none;
+  color: #ffffff;
+  text-align: center;
+  position:relative;
+  top: calc(50% - 10px); /* 50% - 3/4 of icon height */
+}
+.maintenance-schedule-title{
+  font-size: 1.6em;
+  color: #303030;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+.maintenance-schedule-main-title{
+  padding-bottom: 30px;
+  font-size: 1.1em;
+}
+.maintenance-schedule-car-title{
+  font-size: 1.6em;
+  color: #52bb49;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+.current-mileage-input{
+  height: 50px;
+  width: 100%;
+  font-size: 1.3em;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  padding-left: 10px;
+}
+.mileage-input-section{
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.btn-current-mileage-form{
+  height: 50px;
+  width:100%;
+  font-size: 1.3em;
+  background: rgba(82, 187, 73, 1) !important;
+  opacity: 1;
+  border: 1px solid #FFFFFF;
+  color: #FFFFFF !important;
+
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  
+  /* CSS Transition */  
+  -webkit-transition: background .2s ease-in-out, border .2s ease-in-out;
+  -moz-transition: background .2s ease-in-out, border .2s ease-in-out;
+  -ms-transition: background .2s ease-in-out, border .2s ease-in-out;
+  -o-transition: background .2s ease-in-out, border .2s ease-in-out;
+  transition: background .2s ease-in-out, border .2s ease-in-out;
+}
+
+.maintenance-schedule-detailed{
+  background-color: #f1f1f1;
+  margin-bottom: 25px;
+}
+.recalls-detailed{
+  background-color: #f1f1f1;
+  margin-bottom: 25px;
+}
+.maintenanance-history-detailed{
+  background-color: #f1f1f1;
+  margin-bottom: 25px;
+}
+.mh-title-block{
+  background-color: #ffffff;
+  color: #2f2f2f;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+
+}
+.maintenanance-history-item-light{
+  background-color: #f1f1f1;
+}
+.maintenanance-history-item-dark{
+  background-color: #ffffff;
+}
+.mh-text-block{
+  color: #2f2f2f;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.maintenance-schedule-item{
+   
+}
+.maintenance-item{
+
+}
+.maintenance-item-title{
+  text-transform: uppercase;
+}
+.maintenance-item-icon{
+  float:right;
+  padding-right:20px;
+}
+.dashboard-main-message{
+  padding-bottom: 50px;
+}
+.dashboard-car-select{
+  padding-bottom: 100px;
+}
+.maintenance-item .ui-accordion-header, .recall-item .ui-accordion-header{
+  color: #303030;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 600;
+  font-size: 1.4em;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-top: 13px;
+  height: 40px;
+  background-color: #ffffff;
+
+}
+
+.maintenance-item .ui-accordion-header.ui-state-active, .recall-item .ui-accordion-header.ui-state-active{ 
+  color: #303030;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+
+}
+
+.maintenance-item .ui-accordion-content, .recall-item .ui-accordion-content {
+
+  color: #ffffff;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1.3em;
+
+  width: 100%;
+  margin-top: -20px;
+  margin-bottom: 20px;
+  background-color: #5A5A5A;
+}
+
+.maintenance-item .ui-accordion-header:nth-of-type(2), .recall-item .ui-accordion-header:nth-of-type(2){
+  margin-bottom: 20px;
+}
+.maintenance-item .ui-accordion-content:nth-of-type(2), .recall-item .ui-accordion-content:nth-of-type(2){
+  margin-top: -20px;
+}
+
+.btn-maintenance-item{
+  font-size: 1em;
+  width: 100%;
+  background: rgba(255, 255, 255, 1) !important;
+  opacity: 1;
+  border: 1px solid #5A5A5A;
+  color: #5A5A5A !important;
+  cursor: default !important;
+
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  
+  /* CSS Transition */  
+  -webkit-transition: background .2s ease-in-out, border .2s ease-in-out;
+  -moz-transition: background .2s ease-in-out, border .2s ease-in-out;
+  -ms-transition: background .2s ease-in-out, border .2s ease-in-out;
+  -o-transition: background .2s ease-in-out, border .2s ease-in-out;
+  transition: background .2s ease-in-out, border .2s ease-in-out;
+}
+
+
+.profile-hr{
+    margin-top: 0;
+  margin-bottom: 0;
+  width: 100%;
+  border-color: #cfcfcf;
+}
+.recalls-section-main-title{
+  border: 1px solid #e7e7e7;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-top: 25px;
+  margin-bottom: 20px;
+}
+.recalls-section-sub-title{
+  margin-top: 20px;
+  font-size: 1.2em;
+}
+
+
+.maintenanance-history-section-main-title{
+  border: 1px solid #e7e7e7;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-top: 25px;
+  margin-bottom: 20px;
+}
+</style>
+
+<div class = "container">
+  <div class="row">
+    <div class="profile-header-section col-xs-12">
+
+        <div class="profile-img-container col-sm-2 col-xs-12">
+          <img class="hidden-xs profile-img" src="https://scontent-sea1-1.xx.fbcdn.net/v/t1.0-9/13645216_10154234913297976_7031743884618637758_n.jpg?oh=dfe8e57486f123ee2a63cfe0f7aa320f&oe=59AB2708" height="150px" width="150px">
+          <img class="visible-xs mobile-profile-img img-responsive center-block" src="https://scontent-sea1-1.xx.fbcdn.net/v/t1.0-9/13645216_10154234913297976_7031743884618637758_n.jpg?oh=dfe8e57486f123ee2a63cfe0f7aa320f&oe=59AB2708">
+        </div>
+        <div class="profile-details col-sm-8 col-xs-12">
+          <div class="hidden-xs">
+            <div class="profile-name"><%= @car_owner.name %></div>
+            <div class="profile-location">Chicago, Illinois, United States - Joined <%= @car_owner.created_at.strftime("%b %Y") %> </div>
+            <div class="profile-icon-details">
+              <div><i class="fa fa-car profile-icon" aria-hidden="true"></i> <%= @car_owner.cars_count%> <%= "Car".pluralize(@car_owner.cars_count)%></div>
+              <!--<div><i class="fa fa-camera profile-icon" aria-hidden="true"></i> 5 Photos</div>-->
+            </div>
+          </div>
+          <div class="visible-xs text-center">
+            <div class="profile-name"><%= @car_owner.name %></div>
+            <div class="profile-location">Chicago, Illinois, United States - Joined <%= @car_owner.created_at.strftime("%b %Y") %> </div>
+            <div class="profile-icon-details">
+            <div class="profile-icon-details-xs">
+              <div><i class="fa fa-car profile-icon" aria-hidden="true"></i> <%=@car_owner.cars_count%> <%= "Car".pluralize(@car_owner.cars_count)%></div>
+              <!--<div><i class="fa fa-camera profile-icon" aria-hidden="true"></i> 5 Photos</div>-->
+            </div>
+          </div>
+        </div>
+
+        <div class="profile-add-car col-sm-2">
+          
+        </div>
+
+
+    </div>
+  </div>
+
+  <% if @car_owner.cars_count == 0 %>
+  <div id="intial-dashboard-container" class="">
+    <% else %>
+    <div id="intial-dashboard-container" class="hide">
+    <% end %>
+  <div class="row dashboard-main-message">
+   <div class="col-md-6 col-md-offset-3">
+    <h2 class = "main-headline text-center"></h2>
+    <p class = "profile-text text-left">Get started by adding your cars here. By adding a car, you'll be able to see your maintenance schedule so you have a better idea when your maintenance and repairs are due. We'll let you keep track of your cars maintenance history for your record keeping, and if there is a recall on your car we'll also let you know here. This is a community platform so feel free to email us at team@innvoy.com to let us know what else you might be interested in seeing here.</p>
+   </div>
+  </div>
+
+  <div class="row dashboard-car-select">
+      <%= form_for(@car) do |f| %>
+    <div class="col-xs-12 col-sm-4">
+      <%= f.collection_select(:car_year_id, (CarYear.all).reverse, :id, :year, {prompt: "Year"}, {class: "select_submission_form", id: "car_year_select"}) %>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <%= f.select(:car_make_id, options_for_select([]), {prompt: "Make"}, {class: "select_submission_form", id: "car_make_select"}) %>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <%= f.select(:car_model_id, options_for_select([]), {prompt: "Model"}, {class: "select_submission_form", id: "car_model_select"}) %>
+    </div>
+    <% end %>
+  </div>
 </div>
+
+<% if @car_owner.cars_count == 0 %>
+  <div id="dashboard-container" class="hide">
+    <% else %>
+    <div id="dashboard-container" class="">
+    <% end %>
+  <div class="row">
+    <div class="profile-section-nav col-sm-10 col-sm-offset-1">
+      <div class="row">
+        <div class="col-sm-10 col-sm-offset-3">
+          <div class="col-sm-3 profile-menu-item profile-nav-menu-item-active" data-id="dashboard-maintenance-schedule">Maintenance</div>
+          <div class="col-sm-3 profile-menu-item profile-nav-menu-item" data-id="dashboard-recalls">Recalls</div>
+          <!--<div class="col-sm-3 profile-menu-item profile-nav-menu-item" data-id="dashboard-maintenance-history">Repair History</div>-->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="dashboard-maintenance-schedule" class="row hide">
+    <div class="maintenance-section col-xs-12">
+      <!-- ERB to check if car select menus should be displayed -->
+      <!-- if car_owner car count == 0 -->
+        <!-- Display select drop downs to add car -->
+
+      <!-- else show car maintenance schedule -->
+
+        <!-- Show maintenance schedule -->
+        <div class="row">
+          <div class = "col-sm-1 col-xs-12">
+
+            <a class="btn btn-car-select-left-lg visible-lg hidden-md hidden-sm hidden-xs" href="#"><i class="fa fa-caret-left btn-car-select-icon"></i></a>
+          <a class="btn btn-car-select-left-md hidden-lg visible-md hidden-sm hidden-xs" href="#"><i class="fa fa-caret-left btn-car-select-icon"></i></a>
+          <a class="btn btn-car-select-left-sm hidden-lg hidden-md visible-sm hidden-xs" href="#"><i class="fa fa-caret-left btn-car-select-icon"></i></a>
+
+          </div>
+          <div class="col-sm-6" >
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="maintenance-schedule-main-title"><span class="maintenance-schedule-title">Maintenance schedule</span> for your <span class="maintenance-schedule-car-title" id="dashboard-car-name-1"><%= defined?(@first_car_name) ? @first_car_name : '' %></span></div>
+              </div>
+              <hr class = "profile-hr">
+              <div class="col-sm-8 col-sm-offset-2 mileage-input-section">
+                <div class="row">
+                  
+                <%= form_tag({controller: "cars", action: "update", id: defined?(@first_car_id) ? @first_car_id : '1' }, method: "patch", class: "", id: "car_current_mileage_form", remote: true) do %>
+                <div class="col-sm-8">
+                <%= text_field_tag('car[current_mileage]', nil, {placeholder: "Current Mileage",  class: "form-control current-mileage-input", value: defined?(@first_car_mileage) ? @first_car_mileage : '' }) %>
+                </div><!-- /input-group -->
+                 <div class="col-sm-4">
+                <%= submit_tag("Update",  {class: "btn btn-current-mileage-form"}) %>
+              </div>
+              <input type="hidden" name="edmunds_modelyearid" id="edmunds_modelyearid" value=<%= defined?(@first_car_modelyearid) ? @first_car_modelyearid : '' %>>
+                <% end %>
+              </div>
+              </div>
+              
+              <div class="col-sm-8 col-sm-offset-2">
+                <div class="row maintenance-schedule-message" style="font-size:1.5em;color:#52BB49; font-family: 'Roboto', sans-serif;font-weight:300;">
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+        
+
+        <div class="col-sm-4">
+
+          <img class="profile-car-img img-responsive center-block" src="<%= @car_image %>" height="500px" width="500px">
+
+        </div>
+
+        <div class = "col-sm-1 col-xs-12">
+          <a class="btn btn-car-select-right-lg visible-lg hidden-md hidden-sm hidden-xs" href="#"><i class="fa fa-caret-right btn-car-select-icon"></i></a>
+          <a class="btn btn-car-select-right-md hidden-lg visible-md hidden-sm hidden-xs" href="#"><i class="fa fa-caret-right btn-car-select-icon"></i></a>
+          <a class="btn btn-car-select-right-sm hidden-lg hidden-md visible-sm hidden-xs" href="#"><i class="fa fa-caret-right btn-car-select-icon"></i></a>
+        </div>
+
+      </div>
+
+      <!-- -->
+
+    </div>
+    
+
+    <div class="maintenance-schedule-detailed col-xs-12">
+      <div class="row">
+        <div class="maintenance-schedule-item col-xs-10 col-xs-offset-1">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="dashboard-recalls" class="row hide">
+    <div class="recalls-section col-xs-12">
+      <div class="row">
+        <div class="recalls-section-main-title text-center col-sm-12">
+          <span class="maintenance-schedule-title">Recalls</span> for your <span class="maintenance-schedule-car-title" id="dashboard-car-name-2"><%= defined?(@first_car_name) ? @first_car_name : '' %></span>
+          <div class="recalls-section-sub-title text-center col-sm-12"></div>
+        </div>
+        
+
+
+
+      </div>
+    </div>
+    <div class="recalls-detailed col-xs-12">
+      <div class="row">
+        <div class="recall-items col-xs-10 col-xs-offset-1">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="dashboard-maintenance-history" class="row hide">
+    <div class="maintenanance-history-section col-xs-12">
+      <div class="row">
+        <div class="maintenanance-history-section-main-title text-center"><span class="maintenance-schedule-title">Maintenance and repair history</span> for your <span class="maintenance-schedule-car-title" id="dashboard-car-name-3"><%= defined?(@first_car_name) ? @first_car_name : '' %></span>
+        </div>
+      </div>
+    </div>
+
+     <div class="maintenanance-history-detailed col-xs-12">
+      <div class="row">
+        <div class="mh-title-block col-xs-1 col-xs-offset-1">Date</div>
+        <div class="mh-title-block col-xs-2 col-xs-offset-1">Repiar</div>
+        <div class="mh-title-block col-xs-1 col-xs-offset-1">Cost</div>
+        <div class="mh-title-block col-xs-3 col-xs-offset-1">Shop</div>
+
+        <div class="maintenanance-history-item-light col-xs-10 col-xs-offset-1">
+          <div class="mh-text-block col-xs-1 col-xs-offset-1">09/07/2014</div>
+          <div class="mh-text-block col-xs-2 col-xs-offset-1">Rotate/adjust tire air pressure</div>
+          <div class="mh-text-block col-xs-1 col-xs-offset-1">$369</div>
+          <div class="mh-text-block col-xs-3 col-xs-offset-1">John Doe Repair Center <br>Chicago, Illinois</div>
+        </div>
+
+        <div class="maintenanance-history-item-dark col-xs-10 col-xs-offset-1">
+          <div class="mh-text-block col-xs-1 col-xs-offset-1">Date</div>
+          <div class="mh-text-block col-xs-2 col-xs-offset-1">Repair</div>
+          <div class="mh-text-block col-xs-1 col-xs-offset-1">Cost</div>
+          <div class="mh-text-block col-xs-3 col-xs-offset-1">Shop</div>
+        </div>
+
+        <div class="maintenanance-history-item-light col-xs-10 col-xs-offset-1">
+          <div class="mh-text-block col-xs-1 col-xs-offset-1">Date</div>
+          <div class="mh-text-block col-xs-2 col-xs-offset-1">Repair</div>
+          <div class="mh-text-block col-xs-1 col-xs-offset-1">Cost</div>
+          <div class="mh-text-block col-xs-3 col-xs-offset-1">Shop</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<%= javascript_include_tag "jquery.js" %>
+<%= javascript_include_tag "jquery-ui.js" %>    
+<script>
+$( ".maintenance-item, .recall-item" ).accordion({
+      collapsible: true,
+      heightStyle: "content",
+      active: false
+    });
+
+$("#dashboard-maintenance-schedule").removeClass("hide");
+
+$(".profile-menu-item").click(function (e) {
+  var x = $('.profile-nav-menu-item-active').attr("data-id");
+  $("#" + x).addClass("hide");
+  $('.profile-nav-menu-item-active').addClass('profile-nav-menu-item').removeClass('profile-nav-menu-item-active');
+  
+
+  $(this).removeClass("profile-nav-menu-item");
+  $(this).addClass("profile-nav-menu-item-active");
+  var x = $(this).attr("data-id");
+  $("#" + x).removeClass("hide");
+});
+</script>

@@ -84,8 +84,10 @@ class RepairSubmissionsController < ApplicationController
 		@final_submissions = []
 		@repair_submission_ids.each do |id|
 			@repair_submission_car = Car.where(repair_submission_id: id)
-			if @repair_submission_car[0].car_make_id == @car_make_id && @car_model_ids.include?(@repair_submission_car[0].car_model_id)
-				@final_submissions.push(RepairSubmission.find(id))
+			if @repair_submission_car.any?
+				if @repair_submission_car[0].car_make_id == @car_make_id && @car_model_ids.include?(@repair_submission_car[0].car_model_id)
+					@final_submissions.push(RepairSubmission.find(id))
+				end
 			end
 		end 
 
@@ -95,6 +97,7 @@ class RepairSubmissionsController < ApplicationController
     	@shop = Shop.find(params[:shop_id])
     end
 
+    # Functions used to make async calls to populate car details select boxes 
     def fetch_car_makes
     	@makes = CarMake.where(params[:car_year] + " = TRUE").order(name: :asc)
     	respond_to do |format|
