@@ -12,7 +12,7 @@ class SearchesController < ApplicationController
     @car_name = car_name(@search.car_year_id, @search.car_make_id, @search.car_model_id)
 
     flash[:info] = "In create action with year: " + @search.car_year_id + " make: " + @search.car_make_id + " model: " +  @search.car_model_id + " location: " + @search.location
-    redirect_to action: "show", location: @search.location, car: @car_name, repair: @search.repair_name
+    redirect_to search_path location: @search.location, car: @car_name, repair: @search.repair_name
     
   end
   
