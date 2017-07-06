@@ -4,6 +4,7 @@ class AnautomyController < ApplicationController
     @subscriber = Subscriber.new
     @repairSubmission = RepairSubmission.new
     @search = Search.new
+    @repair_category = RepairCategory.all.offset(1)
     @car = params['car_type']
     @repair = params['repair']
     @ip = ipToGeolocation

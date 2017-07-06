@@ -1,4 +1,9 @@
 <% provide(:title, "Home") %>
+<style>
+.repairs-modal{
+  font-family: montserrat, arial, verdana;
+}
+</style>
 <!--Start of main container section-->
 <a id = "signup" name="signup"></a>
 <div class = "container-fluid main-container"> 
@@ -11,31 +16,71 @@
     </div>
 	</div>
   <div class = "row">
+    <!--
   <%= form_tag({controller: "repair_submissions", action: "show"}, method: "get", class: "") do %>
           <div class="col-sm-4 col-sm-offset-1 text-center">
             <%= text_field_tag(:car, nil, {placeholder: "Car (e.g. Mazda 3)", class: "signup-form mp-car-searched"}) %>
           </div>
           <div class="col-sm-4 text-center">
             <%= text_field_tag(:repair_name, nil, {placeholder: "Repair (e.g.  Brake Replacement)",  class: "signup-form mp-repair-name-searched"}) %>
-            <%= text_field_tag(:location, nil, {placeholder: "Near",  class: "signup-form search-location"}) %>
           </div>
             <div class="col-sm-2 text-center">
             <%= submit_tag("Find shop",  {class: "btn btn-auth-form mp-repair-searched"}) %>
           </div>
-        <% end %>
+        <% end %> 
+      -->
 
-      <%= form_for(@search) do |f| %>
-    <div class="col-xs-12 col-sm-4">
+      <%= form_for(@search, html: {class: 'form-inline'}) do |f| %>
+    <div class="col-xs-4 col-sm-2">
       <%= f.collection_select(:car_year_id, (CarYear.all).reverse, :id, :year, {prompt: "Year"}, {class: "select_submission_form", id: "car_year_select_home"}) %>
     </div>
-    <div class="col-xs-12 col-sm-4">
+    <div class="col-xs-4 col-sm-2">
       <%= f.select(:car_make_id, options_for_select([]), {prompt: "Make"}, {class: "select_submission_form", id: "car_make_select_home"}) %>
     </div>
-    <div class="col-xs-12 col-sm-4">
+    <div class="col-xs-4 col-sm-2">
       <%= f.select(:car_model_id, options_for_select([]), {prompt: "Model"}, {class: "select_submission_form", id: "car_model_select_home"}) %>
     </div>
-    <div class="col-xs-12 col-sm-4">
-      <%= f.submit "Submit", {class: "action-button btn-auth-form"}%>
+    <div class="col-xs-12 col-sm-2">
+      <%= f.text_field :location, class: 'signup-form search-location', :placeholder => "Near"%>
+    </div>
+    <div class="col-xs-12 col-sm-2">
+      <div class="select_submission_form text-left" data-toggle="modal" data-target="#myModal"><div class ="repair_name_div" style="float:left; width:90%; overflow: hidden; text-overflow:ellipsis; white-space: nowrap;">Select Repair</div><i class="fa fa-th text-right" aria-hidden="true" style="float:right; padding-top:4px;"></i>
+     </div>
+
+     <div class="modal fade repairs-modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Select Repair</h4>
+          </div>
+          <div class="modal-body" id="carddata">
+            <div class="row" >
+              <div class="col-xs-6 text-left">
+                <a href="#" class="repair-name-custom" data-dismiss="modal" style="font-size:0.9em;">Repair not listed?</a>
+                <input id="cardsearchinput" placeholder="Quick Filter"/ >
+              </div>
+            </div>
+            <% @repair_category.each do |category| %>
+            
+            <div class="row card">
+              <div class="col-sm-12">
+                <h4 class="text-left"><u><%= category.name%></u></h4>
+              </div>
+              <% category.repair_names.each do |repair| %>
+              <div class="col-sm-4"><p><a class="repair-name-text" href="#" data-cat="<%=category.name%>" data-catid="<%=category.id%>" data-repid="<%=repair.id%>" data-dismiss="modal"><%= repair.name %></a></p></div>
+            <% end %>
+          </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%= f.hidden_field :repair_category, {:value => nil, :class => 'repair-cat-hidden'} %>
+    <%= f.hidden_field :repair_name, {:value => nil, :class => 'repair-name-hidden'} %>
+    </div>
+    <div class="col-xs-12 col-sm-2">
+      <%= f.submit "Search", {class: "btn-auth-form"}%>
     </div>
 
     <% end %>
@@ -133,10 +178,11 @@
 <!-- end how anautomy works section-->
 
 <%= javascript_include_tag "jquery.js" %>
+<%= javascript_include_tag "jquery.searcher.min.js" %>
 
  <script>
 
-    mixpanel.track("Homepage");
+  mixpanel.track("Homepage");
 
   $(document).ready(function() {
 
@@ -164,5 +210,18 @@
               position: 'bottom'
             });
         });
+
+  $('#carddata').searcher({
+  itemSelector: '.card',
+  textSelector: 'div',
+  inputSelector: '#cardsearchinput',
+  toggle: function(item, containsText) {
+    if (containsText) {
+      $(item).fadeIn();
+    } else {
+      $(item).fadeOut();
+    }
+  }
+});
   
  </script>
