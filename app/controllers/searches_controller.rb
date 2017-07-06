@@ -8,17 +8,20 @@ class SearchesController < ApplicationController
     # check which values are available and which are missing
     # based on input create a search strategy for each
     @search = Search.new(search_params)
-    flash[:info] = "In Create action with year: " + @search.car_year_id + " make: " + @search.car_make_id + " model: " +  @search.car_model_id
-    render :show
+
+    @car_name = car_name(@search.car_year_id, @search.car_make_id, @search.car_model_id)
+
+    flash[:info] = "In create action with year: " + @search.car_year_id + " make: " + @search.car_make_id + " model: " +  @search.car_model_id + " location: " + @search.location
+    redirect_to action: "show", location: @search.location, car: @car_name, repair: @search.repair_name
     
   end
   
   def show
   	params[:location]
   	params[:car] 
-  	params[:repair]
+  	
 
-  	repair_name_id = 2
+  	repair_name_id = params[:repair]
   	
   	make_id = 82
   	year_id = 22
@@ -49,8 +52,14 @@ class SearchesController < ApplicationController
   private
 
     def search_params
-      params.require(:search).permit(:car_make_id, :car_model_id, :car_year_id)
+      params.require(:search).permit(:car_make_id, :car_model_id, :car_year_id, :location, :repair_category, :repair_name)
     end
 
+    def car_name(car_year_id, car_make_id, car_model_id)
+      @year = CarYear.find(car_year_id).year
+      @make = CarMake.find(car_make_id).name
+      @model = CarModel.find(car_model_id).name
+      return @year.to_s + ' ' + @make + ' ' + @model
+    end
 
 end
