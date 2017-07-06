@@ -18,7 +18,6 @@ Rails.application.routes.draw do
   get 'transparency' => 'anautomy#transparency'
   get 'submission' => 'anautomy#submission'
   #get 'new_submission' => "repair_submissions#new"
-  get 'search' => "repair_submissions#search"
   get 'show' => "repair_submissions#show"
   get 'results' => "shops#search_result"
 
@@ -39,6 +38,9 @@ Rails.application.routes.draw do
   get    '/login_shop',   to: 'sessions#new_shop'
   post   '/login_shop',   to: 'sessions#create_shop'
   delete '/logout_shop',  to: 'sessions#destroy_shop'
+
+  # repair search routes 
+  get 'search' => "searches#show"
 
   get '/anautomy/home'
   get '/repair_submissions/search'
