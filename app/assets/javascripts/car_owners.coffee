@@ -151,7 +151,7 @@ jQuery ->
 				$(".profile-car-img").attr("src", carImage);
 				createCar(modelyearid, carImage)
 			error: (data) ->
-				console.log("error getting model yearid")
+				console.log("error getting car image")
 
 
 	@sortMaintenanceList = (maintenanceList, currentMileage) ->
