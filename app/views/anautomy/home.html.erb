@@ -3,6 +3,33 @@
 .repairs-modal{
   font-family: montserrat, arial, verdana;
 }
+/* CSS for Autcomplete Google Place API */
+      .label {
+        text-align: right;
+        font-weight: bold;
+        width: 100px;
+        color: #303030;
+      }
+      #address {
+        border: 1px solid #000090;
+        background-color: #f0f0ff;
+        width: 480px;
+        padding-right: 2px;
+      }
+      #address td {
+        font-size: 10pt;
+      }
+      .field {
+        width: 99%;
+      }
+      .slimField {
+        width: 80px;
+      }
+      .wideField {
+        width: 200px;
+      }
+
+
 </style>
 <!--Start of main container section-->
 <a id = "signup" name="signup"></a>
@@ -30,7 +57,7 @@
         <% end %> 
       -->
 
-      <%= form_for(@search, html: {class: 'form-inline'}) do |f| %>
+      <%= form_for(@search, html: {class: ''}) do |f| %>
     <div class="col-xs-4 col-sm-2">
       <%= f.collection_select(:car_year_id, (CarYear.all).reverse, :id, :year, {prompt: "Year"}, {class: "select_submission_form", id: "car_year_select_home"}) %>
     </div>
@@ -41,7 +68,15 @@
       <%= f.select(:car_model_id, options_for_select([]), {prompt: "Model"}, {class: "select_submission_form", id: "car_model_select_home"}) %>
     </div>
     <div class="col-xs-12 col-sm-2">
-      <%= f.text_field :location, class: 'signup-form search-location', :placeholder => "Near"%>
+      <%= f.text_field :location, class: 'signup-form', id: 'autocomplete', :placeholder => "Near (address, city, state or zip)"%>
+      <%= f.hidden_field :search_street_number, id: 'street_number'%>
+      <%= f.hidden_field :search_route, id: 'route'%>
+      <%= f.hidden_field :search_locality, id: 'locality' %>
+      <%= f.hidden_field :search_administrative_area_level_1, id: 'administrative_area_level_1' %>
+      <%= f.hidden_field :search_postal_code, id: 'postal_code'%>
+      <%= f.hidden_field :search_country, id: 'country' %>
+      
+
     </div>
     <div class="col-xs-12 col-sm-2">
       <div class="select_submission_form text-left" data-toggle="modal" data-target="#myModal"><div class ="repair_name_div" style="float:left; width:90%; overflow: hidden; text-overflow:ellipsis; white-space: nowrap;">Select Repair</div><i class="fa fa-th text-right" aria-hidden="true" style="float:right; padding-top:4px;"></i>
@@ -57,7 +92,6 @@
           <div class="modal-body" id="carddata">
             <div class="row" >
               <div class="col-xs-6 text-left">
-                <a href="#" class="repair-name-custom" data-dismiss="modal" style="font-size:0.9em;">Repair not listed?</a>
                 <input id="cardsearchinput" placeholder="Quick Filter"/ >
               </div>
             </div>
@@ -180,6 +214,8 @@
 <%= javascript_include_tag "jquery.js" %>
 <%= javascript_include_tag "jquery.searcher.min.js" %>
 
+<%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key="+ @google_api_key +"&libraries=places&callback=initAutocomplete", defer: true, async: true %>
+
  <script>
 
   mixpanel.track("Homepage");
@@ -223,5 +259,74 @@
     }
   }
 });
+
+  // This example displays an address form, using the autocomplete feature
+      // of the Google Places API to help users fill in the information.
+
+      // This example requires the Places library. Include the libraries=places
+      // parameter when you first load the API. For example:
+      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
+      var placeSearch, autocomplete;
+      var componentForm = {
+        street_number: 'short_name',
+        route: 'long_name',
+        locality: 'long_name',
+        administrative_area_level_1: 'short_name',
+        country: 'long_name',
+        postal_code: 'short_name'
+      };
+
+      function initAutocomplete() {
+        // Create the autocomplete object, restricting the search to geographical
+        // location types.
+        autocomplete = new google.maps.places.Autocomplete(
+            /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
+            {types: ['geocode']});
+
+        // When the user selects an address from the dropdown, populate the address
+        // fields in the form.
+        autocomplete.addListener('place_changed', fillInAddress);
+      }
+
+      function fillInAddress() {
+        // Get the place details from the autocomplete object.
+        var place = autocomplete.getPlace();
+
+        for (var component in componentForm) {
+          document.getElementById(component).value = '';
+          document.getElementById(component).disabled = false;
+        }
+
+        // Get each component of the address from the place details
+        // and fill the corresponding field on the form.
+        for (var i = 0; i < place.address_components.length; i++) {
+          var addressType = place.address_components[i].types[0];
+          if (componentForm[addressType]) {
+            var val = place.address_components[i][componentForm[addressType]];
+            document.getElementById(addressType).value = val;
+          }
+        }
+      }
+
+      // Bias the autocomplete object to the user's geographical location,
+      // as supplied by the browser's 'navigator.geolocation' object.
+      function geolocate() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var geolocation = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+            var circle = new google.maps.Circle({
+              center: geolocation,
+              radius: position.coords.accuracy
+            });
+            autocomplete.setBounds(circle.getBounds());
+          });
+        }
+      }
+
+
   
  </script>
