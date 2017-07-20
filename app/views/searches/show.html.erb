@@ -32,7 +32,7 @@
           <span class = "shopName"><%= s.shop.shop_name %> </span></p>
 </div>
 <div class = "col-md-6 col-md-offset-0 col-xs-8 col-xs-offset-2">
-   <div class = "submission-title text-center"><%= CarYear.find(s.car.car_year_id).year %> <%= CarMake.find(s.car.car_make_id).name %> <%= CarModel.find(s.car.car_model_id).name%> - $<%= s.total_cost %>
+   <div class = "submission-title text-center"><%= CarYear.find(s.car.car_year_id).year %> <%= CarMake.find(s.car.car_make_id).name %> <%= CarModel.find(s.car.car_model_id).name%> - <%= number_to_currency(s.total_cost) %>
       </div>
     <p class="text-left review-text "></p>
 </div>
@@ -48,7 +48,7 @@
   <% end %>
 
 <% if @average_repair_cost != nil %>
-<h6><i class="fa fa-caret-right fa-2x averageBarArrow"></i><span class = "averagePriceBarTitle">Average Price: <strong>$<%= @average_repair_cost %></strong></span><i class="fa fa-caret-left fa-2x averageBarArrow"></i></h6>
+<h6><i class="fa fa-caret-right fa-2x averageBarArrow"></i><span class = "averagePriceBarTitle">Average Price: <strong><%= number_to_currency(@average_repair_cost) %></strong></span><i class="fa fa-caret-left fa-2x averageBarArrow"></i></h6>
 <% end %>
 
 
