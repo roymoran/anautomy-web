@@ -331,10 +331,10 @@
   padding-right:20px;
 }
 .dashboard-main-message{
-  padding-bottom: 50px;
+  padding-bottom: 25px;
 }
 .dashboard-car-select{
-  padding-bottom: 100px;
+  padding-bottom: 50px;
 }
 .maintenance-item .ui-accordion-header, .recall-item .ui-accordion-header{
   color: #303030;
@@ -468,7 +468,7 @@
     <div id="intial-dashboard-container" class="hide">
     <% end %>
   <div class="row dashboard-main-message">
-   <div class="col-md-6 col-md-offset-3">
+   <div class="col-md-6 col-md-offset-3 col-xs-10 col-xs-offset-1">
     <h2 class = "main-headline text-center"></h2>
     <p class = "profile-text text-left">Get started by adding your cars here. By adding a car, you'll be able to see your maintenance schedule so you have a better idea when your maintenance and repairs are due. We'll let you keep track of your cars maintenance history for your record keeping, and if there is a recall on your car we'll also let you know here. This is a community platform so feel free to email us at team@innvoy.com to let us know what else you might be interested in seeing here.</p>
    </div>
@@ -476,13 +476,13 @@
 
   <div class="row dashboard-car-select">
       <%= form_for(@car) do |f| %>
-    <div class="col-xs-12 col-sm-4">
+    <div class="col-xs-10 col-xs-offset-1 col-sm-4">
       <%= f.collection_select(:car_year_id, (CarYear.all).reverse, :id, :year, {prompt: "Year"}, {class: "select_submission_form", id: "car_year_select"}) %>
     </div>
-    <div class="col-xs-12 col-sm-4">
+    <div class="col-xs-10 col-xs-offset-1 col-sm-4">
       <%= f.select(:car_make_id, options_for_select([]), {prompt: "Make"}, {class: "select_submission_form", id: "car_make_select"}) %>
     </div>
-    <div class="col-xs-12 col-sm-4">
+    <div class="col-xs-10 col-xs-offset-1 col-sm-4">
       <%= f.select(:car_model_id, options_for_select([]), {prompt: "Model"}, {class: "select_submission_form", id: "car_model_select"}) %>
     </div>
     <% end %>
@@ -495,11 +495,11 @@
     <div id="dashboard-container" class="">
     <% end %>
   <div class="row">
-    <div class="profile-section-nav col-sm-10 col-sm-offset-1">
+    <div class="profile-section-nav col-sm-10 col-sm-offset-1 col-xs-12">
       <div class="row">
-        <div class="col-sm-10 col-sm-offset-3">
+        <div class="col-sm-10 col-sm-offset-3 col-xs-12">
           <div class="col-sm-3 profile-menu-item profile-nav-menu-item-active" data-id="dashboard-maintenance-schedule">Maintenance</div>
-          <div class="col-sm-3 profile-menu-item profile-nav-menu-item" data-id="dashboard-recalls">Recalls</div>
+          <div class="col-sm-3 col-xs-12 profile-menu-item profile-nav-menu-item" data-id="dashboard-recalls">Recalls</div>
           <!--<div class="col-sm-3 profile-menu-item profile-nav-menu-item" data-id="dashboard-maintenance-history">Repair History</div>-->
         </div>
       </div>
@@ -526,11 +526,11 @@
           </div>
           <div class="col-sm-6" >
             <div class="row">
-              <div class="col-sm-12">
+              <div class="col-sm-12 col-xs-10 col-xs-offset-1">
                 <div class="maintenance-schedule-main-title"><span class="maintenance-schedule-title">Maintenance schedule</span> for your <span class="maintenance-schedule-car-title" id="dashboard-car-name-1"><%= defined?(@first_car_name) ? @first_car_name : '' %></span></div>
               </div>
               <hr class = "profile-hr">
-              <div class="col-sm-8 col-sm-offset-2 mileage-input-section">
+              <div class="col-sm-8 col-sm-offset-2  col-xs-10 col-xs-offset-1 mileage-input-section">
                 <div class="row">
                   
                 <%= form_tag({controller: "cars", action: "update", id: defined?(@first_car_id) ? @first_car_id : '1' }, method: "patch", class: "", id: "car_current_mileage_form", remote: true) do %>
@@ -546,7 +546,7 @@
               </div>
               
               <div class="col-sm-8 col-sm-offset-2">
-                <div class="row maintenance-schedule-message" style="font-size:1.5em;color:#52BB49; font-family: 'Roboto', sans-serif;font-weight:300;">
+                <div class="maintenance-schedule-message" style="font-size:1.5em;color:#52BB49; font-family: 'Roboto', sans-serif;font-weight:300;">
 
                 </div>
               </div>
@@ -555,7 +555,7 @@
           </div>
         
 
-        <div class="col-sm-4">
+        <div class="col-sm-4 col-xs-12">
 
           <img class="profile-car-img img-responsive center-block" src="<%= @car_image %>" height="500px" width="500px">
 
