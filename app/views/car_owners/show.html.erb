@@ -431,8 +431,8 @@
     <div class="profile-header-section col-xs-12">
 
         <div class="profile-img-container col-sm-2 col-xs-12">
-          <img class="hidden-xs profile-img" src="https://scontent-sea1-1.xx.fbcdn.net/v/t1.0-9/13645216_10154234913297976_7031743884618637758_n.jpg?oh=dfe8e57486f123ee2a63cfe0f7aa320f&oe=59AB2708" height="150px" width="150px">
-          <img class="visible-xs mobile-profile-img img-responsive center-block" src="https://scontent-sea1-1.xx.fbcdn.net/v/t1.0-9/13645216_10154234913297976_7031743884618637758_n.jpg?oh=dfe8e57486f123ee2a63cfe0f7aa320f&oe=59AB2708">
+          <%= image_tag("user_pic-225x225.png", size: "150x150", alt: @car_owner.name, class: "hidden-xs profile-img") %>
+          <%= image_tag("user_pic-225x225.png", size: "150x150", alt: @car_owner.name, class: "visible-xs mobile-profile-img img-responsive center-block") %>
         </div>
         <div class="profile-details col-sm-8 col-xs-12">
           <div class="hidden-xs">
