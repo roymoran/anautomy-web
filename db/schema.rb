@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170625024113) do
+ActiveRecord::Schema.define(version: 20170721050713) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -161,6 +161,7 @@ ActiveRecord::Schema.define(version: 20170625024113) do
   end
 
   add_index "car_owners", ["email"], name: "index_car_owners_on_email", unique: true, using: :btree
+  add_index "car_owners", ["id"], name: "index_car_owners_on_id", unique: true, using: :btree
 
   create_table "car_years", force: :cascade do |t|
     t.integer  "year"
@@ -175,8 +176,8 @@ ActiveRecord::Schema.define(version: 20170625024113) do
     t.datetime "updated_at",           null: false
     t.integer  "repair_submission_id"
     t.integer  "car_year_id"
-    t.integer  "car_option_id"
     t.integer  "car_owner_id"
+    t.integer  "car_option_id"
     t.integer  "current_mileage"
     t.string   "edmunds_modelyearid"
     t.string   "car_image"
@@ -311,7 +312,6 @@ ActiveRecord::Schema.define(version: 20170625024113) do
   add_foreign_key "cars", "car_makes"
   add_foreign_key "cars", "car_models"
   add_foreign_key "cars", "car_options"
-  add_foreign_key "cars", "car_owners"
   add_foreign_key "cars", "car_years"
   add_foreign_key "cars", "repair_submissions"
   add_foreign_key "repair_names", "repair_categories"
