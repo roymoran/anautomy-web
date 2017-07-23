@@ -42,6 +42,9 @@ class AnautomyController < ApplicationController
   def oaq
   end
 
+  def tos
+  end
+
   def transparency
   end
 
