@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get 'oaq' => 'anautomy#oaq'
   get 'transparency' => 'anautomy#transparency'
   get 'submission' => 'anautomy#submission'
+  get 'tos' => 'anautomy#tos'
   #get 'new_submission' => "repair_submissions#new"
   get 'search' => "repair_submissions#search"
   get 'show' => "repair_submissions#show"
