@@ -11,17 +11,21 @@ class SearchesController < ApplicationController
 
     @car_name = car_name(@search.car_year_id, @search.car_make_id, @search.car_model_id)
 
-    #flash[:info] = "In create action with year: " + @search.car_year_id + " make: " + @search.car_make_id + " model: " +  @search.car_model_id + " location: " + @search.location + " or " + @search.search_street_number + " " + @search.search_route + " " + @search.search_locality + " " + @search.search_administrative_area_level_1 + " " + @search.search_postal_code + " " + @search.search_country
+    flash[:info] = "In create action with year: " + @search.car_year_id + " make: " + @search.car_make_id + " model: " +  @search.car_model_id + " location: " + @search.location + " or " + @search.search_street_number + " " + @search.search_route + " " + @search.search_locality + " " + @search.search_administrative_area_level_1 + " " + @search.search_postal_code + " " + @search.search_country
 
     # validation here in case bad values passed, return back to search if validation fails
-    redirect_to search_path car: @car_name, year_id: @search.car_year_id, make_id: @search.car_make_id, model_id: @search.car_model_id, repair: @search.repair_name,  search_street_number: @search.search_street_number, search_route: @search.search_route, search_locality: @search.search_locality, search_administrative_area_level_1: @search.search_administrative_area_level_1, search_postal_code: @search.search_postal_code, search_country: @search.search_country
+    redirect_to search_path location: @search.location, car: @car_name, year_id: @search.car_year_id, make_id: @search.car_make_id, model_id: @search.car_model_id, repair: @search.repair_name,  search_street_number: @search.search_street_number, search_route: @search.search_route, search_locality: @search.search_locality, search_administrative_area_level_1: @search.search_administrative_area_level_1, search_postal_code: @search.search_postal_code, search_country: @search.search_country
     
   end
   
   def show
+    @google_api_key = Rails.application.secrets.google_api_key
     # Data for search results view 
   	@car = params[:car] 
-    
+    @location = LocationGeocode()
+    @lat = @location["lat"]
+    @lng = @location["lng"]
+
     # Data for Location Search
     params[:search_street_number] # Place Address, 2906
     params[:search_route]  # Route, S. Throop St. 
@@ -67,6 +71,16 @@ class SearchesController < ApplicationController
   	@ip = request.remote_ip
 
   end
+
+  def LocationGeocode
+    api_key = Rails.application.secrets.google_api_key
+    location = URI.encode(params[:location])
+    uri = URI('https://maps.googleapis.com/maps/api/geocode/json?address='+location+'&key=' + api_key)
+    res = Net::HTTP.get_response(uri)
+    json_o = JSON.parse(res.body)
+    return locationCoordinates = json_o["results"][0]["geometry"]["location"]
+  end
+
 
   private
 
