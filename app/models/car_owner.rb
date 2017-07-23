@@ -2,7 +2,7 @@ class CarOwner < ActiveRecord::Base
   has_many :cars, inverse_of: :car_owner
 	attr_accessor :remember_token, :activation_token, :reset_token
   before_save   :downcase_email
-  before_create :create_activation_digest
+  before_create :create_activation_digest, :create_unique_id
 
 
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -10,6 +10,9 @@ class CarOwner < ActiveRecord::Base
 	validates :email, presence: true, length: { maximum: 255 }, format: { with: VALID_EMAIL_REGEX }, uniqueness: {case_sensitive: false}
 	has_secure_password
 	validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
+
+  validates :id, uniqueness: true
+  self.primary_key = 'id'
 
 	# Returns the hash digest of the given string.
   def CarOwner.digest(string)
@@ -56,6 +59,14 @@ class CarOwner < ActiveRecord::Base
     self.reset_token = CarOwner.new_token
     update_attribute(:reset_digest,  CarOwner.digest(reset_token))
     update_attribute(:reset_sent_at, Time.zone.now)
+  end
+
+  # Generate unique car owner id
+  def create_unique_id
+    self.id = CarOwner.new_token
+    while CarOwner.where(id: self.id).present?
+      self.id = CarOwner.new_token
+    end
   end
 
   # Sends password reset email.
