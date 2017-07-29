@@ -22,9 +22,7 @@ class SearchesController < ApplicationController
     @google_api_key = Rails.application.secrets.google_api_key
     # Data for search results view 
   	@car = params[:car] 
-    @location = LocationGeocode()
-    @lat = @location["lat"]
-    @lng = @location["lng"]
+    @location = location_geocode()
 
     # Data for Location Search
     params[:search_street_number] # Place Address, 2906
@@ -72,7 +70,7 @@ class SearchesController < ApplicationController
 
   end
 
-  def LocationGeocode
+  def location_geocode
     api_key = Rails.application.secrets.google_api_key
     location = URI.encode(params[:location])
     uri = URI('https://maps.googleapis.com/maps/api/geocode/json?address='+location+'&key=' + api_key)
