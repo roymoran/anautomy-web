@@ -4,14 +4,10 @@
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
       #map {
-        height: 100%;
+        height: 500px;
+        width: 100%;
       }
-      /* Optional: Makes the sample page fill the window. */
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
+
     </style>
 
 <!-- Page Content -->
@@ -77,8 +73,8 @@
 <div class = "container-fluid">
   <div class = "col-sm-6 backgroundVehicleImage" style = "background: url(<%= @image_link %>) no-repeat center center; background-size: auto 100%;">
     <div class = "background_main_black_repairs">
-      
       <div class = "row">
+    <div id="map"></div>
         <div class = " topBlock col-lg-12 text-left">
           <h3 >Repair Details</h3>
         </div>
@@ -129,6 +125,7 @@
         </div>
         <!-- /.row -->
     </div>
+
 <!-- jQuery Version 1.11.1 -->
 
     <!-- <script src="!inc/js/jquery-2.1.0.min.js"></script> -->
@@ -139,22 +136,20 @@
 
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key="+ @google_api_key +"&libraries=places&callback=initMap", defer: true, async: true %>
 
-
-<div><%= @location %></div>
-<div id="map"></div>
 <script>
 var map;
 var infowindow;
 
   function initMap() {
-    var pyrmont = {lat: <%= @location["lat"] %>, lng: <%= @location["lng"] %>};
-    map = new google.maps.Map(document.getElementById('map'), {
-          center: pyrmont,
+    var location = {lat: <%= @location["lat"] %>, lng: <%= @location["lng"] %>};
+    var mapelement = document.getElementById('map');
+    map = new google.maps.Map(mapelement, {
+          center: location,
           zoom: 15
         });
     
     var request = {
-      location: pyrmont,
+      location: location,
       radius: '1000',
       type: ['car_repair']
     };
@@ -167,12 +162,10 @@ var infowindow;
 
   
   function callback(results, status) {
-    //console.log("Results: ")
-    //console.log(results)
-    //console.log("Status: ")
-    //console.log)(status)
+    var submissionsBlock = document.getElementsByClassName('allSubissionsBlock')[0];
     if (status === google.maps.places.PlacesServiceStatus.OK) {
       for (var i = 0; i < results.length; i++) {
+        submissionsBlock.insertAdjacentHTML('beforeend', '<div class = "submissionBlock"> <div class = "row"><div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2"> <p class="text-center submissionBox"> <span>Submission</span> <span class = "shopName">'+results[i].name+' </span></p></div><div class = "col-md-6 col-md-offset-0 col-xs-8 col-xs-offset-2"><div class = "submission-title text-center"> </div><p class="text-left review-text "></p></div><div class = "col-md-2 col-md-offset-0 col-xs-8 col-xs-offset-2"><p class="text-center submissionBlockPositioning"><span class = "rating star5"></span><span class = "reviewText"><a href = "#review">Read Review</a></span></p></div><div class = "col-md-1 col-md-offset-0 col-xs-12"><a class="btn demo_button_custom_submission  hidden-xs" href="#"><i class="fa fa-caret-right submissionRepairIcon"></i></a><a class="btn demo_button_custom_submission_sm  visible-xs" href="#"><i class="fa fa-caret-right submissionRepairIcon"></i></a></div></div></div>');
         createMarker(results[i]);
       }
     }
@@ -189,5 +182,6 @@ function createMarker(place) {
     infowindow.open(map, this);
   });
 }
-
+//Following line for chrome debugging purposes
+//# sourceURL=googlePlaceResults.js 
 </script>
