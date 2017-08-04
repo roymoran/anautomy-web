@@ -1,35 +1,22 @@
 <% provide(:title, "Search Results") %>
 
-<style>
-      /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-      #map {
-        height: 500px;
-        width: 100%;
-      }
-
-    </style>
-
 <!-- Page Content -->
-    <div class="container-fluid mainContainerPadding">
 
+<div class="container-fluid">
+  <div class="row">
+    <ul class = "col-sm-6 hiddenDataMessage">*To see details for all submissions, you must create a free account and submit at least once.</ul>
+  </div>
+  <div class="row">
+    <div class = "col-sm-6 submissionsRepairTitle">
+      <h5><ul><%= @repair_name %> for <%= @car %></ul></h5>
+    </div>
+  </div>
         <div class="row">
             
 
-            <div class="col-sm-6 left-col">
-                 <div class = "container-fluid">
-                    <h5 class = "newSearchTitle"> </h5>
+<div class="col-sm-6 left-col">
 
-<div class = "row">
-    <div class="col-lg-12">
-</div>
-
-</div>
-<ul class = "hiddenDataMessage">*To see details for all submissions, you must create a free account and submit at least once.</ul>
-<div class = "submissionsRepairTitle">
-<h5><ul><%= @repair_name %> for <%= @car %> - (<%= @final_submissions.count %> <%= "Submission".pluralize(@final_submissions.count)%>)</ul></h5>
-</div>
-<div class = "allSubissionsBlock container-fluid">
+<div class = "allSubissionsBlock">
 
   <% @final_submissions.each do |s| %>
   <div class = "submissionBlock"> 
@@ -67,55 +54,39 @@
 <br>
 <br>
 
-</div>
       </div>
 
-<div class = "container-fluid">
-  <div class = "col-sm-6 backgroundVehicleImage" style = "background: url(<%= @image_link %>) no-repeat center center; background-size: auto 100%;">
-    <div class = "background_main_black_repairs">
-      <div class = "row">
-    <div id="map"></div>
-        <div class = " topBlock col-lg-12 text-left">
-          <h3 >Repair Details</h3>
-        </div>
-      </div>
+  <div class = "col-sm-6 right-col">
       <div class = "row">
         <div class = "col-lg-12">
-          <div class = "clutchImg">
-            <br><br>
-            <br><br>
-            <br><br>
-            <br><br>
-            <br><br>
-            <br><br>
-            <br><br>
-            <br><br>
-            <br><br>
-          </div>
+           <div id="map"></div>
         </div>
       </div>
+
       <div class = "row">
-      <div class = "col-lg-12">
+        <div class = "col-lg-12" style="border-bottom:1px solid #52BB49;">
+          <div class = "row">
+            <div class="col-lg-7" style="padding-top:10px; padding-bottom:10px;">
+              <div class="shop-profile-name"style="color:#52BB49; font-size:1.6em; font-weight: bold;">University Mazda Service</div>
+              <address style="color:#52BB49; font-size:1.3em; margin-bottom:0;" class="shop-profile-address">
+                <span id="street_number" value=""></span>
+                <span id="route" value=""></span><br>
+                <span id="locality" value=""></span>
+                <span id="administrative_area_level_1" value=""></span>
+                <span id="postal_code" value=""></span>
+              </address>
+              <a id="shop-profile-website" style="color:#52BB49; font-size:1.3em;" href="#">Website</a>
+              <div style="color:#52BB49; font-size:1.3em;">Chicago, IL<br><span class = "rating half4star"></span></div>
+              <div class="shop-profile-telephone"><a href="tel:+13174562564">317-456-2564</a></div>
+              
 
-        <div class = "col-xs-6" style = "padding-left:-5px;">
-          <h5 class = "detailsHeader">DESCRIPTION</h5>
-          <p class = "detailsDescription">- A critical component of your vehicle. It is used to engage and disengage the power transmission. Essentially,...<a href = "#moreinfo">read more</a></p>
-          <h5 class = "detailsHeader">REPAIR/REPLACEMENT URGENCY</h5>
-          <p class = "highUrgencyLevel detailsDescription">Very High</p>
-          <h5 class = "detailsHeader">STANDARD REPLACEMENT TIME</h5>
-          <p class = "detailsDescription">- 100,000 miles on BMW M3's, but this is highly variable on clutch shift time and driving style. Individuals experienced in driving manual transmission cars may see more lengevity from their clutch.</p>
-        </div>
-        <div class = "col-xs-6">
-          <h5 class = "detailsHeader">STANDARD REPLACEMENT TIME</h5>
-          <p class = "detailsDescription">- 100,000 miles on BMW M3's, but this is highly variable on clutch shift time and driving style. Individuals experienced in driving manual transmission cars may see more lengevity from their clutch.</p>
+            </div>
+            <div class="col-lg-5" style="padding-top:10px; padding-bottom:10px;">
+              <input type="submit" name="commit" value="Book Oil Change" class="btn-auth-form">
+            </div>
+          </div>
         </div>
     </div>
-  </div>
-
-
-
-    </div>
-  </div>
 </div>
 
   <!--<p class="repairCostBox"><span>Owner Rating</span><span class = "repairCostBoxPrice">4.5/5</span></p>
@@ -145,7 +116,7 @@ var infowindow;
     var mapelement = document.getElementById('map');
     map = new google.maps.Map(mapelement, {
           center: location,
-          zoom: 15
+          zoom: 14
         });
     
     var request = {
@@ -165,7 +136,7 @@ var infowindow;
     var submissionsBlock = document.getElementsByClassName('allSubissionsBlock')[0];
     if (status === google.maps.places.PlacesServiceStatus.OK) {
       for (var i = 0; i < results.length; i++) {
-        submissionsBlock.insertAdjacentHTML('beforeend', '<div class = "submissionBlock"> <div class = "row"><div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2"> <p class="text-center submissionBox"> <span>Submission</span> <span class = "shopName">'+results[i].name+' </span></p></div><div class = "col-md-6 col-md-offset-0 col-xs-8 col-xs-offset-2"><div class = "submission-title text-center"> </div><p class="text-left review-text "></p></div><div class = "col-md-2 col-md-offset-0 col-xs-8 col-xs-offset-2"><p class="text-center submissionBlockPositioning"><span class = "rating star5"></span><span class = "reviewText"><a href = "#review">Read Review</a></span></p></div><div class = "col-md-1 col-md-offset-0 col-xs-12"><a class="btn demo_button_custom_submission  hidden-xs" href="#"><i class="fa fa-caret-right submissionRepairIcon"></i></a><a class="btn demo_button_custom_submission_sm  visible-xs" href="#"><i class="fa fa-caret-right submissionRepairIcon"></i></a></div></div></div>');
+        submissionsBlock.insertAdjacentHTML('beforeend', '<div class = "submissionBlock"> <div class = "row"><div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2"> <p class="text-center submissionBox"> <span>Submission</span> <span class = "shopName">'+results[i].name+' </span></p></div><div class = "col-md-6 col-md-offset-0 col-xs-8 col-xs-offset-2"><div class = "submission-title text-center"> </div><p class="text-left review-text "></p></div><div class = "col-md-2 col-md-offset-0 col-xs-8 col-xs-offset-2"><p class="text-center submissionBlockPositioning"><span class = "rating star5"></span><span class = "reviewText"><a href = "#review">Read Review</a></span></p></div><div class = "col-md-1 col-md-offset-0 col-xs-12"><a class="btn demo_button_custom_submission hidden-xs" data-value="'+results[i].place_id+'"><i class="fa fa-caret-right submissionRepairIcon"></i></a><a class="btn demo_button_custom_submission_sm  visible-xs" href="#"><i class="fa fa-caret-right submissionRepairIcon"></i></a></div></div></div>');
         createMarker(results[i]);
       }
     }
