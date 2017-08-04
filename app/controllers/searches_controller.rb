@@ -79,6 +79,17 @@ class SearchesController < ApplicationController
     return locationCoordinates = json_o["results"][0]["geometry"]["location"]
   end
 
+  def place_details
+    api_key = Rails.application.secrets.google_api_key
+    place_id = params[:place_id]
+    uri = URI('https://maps.googleapis.com/maps/api/place/details/json?parameters&key='+api_key+'&place_id='+place_id)
+    res = Net::HTTP.get_response(uri)
+
+    respond_to do |format|
+      format.json { render :json => res.body}
+    end
+  end
+
 
   private
 

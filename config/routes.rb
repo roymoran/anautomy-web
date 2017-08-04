@@ -83,6 +83,8 @@ Rails.application.routes.draw do
   get 'api/recalls' => "car_owners#recalls"
   get 'api/car_image' => "car_owners#car_image"
 
+  # ajax route for repair search results
+  get 'api/place_details' => "searches#place_details"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
