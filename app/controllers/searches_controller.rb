@@ -11,10 +11,10 @@ class SearchesController < ApplicationController
 
     @car_name = car_name(@search.car_year_id, @search.car_make_id, @search.car_model_id)
 
-    flash[:info] = "In create action with year: " + @search.car_year_id + " make: " + @search.car_make_id + " model: " +  @search.car_model_id + " location: " + @search.location + " or " + @search.search_street_number + " " + @search.search_route + " " + @search.search_locality + " " + @search.search_administrative_area_level_1 + " " + @search.search_postal_code + " " + @search.search_country
+    #flash[:info] = "In create action with year: " + @search.car_year_id + " make: " + @search.car_make_id + " model: " +  @search.car_model_id + " location: " + @search.location + " or " + @search.search_street_number + " " + @search.search_route + " " + @search.search_locality + " " + @search.search_administrative_area_level_1 + " " + @search.search_postal_code + " " + @search.search_country
 
     # validation here in case bad values passed, return back to search if validation fails
-    redirect_to search_path location: @search.location, car: @car_name, year_id: @search.car_year_id, make_id: @search.car_make_id, model_id: @search.car_model_id, repair: @search.repair_name,  search_street_number: @search.search_street_number, search_route: @search.search_route, search_locality: @search.search_locality, search_administrative_area_level_1: @search.search_administrative_area_level_1, search_postal_code: @search.search_postal_code, search_country: @search.search_country
+    redirect_to search_path location: @search.location, car: @car_name, year_id: @search.car_year_id, make_id: @search.car_make_id, model_id: @search.car_model_id, repair: @search.repair_name, search_street_number: @search.search_street_number, search_route: @search.search_route, search_locality: @search.search_locality, search_administrative_area_level_1: @search.search_administrative_area_level_1, search_postal_code: @search.search_postal_code, search_country: @search.search_country
     
   end
   
