@@ -32,7 +32,9 @@
     <div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2">
         <p class="text-center submissionBox">
           <span>Submission</span>
-          <span class = "shopName"><%= s.shop.shop_name %> </span></p>
+          <span class = "shopName"><%= s.shop.shop_name %> </span>
+          <span class = "rating star5"></span>
+        </p>
 </div>
 <div class = "col-md-6 col-md-offset-0 col-xs-8 col-xs-offset-2">
    <div class = "submission-title text-center"><%= CarYear.find(s.car.car_year_id).year %> <%= CarMake.find(s.car.car_make_id).name %> <%= CarModel.find(s.car.car_model_id).name%> - <%= number_to_currency(s.total_cost) %>
@@ -40,11 +42,14 @@
     <p class="text-left review-text "></p>
 </div>
 <div class = "col-md-2 col-md-offset-0 col-xs-8 col-xs-offset-2">
-    <p class="text-center submissionBlockPositioning"><span class = "rating star5"></span><span class = "reviewText"><a href = "#review">Read Review</a></span></p>
+    <p class="text-center submissionBlockPositioning">
+      <!--<span class = "rating star5"></span>
+      <span class = "reviewText"><a href = "#review">Read Review</a></span>-->
+    </p>
 </div>
 <div class = "col-md-1 col-md-offset-0 col-xs-12">
-    <a class="btn demo_button_custom_submission  hidden-xs" href="#"><i class="fa fa-caret-right submissionRepairIcon"></i></a>
-    <a class="btn demo_button_custom_submission_sm  visible-xs" href="#"><i class="fa fa-caret-right submissionRepairIcon"></i></a>
+    <a class="btn demo_button_custom_submission  hidden-sm hidden-xs" href="#"><i class="fa fa-caret-right submissionRepairIcon"></i></a>
+    <a class="btn demo_button_custom_submission_sm  visible-sm visible-xs" href="#"><i class="fa fa-caret-right submissionRepairIcon"></i></a>
 </div>
 </div>
   </div>
@@ -140,7 +145,7 @@ var infowindow;
     if (status === google.maps.places.PlacesServiceStatus.OK) {
       prepareFirstShopProfile(results[0])
       for (var i = 0; i < results.length; i++) {
-        submissionsBlock.insertAdjacentHTML('beforeend', '<div class = "submissionBlock"> <div class = "row"><div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2"> <p class="text-center submissionBox"> <span>Submission</span> <span class = "shopName">'+results[i].name+' </span></p></div><div class = "col-md-6 col-md-offset-0 col-xs-8 col-xs-offset-2"><div class = "submission-title text-center"> </div><p class="text-left review-text "></p></div><div class = "col-md-2 col-md-offset-0 col-xs-8 col-xs-offset-2"><p class="text-center submissionBlockPositioning"><span class = "rating '+placeRatingClass(results[i].rating)+'"></span><span class = "reviewText"><a href = "#review">Read Review</a></span></p></div><div class = "col-md-1 col-md-offset-0 col-xs-12"><a class="btn demo_button_custom_submission hidden-xs" data-value="'+results[i].place_id+'"><i class="fa fa-caret-right submissionRepairIcon"></i></a><a class="btn demo_button_custom_submission_sm  visible-xs" data-value="'+results[i].place_id+'"><i class="fa fa-caret-right submissionRepairIcon"></i></a></div></div></div>');
+        submissionsBlock.insertAdjacentHTML('beforeend', '<div class = "submissionBlock"> <div class = "row"><div class = "col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2"> <p class="text-center submissionBox"> <span></span> <span class = "shopName">'+results[i].name+' </span><span class = "rating '+placeRatingClass(results[i].rating)+'"></span></p></div><div class = "col-md-6 col-md-offset-0 col-xs-8 col-xs-offset-2"><div class = "submission-title text-center"> </div><p class="text-left review-text "></p></div><div class = "col-md-2 col-md-offset-0 col-xs-8 col-xs-offset-2"><p class="text-center submissionBlockPositioning"><!--<span class = "rating '+placeRatingClass(results[i].rating)+'">--></span><span class = "reviewText"><a href = "#review"></a></span></p></div><div class = "col-md-1 col-md-offset-0 col-xs-12"><a class="btn demo_button_custom_submission hidden-xs hidden-sm" data-value="'+results[i].place_id+'"><i class="fa fa-caret-right submissionRepairIcon"></i></a><a class="btn demo_button_custom_submission_sm  visible-sm visible-xs" data-value="'+results[i].place_id+'"><i class="fa fa-caret-right submissionRepairIcon"></i></a></div></div></div>');
         createMarker(results[i]);
       }
     }
