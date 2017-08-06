@@ -1,8 +1,8 @@
 # Place all the behaviors and hooks related to the matching controller here.
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
-jQuery ->
-	$('.allSubissionsBlock').on 'click', '.demo_button_custom_submission', ->
+
+	$('.allSubissionsBlock').on 'click', '.demo_button_custom_submission, .demo_button_custom_submission_sm', ->
 		place_id = $(this).data("value")
 		$.ajax
 			type: "GET"
@@ -11,18 +11,7 @@ jQuery ->
 			dataType: "json"
 			success: (data) ->
 				place = data.result
-				populateAddressDetails(place)
-
-				$('.shop-profile-name').empty()
-				$('.shop-profile-name').append(place.name)
-				$('.shop-profile-telephone').empty()
-				$('.shop-profile-telephone').append('<a href="tel:'+place.international_phone_number+'">'+place.formatted_phone_number+'</a>')
-
-
-				a = document.getElementById('shop-profile-website');
-				a.href = place.website
-				
-				console.log(place.rating)
+				prepareShopProfile(place)				
 				return true
 			error: (data) ->
 				console.log("error getting place details")
@@ -46,6 +35,64 @@ jQuery ->
 				val = place.address_components[i][componentForm[addressType]]
 				document.getElementById(addressType).innerHTML = val
 			i++
+
+	@baseUrl = (place_url) ->
+		if place_url == undefined
+			return ""
+		place_root_url = place_url
+		place_root_url = place_root_url.replace("https://", "")
+		place_root_url = place_root_url.replace("http://", "")
+		place_root_url = place_root_url.replace("www.", "")
+		place_root_url = place_root_url.split('/')[0]
+		return place_root_url = place_root_url.trim()
+
+	@placeRatingClass = (rating) ->
+		classRating = ""
+		num = roundHalf(rating)
+		switch num
+			when 0
+    			classRating = ''
+    		when 0.5
+    			classRating = "halfstar"
+    		when 1
+    			classRating = "star1"
+    		when 1.5
+    			classRating = "half1star"
+    		when 2
+    			classRating = "star2"
+    		when 2.5
+    			classRating = "half2star"
+    		when 3
+    			classRating = "star3"
+    		when 3.5
+    			classRating = "half3star"
+    		when 4
+    			classRating = "star4"
+    		when 4.5
+    			classRating = "half4star"
+    		when 5
+    			classRating = "star5"
+	
+	@roundHalf = (num) ->
+    	return Math.round(num*2)/2;
+
+    @prepareShopProfile = (place) ->
+    	populateAddressDetails(place)
+    	$('.shop-profile-name').empty().append(place.name)
+    	$('.shop-profile-telephone').empty().append('<a href="tel:'+place.international_phone_number+'">'+(place.formatted_phone_number || "")+'</a>')
+    	$('#shop-profile-website').empty().append(baseUrl(place.website))
+    	$('#shop-profile-rating').removeClass();
+    	d = document.getElementById("shop-profile-rating");
+    	d.className += "rating " + (placeRatingClass(place.rating) || "")
+    	a = document.getElementById('shop-profile-website');
+    	a.href = place.website || "#"
+
+    @prepareFirstShopProfile = (place) ->
+    	$('.shop-profile-name').empty().append(place.name)
+    	$('#shop-profile-rating').removeClass();
+    	d = document.getElementById("shop-profile-rating");
+    	d.className += "rating " + (placeRatingClass(place.rating) || "")
+
 
 #map = undefined
 #service = undefined
