@@ -2,46 +2,40 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-jQuery ->
-
-  opts = {current_mileage: $('#car_current_mileage').val()}
-  buildDashboard($('#edmunds_modelyearid').val(), opts)
-
-  $("#car_year_select").change ->
-    $('#car_make_select').empty().append('<option selected>Make</option>')
-    $('#car_model_select').empty().append('<option selected>Model</option>')
-    car_year = $('#car_year_select :selected').text()
-    tryFormSubmit()
+	$("#car_year_select").change ->
+		$('#car_make_select').empty().append('<option selected>Make</option>')
+		$('#car_model_select').empty().append('<option selected>Model</option>')
+		car_year = $('#car_year_select :selected').text()
+		tryFormSubmit()
  
-  $('#car_make_select').change ->
-    $('#car_model_select').empty().append('<option selected>Model</option>')  
-    car_make = $('#car_make_select :selected').text()
-    tryFormSubmit()
+	$('#car_make_select').change ->
+		$('#car_model_select').empty().append('<option selected>Model</option>')  
+		car_make = $('#car_make_select :selected').text()
+		tryFormSubmit()
 
-  $('#car_model_select').change ->
-  	car_model = $('#car_model_select :selected').text()
-  	tryFormSubmit()
+	$('#car_model_select').change ->
+    	car_model = $('#car_model_select :selected').text()
+    	tryFormSubmit()
 
-  @tryFormSubmit = () -> 
-  	year_id = parseInt($('#car_year_select :selected').val())
-  	make_id = parseInt($('#car_make_select :selected').val())
-  	model_id = parseInt($('#car_model_select :selected').val())
-  	# only get model year id when all fields are present
-  	# TODO: This wil break when we change primary keys for car makes/models to text
-  	if isNaN(year_id) || isNaN(model_id) || isNaN(make_id)
-  		return
-  	getModelYearId()
-
-	# getting modelyearid from edmunds
-	@buildDashboard = (modelyearid, opts) ->
-		if isNaN(parseInt(modelyearid)) && isNaN(parseInt(opts['current_mileage'])) 
-			return
-		
-		# populate maintenance schedule
-		buildMaintenanceSchedule(modelyearid, opts['current_mileage'])
+  	# getting modelyearid from edmunds
+  	@buildDashboard = (modelyearid, opts) ->
+  		if isNaN(parseInt(modelyearid)) && isNaN(parseInt(opts['current_mileage'])) 
+  	  		return
+  		# populate maintenance schedule
+    	buildMaintenanceSchedule(modelyearid, opts['current_mileage'])
 
 		# populate recalls 
-		buildRecalls(modelyearid)
+    	buildRecalls(modelyearid)
+  
+	@tryFormSubmit = () -> 
+		year_id = parseInt($('#car_year_select :selected').val())
+		make_id = parseInt($('#car_make_select :selected').val())
+		model_id = parseInt($('#car_model_select :selected').val())
+		# only get model year id when all fields are present
+		# TODO: This wil break when we change primary keys for car makes/models to text
+		if isNaN(year_id) || isNaN(model_id) || isNaN(make_id)
+			return
+		getModelYearId()
 
 	@getModelYearId = () ->
 		year = $('#car_year_select :selected').text()
@@ -50,7 +44,7 @@ jQuery ->
 		model_parsed = model
 
 		# Removing any instance of 2WD, 4WD, AWD, etc. to increase likliehood of getting
-		# modelyearid
+		# modelyearid from edmunds api call
 		model_parsed = model_parsed.replace("2WD", "")
 		model_parsed = model_parsed.replace("4WD", "")
 		model_parsed = model_parsed.replace("AWD", "")
@@ -88,16 +82,17 @@ jQuery ->
 				sortedMaintenanceList = sortMaintenanceList(maintenanceList, currentMileage)
 				$('.maintenance-schedule-item').empty()
 				$.each sortedMaintenanceList, (index, value) ->
-					$('.maintenance-schedule-item').append('<div class="maintenance-item"><div class = "maintenance-item-title">' + sortedMaintenanceList[index].action + ' ' + sortedMaintenanceList[index].item + '<i class="fa fa-plus maintenance-item-icon"></i></div><div class="row"><div class="col-sm-9" style="font-size:1.2em;"><p>'+ sortedMaintenanceList[index].itemDescription+'</p></div><div class="col-sm-3"><button type="" class="btn btn-maintenance-item">Check Every '+sortedMaintenanceList[index].intervalMileage+' mi.</button></div></div></div>')
+					$('.maintenance-schedule-item').append('<div class="maintenance-item"><div class = "maintenance-item-title">' + sortedMaintenanceList[index].action + ' ' + sortedMaintenanceList[index].item + '<i class="fa fa-plus maintenance-item-icon"></i></div><div class="row"><div class="col-sm-9" style="font-size:1.2em;"><p>'+ sortedMaintenanceList[index].itemDescription+'</p></div><div class="col-sm-3"><button type="" class="btn btn-maintenance-item">Check at '+sortedMaintenanceList[index].intervalMileage+' mi.</button></div></div></div>')
 				$( ".maintenance-item, .recall-item" ).accordion({collapsible: true,heightStyle: "content",active: false});
 				$('.maintenance-schedule-message').empty()
 				if sortedMaintenanceList.length == 0
 					$('.maintenance-schedule-message').append('Good news, you don\'t have any upcoming repairs.')
 				else
-					$('.maintenance-schedule-message').append('You have '+sortedMaintenanceList.length+' repairs due in the next 1,000 miles')
+					$('.maintenance-schedule-message').append('You have '+sortedMaintenanceList.length+' repair(s) due in the next 1,000 miles.')
 
 				$('#dashboard-container').removeClass("hide")
 				$('#intial-dashboard-container').addClass("hide")
+				
 				console.log("Sorted maintenance schedule: ")
 				console.log(sortedMaintenanceList)
 
@@ -115,7 +110,7 @@ jQuery ->
 					return
 				$.each recalls, (index, value) ->
 					$('.recall-items').append('<div class="recall-item"><div class = "maintenance-item-title">' + recalls[index].componentDescription + '<i class="fa fa-plus maintenance-item-icon"></i></div><div class="row"><div class="col-sm-12" style="font-size:1.2em;"><p>'+ recalls[index].defectCorrectiveAction+'</p></div></div></div>')
-				$('.recalls-section-sub-title').append('There are '+recalls.length+' recalls for your car.')
+				$('.recalls-section-sub-title').append('You have '+recalls.length+' recall(s) for your car.')
 				$( ".maintenance-item, .recall-item" ).accordion({collapsible: true,heightStyle: "content",active: false});
 				console.log("Recalls w/ model_year_id")
 				console.log(recalls)
@@ -183,6 +178,9 @@ jQuery ->
 		# based on mileage input by car owner
 	).on "ajax:error", (e, xhr, status, error) ->
 		console.log('Error updating current mileage')
+
+	opts = {current_mileage: $('#car_current_mileage').val()}
+	buildDashboard($('#edmunds_modelyearid').val(), opts)
 
 
 
