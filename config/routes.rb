@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'searches/new'
+
+  get 'searches/show'
+
   get 'password_resets/new'
 
   get 'password_resets/edit'
@@ -13,8 +17,8 @@ Rails.application.routes.draw do
   get 'oaq' => 'anautomy#oaq'
   get 'transparency' => 'anautomy#transparency'
   get 'submission' => 'anautomy#submission'
+  get 'tos' => 'anautomy#tos'
   #get 'new_submission' => "repair_submissions#new"
-  get 'search' => "repair_submissions#search"
   get 'show' => "repair_submissions#show"
   get 'results' => "shops#search_result"
 
@@ -36,6 +40,9 @@ Rails.application.routes.draw do
   post   '/login_shop',   to: 'sessions#create_shop'
   delete '/logout_shop',  to: 'sessions#destroy_shop'
 
+  # repair search routes 
+  get 'search' => "searches#show"
+
   get '/anautomy/home'
   get '/repair_submissions/search'
 
@@ -45,6 +52,7 @@ Rails.application.routes.draw do
   #post   'sub'   => 'subscribers#create'
   resources :subscribers
   resources :repair_submissions
+  resources :searches, only: [:new, :create]
 
   resources :anuatomy
   resources :shops
@@ -53,16 +61,30 @@ Rails.application.routes.draw do
   resources :shop_users
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
+  resources :cars
   match 'snap', to: 'invoices#new', via: [:get, :post]
 
   resources :anautomy do
   get :home, :on => :collection
   end
 
-  # ajax routes 
+  # ajax routes for repair submission form
   get 'fetch_car_makes' => "repair_submissions#fetch_car_makes"
   get 'fetch_car_models' => "repair_submissions#fetch_car_models"
   get 'fetch_car_options' => "repair_submissions#fetch_car_options"
+
+  # ajax route for user dashboard
+  get 'api/model_year_id' => "car_owners#model_year_id"
+  get 'api/maintenance_schedule' => "car_owners#maintenance_schedule"
+  get 'api/tco_used' => "car_owners#tco_used"
+  get 'api/tco_used_detailed' => "car_owners#tco_used_detailed"
+  get 'api/tmv_typical' => "car_owners#tmv_typical"
+  get 'api/tmv_detailed' => "car_owners#tmv_detailed"
+  get 'api/recalls' => "car_owners#recalls"
+  get 'api/car_image' => "car_owners#car_image"
+
+  # ajax route for repair search results
+  get 'api/place_details' => "searches#place_details"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

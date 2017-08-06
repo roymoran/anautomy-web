@@ -1,4 +1,36 @@
 <% provide(:title, "Home") %>
+<style>
+.repairs-modal{
+  font-family: montserrat, arial, verdana;
+}
+/* CSS for Autcomplete Google Place API */
+      .label {
+        text-align: right;
+        font-weight: bold;
+        width: 100px;
+        color: #303030;
+      }
+      #address {
+        border: 1px solid #000090;
+        background-color: #f0f0ff;
+        width: 480px;
+        padding-right: 2px;
+      }
+      #address td {
+        font-size: 10pt;
+      }
+      .field {
+        width: 99%;
+      }
+      .slimField {
+        width: 80px;
+      }
+      .wideField {
+        width: 200px;
+      }
+
+
+</style>
 <!--Start of main container section-->
 <a id = "signup" name="signup"></a>
 <div class = "container-fluid main-container"> 
@@ -11,6 +43,7 @@
     </div>
 	</div>
   <div class = "row">
+    <!--
   <%= form_tag({controller: "repair_submissions", action: "show"}, method: "get", class: "") do %>
           <div class="col-sm-4 col-sm-offset-1 text-center">
             <%= text_field_tag(:car, nil, {placeholder: "Car (e.g. Mazda 3)", class: "signup-form mp-car-searched"}) %>
@@ -21,8 +54,76 @@
             <div class="col-sm-2 text-center">
             <%= submit_tag("Find shop",  {class: "btn btn-auth-form mp-repair-searched"}) %>
           </div>
-        <% end %>
+        <% end %> 
+      -->
+
+      <%= form_for(@search, html: {class: ''}) do |f| %>
+    <div class="col-xs-4 col-sm-2">
+      <%= f.collection_select(:car_year_id, (CarYear.all).reverse, :id, :year, {prompt: "Year"}, {class: "select_submission_form", id: "car_year_select_home"}) %>
+    </div>
+    <div class="col-xs-4 col-sm-2">
+      <%= f.select(:car_make_id, options_for_select([]), {prompt: "Make"}, {class: "select_submission_form", id: "car_make_select_home"}) %>
+    </div>
+    <div class="col-xs-4 col-sm-2">
+      <%= f.select(:car_model_id, options_for_select([]), {prompt: "Model"}, {class: "select_submission_form", id: "car_model_select_home"}) %>
+    </div>
+    <div class="col-xs-12 col-sm-2">
+      <%= f.text_field :location, class: 'signup-form', id: 'autocomplete', :placeholder => "Near (address, city, state or zip)"%>
+      <%= f.hidden_field :search_street_number, id: 'street_number'%>
+      <%= f.hidden_field :search_route, id: 'route'%>
+      <%= f.hidden_field :search_locality, id: 'locality' %>
+      <%= f.hidden_field :search_administrative_area_level_1, id: 'administrative_area_level_1' %>
+      <%= f.hidden_field :search_postal_code, id: 'postal_code'%>
+      <%= f.hidden_field :search_country, id: 'country' %>
+      
+
+    </div>
+    <div class="col-xs-12 col-sm-2">
+      <div class="select_submission_form text-left" data-toggle="modal" data-target="#myModal"><div class ="repair_name_div" style="float:left; width:90%; overflow: hidden; text-overflow:ellipsis; white-space: nowrap;">Select Repair</div><i class="fa fa-th text-right" aria-hidden="true" style="float:right; padding-top:4px;"></i>
+     </div>
+
+     <div class="modal fade repairs-modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Select Repair</h4>
+          </div>
+          <div class="modal-body" id="carddata">
+            <div class="row" >
+              <div class="col-xs-6 text-left">
+                <input id="cardsearchinput" placeholder="Quick Filter"/ >
+              </div>
+            </div>
+            <% @repair_category.each do |category| %>
+            
+            <div class="row card">
+              <div class="col-sm-12">
+                <h4 class="text-left"><u><%= category.name%></u></h4>
+              </div>
+              <% category.repair_names.each do |repair| %>
+              <div class="col-sm-4"><p><a class="repair-name-text" href="#" data-cat="<%=category.name%>" data-catid="<%=category.id%>" data-repid="<%=repair.id%>" data-dismiss="modal"><%= repair.name %></a></p></div>
+            <% end %>
+          </div>
+            <% end %>
+          </div>
         </div>
+      </div>
+    </div>
+    <%= f.hidden_field :repair_category, {:value => nil, :class => 'repair-cat-hidden'} %>
+    <%= f.hidden_field :repair_name, {:value => nil, :class => 'repair-name-hidden'} %>
+    </div>
+    <div class="col-xs-12 col-sm-2">
+      <%= f.submit "Search", {class: "btn-auth-form"}%>
+    </div>
+
+    <% end %>
+
+
+
+
+        </div>
+
 
 <!--	<div class = "row">
 		<div class="col-md-6 col-md-offset-3">
@@ -111,10 +212,13 @@
 <!-- end how anautomy works section-->
 
 <%= javascript_include_tag "jquery.js" %>
+<%= javascript_include_tag "jquery.searcher.min.js" %>
+
+<%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key="+ @google_api_key +"&libraries=places&callback=initAutocomplete", defer: true, async: true %>
 
  <script>
 
-    mixpanel.track("Homepage");
+  mixpanel.track("Homepage");
 
   $(document).ready(function() {
 
@@ -143,33 +247,86 @@
             });
         });
 
-      function geoFindMe() {
-  var output = document.getElementById("out");
-
-  if (!navigator.geolocation){
-    output.innerHTML = "<p>Geolocation is not supported by your browser</p>";
-    return;
+  $('#carddata').searcher({
+  itemSelector: '.card',
+  textSelector: 'div',
+  inputSelector: '#cardsearchinput',
+  toggle: function(item, containsText) {
+    if (containsText) {
+      $(item).fadeIn();
+    } else {
+      $(item).fadeOut();
+    }
   }
+});
 
-  function success(position) {
-    var latitude  = position.coords.latitude;
-    var longitude = position.coords.longitude;
+  // This example displays an address form, using the autocomplete feature
+      // of the Google Places API to help users fill in the information.
 
-    output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>';
+      // This example requires the Places library. Include the libraries=places
+      // parameter when you first load the API. For example:
+      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
-    var img = new Image();
-    img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false";
+      var placeSearch, autocomplete;
+      var componentForm = {
+        street_number: 'short_name',
+        route: 'long_name',
+        locality: 'long_name',
+        administrative_area_level_1: 'short_name',
+        country: 'long_name',
+        postal_code: 'short_name'
+      };
 
-    output.appendChild(img);
-  }
+      function initAutocomplete() {
+        // Create the autocomplete object, restricting the search to geographical
+        // location types.
+        autocomplete = new google.maps.places.Autocomplete(
+            /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
+            {types: ['geocode']});
 
-  function error() {
-    output.innerHTML = "Unable to retrieve your location";
-  }
+        // When the user selects an address from the dropdown, populate the address
+        // fields in the form.
+        autocomplete.addListener('place_changed', fillInAddress);
+      }
 
-  output.innerHTML = "<p>Locating…</p>";
+      function fillInAddress() {
+        // Get the place details from the autocomplete object.
+        var place = autocomplete.getPlace();
 
-  navigator.geolocation.getCurrentPosition(success, error);
-}
+        for (var component in componentForm) {
+          document.getElementById(component).value = '';
+          document.getElementById(component).disabled = false;
+        }
+
+        // Get each component of the address from the place details
+        // and fill the corresponding field on the form.
+        for (var i = 0; i < place.address_components.length; i++) {
+          var addressType = place.address_components[i].types[0];
+          if (componentForm[addressType]) {
+            var val = place.address_components[i][componentForm[addressType]];
+            document.getElementById(addressType).value = val;
+          }
+        }
+      }
+
+      // Bias the autocomplete object to the user's geographical location,
+      // as supplied by the browser's 'navigator.geolocation' object.
+      function geolocate() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var geolocation = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+            var circle = new google.maps.Circle({
+              center: geolocation,
+              radius: position.coords.accuracy
+            });
+            autocomplete.setBounds(circle.getBounds());
+          });
+        }
+      }
+
+
   
  </script>

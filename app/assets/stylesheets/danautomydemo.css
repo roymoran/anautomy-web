@@ -386,11 +386,6 @@ src: url("MyriadPro-Cond.otf") format("opentype");
   background-color: white;
   border: 1px solid white;
 }
-
-.newSearchTitle{
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-}
 .searchResultsTitle{
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
@@ -630,13 +625,6 @@ display: block;
   
 }
 
-.backgroundVehicleImage{
-  
-    background: url('https://i.imgur.com/IN90y7G.jpg') no-repeat center center;
-    min-height: 800px;
-    margin-bottom: 50px;
-}
-
 .my-container {
     height: 850px;
     width: 95%;
@@ -690,19 +678,6 @@ display: block;
   
 }
 
-.background_main_black_repairs{
-  background: url('Transparent_Background_2.png');
-  min-height: 600px;
-  margin-top: 15%;
-  height: auto;
-  /*opacity: 0.95;*/
-  
-}
-.background_main_black_repairs a {
-    color: #52BB4A;
-    text-decoration: underline;
-} 
-
 .centerLine{
   border: 1px solid white;
   margin: 0 auto;
@@ -724,11 +699,6 @@ display: block;
   height: 30px;
   font-size: 1.2em;
   
-}
-
-.backgroundVehicleImage div p span{
-  display: block;
-
 }
 /*End Right Column for Repairs Page*/
 
@@ -759,6 +729,7 @@ display: block;
 .allSubissionsBlock{
 max-height: 600px;
 overflow-y:auto;
+overflow-x:hidden;
 width: 100%;
 }
 .allRepairsBlock{
@@ -796,11 +767,6 @@ border-radius: 0; }
   background-color: white;
   display: block;
   z-index: 3;
-}
-
-.newSearchTitle{
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
 }
 .searchResultsTitle{
   font-family: 'Roboto', sans-serif;
@@ -1042,11 +1008,16 @@ h6:before {
 .right-col{
   
 }
+.shop-details{
+  height: 350px;
+  background-color: #C4C4C4;
+}
 
-.backgroundVehicleImage{
-    background: url('https://i.imgur.com/IN90y7G.jpg') no-repeat center center;
-    min-height: 800px;
-    margin-bottom: 50px;
+/* Always set the map height explicitly to define the size of the div 
+* element that contains the map. */
+#map {
+  height: 250px;
+  width: 100%;
 }
 
 .my-container {

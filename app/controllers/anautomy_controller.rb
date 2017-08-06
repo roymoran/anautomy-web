@@ -3,6 +3,10 @@ class AnautomyController < ApplicationController
   def home
     @subscriber = Subscriber.new
     @repairSubmission = RepairSubmission.new
+    @search = Search.new
+    @google_api_key = Rails.application.secrets.google_api_key
+
+    @repair_category = RepairCategory.all.offset(1)
     @car = params['car_type']
     @repair = params['repair']
 
@@ -36,6 +40,9 @@ class AnautomyController < ApplicationController
   end
 
   def oaq
+  end
+
+  def tos
   end
 
   def transparency
@@ -117,4 +124,5 @@ class AnautomyController < ApplicationController
         @eleventhLabor = (0.7 * @eleventhResult).round
       
   end
+
 end

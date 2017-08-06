@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170118042519) do
+ActiveRecord::Schema.define(version: 20170721021818) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -155,6 +155,9 @@ ActiveRecord::Schema.define(version: 20170118042519) do
     t.integer  "cars_count",        default: 0
     t.string   "reset_digest"
     t.datetime "reset_sent_at"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
   end
 
   add_index "car_owners", ["email"], name: "index_car_owners_on_email", unique: true, using: :btree
@@ -172,8 +175,11 @@ ActiveRecord::Schema.define(version: 20170118042519) do
     t.datetime "updated_at",           null: false
     t.integer  "repair_submission_id"
     t.integer  "car_year_id"
+    t.string   "car_owner_id"
     t.integer  "car_option_id"
-    t.integer  "car_owner_id"
+    t.integer  "current_mileage"
+    t.string   "edmunds_modelyearid"
+    t.string   "car_image"
   end
 
   add_index "cars", ["car_make_id"], name: "index_cars_on_car_make_id", using: :btree
@@ -305,7 +311,6 @@ ActiveRecord::Schema.define(version: 20170118042519) do
   add_foreign_key "cars", "car_makes"
   add_foreign_key "cars", "car_models"
   add_foreign_key "cars", "car_options"
-  add_foreign_key "cars", "car_owners"
   add_foreign_key "cars", "car_years"
   add_foreign_key "cars", "repair_submissions"
   add_foreign_key "repair_names", "repair_categories"
