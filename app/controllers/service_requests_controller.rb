@@ -25,6 +25,11 @@ class ServiceRequestsController < ApplicationController
   end
 
   def show
+    @sr = ServiceRequest.find(params[:id])
+    if @sr.car_owner_id != session[:car_owner_id]
+      flash[:info] = "You don't have access to this service request"
+      redirect_to action: 'new'
+    end
   end
 
   private
