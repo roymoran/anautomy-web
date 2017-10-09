@@ -1,5 +1,6 @@
 class CarOwner < ActiveRecord::Base
   has_many :cars, inverse_of: :car_owner
+  has_many :service_requests, inverse_of: :car_owner
 	attr_accessor :remember_token, :activation_token, :reset_token
   before_save   :downcase_email
   before_create :create_activation_digest, :create_unique_id
