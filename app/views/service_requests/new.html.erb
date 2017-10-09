@@ -1,0 +1,100 @@
+<% provide(:title, "New Service Request") %>
+
+<h1>ServiceRequests#new</h1>
+<p>Find me in app/views/service_requests/new.html.erb</p>
+
+<%= form_for @sr, html: {class: ""} do |f| %>
+<%= f.text_field :repair_name, :placeholder => "Repair Name" %>
+<%= f.text_field :pickup_location, class: '', id: 'autocomplete', :placeholder => "Pickup Location (address, city, state or zip)"%>
+<%= f.hidden_field :search_street_number, id: 'street_number'%>
+<%= f.hidden_field :search_route, id: 'route'%>
+<%= f.hidden_field :search_locality, id: 'locality' %>
+<%= f.hidden_field :search_administrative_area_level_1, id: 'administrative_area_level_1' %>
+<%= f.hidden_field :search_postal_code, id: 'postal_code'%>
+<%= f.hidden_field :search_country, id: 'country' %>
+
+<%= f.select(:car_id) do %>
+  <option>Select Your Car</option>
+  <% @cars_list.each do |c| %>
+    <%= content_tag(:option, c["car_name"], value: c["id"]) %>
+  <% end %>
+<% end %>
+
+<%= f.hidden_field :car_owner_id %>
+<%= f.submit "Create" %>
+<% end %>
+
+
+<%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key="+ @google_api_key +"&libraries=places&callback=initAutocomplete", defer: true, async: true %>
+
+<script>
+// This example displays an address form, using the autocomplete feature
+      // of the Google Places API to help users fill in the information.
+
+      // This example requires the Places library. Include the libraries=places
+      // parameter when you first load the API. For example:
+      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
+      var placeSearch, autocomplete;
+      var componentForm = {
+        street_number: 'short_name',
+        route: 'long_name',
+        locality: 'long_name',
+        administrative_area_level_1: 'short_name',
+        country: 'long_name',
+        postal_code: 'short_name'
+      };
+
+      function initAutocomplete() {
+        // Create the autocomplete object, restricting the search to geographical
+        // location types.
+        autocomplete = new google.maps.places.Autocomplete(
+            /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
+            {types: ['geocode']});
+
+        // When the user selects an address from the dropdown, populate the address
+        // fields in the form.
+        autocomplete.addListener('place_changed', fillInAddress);
+      }
+
+      function fillInAddress() {
+        // Get the place details from the autocomplete object.
+        var place = autocomplete.getPlace();
+
+        for (var component in componentForm) {
+          document.getElementById(component).value = '';
+          document.getElementById(component).disabled = false;
+        }
+
+        // Get each component of the address from the place details
+        // and fill the corresponding field on the form.
+        for (var i = 0; i < place.address_components.length; i++) {
+          var addressType = place.address_components[i].types[0];
+          if (componentForm[addressType]) {
+            var val = place.address_components[i][componentForm[addressType]];
+            document.getElementById(addressType).value = val;
+          }
+        }
+      }
+
+      // Bias the autocomplete object to the user's geographical location,
+      // as supplied by the browser's 'navigator.geolocation' object.
+      function geolocate() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var geolocation = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+            var circle = new google.maps.Circle({
+              center: geolocation,
+              radius: position.coords.accuracy
+            });
+            autocomplete.setBounds(circle.getBounds());
+          });
+        }
+      }
+
+
+  
+ </script>
