@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+
+  get 'service_requests/new'
+
+  get 'service_requests/create'
+
+  get 'service_requests/update'
+
+  get 'service_requests/show'
+
   get 'searches/new'
 
   get 'searches/show'
@@ -40,6 +49,8 @@ Rails.application.routes.draw do
   post   '/login_shop',   to: 'sessions#create_shop'
   delete '/logout_shop',  to: 'sessions#destroy_shop'
 
+  # add payment method route 
+  post 'payment_methods/create',  to: 'payment_methods#create'
   # repair search routes 
   get 'search' => "searches#show"
 
@@ -62,6 +73,7 @@ Rails.application.routes.draw do
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
   resources :cars
+  resources :service_requests
   match 'snap', to: 'invoices#new', via: [:get, :post]
 
   resources :anautomy do
