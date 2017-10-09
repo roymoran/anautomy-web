@@ -500,7 +500,7 @@
         <div class="col-sm-10 col-sm-offset-3 col-xs-12">
           <div class="col-sm-3 profile-menu-item profile-nav-menu-item-active" data-id="dashboard-maintenance-schedule">Maintenance</div>
           <div class="col-sm-3 col-xs-12 profile-menu-item profile-nav-menu-item" data-id="dashboard-recalls">Recalls</div>
-          <div class="col-sm-3 col-xs-12 profile-menu-item profile-nav-menu-item" data-id="dashboard-recalls">Service Request</div>        
+          <div class="col-sm-3 col-xs-12 profile-menu-item profile-nav-menu-item" data-id="dashboard-service-requests">Service Request</div>        
           <!--<div class="col-sm-3 profile-menu-item profile-nav-menu-item" data-id="dashboard-maintenance-history">Repair History</div>-->
         </div>
       </div>
@@ -601,6 +601,26 @@
       <div class="row">
         <div class="recall-items col-xs-10 col-xs-offset-1">
 
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="dashboard-service-requests" class="row hide">
+    <div class="service-requests-section col-xs-12">
+      <div class="row">
+        <div class="service-requests-section-main-title text-center col-sm-12">
+          <span class="maintenance-schedule-title">Service requests</span> for your <span class="maintenance-schedule-car-title" id="dashboard-car-name-2"><%= defined?(@first_car_name) ? @first_car_name : '' %></span>
+          <div class="service-requests-section-sub-title text-center col-sm-12"></div>
+        </div>
+
+
+      </div>
+    </div>
+    <div class="service-requests-detailed col-xs-12">
+      <div class="row">
+        <div class="service-requests-items col-xs-10 col-xs-offset-1">
+          <%= link_to "Create service request", new_service_request_path, class: "" %>
         </div>
       </div>
     </div>
