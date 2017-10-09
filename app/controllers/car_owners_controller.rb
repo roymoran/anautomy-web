@@ -19,9 +19,15 @@ class CarOwnersController < ApplicationController
   end
   	
   def create
-  	@car_owner = CarOwner.new(car_owner_params)
+    Stripe.api_key = Rails.application.secrets.stripe_secret_api_key
+    @car_owner = CarOwner.new(car_owner_params)
+
   	if @car_owner.save
   		# Handle a successful save.
+      customer = Stripe::Customer.create(
+        :email => @car_owner.email
+      )
+      @car_owner.update_attribute(:stripe_customer_id, customer.id)
       @car_owner.send_activation_email
       flash[:info] = "Please check your email to activate your account."
       #redirect_to root_url
@@ -35,7 +41,11 @@ class CarOwnersController < ApplicationController
 	end
 
   def edit
+    Stripe.api_key = "sk_test_42URYuWVP4WG9JbG6ScZbOvS"
     @car_owner = CarOwner.find(params[:id])
+    @stripe_customer = Stripe::Customer.retrieve(@car_owner.stripe_customer_id)
+    @payment_methods = @stripe_customer.sources.data
+    
     if !@car_owner.activated?
       message  = "Your account is not activated. "
       message += "Check your email for the activation link."
