@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170721021818) do
+ActiveRecord::Schema.define(version: 20171008214321) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -145,19 +145,20 @@ ActiveRecord::Schema.define(version: 20170721021818) do
   create_table "car_owners", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
-    t.datetime "created_at",                        null: false
-    t.datetime "updated_at",                        null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
     t.string   "password_digest"
     t.string   "remember_digest"
     t.string   "activation_digest"
-    t.boolean  "activated",         default: false
+    t.boolean  "activated",          default: false
     t.datetime "activated_at"
-    t.integer  "cars_count",        default: 0
+    t.integer  "cars_count",         default: 0
     t.string   "reset_digest"
     t.datetime "reset_sent_at"
     t.string   "city"
     t.string   "state"
     t.string   "zip"
+    t.string   "stripe_customer_id"
   end
 
   add_index "car_owners", ["email"], name: "index_car_owners_on_email", unique: true, using: :btree
@@ -242,6 +243,26 @@ ActiveRecord::Schema.define(version: 20170721021818) do
   add_index "repairs", ["repair_name_id"], name: "index_repairs_on_repair_name_id", using: :btree
   add_index "repairs", ["repair_submission_id"], name: "index_repairs_on_repair_submission_id", using: :btree
 
+  create_table "service_requests", force: :cascade do |t|
+    t.string   "car_owner_id"
+    t.integer  "car_id"
+    t.string   "repair_name"
+    t.string   "pickup_location"
+    t.string   "car_location"
+    t.integer  "quote_amount"
+    t.integer  "actual_amount"
+    t.string   "status"
+    t.string   "assigned_driver_name"
+    t.string   "assigned_driver_number"
+    t.string   "assigned_driver_image"
+    t.string   "assigned_driver_info"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "service_requests", ["car_id"], name: "index_service_requests_on_car_id", using: :btree
+  add_index "service_requests", ["car_owner_id"], name: "index_service_requests_on_car_owner_id", using: :btree
+
   create_table "shop_ratings", force: :cascade do |t|
     t.integer  "cost_rating"
     t.integer  "quality_rating"
@@ -307,18 +328,35 @@ ActiveRecord::Schema.define(version: 20170721021818) do
   add_index "subscribers", ["email"], name: "index_subscribers_on_email", unique: true, using: :btree
 
   add_foreign_key "car_models", "car_makes"
+  add_foreign_key "car_models", "car_makes"
+  add_foreign_key "car_options", "car_models"
   add_foreign_key "car_options", "car_models"
   add_foreign_key "cars", "car_makes"
+  add_foreign_key "cars", "car_makes"
+  add_foreign_key "cars", "car_models"
   add_foreign_key "cars", "car_models"
   add_foreign_key "cars", "car_options"
+  add_foreign_key "cars", "car_options"
+  add_foreign_key "cars", "car_owners"
+  add_foreign_key "cars", "car_years"
   add_foreign_key "cars", "car_years"
   add_foreign_key "cars", "repair_submissions"
+  add_foreign_key "cars", "repair_submissions"
+  add_foreign_key "repair_names", "repair_categories"
   add_foreign_key "repair_names", "repair_categories"
   add_foreign_key "repair_submissions", "shops"
+  add_foreign_key "repair_submissions", "shops"
+  add_foreign_key "repairs", "repair_categories"
   add_foreign_key "repairs", "repair_categories"
   add_foreign_key "repairs", "repair_names"
+  add_foreign_key "repairs", "repair_names"
   add_foreign_key "repairs", "repair_submissions"
+  add_foreign_key "repairs", "repair_submissions"
+  add_foreign_key "service_requests", "car_owners"
+  add_foreign_key "shop_ratings", "repair_submissions"
   add_foreign_key "shop_ratings", "repair_submissions"
   add_foreign_key "shop_ratings", "shops"
+  add_foreign_key "shop_ratings", "shops"
+  add_foreign_key "shop_users", "shops"
   add_foreign_key "shop_users", "shops"
 end
