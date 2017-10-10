@@ -6,7 +6,6 @@ class ServiceRequestsController < ApplicationController
   	@sr = ServiceRequest.new
   	@sr.car_owner_id = session[:car_owner_id]
   	@cars_list = car_list_by_name(CarOwner.find(session[:car_owner_id]).cars)
-
   end
 
   def create
@@ -63,7 +62,7 @@ class ServiceRequestsController < ApplicationController
       @stripe_customer = Stripe::Customer.retrieve(CarOwner.find(session[:car_owner_id]).stripe_customer_id)
       @source_count = @stripe_customer.sources.data.count
       if @source_count == 0
-        flash[:warning] = "You must have a payment method before you can create a service request."
+        flash.now[:warning] = "You must have a payment method before you can create a service request."
       end
     end
 end
