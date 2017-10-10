@@ -1,28 +1,85 @@
 <% provide(:title, "New Service Request") %>
+<style type="text/css">
+.service-request-field {
+  height: 50px;
+  width: 100%;
+  font-size: 1.3em;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  padding-left: 10px;
+}
+.select-car-menu{
+  background: transparent;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  height: 48px;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  color: #2C3E50;
+  font-size: 13px;
 
-<h1>ServiceRequests#new</h1>
-<p>Find me in app/views/service_requests/new.html.erb</p>
 
-<%= form_for @sr, html: {class: ""} do |f| %>
-<%= f.text_field :repair_name, :placeholder => "Repair Name" %>
-<%= f.text_field :pickup_location, class: '', id: 'autocomplete', :placeholder => "Pickup Location (address, city, state or zip)"%>
-<%= f.hidden_field :search_street_number, id: 'street_number'%>
-<%= f.hidden_field :search_route, id: 'route'%>
-<%= f.hidden_field :search_locality, id: 'locality' %>
-<%= f.hidden_field :search_administrative_area_level_1, id: 'administrative_area_level_1' %>
-<%= f.hidden_field :search_postal_code, id: 'postal_code'%>
-<%= f.hidden_field :search_country, id: 'country' %>
+  -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
 
-<%= f.select(:car_id) do %>
-  <option>Select Your Car</option>
-  <% @cars_list.each do |c| %>
-    <%= content_tag(:option, c["car_name"], value: c["id"]) %>
-  <% end %>
-<% end %>
+.btn-auth-form{
+  font-size: 1.3em;
+  height: 50px;
+  width: 100%;
+  margin-bottom: 15px;
+  background: rgba(82, 187, 73, 1) !important;
+  opacity: 1;
+  border: 1px solid #FFFFFF;
+  color: #FFFFFF !important;
 
-<%= f.hidden_field :car_owner_id %>
-<%= f.submit "Create" %>
-<% end %>
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  
+  /* CSS Transition */  
+  -webkit-transition: background .2s ease-in-out, border .2s ease-in-out;
+  -moz-transition: background .2s ease-in-out, border .2s ease-in-out;
+  -ms-transition: background .2s ease-in-out, border .2s ease-in-out;
+  -o-transition: background .2s ease-in-out, border .2s ease-in-out;
+  transition: background .2s ease-in-out, border .2s ease-in-out;
+}
+
+</style>
+<div class = "container-fluid">
+  <div class="row">
+  <div class="col-sm-5 col-sm-offset-1 text-center">
+    <h2 class="main-headline">New Service Request</h2>
+    <br>
+    <%= form_for @sr, html: {class: ""} do |f| %>
+    <%= f.text_field :repair_name, class: "service-request-field", placeholder: "Repair Name" %>
+    <%= f.text_field :pickup_location, class: 'service-request-field', id: 'autocomplete', placeholder: "Pickup Location (address, city, state or zip)"%>
+    <%= f.hidden_field :search_street_number, id: 'street_number'%>
+    <%= f.hidden_field :search_route, id: 'route'%>
+    <%= f.hidden_field :search_locality, id: 'locality' %>
+    <%= f.hidden_field :search_administrative_area_level_1, id: 'administrative_area_level_1' %>
+    <%= f.hidden_field :search_postal_code, id: 'postal_code'%>
+    <%= f.hidden_field :search_country, id: 'country' %>
+
+    <%= f.select(:car_id, nil, {}, {class: "select-car-menu"}) do %>
+    <option>Select Your Car</option>
+      <% @cars_list.each do |c| %>
+        <%= content_tag(:option, c["car_name"], value: c["id"]) %>
+      <% end %>
+    <% end %>
+
+    <%= f.hidden_field :car_owner_id %>
+    <%= f.submit "Create", class: "btn btn-auth-form" %>
+    <% end %>
+
+    <br><br>
+  </div>
+</div>
+</div>
 
 
 <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key="+ @google_api_key +"&libraries=places&callback=initAutocomplete", defer: true, async: true %>
