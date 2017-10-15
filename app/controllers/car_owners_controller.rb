@@ -35,7 +35,6 @@ class CarOwnersController < ApplicationController
   		log_in @car_owner
       remember @car_owner
   		redirect_to @car_owner #redirect to root      
-
   	else
       render 'new'
     end
@@ -125,7 +124,7 @@ class CarOwnersController < ApplicationController
 	private
 
 		def car_owner_params
-			params.require(:car_owner).permit(:name, :email, :password, :password_confirmation)
+			params.require(:car_owner).permit(:name, :email, :password, :password_confirmation, :phone_number)
 		end
 
     # Before filters

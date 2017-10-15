@@ -23,7 +23,8 @@ class ServiceRequestsController < ApplicationController
       @driver = Driver.new
       @driver.send_service_created_email(@sr) # default notification
       # assign_driver(@sr) #placeholder for assigning driver
-      redirect_to @sr #redirect to root
+      @car_owner = CarOwner.find(@sr.car_owner_id)
+      redirect_to @car_owner
   	else
       render 'new'
     end
