@@ -290,6 +290,10 @@
   background-color: #f1f1f1;
   margin-bottom: 25px;
 }
+.service-request-detailed{
+  background-color: #f1f1f1;
+  margin-bottom: 25px;
+}
 .maintenanance-history-detailed{
   background-color: #f1f1f1;
   margin-bottom: 25px;
@@ -330,13 +334,25 @@
   float:right;
   padding-right:20px;
 }
+
+.service-request-item{
+
+}
+.service-request-item-title{
+  text-transform: uppercase;
+}
+.service-request-item-icon{
+  float:right;
+  padding-right:20px;
+}
+
 .dashboard-main-message{
   padding-bottom: 25px;
 }
 .dashboard-car-select{
   padding-bottom: 50px;
 }
-.maintenance-item .ui-accordion-header, .recall-item .ui-accordion-header{
+.maintenance-item .ui-accordion-header, .recall-item .ui-accordion-header, .service-request-item .ui-accordion-header{
   color: #303030;
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 600;
@@ -349,14 +365,14 @@
 
 }
 
-.maintenance-item .ui-accordion-header.ui-state-active, .recall-item .ui-accordion-header.ui-state-active{ 
+.maintenance-item .ui-accordion-header.ui-state-active, .recall-item .ui-accordion-header.ui-state-active, .service-request-item .ui-accordion-header.ui-state-active{ 
   color: #303030;
   margin-bottom: 20px;
   background-color: #ffffff;
 
 }
 
-.maintenance-item .ui-accordion-content, .recall-item .ui-accordion-content {
+.maintenance-item .ui-accordion-content, .recall-item .ui-accordion-content, .service-request-item .ui-accordion-content {
 
   color: #ffffff;
   font-family: 'Josefin Sans', sans-serif;
@@ -369,10 +385,10 @@
   background-color: #5A5A5A;
 }
 
-.maintenance-item .ui-accordion-header:nth-of-type(2), .recall-item .ui-accordion-header:nth-of-type(2){
+.maintenance-item .ui-accordion-header:nth-of-type(2), .recall-item .ui-accordion-header:nth-of-type(2), .service-request-item .ui-accordion-header:nth-of-type(2){
   margin-bottom: 20px;
 }
-.maintenance-item .ui-accordion-content:nth-of-type(2), .recall-item .ui-accordion-content:nth-of-type(2){
+.maintenance-item .ui-accordion-content:nth-of-type(2), .recall-item .ui-accordion-content:nth-of-type(2), .service-request-item .ui-accordion-content:nth-of-type(2){
   margin-top: -20px;
 }
 
@@ -397,6 +413,45 @@
   transition: background .2s ease-in-out, border .2s ease-in-out;
 }
 
+.maintenance-item .ui-accordion-header, .recall-item .ui-accordion-header, .service-request-item .ui-accordion-header{
+  color: #303030;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 600;
+  font-size: 1.4em;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-top: 13px;
+  height: 40px;
+  background-color: #ffffff;
+
+}
+
+.service-request-item .ui-accordion-header.ui-state-active, .recall-item .ui-accordion-header.ui-state-active, .service-request-item .ui-accordion-header.ui-state-active{ 
+  color: #303030;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+
+}
+
+.service-request-item .ui-accordion-content, .recall-item .ui-accordion-content, .service-request-item .ui-accordion-content{
+
+  color: #ffffff;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1.3em;
+
+  width: 100%;
+  margin-top: -20px;
+  margin-bottom: 20px;
+  background-color: #5A5A5A;
+}
+
+.service-request-item .ui-accordion-header:nth-of-type(2), .recall-item .ui-accordion-header:nth-of-type(2), .service-request-item .ui-accordion-header:nth-of-type(2){
+  margin-bottom: 20px;
+}
+.service-request-item .ui-accordion-content:nth-of-type(2), .recall-item .ui-accordion-content:nth-of-type(2), .service-request-item .ui-accordion-content:nth-of-type(2){
+  margin-top: -20px;
+}
 
 .profile-hr{
     margin-top: 0;
@@ -416,6 +471,29 @@
   font-size: 1.2em;
 }
 
+.service-requests-section{
+
+}
+
+.service-requests-section-main-title{
+  border: 1px solid #e7e7e7;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-top: 25px;
+  margin-bottom: 20px;
+}
+
+.service-requests-main-title{
+  border: 1px solid #e7e7e7;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-top: 25px;
+  margin-bottom: 20px;
+}
+.service-requests-sub-title{
+  margin-top: 20px;
+  font-size: 1.2em;
+}
 
 .maintenanance-history-section-main-title{
   border: 1px solid #e7e7e7;
@@ -500,7 +578,7 @@
         <div class="col-sm-10 col-sm-offset-3 col-xs-12">
           <div class="col-sm-3 profile-menu-item profile-nav-menu-item-active" data-id="dashboard-maintenance-schedule">Maintenance</div>
           <div class="col-sm-3 col-xs-12 profile-menu-item profile-nav-menu-item" data-id="dashboard-recalls">Recalls</div>
-          <div class="col-sm-3 col-xs-12 profile-menu-item profile-nav-menu-item" data-id="dashboard-service-requests">Service Request</div>        
+          <div class="col-sm-3 col-xs-12 profile-menu-item profile-nav-menu-item" data-id="dashboard-service-requests">Service Requests</div>        
           <!--<div class="col-sm-3 profile-menu-item profile-nav-menu-item" data-id="dashboard-maintenance-history">Repair History</div>-->
         </div>
       </div>
@@ -610,20 +688,37 @@
     <div class="service-requests-section col-xs-12">
       <div class="row">
         <div class="service-requests-section-main-title text-center col-sm-12">
-          <span class="maintenance-schedule-title">Service requests</span> for your <span class="maintenance-schedule-car-title" id="dashboard-car-name-2"><%= defined?(@first_car_name) ? @first_car_name : '' %></span>
+          <span class="maintenance-schedule-title">Service requests</span> for your <span class="maintenance-schedule-car-title" id="dashboard-car-name-2">Cars</span>
           <div class="service-requests-section-sub-title text-center col-sm-12"></div>
         </div>
 
 
       </div>
     </div>
-    <div class="service-requests-detailed col-xs-12">
+    <div class="service-request-detailed col-xs-12">
       <div class="row">
-        <div class="service-requests-items col-xs-10 col-xs-offset-1">
-          <%= link_to "Create service request", new_service_request_path, class: "" %>
-        </div>
+          <% if @service_requests.count > 0 %>
+          <div class="service-request-items col-xs-10 col-xs-offset-1">
+          <% @service_requests.each do |sr| %>
+            <div class="service-request-item">
+              <div class = "service-request-item-title"><%= sr.repair_name %> on car<i class="fa fa-plus service-request-item-icon"></i></div>
+              <div class="row"><div class="col-sm-12" style="font-size:1.2em;">
+                words
+              </div>
+            </div>
+          </div>
+          <% end %>
+          </div>
+          <% else %>
+          <div class="service-request-items col-xs-10 col-xs-offset-1" style="display: table; height: 350px; overflow: hidden;">
+            <div style="display: table-cell; vertical-align: middle;">
+              <div class="text-center" style="font-size:1.4em; color:#4A4A4A">Your service requests live here. When you don't have the time to personally take your car to the shop, we employ drivers who are available to deliver your car to the shop and return it to you. <a href="#">Learn more about service requests here.</a></div>
+            </div>
+          </div>
+          <% end %>
       </div>
     </div>
+    <%= link_to 'Create service request', new_service_request_path %>
   </div>
 
   <div id="dashboard-maintenance-history" class="row hide">
@@ -671,7 +766,7 @@
 <%= javascript_include_tag "jquery.js" %>
 <%= javascript_include_tag "jquery-ui.js" %>    
 <script>
-$( ".maintenance-item, .recall-item" ).accordion({
+$( ".maintenance-item, .recall-item, .service-request-item" ).accordion({
       collapsible: true,
       heightStyle: "content",
       active: false
@@ -679,7 +774,7 @@ $( ".maintenance-item, .recall-item" ).accordion({
 
 $("#dashboard-maintenance-schedule").removeClass("hide");
 
-$(".profile-menu-item").click(function (e) {
+$(".profile-menu-item").click(function () {
   var x = $('.profile-nav-menu-item-active').attr("data-id");
   $("#" + x).addClass("hide");
   $('.profile-nav-menu-item-active').addClass('profile-nav-menu-item').removeClass('profile-nav-menu-item-active');

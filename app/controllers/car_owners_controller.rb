@@ -8,6 +8,7 @@ class CarOwnersController < ApplicationController
 
 	def show
 		@car_owner = CarOwner.find(params[:id])
+    @service_requests = @car_owner.service_requests
     @car = Car.new
     if @car_owner.cars_count > 0
       @first_car_name = first_car(@car_owner)

@@ -1,7 +1,10 @@
 class ServiceRequestsController < ApplicationController
   before_action :payment_method_present, only: [:new]
+  before_action :logged_in_car_owner, only: [:edit, :update, :show]
+  before_action :correct_car_owner,   only: [:edit, :update, :show]
 
   def new
+    @repair_category = RepairCategory.all.offset(1)
   	@google_api_key = Rails.application.secrets.google_api_key
   	@sr = ServiceRequest.new
   	@sr.car_owner_id = session[:car_owner_id]
@@ -10,14 +13,14 @@ class ServiceRequestsController < ApplicationController
 
   def create
   	@sr = ServiceRequest.new(service_request_params)
+    @sr.car_owner_id = session[:car_owner_id]
   	@sr.status = 'Created'
   	# email service created
   	if @sr.save
   		# Handle a successful save.
       #@sr.send_activation_email
-      flash[:info] = "Your service request was created."
-      redirect_to @sr #redirect to root      
-
+      flash[:info] = "Your service request was created, and will be processed shortly."
+      redirect_to @sr #redirect to root
   	else
       render 'new'
     end
@@ -29,14 +32,38 @@ class ServiceRequestsController < ApplicationController
   def show
     @sr = ServiceRequest.find(params[:id])
     if @sr.car_owner_id != session[:car_owner_id]
-      flash[:info] = "You don't have access to this service request"
+      flash[:info] = "You don't have access to this service request."
       redirect_to action: 'new'
+    end
+  end
+
+  def place_coordinates
+    api_key = Rails.application.secrets.google_api_key
+    location = URI.encode(params[:location])
+    uri = URI('https://maps.googleapis.com/maps/api/geocode/json?address='+location+'&key=' + api_key)
+    res = Net::HTTP.get_response(uri)
+    respond_to do |format|
+      format.json { render :json => res.body}
     end
   end
 
   private
   	def service_request_params
   		params.require(:service_request).permit(:car_owner_id, :car_id, :repair_name, :pickup_location, :status)
+    end
+
+    # Confirms a logged-in user.
+    def logged_in_car_owner
+      unless logged_in?
+        flash[:danger] = "Login first please."
+        redirect_to login_url
+      end
+    end
+
+    # Confirms the correct user.
+    def correct_car_owner
+      @car_owner = CarOwner.find(session[:car_owner_id])
+      redirect_to(root_url) unless current_car_owner?(@car_owner)
     end
 
     # Given the user associated cars, return nice list of

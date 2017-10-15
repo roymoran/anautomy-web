@@ -56,7 +56,6 @@
     <h2 class="main-headline">New Service Request</h2>
     <br>
     <%= form_for @sr, html: {class: ""} do |f| %>
-    <%= f.text_field :repair_name, class: "service-request-field", placeholder: "Repair Name" %>
     <%= f.text_field :pickup_location, class: 'service-request-field', id: 'autocomplete', placeholder: "Pickup Location (address, city, state or zip)"%>
     <%= f.hidden_field :search_street_number, id: 'street_number'%>
     <%= f.hidden_field :search_route, id: 'route'%>
@@ -72,12 +71,55 @@
       <% end %>
     <% end %>
 
+    <a data-toggle="modal" data-target="#myModal" href="#">
+      <div class="select_submission_form text-left">
+        <div class ="repair_name_div" style="float:left; width:90%; overflow: hidden; text-overflow:ellipsis; white-space: nowrap;">Select Repair</div><i class="fa fa-th text-right" aria-hidden="true" style="float:right; padding-top:4px;"></i>
+      </div>
+    </a>
+
+    <div class="modal fade repairs-modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Select Repair</h4>
+          </div>
+          <div class="modal-body" id="carddata">
+            <div class="row" >
+              <div class="col-xs-6 text-left">
+                <input id="cardsearchinput" placeholder="Quick Filter"/ >
+              </div>
+            </div>
+            <% @repair_category.each do |category| %>
+            
+            <div class="row card">
+              <div class="col-sm-12">
+                <h4 class="text-left"><u><%= category.name%></u></h4>
+              </div>
+              <% category.repair_names.each do |repair| %>
+              <div class="col-sm-4"><p><a class="repair-name-text" href="#" data-cat="<%=category.name%>" data-catid="<%=category.id%>" data-repid="<%=repair.id%>" data-dismiss="modal"><%= repair.name %></a></p></div>
+            <% end %>
+          </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <%= f.hidden_field :car_owner_id %>
+    <%= f.hidden_field :repair_name %>
     <%= f.submit "Create", class: "btn btn-auth-form" %>
     <% end %>
 
     <br><br>
   </div>
+  <div class = "col-sm-6">
+      <div class = "row">
+        <div class = "col-lg-12">
+           <div id="map"></div>
+        </div>
+      </div>
+    </div>
 </div>
 </div>
 
@@ -85,7 +127,21 @@
 <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key="+ @google_api_key +"&libraries=places&callback=initAutocomplete", defer: true, async: true %>
 
 <script>
-// This example displays an address form, using the autocomplete feature
+
+      var HttpClient = function() {
+        this.get = function(aUrl, aCallback) {
+          var anHttpRequest = new XMLHttpRequest();
+          anHttpRequest.onreadystatechange = function() { 
+            if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200){
+              aCallback(anHttpRequest.responseText);
+            }
+          }
+          anHttpRequest.open( "GET", aUrl, true );            
+          anHttpRequest.send( null );
+        }
+      }
+      
+      // This example displays an address form, using the autocomplete feature
       // of the Google Places API to help users fill in the information.
 
       // This example requires the Places library. Include the libraries=places
@@ -132,6 +188,12 @@
             document.getElementById(addressType).value = val;
           }
         }
+        updateMap(document.getElementById('autocomplete').value);
+      }
+
+      function updateMap(place){
+        var client = new HttpClient();
+        client.get('/api/place_coordinates?location=' + place, initMap);
       }
 
       // Bias the autocomplete object to the user's geographical location,
@@ -152,6 +214,45 @@
         }
       }
 
+      var map;
+      var infowindow;
 
-  
+      function initMap(response) {
+        json_o = JSON.parse(response);
+        locationCoordinates = json_o["results"][0]["geometry"]["location"]  
+        var location = {lat: locationCoordinates.lat, lng: locationCoordinates.lng};
+        var mapelement = document.getElementById('map');
+        map = new google.maps.Map(mapelement, {
+          center: location,
+          zoom: 14
+        });
+
+        infowindow = new google.maps.InfoWindow();
+
+        createMarker(location);
+      }
+
+      function callback(results, status) {
+        if (status === google.maps.places.PlacesServiceStatus.OK) {
+          prepareFirstShopProfile(results[0])
+          for (var i = 0; i < results.length; i++) {
+            createMarker(results[i]);
+          }
+        }
+      }
+
+      function createMarker(location) {
+        var marker = new google.maps.Marker({
+          map: map,
+          position: location
+        });
+
+        google.maps.event.addListener(marker, 'click', function() {
+          infowindow.setContent('Car pickup location');
+          infowindow.open(map, this);
+        });
+      }
+
+//Following line for chrome debugging purposes
+//# sourceURL=NewServiceRequest.js 
  </script>
