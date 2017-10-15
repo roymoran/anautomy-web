@@ -54,6 +54,11 @@ class CarOwner < ActiveRecord::Base
   def send_activation_email
     CarOwnerMailer.account_activation(self).deliver_now
   end
+  
+  # Sends activation email.
+  def service_request_processing_email
+    CarOwnerMailer.service_request_processing(self).deliver_now
+  end
 
   # Sets the password reset attributes.
   def create_reset_digest

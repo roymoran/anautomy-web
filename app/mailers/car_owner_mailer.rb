@@ -19,4 +19,10 @@ class CarOwnerMailer < ApplicationMailer
     @car_owner = car_owner
     mail to: car_owner.email, subject: "Password reset"
   end
+
+  def service_request_processing(car_owner)
+    @car_owner = car_owner
+    mail to: car_owner.email, subject: "Just a heads up, we're processing your request!"
+  end
+
 end
