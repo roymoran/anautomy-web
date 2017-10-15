@@ -71,6 +71,7 @@ jQuery ->
     $('.repair_name_div').text(repair_name)
     $('.repair-cat-hidden').val(repair_category.catid)
     $('.repair-name-hidden').val(repair_category.repid)
+    $('#service_request_repair_name').val(repair_name)
 
   #implement gradual rating for cost, quality, and quickness of repair
   $('.quality-rating-row').hide()
