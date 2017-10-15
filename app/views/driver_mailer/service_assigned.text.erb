@@ -1,0 +1,5 @@
+Hi <%= @car_owner.name %>,
+
+Thanks for registering at Innvoy! Click on the link below to activate your account:
+
+<%= edit_account_activation_url(@car_owner.activation_token, email: @car_owner.email) %>

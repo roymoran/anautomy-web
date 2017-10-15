@@ -20,6 +20,9 @@ class ServiceRequestsController < ApplicationController
   		# Handle a successful save.
       #@sr.send_activation_email
       flash[:info] = "Your service request was created, and will be processed shortly."
+      @driver = Driver.new
+      @driver.send_service_created_email(@sr) # default notification
+      # assign_driver(@sr) #placeholder for assigning driver
       redirect_to @sr #redirect to root
   	else
       render 'new'

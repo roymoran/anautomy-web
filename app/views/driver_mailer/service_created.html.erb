@@ -1,0 +1,13 @@
+<h2>Service Created</h2>
+
+<p>Hi team,</p>
+<p>A request was created with the following details:</p><br>
+<p><strong>Car owner: </strong><%= @car_owner.name%> - <%= @car_owner.email %><br>
+<strong>Service: </strong><%= @service_request.repair_name %> - <%= @car_details %><br>
+<strong>Pickup location: </strong><%= @service_request.pickup_location %><br></p>
+
+<p>More details can be found at service request page with id <%= @service_request.id %> visit root_url/service_requests/<%= @service_request.id %></p>
+
+Regards, 
+
+Innvoy

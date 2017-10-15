@@ -688,7 +688,7 @@
     <div class="service-requests-section col-xs-12">
       <div class="row">
         <div class="service-requests-section-main-title text-center col-sm-12">
-          <span class="maintenance-schedule-title">Service requests</span> for your <span class="maintenance-schedule-car-title" id="dashboard-car-name-2">Cars</span>
+          <span class="maintenance-schedule-title">Service requests</span> for your <span class="maintenance-schedule-car-title" id="dashboard-car-name-2"> <%= "Car".pluralize(@car_owner.cars_count)%></span>
           <div class="service-requests-section-sub-title text-center col-sm-12"></div>
         </div>
 
@@ -703,7 +703,7 @@
             <div class="service-request-item">
               <div class = "service-request-item-title"><%= sr.repair_name %> on car<i class="fa fa-plus service-request-item-icon"></i></div>
               <div class="row"><div class="col-sm-12" style="font-size:1.2em;">
-                words
+                Request status: <%= sr.status %>
               </div>
             </div>
           </div>
