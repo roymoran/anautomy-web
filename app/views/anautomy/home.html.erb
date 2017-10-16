@@ -52,7 +52,7 @@
             <%= text_field_tag(:repair_name, nil, {placeholder: "Repair (e.g.  Brake Replacement)",  class: "signup-form mp-repair-name-searched"}) %>
           </div>
             <div class="col-sm-2 text-center">
-            <%= submit_tag("Find shop",  {class: "btn btn-auth-form mp-repair-searched"}) %>
+            <%= submit_tag("Find shop",  {class: "btn btn-auth-form"}) %>
           </div>
         <% end %> 
       -->
@@ -115,7 +115,7 @@
     <%= f.hidden_field :repair_name, {:value => nil, :class => 'repair-name-hidden'} %>
     </div>
     <div class="col-xs-12 col-sm-2">
-      <%= f.submit "Search", {class: "btn-auth-form"}%>
+      <%= f.submit "Search", {class: "btn-auth-form mp-repair-searched"}%>
     </div>
 
     <% end %>
