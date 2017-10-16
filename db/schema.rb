@@ -177,8 +177,8 @@ ActiveRecord::Schema.define(version: 20171015190633) do
     t.datetime "updated_at",           null: false
     t.integer  "repair_submission_id"
     t.integer  "car_year_id"
-    t.string   "car_owner_id"
     t.integer  "car_option_id"
+    t.string   "car_owner_id"
     t.integer  "current_mileage"
     t.string   "edmunds_modelyearid"
     t.string   "car_image"
