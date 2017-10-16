@@ -17,6 +17,9 @@
     	car_model = $('#car_model_select :selected').text()
     	tryFormSubmit()
 
+    $('.mp-new-service-request').click ->
+    	mixpanel.track 'To New Service Request Form'
+
   	# getting modelyearid from edmunds
   	@buildDashboard = (modelyearid, opts) ->
   		if isNaN(parseInt(modelyearid)) && isNaN(parseInt(opts['current_mileage'])) 
