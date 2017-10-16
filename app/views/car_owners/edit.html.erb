@@ -39,7 +39,7 @@
   <div class="col-md-6 col-md-offset-3 text-center">
     <h2 class = "main-headline">Manage Payment Method</h2>
     <% if @payment_methods.count == 0 %>
-      <div>You currently don't have any active payment methods. Try adding one.</div>
+      <div style="padding-bottom:15px;">You currently don't have any active payment methods. Try adding one.</div>
     <% else %>
       <% @payment_methods.each do |c| %>
         <div class="text-left" style="color:#545E69; font-size:1.2em;"><%= c.brand %> &middot;&middot;&middot;&middot;<%= c.last4 %> (exp. <%= c.exp_month %>/<%= c.exp_year %>) </div>
@@ -48,7 +48,7 @@
     <%= form_tag "/payment_methods/create", class: "text-right" do %>
       <script
       src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-      data-key="pk_test_1lD1KQKMph1VSxayDUWtomiD"
+      data-key="<%= Rails.application.secrets.stripe_publishable_api_key %>"
       data-name="Innvoy"
       data-panel-label="Add Payment Method"
       data-label="Add Payment Method"
