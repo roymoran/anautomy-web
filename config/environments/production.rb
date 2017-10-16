@@ -84,8 +84,8 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: host }
 
    ActionMailer::Base.smtp_settings = {
-    user_name:  'rmoran20',
-    password: 'rm20Cps40474609678716318',
+    user_name:  '',
+    password: '',
     domain: 'www.innvoy.com',
     address: 'smtp.sendgrid.net',
     port: 587,
