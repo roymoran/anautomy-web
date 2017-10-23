@@ -53,6 +53,7 @@
 		model_parsed = model_parsed.replace("AWD", "")
 		model_parsed = model_parsed.replace("FWD", "")
 		model_parsed = model_parsed.replace("RWD", "")
+		model_parsed = model_parsed.replace("Pickup", "")		
 		model_parsed = model_parsed.trim()
 
 		$.ajax
