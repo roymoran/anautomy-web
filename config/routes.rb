@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   get 'transparency' => 'anautomy#transparency'
   get 'submission' => 'anautomy#submission'
   get 'tos' => 'anautomy#tos'
+  get 'service-request-info' => 'anautomy#service'
   #get 'new_submission' => "repair_submissions#new"
   get 'show' => "repair_submissions#show"
   get 'results' => "shops#search_result"
@@ -65,7 +66,6 @@ Rails.application.routes.draw do
   resources :repair_submissions
   resources :searches, only: [:new, :create]
 
-  resources :anuatomy
   resources :shops
   resources :invoices
   resources :car_owners

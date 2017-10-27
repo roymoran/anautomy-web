@@ -725,7 +725,8 @@
           <% else %>
           <div class="service-request-items col-xs-10 col-xs-offset-1" style="display: table; height: 350px; overflow: hidden;">
             <div style="display: table-cell; vertical-align: middle;">
-              <div class="text-center" style="font-size:1.4em; color:#4A4A4A">Your service requests live here. When you don't have the time to personally take your car to the shop, we employ drivers who are available to deliver your car to the shop and return it to you. <a href="#">Learn more about service requests here.</a></div>
+              <div class="text-center" style="font-size:1.4em; color:#4A4A4A">Your service requests live here. When you don't have the time to personally take your car to the shop, we employ drivers who are available to deliver your car to the shop and return it to you. <%= link_to 'Learn more about service requests here.', service_request_info_path %>
+              </div>
             </div>
           </div>
           <% end %>

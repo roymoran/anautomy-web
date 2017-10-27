@@ -1,0 +1,81 @@
+<% provide(:title, "Service Request Information") %>
+
+<div class = "container-fluid about-container hidden-xs">
+	<div class = "row">
+		<div class = "col-sm-6 about-left-title">
+			Service Requests
+		</div>
+		<div class = "col-sm-5 about-right-text">
+			We believe in giving car owners a stress free car repair experience. 
+		</div>
+	</div>
+</div>
+
+<div class = "container-fluid about-container visible-xs">
+	<div class = "row">
+		<div class = "col-sm-6 about-left-title-small">
+			About
+		</div>
+		<div class = "col-sm-5 about-right-text-small">
+			We believe in giving car owners a stress free car repair experience. 
+		</div>
+	</div>
+</div>
+ 
+<hr class = "line-split">
+
+<div class = "container-fluid">
+	<div class = "row">
+		<div class = "col-sm-6 col-sm-offset-3 about-us-text">
+			<p>
+				Finding the right shop for your car repair can be a long and stressful experience. Most people will ask friends and family if they know any honest mechanics whenever their car breaks down or they'll start shopping around for quotes. Innvoy helps you discover the shop that provides a quality repair for the right price.
+			</p> 
+			<p>
+				We'll help you find the shop that offers the best price, quality, and fastest service for the repair on your car. With a better car repair experience you can get back on the road without all the hassle that comes with finding the right mechanic.
+			</p>
+		</div>
+	</div>
+</div>
+
+	
+<hr class = "line-split">
+
+<div class = "container-fluid more-about-container hidden-xs">
+	<div class = "row">
+		<div class = "col-sm-3 col-sm-offset-1 more-about-us-text">
+			More About Us
+		</div>
+		<div class = "col-sm-4">
+			<a target="_blank" href="http://www.builtinchicago.org/2015/05/01/uic-startup-makes-sure-mechanics-cant-rip-you">
+				<%= image_tag("builtin-chicago-logo.png", alt: 'Built In Chicago', class: "logo-img img-responsive") %>
+			</a>
+		</div>
+		<div class = "col-sm-4 inno-img">
+			<a target="_blank" class = "more-about-us-link" href="http://chicagoinno.streetwise.co/2015/04/20/uics-challenge-2-venture-recap-anautomy-wins-venture-challenge/">
+				<%= image_tag("chicagoinno-logo.png", width: '335', alt: 'Chicago Inno', class: "logo-img img-responsive") %>
+			</a>
+		</div>
+	</div>
+</div>
+
+
+<div class = "container-fluid more-about-container visible-xs">
+
+	<div class = "row">
+		<div class = "col-sm-3 col-sm-offset-1 more-about-us-text-xs">
+			More About Us
+		</div>
+		<div class = "col-sm-4">
+			<%= link_to image_tag('builtin-chicago-logo.png', alt: 'Built In Chicago', class: "logo-img-xs img-responsive img-center"), 'http://www.builtinchicago.org/2015/05/01/uic-startup-makes-sure-mechanics-cant-rip-you', target: '_blank' %>
+
+		</div>
+		<div class = "col-sm-4 inno-img">
+			<%= link_to image_tag('chicagoinno-logo.png', width: '335', alt: 'Chicago Inno', class: "logo-img-xs img-responsive img-center"), 'http://chicagoinno.streetwise.co/2015/04/20/uics-challenge-2-venture-recap-anautomy-wins-venture-challenge/', target: '_blank' %>
+		</div>
+	</div>
+</div>
+<script>
+
+mixpanel.track("Service Request Information Page");
+  
+ </script>
