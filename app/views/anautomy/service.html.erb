@@ -7,6 +7,18 @@
 	font-weight: 300;
 
 }
+
+.btn-service-request{
+  font-size: 1.2em;
+  height: 50px;
+  padding-top: 14px;
+  margin-bottom: 15px;
+  background: rgba(82, 187, 73, 1) !important;
+  opacity: 1;
+  border: 1px solid #FFFFFF;
+  color: #FFFFFF !important;
+}
+
 </style>
 <div class = "container-fluid about-container hidden-xs">
 	<div class = "row">
@@ -132,6 +144,13 @@
 			<i class="fa fa-id-card-o" aria-hidden="true" style="font-size:9em; color:#45B13A;"></i>
 		</div>
 	</div>
+
+	<hr class = "line-split">
+	<div class = "row">
+		<div class="col-sm-4 col-sm-offset-4 col-xs-12">
+            <%= link_to 'Create Service Request', new_service_request_path, class: 'center-block btn btn-service-request mp-new-service-request'%>
+        </div>
+    </div>
 
 </div>
 
