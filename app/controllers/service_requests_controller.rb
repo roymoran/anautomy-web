@@ -54,7 +54,7 @@ class ServiceRequestsController < ApplicationController
 
   private
   	def service_request_params
-  		params.require(:service_request).permit(:car_owner_id, :car_id, :repair_name, :pickup_location, :status)
+  		params.require(:service_request).permit(:car_owner_id, :car_id, :repair_name, :pickup_location, :status, :preferred_time, :preferred_day)
     end
 
     # Confirms a logged-in user.

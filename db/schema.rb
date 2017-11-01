@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171015190633) do
+ActiveRecord::Schema.define(version: 20171101111718) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -269,6 +269,8 @@ ActiveRecord::Schema.define(version: 20171015190633) do
     t.string   "assigned_driver_info"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+    t.string   "preferred_time"
+    t.string   "preferred_day"
   end
 
   add_index "service_requests", ["car_id"], name: "index_service_requests_on_car_id", using: :btree
