@@ -1,5 +1,5 @@
 class Driver < ActiveRecord::Base
-
+  has_many :service_requests, inverse_of: :driver
 
   def send_service_assigned_email
     DriverMailer.service_assigned(self).deliver_now

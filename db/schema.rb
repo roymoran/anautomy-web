@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171101111718) do
+ActiveRecord::Schema.define(version: 20171101124245) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -263,18 +263,16 @@ ActiveRecord::Schema.define(version: 20171101111718) do
     t.integer  "quote_amount"
     t.integer  "actual_amount"
     t.string   "status"
-    t.string   "assigned_driver_name"
-    t.string   "assigned_driver_number"
-    t.string   "assigned_driver_image"
-    t.string   "assigned_driver_info"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.string   "preferred_time"
     t.string   "preferred_day"
+    t.integer  "driver_id"
   end
 
   add_index "service_requests", ["car_id"], name: "index_service_requests_on_car_id", using: :btree
   add_index "service_requests", ["car_owner_id"], name: "index_service_requests_on_car_owner_id", using: :btree
+  add_index "service_requests", ["driver_id"], name: "index_service_requests_on_driver_id", using: :btree
 
   create_table "shop_ratings", force: :cascade do |t|
     t.integer  "cost_rating"
@@ -366,6 +364,7 @@ ActiveRecord::Schema.define(version: 20171101111718) do
   add_foreign_key "repairs", "repair_submissions"
   add_foreign_key "repairs", "repair_submissions"
   add_foreign_key "service_requests", "car_owners"
+  add_foreign_key "service_requests", "drivers"
   add_foreign_key "shop_ratings", "repair_submissions"
   add_foreign_key "shop_ratings", "repair_submissions"
   add_foreign_key "shop_ratings", "shops"
