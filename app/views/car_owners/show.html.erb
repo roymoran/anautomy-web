@@ -716,7 +716,10 @@
             <div class="service-request-item">
               <div class = "service-request-item-title"><%= sr.repair_name %><i class="fa fa-plus service-request-item-icon"></i></div>
               <div class="row"><div class="col-sm-12" style="font-size:1.2em;">
-                Request status: <%= sr.status %>
+                Request status: <%= sr.status %><br>
+                Driver: <%= defined?(sr.driver.name) ? sr.driver.name + ', ' + sr.driver.phone_number : 'To be assigned' %><br>
+                Shop: <%= defined?(sr.shop.shop_name) ? sr.shop.shop_name + ', ' + sr.shop.shop_address : 'To be assigned' %><br>
+                Scheduled: <%= defined?(sr.scheduled_at) ? sr.scheduled_at.strftime("%Y-%m-%d") : 'To be scheduled' %> <br>
               </div>
             </div>
           </div>
@@ -733,7 +736,7 @@
     </div>
         <div class="col-xs-12">
             <%= link_to 'Create Service Request', new_service_request_path, class: 'btn btn-service-request mp-new-service-request'%>
-          </div>
+        </div>
   </div>
 
   <div id="dashboard-maintenance-history" class="row hide">
