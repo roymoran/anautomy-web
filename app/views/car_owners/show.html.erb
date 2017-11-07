@@ -718,7 +718,7 @@
               <div class="row"><div class="col-sm-12" style="font-size:1.2em;">
                 Request status: <%= sr.status %><br>
                 Driver: <%= defined?(sr.driver.name) ? sr.driver.name + ', ' + sr.driver.phone_number : 'To be assigned' %><br>
-                Shop: <%= defined?(sr.shop.shop_name) ? sr.shop.shop_name + ', ' + sr.shop.shop_address : 'To be assigned' %><br>
+                Shop: <%= defined?(sr.shop.shop_name) ? sr.shop.shop_name + ' - ' + sr.shop.shop_address + ', ' + sr.shop.shop_city + ', ' + sr.shop.shop_state_code : 'To be assigned' %><br>
                 Scheduled: <%= sr.scheduled_at.nil? ? 'To be scheduled' : sr.scheduled_at.strftime("%a. %b. %d - %I:%M %p") %> <br>
               </div>
             </div>
