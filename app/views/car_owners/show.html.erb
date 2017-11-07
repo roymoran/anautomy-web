@@ -719,7 +719,7 @@
                 Request status: <%= sr.status %><br>
                 Driver: <%= defined?(sr.driver.name) ? sr.driver.name + ', ' + sr.driver.phone_number : 'To be assigned' %><br>
                 Shop: <%= defined?(sr.shop.shop_name) ? sr.shop.shop_name + ', ' + sr.shop.shop_address : 'To be assigned' %><br>
-                Scheduled: <%= defined?(sr.scheduled_at) ? sr.scheduled_at.strftime("%Y-%m-%d") : 'To be scheduled' %> <br>
+                Scheduled: <%= sr.scheduled_at.nil? ? 'To be scheduled' : sr.scheduled_at.strftime("%a. %b. %d - %I:%M %p") %> <br>
               </div>
             </div>
           </div>
