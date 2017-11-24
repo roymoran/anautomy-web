@@ -31,7 +31,23 @@ class ServiceRequestsController < ApplicationController
     end
   end
 
+  def edit
+    @sr = ServiceRequest.find(params[:id])
+    @car = car_name(Car.find(@sr.car_id))
+  end
+
   def update
+    @sr = ServiceRequest.find(params[:id])
+    @sr.status = 'Created'
+    if @sr.update_attributes(service_request_params)
+
+      # Handle a successful update.
+      flash[:success] = "Service Request Updated"
+      # send email 
+      redirect_to edit_service_request_path(@sr)
+    else
+      render 'edit'
+    end
   end
 
   def show
@@ -54,7 +70,7 @@ class ServiceRequestsController < ApplicationController
 
   private
   	def service_request_params
-  		params.require(:service_request).permit(:car_owner_id, :car_id, :repair_name, :pickup_location, :status, :preferred_time, :preferred_day)
+  		params.require(:service_request).permit(:car_owner_id, :car_id, :repair_name, :pickup_location, :status, :preferred_time, :preferred_day, :driver_id, :shop_id, :actual_amount, :quote_amount, :scheduled_at)
     end
 
     # Confirms a logged-in user.
@@ -85,6 +101,13 @@ class ServiceRequestsController < ApplicationController
         new_car_list.push(item)
 		  end
       return new_car_list
+    end
+
+    def car_name(car)
+      @year = CarYear.find(car.car_year_id).year
+      @make = CarMake.find(car.car_make_id).name
+      @model = CarModel.find(car.car_model_id).name
+      return @year.to_s + ' ' + @make + ' ' + @model
     end
 
     # Validate if user has stripe payment source 
