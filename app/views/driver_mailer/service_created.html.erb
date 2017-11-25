@@ -6,8 +6,4 @@
 <strong>Service: </strong><%= @service_request.repair_name %> - <%= @car_details %><br>
 <strong>Pickup location: </strong><%= @service_request.pickup_location %><br></p>
 
-<p>More details can be found at service request page with id <%= @service_request.id %> visit root_url/service_requests/<%= @service_request.id %></p>
-
-Regards, 
-
-Innvoy
+<p>More details can be found at the service request edit page <%= link_to "here", edit_service_request_url(@service_request) %>.</p>
