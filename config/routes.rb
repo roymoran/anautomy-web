@@ -1,13 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'service_requests/new'
-
-  get 'service_requests/create'
-
-  get 'service_requests/update'
-
-  get 'service_requests/show'
-
   get 'searches/new'
 
   get 'searches/show'
@@ -74,6 +66,7 @@ Rails.application.routes.draw do
   resources :password_resets,     only: [:new, :create, :edit, :update]
   resources :cars
   resources :service_requests
+  resources :charges, only: [:new]
   match 'snap', to: 'invoices#new', via: [:get, :post]
 
   resources :anautomy do

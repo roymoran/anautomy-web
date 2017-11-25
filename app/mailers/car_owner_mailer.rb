@@ -25,4 +25,9 @@ class CarOwnerMailer < ApplicationMailer
     mail to: car_owner.email, subject: "Just a heads up, we're processing your request!"
   end
 
+  def service_request_updated(car_owner)
+    @car_owner = car_owner
+    mail to: car_owner.email, subject: "Your service request was updated!"
+  end
+
 end

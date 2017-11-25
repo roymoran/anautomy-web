@@ -536,7 +536,7 @@
           </div>
           <div class="visible-xs text-center">
             <div class="profile-name"><%= @car_owner.name %></div>
-            <div class="profile-location">Chicago, Illinois, United States - Joined <%= @car_owner.created_at.strftime("%b %Y") %> </div>
+            <!--<div class="profile-location">Chicago, Illinois, United States - Joined <%= @car_owner.created_at.strftime("%b %Y") %> </div>-->
             <div class="profile-icon-details">
             <div class="profile-icon-details-xs">
               <div><i class="fa fa-car profile-icon" aria-hidden="true"></i> <%=@car_owner.cars_count%> <%= "Car".pluralize(@car_owner.cars_count)%></div>
@@ -716,7 +716,11 @@
             <div class="service-request-item">
               <div class = "service-request-item-title"><%= sr.repair_name %><i class="fa fa-plus service-request-item-icon"></i></div>
               <div class="row"><div class="col-sm-12" style="font-size:1.2em;">
-                Request status: <%= sr.status %>
+                Request status: <%= sr.status %><br>
+                Driver: <%= defined?(sr.driver.name) ? sr.driver.name + ', ' + sr.driver.phone_number : 'To be assigned' %><br>
+                Shop: <%= defined?(sr.shop.shop_name) ? sr.shop.shop_name + ' - ' + sr.shop.shop_address + ', ' + sr.shop.shop_city + ', ' + sr.shop.shop_state_code : 'To be assigned' %><br>
+                Scheduled: <%= sr.scheduled_at.nil? ? 'To be scheduled' : sr.scheduled_at.strftime("%a. %b. %d - %I:%M %p") %> <br>
+                Quote: <%= sr.quote_amount.nil? ? 'To be provided' : quote_to_usd(sr.quote_amount) %> <br>
               </div>
             </div>
           </div>
@@ -734,7 +738,7 @@
     </div>
         <div class="col-xs-12">
             <%= link_to 'Create Service Request', new_service_request_path, class: 'btn btn-service-request mp-new-service-request'%>
-          </div>
+        </div>
   </div>
 
   <div id="dashboard-maintenance-history" class="row hide">

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171015190633) do
+ActiveRecord::Schema.define(version: 20171125044723) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -145,14 +145,14 @@ ActiveRecord::Schema.define(version: 20171015190633) do
   create_table "car_owners", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
     t.string   "password_digest"
     t.string   "remember_digest"
     t.string   "activation_digest"
-    t.boolean  "activated",          default: false
+    t.boolean  "activated",              default: false
     t.datetime "activated_at"
-    t.integer  "cars_count",         default: 0
+    t.integer  "cars_count",             default: 0
     t.string   "reset_digest"
     t.datetime "reset_sent_at"
     t.string   "city"
@@ -160,6 +160,7 @@ ActiveRecord::Schema.define(version: 20171015190633) do
     t.string   "zip"
     t.string   "stripe_customer_id"
     t.string   "phone_number"
+    t.integer  "service_requests_count", default: 0
   end
 
   add_index "car_owners", ["email"], name: "index_car_owners_on_email", unique: true, using: :btree
@@ -263,16 +264,21 @@ ActiveRecord::Schema.define(version: 20171015190633) do
     t.integer  "quote_amount"
     t.integer  "actual_amount"
     t.string   "status"
-    t.string   "assigned_driver_name"
-    t.string   "assigned_driver_number"
-    t.string   "assigned_driver_image"
-    t.string   "assigned_driver_info"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.string   "preferred_time"
+    t.string   "preferred_day"
+    t.integer  "driver_id"
+    t.integer  "shop_id"
+    t.datetime "scheduled_at"
+    t.boolean  "amount_charged",  default: false
+    t.string   "auth_token"
   end
 
   add_index "service_requests", ["car_id"], name: "index_service_requests_on_car_id", using: :btree
   add_index "service_requests", ["car_owner_id"], name: "index_service_requests_on_car_owner_id", using: :btree
+  add_index "service_requests", ["driver_id"], name: "index_service_requests_on_driver_id", using: :btree
+  add_index "service_requests", ["shop_id"], name: "index_service_requests_on_shop_id", using: :btree
 
   create_table "shop_ratings", force: :cascade do |t|
     t.integer  "cost_rating"
@@ -364,6 +370,8 @@ ActiveRecord::Schema.define(version: 20171015190633) do
   add_foreign_key "repairs", "repair_submissions"
   add_foreign_key "repairs", "repair_submissions"
   add_foreign_key "service_requests", "car_owners"
+  add_foreign_key "service_requests", "drivers"
+  add_foreign_key "service_requests", "shops"
   add_foreign_key "shop_ratings", "repair_submissions"
   add_foreign_key "shop_ratings", "repair_submissions"
   add_foreign_key "shop_ratings", "shops"

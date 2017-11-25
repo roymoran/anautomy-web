@@ -1,0 +1,60 @@
+<% provide(:title, "Edit Service Request") %>
+
+<div class = "container-fluid">
+  <div class="row">
+  <h2 class="text-center">Edit Service Request</h2>
+<div class="col-sm-6 col-sm-offset-3">
+<%= form_for @sr, html: {class: ""} do |f| %>
+    <h4>Request Details</h4>
+
+    <%= f.label :car %>
+    <%= text_field_tag :car, @car, class: "select-car-menu", readonly: true %>
+
+    <%= f.label :pickup_location %>
+    <%= f.text_field :pickup_location, class: 'service-request-field', id: 'autocomplete', placeholder: "Pickup Location (address, city, state or zip)", readonly: true %>
+
+    <%= f.label :repair_name %>
+    <%= f.text_field :repair_name, class: 'service-request-field', readonly: true%>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <%= f.label :preferred_day %>
+        <%= f.text_field :preferred_day, class: "select-car-menu", readonly: true %>
+      </div>
+      <div class="col-sm-6">
+        <%= f.label :preferred_time %>
+        <%= f.text_field :preferred_time, class: "select-car-menu", readonly: true %>
+      </div>
+    </div>
+    <hr class = "line-split">
+    <h4>Updatable Details</h4>
+    <%= f.label :status %>
+    <%= f.select(:status, nil, {}, {class: "select-car-menu"}) do %>
+      <option><%= @sr.status %></option>
+      <% [['Created'], ['In Progress']].each do |c| -%>
+      <%= content_tag(:option, c.first, value: c.first) %>
+      <% end %>
+    <% end %>
+    <%= f.label :driver_id %>
+    <%= f.number_field :driver_id, {class: "service-request-field"} %>
+    <%= f.label :shop_id %>
+    <%= f.number_field :shop_id, {class: "service-request-field"} %>
+    <%= f.label :quote_amount %>
+    <%= f.number_field :quote_amount, {class: "service-request-field"} %>
+    <%= f.label :actual_amount %>
+    <%= f.number_field :actual_amount, {class: "service-request-field"} %>
+    
+    <%= f.label :scheduled_at %>
+    <div style="font-size:1.2em;">Note: Always set date before updating!</div>
+    <div style="font-size:1.2em;"> Currently scheduled for: <%= @sr.scheduled_at.nil? ? 'not scheduled' : + @sr.scheduled_at.strftime("%a. %b. %d - %I:%M %p") %></div>
+    <div><%= datetime_select :service_request, :scheduled_at, {class: "select-car-menu"} %></div><br><br>
+    <%= f.hidden_field :car_owner_id %>
+    <%= hidden_field_tag 't', @sr.auth_token %>
+    <%= f.submit "Update", class: "btn btn-auth-form mp-service-request-created" %>
+    <% end %>
+    <div class="col-xs-12">
+      <%= link_to 'Charge Service Request', new_charge_path(id: @sr.id, t: @sr.auth_token), class: '' %>
+    </div>
+  </div>
+</div>
+</div>

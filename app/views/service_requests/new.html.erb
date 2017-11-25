@@ -1,55 +1,5 @@
 <% provide(:title, "New Service Request") %>
-<style type="text/css">
-.service-request-field {
-  height: 50px;
-  width: 100%;
-  font-size: 1.3em;
-  margin: 0 auto;
-  margin-bottom: 10px;
-  padding-left: 10px;
-}
-.select-car-menu{
-  background: transparent;
-  padding: 15px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  margin-bottom: 10px;
-  height: 48px;
-  width: 100%;
-  box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
-  color: #2C3E50;
-  font-size: 13px;
 
-
-  -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-}
-
-.btn-auth-form{
-  font-size: 1.3em;
-  height: 50px;
-  width: 100%;
-  margin-bottom: 15px;
-  background: rgba(82, 187, 73, 1) !important;
-  opacity: 1;
-  border: 1px solid #FFFFFF;
-  color: #FFFFFF !important;
-
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  border-radius: 8px;
-  
-  /* CSS Transition */  
-  -webkit-transition: background .2s ease-in-out, border .2s ease-in-out;
-  -moz-transition: background .2s ease-in-out, border .2s ease-in-out;
-  -ms-transition: background .2s ease-in-out, border .2s ease-in-out;
-  -o-transition: background .2s ease-in-out, border .2s ease-in-out;
-  transition: background .2s ease-in-out, border .2s ease-in-out;
-}
-
-</style>
 <div class = "container-fluid">
   <div class="row">
   <div class="col-sm-5 col-sm-offset-1 text-center">
@@ -106,7 +56,24 @@
         </div>
       </div>
     </div>
-
+    <div class="row">
+      <div class="col-sm-6">
+    <%= f.select(:preferred_day, nil, {}, {class: "select-car-menu"}) do %>
+    <option>Preferred Day</option>
+    <% [['Weekday'], ['Weekend']].each do |c| -%>
+    <%= content_tag(:option, c.first, value: c.first) %>
+    <% end %>
+    <% end %>
+  </div>
+  <div class="col-sm-6">
+    <%= f.select(:preferred_time, nil, {}, {class: "select-car-menu"}) do %>
+    <option>Preferred Time</option>
+    <% [['Morning (8am-12pm)'], ['Afternoon (12pm-4pm)'], ['Evening (4pm-8pm)']].each do |c| -%>
+    <%= content_tag(:option, c.first, value: c.first) %>
+    <% end %>
+    <% end %>
+  </div>
+    </div>
     <%= f.hidden_field :car_owner_id %>
     <%= f.hidden_field :repair_name %>
     <%= f.submit "Create", class: "btn btn-auth-form mp-service-request-created" %>
