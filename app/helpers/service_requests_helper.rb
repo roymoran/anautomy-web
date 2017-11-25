@@ -1,11 +1,11 @@
 module ServiceRequestsHelper
 
-  def quote_to_usd(amount)
-    return '$'+(amount/100.00).to_s
+  def quote_to_usd(amount_in_cents)
+    return '$'+(amount_in_cents/100.00).to_s
   end
   
-  def amount_to_usd(amount)
-    return '$'+(amount/100.00).to_s
+  def amount_to_usd(amount_in_cents)
+    return '$'+(amount_in_cents/100.00).to_s
   end
   
   def service_fee_usd
