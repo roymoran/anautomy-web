@@ -31,7 +31,7 @@
     <%= f.label :status %>
     <%= f.select(:status, nil, {}, {class: "select-car-menu"}) do %>
       <option><%= @sr.status %></option>
-      <% [['Created'], ['In Progress'], ['Complete']].each do |c| -%>
+      <% [['Created'], ['In Progress']].each do |c| -%>
       <%= content_tag(:option, c.first, value: c.first) %>
       <% end %>
     <% end %>
@@ -45,11 +45,16 @@
     <%= f.number_field :actual_amount, {class: "service-request-field"} %>
     
     <%= f.label :scheduled_at %>
+    <div style="font-size:1.2em;">Note: Always set date before updating!</div>
     <div style="font-size:1.2em;"> Currently scheduled for: <%= @sr.scheduled_at.nil? ? 'not scheduled' : + @sr.scheduled_at.strftime("%a. %b. %d - %I:%M %p") %></div>
     <div><%= datetime_select :service_request, :scheduled_at, {class: "select-car-menu"} %></div><br><br>
     <%= f.hidden_field :car_owner_id %>
+    <%= hidden_field_tag 't', @sr.auth_token %>
     <%= f.submit "Update", class: "btn btn-auth-form mp-service-request-created" %>
     <% end %>
-    <div>
+    <div class="col-xs-12">
+      <%= link_to 'Charge Service Request', new_charge_path(id: @sr.id, t: @sr.auth_token), class: '' %>
     </div>
+  </div>
+</div>
 </div>
