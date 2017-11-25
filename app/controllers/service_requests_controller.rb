@@ -20,7 +20,7 @@ class ServiceRequestsController < ApplicationController
       #@sr.send_activation_email
       flash[:info] = "Your service request was created, and will be processed shortly."
       @driver = Driver.new
-      @driver.send_service_created_email(@sr) # default notification
+      @driver.send_service_created_email(@sr) # notify innvoy team of created request, to be replaced by driver assignment
       # assign_driver(@sr) #placeholder for assigning driver
       @car_owner = CarOwner.find(@sr.car_owner_id)
       @car_owner.service_request_processing_email
