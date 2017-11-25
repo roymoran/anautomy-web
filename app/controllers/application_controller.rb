@@ -11,8 +11,10 @@ class ApplicationController < ActionController::Base
   attr_accessor :image_link
   
   include SessionsHelper
+  include ServiceRequestsHelper
 
   def intialize_car_owner
     @car_owner = CarOwner.new
   end
+
 end

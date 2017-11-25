@@ -11,14 +11,13 @@ def new
     if !@sr.amount_charged # avoid double charging for single service request
         Stripe.api_key = Rails.application.secrets.stripe_secret_api_key
         @car_owner = CarOwner.find(@sr.car_owner_id)
-        service_fee = 2000
-        @amount = @sr.actual_amount + service_fee
+        @amount = @sr.actual_amount + service_fee_cents
         
         begin
         charge = Stripe::Charge.create(
             :customer    => @car_owner.stripe_customer_id,
             :amount      => @amount,
-            :description => 'Repair and Service Fee ('+(service_fee/100).to_s+')',
+            :description => 'Repair ('+amount_to_usd(@sr.actual_amount)+') and Service Fee ('+service_fee_usd+')',
             :currency    => 'usd', 
             :receipt_email => @car_owner.email
         )
