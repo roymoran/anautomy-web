@@ -26,6 +26,7 @@ def new
             return redirect_to edit_service_request_path(params[:id], t: @sr.auth_token)
         end
 
+        @sr.service_request_complete_email
         flash[:success] = "Service request amount has been charged."
         @sr.update_attribute(:amount_charged, true)
         @sr.update_attribute(:status, 'Complete')

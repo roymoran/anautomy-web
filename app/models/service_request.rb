@@ -10,4 +10,10 @@ class ServiceRequest < ActiveRecord::Base
     SecureRandom.urlsafe_base64
   end
 
+  # Sends request processing email.
+  def service_request_complete_email
+    ServiceRequestMailer.service_request_complete(self).deliver_now
+  end
+
+
 end
