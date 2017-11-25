@@ -55,12 +55,12 @@ class CarOwner < ActiveRecord::Base
     CarOwnerMailer.account_activation(self).deliver_now
   end
   
-  # Sends requeste processing email.
+  # Sends request processing email.
   def service_request_processing_email
     CarOwnerMailer.service_request_processing(self).deliver_now
   end
 
-  # Sends requeste processing email.
+  # Sends request updated email.
   def service_request_updated_email
     CarOwnerMailer.service_request_updated(self).deliver_now
   end
