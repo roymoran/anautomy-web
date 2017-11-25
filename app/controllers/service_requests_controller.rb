@@ -1,7 +1,5 @@
 class ServiceRequestsController < ApplicationController
   before_action :payment_method_present, only: [:new]
-  before_action :logged_in_car_owner, only: [:edit, :update, :show]
-  before_action :correct_car_owner,   only: [:edit, :update, :show]
 
   def new
     @repair_category = RepairCategory.all.offset(1)
@@ -15,6 +13,7 @@ class ServiceRequestsController < ApplicationController
   	@sr = ServiceRequest.new(service_request_params)
     @sr.car_owner_id = session[:car_owner_id]
   	@sr.status = 'Created'
+    @sr.auth_token = ServiceRequest.new_token
   	# email service created
   	if @sr.save
   		# Handle a successful save.
@@ -34,28 +33,35 @@ class ServiceRequestsController < ApplicationController
   def edit
     @sr = ServiceRequest.find(params[:id])
     @car = car_name(Car.find(@sr.car_id))
+    auth_token = params[:t]
+    if @sr.auth_token != auth_token
+      flash[:warning] = "If you would like to make changes to your service request please email team@innvoy.com."
+      redirect_to root_url
+    end
+
   end
 
   def update
     @sr = ServiceRequest.find(params[:id])
-    @sr.status = 'Created'
-    if @sr.update_attributes(service_request_params)
+    auth_token = params[:t]
+    if @sr.auth_token != auth_token
+      flash[:warning] = "If you would like to make changes to your service request please email team@innvoy.com."
+      return redirect_to root_url
+    end
 
+    if @sr.update_attributes(service_request_params)
+      @car_owner = CarOwner.find(@sr.car_owner_id)
       # Handle a successful update.
       flash[:success] = "Service Request Updated"
-      # send email 
-      redirect_to edit_service_request_path(@sr)
+      @car_owner.service_request_updated_email
+      redirect_to edit_service_request_path(@sr, t: @sr.auth_token)
     else
       render 'edit'
     end
   end
 
   def show
-    @sr = ServiceRequest.find(params[:id])
-    if @sr.car_owner_id != session[:car_owner_id]
-      flash[:info] = "You don't have access to this service request."
-      redirect_to action: 'new'
-    end
+    
   end
 
   def place_coordinates
@@ -71,20 +77,6 @@ class ServiceRequestsController < ApplicationController
   private
   	def service_request_params
   		params.require(:service_request).permit(:car_owner_id, :car_id, :repair_name, :pickup_location, :status, :preferred_time, :preferred_day, :driver_id, :shop_id, :actual_amount, :quote_amount, :scheduled_at)
-    end
-
-    # Confirms a logged-in user.
-    def logged_in_car_owner
-      unless logged_in?
-        flash[:danger] = "Login first please."
-        redirect_to login_url
-      end
-    end
-
-    # Confirms the correct user.
-    def correct_car_owner
-      @car_owner = CarOwner.find(session[:car_owner_id])
-      redirect_to(root_url) unless current_car_owner?(@car_owner)
     end
 
     # Given the user associated cars, return nice list of

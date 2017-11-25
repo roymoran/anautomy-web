@@ -6,4 +6,8 @@ class ServiceRequest < ActiveRecord::Base
   attr_accessor :search_street_number, :search_route, :search_locality, :search_administrative_area_level_1, :search_postal_code, :search_country
 
 
+  def ServiceRequest.new_token
+    SecureRandom.urlsafe_base64
+  end
+
 end
