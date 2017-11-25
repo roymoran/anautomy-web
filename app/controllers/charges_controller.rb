@@ -18,7 +18,7 @@ def new
         charge = Stripe::Charge.create(
             :customer    => @car_owner.stripe_customer_id,
             :amount      => @amount,
-            :description => 'Repair and Service Fee ($'+(service_fee/100).to_s+')',
+            :description => 'Repair and Service Fee ('+(service_fee/100).to_s+')',
             :currency    => 'usd', 
             :receipt_email => @car_owner.email
         )
