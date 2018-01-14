@@ -1,9 +1,9 @@
-<% provide(:title, "New Service Request") %>
+<% provide(:title, "Schedule Repair") %>
 
 <div class = "container-fluid">
   <div class="row">
   <div class="col-sm-5 col-sm-offset-1 text-center">
-    <h2 class="main-headline">New Service Request</h2>
+    <h2 class="main-headline">Schedule Repair</h2>
     <br>
     <%= form_for @sr, html: {class: ""} do |f| %>
     
@@ -73,10 +73,16 @@
     <% end %>
     <% end %>
   </div>
+    <% if @car_owner_phone.blank? %>
+    <div class="col-sm-12">
+        <%= telephone_field(:car_owner, :phone_number, {class: 'service-request-field', placeholder: "Phone number"}) %>
+    </div>
+    <% else %>
+    <% end %>
     </div>
     <%= f.hidden_field :car_owner_id %>
     <%= f.hidden_field :repair_name %>
-    <%= f.submit "Create", class: "btn btn-auth-form mp-service-request-created" %>
+    <%= f.submit "Submit", class: "btn btn-auth-form mp-service-request-created" %>
     <% end %>
 
     <br><br>

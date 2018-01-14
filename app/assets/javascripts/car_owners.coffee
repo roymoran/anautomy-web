@@ -18,7 +18,7 @@
     	tryFormSubmit()
 
     $('.mp-new-service-request').click ->
-    	mixpanel.track 'To New Service Request Form'
+    	mixpanel.track 'To New Repair Scheduling Form'
 
   	# getting modelyearid from edmunds
   	@buildDashboard = (modelyearid, opts) ->
@@ -96,9 +96,6 @@
 
 				$('#dashboard-container').removeClass("hide")
 				$('#intial-dashboard-container').addClass("hide")
-				
-				console.log("Sorted maintenance schedule: ")
-				console.log(sortedMaintenanceList)
 
 	@buildRecalls = (modelyearid) ->
 		# getting car recall information for given modelyearid

@@ -4,7 +4,7 @@ def new
     @sr = ServiceRequest.find(params[:id])
     auth_token = params[:t]
     if @sr.auth_token != auth_token
-        flash[:warning] = "If you would like to make changes to your service request please email team@innvoy.com."
+        flash[:warning] = "If you would like to make changes to your scheduled repair please email team@innvoy.com."
         return redirect_to root_url
     end
 

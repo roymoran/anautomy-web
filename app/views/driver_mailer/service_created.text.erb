@@ -1,10 +1,12 @@
+Repair Scheduled
+
 Hi team,
-A request was created with the following details:
+A repair was scheduled with the following details:
 Car owner: <%= @car_owner.name%> - <%= @car_owner.email %>
 Service: <%= @service_request.repair_name %> - <%= @car_details %>
 Pickup location: <%= @service_request.pickup_location %>
 
-More details can be found at the service request edit page <%= link_to "here", edit_service_request_url(@service_request, t: @service_request.auth_token) %>.
+More details can be found on the service request edit page <%= link_to "here", edit_service_request_url(@service_request, t: @service_request.auth_token) %>.
 
 Regards, 
 

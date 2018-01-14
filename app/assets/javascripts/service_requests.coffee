@@ -3,4 +3,4 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 	$('.mp-service-request-created').click ->
-		mixpanel.track 'Service Request Created'
+		mixpanel.track 'Repair Scheduled'

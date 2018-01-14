@@ -591,7 +591,7 @@
         <div class="col-sm-10 col-sm-offset-3 col-xs-12">
           <div class="col-sm-3 profile-menu-item profile-nav-menu-item-active" data-id="dashboard-maintenance-schedule">Maintenance</div>
           <div class="col-sm-3 col-xs-12 profile-menu-item profile-nav-menu-item" data-id="dashboard-recalls">Recalls</div>
-          <div class="col-sm-3 col-xs-12 profile-menu-item profile-nav-menu-item" data-id="dashboard-service-requests">Service Requests</div>        
+          <div class="col-sm-3 col-xs-12 profile-menu-item profile-nav-menu-item" data-id="dashboard-service-requests">Scheduled Repairs</div>        
           <!--<div class="col-sm-3 profile-menu-item profile-nav-menu-item" data-id="dashboard-maintenance-history">Repair History</div>-->
         </div>
       </div>
@@ -701,7 +701,7 @@
     <div class="service-requests-section col-xs-12">
       <div class="row">
         <div class="service-requests-section-main-title text-center col-sm-12">
-          <span class="maintenance-schedule-title">Service requests</span> for your <span class="maintenance-schedule-car-title" id="dashboard-car-name-2"> <%= "Car".pluralize(@car_owner.cars_count)%></span>
+          <span class="maintenance-schedule-title">Scheduled repairs</span> for your <span class="maintenance-schedule-car-title" id="dashboard-car-name-2"> <%= "Car".pluralize(@car_owner.cars_count)%></span>
           <div class="service-requests-section-sub-title text-center col-sm-12"></div>
         </div>
 
@@ -729,7 +729,7 @@
           <% else %>
           <div class="service-request-items col-xs-10 col-xs-offset-1" style="display: table; height: 350px; overflow: hidden;">
             <div style="display: table-cell; vertical-align: middle;">
-              <div class="text-center" style="font-size:1.4em; color:#4A4A4A">Your service requests live here. When you don't have the time to personally take your car to the shop, we employ drivers who are available to deliver your car to the shop and return it to you. <%= link_to 'Learn more about service requests here.', service_request_info_path %>
+              <div class="text-center" style="font-size:1.4em; color:#4A4A4A">Your scheduled repairs live here. When you don't have the time to personally take your car to the shop, we employ drivers who are available to deliver your car to the shop and return it to you. <%= link_to 'Learn more about how scheduled repairs work.', service_request_info_path %>
               </div>
             </div>
           </div>
@@ -737,7 +737,7 @@
       </div>
     </div>
         <div class="col-xs-12">
-            <%= link_to 'Create Service Request', new_service_request_path, class: 'btn btn-service-request mp-new-service-request'%>
+            <%= link_to 'Schedule Repair', new_service_request_path, class: 'btn btn-service-request mp-new-service-request'%>
         </div>
   </div>
 

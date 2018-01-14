@@ -1,4 +1,4 @@
-<% provide(:title, "Service Requests Information") %>
+<% provide(:title, "Repair Scheduling Information") %>
 <style>
 .sr-info-text{
 	color:#545E69;
@@ -23,7 +23,7 @@
 <div class = "container-fluid about-container hidden-xs">
 	<div class = "row">
 		<div class = "col-sm-6 about-left-title">
-			Service Requests
+			Repair Scheduling
 		</div>
 		<div class = "col-sm-5 about-right-text">
 			Our flagship service that makes getting your car repaired easy and stress-free.
@@ -34,7 +34,7 @@
 <div class = "container-fluid about-container visible-xs">
 	<div class = "row">
 		<div class = "col-sm-6 about-left-title-small">
-			Service Requests
+			Repair Scheduling
 		</div>
 		<div class = "col-sm-5 about-right-text-small">
 			Our flagship service that makes getting your car repaired easy and stress-free.
@@ -46,7 +46,7 @@
 	<hr class = "line-split">
 	<div class = "row">
 		<div class = "col-sm-6">
-			<h3 class="text-center">Creating Your Request</h3>
+			<h3 class="text-center">Scheduling your Repair</h3>
 			<div class = "row">
 				<div class = "col-sm-10 col-sm-offset-1">
 					<p class="sr-info-text text-center">
@@ -63,11 +63,11 @@
 	<hr class = "line-split">
 	<div class = "row">
 		<div class = "col-sm-6">
-			<h3 class="text-center">The Shop and Repair</h3>
+			<h3 class="text-center">Finding the Shop</h3>
 			<div class = "row">
 				<div class = "col-sm-10 col-sm-offset-1">
 					<p class="sr-info-text text-center">
-						We contact shops in your area to find the one that offers the best value for your repair. We then schedule your repair with the shop at a time that works best for you.
+						We contact shops in your area to find the one that offers the best value for your repair. We handle scheduling the repair at a time that works for you.
 					</p> 
 				</div>
 			</div>
@@ -80,11 +80,11 @@
 	<hr class = "line-split">
 	<div class = "row">
 		<div class = "col-sm-6">
-			<h3 class="text-center">Your Driver</h3>
+			<h3 class="text-center">The Driver</h3>
 			<div class = "row">
 				<div class = "col-sm-10 col-sm-offset-1">
 					<p class="sr-info-text text-center">
-						You're notified once a driver is assigned to your service request. An hour prior to your scheduled repair, your driver will coordinate the key hand-off with you if necessary and arrive at your pickup location to deliver your car to the shop.
+						We'll assign your scheduled repair to a driver who coordinates the key hand-off with you. The driver will arrive at your pickup location to deliver your car to the shop.
 					</p> 
 				</div>
 			</div>
@@ -101,7 +101,7 @@
 			<div class = "row">
 				<div class = "col-sm-10 col-sm-offset-1">
 					<p class="sr-info-text text-center">
-						You have full control over the work done on your car. Any other suggested repairs will be assessed by us and approved by you along with the quoted price.
+						You have full control over the work done on your car.
 					</p> 
 				</div>
 			</div>
@@ -114,11 +114,11 @@
 	<hr class = "line-split">
 	<div class = "row">
 		<div class = "col-sm-6">
-			<h3 class="text-center">Delivering Your Car</h3>
+			<h3 class="text-center">Delivering your Car</h3>
 			<div class = "row">
 				<div class = "col-sm-10 col-sm-offset-1">
 					<p class="sr-info-text text-center">
-						Once the repair is complete, we deliver your car to the pickup location and hand you the original invoice provided by the shop. We also email a duplicate invoice including our service fee.
+						We deliver your car back to the pickup location and hand you the invoice. We include a $20 service fee that helps pay your driver.
 					</p> 
 				</div>
 			</div>
@@ -131,11 +131,11 @@
 	<hr class = "line-split">
 	<div class = "row">
 		<div class = "col-sm-6">
-			<h3 class="text-center">Your Car is Safe with Us</h3>
+			<h3 class="text-center">Your Car and Safety</h3>
 			<div class = "row">
 				<div class = "col-sm-10 col-sm-offset-1">
 					<p class="sr-info-text text-center">
-						Beyond valuing a quality repair experience, we value the safety of your car. Our drivers are required to have a clean driving record. That means no moving violations, suspensions, or at fault accidents.
+						We value the safety of your car. Our drivers are strictly required to have a clean driving record. That means no moving violations, suspensions, or at fault accidents.
 					</p> 
 				</div>
 			</div>
@@ -148,7 +148,7 @@
 	<hr class = "line-split">
 	<div class = "row">
 		<div class="col-sm-4 col-sm-offset-4 col-xs-12">
-            <%= link_to 'Create Service Request', new_service_request_path, class: 'center-block btn btn-service-request mp-new-service-request'%>
+            <%= link_to 'Schedule Repair', new_service_request_path, class: 'center-block btn btn-service-request mp-new-service-request'%>
         </div>
     </div>
 
@@ -156,6 +156,6 @@
 
 <script>
 
-mixpanel.track("Service Request Information Page");
+mixpanel.track("Repair Scheduling Information Page");
   
  </script>
