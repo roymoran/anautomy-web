@@ -1,12 +1,14 @@
 class ServiceRequestsController < ApplicationController
+  require 'Time'
   before_action :payment_method_present, only: [:new]
 
   def new
     @repair_category = RepairCategory.all.offset(1)
-  	@google_api_key = Rails.application.secrets.google_api_key
-  	@sr = ServiceRequest.new
-  	@sr.car_owner_id = session[:car_owner_id]
-  	@cars_list = car_list_by_name(CarOwner.find(session[:car_owner_id]).cars)
+    @google_api_key = Rails.application.secrets.google_api_key
+    @sr = ServiceRequest.new
+    @sr.car_owner_id = session[:car_owner_id]
+    @cars_list = car_list_by_name(CarOwner.find(session[:car_owner_id]).cars)
+    @hours = create_hours(8, 20, 30)
   end
 
   def create
@@ -102,7 +104,7 @@ class ServiceRequestsController < ApplicationController
       return @year.to_s + ' ' + @make + ' ' + @model
     end
 
-    # Validate if user has stripe payment source 
+    # Validate if user has stripe payment source
     # associated with their account
     def payment_method_present
       Stripe.api_key = Rails.application.secrets.stripe_secret_api_key
@@ -112,4 +114,19 @@ class ServiceRequestsController < ApplicationController
         flash.now[:warning] = "You must have a payment method before you can create a service request. Visit your account settings to add a payment method."
       end
     end
+
+  # Create list of hours in increments of 30 minutes given
+  # start and end hour
+  def create_hours(start_hour, end_hour, increment_minutes)
+    t0 = start_hour - 1
+    start_time = Time.new(Time.now.year, Time.now.month, Time.now.day, t0, 30)
+    Array.new(((end_hour - start_hour) * 2) + 1) do
+      # hour = (i % 2).zero? ? start_hour : start_hour += 1
+      # minutes = (i % 2).zero? ? ':00' : ':30'
+      # meridian = start_hour >= 12 ? ' PM' : ' AM'
+      # start_hour.to_s + minutes + meridian
+      start_time += (increment_minutes * 60)
+      start_time.strftime('%l:%M %p')
+    end
+  end
 end
