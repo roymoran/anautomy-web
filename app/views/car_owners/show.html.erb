@@ -786,10 +786,15 @@
 <%= javascript_include_tag "jquery.js" %>
 <%= javascript_include_tag "jquery-ui.js" %>    
 <script>
-$( ".maintenance-item, .recall-item, .service-request-item" ).accordion({
+$( ".maintenance-item, .recall-item" ).accordion({
       collapsible: true,
       heightStyle: "content",
       active: false
+    });
+
+$( ".service-request-item" ).accordion({
+      collapsible: true,
+      heightStyle: "content",
     });
 
 $("#dashboard-maintenance-schedule").removeClass("hide");
