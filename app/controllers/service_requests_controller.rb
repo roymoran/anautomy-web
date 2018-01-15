@@ -23,7 +23,7 @@ class ServiceRequestsController < ApplicationController
       # @sr.send_activation_email
       flash[:info] = 'Your repair request has been submitted, and will be
                       processed shortly.'
-      CarOwner.find(session[:car_owner_id]).update_attribute(:phone_number, params[:car_owner][:phone_number]) unless !params[:car_owner].present? && !params[:phone_number].present?
+      CarOwner.find(session[:car_owner_id]).update_attribute(:phone_number, params[:car_owner][:phone_number]) unless !params[:car_owner].present?
       @driver = Driver.new
       @driver.send_service_created_email(@sr) # notify innvoy team of created request, to be replaced by driver assignment
       # assign_driver(@sr) #placeholder for assigning driver
