@@ -41,7 +41,7 @@
                 <input id="cardsearchinput" placeholder="Quick Filter"/ >
               </div>
             </div>
-            <% @repair_category.each do |category| %>
+            <% RepairCategory.all.offset(1).limit(1).each do |category| %>
             
             <div class="row card">
               <div class="col-sm-12">
@@ -80,7 +80,7 @@
     </div>
     <%= f.hidden_field :car_owner_id %>
     <%= f.hidden_field :repair_name %>
-    <%= f.submit "Submit", class: "btn btn-auth-form mp-service-request-created" %>
+    <%= f.submit "Submit", class: "btn btn-auth-form mp-service-request-created" if logged_in? %>
     <% end %>
 
     <br><br>
@@ -97,7 +97,7 @@
 </div>
 
 
-<%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key="+ @google_api_key +"&libraries=places&callback=initAutocomplete", defer: true, async: true %>
+<%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{Rails.application.secrets.google_api_key}&libraries=places&callback=initAutocomplete", defer: true, async: true %>
 
 <script>
       

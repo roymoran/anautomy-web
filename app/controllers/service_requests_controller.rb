@@ -2,14 +2,19 @@ class ServiceRequestsController < ApplicationController
   before_action :payment_method_present, only: [:new]
 
   def new
-    @repair_category = RepairCategory.all.offset(1).limit(1)
-    @google_api_key = Rails.application.secrets.google_api_key
-    @car_owner = CarOwner.find(session[:car_owner_id])
     @sr = ServiceRequest.new
-    @sr.car_owner_id = session[:car_owner_id]
-    @cars_list = car_list_by_name(@car_owner.cars)
-    @car_owner_phone = @car_owner.phone_number
     @hours = create_hours(8, 20, 30)
+    if logged_in?
+      @car_owner = CarOwner.find(session[:car_owner_id])
+      @cars_list = car_list_by_name(@car_owner.cars)
+      @car_owner_phone = @car_owner.phone_number
+      @sr.car_owner_id = session[:car_owner_id]
+    else
+      @message = 'Login or register to schedule and track your repair'
+      @cars_list = [{'car_name' => @message, 'id' => 0 }]
+      @car_owner_phone = 'intialized to remove phone number field for unauthenticated user'
+      flash[:danger] = @message
+    end
   end
 
   def create
@@ -116,6 +121,7 @@ class ServiceRequestsController < ApplicationController
   # Validate if user has stripe payment source
   # associated with their account
   def payment_method_present
+    return unless logged_in?
     Stripe.api_key = Rails.application.secrets.stripe_secret_api_key
     @stripe_customer = Stripe::Customer.retrieve(CarOwner.find(session[:car_owner_id]).stripe_customer_id)
     @source_count = @stripe_customer.sources.data.count

@@ -132,7 +132,7 @@ class CarOwnersController < ApplicationController
     # Confirms a logged-in user.
     def logged_in_car_owner
       unless logged_in?
-        flash[:danger] = "Login first please."
+        flash[:danger] = 'Login first please.'
         redirect_to login_url
       end
     end
