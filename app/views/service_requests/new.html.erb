@@ -47,9 +47,7 @@
               <div class="col-sm-12">
                 <h4 class="text-left"><u><%= category.name%></u></h4>
               </div>
-              <% category.repair_names.each do |repair| %>
-              <div class="col-sm-4"><p><a class="repair-name-text" href="#" data-cat="<%=category.name%>" data-catid="<%=category.id%>" data-repid="<%=repair.id%>" data-dismiss="modal"><%= repair.name %></a></p></div>
-            <% end %>
+              <div class="col-sm-4"><p><a class="repair-name-text" href="#" data-cat="<%=category.name%>" data-catid="<%=category.id%>" data-repid="<%=category.repair_names.first.id%>" data-dismiss="modal"><%= category.repair_names.first.name %></a></p></div>
           </div>
             <% end %>
           </div>

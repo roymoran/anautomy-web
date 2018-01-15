@@ -2,7 +2,7 @@ class ServiceRequestsController < ApplicationController
   before_action :payment_method_present, only: [:new]
 
   def new
-    @repair_category = RepairCategory.all.offset(1)
+    @repair_category = RepairCategory.all.offset(1).limit(1)
     @google_api_key = Rails.application.secrets.google_api_key
     @car_owner = CarOwner.find(session[:car_owner_id])
     @sr = ServiceRequest.new
