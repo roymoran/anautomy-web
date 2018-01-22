@@ -43,22 +43,9 @@
     </div>
 	</div>
   <div class = "row">
-    <!--
-  <%= form_tag({controller: "repair_submissions", action: "show"}, method: "get", class: "") do %>
-          <div class="col-sm-4 col-sm-offset-1 text-center">
-            <%= text_field_tag(:car, nil, {placeholder: "Car (e.g. Mazda 3)", class: "signup-form mp-car-searched"}) %>
-          </div>
-          <div class="col-sm-4 text-center">
-            <%= text_field_tag(:repair_name, nil, {placeholder: "Repair (e.g.  Brake Replacement)",  class: "signup-form mp-repair-name-searched"}) %>
-          </div>
-            <div class="col-sm-2 text-center">
-            <%= submit_tag("Find shop",  {class: "btn btn-auth-form"}) %>
-          </div>
-        <% end %> 
-      -->
 
       <%= form_for(@search, html: {class: ''}) do |f| %>
-    <div class="col-xs-4 col-sm-2">
+    <div class="col-xs-4 col-sm-2 col-sm-offset-1">
       <%= f.collection_select(:car_year_id, (CarYear.all).reverse, :id, :year, {prompt: "Year"}, {class: "select_submission_form", id: "car_year_select_home"}) %>
     </div>
     <div class="col-xs-4 col-sm-2">
@@ -78,86 +65,13 @@
       
 
     </div>
-    <div class="col-xs-12 col-sm-2">
-      <a data-toggle="modal" data-target="#myModal" href="#">
-      <div class="select_submission_form text-left"><div class ="repair_name_div" style="float:left; width:90%; overflow: hidden; text-overflow:ellipsis; white-space: nowrap;">Select Repair</div><i class="fa fa-th text-right" aria-hidden="true" style="float:right; padding-top:4px;"></i></a>
-     </div>
 
-     <div class="modal fade repairs-modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel">Select Repair</h4>
-          </div>
-          <div class="modal-body" id="carddata">
-            <div class="row" >
-              <div class="col-xs-6 text-left">
-                <input id="cardsearchinput" placeholder="Quick Filter"/ >
-              </div>
-            </div>
-            <% @repair_category.each do |category| %>
-            
-            <div class="row card">
-              <div class="col-sm-12">
-                <h4 class="text-left"><u><%= category.name%></u></h4>
-              </div>
-              <% category.repair_names.each do |repair| %>
-              <div class="col-sm-4"><p><a class="repair-name-text" href="#" data-cat="<%=category.name%>" data-catid="<%=category.id%>" data-repid="<%=repair.id%>" data-dismiss="modal"><%= repair.name %></a></p></div>
-            <% end %>
-          </div>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    </div>
-    <%= f.hidden_field :repair_category, {:value => nil, :class => 'repair-cat-hidden'} %>
-    <%= f.hidden_field :repair_name, {:value => nil, :class => 'repair-name-hidden'} %>
-    </div>
     <div class="col-xs-12 col-sm-2">
       <%= f.submit "Search", {class: "btn-auth-form mp-repair-searched"}%>
     </div>
 
     <% end %>
-
-
-
-
         </div>
-
-
-<!--	<div class = "row">
-		<div class="col-md-6 col-md-offset-3">
-			<div class="text-center"> -->
-				<!--<div class = "row">
-                	<div class = "text-center col-sm-9 col-sm-offset-1" style = "padding-top: 15px;">
-                		<h5 class = "main-launch-message">Bring transparency to auto repair by being part of our early launch.</h5>
-            		</div>
-            	</div>-->
-		 		<!--<div class = "row" >
-                	<div class =  "col-md-12" style = "padding-bottom: 15px;">
-                		<div class = "row">
-                    		<%= form_for @subscriber, :html => {:id => 'subscriber_form', :class => ''}, remote: true do |f|%>
-                    		<div class = "col-sm-5" style="padding-bottom:5px;">
-                         			<label class = "sr-only">Email</label>
-                         			<%= f.email_field :email, class: 'form-control form-custom-2', :placeholder => "EMAIL"%>
-                    		</div>
-                        <div class = "col-sm-5" style="padding-bottom:5px;">
-                              <label class = "sr-only">Zip Code</label>
-                              <%= f.text_field :zip, class: 'form-control form-custom-2', :placeholder => "ZIP CODE"%>
-                        </div>
-                    		<div class = "col-sm-2">
-                    			<%= f.submit "SAVE ME MONEY", class: "btn btn-custom-2 button-text-style" %>
-                			</div>
-                 			<% end %>
-            			</div>
-            		</div>
-       		 	</div>-->
-			<!--</div>
-		</div>
-		<div class = "col-md-3">
-		</div>
-	</div> -->
 </div>
 <!--end main container section-->
 

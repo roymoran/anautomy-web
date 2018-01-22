@@ -416,9 +416,6 @@ src: url("MyriadPro-Cond.otf") format("opentype");
   font-size: 0.8em;
 
 }
-#repairCategories h3 .mainCategoryIcon{
-
-}
 
 #repairCategories {
     color: #2F2F2F;
@@ -429,10 +426,6 @@ src: url("MyriadPro-Cond.otf") format("opentype");
 
   border: 1px solid #CFCFCF;
   margin-bottom: 5px;
-
-}
-
-.repairCategoryTitle{
 
 }
 
@@ -557,15 +550,6 @@ display: block;
 
 }
 
-#top_repair, #top_repair2, #top_repair3, #top_repair4, #top_repair5{
-  /*
-    top margin is 10px
-    right margin is 5px
-    bottom margin is 15px
-    left margin is 20px
-  */  
-}
-
 #top_repair .ui-accordion-content, #top_repair2 .ui-accordion-content, #top_repair3 .ui-accordion-content, #top_repair4 .ui-accordion-content, #top_repair5 .ui-accordion-content{
   
     background-color: #CFCFCF;
@@ -621,9 +605,6 @@ display: block;
 
 
 /*Right Column for Repairs Page*/
-.right-col{
-  
-}
 
 .my-container {
     height: 850px;
@@ -876,8 +857,8 @@ border-radius: 0; }
 
 .submission-title{
   color: #52BB49;
-  font-size: 1.3em;
-  padding-top: 10px;
+  font-size: 1.2em;
+  padding-top: 5px;
 
 }
 
@@ -896,9 +877,6 @@ border-radius: 0; }
   position:relative;
   top: calc(50% - 10px); /* 50% - 3/4 of icon height */
 }
-#repairCategories h3 .mainCategoryIcon{
-
-}
 
 #repairCategories {
     color: #2F2F2F;
@@ -909,10 +887,6 @@ border-radius: 0; }
 
   border: 1px solid #CFCFCF;
   margin-bottom: 5px;
-}
-
-.repairCategoryTitle{
-
 }
 
 #repairCategories .ui-accordion-content {
@@ -1005,9 +979,6 @@ h6:before {
 
 
 /*Right Column for Submissions Page*/
-.right-col{
-  
-}
 .shop-details{
   height: 350px;
   background-color: #C4C4C4;
@@ -1143,12 +1114,7 @@ width:100%;
 .highUrgencyLevel{
   color: red;
 }
-.mediumUrgencyLevel{
 
-}
-.lowUrgencyLevel{
-  
-}
 .my-container a{
   color: #4FB648;
   text-decoration: underline;
@@ -2189,13 +2155,6 @@ input[type=radio].with-fa-frown:checked ~ label:before {
   z-index: -1;
 }
 
-.input-invoice + label {
-}
-
-.input-invoice:focus + label,
-.input-invoice + label:hover { 
-}
-
 .input-invoice:focus + label {
   outline: 1px dotted #000;
   outline: -webkit-focus-ring-color auto 5px;
@@ -2273,5 +2232,21 @@ input[type=radio].with-fa-frown:checked ~ label:before {
   padding-top: 40px;
   padding-bottom: 40px;
 }
-/* Modal Authentication Forms */
+/* End Modal Authentication Forms */
 
+.schedule-button {
+  font-size: 1.3em;  
+  background-color: #52bb49;
+  color: #ffffff;
+  padding-top: 12px;
+  border: 1px solid #52bb49;
+  border-radius: none;
+  height: 50px;
+  width: 100%;
+  display: block;
+
+}
+.schedule-button:hover{
+  color: #ffffff;
+  text-decoration: none;
+}
