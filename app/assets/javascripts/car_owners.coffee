@@ -113,8 +113,6 @@
 					$('.recall-items').append('<div class="recall-item"><div class = "maintenance-item-title">' + recalls[index].componentDescription + '<i class="fa fa-plus maintenance-item-icon"></i></div><div class="row"><div class="col-sm-12" style="font-size:1.2em;"><p>'+ recalls[index].defectCorrectiveAction+'</p></div></div></div>')
 				$('.recalls-section-sub-title').append('You have '+recalls.length+' recall(s) for your car.')
 				$( ".maintenance-item, .recall-item" ).accordion({collapsible: true,heightStyle: "content",active: false});
-				console.log("Recalls w/ model_year_id")
-				console.log(recalls)
 
 	@createCar = (modelyearid, carImage) ->
 		year_id = parseInt($('#car_year_select :selected').val())
@@ -127,7 +125,6 @@
   			success: (data) ->
   				$('#dash').fadeOut()
   				$('#car_current_mileage_form').attr('action', '/cars/' + data);
-  				console.log("Car Created, building dash")
   				buildDashboard(modelyearid, {})
   			error: (data) ->
   				console.log("Error setting up dashboard")
@@ -164,14 +161,11 @@
   				if(mileageRemainder <= 1000)
   					newMaintenanceList.push(maintenanceList[index]);
   			return newMaintenanceList
-  			console.log('Sorting by mileage ' + typeof(maintenanceList).toString())
   		else
   			#mileage data not provided, return general maintenance schedule
   			return maintenanceList
-  			console.log('no current mileage provided')
 
 	$("form#car_current_mileage_form").on("ajax:success", (e, data, status, xhr) ->
-		console.log('Current Mileage updated')
 		# call edmunds api and run algorithm to parse maintenance schedule
 		# getting maintenance schedule information for given modelyearid
 		buildMaintenanceSchedule(data.edmunds_modelyearid, $('#car_current_mileage').val())
