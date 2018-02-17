@@ -17,6 +17,7 @@
   <div class="row">
     <div class = "col-sm-6 submissionsRepairTitle">
       <h5><ul>Repairs for <%= @car %></ul></h5>
+      <div style="display:none;"id="car-searched"><%= @car %></div>
     </div>
   </div>
 <div class="col-sm-6 left-col">
@@ -115,6 +116,10 @@
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key="+ @google_api_key +"&libraries=places&callback=initMap", defer: true, async: true %>
 
 <script>
+
+var car = document.getElementById('car-searched');
+mixpanel.track(car.innerHTML);
+
 var map;
 var infowindow;
 
