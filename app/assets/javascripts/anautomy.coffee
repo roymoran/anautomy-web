@@ -3,9 +3,9 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 jQuery ->
 	$('.mp-repair-searched').click ->
-		car_year = $('#car_year_select_home').find(":selected").text()
-		car_make = $('#car_make_select_home').find(":selected").text()
-		car_model = $('#car_model_select_home').find(":selected").text()
+		car_year = $('#car_year_select_home :selected').text()
+		car_make = $('#car_make_select_home :selected').text()
+		car_model = $('#car_model_select_home :selected').text()
 		location = $('.mp-location').val()
 		mixpanel.track 'Repair Searched Homepage',
 			'Car Searched': car_year + ' ' + car_make + ' ' + car_model
