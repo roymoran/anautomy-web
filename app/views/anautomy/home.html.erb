@@ -55,7 +55,7 @@
       <%= f.select(:car_model_id, options_for_select([]), {prompt: "Model"}, {class: "select_submission_form", id: "car_model_select_home"}) %>
     </div>
     <div class="col-xs-12 col-sm-2">
-      <%= f.text_field :location, class: 'signup-form', id: 'autocomplete', :placeholder => "Near (address, city, state or zip)"%>
+      <%= f.text_field :location, class: 'signup-form mp-location', id: 'autocomplete', :placeholder => "Near (address, city, state or zip)"%>
       <%= f.hidden_field :search_street_number, id: 'street_number'%>
       <%= f.hidden_field :search_route, id: 'route'%>
       <%= f.hidden_field :search_locality, id: 'locality' %>

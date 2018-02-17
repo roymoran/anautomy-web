@@ -17,7 +17,6 @@
   <div class="row">
     <div class = "col-sm-6 submissionsRepairTitle">
       <h5><ul>Repairs for <%= @car %></ul></h5>
-      <div style="display:none;"id="car-searched"><%= @car %></div>
     </div>
   </div>
 <div class="col-sm-6 left-col">
@@ -118,7 +117,6 @@
 <script>
 
 var car = document.getElementById('car-searched');
-mixpanel.track(car.innerHTML);
 
 var map;
 var infowindow;

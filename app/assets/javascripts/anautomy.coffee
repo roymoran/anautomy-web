@@ -3,11 +3,13 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 jQuery ->
 	$('.mp-repair-searched').click ->
-		car_name_search = $('.mp-car-searched').val()
-		repair_name_searched = $('.mp-repair-name-searched').val()
+		car_year = $('#car_year_select_home').find(":selected").text()
+		car_make = $('#car_make_select_home').find(":selected").text()
+		car_model = $('#car_model_select_home').find(":selected").text()
+		location = $('.mp-location').val()
 		mixpanel.track 'Repair Searched Homepage',
-			'Car Name Searched': car_name_search
-			'Repair Name Searched': repair_name_searched
+			'Car Searched': car_year + ' ' + car_make + ' ' + car_model
+			'Location Searched': location
 
 	$('.mp-signup-modal').click ->
 		mixpanel.track 'Sign Up Modal Opened'
