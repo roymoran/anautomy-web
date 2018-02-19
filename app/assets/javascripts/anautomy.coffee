@@ -57,8 +57,7 @@ jQuery ->
 
 	$('#car_make_select_home').change ->
 		try
-			console.log('Make Selected')
-			mixpanel.track 'Model Selected'
+			mixpanel.track 'Make Selected'
 		catch error
 			console.log(error)
 		
@@ -76,14 +75,12 @@ jQuery ->
 
 	$('#car_model_select_home').change ->
 		try
-			console.log('Model Selected')
 			mixpanel.track 'Model Selected'
 		catch error
 			console.log(error)
 
 	$('.mp-location').change ->
 		try
-			console.log('Location changed')
 			mixpanel.track 'Location Changed'
 		catch error
 			console.log(error)
