@@ -2,6 +2,11 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 jQuery ->
+	try
+		mixpanel.track("Homepage")
+	catch error
+		console.log(error);
+	
 	$('.mp-repair-searched').click ->
 		car_year = $('#car_year_select_home :selected').text()
 		car_make = $('#car_make_select_home :selected').text()
@@ -34,6 +39,10 @@ jQuery ->
 		mixpanel.track 'Login Modal Submitted'
 
 	$('#car_year_select_home').change ->
+		try
+			mixpanel.track 'Year Selected'
+		catch error
+			console.log(error)
 		$('#car_make_select_home').empty().append('<option selected>Make</option>')
 		$('#car_model_select_home').empty().append('<option selected>Model</option>')
 		car_year = $('#car_year_select_home :selected').text()
@@ -47,6 +56,12 @@ jQuery ->
 					$('#car_make_select_home').append('<option value='+ data[index].id+'>'+data[index].name+'</option>')
 
 	$('#car_make_select_home').change ->
+		try
+			console.log('Make Selected')
+			mixpanel.track 'Model Selected'
+		catch error
+			console.log(error)
+		
 		car_year = $('#car_year_select_home :selected').text()
 		car_make = $('#car_make_select_home :selected').val()
 		$.ajax
@@ -58,5 +73,22 @@ jQuery ->
 				$('#car_model_select_home').empty().append('<option selected>Model</option>')
 				$.each data, (index, value) ->
 					$('#car_model_select_home').append('<option value='+ data[index].id+'>'+data[index].name+'</option>')
+
+	$('#car_model_select_home').change ->
+		try
+			console.log('Model Selected')
+			mixpanel.track 'Model Selected'
+		catch error
+			console.log(error)
+
+	$('.mp-location').change ->
+		try
+			console.log('Location changed')
+			mixpanel.track 'Location Changed'
+		catch error
+			console.log(error)
+
+	
+
 
 

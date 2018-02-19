@@ -1,36 +1,5 @@
 <% provide(:title, "Home") %>
-<style>
-.repairs-modal{
-  font-family: montserrat, arial, verdana;
-}
-/* CSS for Autcomplete Google Place API */
-      .label {
-        text-align: right;
-        font-weight: bold;
-        width: 100px;
-        color: #303030;
-      }
-      #address {
-        border: 1px solid #000090;
-        background-color: #f0f0ff;
-        width: 480px;
-        padding-right: 2px;
-      }
-      #address td {
-        font-size: 10pt;
-      }
-      .field {
-        width: 99%;
-      }
-      .slimField {
-        width: 80px;
-      }
-      .wideField {
-        width: 200px;
-      }
 
-
-</style>
 <!--Start of main container section-->
 <a id = "signup" name="signup"></a>
 <div class = "container-fluid main-container"> 
@@ -124,48 +93,6 @@
 <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key="+ @google_api_key +"&libraries=places&callback=initAutocomplete", defer: true, async: true %>
 
  <script>
-
-  mixpanel.track("Homepage");
-
-  $(document).ready(function() {
-
-            $('.closed_header_tooltip').tooltipster({
-              animation: 'fade',
-              delay: 0,
-              theme: 'tooltipster-default',
-              trigger: 'click',
-              position: 'bottom'
-            });
-            
-            $('.under_construction_header_tooltip').tooltipster({
-              animation: 'fade',
-              delay: 0,
-              theme: 'tooltipster-default',
-              trigger: 'click',
-              position: 'bottom'
-            });
-
-            $('.under_construction_footer_tooltip').tooltipster({
-              animation: 'fade',
-              delay: 0,
-              theme: 'tooltipster-default',
-              trigger: 'click',
-              position: 'bottom'
-            });
-        });
-
-  $('#carddata').searcher({
-  itemSelector: '.card',
-  textSelector: 'div',
-  inputSelector: '#cardsearchinput',
-  toggle: function(item, containsText) {
-    if (containsText) {
-      $(item).fadeIn();
-    } else {
-      $(item).fadeOut();
-    }
-  }
-});
 
   // This example displays an address form, using the autocomplete feature
       // of the Google Places API to help users fill in the information.
