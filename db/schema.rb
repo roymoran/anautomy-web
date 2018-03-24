@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 20171125044723) do
     t.boolean  "year_2015",  default: false
     t.boolean  "year_2016",  default: false
     t.boolean  "year_2017",  default: false
+    t.boolean  "year_2018",  default: false
   end
 
   create_table "car_models", force: :cascade do |t|
@@ -95,6 +96,7 @@ ActiveRecord::Schema.define(version: 20171125044723) do
     t.boolean  "year_2015",   default: false
     t.boolean  "year_2016",   default: false
     t.boolean  "year_2017",   default: false
+    t.boolean  "year_2018",   default: false
   end
 
   add_index "car_models", ["car_make_id"], name: "index_car_models_on_car_make_id", using: :btree
@@ -138,6 +140,7 @@ ActiveRecord::Schema.define(version: 20171125044723) do
     t.boolean  "year_2015",    default: false
     t.boolean  "year_2016",    default: false
     t.boolean  "year_2017",    default: false
+    t.boolean  "year_2018",    default: false
   end
 
   add_index "car_options", ["car_model_id"], name: "index_car_options_on_car_model_id", using: :btree
