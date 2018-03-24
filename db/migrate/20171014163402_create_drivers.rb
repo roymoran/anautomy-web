@@ -9,7 +9,5 @@ class CreateDrivers < ActiveRecord::Migration
 
       t.timestamps null: false
     end
-    # First default driver
-    Driver.create(name: 'Roy Moran', email: 'roy_moran1993@yahoo.com', location: 'NA', driver_img:'NA', phone_number: '(773) 679-4922')
   end
 end
