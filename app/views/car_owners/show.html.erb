@@ -633,6 +633,7 @@
                 <%= submit_tag("Update",  {class: "btn btn-current-mileage-form"}) %>
               </div>
               <input type="hidden" name="edmunds_modelyearid" id="edmunds_modelyearid" value=<%= defined?(@first_car_modelyearid) ? @first_car_modelyearid : '' %>>
+              <input type="hidden" name="car_owner_car_count" id="car_owner_car_count" value=<%= @car_owner.cars_count %> >
                 <% end %>
               </div>
               </div>

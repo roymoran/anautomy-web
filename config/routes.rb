@@ -77,13 +77,6 @@ Rails.application.routes.draw do
   get 'fetch_car_options' => 'repair_submissions#fetch_car_options'
 
   # ajax route for user dashboard
-  get 'api/model_year_id' => 'car_owners#model_year_id'
-  get 'api/maintenance_schedule' => 'car_owners#maintenance_schedule'
-  get 'api/tco_used' => 'car_owners#tco_used'
-  get 'api/tco_used_detailed' => 'car_owners#tco_used_detailed'
-  get 'api/tmv_typical' => 'car_owners#tmv_typical'
-  get 'api/tmv_detailed' => 'car_owners#tmv_detailed'
-  get 'api/recalls' => 'car_owners#recalls'
   get 'api/car_image' => 'car_owners#car_image'
 
   # ajax route for repair search results

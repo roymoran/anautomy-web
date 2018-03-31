@@ -64,43 +64,7 @@ class CarOwnersController < ApplicationController
     end
   end
 
-  # Actions for Edmunds API calls
-  def model_year_id
-    year = params[:car_year]
-    make = URI.encode(params[:car_make])
-    model = URI.encode(params[:car_model])
-    api_key = Rails.application.secrets.edmunds_api_key
-    uri = URI('https://api.edmunds.com/api/vehicle/v2/'+make+'/'+model+'/'+year+'?fmt=json&api_key='+api_key)
-    res = Net::HTTP.get_response(uri)
-
-    respond_to do |format|
-      format.json { render :json => res.body}
-    end
-
-  end
-
-  def maintenance_schedule
-    api_key = Rails.application.secrets.edmunds_api_key
-    modelyearid = params[:model_year_id]
-    uri = URI('https://api.edmunds.com/v1/api/maintenance/actionrepository/findbymodelyearid?modelyearid='+modelyearid+'&fmt=json&api_key=' + api_key)
-    res = Net::HTTP.get_response(uri)
-
-    respond_to do |format|
-      format.json { render :json => res.body}
-    end
-  end
-
-  def recalls
-    api_key = Rails.application.secrets.edmunds_api_key
-    modelyearid = params[:model_year_id]
-    uri = URI('https://api.edmunds.com/v1/api/maintenance/recallrepository/findbymodelyearid?modelyearid='+modelyearid+'&fmt=json&api_key=' + api_key)
-    res = Net::HTTP.get_response(uri)
-
-    respond_to do |format|
-      format.json { render :json => res.body}
-    end
-  end
-
+  # API call for Google car image search
   def car_image
     api_key = Rails.application.secrets.google_api_key
     search_engine_id = '013470965993787016560:g1ao58vq9k0'

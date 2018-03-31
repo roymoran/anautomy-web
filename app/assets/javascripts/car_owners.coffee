@@ -6,12 +6,28 @@
 		$('#car_make_select').empty().append('<option selected>Make</option>')
 		$('#car_model_select').empty().append('<option selected>Model</option>')
 		car_year = $('#car_year_select :selected').text()
-		tryFormSubmit()
+		$.ajax
+			type: "GET"
+			url: "/fetch_car_makes"
+			data: {car_year:"year_" + car_year}
+			dataType: "json"
+			success: (data) ->
+				$.each data, (index, value) ->
+					$('#car_make_select').append('<option value='+ data[index].id+'>'+data[index].name+'</option>')
  
 	$('#car_make_select').change ->
 		$('#car_model_select').empty().append('<option selected>Model</option>')  
-		car_make = $('#car_make_select :selected').text()
-		tryFormSubmit()
+		car_make = $('#car_make_select :selected').val()
+		car_year = $('#car_year_select :selected').text()
+		$.ajax
+			type: "GET"
+			url: "/fetch_car_models"
+			data: {car_year:"year_" + car_year, car_make_id: car_make}
+			dataType: "json"
+			success: (data) ->
+				$('#car_model_select').empty().append('<option selected>Model</option>')
+				$.each data, (index, value) ->
+					$('#car_model_select').append('<option value='+ data[index].id+'>'+data[index].name+'</option>')
 
 	$('#car_model_select').change ->
     	car_model = $('#car_model_select :selected').text()
@@ -20,15 +36,12 @@
     $('.mp-new-service-request').click ->
     	mixpanel.track 'To New Repair Scheduling Form'
 
-  	# getting modelyearid from edmunds
-  	@buildDashboard = (modelyearid, opts) ->
-  		if isNaN(parseInt(modelyearid)) && isNaN(parseInt(opts['current_mileage'])) 
-  	  		return
-  		# populate maintenance schedule
-    	buildMaintenanceSchedule(modelyearid, opts['current_mileage'])
-
-		# populate recalls 
-    	buildRecalls(modelyearid)
+  	@buildDashboard = (opts) ->
+	  	if parseInt(opts['car_count']) == 0
+		  	return
+		  buildMaintenanceSchedule(opts['current_mileage'])
+		  buildRecalls()
+		  return
   
 	@tryFormSubmit = () -> 
 		year_id = parseInt($('#car_year_select :selected').val())
@@ -38,98 +51,41 @@
 		# TODO: This wil break when we change primary keys for car makes/models to text
 		if isNaN(year_id) || isNaN(model_id) || isNaN(make_id)
 			return
-		getModelYearId()
-
-	@getModelYearId = () ->
+		
 		year = $('#car_year_select :selected').text()
 		make = $('#car_make_select :selected').text()
 		model = $('#car_model_select :selected').text()
-		model_parsed = model
-
-		# Removing any instance of 2WD, 4WD, AWD, etc. to increase likliehood of getting
-		# modelyearid from edmunds api call
-		model_parsed = model_parsed.replace("2WD", "")
-		model_parsed = model_parsed.replace("4WD", "")
-		model_parsed = model_parsed.replace("AWD", "")
-		model_parsed = model_parsed.replace("FWD", "")
-		model_parsed = model_parsed.replace("RWD", "")
-		model_parsed = model_parsed.replace("Pickup", "")		
-		model_parsed = model_parsed.trim()
-
-		$.ajax
-			type: "GET"
-			url: "/api/model_year_id"
-			data: {car_year: year, car_make: make, car_model: model_parsed}
-			dataType: "json"
-			success: (data) ->
-				modelYearId = data.id
-				if data.status == "NOT_FOUND"
-					# TODO: retry getting modelyearid with modified model name 
-					console.log("Error getting model year id.")
-					return
-				$('#dashboard-car-name-1').append(year + ' ' + make + ' ' + model)
-				$('#dashboard-car-name-2').append(year + ' ' + make + ' ' + model)
-				$('#dashboard-car-name-3').append(year + ' ' + make + ' ' + model)
-				getCarImage(modelYearId)
-			error: (data) ->
-				console.log("error getting model yearid")
-
-	@buildMaintenanceSchedule = (modelyearid, currentMileage) ->
-		# getting maintenance schedule from edmunds api
-		$.ajax
-			type: "GET"
-			url: "/api/maintenance_schedule"
-			data: {model_year_id: modelyearid}
-			dataType: "json"
-			success: (data) ->
-				maintenanceList = data.actionHolder
-				sortedMaintenanceList = sortMaintenanceList(maintenanceList, currentMileage)
-				$('.maintenance-schedule-item').empty()
-				$.each sortedMaintenanceList, (index, value) ->
-					$('.maintenance-schedule-item').append('<div class="maintenance-item"><div class = "maintenance-item-title">' + sortedMaintenanceList[index].action + ' ' + sortedMaintenanceList[index].item + '<i class="fa fa-plus maintenance-item-icon"></i></div><div class="row"><div class="col-sm-9" style="font-size:1.2em;"><p>'+ sortedMaintenanceList[index].itemDescription+'</p></div><div class="col-sm-3"><button type="" class="btn btn-maintenance-item">Check at '+sortedMaintenanceList[index].intervalMileage+' mi.</button></div></div></div>')
-				$( ".maintenance-item, .recall-item" ).accordion({collapsible: true,heightStyle: "content",active: false});
-				$('.maintenance-schedule-message').empty()
-				if sortedMaintenanceList.length == 0
-					$('.maintenance-schedule-message').append('Good news, you don\'t have any upcoming repairs.')
-				else
-					$('.maintenance-schedule-message').append('You have '+sortedMaintenanceList.length+' repair(s) due in the next 1,000 miles.')
-
-				$('#dashboard-container').removeClass("hide")
-				$('#intial-dashboard-container').addClass("hide")
-
-	@buildRecalls = (modelyearid) ->
-		# getting car recall information for given modelyearid
-		$.ajax
-			type: "GET"
-			url: "/api/recalls"
-			data: {model_year_id: modelyearid}
-			dataType: "json"
-			success: (data) ->
-				recalls = data.recallHolder
-				if data.recallHolder.length == 0
-					$('.recalls-section-sub-title').append('There are no recalls for your car.')
-					return
-				$.each recalls, (index, value) ->
-					$('.recall-items').append('<div class="recall-item"><div class = "maintenance-item-title">' + recalls[index].componentDescription + '<i class="fa fa-plus maintenance-item-icon"></i></div><div class="row"><div class="col-sm-12" style="font-size:1.2em;"><p>'+ recalls[index].defectCorrectiveAction+'</p></div></div></div>')
-				$('.recalls-section-sub-title').append('You have '+recalls.length+' recall(s) for your car.')
-				$( ".maintenance-item, .recall-item" ).accordion({collapsible: true,heightStyle: "content",active: false});
-
-	@createCar = (modelyearid, carImage) ->
+		
+		$('#dashboard-car-name-1').append(year + ' ' + make + ' ' + model)
+		$('#dashboard-car-name-2').append(year + ' ' + make + ' ' + model)
+		$('#dashboard-car-name-3').append(year + ' ' + make + ' ' + model)
+		getCarImage()
+		
+	@buildMaintenanceSchedule = (currentMileage) ->
+		$('.maintenance-schedule-message').empty().append('There\'s no maintenance information to show at the moment.')
+		$('#dashboard-container').removeClass("hide")
+		$('#intial-dashboard-container').addClass("hide")
+	
+	@buildRecalls = () ->
+		$('.recalls-section-sub-title').empty().append('There\'s no recall information to show right now.')
+		
+	@createCar = (carImage) ->
 		year_id = parseInt($('#car_year_select :selected').val())
 		make_id = parseInt($('#car_make_select :selected').val())
 		model_id = parseInt($('#car_model_select :selected').val())
 		$.ajax
   			type: "POST"
   			url: "/cars"
-  			data: {car:{car_year_id: year_id, car_make_id: make_id, car_model_id: model_id, edmunds_modelyearid: modelyearid, car_image: carImage}}
+  			data: {car:{car_year_id: year_id, car_make_id: make_id, car_model_id: model_id, edmunds_modelyearid: null, car_image: carImage}}
   			success: (data) ->
   				$('#dash').fadeOut()
   				$('#car_current_mileage_form').attr('action', '/cars/' + data);
-  				buildDashboard(modelyearid, {})
+				# build dashboard
+				buildDashboard({car_count: 1}) # car count set to one to show dashboard
   			error: (data) ->
   				console.log("Error setting up dashboard")
   	
-	@getCarImage = (modelyearid) ->
+	@getCarImage = () ->
 		year = $('#car_year_select :selected').text()
 		make = $('#car_make_select :selected').text()
 		model = $('#car_model_select :selected').text()
@@ -142,40 +98,21 @@
 			success: (data) ->
 				carImage = data.items[0].link
 				$(".profile-car-img").attr("src", carImage);
-				createCar(modelyearid, carImage)
+				createCar(carImage)
 			error: (data) ->
 				console.log("error getting car image")
-
-
-	@sortMaintenanceList = (maintenanceList, currentMileage) ->
-  		newMaintenanceList = []
-  		if currentMileage
-  			#get maintenace schedule for provided mileage data
-  			$.each maintenanceList, (index, value) ->
-  				if maintenanceList[index].intervalMileage == 0
-  					return true # if interval mileage is 0 remove from list
-  				newIntervalMileage = maintenanceList[index].intervalMileage
-  				while newIntervalMileage < currentMileage
-  					newIntervalMileage = maintenanceList[index].intervalMileage + newIntervalMileage 
-  				mileageRemainder = newIntervalMileage - currentMileage
-  				if(mileageRemainder <= 1000)
-  					newMaintenanceList.push(maintenanceList[index]);
-  			return newMaintenanceList
-  		else
-  			#mileage data not provided, return general maintenance schedule
-  			return maintenanceList
 
 	$("form#car_current_mileage_form").on("ajax:success", (e, data, status, xhr) ->
 		# call edmunds api and run algorithm to parse maintenance schedule
 		# getting maintenance schedule information for given modelyearid
-		buildMaintenanceSchedule(data.edmunds_modelyearid, $('#car_current_mileage').val())
+		buildMaintenanceSchedule($('#car_current_mileage').val())
 
 		# based on mileage input by car owner
 	).on "ajax:error", (e, xhr, status, error) ->
 		console.log('Error updating current mileage')
 
-	opts = {current_mileage: $('#car_current_mileage').val()}
-	buildDashboard($('#edmunds_modelyearid').val(), opts)
+	opts = {car_count: $('#car_owner_car_count').val()}
+	buildDashboard(opts)
 
 
 
