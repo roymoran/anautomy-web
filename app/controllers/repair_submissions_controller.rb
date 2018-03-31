@@ -12,13 +12,13 @@ class RepairSubmissionsController < ApplicationController
 	end
 
 	def create
-		@repairSubmission = RepairSubmission.new(repairSubmission_params)  
+		@repairSubmission = RepairSubmission.new(repair_submission_params)  
 		if @repairSubmission.save 
 			respond_to do |format|
 				#add fallback to html
 				format.js # actually means: if the client ask for js -> return file.js
 	    	end
-	    	if @repairSubmission.car_option = 0
+	    	if @repairSubmission.car_option == 0
 	    		@repairSubmission.car_option = nil #special case if car_option is selected as "Not sure"
 	    	end
 		# @repairSubmission.create_car is used to create and save the associated car to
@@ -121,7 +121,7 @@ class RepairSubmissionsController < ApplicationController
 
 	private
 
-    def repairSubmission_params
+    def repair_submission_params
       params.require(:repair_submission).permit(:email, :vehicle_trim, :vehicle_mileage, :repair_description, :parts_cost, :labor_cost, :total_cost, :review, :car_make, :car_model, :car_option, :car_year, :shop_id, :repair_date, :repair_name, :repair_category, :repair_name_custom)
     end
 

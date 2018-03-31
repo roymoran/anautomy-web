@@ -13,11 +13,11 @@ jQuery ->
     $("#repair_submission_repair_name_custom").focus()
     
 
-  $('#car_year_select').change ->
-    $('#car_make_select').empty().append('<option selected>Make</option>')
-    $('#car_model_select').empty().append('<option selected>Model</option>')
-    $('#car_option_select').empty().append('<option selected>Engine</option>')
-    car_year = $('#car_year_select :selected').text()
+  $('#car_year_select_submission').change ->
+    $('#car_make_select_submission').empty().append('<option selected>Make</option>')
+    $('#car_model_select_submission').empty().append('<option selected>Model</option>')
+    $('#car_option_select_submission').empty().append('<option selected>Engine</option>')
+    car_year = $('#car_year_select_submission :selected').text()
     $.ajax
       type: "GET"
       url: "/fetch_car_makes"
@@ -25,37 +25,37 @@ jQuery ->
       dataType: "json"
       success: (data) ->
         $.each data, (index, value) ->
-          $('#car_make_select').append('<option value='+ data[index].id+'>'+data[index].name+'</option>')
-        $('#car_make_select').show()
+          $('#car_make_select_submission').append('<option value='+ data[index].id+'>'+data[index].name+'</option>')
+        $('#car_make_select_submission').show()
 
-  $('#car_make_select').change ->
-    $('#car_option_select').empty().append('<option selected>Engine</option>')
-    car_year = $('#car_year_select :selected').text()
-    car_make = $('#car_make_select :selected').val()
+  $('#car_make_select_submission').change ->
+    $('#car_option_select_submission').empty().append('<option selected>Engine</option>')
+    car_year = $('#car_year_select_submission :selected').text()
+    car_make = $('#car_make_select_submission :selected').val()
     $.ajax
       type: "GET"
       url: "/fetch_car_models"
       data: {car_year:"year_" + car_year, car_make_id: car_make}
       dataType: "json"
       success: (data) ->
-        $('#car_model_select').empty().append('<option selected>Model</option>')
+        $('#car_model_select_submission').empty().append('<option selected>Model</option>')
         $.each data, (index, value) ->
-          $('#car_model_select').append('<option value='+ data[index].id+'>'+data[index].name+'</option>')
-        $('#car_model_select').show()
+          $('#car_model_select_submission').append('<option value='+ data[index].id+'>'+data[index].name+'</option>')
+        $('#car_model_select_submission').show()
 
-  $('#car_model_select').change ->
-    car_year = $('#car_year_select :selected').text()
-    car_model = $('#car_model_select :selected').val()
+  $('#car_model_select_submission').change ->
+    car_year = $('#car_year_select_submission :selected').text()
+    car_model = $('#car_model_select_submission :selected').val()
     $.ajax
       type: "GET"
       url: "/fetch_car_options"
       data: {car_year:"year_" + car_year, car_model_id: car_model}
       dataType: "json"
       success: (data) ->
-        $('#car_option_select').empty().append('<option selected>Engine</option><option>Not Sure</option>')
+        $('#car_option_select_submission').empty().append('<option selected>Engine</option><option>Not Sure</option>')
         $.each data, (index, value) ->
-          $('#car_option_select').append('<option value='+ data[index].id+'>'+data[index].name+'</option>')
-        $('#car_option_select').show()
+          $('#car_option_select_submission').append('<option value='+ data[index].id+'>'+data[index].name+'</option>')
+        $('#car_option_select_submission').show()
 
   $('.repair_date_select').change ->
     $('.rate_experience_section').slideDown()
