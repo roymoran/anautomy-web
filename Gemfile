@@ -24,8 +24,6 @@ gem 'bootstrap-sass',          '3.2.0.0'
 gem 'bootstrap-select-rails'
 gem "font-awesome-rails", '~> 4.7.0.2'
 gem 'jquery-turbolinks'
-gem 'httparty'
-gem 'oj'
 gem 'pg',             '0.17.1'
 gem "paperclip", "~> 5.0.0"
 gem 'bcrypt',         '3.1.11'
