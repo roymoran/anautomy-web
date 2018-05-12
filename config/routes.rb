@@ -82,8 +82,9 @@ Rails.application.routes.draw do
   # ajax route for repair search results
   get 'api/place_details' => 'searches#place_details'
 
-  # ajax route for new service request map updating
+  # ajax route for service requests controller
   get 'api/place_coordinates' => 'service_requests#place_coordinates'
+  get 'api/validate_coupon' => 'service_requests#validate_coupon'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

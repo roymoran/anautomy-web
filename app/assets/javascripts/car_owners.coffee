@@ -62,7 +62,7 @@
 		getCarImage()
 		
 	@buildMaintenanceSchedule = (currentMileage) ->
-		$('.maintenance-schedule-message').empty().append('There\'s no maintenance information to show at the moment.')
+		$('.maintenance-schedule-message').empty().append('There\'s no maintenance information to show right now.')
 		$('#dashboard-container').removeClass("hide")
 		$('#intial-dashboard-container').addClass("hide")
 	
@@ -79,7 +79,7 @@
   			data: {car:{car_year_id: year_id, car_make_id: make_id, car_model_id: model_id, edmunds_modelyearid: null, car_image: carImage}}
   			success: (data) ->
   				$('#dash').fadeOut()
-  				$('#car_current_mileage_form').attr('action', '/cars/' + data);
+  				$('#car_current_mileage_form').attr('action', '/cars/' + data)
 				# build dashboard
 				buildDashboard({car_count: 1}) # car count set to one to show dashboard
   			error: (data) ->
@@ -101,15 +101,6 @@
 				createCar(carImage)
 			error: (data) ->
 				console.log("error getting car image")
-
-	$("form#car_current_mileage_form").on("ajax:success", (e, data, status, xhr) ->
-		# call edmunds api and run algorithm to parse maintenance schedule
-		# getting maintenance schedule information for given modelyearid
-		buildMaintenanceSchedule($('#car_current_mileage').val())
-
-		# based on mileage input by car owner
-	).on "ajax:error", (e, xhr, status, error) ->
-		console.log('Error updating current mileage')
 
 	opts = {car_count: $('#car_owner_car_count').val()}
 	buildDashboard(opts)

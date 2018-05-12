@@ -34,7 +34,7 @@ class CarOwnersController < ApplicationController
       #redirect_to root_url
   		log_in @car_owner
       remember @car_owner
-  		redirect_to @car_owner #redirect to root      
+  		redirect_to @car_owner #redirect to car owner page      
   	else
       render 'new'
     end

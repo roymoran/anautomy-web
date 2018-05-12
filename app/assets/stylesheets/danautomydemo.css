@@ -726,16 +726,24 @@ overflow-y:auto;
 .searchForm div span {
   display: block;
 }
-input[type=text] {padding:5px; border:1px solid #CFCFCF; 
--webkit-border-radius: 0;
-border-radius: 0;
+input[type=text] {
+  padding:5px; 
+  border:1px solid #CFCFCF; 
+  -webkit-border-radius: 0;
+  border-radius: 0;
 }
-input[type=text]:focus {border-color:#CFCFCF; }
+input[type=text]:focus { 
+  border-color:#CFCFCF; 
+}
 
-input[type=submit] {padding:5px 15px; background:#ccc; border:0 none;
-cursor:pointer;
--webkit-border-radius: 0;
-border-radius: 0; }
+input[type=submit] {
+  padding:5px 15px;
+  background:#ccc;
+  border:0 none;
+  cursor:pointer;
+  -webkit-border-radius: 0;
+  border-radius: 0; 
+}
 
 .searchButton{
   position: relative;
@@ -2234,19 +2242,14 @@ input[type=radio].with-fa-frown:checked ~ label:before {
 }
 /* End Modal Authentication Forms */
 
-.schedule-button {
-  font-size: 1.3em;  
-  background-color: #52bb49;
-  color: #ffffff;
-  padding-top: 12px;
-  border: 1px solid #52bb49;
-  border-radius: none;
-  height: 50px;
-  width: 100%;
-  display: block;
-
+.invalid-field{
+  border: 1px solid #FC642D !important;
+  background-color: #FFF8F6 !important;
 }
-.schedule-button:hover{
-  color: #ffffff;
-  text-decoration: none;
+
+.invalid-field-msg{
+  padding-top: 4px;
+  color: #d93900;
+  font-size: 1.2em;
+  text-align: left;
 }
