@@ -3,30 +3,30 @@
 <div class = "container-fluid">
   <div class="row">
   <div class="col-sm-5 col-sm-offset-1 text-center">
-    <h2 class="main-headline">Schedule Repair</h2>
+    <h2 class="main-headline">Schedule a Repair</h2>
     <br>
     <%= form_for @sr, html: {class: ""} do |f| %>
-    
     <%= f.select(:car_id, nil, {}, {class: "select-car-menu"}) do %>
-    <option>Select Your Car</option>
-      <% @cars_list.each do |c| %>
-        <%= content_tag(:option, c["car_name"], value: c["id"]) %>
+      <option value="0" selected>Select Your Car</option>
+        <% @cars_list.each do |c| %>
+          <%= content_tag(:option, c["car_name"], value: c["id"]) %>
+        <% end %>
       <% end %>
-    <% end %>
-
-    <%= f.text_field :pickup_location, class: 'service-request-field', id: 'autocomplete', placeholder: "Pickup Location (address, city, state or zip)"%>
+    <div class="padding"></div>
+    <%= f.text_field :pickup_location, class: 'service-request-field ', id: 'autocomplete', placeholder: "Pickup Location (address, city, state or zip)" %>
     <%= f.hidden_field :search_street_number, id: 'street_number'%>
     <%= f.hidden_field :search_route, id: 'route'%>
     <%= f.hidden_field :search_locality, id: 'locality' %>
     <%= f.hidden_field :search_administrative_area_level_1, id: 'administrative_area_level_1' %>
     <%= f.hidden_field :search_postal_code, id: 'postal_code'%>
     <%= f.hidden_field :search_country, id: 'country' %>
-
+    <div class="padding"></div>
     <a data-toggle="modal" data-target="#myModal" href="#">
-      <div class="select_submission_form text-left">
+      <div class="select-service-request-form" id="repair-select-modal">
         <div class ="repair_name_div" style="float:left; width:90%; overflow: hidden; text-overflow:ellipsis; white-space: nowrap;">Select Repair</div><i class="fa fa-th text-right" aria-hidden="true" style="float:right; padding-top:4px;"></i>
       </div>
     </a>
+    <div class="padding"></div>
 
     <div class="modal fade repairs-modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog" role="document">
@@ -54,38 +54,53 @@
         </div>
       </div>
     </div>
-    <div class="row">
+    <div class="row" id="day-time-select">
+      <div class="padding"></div>
       <div class="col-sm-6">
-    <%= f.select(:preferred_day, nil, {}, {class: "select-car-menu"}) do %>
-    <option>Preferred Day</option>
-    <% [['Sunday'], ['Monday'], ['Tuesday'], ['Wednesday'], ['Thursday'], ['Friday'], ['Saturday']].each do |c| %>
-    <%= content_tag(:option, c.first, value: c.first) %>
-    <% end %>
-    <% end %>
-  </div>
-  <div class="col-sm-6">
-    <%= f.select(:preferred_time, nil, {}, {class: "select-car-menu"}) do %>
-    <option>Preferred Time</option>
-    <% @hours.each do |hour| %>
-    <%= content_tag(:option, hour, value: hour) %>
-    <% end %>
-    <% end %>
-  </div>
+      <%= f.select(:preferred_day, nil, {}, {class: "select-car-menu"}) do %>
+        <option value="0">Preferred Day</option>
+          <% [['Sunday'], ['Monday'], ['Tuesday'], ['Wednesday'], ['Thursday'], ['Friday'], ['Saturday']].each do |c| %>
+            <%= content_tag(:option, c.first, value: c.first) %>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="padding"></div>
+      <div class="col-sm-6">
+        <%= f.select(:preferred_time, nil, {}, {class: "select-car-menu"}) do %>
+          <option value="0">Preferred Time</option>
+            <% @hours.each do |hour| %>
+              <%= content_tag(:option, hour, value: hour) %>
+            <% end %>
+          <% end %>
+      </div>
+    </div>
+    <div class="padding"></div>
     <% if @car_owner_phone.blank? %>
-    <div class="col-sm-12">
-        <%= telephone_field(:car_owner, :phone_number, {class: 'service-request-field', placeholder: "Phone number"}) %>
-    </div>
+      <%= telephone_field(:car_owner, :phone_number, {class: 'service-request-field', placeholder: "Phone number"}) %>
     <% else %>
-    <% end %>
-    </div>
-    <%= f.hidden_field :car_owner_id %>
-    <%= f.hidden_field :repair_name %>
-    <%= f.submit "Submit", class: "btn btn-auth-form mp-service-request-created" if logged_in? %>
+  
     <% end %>
 
+    <%= f.hidden_field :car_owner_id %>
+    <%= f.hidden_field :repair_name %>
+    <%= f.hidden_field :coupon_code %>
+
+    <%= f.submit "Submit", class: "btn btn-service-request-form mp-service-request-created" if logged_in? %>
+    <% end %>
+    <div class="row text-left">  
+      <%= form_tag({controller: "service_requests", action: "validate_coupon"},  method: "get", class: "", id: "apply_coupon_code_form", remote: true) do %>
+        <div class="col-sm-12">
+          <span id="coupon_validation_message"></span>
+        </div>
+        <div class="col-sm-12">
+          <%= text_field_tag 'coupon_code', nil, {placeholder: 'Coupon code', id: "coupon_code", class:   "coupon-code-input"} %>
+          <%= submit_tag("Apply",  {class: "btn btn-coupon-form"}) %>
+        </div>
+      <% end %>
+    </div>
     <br><br>
   </div>
-  <div class = "col-sm-6">
+    <div class = "col-sm-6">
       <div class = "row">
         <div class = "col-lg-12">
           <!-- jank placeholder map here -->
@@ -93,14 +108,12 @@
         </div>
       </div>
     </div>
+  </div>
 </div>
-</div>
-
 
 <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{Rails.application.secrets.google_api_key}&libraries=places&callback=initAutocomplete", defer: true, async: true %>
 
 <script>
-      
       var HttpClient = function() {
         this.get = function(aUrl, aCallback) {
           var anHttpRequest = new XMLHttpRequest();
@@ -136,7 +149,7 @@
         // location types.
         autocomplete = new google.maps.places.Autocomplete(
             /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
-            {types: ['geocode']});
+            {types: ['geocode'], componentRestrictions: {country: "us"}});
 
         // When the user selects an address from the dropdown, populate the address
         // fields in the form.
@@ -146,7 +159,7 @@
       function fillInAddress() {
         // Get the place details from the autocomplete object.
         var place = autocomplete.getPlace();
-
+        
         for (var component in componentForm) {
           document.getElementById(component).value = '';
           document.getElementById(component).disabled = false;
