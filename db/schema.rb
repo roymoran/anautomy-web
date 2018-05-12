@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171125044723) do
+ActiveRecord::Schema.define(version: 20180426055112) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -195,6 +195,21 @@ ActiveRecord::Schema.define(version: 20171125044723) do
   add_index "cars", ["car_year_id"], name: "index_cars_on_car_year_id", using: :btree
   add_index "cars", ["repair_submission_id"], name: "index_cars_on_repair_submission_id", using: :btree
 
+  create_table "coupon_codes", force: :cascade do |t|
+    t.string   "code"
+    t.datetime "expiration_at"
+    t.integer  "discount_percent"
+    t.integer  "discount_amount"
+  end
+
+  add_index "coupon_codes", ["code"], name: "index_coupon_codes_on_code", unique: true, using: :btree
+
+  create_table "coupon_funds", force: :cascade do |t|
+    t.integer "initial_amount"
+    t.integer "spent_amount"
+    t.integer "remaining_amount"
+  end
+
   create_table "drivers", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
@@ -276,6 +291,7 @@ ActiveRecord::Schema.define(version: 20171125044723) do
     t.datetime "scheduled_at"
     t.boolean  "amount_charged",  default: false
     t.string   "auth_token"
+    t.string   "coupon_code"
   end
 
   add_index "service_requests", ["car_id"], name: "index_service_requests_on_car_id", using: :btree
