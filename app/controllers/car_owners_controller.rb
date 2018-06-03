@@ -1,4 +1,6 @@
 class CarOwnersController < ApplicationController
+  require 'net/http'
+
   before_action :logged_in_car_owner, only: [:edit, :update, :show]
   before_action :correct_car_owner,   only: [:edit, :update, :show]
 
@@ -76,8 +78,6 @@ class CarOwnersController < ApplicationController
     model = URI.encode(params[:car_model])
     uri = URI('https://www.googleapis.com/customsearch/v1?cx='+search_engine_id+'&q='+year+'+'+make+'+'+model+'&imgSize='+img_size+'&searchType='+search_type+'&num='+num_results+'&key='+api_key)
     res = Net::HTTP.get_response(uri)
-    #json_o = JSON.parse(res.body)
-    #return image = json_o["items"][0]["link"]
     respond_to do |format|
       format.json { render :json => res.body}
     end
