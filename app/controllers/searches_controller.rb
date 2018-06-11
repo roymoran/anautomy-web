@@ -1,4 +1,5 @@
 class SearchesController < ApplicationController
+  require 'net/http'
 
   def new
   end

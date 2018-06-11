@@ -9,13 +9,7 @@
 		document.getElementById("coupon_validation_message").textContent=data.message;
 		document.getElementById("service_request_coupon_code").value = document.getElementById("coupon_code").value;
 	).on "ajax:error", (e, xhr, status, error) ->
-		console.log('Error updating current mileage')
-
-	$("form#apply_coupon_code_form").on("ajax:success", (e, data, status, xhr) ->
-		document.getElementById("coupon_validation_message").textContent=data.message;
-		document.getElementById("service_request_coupon_code").value = document.getElementById("coupon_code").value;
-	).on "ajax:error", (e, xhr, status, error) ->
-		console.log('Error updating current mileage')
+		console.log('Error applying coupon.')
 	
 	$('form#new_service_request').submit (e) ->
 		e.preventDefault()
@@ -29,8 +23,6 @@
 			validateRepairSelected()
 			validateDayTimeSelected()
 			validatePhoneNumber()
-
-
 	
 	@validateLocality = () ->
 		pickupLocation = document.getElementById("autocomplete")

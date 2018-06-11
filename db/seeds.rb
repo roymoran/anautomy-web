@@ -43160,13 +43160,13 @@ CarOption.create(name: 'Auto (AM7), 12 cyl, 6.0 L, Turbo', car_model_id: 3857, y
 CarOption.create(name: 'Auto (A1), 4 cyl, 2.0 L, Turbo', car_model_id: 3858, year_2018: true)
 CarOption.create(name: 'Auto 7-spd, 8 cyl, 5.0 L, Turbo', car_model_id: 3859, year_2018: true)
 
-# Seed data for car years based on EPA from 1984-2017
+# Seed data for car years based on EPA from 1984 to current year
 @years = (1984..Time.new.year)
 @years.each do |year|
     CarYear.create(year: year)
 end
 # Add default driver 
-Driver.create(name: 'Roy Moran', email: 'roy@innvoy.com', location: 'Seattle, WA', driver_img: 'http:roymoran.me/assets/profile_images/self.jpg', phone_number: '(773) 679-4922')
+Driver.create(name: 'Roy Moran', email: 'roy@innvoy.com', location: 'Seattle, WA', driver_img: 'http://roymoran.me/assets/profile_images/self.jpg', phone_number: '(773) 679-4922')
 
 #Seed data for shops
 #Shop.create(shop_name: "1. Aby's Shop", shop_zip: "60609", shop_city: "Chicago", shop_state_code: "IL", shop_iso_country_code: "US", shop_neighborhood: "Brighton Park", shop_address: "4146 S. Western Ave.", shop_phone: "(773) 691-2638")

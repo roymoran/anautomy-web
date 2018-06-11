@@ -23,9 +23,6 @@ Rails.application.routes.draw do
   # get 'new_submission' => "repair_submissions#new"
   get 'show' => 'repair_submissions#show'
   get 'results' => 'shops#search_result'
-
-  get 'repairs' => 'anautomy#repairs'
-  get 'submissions' => 'anautomy#submissions'
   # signup, login, and logout routes for car owners
   get  '/signup',  to: 'car_owners#new'
   post '/signup',  to: 'car_owners#create'

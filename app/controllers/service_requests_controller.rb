@@ -1,4 +1,6 @@
 class ServiceRequestsController < ApplicationController
+  require 'net/http'
+
   before_action :payment_method_present, only: [:new]
 
   def new

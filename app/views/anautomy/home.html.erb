@@ -90,7 +90,7 @@
 <%= javascript_include_tag "jquery.js" %>
 <%= javascript_include_tag "jquery.searcher.min.js" %>
 
-<%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key="+ @google_api_key +"&libraries=places&callback=initAutocomplete", defer: true, async: true %>
+<%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{Rails.application.secrets.google_api_key}&libraries=places&callback=initAutocomplete", defer: true, async: true %>
 
  <script>
 
