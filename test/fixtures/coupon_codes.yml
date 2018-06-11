@@ -4,8 +4,15 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
-# column: value
-#
-two: {}
-#  column: value
+validCoupon:
+  code: valid-code
+  expiration_at: <%= 10.days.from_now %>
+  discount_amount: 2000
+  discount_percent: null
+
+
+invalidCoupon:
+  code: expired-code
+  expiration_at: <%= 10.days.ago %>
+  discount_amount: 2000
+  discount_percent: null
