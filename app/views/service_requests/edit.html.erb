@@ -39,13 +39,13 @@
     <%= f.number_field :driver_id, {class: "service-request-field"} %>
     <%= f.label :shop_id %>
     <%= f.number_field :shop_id, {class: "service-request-field"} %>
-    <%= f.label :quote_amount %>
+    <%= f.label :quote_amount %> (in cents)
     <%= f.number_field :quote_amount, {class: "service-request-field"} %>
-    <%= f.label :actual_amount %>
+    <%= f.label :actual_amount %> (in cents)
     <%= f.number_field :actual_amount, {class: "service-request-field"} %>
     
     <%= f.label :scheduled_at %>
-    <div style="font-size:1.2em;">Note: Always set date before updating!</div>
+    <div style="font-size:1.2em; color:red;">Note: Always set date before updating!</div>
     <div style="font-size:1.2em;"> Currently scheduled for: <%= @sr.scheduled_at.nil? ? 'not scheduled' : + @sr.scheduled_at.strftime("%a. %b. %d - %I:%M %p") %></div>
     <div><%= datetime_select :service_request, :scheduled_at, {class: "select-car-menu"} %></div><br><br>
     <%= f.hidden_field :car_owner_id %>

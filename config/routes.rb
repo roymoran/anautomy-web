@@ -23,9 +23,6 @@ Rails.application.routes.draw do
   # get 'new_submission' => "repair_submissions#new"
   get 'show' => 'repair_submissions#show'
   get 'results' => 'shops#search_result'
-
-  get 'repairs' => 'anautomy#repairs'
-  get 'submissions' => 'anautomy#submissions'
   # signup, login, and logout routes for car owners
   get  '/signup',  to: 'car_owners#new'
   post '/signup',  to: 'car_owners#create'
@@ -82,8 +79,9 @@ Rails.application.routes.draw do
   # ajax route for repair search results
   get 'api/place_details' => 'searches#place_details'
 
-  # ajax route for new service request map updating
+  # ajax route for service requests controller
   get 'api/place_coordinates' => 'service_requests#place_coordinates'
+  get 'api/validate_coupon' => 'service_requests#validate_coupon'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

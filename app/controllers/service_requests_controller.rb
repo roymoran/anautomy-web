@@ -1,9 +1,11 @@
 class ServiceRequestsController < ApplicationController
+  require 'net/http'
+
   before_action :payment_method_present, only: [:new]
 
   def new
     @sr = ServiceRequest.new
-    @hours = create_hours(8, 20, 30)
+    @hours = create_hours(8, 20, 30) # 8am - 8pm in increments of 30 minutes
     if logged_in?
       @car_owner = CarOwner.find(session[:car_owner_id])
       @cars_list = car_list_by_name(@car_owner.cars)
@@ -19,13 +21,12 @@ class ServiceRequestsController < ApplicationController
 
   def create
     @sr = ServiceRequest.new(service_request_params)
+    valid_with_reason = coupon_valid?(params[:service_request][:coupon_code])
+    @sr.coupon_code = valid_with_reason[:valid] ? params[:service_request][:coupon_code] : nil
     @sr.car_owner_id = session[:car_owner_id]
     @sr.status = 'Created'
     @sr.auth_token = ServiceRequest.new_token
-    # email service created
     if @sr.save
-      # Handle a successful save.
-      # @sr.send_activation_email
       flash[:info] = 'Your repair request has been submitted, and will be
                       processed shortly.'
       CarOwner.find(session[:car_owner_id]).update_attribute(:phone_number, params[:car_owner][:phone_number]) unless !params[:car_owner].present?
@@ -40,26 +41,16 @@ class ServiceRequestsController < ApplicationController
     end
   end
 
+  # only driver has access to edit view
   def edit
     @sr = ServiceRequest.find(params[:id])
+    validate_token(@sr.auth_token, params[:t])
     @car = car_name(Car.find(@sr.car_id))
-    auth_token = params[:t]
-    if @sr.auth_token != auth_token
-      flash[:warning] = 'If you would like to make changes to your scheduled
-      repair please email team@innvoy.com.'
-      redirect_to root_url
-    end
   end
 
   def update
     @sr = ServiceRequest.find(params[:id])
-    auth_token = params[:t]
-    if @sr.auth_token != auth_token
-      flash[:warning] = 'If you would like to make changes to your service
-      request please email team@innvoy.com.'
-      return redirect_to root_url
-    end
-
+    validate_token(@sr.auth_token, params[:t])
     if @sr.update_attributes(service_request_params)
       @car_owner = CarOwner.find(@sr.car_owner_id)
       # Handle a successful update.
@@ -84,6 +75,21 @@ class ServiceRequestsController < ApplicationController
     end
   end
 
+  def validate_coupon
+    valid_with_reason = coupon_valid?(params[:coupon_code])
+    if valid_with_reason[:valid]
+      respond_to do |format|
+        message = "Applying #{@coupon.discount_amount.nil? ? @coupon.discount_percent.to_s + '%' : + amount_to_usd(@coupon.discount_amount)} off repair"
+        format.json { render json: { message: message } }
+      end
+    else
+      respond_to do |format|
+        message = valid_with_reason[:reason]
+        format.json { render json: { message: message } }
+      end
+    end
+  end
+
   private
 
   def service_request_params
@@ -92,7 +98,8 @@ class ServiceRequestsController < ApplicationController
                                             :status, :preferred_time,
                                             :preferred_day, :driver_id,
                                             :shop_id, :actual_amount,
-                                            :quote_amount, :scheduled_at)
+                                            :quote_amount, :scheduled_at,
+                                            :coupon_code)
   end
 
   # Given the user associated cars, return nice list of
@@ -118,6 +125,54 @@ class ServiceRequestsController < ApplicationController
     @year.to_s + ' ' + @make + ' ' + @model
   end
 
+  # Create list of hours in increments of 30 minutes given
+  # start and end hour
+  def create_hours(start_hour, end_hour, increment_minutes)
+    t0 = start_hour - 1
+    start_time = Time.new(Time.now.year, Time.now.month, Time.now.day, t0, 30)
+    Array.new(((end_hour - start_hour) * 2) + 1) do
+      start_time += (increment_minutes * 60)
+      start_time.strftime('%l:%M %P')
+    end
+  end
+
+  def coupon_valid?(coupon)
+    @coupon = get_coupon(coupon)
+    return { valid: false, reason: "Invalid coupon code." } unless coupon_exists?(@coupon)
+    return { valid: false, reason: "Coupon code has expired." } if coupon_expired?(@coupon)
+    return { valid: false, reason: "Coupon code has already been redeemed." } if car_owner_used_coupon?(@coupon)
+    return { valid: true, reason: "" }
+  end
+  
+  def get_coupon(coupon)
+    CouponCode.find_by(code: coupon)
+  end
+  
+  def coupon_exists?(coupon)
+    !coupon.nil?
+  end
+  
+  def coupon_expired?(coupon)
+    coupon.expiration_at < DateTime.now
+  end
+
+  def car_owner_used_coupon?(coupon)
+    @car_owner = CarOwner.find(session[:car_owner_id]) # TODO: this breaks if car owner not logged in
+    # coupon_used? = false
+    if @car_owner.service_requests_count.zero?
+      return false
+    else
+      @service_requests = @car_owner.service_requests
+      @service_requests.each do |sr|
+        if sr.coupon_code == coupon.code
+          return true
+        end
+      end
+    end
+    return false
+  end
+
+  # Before filters
   # Validate if user has stripe payment source
   # associated with their account
   def payment_method_present
@@ -129,17 +184,6 @@ class ServiceRequestsController < ApplicationController
       flash.now[:warning] = "You must have a payment method before you can
       schedule a repair. Visit your account settings to add a payment
       method."
-    end
-  end
-
-  # Create list of hours in increments of 30 minutes given
-  # start and end hour
-  def create_hours(start_hour, end_hour, increment_minutes)
-    t0 = start_hour - 1
-    start_time = Time.new(Time.now.year, Time.now.month, Time.now.day, t0, 30)
-    Array.new(((end_hour - start_hour) * 2) + 1) do
-      start_time += (increment_minutes * 60)
-      start_time.strftime('%l:%M %P')
     end
   end
 end

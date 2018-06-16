@@ -4,7 +4,7 @@ class CarsController < ApplicationController
 		@car.car_owner_id = session[:car_owner_id]
 		respond_to do |format|
 			if @car.save
-				format.json {render json: @car.id, status: :created} # returning car id for updating form on user dashboard
+				format.json {render json: @car.id, status: :created} # returning car id to update form on user dashboard
 			else
 				head :bad_request
 			end
@@ -13,20 +13,15 @@ class CarsController < ApplicationController
 
 	def update
 		@car = Car.find(params[:id])
-		#respond_to do |format|
 			# update car if validated and if car belongs to current user 
 			respond_to do |format|
 				if  session[:car_owner_id] == @car.car_owner_id
 					@car.update_attributes(car_params)
-					#head :ok
-					format.json {render json: @car, status: :ok} # returning car for model year id 
+					format.json {render json: {}, status: :ok} # returning car for model year id 
 				else
 					head :bad_request
 				end
 			end
-		#end
-		# TODO - update car owner car mileage from user dashboard
-		# Validate that car belongs to current user before updating
 	end
 
 	private

@@ -2,26 +2,11 @@
 
 one:
   email: MyString
-  vehicleYear: 1
-  vehicleMake: MyString
-  vehicleModel: MyString
-  vehicleTrim: MyString
-  vehicleMileage: 1
-  repairDescription: MyString
-  partsCost: 9.99
-  laborCost: 9.99
-  vechicleDetails: MyText
-  repairDetails: MyText
-
-two:
-  email: MyString
-  vehicleYear: 1
-  vehicleMake: MyString
-  vehicleModel: MyString
-  vehicleTrim: MyString
-  vehicleMileage: 1
-  repairDescription: MyString
-  partsCost: 9.99
-  laborCost: 9.99
-  vechicleDetails: MyText
-  repairDetails: MyText
+  vehicle_trim: MyString
+  vehicle_mileage: 1
+  review: MyString
+  parts_cost: 9.99
+  labor_cost: 9.99
+  total_cost: 19.98
+  shop_id: 2
+  repair_date: <%= 5.day.ago %>
