@@ -16,13 +16,13 @@ class ShopsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create shop" do
-    assert_difference('Shop.count') do
-      post :create, shop: {  }
-    end
-
-    assert_redirected_to shop_path(assigns(:shop))
-  end
+  # test "should create shop" do
+  #   assert_difference('Shop.count') do
+  #     post :create, shop: {  }
+  #   end
+ 
+  #   assert_redirected_to shop_path(assigns(:shop))
+  # end
 
   test "should show shop" do
     get :show, id: @shop

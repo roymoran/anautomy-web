@@ -3,7 +3,3 @@
 one:
   name: MyString
   email: MyString
-
-two:
-  name: MyString
-  email: MyString
